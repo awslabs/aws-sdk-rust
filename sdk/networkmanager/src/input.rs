@@ -136,23 +136,20 @@ impl AssociateCustomerGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.global_network_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_1, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/customer-gateway-associations",
@@ -312,23 +309,20 @@ impl AssociateLinkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.global_network_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_2, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/link-associations",
@@ -511,23 +505,20 @@ impl AssociateTransitGatewayConnectPeerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.global_network_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_3, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/transit-gateway-connect-peer-associations",
@@ -743,23 +734,20 @@ impl CreateConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.global_network_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_4, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/connections",
@@ -1010,23 +998,20 @@ impl CreateDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.global_network_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_5, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/devices",
@@ -1389,23 +1374,20 @@ impl CreateLinkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.global_network_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_6, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/links",
@@ -1595,23 +1577,20 @@ impl CreateSiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.global_network_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_7, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/sites",
@@ -1762,40 +1741,34 @@ impl DeleteConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let connection_id = {
-            let input = &self.connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.global_network_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let global_network_id = smithy_http::label::fmt_string(input_8, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_9 = &self.connection_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let connection_id = smithy_http::label::fmt_string(input_9, false);
+        if connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/connections/{ConnectionId}",
@@ -1942,40 +1915,36 @@ impl DeleteDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_10 = &self.global_network_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_10, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.device_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_11, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/devices/{DeviceId}",
@@ -2113,23 +2082,21 @@ impl DeleteGlobalNetworkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_12 = &self.global_network_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_12, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}",
@@ -2275,40 +2242,36 @@ impl DeleteLinkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_13 = &self.global_network_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let link_id = {
-            let input = &self.link_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_13, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.link_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "link_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "link_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let link_id = smithy_http::label::fmt_string(input_14, false);
+        if link_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "link_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/links/{LinkId}",
@@ -2455,40 +2418,36 @@ impl DeleteSiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_15 = &self.global_network_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let site_id = {
-            let input = &self.site_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_15, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.site_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "site_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let site_id = smithy_http::label::fmt_string(input_16, false);
+        if site_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "site_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/sites/{SiteId}",
@@ -2641,40 +2600,36 @@ impl DeregisterTransitGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_17 = &self.global_network_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let transit_gateway_arn = {
-            let input = &self.transit_gateway_arn;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_17, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_18 = &self.transit_gateway_arn;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "transit_gateway_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "transit_gateway_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let transit_gateway_arn = smithy_http::label::fmt_string(input_18, false);
+        if transit_gateway_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "transit_gateway_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/transit-gateway-registrations/{TransitGatewayArn}",
@@ -2840,19 +2795,22 @@ impl DescribeGlobalNetworksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.global_network_ids {
-            for inner_2 in inner_1 {
+        if let Some(inner_19) = &self.global_network_ids {
+            for inner_20 in inner_19 {
                 query.push_kv(
                     "globalNetworkIds",
-                    &smithy_http::query::fmt_string(&inner_2),
+                    &smithy_http::query::fmt_string(&inner_20),
                 );
             }
         }
-        if let Some(inner_3) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_3));
+        if let Some(inner_21) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+            );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_22) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3000,40 +2958,36 @@ impl DisassociateCustomerGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_23 = &self.global_network_id;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let customer_gateway_arn = {
-            let input = &self.customer_gateway_arn;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_23, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_24 = &self.customer_gateway_arn;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "customer_gateway_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "customer_gateway_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let customer_gateway_arn = smithy_http::label::fmt_string(input_24, false);
+        if customer_gateway_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "customer_gateway_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/customer-gateway-associations/{CustomerGatewayArn}",
@@ -3193,23 +3147,21 @@ impl DisassociateLinkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_25 = &self.global_network_id;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_25, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/link-associations",
@@ -3220,11 +3172,11 @@ impl DisassociateLinkInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.device_id {
-            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_26) = &self.device_id {
+            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_26));
         }
-        if let Some(inner_6) = &self.link_id {
-            query.push_kv("linkId", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_27) = &self.link_id {
+            query.push_kv("linkId", &smithy_http::query::fmt_string(&inner_27));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3375,40 +3327,36 @@ impl DisassociateTransitGatewayConnectPeerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_28 = &self.global_network_id;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let transit_gateway_connect_peer_arn = {
-            let input = &self.transit_gateway_connect_peer_arn;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_28, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_29 = &self.transit_gateway_connect_peer_arn;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "transit_gateway_connect_peer_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "transit_gateway_connect_peer_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let transit_gateway_connect_peer_arn = smithy_http::label::fmt_string(input_29, false);
+        if transit_gateway_connect_peer_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "transit_gateway_connect_peer_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/global-networks/{GlobalNetworkId}/transit-gateway-connect-peer-associations/{TransitGatewayConnectPeerArn}", GlobalNetworkId = global_network_id, TransitGatewayConnectPeerArn = transit_gateway_connect_peer_arn).expect("formatting should succeed");
         Ok(())
     }
@@ -3588,23 +3536,21 @@ impl GetConnectionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_30 = &self.global_network_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_30, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/connections",
@@ -3615,19 +3561,22 @@ impl GetConnectionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.connection_ids {
-            for inner_8 in inner_7 {
-                query.push_kv("connectionIds", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_31) = &self.connection_ids {
+            for inner_32 in inner_31 {
+                query.push_kv("connectionIds", &smithy_http::query::fmt_string(&inner_32));
             }
         }
-        if let Some(inner_9) = &self.device_id {
-            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_33) = &self.device_id {
+            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_33));
         }
-        if let Some(inner_10) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_10));
+        if let Some(inner_34) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_34).encode(),
+            );
         }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3797,23 +3746,21 @@ impl GetCustomerGatewayAssociationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_36 = &self.global_network_id;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_36, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/customer-gateway-associations",
@@ -3824,19 +3771,22 @@ impl GetCustomerGatewayAssociationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.customer_gateway_arns {
-            for inner_13 in inner_12 {
+        if let Some(inner_37) = &self.customer_gateway_arns {
+            for inner_38 in inner_37 {
                 query.push_kv(
                     "customerGatewayArns",
-                    &smithy_http::query::fmt_string(&inner_13),
+                    &smithy_http::query::fmt_string(&inner_38),
                 );
             }
         }
-        if let Some(inner_14) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_14));
+        if let Some(inner_39) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_39).encode(),
+            );
         }
-        if let Some(inner_15) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_40) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4014,23 +3964,21 @@ impl GetDevicesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_41 = &self.global_network_id;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_41, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/devices",
@@ -4041,19 +3989,22 @@ impl GetDevicesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.device_ids {
-            for inner_17 in inner_16 {
-                query.push_kv("deviceIds", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_42) = &self.device_ids {
+            for inner_43 in inner_42 {
+                query.push_kv("deviceIds", &smithy_http::query::fmt_string(&inner_43));
             }
         }
-        if let Some(inner_18) = &self.site_id {
-            query.push_kv("siteId", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_44) = &self.site_id {
+            query.push_kv("siteId", &smithy_http::query::fmt_string(&inner_44));
         }
-        if let Some(inner_19) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_45) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_45).encode(),
+            );
         }
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_46) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_46));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4229,23 +4180,21 @@ impl GetLinkAssociationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_47 = &self.global_network_id;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_47, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/link-associations",
@@ -4256,17 +4205,20 @@ impl GetLinkAssociationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.device_id {
-            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_21));
+        if let Some(inner_48) = &self.device_id {
+            query.push_kv("deviceId", &smithy_http::query::fmt_string(&inner_48));
         }
-        if let Some(inner_22) = &self.link_id {
-            query.push_kv("linkId", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_49) = &self.link_id {
+            query.push_kv("linkId", &smithy_http::query::fmt_string(&inner_49));
         }
-        if let Some(inner_23) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_23));
+        if let Some(inner_50) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_50).encode(),
+            );
         }
-        if let Some(inner_24) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
+        if let Some(inner_51) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_51));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4464,23 +4416,21 @@ impl GetLinksInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_52 = &self.global_network_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_52, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/links",
@@ -4491,25 +4441,28 @@ impl GetLinksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_25) = &self.link_ids {
-            for inner_26 in inner_25 {
-                query.push_kv("linkIds", &smithy_http::query::fmt_string(&inner_26));
+        if let Some(inner_53) = &self.link_ids {
+            for inner_54 in inner_53 {
+                query.push_kv("linkIds", &smithy_http::query::fmt_string(&inner_54));
             }
         }
-        if let Some(inner_27) = &self.site_id {
-            query.push_kv("siteId", &smithy_http::query::fmt_string(&inner_27));
+        if let Some(inner_55) = &self.site_id {
+            query.push_kv("siteId", &smithy_http::query::fmt_string(&inner_55));
         }
-        if let Some(inner_28) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_28));
+        if let Some(inner_56) = &self.r#type {
+            query.push_kv("type", &smithy_http::query::fmt_string(&inner_56));
         }
-        if let Some(inner_29) = &self.provider {
-            query.push_kv("provider", &smithy_http::query::fmt_string(&inner_29));
+        if let Some(inner_57) = &self.provider {
+            query.push_kv("provider", &smithy_http::query::fmt_string(&inner_57));
         }
-        if let Some(inner_30) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_30));
+        if let Some(inner_58) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_58).encode(),
+            );
         }
-        if let Some(inner_31) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_59) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_59));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4674,23 +4627,21 @@ impl GetSitesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_60 = &self.global_network_id;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_60, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/sites",
@@ -4701,16 +4652,19 @@ impl GetSitesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_32) = &self.site_ids {
-            for inner_33 in inner_32 {
-                query.push_kv("siteIds", &smithy_http::query::fmt_string(&inner_33));
+        if let Some(inner_61) = &self.site_ids {
+            for inner_62 in inner_61 {
+                query.push_kv("siteIds", &smithy_http::query::fmt_string(&inner_62));
             }
         }
-        if let Some(inner_34) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_34));
+        if let Some(inner_63) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_63).encode(),
+            );
         }
-        if let Some(inner_35) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
+        if let Some(inner_64) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_64));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4887,23 +4841,21 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_65 = &self.global_network_id;
+        let input_65 =
+            input_65
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_65, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/transit-gateway-connect-peer-associations",
@@ -4914,19 +4866,22 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_36) = &self.transit_gateway_connect_peer_arns {
-            for inner_37 in inner_36 {
+        if let Some(inner_66) = &self.transit_gateway_connect_peer_arns {
+            for inner_67 in inner_66 {
                 query.push_kv(
                     "transitGatewayConnectPeerArns",
-                    &smithy_http::query::fmt_string(&inner_37),
+                    &smithy_http::query::fmt_string(&inner_67),
                 );
             }
         }
-        if let Some(inner_38) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_38));
+        if let Some(inner_68) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_68).encode(),
+            );
         }
-        if let Some(inner_39) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_39));
+        if let Some(inner_69) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_69));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5096,23 +5051,21 @@ impl GetTransitGatewayRegistrationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_70 = &self.global_network_id;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_70, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/transit-gateway-registrations",
@@ -5123,19 +5076,22 @@ impl GetTransitGatewayRegistrationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_40) = &self.transit_gateway_arns {
-            for inner_41 in inner_40 {
+        if let Some(inner_71) = &self.transit_gateway_arns {
+            for inner_72 in inner_71 {
                 query.push_kv(
                     "transitGatewayArns",
-                    &smithy_http::query::fmt_string(&inner_41),
+                    &smithy_http::query::fmt_string(&inner_72),
                 );
             }
         }
-        if let Some(inner_42) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_42));
+        if let Some(inner_73) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_73).encode(),
+            );
         }
-        if let Some(inner_43) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_43));
+        if let Some(inner_74) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_74));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5264,23 +5220,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_75 = &self.resource_arn;
+        let input_75 =
+            input_75
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_75, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -5431,23 +5385,21 @@ impl RegisterTransitGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_76 = &self.global_network_id;
+        let input_76 =
+            input_76
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_76, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/transit-gateway-registrations",
@@ -5597,23 +5549,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_77 = &self.resource_arn;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_77, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -5756,32 +5706,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_78 = &self.resource_arn;
+        let input_78 =
+            input_78
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_78, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_44) = &self.tag_keys {
-            for inner_45 in inner_44 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_45));
+        if let Some(inner_79) = &self.tag_keys {
+            for inner_80 in inner_79 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_80));
             }
         }
     }
@@ -5967,40 +5915,36 @@ impl UpdateConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_81 = &self.global_network_id;
+        let input_81 =
+            input_81
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let connection_id = {
-            let input = &self.connection_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_81, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_82 = &self.connection_id;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "connection_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let connection_id = smithy_http::label::fmt_string(input_82, false);
+        if connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/connections/{ConnectionId}",
@@ -6248,40 +6192,36 @@ impl UpdateDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_83 = &self.global_network_id;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_83, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_84 = &self.device_id;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_84, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/devices/{DeviceId}",
@@ -6434,23 +6374,21 @@ impl UpdateGlobalNetworkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_85 = &self.global_network_id;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let global_network_id = smithy_http::label::fmt_string(input_85, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}",
@@ -6649,40 +6587,36 @@ impl UpdateLinkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_86 = &self.global_network_id;
+        let input_86 =
+            input_86
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let link_id = {
-            let input = &self.link_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_86, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_87 = &self.link_id;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "link_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "link_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let link_id = smithy_http::label::fmt_string(input_87, false);
+        if link_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "link_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/links/{LinkId}",
@@ -6869,40 +6803,36 @@ impl UpdateSiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let global_network_id = {
-            let input = &self.global_network_id;
-            let input = input
+        let input_88 = &self.global_network_id;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "global_network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let site_id = {
-            let input = &self.site_id;
-            let input = input
+        let global_network_id = smithy_http::label::fmt_string(input_88, false);
+        if global_network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "global_network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_89 = &self.site_id;
+        let input_89 =
+            input_89
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "site_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let site_id = smithy_http::label::fmt_string(input_89, false);
+        if site_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "site_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/global-networks/{GlobalNetworkId}/sites/{SiteId}",

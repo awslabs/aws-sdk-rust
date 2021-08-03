@@ -4,6 +4,7 @@
  */
 
 use http::uri::{Authority, InvalidUri, Uri};
+use std::borrow::Cow;
 use std::str::FromStr;
 
 /// API Endpoint
@@ -82,10 +83,27 @@ impl Endpoint {
         let new_uri = Uri::builder()
             .authority(authority)
             .scheme(scheme.clone())
-            .path_and_query(uri.path_and_query().unwrap().clone())
+            .path_and_query(Self::merge_paths(&self.uri, &uri).as_ref())
             .build()
             .expect("valid uri");
         *uri = new_uri;
+    }
+
+    fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {
+        if let Some(query) = endpoint.path_and_query().and_then(|pq| pq.query()) {
+            tracing::warn!(query = %query, "query specified in endpoint will be ignored during endpoint resolution");
+        }
+        let endpoint_path = endpoint.path();
+        let uri_path_and_query = uri.path_and_query().map(|pq| pq.as_str()).unwrap_or("");
+        if endpoint_path.is_empty() {
+            Cow::Borrowed(uri_path_and_query)
+        } else {
+            let ep_no_slash = endpoint_path.strip_suffix("/").unwrap_or(endpoint_path);
+            let uri_path_no_slash = uri_path_and_query
+                .strip_prefix("/")
+                .unwrap_or(uri_path_and_query);
+            Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
+        }
     }
 }
 
@@ -138,6 +156,26 @@ mod test {
             uri,
             Uri::from_static("https://us-east-1.dynamo.amazonaws.com/list_tables?k=v")
         );
+    }
+
+    #[test]
+    fn endpoint_with_path() {
+        for uri in &[
+            // check that trailing slashes are properly normalized
+            "https://us-east-1.dynamo.amazonaws.com/private",
+            "https://us-east-1.dynamo.amazonaws.com/private/",
+        ] {
+            let ep = Endpoint::immutable(Uri::from_static(uri));
+            let mut uri = Uri::from_static("/list_tables?k=v");
+            ep.set_endpoint(
+                &mut uri,
+                Some(&EndpointPrefix::new("subregion.").expect("valid prefix")),
+            );
+            assert_eq!(
+                uri,
+                Uri::from_static("https://us-east-1.dynamo.amazonaws.com/private/list_tables?k=v")
+            );
+        }
     }
 
     #[test]

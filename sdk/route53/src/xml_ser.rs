@@ -283,7 +283,7 @@ pub fn serialize_structure_create_traffic_policy_instance_input(
             .start_el("TTL")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_29.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_29).encode());
     }
     if let Some(var_30) = &input.traffic_policy_id {
         let mut inner_writer = scope
@@ -297,7 +297,7 @@ pub fn serialize_structure_create_traffic_policy_instance_input(
             .start_el("TrafficPolicyVersion")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_31.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_31).encode());
     }
     scope.finish();
 }
@@ -433,21 +433,21 @@ pub fn serialize_structure_update_health_check_input(
             .start_el("Disabled")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_43 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_43).encode());
     }
     if let Some(var_44) = &input.enable_sni {
         let mut inner_writer = scope
             .start_el("EnableSNI")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_44 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_44).encode());
     }
     if let Some(var_45) = &input.failure_threshold {
         let mut inner_writer = scope
             .start_el("FailureThreshold")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_45.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_45).encode());
     }
     if let Some(var_46) = &input.fully_qualified_domain_name {
         let mut inner_writer = scope
@@ -461,14 +461,14 @@ pub fn serialize_structure_update_health_check_input(
             .start_el("HealthCheckVersion")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_47.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_47).encode());
     }
     if let Some(var_48) = &input.health_threshold {
         let mut inner_writer = scope
             .start_el("HealthThreshold")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_48.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_48).encode());
     }
     if let Some(var_49) = &input.ip_address {
         let mut inner_writer = scope
@@ -489,14 +489,14 @@ pub fn serialize_structure_update_health_check_input(
             .start_el("Inverted")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_51 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_51).encode());
     }
     if let Some(var_52) = &input.port {
         let mut inner_writer = scope
             .start_el("Port")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_52.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_52).encode());
     }
     if let Some(var_53) = &input.regions {
         let mut inner_writer = scope
@@ -588,7 +588,7 @@ pub fn serialize_structure_update_traffic_policy_instance_input(
             .start_el("TTL")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_61.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_61).encode());
     }
     if let Some(var_62) = &input.traffic_policy_id {
         let mut inner_writer = scope
@@ -602,7 +602,7 @@ pub fn serialize_structure_update_traffic_policy_instance_input(
             .start_el("TrafficPolicyVersion")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_63.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_63).encode());
     }
     scope.finish();
 }
@@ -695,7 +695,7 @@ pub fn serialize_structure_health_check_config(
             .start_el("Port")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_72.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_72).encode());
     }
     if let Some(var_73) = &input.r#type {
         let mut inner_writer = scope
@@ -730,42 +730,42 @@ pub fn serialize_structure_health_check_config(
             .start_el("RequestInterval")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_77.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_77).encode());
     }
     if let Some(var_78) = &input.failure_threshold {
         let mut inner_writer = scope
             .start_el("FailureThreshold")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_78.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_78).encode());
     }
     if let Some(var_79) = &input.measure_latency {
         let mut inner_writer = scope
             .start_el("MeasureLatency")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_79 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_79).encode());
     }
     if let Some(var_80) = &input.inverted {
         let mut inner_writer = scope
             .start_el("Inverted")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_80 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_80).encode());
     }
     if let Some(var_81) = &input.disabled {
         let mut inner_writer = scope
             .start_el("Disabled")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_81 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_81).encode());
     }
     if let Some(var_82) = &input.health_threshold {
         let mut inner_writer = scope
             .start_el("HealthThreshold")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_82.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_82).encode());
     }
     if let Some(var_83) = &input.child_health_checks {
         let mut inner_writer = scope
@@ -787,7 +787,7 @@ pub fn serialize_structure_health_check_config(
             .start_el("EnableSNI")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_85 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_85).encode());
     }
     if let Some(var_86) = &input.regions {
         let mut inner_writer = scope
@@ -838,7 +838,7 @@ pub fn serialize_structure_hosted_zone_config(
             .start_el("PrivateZone")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if input.private_zone { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.private_zone).encode());
     }
     scope.finish();
 }
@@ -920,7 +920,7 @@ pub fn serialize_structure_resource_record_set(
             .start_el("Weight")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_98.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_98).encode());
     }
     if let Some(var_99) = &input.region {
         let mut inner_writer = scope
@@ -947,14 +947,14 @@ pub fn serialize_structure_resource_record_set(
             .start_el("MultiValueAnswer")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if *var_102 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_102).encode());
     }
     if let Some(var_103) = &input.ttl {
         let mut inner_writer = scope
             .start_el("TTL")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_103.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_103).encode());
     }
     if let Some(var_104) = &input.resource_records {
         let mut inner_writer = scope
@@ -1064,11 +1064,8 @@ pub fn serialize_structure_alias_target(
             .start_el("EvaluateTargetHealth")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(if input.evaluate_target_health {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.evaluate_target_health).encode());
     }
     scope.finish();
 }

@@ -290,23 +290,20 @@ impl DeleteLifecyclePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let policy_id = {
-            let input = &self.policy_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "policy_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "policy_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.policy_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "policy_id",
+                details: "cannot be empty or unset",
+            })?;
+        let policy_id = smithy_http::label::fmt_string(input_1, false);
+        if policy_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "policy_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policies/{PolicyId}", PolicyId = policy_id)
             .expect("formatting should succeed");
         Ok(())
@@ -508,27 +505,27 @@ impl GetLifecyclePoliciesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.policy_ids {
-            for inner_2 in inner_1 {
-                query.push_kv("policyIds", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_2) = &self.policy_ids {
+            for inner_3 in inner_2 {
+                query.push_kv("policyIds", &smithy_http::query::fmt_string(&inner_3));
             }
         }
-        if let Some(inner_3) = &self.state {
-            query.push_kv("state", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_4) = &self.state {
+            query.push_kv("state", &smithy_http::query::fmt_string(&inner_4));
         }
-        if let Some(inner_4) = &self.resource_types {
-            for inner_5 in inner_4 {
-                query.push_kv("resourceTypes", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_5) = &self.resource_types {
+            for inner_6 in inner_5 {
+                query.push_kv("resourceTypes", &smithy_http::query::fmt_string(&inner_6));
             }
         }
-        if let Some(inner_6) = &self.target_tags {
-            for inner_7 in inner_6 {
-                query.push_kv("targetTags", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_7) = &self.target_tags {
+            for inner_8 in inner_7 {
+                query.push_kv("targetTags", &smithy_http::query::fmt_string(&inner_8));
             }
         }
-        if let Some(inner_8) = &self.tags_to_add {
-            for inner_9 in inner_8 {
-                query.push_kv("tagsToAdd", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_9) = &self.tags_to_add {
+            for inner_10 in inner_9 {
+                query.push_kv("tagsToAdd", &smithy_http::query::fmt_string(&inner_10));
             }
         }
     }
@@ -658,23 +655,21 @@ impl GetLifecyclePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let policy_id = {
-            let input = &self.policy_id;
-            let input = input
+        let input_11 = &self.policy_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "policy_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let policy_id = smithy_http::label::fmt_string(input_11, false);
+        if policy_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "policy_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policies/{PolicyId}", PolicyId = policy_id)
             .expect("formatting should succeed");
         Ok(())
@@ -804,23 +799,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_12 = &self.resource_arn;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_12, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -971,23 +964,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_13 = &self.resource_arn;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_13, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -1130,32 +1121,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_14 = &self.resource_arn;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_14, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.tag_keys {
-            for inner_11 in inner_10 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_15) = &self.tag_keys {
+            for inner_16 in inner_15 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_16));
             }
         }
     }
@@ -1343,23 +1332,21 @@ impl UpdateLifecyclePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let policy_id = {
-            let input = &self.policy_id;
-            let input = input
+        let input_17 = &self.policy_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "policy_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let policy_id = smithy_http::label::fmt_string(input_17, false);
+        if policy_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "policy_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policies/{PolicyId}", PolicyId = policy_id)
             .expect("formatting should succeed");
         Ok(())

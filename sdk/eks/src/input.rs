@@ -132,23 +132,20 @@ impl AssociateEncryptionConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.cluster_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_1, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/encryption-config/associate",
@@ -343,23 +340,20 @@ impl AssociateIdentityProviderConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.cluster_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_2, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/identity-provider-configs/associate",
@@ -597,23 +591,20 @@ impl CreateAddonInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.cluster_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_3, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/addons",
@@ -1128,23 +1119,20 @@ impl CreateFargateProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.cluster_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_4, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/fargate-profiles",
@@ -1562,23 +1550,20 @@ impl CreateNodegroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.cluster_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_5, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups",
@@ -1720,40 +1705,34 @@ impl DeleteAddonInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let addon_name = {
-            let input = &self.addon_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "addon_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "addon_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.cluster_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_6, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.addon_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "addon_name",
+                details: "cannot be empty or unset",
+            })?;
+        let addon_name = smithy_http::label::fmt_string(input_7, false);
+        if addon_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "addon_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/addons/{addonName}",
@@ -1884,23 +1863,20 @@ impl DeleteClusterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_8, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/clusters/{name}", name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -2043,40 +2019,35 @@ impl DeleteFargateProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let fargate_profile_name = {
-            let input = &self.fargate_profile_name;
-            let input = input
+        let input_9 = &self.cluster_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            })?;
+        let cluster_name = smithy_http::label::fmt_string(input_9, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.fargate_profile_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "fargate_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "fargate_profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let fargate_profile_name = smithy_http::label::fmt_string(input_10, false);
+        if fargate_profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "fargate_profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/fargate-profiles/{fargateProfileName}",
@@ -2225,40 +2196,36 @@ impl DeleteNodegroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_11 = &self.cluster_name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let nodegroup_name = {
-            let input = &self.nodegroup_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_11, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_12 = &self.nodegroup_name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "nodegroup_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "nodegroup_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let nodegroup_name = smithy_http::label::fmt_string(input_12, false);
+        if nodegroup_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "nodegroup_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups/{nodegroupName}",
@@ -2404,40 +2371,36 @@ impl DescribeAddonInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_13 = &self.cluster_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let addon_name = {
-            let input = &self.addon_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_13, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.addon_name;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "addon_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "addon_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let addon_name = smithy_http::label::fmt_string(input_14, false);
+        if addon_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "addon_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/addons/{addonName}",
@@ -2622,20 +2585,23 @@ impl DescribeAddonVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.kubernetes_version {
+        if let Some(inner_15) = &self.kubernetes_version {
             query.push_kv(
                 "kubernetesVersion",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_15),
             );
         }
-        if let Some(inner_2) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_2));
+        if let Some(inner_16) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+            );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_17) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
         }
-        if let Some(inner_4) = &self.addon_name {
-            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_18) = &self.addon_name {
+            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_18));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2762,23 +2728,21 @@ impl DescribeClusterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_19 = &self.name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_19, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/clusters/{name}", name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -2921,40 +2885,36 @@ impl DescribeFargateProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_20 = &self.cluster_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let fargate_profile_name = {
-            let input = &self.fargate_profile_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_20, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_21 = &self.fargate_profile_name;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "fargate_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "fargate_profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let fargate_profile_name = smithy_http::label::fmt_string(input_21, false);
+        if fargate_profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "fargate_profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/fargate-profiles/{fargateProfileName}",
@@ -3112,23 +3072,21 @@ impl DescribeIdentityProviderConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_22 = &self.cluster_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_22, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/identity-provider-configs/describe",
@@ -3276,40 +3234,36 @@ impl DescribeNodegroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_23 = &self.cluster_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let nodegroup_name = {
-            let input = &self.nodegroup_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_23, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_24 = &self.nodegroup_name;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "nodegroup_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "nodegroup_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let nodegroup_name = smithy_http::label::fmt_string(input_24, false);
+        if nodegroup_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "nodegroup_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups/{nodegroupName}",
@@ -3482,40 +3436,36 @@ impl DescribeUpdateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_25 = &self.name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let update_id = {
-            let input = &self.update_id;
-            let input = input
+        let name = smithy_http::label::fmt_string(input_25, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_26 = &self.update_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "update_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "update_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let update_id = smithy_http::label::fmt_string(input_26, false);
+        if update_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "update_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{name}/updates/{updateId}",
@@ -3527,11 +3477,11 @@ impl DescribeUpdateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.nodegroup_name {
-            query.push_kv("nodegroupName", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_27) = &self.nodegroup_name {
+            query.push_kv("nodegroupName", &smithy_http::query::fmt_string(&inner_27));
         }
-        if let Some(inner_6) = &self.addon_name {
-            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_28) = &self.addon_name {
+            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_28));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3703,23 +3653,21 @@ impl DisassociateIdentityProviderConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_29 = &self.cluster_name;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_29, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/identity-provider-configs/disassociate",
@@ -3885,23 +3833,21 @@ impl ListAddonsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_30 = &self.cluster_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_30, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/addons",
@@ -3912,11 +3858,14 @@ impl ListAddonsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_31) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_32) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_32));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4070,11 +4019,14 @@ impl ListClustersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_9));
+        if let Some(inner_33) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_33).encode(),
+            );
         }
-        if let Some(inner_10) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_34) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_34));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4236,23 +4188,21 @@ impl ListFargateProfilesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_35 = &self.cluster_name;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_35, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/fargate-profiles",
@@ -4263,11 +4213,14 @@ impl ListFargateProfilesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_11));
+        if let Some(inner_36) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_36).encode(),
+            );
         }
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_37) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4431,23 +4384,21 @@ impl ListIdentityProviderConfigsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_38 = &self.cluster_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_38, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/identity-provider-configs",
@@ -4458,11 +4409,14 @@ impl ListIdentityProviderConfigsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_13) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_13));
+        if let Some(inner_39) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_39).encode(),
+            );
         }
-        if let Some(inner_14) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_40) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4623,23 +4577,21 @@ impl ListNodegroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_41 = &self.cluster_name;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cluster_name = smithy_http::label::fmt_string(input_41, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups",
@@ -4650,11 +4602,14 @@ impl ListNodegroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_15));
+        if let Some(inner_42) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_42).encode(),
+            );
         }
-        if let Some(inner_16) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_43) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_43));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4784,23 +4739,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_44 = &self.resource_arn;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_44, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4982,39 +4935,40 @@ impl ListUpdatesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_45 = &self.name;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_45, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/clusters/{name}/updates", name = name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.nodegroup_name {
-            query.push_kv("nodegroupName", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_46) = &self.nodegroup_name {
+            query.push_kv("nodegroupName", &smithy_http::query::fmt_string(&inner_46));
         }
-        if let Some(inner_18) = &self.addon_name {
-            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_47) = &self.addon_name {
+            query.push_kv("addonName", &smithy_http::query::fmt_string(&inner_47));
         }
-        if let Some(inner_19) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_48) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
         }
-        if let Some(inner_20) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_20));
+        if let Some(inner_49) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_49).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5165,23 +5119,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_50 = &self.resource_arn;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_50, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -5325,32 +5277,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_51 = &self.resource_arn;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_51, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.tag_keys {
-            for inner_22 in inner_21 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_52) = &self.tag_keys {
+            for inner_53 in inner_52 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_53));
             }
         }
     }
@@ -5561,40 +5511,36 @@ impl UpdateAddonInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_54 = &self.cluster_name;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let addon_name = {
-            let input = &self.addon_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_54, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_55 = &self.addon_name;
+        let input_55 =
+            input_55
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "addon_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "addon_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let addon_name = smithy_http::label::fmt_string(input_55, false);
+        if addon_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "addon_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/addons/{addonName}/update",
@@ -5784,23 +5730,21 @@ impl UpdateClusterConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_56 = &self.name;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_56, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/clusters/{name}/update-config", name = name)
             .expect("formatting should succeed");
         Ok(())
@@ -5962,23 +5906,21 @@ impl UpdateClusterVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_57 = &self.name;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_57, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/clusters/{name}/updates", name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -6199,40 +6141,36 @@ impl UpdateNodegroupConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_58 = &self.cluster_name;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let nodegroup_name = {
-            let input = &self.nodegroup_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_58, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_59 = &self.nodegroup_name;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "nodegroup_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "nodegroup_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let nodegroup_name = smithy_http::label::fmt_string(input_59, false);
+        if nodegroup_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "nodegroup_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups/{nodegroupName}/update-config",
@@ -6468,40 +6406,36 @@ impl UpdateNodegroupVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cluster_name = {
-            let input = &self.cluster_name;
-            let input = input
+        let input_60 = &self.cluster_name;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cluster_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cluster_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let nodegroup_name = {
-            let input = &self.nodegroup_name;
-            let input = input
+        let cluster_name = smithy_http::label::fmt_string(input_60, false);
+        if cluster_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cluster_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_61 = &self.nodegroup_name;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "nodegroup_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "nodegroup_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let nodegroup_name = smithy_http::label::fmt_string(input_61, false);
+        if nodegroup_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "nodegroup_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/clusters/{clusterName}/node-groups/{nodegroupName}/update-version",

@@ -88,23 +88,20 @@ impl CancelJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_1, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/jobs/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -1148,23 +1145,20 @@ impl DeletePipelineInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_2, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/pipelines/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -1289,23 +1283,20 @@ impl DeletePresetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_3, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/presets/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -1459,23 +1450,20 @@ impl ListJobsByPipelineInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let pipeline_id = {
-            let input = &self.pipeline_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "pipeline_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "pipeline_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.pipeline_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "pipeline_id",
+                details: "cannot be empty or unset",
+            })?;
+        let pipeline_id = smithy_http::label::fmt_string(input_4, false);
+        if pipeline_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "pipeline_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2012-09-25/jobsByPipeline/{PipelineId}",
@@ -1486,11 +1474,11 @@ impl ListJobsByPipelineInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.ascending {
-            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_5) = &self.ascending {
+            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_5));
         }
-        if let Some(inner_2) = &self.page_token {
-            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_6) = &self.page_token {
+            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_6));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1647,34 +1635,31 @@ impl ListJobsByStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let status = {
-            let input = &self.status;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "status",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "status",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.status;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "status",
+                details: "cannot be empty or unset",
+            })?;
+        let status = smithy_http::label::fmt_string(input_7, false);
+        if status.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "status",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/jobsByStatus/{Status}", Status = status)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.ascending {
-            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_8) = &self.ascending {
+            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_8));
         }
-        if let Some(inner_4) = &self.page_token {
-            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_9) = &self.page_token {
+            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_9));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1820,11 +1805,11 @@ impl ListPipelinesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.ascending {
-            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_10) = &self.ascending {
+            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_10));
         }
-        if let Some(inner_6) = &self.page_token {
-            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_11) = &self.page_token {
+            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_11));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1970,11 +1955,11 @@ impl ListPresetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.ascending {
-            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_12) = &self.ascending {
+            query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_12));
         }
-        if let Some(inner_8) = &self.page_token {
-            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_13) = &self.page_token {
+            query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_13));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2094,23 +2079,21 @@ impl ReadJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_14 = &self.id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_14, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/jobs/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2235,23 +2218,21 @@ impl ReadPipelineInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_15 = &self.id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_15, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/pipelines/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2376,23 +2357,21 @@ impl ReadPresetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_16 = &self.id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_16, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/presets/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -3005,23 +2984,21 @@ impl UpdatePipelineInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_17 = &self.id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_17, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/pipelines/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -3198,23 +3175,21 @@ impl UpdatePipelineNotificationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_18 = &self.id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_18, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/pipelines/{Id}/notifications", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -3368,23 +3343,21 @@ impl UpdatePipelineStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_19 = &self.id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_19, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/2012-09-25/pipelines/{Id}/status", Id = id)
             .expect("formatting should succeed");
         Ok(())

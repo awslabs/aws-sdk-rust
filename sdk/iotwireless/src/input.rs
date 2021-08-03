@@ -277,23 +277,20 @@ impl AssociateWirelessDeviceWithThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_1, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}/thing", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -440,23 +437,20 @@ impl AssociateWirelessGatewayWithCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_2, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -604,23 +598,20 @@ impl AssociateWirelessGatewayWithThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_3, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/thing", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -1740,23 +1731,20 @@ impl CreateWirelessGatewayTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_4, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -2077,23 +2065,20 @@ impl DeleteDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_5, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/destinations/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -2220,23 +2205,20 @@ impl DeleteDeviceProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_6, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/device-profiles/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2363,23 +2345,20 @@ impl DeleteServiceProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_7, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/service-profiles/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2506,23 +2485,20 @@ impl DeleteWirelessDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_8, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2649,23 +2625,20 @@ impl DeleteWirelessGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_9, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -2793,23 +2766,21 @@ impl DeleteWirelessGatewayTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_10 = &self.id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_10, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -2939,23 +2910,21 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_11 = &self.id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_11, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateway-task-definitions/{Id}", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -3106,23 +3075,21 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let partner_account_id = {
-            let input = &self.partner_account_id;
-            let input = input
+        let input_12 = &self.partner_account_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "partner_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let partner_account_id = smithy_http::label::fmt_string(input_12, false);
+        if partner_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "partner_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/partner-accounts/{PartnerAccountId}",
@@ -3133,8 +3100,8 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.partner_type {
-            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_13) = &self.partner_type {
+            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_13));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3263,23 +3230,21 @@ impl DisassociateWirelessDeviceFromThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_14 = &self.id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_14, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}/thing", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -3408,23 +3373,21 @@ impl DisassociateWirelessGatewayFromCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_15 = &self.id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_15, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -3555,23 +3518,21 @@ impl DisassociateWirelessGatewayFromThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_16 = &self.id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_16, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/thing", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -3699,23 +3660,21 @@ impl GetDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_17 = &self.name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_17, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/destinations/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -3842,23 +3801,21 @@ impl GetDeviceProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_18 = &self.id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_18, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/device-profiles/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -4120,23 +4077,21 @@ impl GetPartnerAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let partner_account_id = {
-            let input = &self.partner_account_id;
-            let input = input
+        let input_19 = &self.partner_account_id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "partner_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let partner_account_id = smithy_http::label::fmt_string(input_19, false);
+        if partner_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "partner_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/partner-accounts/{PartnerAccountId}",
@@ -4147,8 +4102,8 @@ impl GetPartnerAccountInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.partner_type {
-            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_20) = &self.partner_type {
+            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_20));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4294,23 +4249,21 @@ impl GetResourceLogLevelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_identifier = {
-            let input = &self.resource_identifier;
-            let input = input
+        let input_21 = &self.resource_identifier;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_identifier",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_identifier = smithy_http::label::fmt_string(input_21, false);
+        if resource_identifier.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_identifier",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/log-levels/{ResourceIdentifier}",
@@ -4321,8 +4274,8 @@ impl GetResourceLogLevelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_22) = &self.resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4459,8 +4412,8 @@ impl GetServiceEndpointInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.service_type {
-            query.push_kv("serviceType", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_23) = &self.service_type {
+            query.push_kv("serviceType", &smithy_http::query::fmt_string(&inner_23));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4587,23 +4540,21 @@ impl GetServiceProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_24 = &self.id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_24, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/service-profiles/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -4746,23 +4697,21 @@ impl GetWirelessDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identifier = {
-            let input = &self.identifier;
-            let input = input
+        let input_25 = &self.identifier;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identifier",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identifier = smithy_http::label::fmt_string(input_25, false);
+        if identifier.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identifier",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/wireless-devices/{Identifier}",
@@ -4773,8 +4722,8 @@ impl GetWirelessDeviceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.identifier_type {
-            query.push_kv("identifierType", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_26) = &self.identifier_type {
+            query.push_kv("identifierType", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4907,23 +4856,21 @@ impl GetWirelessDeviceStatisticsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let wireless_device_id = {
-            let input = &self.wireless_device_id;
-            let input = input
+        let input_27 = &self.wireless_device_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "wireless_device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "wireless_device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let wireless_device_id = smithy_http::label::fmt_string(input_27, false);
+        if wireless_device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "wireless_device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/wireless-devices/{WirelessDeviceId}/statistics",
@@ -5071,23 +5018,21 @@ impl GetWirelessGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identifier = {
-            let input = &self.identifier;
-            let input = input
+        let input_28 = &self.identifier;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identifier",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identifier = smithy_http::label::fmt_string(input_28, false);
+        if identifier.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identifier",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/wireless-gateways/{Identifier}",
@@ -5098,8 +5043,8 @@ impl GetWirelessGatewayInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.identifier_type {
-            query.push_kv("identifierType", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_29) = &self.identifier_type {
+            query.push_kv("identifierType", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5227,23 +5172,21 @@ impl GetWirelessGatewayCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_30 = &self.id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_30, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -5373,23 +5316,21 @@ impl GetWirelessGatewayFirmwareInformationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_31 = &self.id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_31, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/wireless-gateways/{Id}/firmware-information",
@@ -5527,23 +5468,21 @@ impl GetWirelessGatewayStatisticsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let wireless_gateway_id = {
-            let input = &self.wireless_gateway_id;
-            let input = input
+        let input_32 = &self.wireless_gateway_id;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "wireless_gateway_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "wireless_gateway_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let wireless_gateway_id = smithy_http::label::fmt_string(input_32, false);
+        if wireless_gateway_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "wireless_gateway_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/wireless-gateways/{WirelessGatewayId}/statistics",
@@ -5675,23 +5614,21 @@ impl GetWirelessGatewayTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_33 = &self.id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_33, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -5820,23 +5757,21 @@ impl GetWirelessGatewayTaskDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_34 = &self.id;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_34, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateway-task-definitions/{Id}", Id = id)
             .expect("formatting should succeed");
         Ok(())
@@ -5985,11 +5920,11 @@ impl ListDestinationsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_7) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6134,13 +6069,13 @@ impl ListDeviceProfilesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_36) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_36));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -6286,13 +6221,13 @@ impl ListPartnerAccountsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_37) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -6438,13 +6373,13 @@ impl ListServiceProfilesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_38) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_38));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -6579,8 +6514,8 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_39) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_39));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6784,34 +6719,34 @@ impl ListWirelessDevicesInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_40) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
         }
-        if let Some(inner_13) = &self.destination_name {
+        if let Some(inner_41) = &self.destination_name {
             query.push_kv(
                 "destinationName",
-                &smithy_http::query::fmt_string(&inner_13),
+                &smithy_http::query::fmt_string(&inner_41),
             );
         }
-        if let Some(inner_14) = &self.device_profile_id {
+        if let Some(inner_42) = &self.device_profile_id {
             query.push_kv(
                 "deviceProfileId",
-                &smithy_http::query::fmt_string(&inner_14),
+                &smithy_http::query::fmt_string(&inner_42),
             );
         }
-        if let Some(inner_15) = &self.service_profile_id {
+        if let Some(inner_43) = &self.service_profile_id {
             query.push_kv(
                 "serviceProfileId",
-                &smithy_http::query::fmt_string(&inner_15),
+                &smithy_http::query::fmt_string(&inner_43),
             );
         }
-        if let Some(inner_16) = &self.wireless_device_type {
+        if let Some(inner_44) = &self.wireless_device_type {
             query.push_kv(
                 "wirelessDeviceType",
-                &smithy_http::query::fmt_string(&inner_16),
+                &smithy_http::query::fmt_string(&inner_44),
             );
         }
     }
@@ -6957,13 +6892,13 @@ impl ListWirelessGatewaysInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_45) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_45));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -7131,16 +7066,16 @@ impl ListWirelessGatewayTaskDefinitionsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_46) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_46));
         }
-        if let Some(inner_19) = &self.task_definition_type {
+        if let Some(inner_47) = &self.task_definition_type {
             query.push_kv(
                 "taskDefinitionType",
-                &smithy_http::query::fmt_string(&inner_19),
+                &smithy_http::query::fmt_string(&inner_47),
             );
         }
     }
@@ -7301,23 +7236,21 @@ impl PutResourceLogLevelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_identifier = {
-            let input = &self.resource_identifier;
-            let input = input
+        let input_48 = &self.resource_identifier;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_identifier",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_identifier = smithy_http::label::fmt_string(input_48, false);
+        if resource_identifier.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_identifier",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/log-levels/{ResourceIdentifier}",
@@ -7328,8 +7261,8 @@ impl PutResourceLogLevelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_49) = &self.resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_49));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7591,23 +7524,21 @@ impl ResetResourceLogLevelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_identifier = {
-            let input = &self.resource_identifier;
-            let input = input
+        let input_50 = &self.resource_identifier;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_identifier",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_identifier = smithy_http::label::fmt_string(input_50, false);
+        if resource_identifier.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_identifier",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/log-levels/{ResourceIdentifier}",
@@ -7618,8 +7549,8 @@ impl ResetResourceLogLevelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_21));
+        if let Some(inner_51) = &self.resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_51));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7789,23 +7720,21 @@ impl SendDataToWirelessDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_52 = &self.id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_52, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}/data", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -7955,8 +7884,8 @@ impl TagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_22) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_53) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_53));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8083,23 +8012,21 @@ impl TestWirelessDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_54 = &self.id;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_54, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}/test", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -8246,12 +8173,12 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_23) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_23));
+        if let Some(inner_55) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_55));
         }
-        if let Some(inner_24) = &self.tag_keys {
-            for inner_25 in inner_24 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_25));
+        if let Some(inner_56) = &self.tag_keys {
+            for inner_57 in inner_56 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_57));
             }
         }
     }
@@ -8431,23 +8358,21 @@ impl UpdateDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_58 = &self.name;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_58, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/destinations/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -8786,23 +8711,21 @@ impl UpdatePartnerAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let partner_account_id = {
-            let input = &self.partner_account_id;
-            let input = input
+        let input_59 = &self.partner_account_id;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "partner_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let partner_account_id = smithy_http::label::fmt_string(input_59, false);
+        if partner_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "partner_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/partner-accounts/{PartnerAccountId}",
@@ -8813,8 +8736,8 @@ impl UpdatePartnerAccountInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_26) = &self.partner_type {
-            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_26));
+        if let Some(inner_60) = &self.partner_type {
+            query.push_kv("partnerType", &smithy_http::query::fmt_string(&inner_60));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8996,23 +8919,21 @@ impl UpdateWirelessDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_61 = &self.id;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_61, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-devices/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -9200,23 +9121,21 @@ impl UpdateWirelessGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
+        let input_62 = &self.id;
+        let input_62 =
+            input_62
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let id = smithy_http::label::fmt_string(input_62, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/wireless-gateways/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }

@@ -788,23 +788,20 @@ impl CreateTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.file_system_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            })?;
+        let file_system_id = smithy_http::label::fmt_string(input_1, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/create-tags/{FileSystemId}",
@@ -941,23 +938,20 @@ impl DeleteAccessPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let access_point_id = {
-            let input = &self.access_point_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "access_point_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "access_point_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.access_point_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "access_point_id",
+                details: "cannot be empty or unset",
+            })?;
+        let access_point_id = smithy_http::label::fmt_string(input_2, false);
+        if access_point_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "access_point_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/access-points/{AccessPointId}",
@@ -1094,23 +1088,20 @@ impl DeleteFileSystemInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.file_system_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            })?;
+        let file_system_id = smithy_http::label::fmt_string(input_3, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}",
@@ -1247,23 +1238,20 @@ impl DeleteFileSystemPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.file_system_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            })?;
+        let file_system_id = smithy_http::label::fmt_string(input_4, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/policy",
@@ -1400,23 +1388,20 @@ impl DeleteMountTargetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mount_target_id = {
-            let input = &self.mount_target_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "mount_target_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mount_target_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.mount_target_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "mount_target_id",
+                details: "cannot be empty or unset",
+            })?;
+        let mount_target_id = smithy_http::label::fmt_string(input_5, false);
+        if mount_target_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mount_target_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/mount-targets/{MountTargetId}",
@@ -1566,23 +1551,20 @@ impl DeleteTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.file_system_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            })?;
+        let file_system_id = smithy_http::label::fmt_string(input_6, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/delete-tags/{FileSystemId}",
@@ -1763,17 +1745,20 @@ impl DescribeAccessPointsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_1));
+        if let Some(inner_7) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_7).encode(),
+            );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_8) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_8));
         }
-        if let Some(inner_3) = &self.access_point_id {
-            query.push_kv("AccessPointId", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_9) = &self.access_point_id {
+            query.push_kv("AccessPointId", &smithy_http::query::fmt_string(&inner_9));
         }
-        if let Some(inner_4) = &self.file_system_id {
-            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_10) = &self.file_system_id {
+            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_10));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2049,23 +2034,21 @@ impl DescribeBackupPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_11 = &self.file_system_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_11, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/backup-policy",
@@ -2203,23 +2186,21 @@ impl DescribeFileSystemPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_12 = &self.file_system_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_12, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/policy",
@@ -2403,17 +2384,20 @@ impl DescribeFileSystemsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.max_items {
-            query.push_kv("MaxItems", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_13) = &self.max_items {
+            query.push_kv(
+                "MaxItems",
+                &smithy_types::primitive::Encoder::from(*inner_13).encode(),
+            );
         }
-        if let Some(inner_6) = &self.marker {
-            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_14) = &self.marker {
+            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_14));
         }
-        if let Some(inner_7) = &self.creation_token {
-            query.push_kv("CreationToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_15) = &self.creation_token {
+            query.push_kv("CreationToken", &smithy_http::query::fmt_string(&inner_15));
         }
-        if let Some(inner_8) = &self.file_system_id {
-            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_16) = &self.file_system_id {
+            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_16));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2547,23 +2531,21 @@ impl DescribeLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_17 = &self.file_system_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_17, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/lifecycle-configuration",
@@ -2762,20 +2744,23 @@ impl DescribeMountTargetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.max_items {
-            query.push_kv("MaxItems", &smithy_http::query::fmt_default(&inner_9));
+        if let Some(inner_18) = &self.max_items {
+            query.push_kv(
+                "MaxItems",
+                &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+            );
         }
-        if let Some(inner_10) = &self.marker {
-            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_19) = &self.marker {
+            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_19));
         }
-        if let Some(inner_11) = &self.file_system_id {
-            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_20) = &self.file_system_id {
+            query.push_kv("FileSystemId", &smithy_http::query::fmt_string(&inner_20));
         }
-        if let Some(inner_12) = &self.mount_target_id {
-            query.push_kv("MountTargetId", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_21) = &self.mount_target_id {
+            query.push_kv("MountTargetId", &smithy_http::query::fmt_string(&inner_21));
         }
-        if let Some(inner_13) = &self.access_point_id {
-            query.push_kv("AccessPointId", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_22) = &self.access_point_id {
+            query.push_kv("AccessPointId", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2908,23 +2893,21 @@ impl DescribeMountTargetSecurityGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mount_target_id = {
-            let input = &self.mount_target_id;
-            let input = input
+        let input_23 = &self.mount_target_id;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mount_target_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mount_target_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mount_target_id = smithy_http::label::fmt_string(input_23, false);
+        if mount_target_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mount_target_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/mount-targets/{MountTargetId}/security-groups",
@@ -3082,23 +3065,21 @@ impl DescribeTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_24 = &self.file_system_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_24, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/tags/{FileSystemId}",
@@ -3109,11 +3090,14 @@ impl DescribeTagsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.max_items {
-            query.push_kv("MaxItems", &smithy_http::query::fmt_default(&inner_14));
+        if let Some(inner_25) = &self.max_items {
+            query.push_kv(
+                "MaxItems",
+                &smithy_types::primitive::Encoder::from(*inner_25).encode(),
+            );
         }
-        if let Some(inner_15) = &self.marker {
-            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_26) = &self.marker {
+            query.push_kv("Marker", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3264,23 +3248,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_id = {
-            let input = &self.resource_id;
-            let input = input
+        let input_27 = &self.resource_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_id = smithy_http::label::fmt_string(input_27, false);
+        if resource_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/resource-tags/{ResourceId}",
@@ -3291,11 +3273,14 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_16));
+        if let Some(inner_28) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_28).encode(),
+            );
         }
-        if let Some(inner_17) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_29) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3449,23 +3434,21 @@ impl ModifyMountTargetSecurityGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mount_target_id = {
-            let input = &self.mount_target_id;
-            let input = input
+        let input_30 = &self.mount_target_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mount_target_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mount_target_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mount_target_id = smithy_http::label::fmt_string(input_30, false);
+        if mount_target_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mount_target_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/mount-targets/{MountTargetId}/security-groups",
@@ -3752,23 +3735,21 @@ impl PutBackupPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_31 = &self.file_system_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_31, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/backup-policy",
@@ -3944,23 +3925,21 @@ impl PutFileSystemPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_32 = &self.file_system_id;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_32, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/policy",
@@ -4121,23 +4100,21 @@ impl PutLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_33 = &self.file_system_id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_33, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}/lifecycle-configuration",
@@ -4284,23 +4261,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_id = {
-            let input = &self.resource_id;
-            let input = input
+        let input_34 = &self.resource_id;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_id = smithy_http::label::fmt_string(input_34, false);
+        if resource_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/resource-tags/{ResourceId}",
@@ -4447,23 +4422,21 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_id = {
-            let input = &self.resource_id;
-            let input = input
+        let input_35 = &self.resource_id;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_id = smithy_http::label::fmt_string(input_35, false);
+        if resource_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/resource-tags/{ResourceId}",
@@ -4474,9 +4447,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.tag_keys {
-            for inner_19 in inner_18 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_36) = &self.tag_keys {
+            for inner_37 in inner_36 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_37));
             }
         }
     }
@@ -4646,23 +4619,21 @@ impl UpdateFileSystemInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let file_system_id = {
-            let input = &self.file_system_id;
-            let input = input
+        let input_38 = &self.file_system_id;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_system_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_system_id = smithy_http::label::fmt_string(input_38, false);
+        if file_system_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_system_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-02-01/file-systems/{FileSystemId}",

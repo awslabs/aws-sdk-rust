@@ -3239,7 +3239,10 @@ impl GetAuthorizationTokenInput {
             query.push_kv("domain-owner", &smithy_http::query::fmt_string(&inner_57));
         }
         if let Some(inner_58) = &self.duration_seconds {
-            query.push_kv("duration", &smithy_http::query::fmt_default(&inner_58));
+            query.push_kv(
+                "duration",
+                &smithy_types::primitive::Encoder::from(*inner_58).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4792,7 +4795,10 @@ impl ListPackagesInput {
             query.push_kv("package-prefix", &smithy_http::query::fmt_string(&inner_89));
         }
         if let Some(inner_90) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_90));
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_90).encode(),
+            );
         }
         if let Some(inner_91) = &self.next_token {
             query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_91));
@@ -5101,7 +5107,10 @@ impl ListPackageVersionAssetsInput {
             query.push_kv("version", &smithy_http::query::fmt_string(&inner_98));
         }
         if let Some(inner_99) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_99));
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_99).encode(),
+            );
         }
         if let Some(inner_100) = &self.next_token {
             query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_100));
@@ -5748,7 +5757,10 @@ impl ListPackageVersionsInput {
             query.push_kv("sortBy", &smithy_http::query::fmt_string(&inner_116));
         }
         if let Some(inner_117) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_117));
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_117).encode(),
+            );
         }
         if let Some(inner_118) = &self.next_token {
             query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_118));
@@ -5922,7 +5934,10 @@ impl ListRepositoriesInput {
             );
         }
         if let Some(inner_120) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_120));
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_120).encode(),
+            );
         }
         if let Some(inner_121) = &self.next_token {
             query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_121));
@@ -6154,7 +6169,10 @@ impl ListRepositoriesInDomainInput {
             );
         }
         if let Some(inner_126) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_126));
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_126).encode(),
+            );
         }
         if let Some(inner_127) = &self.next_token {
             query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_127));

@@ -154,23 +154,20 @@ impl AddProfilePermissionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.profile_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profile_name = smithy_http::label::fmt_string(input_1, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}/permissions",
@@ -304,23 +301,20 @@ impl CancelSigningProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.profile_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profile_name = smithy_http::label::fmt_string(input_2, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}",
@@ -454,23 +448,20 @@ impl DescribeSigningJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let job_id = {
-            let input = &self.job_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.job_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            })?;
+        let job_id = smithy_http::label::fmt_string(input_3, false);
+        if job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/signing-jobs/{jobId}", jobId = job_id).expect("formatting should succeed");
         Ok(())
     }
@@ -599,23 +590,20 @@ impl GetSigningPlatformInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let platform_id = {
-            let input = &self.platform_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "platform_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "platform_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.platform_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "platform_id",
+                details: "cannot be empty or unset",
+            })?;
+        let platform_id = smithy_http::label::fmt_string(input_4, false);
+        if platform_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "platform_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-platforms/{platformId}",
@@ -763,23 +751,20 @@ impl GetSigningProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.profile_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profile_name = smithy_http::label::fmt_string(input_5, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}",
@@ -790,8 +775,8 @@ impl GetSigningProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.profile_owner {
-            query.push_kv("profileOwner", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_6) = &self.profile_owner {
+            query.push_kv("profileOwner", &smithy_http::query::fmt_string(&inner_6));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -931,23 +916,20 @@ impl ListProfilePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.profile_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profile_name = smithy_http::label::fmt_string(input_7, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}/permissions",
@@ -958,8 +940,8 @@ impl ListProfilePermissionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_8) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1200,47 +1182,50 @@ impl ListSigningJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_9) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_9));
         }
-        if let Some(inner_4) = &self.platform_id {
-            query.push_kv("platformId", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_10) = &self.platform_id {
+            query.push_kv("platformId", &smithy_http::query::fmt_string(&inner_10));
         }
-        if let Some(inner_5) = &self.requested_by {
-            query.push_kv("requestedBy", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_11) = &self.requested_by {
+            query.push_kv("requestedBy", &smithy_http::query::fmt_string(&inner_11));
         }
-        if let Some(inner_6) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_6));
+        if let Some(inner_12) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_12).encode(),
+            );
         }
-        if let Some(inner_7) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_13) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
         }
         if self.is_revoked {
             query.push_kv(
                 "isRevoked",
-                &smithy_http::query::fmt_default(&&self.is_revoked),
+                &smithy_types::primitive::Encoder::from(self.is_revoked).encode(),
             );
         }
-        if let Some(inner_8) = &self.signature_expires_before {
+        if let Some(inner_14) = &self.signature_expires_before {
             query.push_kv(
                 "signatureExpiresBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_8,
+                    inner_14,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_9) = &self.signature_expires_after {
+        if let Some(inner_15) = &self.signature_expires_after {
             query.push_kv(
                 "signatureExpiresAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_9,
+                    inner_15,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_10) = &self.job_invoker {
-            query.push_kv("jobInvoker", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_16) = &self.job_invoker {
+            query.push_kv("jobInvoker", &smithy_http::query::fmt_string(&inner_16));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1420,20 +1405,23 @@ impl ListSigningPlatformsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.category {
-            query.push_kv("category", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_17) = &self.category {
+            query.push_kv("category", &smithy_http::query::fmt_string(&inner_17));
         }
-        if let Some(inner_12) = &self.partner {
-            query.push_kv("partner", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_18) = &self.partner {
+            query.push_kv("partner", &smithy_http::query::fmt_string(&inner_18));
         }
-        if let Some(inner_13) = &self.target {
-            query.push_kv("target", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_19) = &self.target {
+            query.push_kv("target", &smithy_http::query::fmt_string(&inner_19));
         }
-        if let Some(inner_14) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_14));
+        if let Some(inner_20) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_20).encode(),
+            );
         }
-        if let Some(inner_15) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_21) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_21));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1622,21 +1610,24 @@ impl ListSigningProfilesInput {
         if self.include_canceled {
             query.push_kv(
                 "includeCanceled",
-                &smithy_http::query::fmt_default(&&self.include_canceled),
+                &smithy_types::primitive::Encoder::from(self.include_canceled).encode(),
             );
         }
-        if let Some(inner_16) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_16));
+        if let Some(inner_22) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
-        if let Some(inner_17) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_23) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_23));
         }
-        if let Some(inner_18) = &self.platform_id {
-            query.push_kv("platformId", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_24) = &self.platform_id {
+            query.push_kv("platformId", &smithy_http::query::fmt_string(&inner_24));
         }
-        if let Some(inner_19) = &self.statuses {
-            for inner_20 in inner_19 {
-                query.push_kv("statuses", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_25) = &self.statuses {
+            for inner_26 in inner_25 {
+                query.push_kv("statuses", &smithy_http::query::fmt_string(&inner_26));
             }
         }
     }
@@ -1766,23 +1757,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_27 = &self.resource_arn;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_27, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2022,23 +2011,21 @@ impl PutSigningProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
+        let input_28 = &self.profile_name;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profile_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profile_name = smithy_http::label::fmt_string(input_28, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}",
@@ -2195,40 +2182,36 @@ impl RemoveProfilePermissionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
+        let input_29 = &self.profile_name;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profile_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let statement_id = {
-            let input = &self.statement_id;
-            let input = input
+        let profile_name = smithy_http::label::fmt_string(input_29, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_30 = &self.statement_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "statement_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "statement_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let statement_id = smithy_http::label::fmt_string(input_30, false);
+        if statement_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "statement_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}/permissions/{statementId}",
@@ -2240,8 +2223,8 @@ impl RemoveProfilePermissionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.revision_id {
-            query.push_kv("revisionId", &smithy_http::query::fmt_string(&inner_21));
+        if let Some(inner_31) = &self.revision_id {
+            query.push_kv("revisionId", &smithy_http::query::fmt_string(&inner_31));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2394,23 +2377,21 @@ impl RevokeSignatureInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let job_id = {
-            let input = &self.job_id;
-            let input = input
+        let input_32 = &self.job_id;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let job_id = smithy_http::label::fmt_string(input_32, false);
+        if job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/signing-jobs/{jobId}/revoke", jobId = job_id)
             .expect("formatting should succeed");
         Ok(())
@@ -2584,23 +2565,21 @@ impl RevokeSigningProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profile_name = {
-            let input = &self.profile_name;
-            let input = input
+        let input_33 = &self.profile_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profile_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profile_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profile_name = smithy_http::label::fmt_string(input_33, false);
+        if profile_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profile_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/signing-profiles/{profileName}/revoke",
@@ -2947,23 +2926,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_34 = &self.resource_arn;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_34, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3106,32 +3083,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_35 = &self.resource_arn;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_35, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_22) = &self.tag_keys {
-            for inner_23 in inner_22 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_23));
+        if let Some(inner_36) = &self.tag_keys {
+            for inner_37 in inner_36 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_37));
             }
         }
     }

@@ -460,7 +460,7 @@ pub fn serialize_structure_delete(
             .start_el("Quiet")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.quiet { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.quiet).encode());
     }
     scope.finish();
 }
@@ -635,7 +635,7 @@ pub fn serialize_structure_inventory_configuration(
             .start_el("IsEnabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.is_enabled { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     if let Some(var_23) = &input.filter {
         let inner_writer = scope
@@ -1002,44 +1002,31 @@ pub fn serialize_structure_public_access_block_configuration(
             .start_el("BlockPublicAcls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.block_public_acls {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
     }
     if input.ignore_public_acls {
         let mut inner_writer = scope
             .start_el("IgnorePublicAcls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.ignore_public_acls {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
     }
     if input.block_public_policy {
         let mut inner_writer = scope
             .start_el("BlockPublicPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.block_public_policy {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
     }
     if input.restrict_public_buckets {
         let mut inner_writer = scope
             .start_el("RestrictPublicBuckets")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.restrict_public_buckets {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode());
     }
     scope.finish();
 }
@@ -1055,7 +1042,7 @@ pub fn serialize_structure_restore_request(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_60) = &input.glacier_job_parameters {
         let inner_writer = scope
@@ -1117,7 +1104,7 @@ pub fn serialize_structure_completed_part(
             .start_el("PartNumber")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.part_number.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.part_number).encode());
     }
     scope.finish();
 }
@@ -1298,7 +1285,7 @@ pub fn serialize_structure_cors_rule(
             .start_el("MaxAgeSeconds")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.max_age_seconds.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.max_age_seconds).encode());
     }
     scope.finish();
 }
@@ -1320,11 +1307,8 @@ pub fn serialize_structure_server_side_encryption_rule(
             .start_el("BucketKeyEnabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.bucket_key_enabled {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     scope.finish();
 }
@@ -1368,7 +1352,7 @@ pub fn serialize_structure_tiering(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_87) = &input.access_tier {
         let mut inner_writer = scope
@@ -1735,7 +1719,7 @@ pub fn serialize_structure_replication_rule(
             .start_el("Priority")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.priority.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.priority).encode());
     }
     if let Some(var_123) = &input.prefix {
         let mut inner_writer = scope
@@ -2164,18 +2148,16 @@ pub fn serialize_structure_lifecycle_expiration(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if input.expired_object_delete_marker {
         let mut inner_writer = scope
             .start_el("ExpiredObjectDeleteMarker")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.expired_object_delete_marker {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(
+            smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode(),
+        );
     }
     scope.finish();
 }
@@ -2230,7 +2212,7 @@ pub fn serialize_structure_transition(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_167) = &input.storage_class {
         let mut inner_writer = scope
@@ -2253,7 +2235,7 @@ pub fn serialize_structure_noncurrent_version_transition(
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.noncurrent_days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     if let Some(var_168) = &input.storage_class {
         let mut inner_writer = scope
@@ -2276,7 +2258,7 @@ pub fn serialize_structure_noncurrent_version_expiration(
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.noncurrent_days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     scope.finish();
 }
@@ -2292,7 +2274,8 @@ pub fn serialize_structure_abort_incomplete_multipart_upload(
             .start_el("DaysAfterInitiation")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days_after_initiation.to_string().as_ref());
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
     }
     scope.finish();
 }
@@ -2580,14 +2563,14 @@ pub fn serialize_structure_default_retention(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if input.years != 0 {
         let mut inner_writer = scope
             .start_el("Years")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.years.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.years).encode());
     }
     scope.finish();
 }
@@ -2992,11 +2975,9 @@ pub fn serialize_structure_csv_input(
             .start_el("AllowQuotedRecordDelimiter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(if input.allow_quoted_record_delimiter {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(
+            smithy_types::primitive::Encoder::from(input.allow_quoted_record_delimiter).encode(),
+        );
     }
     scope.finish();
 }
@@ -3237,7 +3218,7 @@ pub fn serialize_structure_replication_time_value(
             .start_el("Minutes")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(&input.minutes.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.minutes).encode());
     }
     scope.finish();
 }

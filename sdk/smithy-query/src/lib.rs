@@ -6,6 +6,7 @@
 //! Abstractions for the Smithy AWS Query protocol
 
 use smithy_types::instant::Format;
+use smithy_types::primitive::Encoder;
 use smithy_types::{Instant, Number};
 use std::borrow::Cow;
 use urlencoding::encode;
@@ -168,20 +169,12 @@ impl<'a> QueryValueWriter<'a> {
         match value {
             Number::PosInt(value) => {
                 // itoa::Buffer is a fixed-size stack allocation, so this is cheap
-                self.string(itoa::Buffer::new().format(value));
+                self.string(Encoder::from(value).encode());
             }
             Number::NegInt(value) => {
-                self.string(itoa::Buffer::new().format(value));
+                self.string(Encoder::from(value).encode());
             }
-            Number::Float(value) => {
-                // If the value is NaN, Infinity, or -Infinity
-                if value.is_nan() || value.is_infinite() {
-                    self.string("");
-                } else {
-                    // ryu::Buffer is a fixed-size stack allocation, so this is cheap
-                    self.string(ryu::Buffer::new().format_finite(value));
-                }
-            }
+            Number::Float(value) => self.string(Encoder::from(value).encode()),
         }
     }
 
@@ -378,9 +371,9 @@ mod tests {
             &Version=1.0\
             &PosInt=5\
             &NegInt=-5\
-            &Infinity=\
-            &NegInfinity=\
-            &NaN=\
+            &Infinity=Infinity\
+            &NegInfinity=-Infinity\
+            &NaN=NaN\
             &Floating=5.2\
             ",
             out

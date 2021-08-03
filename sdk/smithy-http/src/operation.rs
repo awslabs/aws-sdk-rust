@@ -143,11 +143,7 @@ pub struct Request {
     /// Property bag of configuration options
     ///
     /// Middleware can read and write from the property bag and use its
-    /// contents to augment the request (see `Request::augment`)
-    ///
-    /// configuration is stored in an `Rc<RefCell>>` to facilitate cloning requests during retries
-    /// We should consider if this should instead be an `Arc<Mutex>`. I'm not aware of times where
-    /// we'd need to modify the request concurrently, but perhaps such a thing may some day exist.
+    /// contents to augment the request (see [`Request::augment`](Request::augment))
     configuration: Arc<Mutex<PropertyBag>>,
 }
 

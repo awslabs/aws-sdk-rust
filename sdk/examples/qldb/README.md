@@ -51,4 +51,4 @@ where:
   If the environment variable is not set, defaults to **us-west-2**.
 - __-v__ enables displaying additional information.
 
-## 
+##

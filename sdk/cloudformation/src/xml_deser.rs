@@ -1249,8 +1249,7 @@ pub fn deser_operation_describe_change_set(
                 let var_46 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IncludeNestedStacks`)"))
@@ -1491,8 +1490,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 let var_58 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#BoxedInteger`)"))
@@ -2106,8 +2104,7 @@ pub fn deser_operation_describe_type(
                 let var_77 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IsDefaultVersion`)"))
@@ -2382,8 +2379,7 @@ pub fn deser_operation_describe_type(
                 let var_98 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IsActivated`)"))
@@ -2398,8 +2394,7 @@ pub fn deser_operation_describe_type(
                 let var_99 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#AutoUpdate`)"))
@@ -4471,8 +4466,7 @@ pub fn deser_structure_rollback_configuration(
                 let var_161 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#MonitoringTimeInMinutes`)"))
@@ -5211,8 +5205,7 @@ pub fn deser_structure_stack_set_operation(
                 let var_205 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#RetainStacksNullable`)"))
@@ -6087,8 +6080,7 @@ pub fn deser_structure_type_configuration_details(
                 let var_239 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IsDefaultConfiguration`)"))
@@ -6129,8 +6121,7 @@ pub fn deser_structure_account_limit(
                 let var_241 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#LimitValue`)"))
@@ -6184,8 +6175,7 @@ pub fn deser_structure_parameter(
                 let var_244 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#UsePreviousValue`)"))
@@ -6879,8 +6869,7 @@ pub fn deser_structure_stack(
                 let var_288 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#DisableRollback`)"))
@@ -6905,8 +6894,7 @@ pub fn deser_structure_stack(
                 let var_290 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#TimeoutMinutes`)"))
@@ -6964,8 +6952,7 @@ pub fn deser_structure_stack(
                 let var_295 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#EnableTerminationProtection`)"))
@@ -7071,8 +7058,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
                 let var_302 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#TotalStackInstancesCount`)"))
@@ -7087,8 +7073,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
                 let var_303 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#DriftedStackInstancesCount`)"))
@@ -7103,8 +7088,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
                 let var_304 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InSyncStackInstancesCount`)"))
@@ -7119,8 +7103,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
                 let var_305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InProgressStackInstancesCount`)"))
@@ -7135,8 +7118,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
                 let var_306 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#FailedStackInstancesCount`)"))
@@ -7164,8 +7146,7 @@ pub fn deser_structure_auto_deployment(
                 let var_307 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#AutoDeploymentNullable`)"))
@@ -7180,8 +7161,7 @@ pub fn deser_structure_auto_deployment(
                 let var_308 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#RetainStacksOnAccountRemovalNullable`)"))
@@ -7255,8 +7235,7 @@ pub fn deser_structure_stack_set_operation_preferences(
                 let var_311 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#FailureToleranceCount`)"))
@@ -7271,8 +7250,7 @@ pub fn deser_structure_stack_set_operation_preferences(
                 let var_312 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#FailureTolerancePercentage`)"))
@@ -7287,8 +7265,7 @@ pub fn deser_structure_stack_set_operation_preferences(
                 let var_313 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#MaxConcurrentCount`)"))
@@ -7303,8 +7280,7 @@ pub fn deser_structure_stack_set_operation_preferences(
                 let var_314 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#MaxConcurrentPercentage`)"))
@@ -7520,8 +7496,7 @@ pub fn deser_structure_parameter_declaration(
                 let var_325 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#NoEcho`)"))
@@ -7738,8 +7713,7 @@ pub fn deser_structure_change_set_summary(
                 let var_340 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IncludeNestedStacks`)"))
@@ -8706,8 +8680,7 @@ pub fn deser_structure_type_summary(
                 let var_406 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IsActivated`)"))
@@ -8775,8 +8748,7 @@ pub fn deser_structure_type_version_summary(
                 let var_410 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#IsDefaultVersion`)"))
@@ -8883,8 +8855,7 @@ pub fn deser_structure_template_parameter(
                 let var_417 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudformation#NoEcho`)"))
@@ -9189,8 +9160,7 @@ pub fn deser_list_supported_major_versions(
             s if s.matches("member") /* member com.amazonaws.cloudformation#SupportedMajorVersions$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        i32::from_str(
+                        <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#SupportedMajorVersion`)"))

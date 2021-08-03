@@ -114,23 +114,20 @@ impl AddFlowMediaStreamsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.flow_arn;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_1, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/mediaStreams",
@@ -281,23 +278,20 @@ impl AddFlowOutputsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.flow_arn;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_2, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/{FlowArn}/outputs", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -444,23 +438,20 @@ impl AddFlowSourcesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.flow_arn;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_3, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/{FlowArn}/source", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -612,23 +603,20 @@ impl AddFlowVpcInterfacesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.flow_arn;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_4, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/vpcInterfaces",
@@ -1018,23 +1006,20 @@ impl DeleteFlowInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.flow_arn;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_5, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -1162,23 +1147,20 @@ impl DescribeFlowInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.flow_arn;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_6, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -1308,23 +1290,20 @@ impl DescribeOfferingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let offering_arn = {
-            let input = &self.offering_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "offering_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "offering_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.offering_arn;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "offering_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let offering_arn = smithy_http::label::fmt_string(input_7, false);
+        if offering_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "offering_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/offerings/{OfferingArn}",
@@ -1461,23 +1440,20 @@ impl DescribeReservationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let reservation_arn = {
-            let input = &self.reservation_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "reservation_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "reservation_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.reservation_arn;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "reservation_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let reservation_arn = smithy_http::label::fmt_string(input_8, false);
+        if reservation_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "reservation_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/reservations/{ReservationArn}",
@@ -1633,23 +1609,20 @@ impl GrantFlowEntitlementsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.flow_arn;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let flow_arn = smithy_http::label::fmt_string(input_9, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/entitlements",
@@ -1802,11 +1775,11 @@ impl ListEntitlementsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_10) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1950,11 +1923,11 @@ impl ListFlowsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_11) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2100,11 +2073,11 @@ impl ListOfferingsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_12) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2252,11 +2225,11 @@ impl ListReservationsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_13) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2385,23 +2358,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_14 = &self.resource_arn;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_14, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2558,23 +2529,21 @@ impl PurchaseOfferingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let offering_arn = {
-            let input = &self.offering_arn;
-            let input = input
+        let input_15 = &self.offering_arn;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "offering_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "offering_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let offering_arn = smithy_http::label::fmt_string(input_15, false);
+        if offering_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "offering_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/offerings/{OfferingArn}",
@@ -2722,40 +2691,36 @@ impl RemoveFlowMediaStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_16 = &self.flow_arn;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let media_stream_name = {
-            let input = &self.media_stream_name;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_16, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.media_stream_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "media_stream_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "media_stream_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let media_stream_name = smithy_http::label::fmt_string(input_17, false);
+        if media_stream_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "media_stream_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}",
@@ -2901,40 +2866,36 @@ impl RemoveFlowOutputInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_18 = &self.flow_arn;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let output_arn = {
-            let input = &self.output_arn;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_18, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.output_arn;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "output_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "output_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let output_arn = smithy_http::label::fmt_string(input_19, false);
+        if output_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "output_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/outputs/{OutputArn}",
@@ -3080,40 +3041,36 @@ impl RemoveFlowSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_20 = &self.flow_arn;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let source_arn = {
-            let input = &self.source_arn;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_20, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_21 = &self.source_arn;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_arn = smithy_http::label::fmt_string(input_21, false);
+        if source_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/source/{SourceArn}",
@@ -3262,40 +3219,36 @@ impl RemoveFlowVpcInterfaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_22 = &self.flow_arn;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let vpc_interface_name = {
-            let input = &self.vpc_interface_name;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_22, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.vpc_interface_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "vpc_interface_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "vpc_interface_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let vpc_interface_name = smithy_http::label::fmt_string(input_23, false);
+        if vpc_interface_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "vpc_interface_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/vpcInterfaces/{VpcInterfaceName}",
@@ -3444,40 +3397,36 @@ impl RevokeFlowEntitlementInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_24 = &self.flow_arn;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let entitlement_arn = {
-            let input = &self.entitlement_arn;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_24, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.entitlement_arn;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "entitlement_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "entitlement_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let entitlement_arn = smithy_http::label::fmt_string(input_25, false);
+        if entitlement_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "entitlement_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}",
@@ -3608,23 +3557,21 @@ impl StartFlowInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_26 = &self.flow_arn;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let flow_arn = smithy_http::label::fmt_string(input_26, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/start/{FlowArn}", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3750,23 +3697,21 @@ impl StopFlowInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_27 = &self.flow_arn;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let flow_arn = smithy_http::label::fmt_string(input_27, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/stop/{FlowArn}", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3920,23 +3865,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_28 = &self.resource_arn;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_28, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4079,32 +4022,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_29 = &self.resource_arn;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_29, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.tag_keys {
-            for inner_6 in inner_5 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_30) = &self.tag_keys {
+            for inner_31 in inner_30 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_31));
             }
         }
     }
@@ -4249,23 +4190,21 @@ impl UpdateFlowInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_32 = &self.flow_arn;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let flow_arn = smithy_http::label::fmt_string(input_32, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4466,40 +4405,36 @@ impl UpdateFlowEntitlementInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_33 = &self.flow_arn;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let entitlement_arn = {
-            let input = &self.entitlement_arn;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_33, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.entitlement_arn;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "entitlement_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "entitlement_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let entitlement_arn = smithy_http::label::fmt_string(input_34, false);
+        if entitlement_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "entitlement_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}",
@@ -4712,40 +4647,36 @@ impl UpdateFlowMediaStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_35 = &self.flow_arn;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let media_stream_name = {
-            let input = &self.media_stream_name;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_35, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_36 = &self.media_stream_name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "media_stream_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "media_stream_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let media_stream_name = smithy_http::label::fmt_string(input_36, false);
+        if media_stream_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "media_stream_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}",
@@ -5059,40 +4990,36 @@ impl UpdateFlowSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let flow_arn = {
-            let input = &self.flow_arn;
-            let input = input
+        let input_37 = &self.flow_arn;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "flow_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let source_arn = {
-            let input = &self.source_arn;
-            let input = input
+        let flow_arn = smithy_http::label::fmt_string(input_37, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.source_arn;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_arn = smithy_http::label::fmt_string(input_38, false);
+        if source_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/flows/{FlowArn}/source/{SourceArn}",

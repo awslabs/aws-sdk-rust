@@ -218,23 +218,20 @@ impl InvokeEndpointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let endpoint_name = {
-            let input = &self.endpoint_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "endpoint_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "endpoint_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.endpoint_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "endpoint_name",
+                details: "cannot be empty or unset",
+            })?;
+        let endpoint_name = smithy_http::label::fmt_string(input_1, false);
+        if endpoint_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "endpoint_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/endpoints/{EndpointName}/invocations",
@@ -247,11 +244,11 @@ impl InvokeEndpointInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_1) = &self.content_type {
-            let formatted_2 = AsRef::<str>::as_ref(inner_1);
-            if !formatted_2.is_empty() {
+        if let Some(inner_2) = &self.content_type {
+            let formatted_3 = AsRef::<str>::as_ref(inner_2);
+            if !formatted_3.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_2;
+                let header_value = formatted_3;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -265,11 +262,11 @@ impl InvokeEndpointInput {
                 builder = builder.header("Content-Type", header_value);
             }
         }
-        if let Some(inner_3) = &self.accept {
-            let formatted_4 = AsRef::<str>::as_ref(inner_3);
-            if !formatted_4.is_empty() {
+        if let Some(inner_4) = &self.accept {
+            let formatted_5 = AsRef::<str>::as_ref(inner_4);
+            if !formatted_5.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_4;
+                let header_value = formatted_5;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -283,11 +280,11 @@ impl InvokeEndpointInput {
                 builder = builder.header("Accept", header_value);
             }
         }
-        if let Some(inner_5) = &self.custom_attributes {
-            let formatted_6 = AsRef::<str>::as_ref(inner_5);
-            if !formatted_6.is_empty() {
+        if let Some(inner_6) = &self.custom_attributes {
+            let formatted_7 = AsRef::<str>::as_ref(inner_6);
+            if !formatted_7.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_6;
+                let header_value = formatted_7;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -301,11 +298,11 @@ impl InvokeEndpointInput {
                 builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
             }
         }
-        if let Some(inner_7) = &self.target_model {
-            let formatted_8 = AsRef::<str>::as_ref(inner_7);
-            if !formatted_8.is_empty() {
+        if let Some(inner_8) = &self.target_model {
+            let formatted_9 = AsRef::<str>::as_ref(inner_8);
+            if !formatted_9.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_8;
+                let header_value = formatted_9;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -319,11 +316,11 @@ impl InvokeEndpointInput {
                 builder = builder.header("X-Amzn-SageMaker-Target-Model", header_value);
             }
         }
-        if let Some(inner_9) = &self.target_variant {
-            let formatted_10 = AsRef::<str>::as_ref(inner_9);
-            if !formatted_10.is_empty() {
+        if let Some(inner_10) = &self.target_variant {
+            let formatted_11 = AsRef::<str>::as_ref(inner_10);
+            if !formatted_11.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_10;
+                let header_value = formatted_11;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -337,11 +334,11 @@ impl InvokeEndpointInput {
                 builder = builder.header("X-Amzn-SageMaker-Target-Variant", header_value);
             }
         }
-        if let Some(inner_11) = &self.target_container_hostname {
-            let formatted_12 = AsRef::<str>::as_ref(inner_11);
-            if !formatted_12.is_empty() {
+        if let Some(inner_12) = &self.target_container_hostname {
+            let formatted_13 = AsRef::<str>::as_ref(inner_12);
+            if !formatted_13.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_12;
+                let header_value = formatted_13;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -356,11 +353,11 @@ impl InvokeEndpointInput {
                     builder.header("X-Amzn-SageMaker-Target-Container-Hostname", header_value);
             }
         }
-        if let Some(inner_13) = &self.inference_id {
-            let formatted_14 = AsRef::<str>::as_ref(inner_13);
-            if !formatted_14.is_empty() {
+        if let Some(inner_14) = &self.inference_id {
+            let formatted_15 = AsRef::<str>::as_ref(inner_14);
+            if !formatted_15.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_14;
+                let header_value = formatted_15;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {

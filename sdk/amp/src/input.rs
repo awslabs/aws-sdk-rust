@@ -250,23 +250,20 @@ impl DeleteWorkspaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workspace_id = {
-            let input = &self.workspace_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.workspace_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workspace_id = smithy_http::label::fmt_string(input_1, false);
+        if workspace_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workspaces/{workspaceId}",
@@ -277,8 +274,8 @@ impl DeleteWorkspaceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_2) = &self.client_token {
+            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_2));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -407,23 +404,20 @@ impl DescribeWorkspaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workspace_id = {
-            let input = &self.workspace_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.workspace_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workspace_id = smithy_http::label::fmt_string(input_3, false);
+        if workspace_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workspaces/{workspaceId}",
@@ -584,14 +578,17 @@ impl ListWorkspacesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_4) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
         }
-        if let Some(inner_3) = &self.alias {
-            query.push_kv("alias", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_5) = &self.alias {
+            query.push_kv("alias", &smithy_http::query::fmt_string(&inner_5));
         }
-        if let Some(inner_4) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_4));
+        if let Some(inner_6) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_6).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -748,23 +745,20 @@ impl UpdateWorkspaceAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workspace_id = {
-            let input = &self.workspace_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.workspace_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workspace_id = smithy_http::label::fmt_string(input_7, false);
+        if workspace_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workspace_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workspaces/{workspaceId}/alias",

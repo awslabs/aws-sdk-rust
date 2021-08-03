@@ -46,9 +46,12 @@ pub fn deser_header_create_hosted_configuration_version_create_hosted_configurat
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Version-Number").iter();
-    let var_1: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_1 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_1.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())
@@ -127,9 +130,12 @@ pub fn deser_header_get_hosted_configuration_version_get_hosted_configuration_ve
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Version-Number").iter();
-    let var_2: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_2 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
     } else {
         let mut var_2 = var_2;
         Ok(var_2.pop())

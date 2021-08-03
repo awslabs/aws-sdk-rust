@@ -148,23 +148,20 @@ impl CreateDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.project_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            })?;
+        let project_name = smithy_http::label::fmt_string(input_1, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/datasets",
@@ -177,11 +174,11 @@ impl CreateDatasetInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_1) = &self.client_token {
-            let formatted_2 = AsRef::<str>::as_ref(inner_1);
-            if !formatted_2.is_empty() {
+        if let Some(inner_2) = &self.client_token {
+            let formatted_3 = AsRef::<str>::as_ref(inner_2);
+            if !formatted_3.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_2;
+                let header_value = formatted_3;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -399,23 +396,20 @@ impl CreateModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.project_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            })?;
+        let project_name = smithy_http::label::fmt_string(input_4, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models",
@@ -428,11 +422,11 @@ impl CreateModelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_3) = &self.client_token {
-            let formatted_4 = AsRef::<str>::as_ref(inner_3);
-            if !formatted_4.is_empty() {
+        if let Some(inner_5) = &self.client_token {
+            let formatted_6 = AsRef::<str>::as_ref(inner_5);
+            if !formatted_6.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_4;
+                let header_value = formatted_6;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -603,11 +597,11 @@ impl CreateProjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_5) = &self.client_token {
-            let formatted_6 = AsRef::<str>::as_ref(inner_5);
-            if !formatted_6.is_empty() {
+        if let Some(inner_7) = &self.client_token {
+            let formatted_8 = AsRef::<str>::as_ref(inner_7);
+            if !formatted_8.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_6;
+                let header_value = formatted_8;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -781,40 +775,35 @@ impl DeleteDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_type = {
-            let input = &self.dataset_type;
-            let input = input
+        let input_9 = &self.project_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            })?;
+        let project_name = smithy_http::label::fmt_string(input_9, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.dataset_type;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_type = smithy_http::label::fmt_string(input_10, false);
+        if dataset_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/datasets/{DatasetType}",
@@ -828,11 +817,11 @@ impl DeleteDatasetInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_7) = &self.client_token {
-            let formatted_8 = AsRef::<str>::as_ref(inner_7);
-            if !formatted_8.is_empty() {
+        if let Some(inner_11) = &self.client_token {
+            let formatted_12 = AsRef::<str>::as_ref(inner_11);
+            if !formatted_12.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_8;
+                let header_value = formatted_12;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1007,40 +996,36 @@ impl DeleteModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_13 = &self.project_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let model_version = {
-            let input = &self.model_version;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_13, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.model_version;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "model_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let model_version = smithy_http::label::fmt_string(input_14, false);
+        if model_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "model_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models/{ModelVersion}",
@@ -1054,11 +1039,11 @@ impl DeleteModelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_9) = &self.client_token {
-            let formatted_10 = AsRef::<str>::as_ref(inner_9);
-            if !formatted_10.is_empty() {
+        if let Some(inner_15) = &self.client_token {
+            let formatted_16 = AsRef::<str>::as_ref(inner_15);
+            if !formatted_16.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_10;
+                let header_value = formatted_16;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1219,23 +1204,21 @@ impl DeleteProjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_17 = &self.project_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let project_name = smithy_http::label::fmt_string(input_17, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}",
@@ -1248,11 +1231,11 @@ impl DeleteProjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_11) = &self.client_token {
-            let formatted_12 = AsRef::<str>::as_ref(inner_11);
-            if !formatted_12.is_empty() {
+        if let Some(inner_18) = &self.client_token {
+            let formatted_19 = AsRef::<str>::as_ref(inner_18);
+            if !formatted_19.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_12;
+                let header_value = formatted_19;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1408,40 +1391,36 @@ impl DescribeDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_20 = &self.project_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_type = {
-            let input = &self.dataset_type;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_20, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_21 = &self.dataset_type;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_type = smithy_http::label::fmt_string(input_21, false);
+        if dataset_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/datasets/{DatasetType}",
@@ -1588,40 +1567,36 @@ impl DescribeModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_22 = &self.project_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let model_version = {
-            let input = &self.model_version;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_22, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.model_version;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "model_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let model_version = smithy_http::label::fmt_string(input_23, false);
+        if model_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "model_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models/{ModelVersion}",
@@ -1756,23 +1731,21 @@ impl DescribeProjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_24 = &self.project_name;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let project_name = smithy_http::label::fmt_string(input_24, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}",
@@ -1946,40 +1919,36 @@ impl DetectAnomaliesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_25 = &self.project_name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let model_version = {
-            let input = &self.model_version;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_25, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_26 = &self.model_version;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "model_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let model_version = smithy_http::label::fmt_string(input_26, false);
+        if model_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "model_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models/{ModelVersion}/detect",
@@ -1993,11 +1962,11 @@ impl DetectAnomaliesInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_13) = &self.content_type {
-            let formatted_14 = AsRef::<str>::as_ref(inner_13);
-            if !formatted_14.is_empty() {
+        if let Some(inner_27) = &self.content_type {
+            let formatted_28 = AsRef::<str>::as_ref(inner_27);
+            if !formatted_28.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_14;
+                let header_value = formatted_28;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2251,40 +2220,36 @@ impl ListDatasetEntriesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_29 = &self.project_name;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_type = {
-            let input = &self.dataset_type;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_29, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_30 = &self.dataset_type;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_type = smithy_http::label::fmt_string(input_30, false);
+        if dataset_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/datasets/{DatasetType}/entries",
@@ -2296,40 +2261,46 @@ impl ListDatasetEntriesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.labeled {
-            query.push_kv("labeled", &smithy_http::query::fmt_default(&inner_15));
+        if let Some(inner_31) = &self.labeled {
+            query.push_kv(
+                "labeled",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
-        if let Some(inner_16) = &self.anomaly_class {
-            query.push_kv("anomalyClass", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_32) = &self.anomaly_class {
+            query.push_kv("anomalyClass", &smithy_http::query::fmt_string(&inner_32));
         }
-        if let Some(inner_17) = &self.before_creation_date {
+        if let Some(inner_33) = &self.before_creation_date {
             query.push_kv(
                 "createdBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_17,
+                    inner_33,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_18) = &self.after_creation_date {
+        if let Some(inner_34) = &self.after_creation_date {
             query.push_kv(
                 "createdAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_18,
+                    inner_34,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_19) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
         }
-        if let Some(inner_20) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_20));
+        if let Some(inner_36) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_36).encode(),
+            );
         }
-        if let Some(inner_21) = &self.source_ref_contains {
+        if let Some(inner_37) = &self.source_ref_contains {
             query.push_kv(
                 "sourceRefContains",
-                &smithy_http::query::fmt_string(&inner_21),
+                &smithy_http::query::fmt_string(&inner_37),
             );
         }
     }
@@ -2483,23 +2454,21 @@ impl ListModelsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_38 = &self.project_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let project_name = smithy_http::label::fmt_string(input_38, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models",
@@ -2510,11 +2479,14 @@ impl ListModelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_22) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_39) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_39));
         }
-        if let Some(inner_23) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_23));
+        if let Some(inner_40) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_40).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2661,11 +2633,14 @@ impl ListProjectsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_24) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
+        if let Some(inner_41) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_41));
         }
-        if let Some(inner_25) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_25));
+        if let Some(inner_42) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_42).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2794,23 +2769,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_43 = &self.resource_arn;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_43, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/tags/{ResourceArn}",
@@ -2996,40 +2969,36 @@ impl StartModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_44 = &self.project_name;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let model_version = {
-            let input = &self.model_version;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_44, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_45 = &self.model_version;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "model_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let model_version = smithy_http::label::fmt_string(input_45, false);
+        if model_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "model_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models/{ModelVersion}/start",
@@ -3043,11 +3012,11 @@ impl StartModelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_26) = &self.client_token {
-            let formatted_27 = AsRef::<str>::as_ref(inner_26);
-            if !formatted_27.is_empty() {
+        if let Some(inner_46) = &self.client_token {
+            let formatted_47 = AsRef::<str>::as_ref(inner_46);
+            if !formatted_47.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_27;
+                let header_value = formatted_47;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3221,40 +3190,36 @@ impl StopModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_48 = &self.project_name;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let model_version = {
-            let input = &self.model_version;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_48, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_49 = &self.model_version;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "model_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let model_version = smithy_http::label::fmt_string(input_49, false);
+        if model_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "model_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/models/{ModelVersion}/stop",
@@ -3268,11 +3233,11 @@ impl StopModelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_28) = &self.client_token {
-            let formatted_29 = AsRef::<str>::as_ref(inner_28);
-            if !formatted_29.is_empty() {
+        if let Some(inner_50) = &self.client_token {
+            let formatted_51 = AsRef::<str>::as_ref(inner_50);
+            if !formatted_51.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_29;
+                let header_value = formatted_51;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3430,23 +3395,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_52 = &self.resource_arn;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_52, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/tags/{ResourceArn}",
@@ -3593,23 +3556,21 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_53 = &self.resource_arn;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_53, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/tags/{ResourceArn}",
@@ -3620,9 +3581,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_30) = &self.tag_keys {
-            for inner_31 in inner_30 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_54) = &self.tag_keys {
+            for inner_55 in inner_54 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_55));
             }
         }
     }
@@ -3801,40 +3762,36 @@ impl UpdateDatasetEntriesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_name = {
-            let input = &self.project_name;
-            let input = input
+        let input_56 = &self.project_name;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_type = {
-            let input = &self.dataset_type;
-            let input = input
+        let project_name = smithy_http::label::fmt_string(input_56, false);
+        if project_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_57 = &self.dataset_type;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_type = smithy_http::label::fmt_string(input_57, false);
+        if dataset_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2020-11-20/projects/{ProjectName}/datasets/{DatasetType}/entries",
@@ -3848,11 +3805,11 @@ impl UpdateDatasetEntriesInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_32) = &self.client_token {
-            let formatted_33 = AsRef::<str>::as_ref(inner_32);
-            if !formatted_33.is_empty() {
+        if let Some(inner_58) = &self.client_token {
+            let formatted_59 = AsRef::<str>::as_ref(inner_58);
+            if !formatted_59.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_33;
+                let header_value = formatted_59;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {

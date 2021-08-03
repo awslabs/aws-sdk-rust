@@ -14,9 +14,12 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
-    let var_1: Vec<i64> = smithy_http::header::read_many(headers)?;
+    let var_1 = smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_1.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())
@@ -49,7 +52,10 @@ pub fn deser_header_describe_input_device_thumbnail_describe_input_device_thumbn
     let var_2: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
     } else {
         let mut var_2 = var_2;
         Ok(var_2.pop())

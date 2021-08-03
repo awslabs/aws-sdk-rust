@@ -15,9 +15,12 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_b
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_1: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_1 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_1.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())
@@ -76,9 +79,12 @@ pub fn deser_header_copy_object_copy_object_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_2: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_2 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
     } else {
         let mut var_2 = var_2;
         Ok(var_2.pop())
@@ -199,7 +205,10 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort
     let var_3: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_3.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_3.len()
+        )))
     } else {
         let mut var_3 = var_3;
         Ok(var_3.pop())
@@ -220,9 +229,12 @@ pub fn deser_header_create_multipart_upload_create_multipart_upload_output_bucke
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_4: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_4 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_4.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_4.len()
+        )))
     } else {
         let mut var_4 = var_4;
         Ok(var_4.pop())
@@ -293,9 +305,12 @@ pub fn deser_header_delete_object_delete_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
-    let var_5: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_5 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_5.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_5.len()
+        )))
     } else {
         let mut var_5 = var_5;
         Ok(var_5.pop())
@@ -474,9 +489,12 @@ pub fn deser_header_get_object_get_object_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_6: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_6 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_6.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_6.len()
+        )))
     } else {
         let mut var_6 = var_6;
         Ok(var_6.pop())
@@ -519,9 +537,12 @@ pub fn deser_header_get_object_get_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
-    let var_7: Vec<i64> = smithy_http::header::read_many(headers)?;
+    let var_7 = smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_7.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_7.len()
+        )))
     } else {
         let mut var_7 = var_7;
         Ok(var_7.pop())
@@ -548,9 +569,12 @@ pub fn deser_header_get_object_get_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
-    let var_8: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_8 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_8.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_8.len()
+        )))
     } else {
         let mut var_8 = var_8;
         Ok(var_8.pop())
@@ -581,7 +605,10 @@ pub fn deser_header_get_object_get_object_output_expires(
     let var_9: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_9.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_9.len()
+        )))
     } else {
         let mut var_9 = var_9;
         Ok(var_9.pop())
@@ -596,7 +623,10 @@ pub fn deser_header_get_object_get_object_output_last_modified(
     let var_10: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_10.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_10.len()
+        )))
     } else {
         let mut var_10 = var_10;
         Ok(var_10.pop())
@@ -626,9 +656,12 @@ pub fn deser_header_get_object_get_object_output_missing_meta(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-missing-meta").iter();
-    let var_11: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_11 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_11.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_11.len()
+        )))
     } else {
         let mut var_11 = var_11;
         Ok(var_11.pop())
@@ -665,7 +698,10 @@ pub fn deser_header_get_object_get_object_output_object_lock_retain_until_date(
     let var_12: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
     if var_12.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_12.len()
+        )))
     } else {
         let mut var_12 = var_12;
         Ok(var_12.pop())
@@ -676,9 +712,12 @@ pub fn deser_header_get_object_get_object_output_parts_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-mp-parts-count").iter();
-    let var_13: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_13 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_13.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_13.len()
+        )))
     } else {
         let mut var_13 = var_13;
         Ok(var_13.pop())
@@ -767,9 +806,12 @@ pub fn deser_header_get_object_get_object_output_tag_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-tagging-count").iter();
-    let var_14: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_14 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_14.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_14.len()
+        )))
     } else {
         let mut var_14 = var_14;
         Ok(var_14.pop())
@@ -903,9 +945,12 @@ pub fn deser_header_head_object_head_object_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_15: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_15 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_15.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_15.len()
+        )))
     } else {
         let mut var_15 = var_15;
         Ok(var_15.pop())
@@ -948,9 +993,12 @@ pub fn deser_header_head_object_head_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
-    let var_16: Vec<i64> = smithy_http::header::read_many(headers)?;
+    let var_16 = smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_16.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_16.len()
+        )))
     } else {
         let mut var_16 = var_16;
         Ok(var_16.pop())
@@ -969,9 +1017,12 @@ pub fn deser_header_head_object_head_object_output_delete_marker(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-delete-marker").iter();
-    let var_17: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_17 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_17.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_17.len()
+        )))
     } else {
         let mut var_17 = var_17;
         Ok(var_17.pop())
@@ -1002,7 +1053,10 @@ pub fn deser_header_head_object_head_object_output_expires(
     let var_18: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_18.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_18.len()
+        )))
     } else {
         let mut var_18 = var_18;
         Ok(var_18.pop())
@@ -1017,7 +1071,10 @@ pub fn deser_header_head_object_head_object_output_last_modified(
     let var_19: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_19.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_19.len()
+        )))
     } else {
         let mut var_19 = var_19;
         Ok(var_19.pop())
@@ -1047,9 +1104,12 @@ pub fn deser_header_head_object_head_object_output_missing_meta(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-missing-meta").iter();
-    let var_20: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_20 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_20.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_20.len()
+        )))
     } else {
         let mut var_20 = var_20;
         Ok(var_20.pop())
@@ -1086,7 +1146,10 @@ pub fn deser_header_head_object_head_object_output_object_lock_retain_until_date
     let var_21: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
     if var_21.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_21.len()
+        )))
     } else {
         let mut var_21 = var_21;
         Ok(var_21.pop())
@@ -1097,9 +1160,12 @@ pub fn deser_header_head_object_head_object_output_parts_count(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-mp-parts-count").iter();
-    let var_22: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_22 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_22.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_22.len()
+        )))
     } else {
         let mut var_22 = var_22;
         Ok(var_22.pop())
@@ -1208,7 +1274,10 @@ pub fn deser_header_list_parts_list_parts_output_abort_date(
     let var_23: Vec<smithy_types::Instant> =
         smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_23.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_23.len()
+        )))
     } else {
         let mut var_23 = var_23;
         Ok(var_23.pop())
@@ -1239,9 +1308,12 @@ pub fn deser_header_put_object_put_object_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_24: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_24 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_24.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_24.len()
+        )))
     } else {
         let mut var_24 = var_24;
         Ok(var_24.pop())
@@ -1404,9 +1476,12 @@ pub fn deser_header_upload_part_upload_part_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_25: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_25 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_25.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_25.len()
+        )))
     } else {
         let mut var_25 = var_25;
         Ok(var_25.pop())
@@ -1477,9 +1552,12 @@ pub fn deser_header_upload_part_copy_upload_part_copy_output_bucket_key_enabled(
     let headers = header_map
         .get_all("x-amz-server-side-encryption-bucket-key-enabled")
         .iter();
-    let var_26: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_26 = smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_26.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_26.len()
+        )))
     } else {
         let mut var_26 = var_26;
         Ok(var_26.pop())

@@ -326,7 +326,11 @@ impl<'a> JsonTokenIterator<'a> {
             offset,
             value: if floating {
                 Number::Float(
-                    f64::from_str(&number_str).map_err(|_| self.error_at(start, InvalidNumber))?,
+                    f64::from_str(&number_str)
+                        .map_err(|_| self.error_at(start, InvalidNumber))
+                        .and_then(|f| {
+                            must_be_finite(f).map_err(|_| self.error_at(start, InvalidNumber))
+                        })?,
                 )
             } else if negative {
                 // If the negative value overflows, then stuff it into an f64
@@ -481,6 +485,22 @@ impl<'a> Iterator for JsonTokenIterator<'a> {
             self.index = self.input.len();
         }
         result
+    }
+}
+
+fn must_be_finite(f: f64) -> Result<f64, ()> {
+    if f.is_finite() {
+        Ok(f)
+    } else {
+        Err(())
+    }
+}
+
+fn must_not_be_finite(f: f64) -> Result<f64, ()> {
+    if !f.is_finite() {
+        Ok(f)
+    } else {
+        Err(())
     }
 }
 

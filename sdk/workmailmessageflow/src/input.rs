@@ -92,23 +92,20 @@ impl GetRawMessageContentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let message_id = {
-            let input = &self.message_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.message_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "message_id",
+                details: "cannot be empty or unset",
+            })?;
+        let message_id = smithy_http::label::fmt_string(input_1, false);
+        if message_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "message_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/messages/{messageId}", messageId = message_id)
             .expect("formatting should succeed");
         Ok(())
@@ -255,23 +252,20 @@ impl PutRawMessageContentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let message_id = {
-            let input = &self.message_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.message_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "message_id",
+                details: "cannot be empty or unset",
+            })?;
+        let message_id = smithy_http::label::fmt_string(input_2, false);
+        if message_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "message_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/messages/{messageId}", messageId = message_id)
             .expect("formatting should succeed");
         Ok(())

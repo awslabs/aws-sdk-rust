@@ -5131,7 +5131,7 @@ mod put_bucket_lifecycle_configuration_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket");
-        let expected_headers = &[("content-md5", "b14bbeb8064f913b40c4975a03ef6e4a")];
+        let expected_headers = &[("content-md5", "sUu+uAZPkTtAxJdaA+9uSg==")];
         protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
             &http_request,
             expected_headers,

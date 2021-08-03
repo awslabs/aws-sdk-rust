@@ -95,23 +95,20 @@ impl BulkPublishInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.identity_pool_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_pool_id = smithy_http::label::fmt_string(input_1, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/bulkpublish",
@@ -274,57 +271,48 @@ impl DeleteDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.identity_pool_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_pool_id = smithy_http::label::fmt_string(input_2, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.identity_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_id = smithy_http::label::fmt_string(input_3, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_4 = &self.dataset_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            })?;
+        let dataset_name = smithy_http::label::fmt_string(input_4, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
@@ -491,57 +479,48 @@ impl DescribeDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.identity_pool_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_pool_id = smithy_http::label::fmt_string(input_5, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_6 = &self.identity_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_id = smithy_http::label::fmt_string(input_6, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.dataset_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            })?;
+        let dataset_name = smithy_http::label::fmt_string(input_7, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
@@ -683,23 +662,20 @@ impl DescribeIdentityPoolUsageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.identity_pool_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_pool_id = smithy_http::label::fmt_string(input_8, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}",
@@ -851,40 +827,35 @@ impl DescribeIdentityUsageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let input_9 = &self.identity_pool_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            })?;
+        let identity_pool_id = smithy_http::label::fmt_string(input_9, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.identity_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_id = smithy_http::label::fmt_string(input_10, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identities/{IdentityId}",
@@ -1024,23 +995,21 @@ impl GetBulkPublishDetailsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_11 = &self.identity_pool_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_pool_id = smithy_http::label::fmt_string(input_11, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/getBulkPublishDetails",
@@ -1177,23 +1146,21 @@ impl GetCognitoEventsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_12 = &self.identity_pool_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_pool_id = smithy_http::label::fmt_string(input_12, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/events",
@@ -1332,23 +1299,21 @@ impl GetIdentityPoolConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_13 = &self.identity_pool_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_pool_id = smithy_http::label::fmt_string(input_13, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/configuration",
@@ -1522,40 +1487,36 @@ impl ListDatasetsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_14 = &self.identity_pool_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_14, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_15 = &self.identity_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_id = smithy_http::label::fmt_string(input_15, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets",
@@ -1567,13 +1528,13 @@ impl ListDatasetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_16) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -1721,13 +1682,13 @@ impl ListIdentityPoolUsageInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_17) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -1936,78 +1897,75 @@ impl ListRecordsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_18 = &self.identity_pool_id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_18, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.identity_id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
+        let identity_id = smithy_http::label::fmt_string(input_19, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.dataset_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_name = smithy_http::label::fmt_string(input_20, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.last_sync_count {
-            query.push_kv("lastSyncCount", &smithy_http::query::fmt_default(&inner_3));
+        if let Some(inner_21) = &self.last_sync_count {
+            query.push_kv(
+                "lastSyncCount",
+                &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+            );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_22) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_5) = &self.sync_session_token {
+        if let Some(inner_23) = &self.sync_session_token {
             query.push_kv(
                 "syncSessionToken",
-                &smithy_http::query::fmt_string(&inner_5),
+                &smithy_http::query::fmt_string(&inner_23),
             );
         }
     }
@@ -2176,40 +2134,36 @@ impl RegisterDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_24 = &self.identity_pool_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_24, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.identity_id;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_id = smithy_http::label::fmt_string(input_25, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device",
@@ -2373,23 +2327,21 @@ impl SetCognitoEventsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_26 = &self.identity_pool_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_pool_id = smithy_http::label::fmt_string(input_26, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/events",
@@ -2557,23 +2509,21 @@ impl SetIdentityPoolConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_27 = &self.identity_pool_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let identity_pool_id = smithy_http::label::fmt_string(input_27, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/configuration",
@@ -2744,74 +2694,66 @@ impl SubscribeToDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_28 = &self.identity_pool_id;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_28, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_29 = &self.identity_id;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
+        let identity_id = smithy_http::label::fmt_string(input_29, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_30 = &self.dataset_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let dataset_name = smithy_http::label::fmt_string(input_30, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_31 = &self.device_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_31, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name, DeviceId = device_id).expect("formatting should succeed");
         Ok(())
     }
@@ -2977,74 +2919,66 @@ impl UnsubscribeFromDatasetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_32 = &self.identity_pool_id;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_32, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_33 = &self.identity_id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
+        let identity_id = smithy_http::label::fmt_string(input_33, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.dataset_name;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let dataset_name = smithy_http::label::fmt_string(input_34, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_35 = &self.device_id;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_35, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name, DeviceId = device_id).expect("formatting should succeed");
         Ok(())
     }
@@ -3262,57 +3196,51 @@ impl UpdateRecordsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let identity_pool_id = {
-            let input = &self.identity_pool_id;
-            let input = input
+        let input_36 = &self.identity_pool_id;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_pool_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let identity_id = {
-            let input = &self.identity_id;
-            let input = input
+        let identity_pool_id = smithy_http::label::fmt_string(input_36, false);
+        if identity_pool_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_pool_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_37 = &self.identity_id;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "identity_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dataset_name = {
-            let input = &self.dataset_name;
-            let input = input
+        let identity_id = smithy_http::label::fmt_string(input_37, false);
+        if identity_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "identity_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.dataset_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dataset_name = smithy_http::label::fmt_string(input_38, false);
+        if dataset_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
@@ -3327,11 +3255,11 @@ impl UpdateRecordsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_6) = &self.client_context {
-            let formatted_7 = AsRef::<str>::as_ref(inner_6);
-            if !formatted_7.is_empty() {
+        if let Some(inner_39) = &self.client_context {
+            let formatted_40 = AsRef::<str>::as_ref(inner_39);
+            if !formatted_40.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_7;
+                let header_value = formatted_40;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {

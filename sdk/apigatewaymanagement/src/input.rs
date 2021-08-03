@@ -94,23 +94,20 @@ impl DeleteConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let connection_id = {
-            let input = &self.connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.connection_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let connection_id = smithy_http::label::fmt_string(input_1, false);
+        if connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/@connections/{ConnectionId}",
@@ -244,23 +241,20 @@ impl GetConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let connection_id = {
-            let input = &self.connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.connection_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let connection_id = smithy_http::label::fmt_string(input_2, false);
+        if connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/@connections/{ConnectionId}",
@@ -408,23 +402,20 @@ impl PostToConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let connection_id = {
-            let input = &self.connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.connection_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let connection_id = smithy_http::label::fmt_string(input_3, false);
+        if connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/@connections/{ConnectionId}",

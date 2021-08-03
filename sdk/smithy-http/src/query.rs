@@ -8,11 +8,6 @@ use percent_encoding::utf8_percent_encode;
 /// Formatting values into the query string as specified in
 /// [httpQuery](https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httpquery-trait)
 use smithy_types::Instant;
-use std::fmt::Debug;
-
-pub fn fmt_default<T: Debug>(t: T) -> String {
-    format!("{:?}", t)
-}
 
 pub fn fmt_string<T: AsRef<str>>(t: T) -> String {
     utf8_percent_encode(t.as_ref(), BASE_SET).to_string()

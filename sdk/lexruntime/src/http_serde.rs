@@ -20,20 +20,29 @@ pub fn deser_header_post_content_post_content_output_active_contexts(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-active-contexts").iter();
-    let var_1: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_1: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_1: std::result::Result<Vec<_>, _> = var_1
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_1 = var_1?;
     if var_1.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())
@@ -45,20 +54,29 @@ pub fn deser_header_post_content_post_content_output_alternative_intents(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-alternative-intents").iter();
-    let var_2: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_2: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_2: std::result::Result<Vec<_>, _> = var_2
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_2 = var_2?;
     if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
     } else {
         let mut var_2 = var_2;
         Ok(var_2.pop())
@@ -156,20 +174,29 @@ pub fn deser_header_post_content_post_content_output_nlu_intent_confidence(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-nlu-intent-confidence").iter();
-    let var_3: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_3: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_3: std::result::Result<Vec<_>, _> = var_3
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_3 = var_3?;
     if var_3.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_3.len()
+        )))
     } else {
         let mut var_3 = var_3;
         Ok(var_3.pop())
@@ -189,20 +216,29 @@ pub fn deser_header_post_content_post_content_output_session_attributes(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-session-attributes").iter();
-    let var_4: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_4: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_4: std::result::Result<Vec<_>, _> = var_4
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_4 = var_4?;
     if var_4.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_4.len()
+        )))
     } else {
         let mut var_4 = var_4;
         Ok(var_4.pop())
@@ -230,20 +266,29 @@ pub fn deser_header_post_content_post_content_output_slots(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-slots").iter();
-    let var_5: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_5: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_5: std::result::Result<Vec<_>, _> = var_5
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_5 = var_5?;
     if var_5.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_5.len()
+        )))
     } else {
         let mut var_5 = var_5;
         Ok(var_5.pop())
@@ -271,20 +316,29 @@ pub fn deser_header_put_session_put_session_output_active_contexts(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-active-contexts").iter();
-    let var_6: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_6: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_6: std::result::Result<Vec<_>, _> = var_6
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_6 = var_6?;
     if var_6.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_6.len()
+        )))
     } else {
         let mut var_6 = var_6;
         Ok(var_6.pop())
@@ -356,20 +410,29 @@ pub fn deser_header_put_session_put_session_output_session_attributes(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-session-attributes").iter();
-    let var_7: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_7: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_7: std::result::Result<Vec<_>, _> = var_7
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_7 = var_7?;
     if var_7.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_7.len()
+        )))
     } else {
         let mut var_7 = var_7;
         Ok(var_7.pop())
@@ -397,20 +460,29 @@ pub fn deser_header_put_session_put_session_output_slots(
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amz-lex-slots").iter();
-    let var_8: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_8: Vec<std::string::String> = smithy_http::header::read_many_from_str(headers)?;
     let var_8: std::result::Result<Vec<_>, _> = var_8
         .iter()
         .map(|s| {
             smithy_types::base64::decode(s)
-                .map_err(|_| smithy_http::header::ParseError)
+                .map_err(|_| {
+                    smithy_http::header::ParseError::new_with_message("failed to decode base64")
+                })
                 .and_then(|bytes| {
-                    String::from_utf8(bytes).map_err(|_| smithy_http::header::ParseError)
+                    String::from_utf8(bytes).map_err(|_| {
+                        smithy_http::header::ParseError::new_with_message(
+                            "base64 encoded data was not valid utf-8",
+                        )
+                    })
                 })
         })
         .collect();
     let var_8 = var_8?;
     if var_8.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_8.len()
+        )))
     } else {
         let mut var_8 = var_8;
         Ok(var_8.pop())

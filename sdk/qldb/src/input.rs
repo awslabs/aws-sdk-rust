@@ -105,40 +105,34 @@ impl CancelJournalKinesisStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ledger_name = {
-            let input = &self.ledger_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let stream_id = {
-            let input = &self.stream_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "stream_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "stream_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.ledger_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            })?;
+        let ledger_name = smithy_http::label::fmt_string(input_1, false);
+        if ledger_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.stream_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "stream_id",
+                details: "cannot be empty or unset",
+            })?;
+        let stream_id = smithy_http::label::fmt_string(input_2, false);
+        if stream_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "stream_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams/{StreamId}",
@@ -487,23 +481,20 @@ impl DeleteLedgerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_3, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -645,40 +636,34 @@ impl DescribeJournalKinesisStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ledger_name = {
-            let input = &self.ledger_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let stream_id = {
-            let input = &self.stream_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "stream_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "stream_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.ledger_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            })?;
+        let ledger_name = smithy_http::label::fmt_string(input_4, false);
+        if ledger_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_5 = &self.stream_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "stream_id",
+                details: "cannot be empty or unset",
+            })?;
+        let stream_id = smithy_http::label::fmt_string(input_5, false);
+        if stream_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "stream_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams/{StreamId}",
@@ -826,40 +811,34 @@ impl DescribeJournalS3ExportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let export_id = {
-            let input = &self.export_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "export_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "export_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_6, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.export_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "export_id",
+                details: "cannot be empty or unset",
+            })?;
+        let export_id = smithy_http::label::fmt_string(input_7, false);
+        if export_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "export_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/ledgers/{Name}/journal-s3-exports/{ExportId}",
@@ -992,23 +971,20 @@ impl DescribeLedgerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_8, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -1220,23 +1196,20 @@ impl ExportJournalToS3Input {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_9, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
             .expect("formatting should succeed");
         Ok(())
@@ -1395,23 +1368,21 @@ impl GetBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_10 = &self.name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_10, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/block", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -1531,23 +1502,21 @@ impl GetDigestInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_11 = &self.name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_11, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/digest", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -1718,23 +1687,21 @@ impl GetRevisionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_12 = &self.name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_12, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/revision", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -1891,23 +1858,21 @@ impl ListJournalKinesisStreamsForLedgerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ledger_name = {
-            let input = &self.ledger_name;
-            let input = input
+        let input_13 = &self.ledger_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ledger_name = smithy_http::label::fmt_string(input_13, false);
+        if ledger_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams",
@@ -1918,11 +1883,14 @@ impl ListJournalKinesisStreamsForLedgerInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.max_results {
-            query.push_kv("max_results", &smithy_http::query::fmt_default(&inner_1));
+        if let Some(inner_14) = &self.max_results {
+            query.push_kv(
+                "max_results",
+                &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+            );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_15));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2071,11 +2039,14 @@ impl ListJournalS3ExportsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.max_results {
-            query.push_kv("max_results", &smithy_http::query::fmt_default(&inner_3));
+        if let Some(inner_16) = &self.max_results {
+            query.push_kv(
+                "max_results",
+                &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+            );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_17) = &self.next_token {
+            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_17));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2232,34 +2203,35 @@ impl ListJournalS3ExportsForLedgerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_18 = &self.name;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_18, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.max_results {
-            query.push_kv("max_results", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_19) = &self.max_results {
+            query.push_kv(
+                "max_results",
+                &smithy_types::primitive::Encoder::from(*inner_19).encode(),
+            );
         }
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_20) = &self.next_token {
+            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_20));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2402,11 +2374,14 @@ impl ListLedgersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.max_results {
-            query.push_kv("max_results", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_21) = &self.max_results {
+            query.push_kv(
+                "max_results",
+                &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+            );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_22) = &self.next_token {
+            query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2538,23 +2513,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_23 = &self.resource_arn;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_23, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2797,23 +2770,21 @@ impl StreamJournalToKinesisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ledger_name = {
-            let input = &self.ledger_name;
-            let input = input
+        let input_24 = &self.ledger_name;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ledger_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ledger_name = smithy_http::label::fmt_string(input_24, false);
+        if ledger_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ledger_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams",
@@ -2977,23 +2948,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_25 = &self.resource_arn;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_25, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3139,32 +3108,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_26 = &self.resource_arn;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_26, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.tag_keys {
-            for inner_10 in inner_9 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_27) = &self.tag_keys {
+            for inner_28 in inner_27 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_28));
             }
         }
     }
@@ -3309,23 +3276,21 @@ impl UpdateLedgerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_29 = &self.name;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_29, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -3502,23 +3467,21 @@ impl UpdateLedgerPermissionsModeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_30 = &self.name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_30, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/ledgers/{Name}/permissions-mode", Name = name)
             .expect("formatting should succeed");
         Ok(())

@@ -234,8 +234,7 @@ pub fn deser_operation_check_dns_availability(
                 let var_8 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#CnameAvailability`)"))
@@ -1045,8 +1044,7 @@ pub fn deser_operation_create_environment(
                 let var_44 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
@@ -2914,8 +2912,7 @@ pub fn deser_operation_terminate_environment(
                 let var_114 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
@@ -3556,8 +3553,7 @@ pub fn deser_operation_update_environment(
                 let var_149 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
@@ -4496,8 +4492,7 @@ pub fn deser_structure_application_metrics(
                 let var_199 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4512,8 +4507,7 @@ pub fn deser_structure_application_metrics(
                 let var_200 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#RequestCount`)"))
@@ -4561,8 +4555,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_203 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4577,8 +4570,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_204 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4593,8 +4585,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_205 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4609,8 +4600,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_206 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4625,8 +4615,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_207 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4641,8 +4630,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_208 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4657,8 +4645,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_209 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -4673,8 +4660,7 @@ pub fn deser_structure_instance_health_summary(
                 let var_210 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -5492,8 +5478,7 @@ pub fn deser_structure_environment_description(
                 let var_255 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
@@ -5939,8 +5924,7 @@ pub fn deser_structure_resource_quota(
                 let var_277 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#BoxedInt`)"))
@@ -6020,8 +6004,7 @@ pub fn deser_structure_configuration_option_description(
                 let var_282 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#UserDefinedOption`)"))
@@ -6060,8 +6043,7 @@ pub fn deser_structure_configuration_option_description(
                 let var_285 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#OptionRestrictionMinValue`)"))
@@ -6076,8 +6058,7 @@ pub fn deser_structure_configuration_option_description(
                 let var_286 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#OptionRestrictionMaxValue`)"))
@@ -6092,8 +6073,7 @@ pub fn deser_structure_configuration_option_description(
                 let var_287 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#OptionRestrictionMaxLength`)"))
@@ -6274,8 +6254,7 @@ pub fn deser_structure_status_codes(
                 let var_299 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -6290,8 +6269,7 @@ pub fn deser_structure_status_codes(
                 let var_300 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -6306,8 +6284,7 @@ pub fn deser_structure_status_codes(
                 let var_301 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -6322,8 +6299,7 @@ pub fn deser_structure_status_codes(
                 let var_302 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#NullableInteger`)"))
@@ -6351,8 +6327,7 @@ pub fn deser_structure_latency(
                 let var_303 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6367,8 +6342,7 @@ pub fn deser_structure_latency(
                 let var_304 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6383,8 +6357,7 @@ pub fn deser_structure_latency(
                 let var_305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6399,8 +6372,7 @@ pub fn deser_structure_latency(
                 let var_306 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6415,8 +6387,7 @@ pub fn deser_structure_latency(
                 let var_307 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6431,8 +6402,7 @@ pub fn deser_structure_latency(
                 let var_308 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6447,8 +6417,7 @@ pub fn deser_structure_latency(
                 let var_309 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -6463,8 +6432,7 @@ pub fn deser_structure_latency(
                 let var_310 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -7225,8 +7193,7 @@ pub fn deser_structure_platform_branch_summary(
                 let var_348 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#BranchOrder`)"))
@@ -7790,8 +7757,7 @@ pub fn deser_structure_deployment(
                 let var_375 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.elasticbeanstalk#NullableLong`)"))
@@ -7985,8 +7951,7 @@ pub fn deser_structure_max_count_rule(
                 let var_384 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#BoxedBoolean`)"))
@@ -8001,8 +7966,7 @@ pub fn deser_structure_max_count_rule(
                 let var_385 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#BoxedInt`)"))
@@ -8017,8 +7981,7 @@ pub fn deser_structure_max_count_rule(
                 let var_386 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#BoxedBoolean`)"))
@@ -8046,8 +8009,7 @@ pub fn deser_structure_max_age_rule(
                 let var_387 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#BoxedBoolean`)"))
@@ -8062,8 +8024,7 @@ pub fn deser_structure_max_age_rule(
                 let var_388 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#BoxedInt`)"))
@@ -8078,8 +8039,7 @@ pub fn deser_structure_max_age_rule(
                 let var_389 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#BoxedBoolean`)"))
@@ -8120,8 +8080,7 @@ pub fn deser_structure_listener(
                 let var_391 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticbeanstalk#Integer`)"))
@@ -8149,8 +8108,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_392 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8165,8 +8123,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_393 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8181,8 +8138,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_394 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8197,8 +8153,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_395 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8213,8 +8168,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_396 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8229,8 +8183,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_397 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8245,8 +8198,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_398 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8261,8 +8213,7 @@ pub fn deser_structure_cpu_utilization(
                 let var_399 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#NullableDouble`)"))
@@ -8288,8 +8239,7 @@ pub fn deser_list_load_average(
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#LoadAverage$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        f64::from_str(
+                        <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticbeanstalk#LoadAverageValue`)"))

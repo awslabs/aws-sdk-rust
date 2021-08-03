@@ -95,23 +95,20 @@ impl DeleteHumanLoopInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let human_loop_name = {
-            let input = &self.human_loop_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "human_loop_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "human_loop_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.human_loop_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "human_loop_name",
+                details: "cannot be empty or unset",
+            })?;
+        let human_loop_name = smithy_http::label::fmt_string(input_1, false);
+        if human_loop_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "human_loop_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/human-loops/{HumanLoopName}",
@@ -248,23 +245,20 @@ impl DescribeHumanLoopInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let human_loop_name = {
-            let input = &self.human_loop_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "human_loop_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "human_loop_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.human_loop_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "human_loop_name",
+                details: "cannot be empty or unset",
+            })?;
+        let human_loop_name = smithy_http::label::fmt_string(input_2, false);
+        if human_loop_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "human_loop_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/human-loops/{HumanLoopName}",
@@ -473,38 +467,41 @@ impl ListHumanLoopsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.creation_time_after {
+        if let Some(inner_3) = &self.creation_time_after {
             query.push_kv(
                 "CreationTimeAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_1,
+                    inner_3,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_2) = &self.creation_time_before {
+        if let Some(inner_4) = &self.creation_time_before {
             query.push_kv(
                 "CreationTimeBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_2,
+                    inner_4,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_3) = &self.flow_definition_arn {
+        if let Some(inner_5) = &self.flow_definition_arn {
             query.push_kv(
                 "FlowDefinitionArn",
-                &smithy_http::query::fmt_string(&inner_3),
+                &smithy_http::query::fmt_string(&inner_5),
             );
         }
-        if let Some(inner_4) = &self.sort_order {
-            query.push_kv("SortOrder", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_6) = &self.sort_order {
+            query.push_kv("SortOrder", &smithy_http::query::fmt_string(&inner_6));
         }
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_7) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
         }
-        if let Some(inner_6) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_6));
+        if let Some(inner_8) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]

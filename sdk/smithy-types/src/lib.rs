@@ -5,6 +5,7 @@
 
 pub mod base64;
 pub mod instant;
+pub mod primitive;
 pub mod retry;
 
 use std::collections::HashMap;

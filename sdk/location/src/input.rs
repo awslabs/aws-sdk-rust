@@ -126,23 +126,20 @@ impl AssociateTrackerConsumerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.tracker_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            })?;
+        let tracker_name = smithy_http::label::fmt_string(input_1, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/consumers",
@@ -309,23 +306,20 @@ impl BatchDeleteDevicePositionHistoryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.tracker_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            })?;
+        let tracker_name = smithy_http::label::fmt_string(input_2, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/delete-positions",
@@ -491,23 +485,20 @@ impl BatchDeleteGeofenceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.collection_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            })?;
+        let collection_name = smithy_http::label::fmt_string(input_3, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/delete-geofences",
@@ -678,23 +669,20 @@ impl BatchEvaluateGeofencesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.collection_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            })?;
+        let collection_name = smithy_http::label::fmt_string(input_4, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/positions",
@@ -857,23 +845,20 @@ impl BatchGetDevicePositionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.tracker_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            })?;
+        let tracker_name = smithy_http::label::fmt_string(input_5, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/get-positions",
@@ -1043,23 +1028,20 @@ impl BatchPutGeofenceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.collection_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            })?;
+        let collection_name = smithy_http::label::fmt_string(input_6, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/put-geofences",
@@ -1224,23 +1206,20 @@ impl BatchUpdateDevicePositionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.tracker_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            })?;
+        let tracker_name = smithy_http::label::fmt_string(input_7, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/positions",
@@ -1581,23 +1560,20 @@ impl CalculateRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let calculator_name = {
-            let input = &self.calculator_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "calculator_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "calculator_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.calculator_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "calculator_name",
+                details: "cannot be empty or unset",
+            })?;
+        let calculator_name = smithy_http::label::fmt_string(input_8, false);
+        if calculator_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "calculator_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/routes/v0/calculators/{CalculatorName}/calculate/route",
@@ -2934,23 +2910,20 @@ impl DeleteGeofenceCollectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.collection_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            })?;
+        let collection_name = smithy_http::label::fmt_string(input_9, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}",
@@ -3091,23 +3064,21 @@ impl DeleteMapInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_10 = &self.map_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let map_name = smithy_http::label::fmt_string(input_10, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/maps/v0/maps/{MapName}", MapName = map_name)
             .expect("formatting should succeed");
         Ok(())
@@ -3248,23 +3219,21 @@ impl DeletePlaceIndexInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let index_name = {
-            let input = &self.index_name;
-            let input = input
+        let input_11 = &self.index_name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "index_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let index_name = smithy_http::label::fmt_string(input_11, false);
+        if index_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "index_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/places/v0/indexes/{IndexName}",
@@ -3412,23 +3381,21 @@ impl DeleteRouteCalculatorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let calculator_name = {
-            let input = &self.calculator_name;
-            let input = input
+        let input_12 = &self.calculator_name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "calculator_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let calculator_name = smithy_http::label::fmt_string(input_12, false);
+        if calculator_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "calculator_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/routes/v0/calculators/{CalculatorName}",
@@ -3571,23 +3538,21 @@ impl DeleteTrackerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_13 = &self.tracker_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let tracker_name = smithy_http::label::fmt_string(input_13, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}",
@@ -3736,23 +3701,21 @@ impl DescribeGeofenceCollectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
+        let input_14 = &self.collection_name;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let collection_name = smithy_http::label::fmt_string(input_14, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}",
@@ -3895,23 +3858,21 @@ impl DescribeMapInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_15 = &self.map_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let map_name = smithy_http::label::fmt_string(input_15, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/maps/v0/maps/{MapName}", MapName = map_name)
             .expect("formatting should succeed");
         Ok(())
@@ -4052,23 +4013,21 @@ impl DescribePlaceIndexInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let index_name = {
-            let input = &self.index_name;
-            let input = input
+        let input_16 = &self.index_name;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "index_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let index_name = smithy_http::label::fmt_string(input_16, false);
+        if index_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "index_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/places/v0/indexes/{IndexName}",
@@ -4217,23 +4176,21 @@ impl DescribeRouteCalculatorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let calculator_name = {
-            let input = &self.calculator_name;
-            let input = input
+        let input_17 = &self.calculator_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "calculator_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let calculator_name = smithy_http::label::fmt_string(input_17, false);
+        if calculator_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "calculator_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/routes/v0/calculators/{CalculatorName}",
@@ -4378,23 +4335,21 @@ impl DescribeTrackerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_18 = &self.tracker_name;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let tracker_name = smithy_http::label::fmt_string(input_18, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}",
@@ -4559,40 +4514,36 @@ impl DisassociateTrackerConsumerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_19 = &self.tracker_name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let consumer_arn = {
-            let input = &self.consumer_arn;
-            let input = input
+        let tracker_name = smithy_http::label::fmt_string(input_19, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.consumer_arn;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "consumer_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "consumer_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let consumer_arn = smithy_http::label::fmt_string(input_20, false);
+        if consumer_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "consumer_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/consumers/{ConsumerArn}",
@@ -4749,40 +4700,36 @@ impl GetDevicePositionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_21 = &self.tracker_name;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let tracker_name = smithy_http::label::fmt_string(input_21, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_22 = &self.device_id;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_22, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/positions/latest",
@@ -5003,40 +4950,36 @@ impl GetDevicePositionHistoryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_23 = &self.tracker_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let device_id = {
-            let input = &self.device_id;
-            let input = input
+        let tracker_name = smithy_http::label::fmt_string(input_23, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_24 = &self.device_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "device_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let device_id = smithy_http::label::fmt_string(input_24, false);
+        if device_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "device_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/list-positions",
@@ -5194,40 +5137,36 @@ impl GetGeofenceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
+        let input_25 = &self.collection_name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let geofence_id = {
-            let input = &self.geofence_id;
-            let input = input
+        let collection_name = smithy_http::label::fmt_string(input_25, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_26 = &self.geofence_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "geofence_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let geofence_id = smithy_http::label::fmt_string(input_26, false);
+        if geofence_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "geofence_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}",
@@ -5399,57 +5338,51 @@ impl GetMapGlyphsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_27 = &self.map_name;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let font_stack = {
-            let input = &self.font_stack;
-            let input = input
+        let map_name = smithy_http::label::fmt_string(input_27, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_28 = &self.font_stack;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "font_stack",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "font_stack",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let font_unicode_range = {
-            let input = &self.font_unicode_range;
-            let input = input
+        let font_stack = smithy_http::label::fmt_string(input_28, false);
+        if font_stack.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "font_stack",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_29 = &self.font_unicode_range;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "font_unicode_range",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "font_unicode_range",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let font_unicode_range = smithy_http::label::fmt_string(input_29, false);
+        if font_unicode_range.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "font_unicode_range",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/maps/v0/maps/{MapName}/glyphs/{FontStack}/{FontUnicodeRange}",
@@ -5628,40 +5561,36 @@ impl GetMapSpritesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_30 = &self.map_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let file_name = {
-            let input = &self.file_name;
-            let input = input
+        let map_name = smithy_http::label::fmt_string(input_30, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_31 = &self.file_name;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "file_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "file_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let file_name = smithy_http::label::fmt_string(input_31, false);
+        if file_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "file_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/maps/v0/maps/{MapName}/sprites/{FileName}",
@@ -5807,23 +5736,21 @@ impl GetMapStyleDescriptorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_32 = &self.map_name;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let map_name = smithy_http::label::fmt_string(input_32, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/maps/v0/maps/{MapName}/style-descriptor",
@@ -5999,74 +5926,66 @@ impl GetMapTileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let map_name = {
-            let input = &self.map_name;
-            let input = input
+        let input_33 = &self.map_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "map_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let z = {
-            let input = &self.z;
-            let input = input
+        let map_name = smithy_http::label::fmt_string(input_33, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.z;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "z",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "z",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let x = {
-            let input = &self.x;
-            let input = input
+        let z = smithy_http::label::fmt_string(input_34, false);
+        if z.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "z",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_35 = &self.x;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "x",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "x",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let y = {
-            let input = &self.y;
-            let input = input
+        let x = smithy_http::label::fmt_string(input_35, false);
+        if x.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "x",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_36 = &self.y;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "y",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "y",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let y = smithy_http::label::fmt_string(input_36, false);
+        if y.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "y",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}",
@@ -6244,23 +6163,21 @@ impl ListDevicePositionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_37 = &self.tracker_name;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let tracker_name = smithy_http::label::fmt_string(input_37, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/list-positions",
@@ -6582,23 +6499,21 @@ impl ListGeofencesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
+        let input_38 = &self.collection_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let collection_name = smithy_http::label::fmt_string(input_38, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/list-geofences",
@@ -7212,23 +7127,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_39 = &self.resource_arn;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_39, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -7399,23 +7312,21 @@ impl ListTrackerConsumersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let tracker_name = {
-            let input = &self.tracker_name;
-            let input = input
+        let input_40 = &self.tracker_name;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "tracker_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let tracker_name = smithy_http::label::fmt_string(input_40, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/tracking/v0/trackers/{TrackerName}/list-consumers",
@@ -7748,40 +7659,36 @@ impl PutGeofenceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let collection_name = {
-            let input = &self.collection_name;
-            let input = input
+        let input_41 = &self.collection_name;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "collection_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let geofence_id = {
-            let input = &self.geofence_id;
-            let input = input
+        let collection_name = smithy_http::label::fmt_string(input_41, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_42 = &self.geofence_id;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "geofence_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let geofence_id = smithy_http::label::fmt_string(input_42, false);
+        if geofence_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "geofence_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}",
@@ -7957,23 +7864,21 @@ impl SearchPlaceIndexForPositionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let index_name = {
-            let input = &self.index_name;
-            let input = input
+        let input_43 = &self.index_name;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "index_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let index_name = smithy_http::label::fmt_string(input_43, false);
+        if index_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "index_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/places/v0/indexes/{IndexName}/search/position",
@@ -8187,23 +8092,21 @@ impl SearchPlaceIndexForTextInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let index_name = {
-            let input = &self.index_name;
-            let input = input
+        let input_44 = &self.index_name;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "index_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let index_name = smithy_http::label::fmt_string(input_44, false);
+        if index_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "index_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/places/v0/indexes/{IndexName}/search/text",
@@ -8372,23 +8275,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_45 = &self.resource_arn;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_45, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -8542,32 +8443,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_46 = &self.resource_arn;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_46, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.tag_keys {
-            for inner_2 in inner_1 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_47) = &self.tag_keys {
+            for inner_48 in inner_47 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_48));
             }
         }
     }

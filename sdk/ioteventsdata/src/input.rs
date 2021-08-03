@@ -1069,23 +1069,20 @@ impl DescribeAlarmInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.alarm_model_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let alarm_model_name = smithy_http::label::fmt_string(input_1, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarms/{alarmModelName}/keyValues",
@@ -1096,8 +1093,8 @@ impl DescribeAlarmInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.key_value {
-            query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_2) = &self.key_value {
+            query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_2));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1242,23 +1239,20 @@ impl DescribeDetectorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.detector_model_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let detector_model_name = smithy_http::label::fmt_string(input_3, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detectors/{detectorModelName}/keyValues",
@@ -1269,8 +1263,8 @@ impl DescribeDetectorInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.key_value {
-            query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_4) = &self.key_value {
+            query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_4));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1422,23 +1416,20 @@ impl ListAlarmsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.alarm_model_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let alarm_model_name = smithy_http::label::fmt_string(input_5, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarms/{alarmModelName}",
@@ -1449,11 +1440,14 @@ impl ListAlarmsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_6) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
         }
-        if let Some(inner_4) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_4));
+        if let Some(inner_7) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_7).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1616,23 +1610,20 @@ impl ListDetectorsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.detector_model_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let detector_model_name = smithy_http::label::fmt_string(input_8, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detectors/{detectorModelName}",
@@ -1643,14 +1634,17 @@ impl ListDetectorsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.state_name {
-            query.push_kv("stateName", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_9) = &self.state_name {
+            query.push_kv("stateName", &smithy_http::query::fmt_string(&inner_9));
         }
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_10) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
         }
-        if let Some(inner_7) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_11) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_11).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]

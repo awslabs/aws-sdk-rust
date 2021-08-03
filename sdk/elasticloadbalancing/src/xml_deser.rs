@@ -1700,8 +1700,7 @@ pub fn deser_structure_health_check(
                 let var_44 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#HealthCheckInterval`)"))
@@ -1716,8 +1715,7 @@ pub fn deser_structure_health_check(
                 let var_45 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#HealthCheckTimeout`)"))
@@ -1732,8 +1730,7 @@ pub fn deser_structure_health_check(
                 let var_46 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#UnhealthyThreshold`)"))
@@ -1748,8 +1745,7 @@ pub fn deser_structure_health_check(
                 let var_47 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#HealthyThreshold`)"))
@@ -2125,8 +2121,7 @@ pub fn deser_structure_cross_zone_load_balancing(
                 let var_60 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancing#CrossZoneLoadBalancingEnabled`)"))
@@ -2154,8 +2149,7 @@ pub fn deser_structure_access_log(
                 let var_61 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancing#AccessLogEnabled`)"))
@@ -2183,8 +2177,7 @@ pub fn deser_structure_access_log(
                 let var_63 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#AccessLogInterval`)"))
@@ -2225,8 +2218,7 @@ pub fn deser_structure_connection_draining(
                 let var_65 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancing#ConnectionDrainingEnabled`)"))
@@ -2241,8 +2233,7 @@ pub fn deser_structure_connection_draining(
                 let var_66 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#ConnectionDrainingTimeout`)"))
@@ -2270,8 +2261,7 @@ pub fn deser_structure_connection_settings(
                 let var_67 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#IdleTimeout`)"))
@@ -3074,8 +3064,7 @@ pub fn deser_structure_backend_server_description(
                 let var_108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#InstancePort`)"))
@@ -3165,8 +3154,7 @@ pub fn deser_structure_listener(
                 let var_113 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#AccessPointPort`)"))
@@ -3194,8 +3182,7 @@ pub fn deser_structure_listener(
                 let var_115 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancing#InstancePort`)"))
@@ -3288,8 +3275,7 @@ pub fn deser_structure_lb_cookie_stickiness_policy(
                 let var_120 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.elasticloadbalancing#CookieExpirationPeriod`)"))

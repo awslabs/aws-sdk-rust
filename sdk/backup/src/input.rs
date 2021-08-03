@@ -302,23 +302,20 @@ impl CreateBackupSelectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.backup_plan_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_plan_id = smithy_http::label::fmt_string(input_1, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/selections",
@@ -513,23 +510,20 @@ impl CreateBackupVaultInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.backup_vault_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_vault_name = smithy_http::label::fmt_string(input_2, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}",
@@ -666,23 +660,20 @@ impl DeleteBackupPlanInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.backup_plan_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_plan_id = smithy_http::label::fmt_string(input_3, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}",
@@ -831,40 +822,34 @@ impl DeleteBackupSelectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let selection_id = {
-            let input = &self.selection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "selection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "selection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.backup_plan_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_plan_id = smithy_http::label::fmt_string(input_4, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_5 = &self.selection_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "selection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let selection_id = smithy_http::label::fmt_string(input_5, false);
+        if selection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "selection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/selections/{SelectionId}",
@@ -1004,23 +989,20 @@ impl DeleteBackupVaultInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.backup_vault_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_vault_name = smithy_http::label::fmt_string(input_6, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}",
@@ -1160,23 +1142,20 @@ impl DeleteBackupVaultAccessPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.backup_vault_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_vault_name = smithy_http::label::fmt_string(input_7, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/access-policy",
@@ -1316,23 +1295,20 @@ impl DeleteBackupVaultNotificationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.backup_vault_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_vault_name = smithy_http::label::fmt_string(input_8, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/notification-configuration",
@@ -1486,40 +1462,35 @@ impl DeleteRecoveryPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let recovery_point_arn = {
-            let input = &self.recovery_point_arn;
-            let input = input
+        let input_9 = &self.backup_vault_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            })?;
+        let backup_vault_name = smithy_http::label::fmt_string(input_9, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.recovery_point_arn;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "recovery_point_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let recovery_point_arn = smithy_http::label::fmt_string(input_10, false);
+        if recovery_point_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "recovery_point_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points/{RecoveryPointArn}",
@@ -1657,23 +1628,21 @@ impl DescribeBackupJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_job_id = {
-            let input = &self.backup_job_id;
-            let input = input
+        let input_11 = &self.backup_job_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_job_id = smithy_http::label::fmt_string(input_11, false);
+        if backup_job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-jobs/{BackupJobId}",
@@ -1812,23 +1781,21 @@ impl DescribeBackupVaultInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_12 = &self.backup_vault_name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_12, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}",
@@ -1962,23 +1929,21 @@ impl DescribeCopyJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let copy_job_id = {
-            let input = &self.copy_job_id;
-            let input = input
+        let input_13 = &self.copy_job_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "copy_job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "copy_job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let copy_job_id = smithy_http::label::fmt_string(input_13, false);
+        if copy_job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "copy_job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/copy-jobs/{CopyJobId}", CopyJobId = copy_job_id)
             .expect("formatting should succeed");
         Ok(())
@@ -2225,23 +2190,21 @@ impl DescribeProtectedResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_14 = &self.resource_arn;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_14, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resources/{ResourceArn}",
@@ -2395,40 +2358,36 @@ impl DescribeRecoveryPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_15 = &self.backup_vault_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let recovery_point_arn = {
-            let input = &self.recovery_point_arn;
-            let input = input
+        let backup_vault_name = smithy_http::label::fmt_string(input_15, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.recovery_point_arn;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "recovery_point_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let recovery_point_arn = smithy_http::label::fmt_string(input_16, false);
+        if recovery_point_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "recovery_point_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points/{RecoveryPointArn}",
@@ -2681,23 +2640,21 @@ impl DescribeRestoreJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let restore_job_id = {
-            let input = &self.restore_job_id;
-            let input = input
+        let input_17 = &self.restore_job_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "restore_job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "restore_job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let restore_job_id = smithy_http::label::fmt_string(input_17, false);
+        if restore_job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "restore_job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/restore-jobs/{RestoreJobId}",
@@ -2850,40 +2807,36 @@ impl DisassociateRecoveryPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_18 = &self.backup_vault_name;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let recovery_point_arn = {
-            let input = &self.recovery_point_arn;
-            let input = input
+        let backup_vault_name = smithy_http::label::fmt_string(input_18, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.recovery_point_arn;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "recovery_point_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let recovery_point_arn = smithy_http::label::fmt_string(input_19, false);
+        if recovery_point_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "recovery_point_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points/{RecoveryPointArn}/disassociate",
@@ -3022,23 +2975,21 @@ impl ExportBackupPlanTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_20 = &self.backup_plan_id;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_id = smithy_http::label::fmt_string(input_20, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/toTemplate",
@@ -3185,23 +3136,21 @@ impl GetBackupPlanInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_21 = &self.backup_plan_id;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_id = smithy_http::label::fmt_string(input_21, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}",
@@ -3212,8 +3161,8 @@ impl GetBackupPlanInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_22) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3480,23 +3429,21 @@ impl GetBackupPlanFromTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_template_id = {
-            let input = &self.backup_plan_template_id;
-            let input = input
+        let input_23 = &self.backup_plan_template_id;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_template_id = smithy_http::label::fmt_string(input_23, false);
+        if backup_plan_template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/template/plans/{BackupPlanTemplateId}/toPlan",
@@ -3645,40 +3592,36 @@ impl GetBackupSelectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_24 = &self.backup_plan_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let selection_id = {
-            let input = &self.selection_id;
-            let input = input
+        let backup_plan_id = smithy_http::label::fmt_string(input_24, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.selection_id;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "selection_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "selection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let selection_id = smithy_http::label::fmt_string(input_25, false);
+        if selection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "selection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/selections/{SelectionId}",
@@ -3819,23 +3762,21 @@ impl GetBackupVaultAccessPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_26 = &self.backup_vault_name;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_26, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/access-policy",
@@ -3975,23 +3916,21 @@ impl GetBackupVaultNotificationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_27 = &self.backup_vault_name;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_27, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/notification-configuration",
@@ -4146,40 +4085,36 @@ impl GetRecoveryPointRestoreMetadataInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_28 = &self.backup_vault_name;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let recovery_point_arn = {
-            let input = &self.recovery_point_arn;
-            let input = input
+        let backup_vault_name = smithy_http::label::fmt_string(input_28, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_29 = &self.recovery_point_arn;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "recovery_point_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let recovery_point_arn = smithy_http::label::fmt_string(input_29, false);
+        if recovery_point_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "recovery_point_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points/{RecoveryPointArn}/restore-metadata",
@@ -4584,44 +4519,50 @@ impl ListBackupJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_30) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_30));
         }
-        if let Some(inner_3) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_3));
+        if let Some(inner_31) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
-        if let Some(inner_4) = &self.by_resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_32) = &self.by_resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_32));
         }
-        if let Some(inner_5) = &self.by_state {
-            query.push_kv("state", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_33) = &self.by_state {
+            query.push_kv("state", &smithy_http::query::fmt_string(&inner_33));
         }
-        if let Some(inner_6) = &self.by_backup_vault_name {
-            query.push_kv("backupVaultName", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_34) = &self.by_backup_vault_name {
+            query.push_kv(
+                "backupVaultName",
+                &smithy_http::query::fmt_string(&inner_34),
+            );
         }
-        if let Some(inner_7) = &self.by_created_before {
+        if let Some(inner_35) = &self.by_created_before {
             query.push_kv(
                 "createdBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_7,
+                    inner_35,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_8) = &self.by_created_after {
+        if let Some(inner_36) = &self.by_created_after {
             query.push_kv(
                 "createdAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_8,
+                    inner_36,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_9) = &self.by_resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_37) = &self.by_resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_37));
         }
-        if let Some(inner_10) = &self.by_account_id {
-            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_38) = &self.by_account_id {
+            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_38));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4781,16 +4722,19 @@ impl ListBackupPlansInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_39) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_39));
         }
-        if let Some(inner_12) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_12));
+        if let Some(inner_40) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_40).encode(),
+            );
         }
-        if let Some(inner_13) = &self.include_deleted {
+        if let Some(inner_41) = &self.include_deleted {
             query.push_kv(
                 "includeDeleted",
-                &smithy_http::query::fmt_default(&inner_13),
+                &smithy_types::primitive::Encoder::from(*inner_41).encode(),
             );
         }
     }
@@ -4940,11 +4884,14 @@ impl ListBackupPlanTemplatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_42) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_42));
         }
-        if let Some(inner_15) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_15));
+        if let Some(inner_43) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_43).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5101,23 +5048,21 @@ impl ListBackupPlanVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_44 = &self.backup_plan_id;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_id = smithy_http::label::fmt_string(input_44, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/versions",
@@ -5128,11 +5073,14 @@ impl ListBackupPlanVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_45) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_45));
         }
-        if let Some(inner_17) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_17));
+        if let Some(inner_46) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_46).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5289,23 +5237,21 @@ impl ListBackupSelectionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_47 = &self.backup_plan_id;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_id = smithy_http::label::fmt_string(input_47, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}/selections",
@@ -5316,11 +5262,14 @@ impl ListBackupSelectionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_48) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
         }
-        if let Some(inner_19) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_49) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_49).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5468,11 +5417,14 @@ impl ListBackupVaultsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_50) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_50));
         }
-        if let Some(inner_21) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_21));
+        if let Some(inner_51) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_51).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5749,47 +5701,50 @@ impl ListCopyJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_22) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_52) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_52));
         }
-        if let Some(inner_23) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_23));
+        if let Some(inner_53) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_53).encode(),
+            );
         }
-        if let Some(inner_24) = &self.by_resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_24));
+        if let Some(inner_54) = &self.by_resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_54));
         }
-        if let Some(inner_25) = &self.by_state {
-            query.push_kv("state", &smithy_http::query::fmt_string(&inner_25));
+        if let Some(inner_55) = &self.by_state {
+            query.push_kv("state", &smithy_http::query::fmt_string(&inner_55));
         }
-        if let Some(inner_26) = &self.by_created_before {
+        if let Some(inner_56) = &self.by_created_before {
             query.push_kv(
                 "createdBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_26,
+                    inner_56,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_27) = &self.by_created_after {
+        if let Some(inner_57) = &self.by_created_after {
             query.push_kv(
                 "createdAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_27,
+                    inner_57,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_28) = &self.by_resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_28));
+        if let Some(inner_58) = &self.by_resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_58));
         }
-        if let Some(inner_29) = &self.by_destination_vault_arn {
+        if let Some(inner_59) = &self.by_destination_vault_arn {
             query.push_kv(
                 "destinationVaultArn",
-                &smithy_http::query::fmt_string(&inner_29),
+                &smithy_http::query::fmt_string(&inner_59),
             );
         }
-        if let Some(inner_30) = &self.by_account_id {
-            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_30));
+        if let Some(inner_60) = &self.by_account_id {
+            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_60));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5937,11 +5892,14 @@ impl ListProtectedResourcesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_31) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_61) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_61));
         }
-        if let Some(inner_32) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_32));
+        if let Some(inner_62) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_62).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6172,23 +6130,21 @@ impl ListRecoveryPointsByBackupVaultInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_63 = &self.backup_vault_name;
+        let input_63 =
+            input_63
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_63, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points",
@@ -6199,35 +6155,38 @@ impl ListRecoveryPointsByBackupVaultInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_33) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_33));
+        if let Some(inner_64) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_64));
         }
-        if let Some(inner_34) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_34));
+        if let Some(inner_65) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_65).encode(),
+            );
         }
-        if let Some(inner_35) = &self.by_resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_35));
+        if let Some(inner_66) = &self.by_resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_66));
         }
-        if let Some(inner_36) = &self.by_resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_36));
+        if let Some(inner_67) = &self.by_resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_67));
         }
-        if let Some(inner_37) = &self.by_backup_plan_id {
-            query.push_kv("backupPlanId", &smithy_http::query::fmt_string(&inner_37));
+        if let Some(inner_68) = &self.by_backup_plan_id {
+            query.push_kv("backupPlanId", &smithy_http::query::fmt_string(&inner_68));
         }
-        if let Some(inner_38) = &self.by_created_before {
+        if let Some(inner_69) = &self.by_created_before {
             query.push_kv(
                 "createdBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_38,
+                    inner_69,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_39) = &self.by_created_after {
+        if let Some(inner_70) = &self.by_created_after {
             query.push_kv(
                 "createdAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_39,
+                    inner_70,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
@@ -6386,23 +6345,21 @@ impl ListRecoveryPointsByResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_71 = &self.resource_arn;
+        let input_71 =
+            input_71
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_71, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resources/{ResourceArn}/recovery-points",
@@ -6413,11 +6370,14 @@ impl ListRecoveryPointsByResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_40) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
+        if let Some(inner_72) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_72));
         }
-        if let Some(inner_41) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_41));
+        if let Some(inner_73) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_73).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6622,35 +6582,38 @@ impl ListRestoreJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_42) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_42));
+        if let Some(inner_74) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_74));
         }
-        if let Some(inner_43) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_43));
+        if let Some(inner_75) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_75).encode(),
+            );
         }
-        if let Some(inner_44) = &self.by_account_id {
-            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_44));
+        if let Some(inner_76) = &self.by_account_id {
+            query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_76));
         }
-        if let Some(inner_45) = &self.by_created_before {
+        if let Some(inner_77) = &self.by_created_before {
             query.push_kv(
                 "createdBefore",
                 &smithy_http::query::fmt_timestamp(
-                    inner_45,
+                    inner_77,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_46) = &self.by_created_after {
+        if let Some(inner_78) = &self.by_created_after {
             query.push_kv(
                 "createdAfter",
                 &smithy_http::query::fmt_timestamp(
-                    inner_46,
+                    inner_78,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_47) = &self.by_status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_47));
+        if let Some(inner_79) = &self.by_status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_79));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6799,34 +6762,35 @@ impl ListTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_80 = &self.resource_arn;
+        let input_80 =
+            input_80
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_80, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_48) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
+        if let Some(inner_81) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_81));
         }
-        if let Some(inner_49) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_49));
+        if let Some(inner_82) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_82).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6976,23 +6940,21 @@ impl PutBackupVaultAccessPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_83 = &self.backup_vault_name;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_83, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/access-policy",
@@ -7170,23 +7132,21 @@ impl PutBackupVaultNotificationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_84 = &self.backup_vault_name;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_vault_name = smithy_http::label::fmt_string(input_84, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/notification-configuration",
@@ -8032,23 +7992,21 @@ impl StopBackupJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_job_id = {
-            let input = &self.backup_job_id;
-            let input = input
+        let input_85 = &self.backup_job_id;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_job_id = smithy_http::label::fmt_string(input_85, false);
+        if backup_job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-jobs/{BackupJobId}",
@@ -8207,23 +8165,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_86 = &self.resource_arn;
+        let input_86 =
+            input_86
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_86, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -8370,23 +8326,21 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_87 = &self.resource_arn;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_87, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/untag/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -8537,23 +8491,21 @@ impl UpdateBackupPlanInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_plan_id = {
-            let input = &self.backup_plan_id;
-            let input = input
+        let input_88 = &self.backup_plan_id;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_plan_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let backup_plan_id = smithy_http::label::fmt_string(input_88, false);
+        if backup_plan_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_plan_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup/plans/{BackupPlanId}",
@@ -8875,40 +8827,36 @@ impl UpdateRecoveryPointLifecycleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let backup_vault_name = {
-            let input = &self.backup_vault_name;
-            let input = input
+        let input_89 = &self.backup_vault_name;
+        let input_89 =
+            input_89
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "backup_vault_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let recovery_point_arn = {
-            let input = &self.recovery_point_arn;
-            let input = input
+        let backup_vault_name = smithy_http::label::fmt_string(input_89, false);
+        if backup_vault_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "backup_vault_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_90 = &self.recovery_point_arn;
+        let input_90 =
+            input_90
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "recovery_point_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let recovery_point_arn = smithy_http::label::fmt_string(input_90, false);
+        if recovery_point_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "recovery_point_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/backup-vaults/{BackupVaultName}/recovery-points/{RecoveryPointArn}",

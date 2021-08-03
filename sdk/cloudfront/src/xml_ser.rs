@@ -240,7 +240,7 @@ pub fn serialize_structure_create_realtime_log_config_input(
             .start_el("SamplingRate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_9.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_9).encode());
     }
     scope.finish();
 }
@@ -339,7 +339,7 @@ pub fn serialize_structure_list_distributions_by_realtime_log_config_input(
             .start_el("MaxItems")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_15.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_15).encode());
     }
     if let Some(var_16) = &input.realtime_log_config_arn {
         let mut inner_writer = scope
@@ -607,7 +607,7 @@ pub fn serialize_structure_update_realtime_log_config_input(
             .start_el("SamplingRate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_28.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_28).encode());
     }
     scope.finish();
 }
@@ -652,21 +652,21 @@ pub fn serialize_structure_cache_policy_config(
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_31.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_31).encode());
     }
     if let Some(var_32) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_32.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_32).encode());
     }
     if let Some(var_33) = &input.min_ttl {
         let mut inner_writer = scope
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_33.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_33).encode());
     }
     if let Some(var_34) = &input.parameters_in_cache_key_and_forwarded_to_origin {
         let inner_writer = scope
@@ -784,7 +784,7 @@ pub fn serialize_structure_distribution_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_48 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_48).encode());
     }
     if let Some(var_49) = &input.viewer_certificate {
         let inner_writer = scope
@@ -817,7 +817,7 @@ pub fn serialize_structure_distribution_config(
             .start_el("IsIPV6Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_53 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_53).encode());
     }
     scope.finish();
 }
@@ -1180,7 +1180,7 @@ pub fn serialize_structure_streaming_distribution_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_91 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_91).encode());
     }
     scope.finish();
 }
@@ -1261,14 +1261,14 @@ pub fn serialize_structure_parameters_in_cache_key_and_forwarded_to_origin(
             .start_el("EnableAcceptEncodingGzip")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_98 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_98).encode());
     }
     if let Some(var_99) = &input.enable_accept_encoding_brotli {
         let mut inner_writer = scope
             .start_el("EnableAcceptEncodingBrotli")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_99 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_99).encode());
     }
     if let Some(var_100) = &input.headers_config {
         let inner_writer = scope
@@ -1305,7 +1305,7 @@ pub fn serialize_structure_aliases(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_103.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_103).encode());
     }
     if let Some(var_104) = &input.items {
         let mut inner_writer = scope
@@ -1336,7 +1336,7 @@ pub fn serialize_structure_origins(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_106.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_106).encode());
     }
     if let Some(var_107) = &input.items {
         let mut inner_writer = scope
@@ -1366,7 +1366,7 @@ pub fn serialize_structure_origin_groups(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_109.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_109).encode());
     }
     if let Some(var_110) = &input.items {
         let mut inner_writer = scope
@@ -1428,14 +1428,14 @@ pub fn serialize_structure_default_cache_behavior(
             .start_el("SmoothStreaming")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_117 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_117).encode());
     }
     if let Some(var_118) = &input.compress {
         let mut inner_writer = scope
             .start_el("Compress")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_118 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_118).encode());
     }
     if let Some(var_119) = &input.lambda_function_associations {
         let inner_writer = scope
@@ -1488,21 +1488,21 @@ pub fn serialize_structure_default_cache_behavior(
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_126.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_126).encode());
     }
     if let Some(var_127) = &input.default_ttl {
         let mut inner_writer = scope
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_127.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_127).encode());
     }
     if let Some(var_128) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_128.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_128).encode());
     }
     scope.finish();
 }
@@ -1518,7 +1518,7 @@ pub fn serialize_structure_cache_behaviors(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_129.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_129).encode());
     }
     if let Some(var_130) = &input.items {
         let mut inner_writer = scope
@@ -1548,7 +1548,7 @@ pub fn serialize_structure_custom_error_responses(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_132.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_132).encode());
     }
     if let Some(var_133) = &input.items {
         let mut inner_writer = scope
@@ -1581,14 +1581,14 @@ pub fn serialize_structure_logging_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_135 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_135).encode());
     }
     if let Some(var_136) = &input.include_cookies {
         let mut inner_writer = scope
             .start_el("IncludeCookies")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_136 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_136).encode());
     }
     if let Some(var_137) = &input.bucket {
         let mut inner_writer = scope
@@ -1618,7 +1618,7 @@ pub fn serialize_structure_viewer_certificate(
             .start_el("CloudFrontDefaultCertificate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_139 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_139).encode());
     }
     if let Some(var_140) = &input.iam_certificate_id {
         let mut inner_writer = scope
@@ -1691,7 +1691,7 @@ pub fn serialize_structure_query_arg_profile_config(
             .start_el("ForwardWhenQueryArgProfileIsUnknown")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_147 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_147).encode());
     }
     if let Some(var_148) = &input.query_arg_profiles {
         let inner_writer = scope
@@ -1713,7 +1713,7 @@ pub fn serialize_structure_content_type_profile_config(
             .start_el("ForwardWhenContentTypeIsUnknown")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_149 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_149).encode());
     }
     if let Some(var_150) = &input.content_type_profiles {
         let inner_writer = scope
@@ -1735,7 +1735,7 @@ pub fn serialize_structure_encryption_entities(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_151.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_151).encode());
     }
     if let Some(var_152) = &input.items {
         let mut inner_writer = scope
@@ -1765,7 +1765,7 @@ pub fn serialize_structure_paths(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_154.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_154).encode());
     }
     if let Some(var_155) = &input.items {
         let mut inner_writer = scope
@@ -1924,7 +1924,7 @@ pub fn serialize_structure_streaming_logging_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_168 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_168).encode());
     }
     if let Some(var_169) = &input.bucket {
         let mut inner_writer = scope
@@ -1954,14 +1954,14 @@ pub fn serialize_structure_trusted_signers(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_171 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_171).encode());
     }
     if let Some(var_172) = &input.quantity {
         let mut inner_writer = scope
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_172.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_172).encode());
     }
     if let Some(var_173) = &input.items {
         let mut inner_writer = scope
@@ -2117,14 +2117,14 @@ pub fn serialize_structure_origin(
             .start_el("ConnectionAttempts")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_189.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_189).encode());
     }
     if let Some(var_190) = &input.connection_timeout {
         let mut inner_writer = scope
             .start_el("ConnectionTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_190.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_190).encode());
     }
     if let Some(var_191) = &input.origin_shield {
         let inner_writer = scope
@@ -2174,14 +2174,14 @@ pub fn serialize_structure_trusted_key_groups(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_195 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_195).encode());
     }
     if let Some(var_196) = &input.quantity {
         let mut inner_writer = scope
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_196.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_196).encode());
     }
     if let Some(var_197) = &input.items {
         let mut inner_writer = scope
@@ -2212,7 +2212,7 @@ pub fn serialize_structure_allowed_methods(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_199.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_199).encode());
     }
     if let Some(var_200) = &input.items {
         let mut inner_writer = scope
@@ -2249,7 +2249,7 @@ pub fn serialize_structure_lambda_function_associations(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_203.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_203).encode());
     }
     if let Some(var_204) = &input.items {
         let mut inner_writer = scope
@@ -2282,7 +2282,7 @@ pub fn serialize_structure_function_associations(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_206.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_206).encode());
     }
     if let Some(var_207) = &input.items {
         let mut inner_writer = scope
@@ -2315,7 +2315,7 @@ pub fn serialize_structure_forwarded_values(
             .start_el("QueryString")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_209 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_209).encode());
     }
     if let Some(var_210) = &input.cookies {
         let inner_writer = scope
@@ -2388,14 +2388,14 @@ pub fn serialize_structure_cache_behavior(
             .start_el("SmoothStreaming")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_219 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_219).encode());
     }
     if let Some(var_220) = &input.compress {
         let mut inner_writer = scope
             .start_el("Compress")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_220 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_220).encode());
     }
     if let Some(var_221) = &input.lambda_function_associations {
         let inner_writer = scope
@@ -2448,21 +2448,21 @@ pub fn serialize_structure_cache_behavior(
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_228.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_228).encode());
     }
     if let Some(var_229) = &input.default_ttl {
         let mut inner_writer = scope
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_229.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_229).encode());
     }
     if let Some(var_230) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_230.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_230).encode());
     }
     scope.finish();
 }
@@ -2478,7 +2478,7 @@ pub fn serialize_structure_custom_error_response(
             .start_el("ErrorCode")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_231.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_231).encode());
     }
     if let Some(var_232) = &input.response_page_path {
         let mut inner_writer = scope
@@ -2499,7 +2499,7 @@ pub fn serialize_structure_custom_error_response(
             .start_el("ErrorCachingMinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_234.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_234).encode());
     }
     scope.finish();
 }
@@ -2522,7 +2522,7 @@ pub fn serialize_structure_geo_restriction(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_236.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_236).encode());
     }
     if let Some(var_237) = &input.items {
         let mut inner_writer = scope
@@ -2553,7 +2553,7 @@ pub fn serialize_structure_query_arg_profiles(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_239.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_239).encode());
     }
     if let Some(var_240) = &input.items {
         let mut inner_writer = scope
@@ -2583,7 +2583,7 @@ pub fn serialize_structure_content_type_profiles(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_242.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_242).encode());
     }
     if let Some(var_243) = &input.items {
         let mut inner_writer = scope
@@ -2645,7 +2645,7 @@ pub fn serialize_structure_headers(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_248.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_248).encode());
     }
     if let Some(var_249) = &input.items {
         let mut inner_writer = scope
@@ -2676,7 +2676,7 @@ pub fn serialize_structure_cookie_names(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_251.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_251).encode());
     }
     if let Some(var_252) = &input.items {
         let mut inner_writer = scope
@@ -2707,7 +2707,7 @@ pub fn serialize_structure_query_string_names(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_254.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_254).encode());
     }
     if let Some(var_255) = &input.items {
         let mut inner_writer = scope
@@ -2738,7 +2738,7 @@ pub fn serialize_structure_custom_headers(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_257.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_257).encode());
     }
     if let Some(var_258) = &input.items {
         let mut inner_writer = scope
@@ -2787,14 +2787,14 @@ pub fn serialize_structure_custom_origin_config(
             .start_el("HTTPPort")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_261.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_261).encode());
     }
     if let Some(var_262) = &input.https_port {
         let mut inner_writer = scope
             .start_el("HTTPSPort")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_262.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_262).encode());
     }
     if let Some(var_263) = &input.origin_protocol_policy {
         let mut inner_writer = scope
@@ -2814,14 +2814,14 @@ pub fn serialize_structure_custom_origin_config(
             .start_el("OriginReadTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_265.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_265).encode());
     }
     if let Some(var_266) = &input.origin_keepalive_timeout {
         let mut inner_writer = scope
             .start_el("OriginKeepaliveTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_266.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_266).encode());
     }
     scope.finish();
 }
@@ -2837,7 +2837,7 @@ pub fn serialize_structure_origin_shield(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_267 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_267).encode());
     }
     if let Some(var_268) = &input.origin_shield_region {
         let mut inner_writer = scope
@@ -2875,7 +2875,7 @@ pub fn serialize_structure_origin_group_members(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_270.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_270).encode());
     }
     if let Some(var_271) = &input.items {
         let mut inner_writer = scope
@@ -2908,7 +2908,7 @@ pub fn serialize_structure_cached_methods(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_273.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_273).encode());
     }
     if let Some(var_274) = &input.items {
         let mut inner_writer = scope
@@ -2953,7 +2953,7 @@ pub fn serialize_structure_lambda_function_association(
             .start_el("IncludeBody")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(if *var_278 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_278).encode());
     }
     scope.finish();
 }
@@ -3014,7 +3014,7 @@ pub fn serialize_structure_query_string_cache_keys(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_283.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_283).encode());
     }
     if let Some(var_284) = &input.items {
         let mut inner_writer = scope
@@ -3098,7 +3098,7 @@ pub fn serialize_structure_field_patterns(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_291.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_291).encode());
     }
     if let Some(var_292) = &input.items {
         let mut inner_writer = scope
@@ -3152,7 +3152,7 @@ pub fn serialize_structure_origin_ssl_protocols(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_296.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_296).encode());
     }
     if let Some(var_297) = &input.items {
         let mut inner_writer = scope
@@ -3183,7 +3183,7 @@ pub fn serialize_structure_status_codes(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(var_299.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_299).encode());
     }
     if let Some(var_300) = &input.items {
         let mut inner_writer = scope
@@ -3196,7 +3196,7 @@ pub fn serialize_structure_status_codes(
                     .start_el("StatusCode")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
                     .finish();
-                inner_writer.data(list_item_301.to_string().as_ref());
+                inner_writer.data(smithy_types::primitive::Encoder::from(*list_item_301).encode());
             }
         }
     }

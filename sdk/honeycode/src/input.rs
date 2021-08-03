@@ -151,40 +151,34 @@ impl BatchCreateTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.workbook_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workbook_id = smithy_http::label::fmt_string(input_1, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.table_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            })?;
+        let table_id = smithy_http::label::fmt_string(input_2, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/batchcreate",
@@ -378,40 +372,34 @@ impl BatchDeleteTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.workbook_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workbook_id = smithy_http::label::fmt_string(input_3, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_4 = &self.table_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            })?;
+        let table_id = smithy_http::label::fmt_string(input_4, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/batchdelete",
@@ -605,40 +593,34 @@ impl BatchUpdateTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.workbook_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workbook_id = smithy_http::label::fmt_string(input_5, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_6 = &self.table_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            })?;
+        let table_id = smithy_http::label::fmt_string(input_6, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/batchupdate",
@@ -832,40 +814,34 @@ impl BatchUpsertTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.workbook_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workbook_id = smithy_http::label::fmt_string(input_7, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_8 = &self.table_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            })?;
+        let table_id = smithy_http::label::fmt_string(input_8, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/batchupsert",
@@ -1032,57 +1008,50 @@ impl DescribeTableDataImportJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
+        let input_9 = &self.workbook_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workbook_id = smithy_http::label::fmt_string(input_9, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.table_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "table_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let job_id = {
-            let input = &self.job_id;
-            let input = input
+        let table_id = smithy_http::label::fmt_string(input_10, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.job_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let job_id = smithy_http::label::fmt_string(input_11, false);
+        if job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/import/{jobId}",
@@ -1524,74 +1493,66 @@ impl InvokeScreenAutomationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_12 = &self.workbook_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let app_id = {
-            let input = &self.app_id;
-            let input = input
+        let workbook_id = smithy_http::label::fmt_string(input_12, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_13 = &self.app_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "app_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let screen_id = {
-            let input = &self.screen_id;
-            let input = input
+        let app_id = smithy_http::label::fmt_string(input_13, false);
+        if app_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "app_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.screen_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "screen_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "screen_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let screen_automation_id = {
-            let input = &self.screen_automation_id;
-            let input = input
+        let screen_id = smithy_http::label::fmt_string(input_14, false);
+        if screen_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "screen_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_15 = &self.screen_automation_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "screen_automation_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "screen_automation_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let screen_automation_id = smithy_http::label::fmt_string(input_15, false);
+        if screen_automation_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "screen_automation_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/workbooks/{workbookId}/apps/{appId}/screens/{screenId}/automations/{screenAutomationId}", workbookId = workbook_id, appId = app_id, screenId = screen_id, screenAutomationId = screen_automation_id).expect("formatting should succeed");
         Ok(())
     }
@@ -1754,40 +1715,36 @@ impl ListTableColumnsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_16 = &self.workbook_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
+        let workbook_id = smithy_http::label::fmt_string(input_16, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.table_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "table_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let table_id = smithy_http::label::fmt_string(input_17, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/columns",
@@ -1799,8 +1756,8 @@ impl ListTableColumnsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_18) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1989,40 +1946,36 @@ impl ListTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_19 = &self.workbook_id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
+        let workbook_id = smithy_http::label::fmt_string(input_19, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.table_id;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "table_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let table_id = smithy_http::label::fmt_string(input_20, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/list",
@@ -2186,23 +2139,21 @@ impl ListTablesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_21 = &self.workbook_id;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workbook_id = smithy_http::label::fmt_string(input_21, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables",
@@ -2213,11 +2164,14 @@ impl ListTablesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_2));
+        if let Some(inner_22) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_23) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_23));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2408,40 +2362,36 @@ impl QueryTableRowsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_24 = &self.workbook_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let table_id = {
-            let input = &self.table_id;
-            let input = input
+        let workbook_id = smithy_http::label::fmt_string(input_24, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.table_id;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "table_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let table_id = smithy_http::label::fmt_string(input_25, false);
+        if table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{tableId}/rows/query",
@@ -2673,40 +2623,36 @@ impl StartTableDataImportJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workbook_id = {
-            let input = &self.workbook_id;
-            let input = input
+        let input_26 = &self.workbook_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workbook_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workbook_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let destination_table_id = {
-            let input = &self.destination_table_id;
-            let input = input
+        let workbook_id = smithy_http::label::fmt_string(input_26, false);
+        if workbook_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workbook_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_27 = &self.destination_table_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "destination_table_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "destination_table_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let destination_table_id = smithy_http::label::fmt_string(input_27, false);
+        if destination_table_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "destination_table_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workbooks/{workbookId}/tables/{destinationTableId}/import",

@@ -9,13 +9,8 @@
 use crate::urlencode::BASE_SET;
 use percent_encoding::AsciiSet;
 use smithy_types::Instant;
-use std::fmt::Debug;
 
 const GREEDY: &AsciiSet = &BASE_SET.remove(b'/');
-
-pub fn fmt_default<T: Debug>(t: T) -> String {
-    format!("{:?}", t)
-}
 
 pub fn fmt_string<T: AsRef<str>>(t: T, greedy: bool) -> String {
     let uri_set = if greedy { GREEDY } else { BASE_SET };

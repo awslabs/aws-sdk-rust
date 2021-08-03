@@ -111,7 +111,10 @@ impl CloseTunnelInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         if let Some(inner_1) = &self.delete {
-            query.push_kv("delete", &smithy_http::query::fmt_default(&inner_1));
+            query.push_kv(
+                "delete",
+                &smithy_types::primitive::Encoder::from(*inner_1).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -564,7 +567,10 @@ impl ListTunnelsInput {
             query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_3));
         }
         if let Some(inner_4) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_4));
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_4).encode(),
+            );
         }
         if let Some(inner_5) = &self.next_token {
             query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));

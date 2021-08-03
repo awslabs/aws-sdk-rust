@@ -5,6 +5,7 @@
 
 use crate::escape::escape_string;
 use smithy_types::instant::Format;
+use smithy_types::primitive::Encoder;
 use smithy_types::{Document, Instant, Number};
 use std::borrow::Cow;
 
@@ -76,19 +77,18 @@ impl<'a> JsonValueWriter<'a> {
         match value {
             Number::PosInt(value) => {
                 // itoa::Buffer is a fixed-size stack allocation, so this is cheap
-                self.output.push_str(itoa::Buffer::new().format(value));
+                self.output.push_str(Encoder::from(value).encode());
             }
             Number::NegInt(value) => {
-                self.output.push_str(itoa::Buffer::new().format(value));
+                self.output.push_str(Encoder::from(value).encode());
             }
             Number::Float(value) => {
-                // If the value is NaN, Infinity, or -Infinity
-                if value.is_nan() || value.is_infinite() {
-                    self.output.push_str("null");
+                let mut encoder: Encoder = value.into();
+                // Nan / infinite values actually get written in quotes as a string value
+                if value.is_infinite() || value.is_nan() {
+                    self.string_unchecked(encoder.encode())
                 } else {
-                    // ryu::Buffer is a fixed-size stack allocation, so this is cheap
-                    self.output
-                        .push_str(ryu::Buffer::new().format_finite(value));
+                    self.output.push_str(encoder.encode())
                 }
             }
         }
@@ -394,18 +394,15 @@ mod tests {
         assert_eq!("10000000000.0", format_test_number(Number::Float(1e10)));
         assert_eq!("-1.2", format_test_number(Number::Float(-1.2)));
 
-        // JSON doesn't support NaN, Infinity, or -Infinity, so we're matching
+        // Smithy has specific behavior for infinity & NaN
         // the behavior of the serde_json crate in these cases.
+        assert_eq!("\"NaN\"", format_test_number(Number::Float(f64::NAN)));
         assert_eq!(
-            serde_json::to_string(&f64::NAN).unwrap(),
-            format_test_number(Number::Float(f64::NAN))
-        );
-        assert_eq!(
-            serde_json::to_string(&f64::INFINITY).unwrap(),
+            "\"Infinity\"",
             format_test_number(Number::Float(f64::INFINITY))
         );
         assert_eq!(
-            serde_json::to_string(&f64::NEG_INFINITY).unwrap(),
+            "\"-Infinity\"",
             format_test_number(Number::Float(f64::NEG_INFINITY))
         );
     }

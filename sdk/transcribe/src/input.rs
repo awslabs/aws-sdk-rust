@@ -2633,7 +2633,10 @@ impl ListLanguageModelsInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_3));
         }
         if let Some(inner_4) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_4));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_4).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2835,7 +2838,10 @@ impl ListMedicalTranscriptionJobsInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
         }
         if let Some(inner_8) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_8));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3033,7 +3039,10 @@ impl ListMedicalVocabulariesInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
         }
         if let Some(inner_10) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_10));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_10).encode(),
+            );
         }
         if let Some(inner_11) = &self.state_equals {
             query.push_kv("StateEquals", &smithy_http::query::fmt_string(&inner_11));
@@ -3241,7 +3250,10 @@ impl ListTranscriptionJobsInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_15));
         }
         if let Some(inner_16) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_16));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3434,7 +3446,10 @@ impl ListVocabulariesInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_17));
         }
         if let Some(inner_18) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_18));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+            );
         }
         if let Some(inner_19) = &self.state_equals {
             query.push_kv("StateEquals", &smithy_http::query::fmt_string(&inner_19));
@@ -3618,7 +3633,10 @@ impl ListVocabularyFiltersInput {
             query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_21));
         }
         if let Some(inner_22) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_22));
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
         if let Some(inner_23) = &self.name_contains {
             query.push_kv("NameContains", &smithy_http::query::fmt_string(&inner_23));
