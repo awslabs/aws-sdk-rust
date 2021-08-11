@@ -19,6 +19,8 @@ jobs:
             ~/.cargo/git
             sdk/target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
