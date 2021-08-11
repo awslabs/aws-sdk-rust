@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Compile & Test SDK
     steps:
-      - name: check disk usage
-        run: df -h
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         name: Cargo Cache
@@ -27,8 +25,8 @@ jobs:
         with:
           toolchain: ${{ env.rust_version }}
           default: true
-      - name: check disk usage again
-        run: df -h
       - name: Cargo Test
         run: cargo test
+        env:
+          CARGO_INCREMENTAL: 'false'
         working-directory: sdk
