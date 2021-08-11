@@ -1,7 +1,7 @@
 on: [ pull_request ]
 
 env:
-  rust_version: 1.51.0
+  rust_version: 1.52.1
 
 name: CI
 
@@ -26,6 +26,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
+          default: true
       - name: check disk usage again
         run: df -h
       - name: Cargo Test
