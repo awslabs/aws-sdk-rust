@@ -121,7 +121,7 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>Contains information about a component version that is compatible to run on a AWS IoT Greengrass core
+/// <p>Contains information about a component version that is compatible to run on a Greengrass core
 /// device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -217,7 +217,7 @@ impl ResolvedComponentVersion {
     }
 }
 
-/// <p>Contains information about a component that is a candidate to deploy to a AWS IoT Greengrass core
+/// <p>Contains information about a component that is a candidate to deploy to a Greengrass core
 /// device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -226,9 +226,9 @@ pub struct ComponentCandidate {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
-    /// <p>The version requirements for the component's dependencies. AWS IoT Greengrass core devices get the
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
     /// version requirements from component recipes.</p>
-    /// <p>AWS IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     pub version_requirements:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -319,14 +319,14 @@ impl ComponentCandidate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentPlatform {
     /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-    /// <p>If you omit this parameter, AWS IoT Greengrass creates a friendly name from the <code>os</code> and
+    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
     /// <code>architecture</code> of the platform.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A dictionary of attributes for the platform. The AWS IoT Greengrass Core software defines the
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
     /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
-    /// attributes for a core device when you deploy the AWS IoT Greengrass nucleus component. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">AWS IoT Greengrass nucleus
-    /// component</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -351,7 +351,7 @@ pub mod component_platform {
     }
     impl Builder {
         /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-        /// <p>If you omit this parameter, AWS IoT Greengrass creates a friendly name from the <code>os</code> and
+        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
         /// <code>architecture</code> of the platform.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -396,7 +396,7 @@ impl ComponentPlatform {
     }
 }
 
-/// <p>Contains information about a component on a AWS IoT Greengrass core device.</p>
+/// <p>Contains information about a component on a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstalledComponent {
@@ -592,27 +592,23 @@ impl AsRef<str> for InstalledComponentLifecycleState {
     }
 }
 
-/// <p>Contains information about a deployment job that AWS IoT Greengrass sends to a AWS IoT Greengrass core device.</p>
+/// <p>Contains information about a deployment job that IoT Greengrass sends to a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
-    /// <p>You can create deployments without names. If you create a deployment without a name, the
-    /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-    /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-    /// deployment target.</p>
     pub deployment_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The description of the deployment job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+    /// <p>The status of the deployment job on the Greengrass core device.</p>
     pub core_device_execution_status:
         std::option::Option<crate::model::EffectiveDeploymentExecutionStatus>,
     /// <p>The reason code for the update, if the job was updated.</p>
@@ -674,10 +670,6 @@ pub mod effective_deployment {
             self
         }
         /// <p>The name of the deployment.</p>
-        /// <p>You can create deployments without names. If you create a deployment without a name, the
-        /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-        /// deployment target.</p>
         pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_name = Some(input.into());
             self
@@ -689,7 +681,7 @@ pub mod effective_deployment {
             self.deployment_name = input;
             self
         }
-        /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_id = Some(input.into());
             self
@@ -698,7 +690,7 @@ pub mod effective_deployment {
             self.iot_job_id = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_arn = Some(input.into());
             self
@@ -716,7 +708,7 @@ pub mod effective_deployment {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -725,7 +717,7 @@ pub mod effective_deployment {
             self.target_arn = input;
             self
         }
-        /// <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+        /// <p>The status of the deployment job on the Greengrass core device.</p>
         pub fn core_device_execution_status(
             mut self,
             input: crate::model::EffectiveDeploymentExecutionStatus,
@@ -875,17 +867,13 @@ impl AsRef<str> for EffectiveDeploymentExecutionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the deployment.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
-    /// <p>You can create deployments without names. If you create a deployment without a name, the
-    /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-    /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-    /// deployment target.</p>
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub creation_timestamp: std::option::Option<smithy_types::Instant>,
@@ -922,7 +910,7 @@ pub mod deployment {
         pub(crate) is_latest_for_target: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -953,10 +941,6 @@ pub mod deployment {
             self
         }
         /// <p>The name of the deployment.</p>
-        /// <p>You can create deployments without names. If you create a deployment without a name, the
-        /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-        /// deployment target.</p>
         pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_name = Some(input.into());
             self
@@ -1131,22 +1115,22 @@ impl AsRef<str> for DeploymentHistoryFilter {
     }
 }
 
-/// <p>Contains information about a AWS IoT Greengrass core device, which is an AWS IoT thing that runs the AWS IoT Greengrass
+/// <p>Contains information about a Greengrass core device, which is an IoT thing that runs the IoT Greengrass
 /// Core software.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreDevice {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
     /// on the core device.</p>
     /// </li>
     /// </ul>
@@ -1178,7 +1162,7 @@ pub mod core_device {
         pub(crate) last_status_update_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -1194,11 +1178,11 @@ pub mod core_device {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
         /// on the core device.</p>
         /// </li>
         /// </ul>
@@ -1637,7 +1621,7 @@ impl AsRef<str> for ComponentVisibilityScope {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedClientDevice {
-    /// <p>The name of the AWS IoT thing that represents the associated client device.</p>
+    /// <p>The name of the IoT thing that represents the associated client device.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     pub association_timestamp: std::option::Option<smithy_types::Instant>,
@@ -1660,7 +1644,7 @@ pub mod associated_client_device {
         pub(crate) association_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT thing that represents the associated client device.</p>
+        /// <p>The name of the IoT thing that represents the associated client device.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
@@ -1697,7 +1681,7 @@ impl AssociatedClientDevice {
     }
 }
 
-/// <p>Contains information about an AWS IoT job configuration.</p>
+/// <p>Contains information about an IoT job configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIoTJobConfiguration {
@@ -2478,7 +2462,7 @@ impl DeploymentPolicies {
 
 /// <p>Contains information about how long a component on a core device can validate its
 /// configuration updates before it times out. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates">SubscribeToValidateConfigurationUpdates</a> IPC operation to receive notifications when
-/// a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+/// a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigurationValidationPolicy {
@@ -2554,7 +2538,7 @@ pub struct DeploymentComponentUpdatePolicy {
     /// <p>
     /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
     /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-    /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2604,7 +2588,7 @@ pub mod deployment_component_update_policy {
         /// <p>
         /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
         /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-        /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2753,14 +2737,14 @@ pub struct ComponentDeploymentSpecification {
     /// <p>The configuration updates to deploy for the component. You can define
     /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
     /// the keys that you specify to the default configuration for the component. A merge updates the
-    /// core device's component configuration with the keys and values that you specify. The AWS IoT Greengrass Core
+    /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
     /// software applies reset updates before it applies merge updates. For more information, see
     /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-    /// configurations</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub configuration_update: std::option::Option<crate::model::ComponentConfigurationUpdate>,
-    /// <p>The system user and group that the AWS IoT Greengrass Core software uses to run component processes on the
-    /// core device. If you omit this parameter, the AWS IoT Greengrass Core software uses the system user and group
-    /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>AWS IoT Greengrass V2 Developer
+    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
+    /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
+    /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
     /// Guide</i>.</p>
     pub run_with: std::option::Option<crate::model::ComponentRunWith>,
 }
@@ -2800,10 +2784,10 @@ pub mod component_deployment_specification {
         /// <p>The configuration updates to deploy for the component. You can define
         /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
         /// the keys that you specify to the default configuration for the component. A merge updates the
-        /// core device's component configuration with the keys and values that you specify. The AWS IoT Greengrass Core
+        /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
         /// software applies reset updates before it applies merge updates. For more information, see
         /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-        /// configurations</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn configuration_update(
             mut self,
             input: crate::model::ComponentConfigurationUpdate,
@@ -2818,9 +2802,9 @@ pub mod component_deployment_specification {
             self.configuration_update = input;
             self
         }
-        /// <p>The system user and group that the AWS IoT Greengrass Core software uses to run component processes on the
-        /// core device. If you omit this parameter, the AWS IoT Greengrass Core software uses the system user and group
-        /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>AWS IoT Greengrass V2 Developer
+        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
+        /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
+        /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
         /// Guide</i>.</p>
         pub fn run_with(mut self, input: crate::model::ComponentRunWith) -> Self {
             self.run_with = Some(input);
@@ -2850,22 +2834,29 @@ impl ComponentDeploymentSpecification {
     }
 }
 
-/// <p>Contains information system user and group that the AWS IoT Greengrass Core software uses to run component
-/// processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>AWS IoT Greengrass V2 Developer
+/// <p>Contains information system user and group that the IoT Greengrass Core software uses to run component
+/// processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
 /// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRunWith {
     /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
     /// and group separated by a colon (<code>:</code>) in the following format:
-    /// <code>user:group</code>. The group is optional. If you don't specify a group, the AWS IoT Greengrass Core
+    /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
     /// software uses the primary user for the group.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
+    /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub posix_user: std::option::Option<std::string::String>,
+    /// <p>The system resource limits to apply to this component's process on the core device.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
+    /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+    pub system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
 }
 impl std::fmt::Debug for ComponentRunWith {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentRunWith");
         formatter.field("posix_user", &self.posix_user);
+        formatter.field("system_resource_limits", &self.system_resource_limits);
         formatter.finish()
     }
 }
@@ -2876,12 +2867,15 @@ pub mod component_run_with {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) posix_user: std::option::Option<std::string::String>,
+        pub(crate) system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
     }
     impl Builder {
         /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
         /// and group separated by a colon (<code>:</code>) in the following format:
-        /// <code>user:group</code>. The group is optional. If you don't specify a group, the AWS IoT Greengrass Core
+        /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
         /// software uses the primary user for the group.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
+        /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn posix_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.posix_user = Some(input.into());
             self
@@ -2890,10 +2884,25 @@ pub mod component_run_with {
             self.posix_user = input;
             self
         }
+        /// <p>The system resource limits to apply to this component's process on the core device.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
+        /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+        pub fn system_resource_limits(mut self, input: crate::model::SystemResourceLimits) -> Self {
+            self.system_resource_limits = Some(input);
+            self
+        }
+        pub fn set_system_resource_limits(
+            mut self,
+            input: std::option::Option<crate::model::SystemResourceLimits>,
+        ) -> Self {
+            self.system_resource_limits = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentRunWith`](crate::model::ComponentRunWith)
         pub fn build(self) -> crate::model::ComponentRunWith {
             crate::model::ComponentRunWith {
                 posix_user: self.posix_user,
+                system_resource_limits: self.system_resource_limits,
             }
         }
     }
@@ -2905,9 +2914,85 @@ impl ComponentRunWith {
     }
 }
 
+/// <p>Contains information about system resource limits that the IoT Greengrass Core software applies to a
+/// component's processes. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SystemResourceLimits {
+    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
+    /// the core device.</p>
+    pub memory: i64,
+    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
+    /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
+    /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
+    /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
+    /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
+    /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
+    /// software doesn't limit the component's CPU usage.</p>
+    pub cpus: f64,
+}
+impl std::fmt::Debug for SystemResourceLimits {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SystemResourceLimits");
+        formatter.field("memory", &self.memory);
+        formatter.field("cpus", &self.cpus);
+        formatter.finish()
+    }
+}
+/// See [`SystemResourceLimits`](crate::model::SystemResourceLimits)
+pub mod system_resource_limits {
+    /// A builder for [`SystemResourceLimits`](crate::model::SystemResourceLimits)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) memory: std::option::Option<i64>,
+        pub(crate) cpus: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
+        /// the core device.</p>
+        pub fn memory(mut self, input: i64) -> Self {
+            self.memory = Some(input);
+            self
+        }
+        pub fn set_memory(mut self, input: std::option::Option<i64>) -> Self {
+            self.memory = input;
+            self
+        }
+        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
+        /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
+        /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
+        /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
+        /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
+        /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
+        /// software doesn't limit the component's CPU usage.</p>
+        pub fn cpus(mut self, input: f64) -> Self {
+            self.cpus = Some(input);
+            self
+        }
+        pub fn set_cpus(mut self, input: std::option::Option<f64>) -> Self {
+            self.cpus = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SystemResourceLimits`](crate::model::SystemResourceLimits)
+        pub fn build(self) -> crate::model::SystemResourceLimits {
+            crate::model::SystemResourceLimits {
+                memory: self.memory.unwrap_or_default(),
+                cpus: self.cpus.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl SystemResourceLimits {
+    /// Creates a new builder-style object to manufacture [`SystemResourceLimits`](crate::model::SystemResourceLimits)
+    pub fn builder() -> crate::model::system_resource_limits::Builder {
+        crate::model::system_resource_limits::Builder::default()
+    }
+}
+
 /// <p>Contains information about a deployment's update to a component's configuration on
 /// Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-/// configurations</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+/// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentConfigurationUpdate {
@@ -2916,14 +3001,14 @@ pub struct ComponentConfigurationUpdate {
     /// configuration. If this is the first time a component deploys on a device, the core device
     /// merges this configuration with the component's default configuration. This means that the core
     /// device keeps it's existing configuration for keys and values that you don't specify in this
-    /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>AWS IoT Greengrass V2 Developer
+    /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
     /// Guide</i>.</p>
     pub merge: std::option::Option<std::string::String>,
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
     /// pointers to specify each node to reset. JSON pointers start with a forward slash
     /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
     /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
-    /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>AWS IoT Greengrass V2 Developer
+    /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
     /// Guide</i>.</p>
     pub reset: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2950,7 +3035,7 @@ pub mod component_configuration_update {
         /// configuration. If this is the first time a component deploys on a device, the core device
         /// merges this configuration with the component's default configuration. This means that the core
         /// device keeps it's existing configuration for keys and values that you don't specify in this
-        /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>AWS IoT Greengrass V2 Developer
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
         /// Guide</i>.</p>
         pub fn merge(mut self, input: impl Into<std::string::String>) -> Self {
             self.merge = Some(input.into());
@@ -3039,7 +3124,7 @@ impl AsRef<str> for RecipeOutputFormat {
     }
 }
 
-/// <p>Contains the status of a component in the AWS IoT Greengrass service.</p>
+/// <p>Contains the status of a component in the IoT Greengrass service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudComponentStatus {
@@ -3048,7 +3133,7 @@ pub struct CloudComponentStatus {
     /// <p>A message that communicates details, such as errors, about the status of the component.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>A dictionary of errors that communicate why the component is in an error state. For
-    /// example, if AWS IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
+    /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
     /// the artifact's URI as a key, and the error message as the value for that key.</p>
     pub errors:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3197,7 +3282,7 @@ impl AsRef<str> for CloudComponentState {
     }
 }
 
-/// <p>Contains information about an AWS Lambda function to import to create a component.</p>
+/// <p>Contains information about an Lambda function to import to create a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionRecipeSource {
@@ -3220,7 +3305,7 @@ pub struct LambdaFunctionRecipeSource {
             crate::model::ComponentDependencyRequirement,
         >,
     >,
-    /// <p>The system and runtime parameters for the Lambda function as it runs on the AWS IoT Greengrass core
+    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
     /// device.</p>
     pub component_lambda_parameters: std::option::Option<crate::model::LambdaExecutionParameters>,
 }
@@ -3335,7 +3420,7 @@ pub mod lambda_function_recipe_source {
             self.component_dependencies = input;
             self
         }
-        /// <p>The system and runtime parameters for the Lambda function as it runs on the AWS IoT Greengrass core
+        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
         /// device.</p>
         pub fn component_lambda_parameters(
             mut self,
@@ -3371,15 +3456,15 @@ impl LambdaFunctionRecipeSource {
     }
 }
 
-/// <p>Contains parameters for a Lambda function that runs on AWS IoT Greengrass.</p>
+/// <p>Contains parameters for a Lambda function that runs on IoT Greengrass.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
     /// function runs when it receives a message from an event source. You can subscribe this function
-    /// to local publish/subscribe messages and AWS IoT Core MQTT messages.</p>
+    /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
     pub event_sources: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
-    /// <p>The maximum size of the message queue for the Lambda function component. The AWS IoT Greengrass core
+    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
     /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
     /// consume each message.</p>
     pub max_queue_size: std::option::Option<i32>,
@@ -3387,7 +3472,7 @@ pub struct LambdaExecutionParameters {
     /// time.</p>
     pub max_instances_count: std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-    /// AWS IoT Greengrass Core software stops its process.</p>
+    /// IoT Greengrass Core software stops its process.</p>
     pub max_idle_time_in_seconds: std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that the Lambda function can process a work
     /// item.</p>
@@ -3399,12 +3484,12 @@ pub struct LambdaExecutionParameters {
     /// <ul>
     /// <li>
     /// <p>A pinned Lambda function starts
-    /// when AWS IoT Greengrass starts and keeps running in its own container.</p>
+    /// when IoT Greengrass starts and keeps running in its own container.</p>
     /// </li>
     /// <li>
     /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
     /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-    /// the AWS IoT Greengrass Core software creates multiple instances of the function.</p>
+    /// the IoT Greengrass Core software creates multiple instances of the function.</p>
     /// </li>
     /// </ul>
     /// <p>Default: <code>true</code>
@@ -3480,7 +3565,7 @@ pub mod lambda_execution_parameters {
             self.event_sources = input;
             self
         }
-        /// <p>The maximum size of the message queue for the Lambda function component. The AWS IoT Greengrass core
+        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
         /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
         /// consume each message.</p>
         pub fn max_queue_size(mut self, input: i32) -> Self {
@@ -3502,7 +3587,7 @@ pub mod lambda_execution_parameters {
             self
         }
         /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-        /// AWS IoT Greengrass Core software stops its process.</p>
+        /// IoT Greengrass Core software stops its process.</p>
         pub fn max_idle_time_in_seconds(mut self, input: i32) -> Self {
             self.max_idle_time_in_seconds = Some(input);
             self
@@ -3535,12 +3620,12 @@ pub mod lambda_execution_parameters {
         /// <ul>
         /// <li>
         /// <p>A pinned Lambda function starts
-        /// when AWS IoT Greengrass starts and keeps running in its own container.</p>
+        /// when IoT Greengrass starts and keeps running in its own container.</p>
         /// </li>
         /// <li>
         /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
         /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-        /// the AWS IoT Greengrass Core software creates multiple instances of the function.</p>
+        /// the IoT Greengrass Core software creates multiple instances of the function.</p>
         /// </li>
         /// </ul>
         /// <p>Default: <code>true</code>
@@ -3642,12 +3727,12 @@ impl LambdaExecutionParameters {
     }
 }
 
-/// <p>Contains parameters for a Linux process that contains an AWS Lambda function.</p>
+/// <p>Contains parameters for a Linux process that contains an Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaLinuxProcessParams {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-    /// in an isolated runtime environment inside the AWS IoT Greengrass container, or as a regular process outside
+    /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
     /// any container.</p>
     /// <p>Default: <code>GreengrassContainer</code>
     /// </p>
@@ -3674,7 +3759,7 @@ pub mod lambda_linux_process_params {
     }
     impl Builder {
         /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-        /// in an isolated runtime environment inside the AWS IoT Greengrass container, or as a regular process outside
+        /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
         /// any container.</p>
         /// <p>Default: <code>GreengrassContainer</code>
         /// </p>
@@ -3717,7 +3802,7 @@ impl LambdaLinuxProcessParams {
     }
 }
 
-/// <p>Contains information about a container in which AWS Lambda functions run on AWS IoT Greengrass core
+/// <p>Contains information about a container in which Lambda functions run on Greengrass core
 /// devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3962,7 +4047,7 @@ impl AsRef<str> for LambdaFilesystemPermission {
 }
 
 /// <p>Contains information about a volume that Linux processes in a container can access. When
-/// you define a volume, the AWS IoT Greengrass Core software mounts the source files to the destination inside the
+/// you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the
 /// container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3976,7 +4061,7 @@ pub struct LambdaVolumeMount {
     /// <p>Default: <code>ro</code>
     /// </p>
     pub permission: std::option::Option<crate::model::LambdaFilesystemPermission>,
-    /// <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the volume.</p>
+    /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code>
     /// </p>
     pub add_group_owner: std::option::Option<bool>,
@@ -4039,7 +4124,7 @@ pub mod lambda_volume_mount {
             self.permission = input;
             self
         }
-        /// <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the volume.</p>
+        /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
         /// <p>Default: <code>false</code>
         /// </p>
         pub fn add_group_owner(mut self, input: bool) -> Self {
@@ -4168,7 +4253,7 @@ impl AsRef<str> for LambdaInputPayloadEncodingType {
     }
 }
 
-/// <p>Contains information about an event source for an AWS Lambda function. The event source
+/// <p>Contains information about an event source for an Lambda function. The event source
 /// defines the topics on which this Lambda function subscribes to receive messages that run the
 /// function.</p>
 #[non_exhaustive]
@@ -4186,7 +4271,7 @@ pub struct LambdaEventSource {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event source
+    /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
     /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
     /// topic.</p>
     /// </li>
@@ -4230,7 +4315,7 @@ pub mod lambda_event_source {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event source
+        /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
         /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
         /// topic.</p>
         /// </li>
@@ -4317,7 +4402,7 @@ impl AsRef<str> for LambdaEventSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentDependencyRequirement {
     /// <p>The component version requirement for the component dependency.</p>
-    /// <p>AWS IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     pub version_requirement: std::option::Option<std::string::String>,
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
@@ -4355,7 +4440,7 @@ pub mod component_dependency_requirement {
     }
     impl Builder {
         /// <p>The component version requirement for the component dependency.</p>
-        /// <p>AWS IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+        /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn version_requirement(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_requirement = Some(input.into());
             self
@@ -4465,7 +4550,7 @@ impl AsRef<str> for ComponentDependencyType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
-    /// <p>The name of the AWS IoT thing whose disassociate request failed.</p>
+    /// <p>The name of the IoT thing whose disassociate request failed.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The error code for the request.</p>
     pub code: std::option::Option<std::string::String>,
@@ -4492,7 +4577,7 @@ pub mod disassociate_client_device_from_core_device_error_entry {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT thing whose disassociate request failed.</p>
+        /// <p>The name of the IoT thing whose disassociate request failed.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
@@ -4542,7 +4627,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceEntry {
-    /// <p>The name of the AWS IoT thing that represents the client device to disassociate.</p>
+    /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisassociateClientDeviceFromCoreDeviceEntry {
@@ -4561,7 +4646,7 @@ pub mod disassociate_client_device_from_core_device_entry {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT thing that represents the client device to disassociate.</p>
+        /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
@@ -4591,7 +4676,7 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
-    /// <p>The name of the AWS IoT thing whose associate request failed.</p>
+    /// <p>The name of the IoT thing whose associate request failed.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The error code for the request.</p>
     pub code: std::option::Option<std::string::String>,
@@ -4618,7 +4703,7 @@ pub mod associate_client_device_with_core_device_error_entry {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT thing whose associate request failed.</p>
+        /// <p>The name of the IoT thing whose associate request failed.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
@@ -4668,7 +4753,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceEntry {
-    /// <p>The name of the AWS IoT thing that represents the client device to associate.</p>
+    /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociateClientDeviceWithCoreDeviceEntry {
@@ -4687,7 +4772,7 @@ pub mod associate_client_device_with_core_device_entry {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT thing that represents the client device to associate.</p>
+        /// <p>The name of the IoT thing that represents the client device to associate.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self

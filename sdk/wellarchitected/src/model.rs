@@ -1724,6 +1724,7 @@ pub struct Answer {
     /// <p>The description of the question.</p>
     pub question_description: std::option::Option<std::string::String>,
     /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
     pub improvement_plan_url: std::option::Option<std::string::String>,
     /// <p>The helpful resource URL for a question.</p>
     pub helpful_resource_url: std::option::Option<std::string::String>,
@@ -1732,12 +1733,16 @@ pub struct Answer {
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub choice_answers: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The notes associated with the workload.</p>
     pub notes: std::option::Option<std::string::String>,
+    /// <p>The reason why the question is not applicable to your workload.</p>
+    pub reason: std::option::Option<crate::model::AnswerReason>,
 }
 impl std::fmt::Debug for Answer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1750,9 +1755,11 @@ impl std::fmt::Debug for Answer {
         formatter.field("helpful_resource_url", &self.helpful_resource_url);
         formatter.field("choices", &self.choices);
         formatter.field("selected_choices", &self.selected_choices);
+        formatter.field("choice_answers", &self.choice_answers);
         formatter.field("is_applicable", &self.is_applicable);
         formatter.field("risk", &self.risk);
         formatter.field("notes", &self.notes);
+        formatter.field("reason", &self.reason);
         formatter.finish()
     }
 }
@@ -1770,9 +1777,11 @@ pub mod answer {
         pub(crate) helpful_resource_url: std::option::Option<std::string::String>,
         pub(crate) choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
         pub(crate) selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) choice_answers: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
         pub(crate) is_applicable: std::option::Option<bool>,
         pub(crate) risk: std::option::Option<crate::model::Risk>,
         pub(crate) notes: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::AnswerReason>,
     }
     impl Builder {
         /// <p>The ID of the question.</p>
@@ -1819,6 +1828,7 @@ pub mod answer {
             self
         }
         /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
         pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.improvement_plan_url = Some(input.into());
             self
@@ -1868,6 +1878,19 @@ pub mod answer {
             self.selected_choices = input;
             self
         }
+        pub fn choice_answers(mut self, input: impl Into<crate::model::ChoiceAnswer>) -> Self {
+            let mut v = self.choice_answers.unwrap_or_default();
+            v.push(input.into());
+            self.choice_answers = Some(v);
+            self
+        }
+        pub fn set_choice_answers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
+        ) -> Self {
+            self.choice_answers = input;
+            self
+        }
         /// <p>Defines whether this question is applicable to a lens review.</p>
         pub fn is_applicable(mut self, input: bool) -> Self {
             self.is_applicable = Some(input);
@@ -1895,6 +1918,18 @@ pub mod answer {
             self.notes = input;
             self
         }
+        /// <p>The reason why the question is not applicable to your workload.</p>
+        pub fn reason(mut self, input: crate::model::AnswerReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::AnswerReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Answer`](crate::model::Answer)
         pub fn build(self) -> crate::model::Answer {
             crate::model::Answer {
@@ -1906,9 +1941,11 @@ pub mod answer {
                 helpful_resource_url: self.helpful_resource_url,
                 choices: self.choices,
                 selected_choices: self.selected_choices,
+                choice_answers: self.choice_answers,
                 is_applicable: self.is_applicable.unwrap_or_default(),
                 risk: self.risk,
                 notes: self.notes,
+                reason: self.reason,
             }
         }
     }
@@ -1917,6 +1954,284 @@ impl Answer {
     /// Creates a new builder-style object to manufacture [`Answer`](crate::model::Answer)
     pub fn builder() -> crate::model::answer::Builder {
         crate::model::answer::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AnswerReason {
+    ArchitectureConstraints,
+    BusinessPriorities,
+    None,
+    Other,
+    OutOfScope,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AnswerReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARCHITECTURE_CONSTRAINTS" => AnswerReason::ArchitectureConstraints,
+            "BUSINESS_PRIORITIES" => AnswerReason::BusinessPriorities,
+            "NONE" => AnswerReason::None,
+            "OTHER" => AnswerReason::Other,
+            "OUT_OF_SCOPE" => AnswerReason::OutOfScope,
+            other => AnswerReason::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AnswerReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AnswerReason::from(s))
+    }
+}
+impl AnswerReason {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AnswerReason::ArchitectureConstraints => "ARCHITECTURE_CONSTRAINTS",
+            AnswerReason::BusinessPriorities => "BUSINESS_PRIORITIES",
+            AnswerReason::None => "NONE",
+            AnswerReason::Other => "OTHER",
+            AnswerReason::OutOfScope => "OUT_OF_SCOPE",
+            AnswerReason::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ARCHITECTURE_CONSTRAINTS",
+            "BUSINESS_PRIORITIES",
+            "NONE",
+            "OTHER",
+            "OUT_OF_SCOPE",
+        ]
+    }
+}
+impl AsRef<str> for AnswerReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A choice that has been answered on a question in your workload.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChoiceAnswer {
+    /// <p>The ID of a choice.</p>
+    pub choice_id: std::option::Option<std::string::String>,
+    /// <p>The status of a choice.</p>
+    pub status: std::option::Option<crate::model::ChoiceStatus>,
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub reason: std::option::Option<crate::model::ChoiceReason>,
+    /// <p>The notes associated with a choice.</p>
+    pub notes: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ChoiceAnswer {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChoiceAnswer");
+        formatter.field("choice_id", &self.choice_id);
+        formatter.field("status", &self.status);
+        formatter.field("reason", &self.reason);
+        formatter.field("notes", &self.notes);
+        formatter.finish()
+    }
+}
+/// See [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+pub mod choice_answer {
+    /// A builder for [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ChoiceStatus>,
+        pub(crate) reason: std::option::Option<crate::model::ChoiceReason>,
+        pub(crate) notes: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// <p>The status of a choice.</p>
+        pub fn status(mut self, input: crate::model::ChoiceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+        pub fn reason(mut self, input: crate::model::ChoiceReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>The notes associated with a choice.</p>
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notes = Some(input.into());
+            self
+        }
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+        pub fn build(self) -> crate::model::ChoiceAnswer {
+            crate::model::ChoiceAnswer {
+                choice_id: self.choice_id,
+                status: self.status,
+                reason: self.reason,
+                notes: self.notes,
+            }
+        }
+    }
+}
+impl ChoiceAnswer {
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+    pub fn builder() -> crate::model::choice_answer::Builder {
+        crate::model::choice_answer::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ChoiceReason {
+    ArchitectureConstraints,
+    BusinessPriorities,
+    None,
+    Other,
+    OutOfScope,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ChoiceReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARCHITECTURE_CONSTRAINTS" => ChoiceReason::ArchitectureConstraints,
+            "BUSINESS_PRIORITIES" => ChoiceReason::BusinessPriorities,
+            "NONE" => ChoiceReason::None,
+            "OTHER" => ChoiceReason::Other,
+            "OUT_OF_SCOPE" => ChoiceReason::OutOfScope,
+            other => ChoiceReason::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ChoiceReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChoiceReason::from(s))
+    }
+}
+impl ChoiceReason {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChoiceReason::ArchitectureConstraints => "ARCHITECTURE_CONSTRAINTS",
+            ChoiceReason::BusinessPriorities => "BUSINESS_PRIORITIES",
+            ChoiceReason::None => "NONE",
+            ChoiceReason::Other => "OTHER",
+            ChoiceReason::OutOfScope => "OUT_OF_SCOPE",
+            ChoiceReason::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ARCHITECTURE_CONSTRAINTS",
+            "BUSINESS_PRIORITIES",
+            "NONE",
+            "OTHER",
+            "OUT_OF_SCOPE",
+        ]
+    }
+}
+impl AsRef<str> for ChoiceReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ChoiceStatus {
+    NotApplicable,
+    Selected,
+    Unselected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ChoiceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "NOT_APPLICABLE" => ChoiceStatus::NotApplicable,
+            "SELECTED" => ChoiceStatus::Selected,
+            "UNSELECTED" => ChoiceStatus::Unselected,
+            other => ChoiceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ChoiceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChoiceStatus::from(s))
+    }
+}
+impl ChoiceStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChoiceStatus::NotApplicable => "NOT_APPLICABLE",
+            ChoiceStatus::Selected => "SELECTED",
+            ChoiceStatus::Unselected => "UNSELECTED",
+            ChoiceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NOT_APPLICABLE", "SELECTED", "UNSELECTED"]
+    }
+}
+impl AsRef<str> for ChoiceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1992,6 +2307,87 @@ impl Choice {
     /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice)
     pub fn builder() -> crate::model::choice::Builder {
         crate::model::choice::Builder::default()
+    }
+}
+
+/// <p>A list of choices to be updated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChoiceUpdate {
+    /// <p>The status of a choice.</p>
+    pub status: std::option::Option<crate::model::ChoiceStatus>,
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub reason: std::option::Option<crate::model::ChoiceReason>,
+    /// <p>The notes associated with a choice.</p>
+    pub notes: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ChoiceUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChoiceUpdate");
+        formatter.field("status", &self.status);
+        formatter.field("reason", &self.reason);
+        formatter.field("notes", &self.notes);
+        formatter.finish()
+    }
+}
+/// See [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+pub mod choice_update {
+    /// A builder for [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::ChoiceStatus>,
+        pub(crate) reason: std::option::Option<crate::model::ChoiceReason>,
+        pub(crate) notes: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of a choice.</p>
+        pub fn status(mut self, input: crate::model::ChoiceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+        pub fn reason(mut self, input: crate::model::ChoiceReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>The notes associated with a choice.</p>
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notes = Some(input.into());
+            self
+        }
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+        pub fn build(self) -> crate::model::ChoiceUpdate {
+            crate::model::ChoiceUpdate {
+                status: self.status,
+                reason: self.reason,
+                notes: self.notes,
+            }
+        }
+    }
+}
+impl ChoiceUpdate {
+    /// Creates a new builder-style object to manufacture [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+    pub fn builder() -> crate::model::choice_update::Builder {
+        crate::model::choice_update::Builder::default()
     }
 }
 
@@ -2862,6 +3258,7 @@ pub struct ImprovementSummary {
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
     pub improvement_plan_url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImprovementSummary {
@@ -2929,6 +3326,7 @@ pub mod improvement_summary {
             self
         }
         /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
         pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.improvement_plan_url = Some(input.into());
             self
@@ -3066,10 +3464,15 @@ pub struct AnswerSummary {
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub choice_answer_summaries:
+        std::option::Option<std::vec::Vec<crate::model::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: std::option::Option<crate::model::Risk>,
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub reason: std::option::Option<crate::model::AnswerReason>,
 }
 impl std::fmt::Debug for AnswerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3079,8 +3482,10 @@ impl std::fmt::Debug for AnswerSummary {
         formatter.field("question_title", &self.question_title);
         formatter.field("choices", &self.choices);
         formatter.field("selected_choices", &self.selected_choices);
+        formatter.field("choice_answer_summaries", &self.choice_answer_summaries);
         formatter.field("is_applicable", &self.is_applicable);
         formatter.field("risk", &self.risk);
+        formatter.field("reason", &self.reason);
         formatter.finish()
     }
 }
@@ -3095,8 +3500,11 @@ pub mod answer_summary {
         pub(crate) question_title: std::option::Option<std::string::String>,
         pub(crate) choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
         pub(crate) selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) choice_answer_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ChoiceAnswerSummary>>,
         pub(crate) is_applicable: std::option::Option<bool>,
         pub(crate) risk: std::option::Option<crate::model::Risk>,
+        pub(crate) reason: std::option::Option<crate::model::AnswerReason>,
     }
     impl Builder {
         /// <p>The ID of the question.</p>
@@ -3156,6 +3564,22 @@ pub mod answer_summary {
             self.selected_choices = input;
             self
         }
+        pub fn choice_answer_summaries(
+            mut self,
+            input: impl Into<crate::model::ChoiceAnswerSummary>,
+        ) -> Self {
+            let mut v = self.choice_answer_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.choice_answer_summaries = Some(v);
+            self
+        }
+        pub fn set_choice_answer_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswerSummary>>,
+        ) -> Self {
+            self.choice_answer_summaries = input;
+            self
+        }
         /// <p>Defines whether this question is applicable to a lens review.</p>
         pub fn is_applicable(mut self, input: bool) -> Self {
             self.is_applicable = Some(input);
@@ -3174,6 +3598,18 @@ pub mod answer_summary {
             self.risk = input;
             self
         }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+        pub fn reason(mut self, input: crate::model::AnswerReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::AnswerReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AnswerSummary`](crate::model::AnswerSummary)
         pub fn build(self) -> crate::model::AnswerSummary {
             crate::model::AnswerSummary {
@@ -3182,8 +3618,10 @@ pub mod answer_summary {
                 question_title: self.question_title,
                 choices: self.choices,
                 selected_choices: self.selected_choices,
+                choice_answer_summaries: self.choice_answer_summaries,
                 is_applicable: self.is_applicable.unwrap_or_default(),
                 risk: self.risk,
+                reason: self.reason,
             }
         }
     }
@@ -3192,6 +3630,87 @@ impl AnswerSummary {
     /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::model::AnswerSummary)
     pub fn builder() -> crate::model::answer_summary::Builder {
         crate::model::answer_summary::Builder::default()
+    }
+}
+
+/// <p>A choice summary that has been answered on a question in your workload.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChoiceAnswerSummary {
+    /// <p>The ID of a choice.</p>
+    pub choice_id: std::option::Option<std::string::String>,
+    /// <p>The status of a choice.</p>
+    pub status: std::option::Option<crate::model::ChoiceStatus>,
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub reason: std::option::Option<crate::model::ChoiceReason>,
+}
+impl std::fmt::Debug for ChoiceAnswerSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChoiceAnswerSummary");
+        formatter.field("choice_id", &self.choice_id);
+        formatter.field("status", &self.status);
+        formatter.field("reason", &self.reason);
+        formatter.finish()
+    }
+}
+/// See [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+pub mod choice_answer_summary {
+    /// A builder for [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ChoiceStatus>,
+        pub(crate) reason: std::option::Option<crate::model::ChoiceReason>,
+    }
+    impl Builder {
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// <p>The status of a choice.</p>
+        pub fn status(mut self, input: crate::model::ChoiceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+        pub fn reason(mut self, input: crate::model::ChoiceReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+        pub fn build(self) -> crate::model::ChoiceAnswerSummary {
+            crate::model::ChoiceAnswerSummary {
+                choice_id: self.choice_id,
+                status: self.status,
+                reason: self.reason,
+            }
+        }
+    }
+}
+impl ChoiceAnswerSummary {
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+    pub fn builder() -> crate::model::choice_answer_summary::Builder {
+        crate::model::choice_answer_summary::Builder::default()
     }
 }
 

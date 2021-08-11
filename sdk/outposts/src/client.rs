@@ -130,7 +130,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input);
             self
@@ -143,7 +142,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_id(input);
             self
@@ -403,6 +401,55 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>
+        /// A filter for the lifecycle status of the Outpost.
+        /// </p>
+        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+        /// specified values. </p>
+        pub fn life_cycle_status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.life_cycle_status_filter(inp);
+            self
+        }
+        pub fn set_life_cycle_status_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_life_cycle_status_filter(input);
+            self
+        }
+        /// <p> A filter for the Availibility Zone (<code>us-east-1a</code>) of the Outpost. </p>
+        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+        /// specified values. </p>
+        pub fn availability_zone_filter(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_filter(inp);
+            self
+        }
+        pub fn set_availability_zone_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_availability_zone_filter(input);
+            self
+        }
+        /// <p>
+        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
+        /// </p>
+        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+        /// specified values. </p>
+        pub fn availability_zone_id_filter(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_id_filter(inp);
+            self
+        }
+        pub fn set_availability_zone_id_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_availability_zone_id_filter(input);
             self
         }
     }

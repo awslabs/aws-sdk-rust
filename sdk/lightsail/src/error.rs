@@ -1081,6 +1081,222 @@ impl std::error::Error for CopySnapshotError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateBucketError {
+    pub kind: CreateBucketErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBucketErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBucketError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBucketErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateBucketErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateBucketErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateBucketErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            CreateBucketErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateBucketError {
+    fn code(&self) -> Option<&str> {
+        CreateBucketError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBucketError {
+    pub fn new(kind: CreateBucketErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBucketErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBucketErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateBucketErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreateBucketErrorKind::InvalidInputException(_))
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, CreateBucketErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBucketError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBucketErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateBucketErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateBucketErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            CreateBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBucketAccessKeyError {
+    pub kind: CreateBucketAccessKeyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBucketAccessKeyErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBucketAccessKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBucketAccessKeyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateBucketAccessKeyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateBucketAccessKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateBucketAccessKeyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            CreateBucketAccessKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateBucketAccessKeyError {
+    fn code(&self) -> Option<&str> {
+        CreateBucketAccessKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBucketAccessKeyError {
+    pub fn new(kind: CreateBucketAccessKeyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBucketAccessKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBucketAccessKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketAccessKeyErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketAccessKeyErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketAccessKeyErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketAccessKeyErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketAccessKeyErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBucketAccessKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBucketAccessKeyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateBucketAccessKeyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateBucketAccessKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateBucketAccessKeyErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            CreateBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateCertificateError {
     pub kind: CreateCertificateErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4115,6 +4331,228 @@ impl std::error::Error for DeleteAutoSnapshotError {
             DeleteAutoSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteAutoSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
             DeleteAutoSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteBucketError {
+    pub kind: DeleteBucketErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBucketErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteBucketError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBucketErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteBucketErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteBucketErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteBucketErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteBucketErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            DeleteBucketErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteBucketError {
+    fn code(&self) -> Option<&str> {
+        DeleteBucketError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBucketError {
+    pub fn new(kind: DeleteBucketErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBucketErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBucketErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBucketErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBucketErrorKind::InvalidInputException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBucketErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBucketErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBucketError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBucketErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteBucketErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteBucketErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteBucketErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            DeleteBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteBucketAccessKeyError {
+    pub kind: DeleteBucketAccessKeyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBucketAccessKeyErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteBucketAccessKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBucketAccessKeyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteBucketAccessKeyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteBucketAccessKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteBucketAccessKeyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            DeleteBucketAccessKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteBucketAccessKeyError {
+    fn code(&self) -> Option<&str> {
+        DeleteBucketAccessKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBucketAccessKeyError {
+    pub fn new(kind: DeleteBucketAccessKeyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBucketAccessKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBucketAccessKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketAccessKeyErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketAccessKeyErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketAccessKeyErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketAccessKeyErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBucketAccessKeyErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBucketAccessKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBucketAccessKeyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteBucketAccessKeyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteBucketAccessKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteBucketAccessKeyErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            DeleteBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7841,6 +8279,447 @@ impl std::error::Error for GetBlueprintsError {
             GetBlueprintsErrorKind::ServiceException(_inner) => Some(_inner),
             GetBlueprintsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
             GetBlueprintsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBucketAccessKeysError {
+    pub kind: GetBucketAccessKeysErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBucketAccessKeysErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBucketAccessKeysError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBucketAccessKeysErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetBucketAccessKeysErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetBucketAccessKeysErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBucketAccessKeysErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetBucketAccessKeysErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            GetBucketAccessKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBucketAccessKeysError {
+    fn code(&self) -> Option<&str> {
+        GetBucketAccessKeysError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBucketAccessKeysError {
+    pub fn new(kind: GetBucketAccessKeysErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBucketAccessKeysErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBucketAccessKeysErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketAccessKeysErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketAccessKeysErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketAccessKeysErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketAccessKeysErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketAccessKeysErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for GetBucketAccessKeysError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBucketAccessKeysErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetBucketAccessKeysErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetBucketAccessKeysErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBucketAccessKeysErrorKind::ServiceException(_inner) => Some(_inner),
+            GetBucketAccessKeysErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            GetBucketAccessKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBucketBundlesError {
+    pub kind: GetBucketBundlesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBucketBundlesErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBucketBundlesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBucketBundlesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetBucketBundlesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetBucketBundlesErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetBucketBundlesErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            GetBucketBundlesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBucketBundlesError {
+    fn code(&self) -> Option<&str> {
+        GetBucketBundlesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBucketBundlesError {
+    pub fn new(kind: GetBucketBundlesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBucketBundlesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBucketBundlesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketBundlesErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketBundlesErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketBundlesErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketBundlesErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for GetBucketBundlesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBucketBundlesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetBucketBundlesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetBucketBundlesErrorKind::ServiceException(_inner) => Some(_inner),
+            GetBucketBundlesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            GetBucketBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBucketMetricDataError {
+    pub kind: GetBucketMetricDataErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBucketMetricDataErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBucketMetricDataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBucketMetricDataErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetBucketMetricDataErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetBucketMetricDataErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBucketMetricDataErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetBucketMetricDataErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            GetBucketMetricDataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBucketMetricDataError {
+    fn code(&self) -> Option<&str> {
+        GetBucketMetricDataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBucketMetricDataError {
+    pub fn new(kind: GetBucketMetricDataErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBucketMetricDataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBucketMetricDataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketMetricDataErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketMetricDataErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketMetricDataErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketMetricDataErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketMetricDataErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for GetBucketMetricDataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBucketMetricDataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetBucketMetricDataErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetBucketMetricDataErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBucketMetricDataErrorKind::ServiceException(_inner) => Some(_inner),
+            GetBucketMetricDataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            GetBucketMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBucketsError {
+    pub kind: GetBucketsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBucketsErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBucketsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBucketsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetBucketsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetBucketsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBucketsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetBucketsErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            GetBucketsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBucketsError {
+    fn code(&self) -> Option<&str> {
+        GetBucketsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBucketsError {
+    pub fn new(kind: GetBucketsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBucketsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBucketsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketsErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketsErrorKind::InvalidInputException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketsErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketsErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(&self.kind, GetBucketsErrorKind::UnauthenticatedException(_))
+    }
+}
+impl std::error::Error for GetBucketsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBucketsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetBucketsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetBucketsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBucketsErrorKind::ServiceException(_inner) => Some(_inner),
+            GetBucketsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            GetBucketsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -16546,6 +17425,123 @@ impl std::error::Error for SetIpAddressTypeError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct SetResourceAccessForBucketError {
+    pub kind: SetResourceAccessForBucketErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SetResourceAccessForBucketErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SetResourceAccessForBucketError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SetResourceAccessForBucketErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SetResourceAccessForBucketErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            SetResourceAccessForBucketErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SetResourceAccessForBucketErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            SetResourceAccessForBucketErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            SetResourceAccessForBucketErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for SetResourceAccessForBucketError {
+    fn code(&self) -> Option<&str> {
+        SetResourceAccessForBucketError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SetResourceAccessForBucketError {
+    pub fn new(kind: SetResourceAccessForBucketErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SetResourceAccessForBucketErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SetResourceAccessForBucketErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetResourceAccessForBucketErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetResourceAccessForBucketErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetResourceAccessForBucketErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetResourceAccessForBucketErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetResourceAccessForBucketErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for SetResourceAccessForBucketError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SetResourceAccessForBucketErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SetResourceAccessForBucketErrorKind::InvalidInputException(_inner) => Some(_inner),
+            SetResourceAccessForBucketErrorKind::NotFoundException(_inner) => Some(_inner),
+            SetResourceAccessForBucketErrorKind::ServiceException(_inner) => Some(_inner),
+            SetResourceAccessForBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            SetResourceAccessForBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct StartInstanceError {
     pub kind: StartInstanceErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -17535,6 +18531,225 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateBucketError {
+    pub kind: UpdateBucketErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateBucketErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateBucketError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateBucketErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateBucketErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateBucketErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateBucketErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateBucketErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            UpdateBucketErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateBucketError {
+    fn code(&self) -> Option<&str> {
+        UpdateBucketError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateBucketError {
+    pub fn new(kind: UpdateBucketErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateBucketErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateBucketErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBucketErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBucketErrorKind::InvalidInputException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBucketErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBucketErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBucketErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateBucketError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateBucketErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateBucketErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateBucketErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateBucketErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            UpdateBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateBucketBundleError {
+    pub kind: UpdateBucketBundleErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateBucketBundleErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceException(crate::error::ServiceException),
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateBucketBundleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateBucketBundleErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateBucketBundleErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateBucketBundleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateBucketBundleErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateBucketBundleErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            UpdateBucketBundleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateBucketBundleError {
+    fn code(&self) -> Option<&str> {
+        UpdateBucketBundleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateBucketBundleError {
+    pub fn new(kind: UpdateBucketBundleErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateBucketBundleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateBucketBundleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBucketBundleErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBucketBundleErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBucketBundleErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBucketBundleErrorKind::ServiceException(_))
+    }
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBucketBundleErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateBucketBundleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateBucketBundleErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateBucketBundleErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateBucketBundleErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateBucketBundleErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateBucketBundleErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            UpdateBucketBundleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

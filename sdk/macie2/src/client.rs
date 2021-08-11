@@ -264,7 +264,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for the account that sent the invitation.</p>
+        /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
         pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.administrator_account_id(input);
             self
@@ -288,7 +288,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_invitation_id(input);
             self
         }
-        /// <p>(Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+        /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
         pub fn master_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_account(input);
             self
@@ -534,7 +534,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ignore_words(inp);
             self
@@ -546,7 +546,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ignore_words(input);
             self
         }
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(inp);
             self
@@ -558,7 +558,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(input);
             self
@@ -745,7 +745,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An array that lists AWS account IDs, one for each account to send the invitation to.</p>
+        /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self
@@ -757,7 +757,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_ids(input);
             self
         }
-        /// <p>Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to true.</p>
+        /// <p>Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To send an email notification to the root user of each account, set this value to true.</p>
         pub fn disable_email_notification(mut self, input: bool) -> Self {
             self.inner = self.inner.disable_email_notification(input);
             self
@@ -807,7 +807,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The details for the account to associate with the administrator account.</p>
+        /// <p>The details of the account to associate with the administrator account.</p>
         pub fn account(mut self, input: crate::model::AccountDetail) -> Self {
             self.inner = self.inner.account(input);
             self
@@ -913,7 +913,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An array that lists AWS account IDs, one for each account that sent an invitation to decline.</p>
+        /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self
@@ -1039,7 +1039,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An array that lists AWS account IDs, one for each account that sent an invitation to delete.</p>
+        /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self
@@ -1312,7 +1312,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the delegated Amazon Macie administrator account.</p>
+        /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input);
             self
@@ -1470,7 +1470,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// Specifies how often to publish updates to policy findings for the account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -1526,7 +1526,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+        /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input);
             self
@@ -1611,7 +1611,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the AWS account.</p>
+        /// <p>The unique identifier for the Amazon Web Services account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2699,7 +2699,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The configuration settings that determine which findings to publish to AWS Security Hub.</p>
+        /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
         pub fn security_hub_configuration(
             mut self,
             input: crate::model::SecurityHubConfiguration,
@@ -2882,7 +2882,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ignore_words(inp);
             self
@@ -2894,7 +2894,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ignore_words(input);
             self
         }
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(inp);
             self
@@ -2906,7 +2906,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(input);
             self
@@ -3172,7 +3172,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// Specifies how often to publish updates to policy findings for the account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -3278,7 +3278,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to enable Amazon Macie automatically for each account, when the account is added to the AWS organization.</p>
+        /// <p>Specifies whether to enable Amazon Macie automatically for each account, when the account is added to the Amazon Web Services organization.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_enable(input);
             self

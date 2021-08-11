@@ -49,8 +49,7 @@ impl AsRef<str> for IdentityType {
     }
 }
 
-/// <p>A key-value pair containing user-defined metadata that you can associate with an Amazon
-/// EMR resource. Tags make it easier to associate clusters in various ways, such as grouping
+/// <p>A key-value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping
 /// clusters to track your Amazon EMR resource allocation costs. For more information, see
 /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
 /// Clusters</a>. </p>
@@ -1290,8 +1289,7 @@ impl BootstrapActionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptBootstrapActionConfig {
-    /// <p>Location of the script to run during a bootstrap action. Can be either a location in
-    /// Amazon S3 or on a local file system.</p>
+    /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1314,8 +1312,7 @@ pub mod script_bootstrap_action_config {
         pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Location of the script to run during a bootstrap action. Can be either a location in
-        /// Amazon S3 or on a local file system.</p>
+        /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
@@ -1353,15 +1350,33 @@ impl ScriptBootstrapActionConfig {
     }
 }
 
-/// <p>Specification of a cluster (job flow) step.</p>
+/// <p>Specification for a cluster (job flow) step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepConfig {
     /// <p>The name of the step.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-    /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
-    /// We recommend using TERMINATE_CLUSTER instead.</p>
+    /// <p>The action to take when the step fails. Use one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONTINUE</code> - Continues to the next step in the queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The JAR file used for the step.</p>
     pub hadoop_jar_step: std::option::Option<crate::model::HadoopJarStepConfig>,
@@ -1395,9 +1410,27 @@ pub mod step_config {
             self.name = input;
             self
         }
-        /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
-        /// We recommend using TERMINATE_CLUSTER instead.</p>
+        /// <p>The action to take when the step fails. Use one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONTINUE</code> - Continues to the next step in the queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
             self.action_on_failure = Some(input);
             self
@@ -1690,7 +1723,7 @@ pub struct JobFlowInstancesConfig {
     pub ec2_key_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the cluster runs.</p>
     pub placement: std::option::Option<crate::model::PlacementType>,
-    /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub keep_job_flow_alive_when_no_steps: bool,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being
     /// terminated by API call, user intervention, or in the event of a job-flow error.</p>
@@ -1715,9 +1748,9 @@ pub struct JobFlowInstancesConfig {
     /// later, excluding 5.0.x versions.</p>
     /// </note>
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
+    /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
     pub emr_managed_master_security_group: std::option::Option<std::string::String>,
-    /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
+    /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
     pub emr_managed_slave_security_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access
     /// clusters in VPC private subnets.</p>
@@ -1884,7 +1917,7 @@ pub mod job_flow_instances_config {
             self.placement = input;
             self
         }
-        /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
+        /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
         pub fn keep_job_flow_alive_when_no_steps(mut self, input: bool) -> Self {
             self.keep_job_flow_alive_when_no_steps = Some(input);
             self
@@ -1951,7 +1984,7 @@ pub mod job_flow_instances_config {
             self.ec2_subnet_ids = input;
             self
         }
-        /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
+        /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
         pub fn emr_managed_master_security_group(
             mut self,
             input: impl Into<std::string::String>,
@@ -1966,7 +1999,7 @@ pub mod job_flow_instances_config {
             self.emr_managed_master_security_group = input;
             self
         }
-        /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
+        /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
         pub fn emr_managed_slave_security_group(
             mut self,
             input: impl Into<std::string::String>,
@@ -2538,7 +2571,7 @@ impl OnDemandProvisioningSpecification {
 pub struct OnDemandCapacityReservationOptions {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
-    /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
+    /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
     pub usage_strategy: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
@@ -2587,7 +2620,7 @@ pub mod on_demand_capacity_reservation_options {
     impl Builder {
         /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
         /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
-        /// <p>If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
+        /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
         pub fn usage_strategy(
             mut self,
             input: crate::model::OnDemandCapacityReservationUsageStrategy,
@@ -3047,8 +3080,7 @@ impl AsRef<str> for SpotProvisioningTimeoutAction {
 
 /// <p>An instance type configuration for each instance type in an instance fleet, which
 /// determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot
-/// target capacities. There can be a maximum of five instance type configurations in a
-/// fleet.</p>
+/// target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p>
 /// <note>
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
 /// later, excluding 5.0.x versions.</p>
@@ -3073,7 +3105,7 @@ pub struct InstanceTypeConfig {
     /// neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is
     /// provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub bid_price_as_percentage_of_on_demand_price: std::option::Option<f64>,
-    /// <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
     /// as defined by <code>InstanceType</code>. </p>
     pub ebs_configuration: std::option::Option<crate::model::EbsConfiguration>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which
@@ -3160,7 +3192,7 @@ pub mod instance_type_config {
             self.bid_price_as_percentage_of_on_demand_price = input;
             self
         }
-        /// <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
+        /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>. </p>
         pub fn ebs_configuration(mut self, input: crate::model::EbsConfiguration) -> Self {
             self.ebs_configuration = Some(input);
@@ -5757,10 +5789,10 @@ impl InstanceFleetModifyConfig {
 pub struct SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group from the AWS SSO Identity
+    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
     /// Store.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API
     /// Reference</i>.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
@@ -5806,7 +5838,7 @@ pub mod session_mapping_summary {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the AWS SSO Identity
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
         /// Store.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
@@ -5816,7 +5848,7 @@ pub mod session_mapping_summary {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API
         /// Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
@@ -6021,8 +6053,7 @@ pub struct StepSummary {
     /// <p>The Hadoop job configuration of the cluster step.</p>
     pub config: std::option::Option<crate::model::HadoopStepConfig>,
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-    /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.
-    /// We recommend using TERMINATE_CLUSTER instead.</p>
+    /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
     pub status: std::option::Option<crate::model::StepStatus>,
@@ -6082,8 +6113,7 @@ pub mod step_summary {
             self
         }
         /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.
-        /// We recommend using TERMINATE_CLUSTER instead.</p>
+        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
             self.action_on_failure = Some(input);
             self
@@ -6753,7 +6783,68 @@ impl SecurityConfigurationSummary {
     }
 }
 
-/// <p></p>
+/// <p>The release label filters by application or version prefix.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleaseLabelFilter {
+    /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
+    pub prefix: std::option::Option<std::string::String>,
+    /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
+    pub application: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReleaseLabelFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleaseLabelFilter");
+        formatter.field("prefix", &self.prefix);
+        formatter.field("application", &self.application);
+        formatter.finish()
+    }
+}
+/// See [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
+pub mod release_label_filter {
+    /// A builder for [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) prefix: std::option::Option<std::string::String>,
+        pub(crate) application: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application = Some(input.into());
+            self
+        }
+        pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
+        pub fn build(self) -> crate::model::ReleaseLabelFilter {
+            crate::model::ReleaseLabelFilter {
+                prefix: self.prefix,
+                application: self.application,
+            }
+        }
+    }
+}
+impl ReleaseLabelFilter {
+    /// Creates a new builder-style object to manufacture [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
+    pub fn builder() -> crate::model::release_label_filter::Builder {
+        crate::model::release_label_filter::Builder::default()
+    }
+}
+
+/// <p>Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotebookExecutionSummary {
@@ -7093,7 +7184,7 @@ pub struct Instance {
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The list of EBS volumes that are attached to this instance.</p>
+    /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
     pub ebs_volumes: std::option::Option<std::vec::Vec<crate::model::EbsVolume>>,
 }
 impl std::fmt::Debug for Instance {
@@ -7807,7 +7898,7 @@ pub struct InstanceGroup {
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
-    /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a
+    /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a
     /// separate configuration for each instance group (master, core, and task).</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The version number of the requested configuration specification for this instance
@@ -8643,8 +8734,7 @@ pub struct InstanceFleet {
     /// <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater
     /// than <code>TargetSpotCapacity</code>.</p>
     pub provisioned_spot_capacity: std::option::Option<i32>,
-    /// <p>The specification for the instance types that comprise an instance fleet. Up to five
-    /// unique instance specifications may be defined for each instance fleet. </p>
+    /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
     pub instance_type_specifications:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
     /// <p>Describes the launch specification for an instance fleet. </p>
@@ -8893,7 +8983,7 @@ pub struct InstanceTypeSpecification {
     /// <p>A configuration classification that applies when provisioning cluster instances, which
     /// can include configurations for applications and software bundled with Amazon EMR.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-    /// <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
     /// as defined by <code>InstanceType</code>.</p>
     pub ebs_block_devices: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is
@@ -10094,7 +10184,7 @@ pub struct SessionMappingDetail {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API
     /// Reference</i>.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
@@ -10153,7 +10243,7 @@ pub mod session_mapping_detail {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API
         /// Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
@@ -10236,7 +10326,7 @@ impl SessionMappingDetail {
     }
 }
 
-/// <p>Properties that describe the AWS principal that created the
+/// <p>Properties that describe the Amazon Web Services principal that created the
 /// <code>BlockPublicAccessConfiguration</code> using the
 /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
 /// the configuration was created. Each time a configuration for block public access is
@@ -10648,9 +10738,11 @@ pub struct Step {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Hadoop job configuration of the cluster step.</p>
     pub config: std::option::Option<crate::model::HadoopStepConfig>,
-    /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-    /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
-    /// We recommend using TERMINATE_CLUSTER instead.</p>
+    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>,
+    /// <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility.
+    /// We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
     pub status: std::option::Option<crate::model::StepStatus>,
@@ -10709,9 +10801,11 @@ pub mod step {
             self.config = input;
             self
         }
-        /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
-        /// We recommend using TERMINATE_CLUSTER instead.</p>
+        /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>,
+        /// <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility.
+        /// We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
             self.action_on_failure = Some(input);
             self
@@ -10748,6 +10842,67 @@ impl Step {
     /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step)
     pub fn builder() -> crate::model::step::Builder {
         crate::model::step::Builder::default()
+    }
+}
+
+/// <p>The returned release label application names or versions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SimplifiedApplication {
+    /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SimplifiedApplication {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SimplifiedApplication");
+        formatter.field("name", &self.name);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`SimplifiedApplication`](crate::model::SimplifiedApplication)
+pub mod simplified_application {
+    /// A builder for [`SimplifiedApplication`](crate::model::SimplifiedApplication)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SimplifiedApplication`](crate::model::SimplifiedApplication)
+        pub fn build(self) -> crate::model::SimplifiedApplication {
+            crate::model::SimplifiedApplication {
+                name: self.name,
+                version: self.version,
+            }
+        }
+    }
+}
+impl SimplifiedApplication {
+    /// Creates a new builder-style object to manufacture [`SimplifiedApplication`](crate::model::SimplifiedApplication)
+    pub fn builder() -> crate::model::simplified_application::Builder {
+        crate::model::simplified_application::Builder::default()
     }
 }
 
@@ -11127,7 +11282,7 @@ pub struct JobFlowDetail {
     pub name: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 where log files for the job are stored.</p>
     pub log_uri: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is
+    /// <p>The KMS key used for encrypting log files. This attribute is
     /// only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
@@ -11145,18 +11300,15 @@ pub struct JobFlowDetail {
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are
     /// not using third-party software to manage the job flow, this value is empty.</p>
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether the cluster is visible to all IAM users of the AWS account associated
-    /// with the cluster. The default value, <code>true</code>, indicates that all IAM users in the
-    /// AWS account can perform cluster actions if they have the proper IAM policy permissions. If
-    /// this value is <code>false</code>, only the IAM user that created the cluster can perform
-    /// actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of
-    /// <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code>
-    /// parameter of the <code>RunJobFlow</code> action.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+    /// with the cluster. When <code>true</code>, IAM principals in the
+    /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the
     /// job flow assume this role.</p>
     pub job_flow_role: std::option::Option<std::string::String>,
-    /// <p>The IAM role that is assumed by the Amazon EMR service to access AWS resources on your
+    /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your
     /// behalf.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is
@@ -11250,7 +11402,7 @@ pub mod job_flow_detail {
             self.log_uri = input;
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is
+        /// <p>The KMS key used for encrypting log files. This attribute is
         /// only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_encryption_kms_key_id = Some(input.into());
@@ -11343,13 +11495,10 @@ pub mod job_flow_detail {
             self.supported_products = input;
             self
         }
-        /// <p>Indicates whether the cluster is visible to all IAM users of the AWS account associated
-        /// with the cluster. The default value, <code>true</code>, indicates that all IAM users in the
-        /// AWS account can perform cluster actions if they have the proper IAM policy permissions. If
-        /// this value is <code>false</code>, only the IAM user that created the cluster can perform
-        /// actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of
-        /// <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code>
-        /// parameter of the <code>RunJobFlow</code> action.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+        /// with the cluster. When <code>true</code>, IAM principals in the
+        /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
@@ -11371,7 +11520,7 @@ pub mod job_flow_detail {
             self.job_flow_role = input;
             self
         }
-        /// <p>The IAM role that is assumed by the Amazon EMR service to access AWS resources on your
+        /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your
         /// behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
@@ -12529,7 +12678,7 @@ pub struct Cluster {
     pub instance_collection_type: std::option::Option<crate::model::InstanceCollectionType>,
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     pub log_uri: std::option::Option<std::string::String>,
-    /// <p> The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is
+    /// <p> The KMS key used for encrypting log files. This attribute is
     /// only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The AMI version requested for this cluster.</p>
@@ -12550,19 +12699,16 @@ pub struct Cluster {
     /// being terminated by an API call or user intervention, or in the event of a cluster
     /// error.</p>
     pub termination_protected: bool,
-    /// <p>Indicates whether the cluster is visible to all IAM users of the AWS account associated
-    /// with the cluster. The default value, <code>true</code>, indicates that all IAM users in the
-    /// AWS account can perform cluster actions if they have the proper IAM policy permissions. If
-    /// this value is <code>false</code>, only the IAM user that created the cluster can perform
-    /// actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of
-    /// <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code>
-    /// parameter of the <code>RunJobFlow</code> action.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+    /// with the cluster. When <code>true</code>, IAM principals in the
+    /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>A list of tags associated with a cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on
+    /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
     /// your behalf.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value
@@ -12772,7 +12918,7 @@ pub mod cluster {
             self.log_uri = input;
             self
         }
-        /// <p> The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is
+        /// <p> The KMS key used for encrypting log files. This attribute is
         /// only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_encryption_kms_key_id = Some(input.into());
@@ -12847,13 +12993,10 @@ pub mod cluster {
             self.termination_protected = input;
             self
         }
-        /// <p>Indicates whether the cluster is visible to all IAM users of the AWS account associated
-        /// with the cluster. The default value, <code>true</code>, indicates that all IAM users in the
-        /// AWS account can perform cluster actions if they have the proper IAM policy permissions. If
-        /// this value is <code>false</code>, only the IAM user that created the cluster can perform
-        /// actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of
-        /// <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code>
-        /// parameter of the <code>RunJobFlow</code> action.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+        /// with the cluster. When <code>true</code>, IAM principals in the
+        /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
@@ -12888,7 +13031,7 @@ pub mod cluster {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on
+        /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
         /// your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());

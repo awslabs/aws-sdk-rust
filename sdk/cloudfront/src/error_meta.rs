@@ -289,6 +289,31 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::AssociateAliasError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::AssociateAliasError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateAliasErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::AssociateAliasErrorKind::IllegalUpdate(inner) => {
+                    Error::IllegalUpdate(inner)
+                }
+                crate::error::AssociateAliasErrorKind::InvalidArgument(inner) => {
+                    Error::InvalidArgument(inner)
+                }
+                crate::error::AssociateAliasErrorKind::NoSuchDistribution(inner) => {
+                    Error::NoSuchDistribution(inner)
+                }
+                crate::error::AssociateAliasErrorKind::TooManyDistributionCnamEs(inner) => {
+                    Error::TooManyDistributionCnamEs(inner)
+                }
+                crate::error::AssociateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateCachePolicyError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateCachePolicyError>) -> Self {
         match err {
@@ -540,6 +565,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateFunctionError>> for 
                 }
                 crate::error::CreateFunctionErrorKind::TooManyFunctions(inner) => {
                     Error::TooManyFunctions(inner)
+                }
+                crate::error::CreateFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
                 }
                 crate::error::CreateFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -873,6 +901,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteFunctionError>> for 
                 crate::error::DeleteFunctionErrorKind::PreconditionFailed(inner) => {
                     Error::PreconditionFailed(inner)
                 }
+                crate::error::DeleteFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
                 crate::error::DeleteFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -1032,6 +1063,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeFunctionError>> fo
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeFunctionErrorKind::NoSuchFunctionExists(inner) => {
                     Error::NoSuchFunctionExists(inner)
+                }
+                crate::error::DescribeFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
                 }
                 crate::error::DescribeFunctionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1211,6 +1245,9 @@ impl From<smithy_http::result::SdkError<crate::error::GetFunctionError>> for Err
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetFunctionErrorKind::NoSuchFunctionExists(inner) => {
                     Error::NoSuchFunctionExists(inner)
+                }
+                crate::error::GetFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
                 }
                 crate::error::GetFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1459,6 +1496,24 @@ impl From<smithy_http::result::SdkError<crate::error::ListCloudFrontOriginAccess
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListConflictingAliasesError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListConflictingAliasesError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListConflictingAliasesErrorKind::InvalidArgument(inner) => {
+                    Error::InvalidArgument(inner)
+                }
+                crate::error::ListConflictingAliasesErrorKind::NoSuchDistribution(inner) => {
+                    Error::NoSuchDistribution(inner)
+                }
+                crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListDistributionsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ListDistributionsError>) -> Self {
         match err {
@@ -1623,6 +1678,9 @@ impl From<smithy_http::result::SdkError<crate::error::ListFunctionsError>> for E
                 crate::error::ListFunctionsErrorKind::InvalidArgument(inner) => {
                     Error::InvalidArgument(inner)
                 }
+                crate::error::ListFunctionsErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
                 crate::error::ListFunctionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -1777,6 +1835,9 @@ impl From<smithy_http::result::SdkError<crate::error::PublishFunctionError>> for
                 crate::error::PublishFunctionErrorKind::PreconditionFailed(inner) => {
                     Error::PreconditionFailed(inner)
                 }
+                crate::error::PublishFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
                 crate::error::PublishFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -1820,6 +1881,9 @@ impl From<smithy_http::result::SdkError<crate::error::TestFunctionError>> for Er
                 }
                 crate::error::TestFunctionErrorKind::TestFunctionFailed(inner) => {
                     Error::TestFunctionFailed(inner)
+                }
+                crate::error::TestFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
                 }
                 crate::error::TestFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2052,6 +2116,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateFunctionError>> for 
                 }
                 crate::error::UpdateFunctionErrorKind::PreconditionFailed(inner) => {
                     Error::PreconditionFailed(inner)
+                }
+                crate::error::UpdateFunctionErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
                 }
                 crate::error::UpdateFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

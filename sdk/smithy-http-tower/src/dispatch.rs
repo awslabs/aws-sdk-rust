@@ -25,11 +25,11 @@ type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>
 
 impl<S> Service<operation::Request> for DispatchService<S>
 where
-    S: Service<http::Request<SdkBody>> + Clone + Send + 'static,
+    S: Service<http::Request<SdkBody>, Response = http::Response<SdkBody>> + Clone + Send + 'static,
     S::Error: Into<BoxError>,
     S::Future: Send + 'static,
 {
-    type Response = S::Response;
+    type Response = operation::Response;
     type Error = SendOperationError;
     type Future = BoxedResultFuture<Self::Response, Self::Error>;
 
@@ -40,13 +40,14 @@ where
     }
 
     fn call(&mut self, req: operation::Request) -> Self::Future {
-        let (req, _property_bag) = req.into_parts();
+        let (req, property_bag) = req.into_parts();
         let mut inner = self.inner.clone();
         let future = async move {
             trace!(request = ?req);
             inner
                 .call(req)
                 .await
+                .map(|resp| operation::Response::from_parts(resp, property_bag))
                 .map_err(|e| SendOperationError::RequestDispatchError(e.into()))
         };
         Box::pin(future)

@@ -390,6 +390,36 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIndexError>> for Err
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DeletePrincipalMappingError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePrincipalMappingError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeletePrincipalMappingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeletePrincipalMappingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DeleteQuerySuggestionsBlockListError>>
     for Error
 {
@@ -510,6 +540,35 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeIndexError>> for E
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeIndexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribePrincipalMappingError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribePrincipalMappingError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribePrincipalMappingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribePrincipalMappingErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::DescribePrincipalMappingErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribePrincipalMappingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribePrincipalMappingErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribePrincipalMappingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -693,6 +752,40 @@ impl From<smithy_http::result::SdkError<crate::error::ListFaqsError>> for Error 
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListGroupsOlderThanOrderingIdError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListGroupsOlderThanOrderingIdError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::ThrottlingException(
+                    inner,
+                ) => Error::ThrottlingException(inner),
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::ListGroupsOlderThanOrderingIdErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListIndicesError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ListIndicesError>) -> Self {
         match err {
@@ -781,6 +874,39 @@ impl From<smithy_http::result::SdkError<crate::error::ListThesauriError>> for Er
                     Error::ValidationException(inner)
                 }
                 crate::error::ListThesauriErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::PutPrincipalMappingError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::PutPrincipalMappingError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutPrincipalMappingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::PutPrincipalMappingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::PutPrincipalMappingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -7616,6 +7616,378 @@ impl std::error::Error for DescribeUserError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GenerateEmbedUrlForAnonymousUserError {
+    pub kind: GenerateEmbedUrlForAnonymousUserErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    SessionLifetimeInMinutesInvalidException(
+        crate::error::SessionLifetimeInMinutesInvalidException,
+    ),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
+    UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GenerateEmbedUrlForAnonymousUserError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException(
+                _inner,
+            ) => _inner.fmt(f),
+            GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GenerateEmbedUrlForAnonymousUserError {
+    fn code(&self) -> Option<&str> {
+        GenerateEmbedUrlForAnonymousUserError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GenerateEmbedUrlForAnonymousUserError {
+    pub fn new(kind: GenerateEmbedUrlForAnonymousUserErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unsupported_pricing_plan_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(_)
+        )
+    }
+    pub fn is_unsupported_user_edition_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(_)
+        )
+    }
+}
+impl std::error::Error for GenerateEmbedUrlForAnonymousUserError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException(
+                _inner,
+            ) => Some(_inner),
+            GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(_inner) => {
+                Some(_inner)
+            }
+            GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GenerateEmbedUrlForRegisteredUserError {
+    pub kind: GenerateEmbedUrlForRegisteredUserErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GenerateEmbedUrlForRegisteredUserErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    QuickSightUserNotFoundException(crate::error::QuickSightUserNotFoundException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    SessionLifetimeInMinutesInvalidException(
+        crate::error::SessionLifetimeInMinutesInvalidException,
+    ),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
+    UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GenerateEmbedUrlForRegisteredUserError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GenerateEmbedUrlForRegisteredUserError {
+    fn code(&self) -> Option<&str> {
+        GenerateEmbedUrlForRegisteredUserError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GenerateEmbedUrlForRegisteredUserError {
+    pub fn new(
+        kind: GenerateEmbedUrlForRegisteredUserErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_quick_sight_user_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unsupported_pricing_plan_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(_)
+        )
+    }
+    pub fn is_unsupported_user_edition_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException(_)
+        )
+    }
+}
+impl std::error::Error for GenerateEmbedUrlForRegisteredUserError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlError {
     pub kind: GetDashboardEmbedUrlErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -14548,7 +14920,7 @@ impl std::error::Error for UpdateUserError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -14592,7 +14964,7 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -14624,7 +14996,7 @@ pub struct ResourceUnavailableException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceUnavailableException {
@@ -14682,7 +15054,7 @@ pub mod resource_unavailable_exception {
             self.resource_type = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -14715,7 +15087,7 @@ pub struct ResourceNotFoundException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -14773,7 +15145,7 @@ pub mod resource_not_found_exception {
             self.resource_type = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -14804,7 +15176,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionNotMetException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PreconditionNotMetException {
@@ -14848,7 +15220,7 @@ pub mod precondition_not_met_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -14878,7 +15250,7 @@ impl PreconditionNotMetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -14922,7 +15294,7 @@ pub mod invalid_parameter_value_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -14952,7 +15324,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailureException {
@@ -14996,7 +15368,7 @@ pub mod internal_failure_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15029,7 +15401,7 @@ impl InternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -15073,7 +15445,7 @@ pub mod access_denied_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15106,7 +15478,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedUserEditionException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedUserEditionException {
@@ -15150,7 +15522,7 @@ pub mod unsupported_user_edition_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15182,7 +15554,7 @@ pub struct ResourceExistsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceExistsException {
@@ -15240,7 +15612,7 @@ pub mod resource_exists_exception {
             self.resource_type = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15271,7 +15643,7 @@ impl ResourceExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -15315,7 +15687,7 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15347,7 +15719,7 @@ pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>Limit exceeded.</p>
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -15405,7 +15777,7 @@ pub mod limit_exceeded_exception {
             self.resource_type = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15509,7 +15881,7 @@ impl ConcurrentUpdatingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -15553,7 +15925,7 @@ pub mod invalid_next_token_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15584,7 +15956,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionLifetimeInMinutesInvalidException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SessionLifetimeInMinutesInvalidException {
@@ -15628,7 +16000,7 @@ pub mod session_lifetime_in_minutes_invalid_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15660,7 +16032,7 @@ impl SessionLifetimeInMinutesInvalidException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickSightUserNotFoundException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QuickSightUserNotFoundException {
@@ -15704,7 +16076,7 @@ pub mod quick_sight_user_not_found_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15730,7 +16102,7 @@ impl QuickSightUserNotFoundException {
 }
 
 /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-/// without the required pricing plan on your AWS account. Before you can use embedding
+/// without the required pricing plan on your Amazon Web Services account;. Before you can use embedding
 /// for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight. You
 /// can do this on the <b>Manage QuickSight</b> page. </p>
 /// <p>After capacity pricing is added, you can use the
@@ -15740,7 +16112,7 @@ impl QuickSightUserNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPricingPlanException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedPricingPlanException {
@@ -15784,7 +16156,7 @@ pub mod unsupported_pricing_plan_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15815,7 +16187,7 @@ impl UnsupportedPricingPlanException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityTypeNotSupportedException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdentityTypeNotSupportedException {
@@ -15859,7 +16231,7 @@ pub mod identity_type_not_supported_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -15890,7 +16262,7 @@ impl IdentityTypeNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNotWhitelistedException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this request.</p>
+    /// <p>The Amazon Web Services request ID for this request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainNotWhitelistedException {
@@ -15934,7 +16306,7 @@ pub mod domain_not_whitelisted_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request ID for this request.</p>
+        /// <p>The Amazon Web Services request ID for this request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self

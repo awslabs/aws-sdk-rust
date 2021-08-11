@@ -39,6 +39,9 @@ impl<C> Client<C>
 where
     C: aws_hyper::SmithyConnector,
 {
+    pub fn batch_execute_statement(&self) -> fluent_builders::BatchExecuteStatement<C> {
+        fluent_builders::BatchExecuteStatement::new(self.handle.clone())
+    }
     pub fn cancel_statement(&self) -> fluent_builders::CancelStatement<C> {
         fluent_builders::CancelStatement::new(self.handle.clone())
     }
@@ -68,6 +71,110 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct BatchExecuteStatement<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::batch_execute_statement_input::Builder,
+    }
+    impl<C> BatchExecuteStatement<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchExecuteStatementOutput,
+            smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>One or more SQL statements to run. </p>
+        pub fn sqls(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sqls(inp);
+            self
+        }
+        pub fn set_sqls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_sqls(input);
+            self
+        }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input);
+            self
+        }
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_cluster_identifier(input);
+            self
+        }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
+            self
+        }
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
+            self
+        }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input);
+            self
+        }
+        pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_user(input);
+            self
+        }
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input);
+            self
+        }
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_database(input);
+            self
+        }
+        /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
+        pub fn with_event(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_event(input);
+            self
+        }
+        pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_with_event(input);
+            self
+        }
+        /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input);
+            self
+        }
+        pub fn set_statement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_statement_name(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CancelStatement<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
@@ -100,7 +207,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>ExecuteStatment</code> and <code>ListStatements</code>. </p>
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input);
             self
@@ -142,7 +249,9 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>ExecuteStatment</code> and <code>ListStatements</code>. </p>
+        /// A suffix indicates the number of the SQL statement.
+        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input);
             self
@@ -183,7 +292,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
             self
@@ -195,7 +304,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using AWS Secrets Manager. </p>
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input);
             self
@@ -314,7 +423,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sql(input);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
             self
@@ -326,7 +435,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using AWS Secrets Manager. </p>
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input);
             self
@@ -344,7 +453,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_user(input);
             self
         }
-        /// <p>The name of the database. This parameter is required when authenticating using temporary credentials.</p>
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database(input);
             self
@@ -419,7 +528,9 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>ExecuteStatment</code> and <code>ListStatements</code>. </p>
+        /// A suffix indicates then number of the SQL statement.
+        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input);
             self
@@ -469,7 +580,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
             self
@@ -481,7 +592,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name of the database. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database(input);
             self
@@ -490,7 +601,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using AWS Secrets Manager. </p>
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input);
             self
@@ -559,7 +670,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
             self
@@ -571,7 +682,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using AWS Secrets Manager. </p>
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input);
             self
@@ -695,7 +806,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query.
+        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query.
         /// You can list multiple statements by providing a prefix that matches the beginning of the statement name.
         /// For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.  
         /// Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
@@ -787,7 +898,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
             self
@@ -799,7 +910,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using AWS Secrets Manager. </p>
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input);
             self

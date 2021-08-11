@@ -76,6 +76,139 @@ impl Tag {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum MigrationStrategy {
+    CreateNew,
+    UpdateExisting,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MigrationStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATE_NEW" => MigrationStrategy::CreateNew,
+            "UPDATE_EXISTING" => MigrationStrategy::UpdateExisting,
+            other => MigrationStrategy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MigrationStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MigrationStrategy::from(s))
+    }
+}
+impl MigrationStrategy {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MigrationStrategy::CreateNew => "CREATE_NEW",
+            MigrationStrategy::UpdateExisting => "UPDATE_EXISTING",
+            MigrationStrategy::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATE_NEW", "UPDATE_EXISTING"]
+    }
+}
+impl AsRef<str> for MigrationStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Locale {
+    DeDe,
+    EnAu,
+    EnGb,
+    EnIn,
+    EnUs,
+    Es419,
+    EsEs,
+    EsUs,
+    FrCa,
+    FrFr,
+    ItIt,
+    JaJp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Locale {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => Locale::DeDe,
+            "en-AU" => Locale::EnAu,
+            "en-GB" => Locale::EnGb,
+            "en-IN" => Locale::EnIn,
+            "en-US" => Locale::EnUs,
+            "es-419" => Locale::Es419,
+            "es-ES" => Locale::EsEs,
+            "es-US" => Locale::EsUs,
+            "fr-CA" => Locale::FrCa,
+            "fr-FR" => Locale::FrFr,
+            "it-IT" => Locale::ItIt,
+            "ja-JP" => Locale::JaJp,
+            other => Locale::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Locale {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Locale::from(s))
+    }
+}
+impl Locale {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Locale::DeDe => "de-DE",
+            Locale::EnAu => "en-AU",
+            Locale::EnGb => "en-GB",
+            Locale::EnIn => "en-IN",
+            Locale::EnUs => "en-US",
+            Locale::Es419 => "es-419",
+            Locale::EsEs => "es-ES",
+            Locale::EsUs => "es-US",
+            Locale::FrCa => "fr-CA",
+            Locale::FrFr => "fr-FR",
+            Locale::ItIt => "it-IT",
+            Locale::JaJp => "ja-JP",
+            Locale::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA",
+            "fr-FR", "it-IT", "ja-JP",
+        ]
+    }
+}
+impl AsRef<str> for Locale {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ImportStatus {
     Complete,
     Failed,
@@ -2289,86 +2422,6 @@ impl LogSettingsRequest {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum Locale {
-    DeDe,
-    EnAu,
-    EnGb,
-    EnUs,
-    Es419,
-    EsEs,
-    EsUs,
-    FrCa,
-    FrFr,
-    ItIt,
-    JaJp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for Locale {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => Locale::DeDe,
-            "en-AU" => Locale::EnAu,
-            "en-GB" => Locale::EnGb,
-            "en-US" => Locale::EnUs,
-            "es-419" => Locale::Es419,
-            "es-ES" => Locale::EsEs,
-            "es-US" => Locale::EsUs,
-            "fr-CA" => Locale::FrCa,
-            "fr-FR" => Locale::FrFr,
-            "it-IT" => Locale::ItIt,
-            "ja-JP" => Locale::JaJp,
-            other => Locale::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for Locale {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Locale::from(s))
-    }
-}
-impl Locale {
-    pub fn as_str(&self) -> &str {
-        match self {
-            Locale::DeDe => "de-DE",
-            Locale::EnAu => "en-AU",
-            Locale::EnGb => "en-GB",
-            Locale::EnUs => "en-US",
-            Locale::Es419 => "es-419",
-            Locale::EsEs => "es-ES",
-            Locale::EsUs => "es-US",
-            Locale::FrCa => "fr-CA",
-            Locale::FrFr => "fr-FR",
-            Locale::ItIt => "it-IT",
-            Locale::JaJp => "ja-JP",
-            Locale::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-419", "es-ES", "es-US", "fr-CA", "fr-FR",
-            "it-IT", "ja-JP",
-        ]
-    }
-}
-impl AsRef<str> for Locale {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
 pub enum Status {
     Building,
     Failed,
@@ -2880,6 +2933,516 @@ impl SlotTypeMetadata {
     /// Creates a new builder-style object to manufacture [`SlotTypeMetadata`](crate::model::SlotTypeMetadata)
     pub fn builder() -> crate::model::slot_type_metadata::Builder {
         crate::model::slot_type_metadata::Builder::default()
+    }
+}
+
+/// <p>Provides information about migrating a bot from Amazon Lex V1 to Amazon Lex V2.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MigrationSummary {
+    /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    pub migration_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub v1_bot_name: std::option::Option<std::string::String>,
+    /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub v1_bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub v1_bot_locale: std::option::Option<crate::model::Locale>,
+    /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
+    pub v2_bot_id: std::option::Option<std::string::String>,
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub v2_bot_role: std::option::Option<std::string::String>,
+    /// <p>The status of the operation. When the status is <code>COMPLETE</code>
+    /// the bot is available in Amazon Lex V2. There may be alerts and warnings that
+    /// need to be resolved to complete the migration.</p>
+    pub migration_status: std::option::Option<crate::model::MigrationStatus>,
+    /// <p>The strategy used to conduct the migration.</p>
+    pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+    /// <p>The date and time that the migration started.</p>
+    pub migration_timestamp: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for MigrationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MigrationSummary");
+        formatter.field("migration_id", &self.migration_id);
+        formatter.field("v1_bot_name", &self.v1_bot_name);
+        formatter.field("v1_bot_version", &self.v1_bot_version);
+        formatter.field("v1_bot_locale", &self.v1_bot_locale);
+        formatter.field("v2_bot_id", &self.v2_bot_id);
+        formatter.field("v2_bot_role", &self.v2_bot_role);
+        formatter.field("migration_status", &self.migration_status);
+        formatter.field("migration_strategy", &self.migration_strategy);
+        formatter.field("migration_timestamp", &self.migration_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`MigrationSummary`](crate::model::MigrationSummary)
+pub mod migration_summary {
+    /// A builder for [`MigrationSummary`](crate::model::MigrationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) migration_id: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_name: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_version: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_locale: std::option::Option<crate::model::Locale>,
+        pub(crate) v2_bot_id: std::option::Option<std::string::String>,
+        pub(crate) v2_bot_role: std::option::Option<std::string::String>,
+        pub(crate) migration_status: std::option::Option<crate::model::MigrationStatus>,
+        pub(crate) migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+        pub(crate) migration_timestamp: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+        pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.migration_id = Some(input.into());
+            self
+        }
+        pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.migration_id = input;
+            self
+        }
+        /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
+        pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_name = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v1_bot_name = input;
+            self
+        }
+        /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
+        pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_version = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.v1_bot_version = input;
+            self
+        }
+        /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
+        pub fn v1_bot_locale(mut self, input: crate::model::Locale) -> Self {
+            self.v1_bot_locale = Some(input);
+            self
+        }
+        pub fn set_v1_bot_locale(
+            mut self,
+            input: std::option::Option<crate::model::Locale>,
+        ) -> Self {
+            self.v1_bot_locale = input;
+            self
+        }
+        /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
+        pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_id = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_id = input;
+            self
+        }
+        /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+        pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_role = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_role = input;
+            self
+        }
+        /// <p>The status of the operation. When the status is <code>COMPLETE</code>
+        /// the bot is available in Amazon Lex V2. There may be alerts and warnings that
+        /// need to be resolved to complete the migration.</p>
+        pub fn migration_status(mut self, input: crate::model::MigrationStatus) -> Self {
+            self.migration_status = Some(input);
+            self
+        }
+        pub fn set_migration_status(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStatus>,
+        ) -> Self {
+            self.migration_status = input;
+            self
+        }
+        /// <p>The strategy used to conduct the migration.</p>
+        pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
+            self.migration_strategy = Some(input);
+            self
+        }
+        pub fn set_migration_strategy(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStrategy>,
+        ) -> Self {
+            self.migration_strategy = input;
+            self
+        }
+        /// <p>The date and time that the migration started.</p>
+        pub fn migration_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.migration_timestamp = Some(input);
+            self
+        }
+        pub fn set_migration_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.migration_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MigrationSummary`](crate::model::MigrationSummary)
+        pub fn build(self) -> crate::model::MigrationSummary {
+            crate::model::MigrationSummary {
+                migration_id: self.migration_id,
+                v1_bot_name: self.v1_bot_name,
+                v1_bot_version: self.v1_bot_version,
+                v1_bot_locale: self.v1_bot_locale,
+                v2_bot_id: self.v2_bot_id,
+                v2_bot_role: self.v2_bot_role,
+                migration_status: self.migration_status,
+                migration_strategy: self.migration_strategy,
+                migration_timestamp: self.migration_timestamp,
+            }
+        }
+    }
+}
+impl MigrationSummary {
+    /// Creates a new builder-style object to manufacture [`MigrationSummary`](crate::model::MigrationSummary)
+    pub fn builder() -> crate::model::migration_summary::Builder {
+        crate::model::migration_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MigrationStatus {
+    Completed,
+    Failed,
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MigrationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => MigrationStatus::Completed,
+            "FAILED" => MigrationStatus::Failed,
+            "IN_PROGRESS" => MigrationStatus::InProgress,
+            other => MigrationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MigrationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MigrationStatus::from(s))
+    }
+}
+impl MigrationStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MigrationStatus::Completed => "COMPLETED",
+            MigrationStatus::Failed => "FAILED",
+            MigrationStatus::InProgress => "IN_PROGRESS",
+            MigrationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "IN_PROGRESS"]
+    }
+}
+impl AsRef<str> for MigrationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    Ascending,
+    Descending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MigrationSortAttribute {
+    MigrationDateTime,
+    V1BotName,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MigrationSortAttribute {
+    fn from(s: &str) -> Self {
+        match s {
+            "MIGRATION_DATE_TIME" => MigrationSortAttribute::MigrationDateTime,
+            "V1_BOT_NAME" => MigrationSortAttribute::V1BotName,
+            other => MigrationSortAttribute::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MigrationSortAttribute {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MigrationSortAttribute::from(s))
+    }
+}
+impl MigrationSortAttribute {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MigrationSortAttribute::MigrationDateTime => "MIGRATION_DATE_TIME",
+            MigrationSortAttribute::V1BotName => "V1_BOT_NAME",
+            MigrationSortAttribute::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MIGRATION_DATE_TIME", "V1_BOT_NAME"]
+    }
+}
+impl AsRef<str> for MigrationSortAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides information about alerts and warnings that Amazon Lex sends during
+/// a migration. The alerts include information about how to resolve the
+/// issue.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MigrationAlert {
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - There was an issue with the migration that
+    /// can't be resolved. The migration stops.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>WARN</code> - There was an issue with the migration that
+    /// requires manual changes to the new Amazon Lex V2 bot. The migration
+    /// continues.</p>
+    /// </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::MigrationAlertType>,
+    /// <p>A message that describes why the alert was issued.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Additional details about the alert.</p>
+    pub details: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A link to the Amazon Lex documentation that describes how to resolve
+    /// the alert.</p>
+    pub reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for MigrationAlert {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MigrationAlert");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("message", &self.message);
+        formatter.field("details", &self.details);
+        formatter.field("reference_ur_ls", &self.reference_ur_ls);
+        formatter.finish()
+    }
+}
+/// See [`MigrationAlert`](crate::model::MigrationAlert)
+pub mod migration_alert {
+    /// A builder for [`MigrationAlert`](crate::model::MigrationAlert)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::MigrationAlertType>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) details: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The type of alert. There are two kinds of alerts:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - There was an issue with the migration that
+        /// can't be resolved. The migration stops.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WARN</code> - There was an issue with the migration that
+        /// requires manual changes to the new Amazon Lex V2 bot. The migration
+        /// continues.</p>
+        /// </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::MigrationAlertType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::MigrationAlertType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>A message that describes why the alert was issued.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.details.unwrap_or_default();
+            v.push(input.into());
+            self.details = Some(v);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
+        pub fn reference_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.reference_ur_ls.unwrap_or_default();
+            v.push(input.into());
+            self.reference_ur_ls = Some(v);
+            self
+        }
+        pub fn set_reference_ur_ls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.reference_ur_ls = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MigrationAlert`](crate::model::MigrationAlert)
+        pub fn build(self) -> crate::model::MigrationAlert {
+            crate::model::MigrationAlert {
+                r#type: self.r#type,
+                message: self.message,
+                details: self.details,
+                reference_ur_ls: self.reference_ur_ls,
+            }
+        }
+    }
+}
+impl MigrationAlert {
+    /// Creates a new builder-style object to manufacture [`MigrationAlert`](crate::model::MigrationAlert)
+    pub fn builder() -> crate::model::migration_alert::Builder {
+        crate::model::migration_alert::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MigrationAlertType {
+    Error,
+    Warn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MigrationAlertType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ERROR" => MigrationAlertType::Error,
+            "WARN" => MigrationAlertType::Warn,
+            other => MigrationAlertType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MigrationAlertType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MigrationAlertType::from(s))
+    }
+}
+impl MigrationAlertType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MigrationAlertType::Error => "ERROR",
+            MigrationAlertType::Warn => "WARN",
+            MigrationAlertType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ERROR", "WARN"]
+    }
+}
+impl AsRef<str> for MigrationAlertType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

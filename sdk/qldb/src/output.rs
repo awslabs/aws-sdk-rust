@@ -93,6 +93,10 @@ pub struct UpdateLedgerOutput {
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
     /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the
+    /// current status, the KMS key, and when the key became inaccessible (in the case of an
+    /// error).</p>
+    pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl std::fmt::Debug for UpdateLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -102,6 +106,7 @@ impl std::fmt::Debug for UpdateLedgerOutput {
         formatter.field("state", &self.state);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_description", &self.encryption_description);
         formatter.finish()
     }
 }
@@ -116,6 +121,8 @@ pub mod update_ledger_output {
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
         pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) encryption_description:
+            std::option::Option<crate::model::LedgerEncryptionDescription>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -170,6 +177,23 @@ pub mod update_ledger_output {
             self.deletion_protection = input;
             self
         }
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the
+        /// current status, the KMS key, and when the key became inaccessible (in the case of an
+        /// error).</p>
+        pub fn encryption_description(
+            mut self,
+            input: crate::model::LedgerEncryptionDescription,
+        ) -> Self {
+            self.encryption_description = Some(input);
+            self
+        }
+        pub fn set_encryption_description(
+            mut self,
+            input: std::option::Option<crate::model::LedgerEncryptionDescription>,
+        ) -> Self {
+            self.encryption_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
         pub fn build(self) -> crate::output::UpdateLedgerOutput {
             crate::output::UpdateLedgerOutput {
@@ -178,6 +202,7 @@ pub mod update_ledger_output {
                 state: self.state,
                 creation_date_time: self.creation_date_time,
                 deletion_protection: self.deletion_protection,
+                encryption_description: self.encryption_description,
             }
         }
     }
@@ -362,7 +387,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersOutput {
-    /// <p>The array of ledger summaries that are associated with the current AWS account and
+    /// <p>The array of ledger summaries that are associated with the current account and
     /// Region.</p>
     pub ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
     /// <p>A pagination token, indicating whether there are more results available:</p>
@@ -542,7 +567,7 @@ impl ListJournalS3ExportsForLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsOutput {
     /// <p>The array of journal export job descriptions for all ledgers that are associated with
-    /// the current AWS account and Region.</p>
+    /// the current account and Region.</p>
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
     /// <ul>
@@ -994,6 +1019,10 @@ pub struct DescribeLedgerOutput {
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
     /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the
+    /// current status, the KMS key, and when the key became inaccessible (in the case of an
+    /// error).</p>
+    pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl std::fmt::Debug for DescribeLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,6 +1033,7 @@ impl std::fmt::Debug for DescribeLedgerOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("permissions_mode", &self.permissions_mode);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_description", &self.encryption_description);
         formatter.finish()
     }
 }
@@ -1019,6 +1049,8 @@ pub mod describe_ledger_output {
         pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) encryption_description:
+            std::option::Option<crate::model::LedgerEncryptionDescription>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1085,6 +1117,23 @@ pub mod describe_ledger_output {
             self.deletion_protection = input;
             self
         }
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the
+        /// current status, the KMS key, and when the key became inaccessible (in the case of an
+        /// error).</p>
+        pub fn encryption_description(
+            mut self,
+            input: crate::model::LedgerEncryptionDescription,
+        ) -> Self {
+            self.encryption_description = Some(input);
+            self
+        }
+        pub fn set_encryption_description(
+            mut self,
+            input: std::option::Option<crate::model::LedgerEncryptionDescription>,
+        ) -> Self {
+            self.encryption_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
         pub fn build(self) -> crate::output::DescribeLedgerOutput {
             crate::output::DescribeLedgerOutput {
@@ -1094,6 +1143,7 @@ pub mod describe_ledger_output {
                 creation_date_time: self.creation_date_time,
                 permissions_mode: self.permissions_mode,
                 deletion_protection: self.deletion_protection,
+                encryption_description: self.encryption_description,
             }
         }
     }
@@ -1259,6 +1309,9 @@ pub struct CreateLedgerOutput {
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
     /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
+    /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1269,6 +1322,7 @@ impl std::fmt::Debug for CreateLedgerOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("permissions_mode", &self.permissions_mode);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }
@@ -1284,6 +1338,7 @@ pub mod create_ledger_output {
         pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1350,6 +1405,16 @@ pub mod create_ledger_output {
             self.deletion_protection = input;
             self
         }
+        /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
+        /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
         pub fn build(self) -> crate::output::CreateLedgerOutput {
             crate::output::CreateLedgerOutput {
@@ -1359,6 +1424,7 @@ pub mod create_ledger_output {
                 creation_date_time: self.creation_date_time,
                 permissions_mode: self.permissions_mode,
                 deletion_protection: self.deletion_protection,
+                kms_key_arn: self.kms_key_arn,
             }
         }
     }

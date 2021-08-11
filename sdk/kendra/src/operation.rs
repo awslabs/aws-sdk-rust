@@ -2,7 +2,7 @@
 /// <p>Removes one or more documents from an index. The documents must have
 /// been added with the <code>BatchPutDocument</code> operation.</p>
 /// <p>The documents are deleted asynchronously. You can see the progress of
-/// the deletion by using AWS CloudWatch. Any error messages related to the
+/// the deletion by using Amazon Web Services CloudWatch. Any error messages related to the
 /// processing of the batch are sent to you CloudWatch log.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteDocument {
@@ -78,8 +78,8 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDocumentStatus {
 /// add custom attributes to the documents, and to attach an access control
 /// list to the documents added to the index.</p>
 /// <p>The documents are indexed asynchronously. You can see the progress of
-/// the batch using AWS CloudWatch. Any error messages related to processing
-/// the batch are sent to your AWS CloudWatch log.</p>
+/// the batch using Amazon Web Services CloudWatch. Any error messages related to processing
+/// the batch are sent to your Amazon Web Services CloudWatch log.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutDocument {
     _private: (),
@@ -387,6 +387,45 @@ impl smithy_http::response::ParseStrictResponse for DeleteIndex {
     }
 }
 
+/// <p>Deletes a group so that all users and sub groups that belong to the group can
+/// no longer access documents only available to that group.</p>
+/// <p>For example, after deleting the group "Summer Interns", all interns who
+/// belonged to that group no longer see intern-only documents in their search
+/// results.</p>
+/// <p>If you want to delete or replace users or sub groups of a group, you need to
+/// use the <code>PutPrincipalMapping</code> operation. For example, if a user in
+/// the group "Engineering" leaves the engineering team and another user takes
+/// their place, you provide an updated list of users or sub groups that belong
+/// to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You
+/// can update your internal list of users or sub groups and input this list
+/// when calling <code>PutPrincipalMapping</code>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePrincipalMapping {
+    _private: (),
+}
+impl DeletePrincipalMapping {
+    /// Creates a new builder-style object to manufacture [`DeletePrincipalMappingInput`](crate::input::DeletePrincipalMappingInput)
+    pub fn builder() -> crate::input::delete_principal_mapping_input::Builder {
+        crate::input::delete_principal_mapping_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeletePrincipalMapping {
+    type Output = std::result::Result<
+        crate::output::DeletePrincipalMappingOutput,
+        crate::error::DeletePrincipalMappingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_principal_mapping_error(response)
+        } else {
+            crate::operation_deser::parse_delete_principal_mapping_response(response)
+        }
+    }
+}
+
 /// <p>Deletes a block list used for query suggestions for an index.</p>
 /// <p>A deleted block list might not take effect right away. Amazon Kendra
 /// needs to refresh the entire suggestions list to add back the
@@ -523,6 +562,39 @@ impl smithy_http::response::ParseStrictResponse for DescribeIndex {
             crate::operation_deser::parse_describe_index_error(response)
         } else {
             crate::operation_deser::parse_describe_index_response(response)
+        }
+    }
+}
+
+/// <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions
+/// for mapping users to their groups. This includes information on the status of
+/// actions currently processing or yet to be processed, when actions were last updated,
+/// when actions were received by Amazon Kendra, the latest action that should process
+/// and apply after other actions, and useful error messages if an action could
+/// not be processed.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribePrincipalMapping {
+    _private: (),
+}
+impl DescribePrincipalMapping {
+    /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingInput`](crate::input::DescribePrincipalMappingInput)
+    pub fn builder() -> crate::input::describe_principal_mapping_input::Builder {
+        crate::input::describe_principal_mapping_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribePrincipalMapping {
+    type Output = std::result::Result<
+        crate::output::DescribePrincipalMappingOutput,
+        crate::error::DescribePrincipalMappingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_principal_mapping_error(response)
+        } else {
+            crate::operation_deser::parse_describe_principal_mapping_response(response)
         }
     }
 }
@@ -725,6 +797,35 @@ impl smithy_http::response::ParseStrictResponse for ListFaqs {
     }
 }
 
+/// <p>Provides a list of groups that are mapped to users before a
+/// given ordering or timestamp identifier.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListGroupsOlderThanOrderingId {
+    _private: (),
+}
+impl ListGroupsOlderThanOrderingId {
+    /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdInput`](crate::input::ListGroupsOlderThanOrderingIdInput)
+    pub fn builder() -> crate::input::list_groups_older_than_ordering_id_input::Builder {
+        crate::input::list_groups_older_than_ordering_id_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListGroupsOlderThanOrderingId {
+    type Output = std::result::Result<
+        crate::output::ListGroupsOlderThanOrderingIdOutput,
+        crate::error::ListGroupsOlderThanOrderingIdError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_groups_older_than_ordering_id_error(response)
+        } else {
+            crate::operation_deser::parse_list_groups_older_than_ordering_id_response(response)
+        }
+    }
+}
+
 /// <p>Lists the Amazon Kendra indexes that you have created.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListIndices {
@@ -837,6 +938,47 @@ impl smithy_http::response::ParseStrictResponse for ListThesauri {
     }
 }
 
+/// <p>Maps users to their groups. You can also map sub groups to groups.
+/// For example, the group "Company Intellectual Property Teams" includes
+/// sub groups "Research" and "Engineering". These sub groups include their
+/// own list of users or people who work in these teams. Only users who work
+/// in research and engineering, and therefore belong in the intellectual
+/// property group, can see top-secret company documents in their search
+/// results. </p>
+/// <p>You map users to their groups when you want to filter search results
+/// for different users based on their group’s access to documents. For more
+/// information on filtering search results for different users, see
+/// <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+/// on user context</a>.</p>
+/// <p>If more than five <code>PUT</code> actions for a group are currently
+/// processing, a validation exception is thrown.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutPrincipalMapping {
+    _private: (),
+}
+impl PutPrincipalMapping {
+    /// Creates a new builder-style object to manufacture [`PutPrincipalMappingInput`](crate::input::PutPrincipalMappingInput)
+    pub fn builder() -> crate::input::put_principal_mapping_input::Builder {
+        crate::input::put_principal_mapping_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutPrincipalMapping {
+    type Output = std::result::Result<
+        crate::output::PutPrincipalMappingOutput,
+        crate::error::PutPrincipalMappingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_principal_mapping_error(response)
+        } else {
+            crate::operation_deser::parse_put_principal_mapping_response(response)
+        }
+    }
+}
+
 /// <p>Searches an active index. Use this API to search your documents
 /// using query. The <code>Query</code> operation enables to do faceted
 /// search and to filter results based on document attributes.</p>
@@ -943,7 +1085,7 @@ impl smithy_http::response::ParseStrictResponse for StopDataSourceSyncJob {
 }
 
 /// <p>Enables you to provide feedback to Amazon Kendra to improve the
-/// performance of the service. </p>
+/// performance of your index. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitFeedback {
     _private: (),

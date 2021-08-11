@@ -38,7 +38,7 @@ mod complete_snapshot_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -52,16 +52,15 @@ mod complete_snapshot_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::CompleteSnapshot::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::CompleteSnapshot as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::CompleteSnapshot as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -84,7 +83,7 @@ mod complete_snapshot_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -93,16 +92,15 @@ mod complete_snapshot_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::CompleteSnapshot::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::CompleteSnapshot as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::CompleteSnapshot as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -131,17 +129,17 @@ impl GetSnapshotBlock {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetSnapshotBlock {
+impl smithy_http::response::ParseHttpResponse for GetSnapshotBlock {
     type Output = std::result::Result<
         crate::output::GetSnapshotBlockOutput,
         crate::error::GetSnapshotBlockError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_snapshot_block(response))
@@ -161,7 +159,7 @@ mod get_snapshot_block_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -175,16 +173,15 @@ mod get_snapshot_block_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::GetSnapshotBlock::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::GetSnapshotBlock as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::GetSnapshotBlock as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -207,7 +204,7 @@ mod get_snapshot_block_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -216,16 +213,15 @@ mod get_snapshot_block_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::GetSnapshotBlock::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::GetSnapshotBlock as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::GetSnapshotBlock as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -278,7 +274,7 @@ mod list_changed_blocks_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -292,16 +288,15 @@ mod list_changed_blocks_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListChangedBlocks::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::ListChangedBlocks as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::ListChangedBlocks as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -324,7 +319,7 @@ mod list_changed_blocks_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -333,16 +328,15 @@ mod list_changed_blocks_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListChangedBlocks::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::ListChangedBlocks as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::ListChangedBlocks as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -394,7 +388,7 @@ mod list_snapshot_blocks_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -408,16 +402,15 @@ mod list_snapshot_blocks_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListSnapshotBlocks::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::ListSnapshotBlocks as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::ListSnapshotBlocks as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -440,7 +433,7 @@ mod list_snapshot_blocks_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -449,16 +442,15 @@ mod list_snapshot_blocks_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListSnapshotBlocks::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::ListSnapshotBlocks as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::ListSnapshotBlocks as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -513,7 +505,7 @@ mod put_snapshot_block_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -527,16 +519,15 @@ mod put_snapshot_block_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::PutSnapshotBlock::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::PutSnapshotBlock as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::PutSnapshotBlock as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -559,7 +550,7 @@ mod put_snapshot_block_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -568,16 +559,15 @@ mod put_snapshot_block_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::PutSnapshotBlock::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::PutSnapshotBlock as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::PutSnapshotBlock as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
@@ -630,7 +620,7 @@ mod start_snapshot_request_test {
         let expected_output = crate::error::ValidationException::builder()
             .set_message(Some("1 validation error detected".to_string()))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -644,16 +634,15 @@ mod start_snapshot_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::StartSnapshot::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::StartSnapshot as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::StartSnapshot as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind
         {
@@ -675,7 +664,7 @@ mod start_snapshot_request_test {
                 "INVALID_VOLUME_SIZE",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -684,16 +673,15 @@ mod start_snapshot_request_test {
         .status(400)
                         .body(smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::StartSnapshot::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::StartSnapshot as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::StartSnapshot as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind
         {

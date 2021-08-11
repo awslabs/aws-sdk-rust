@@ -499,6 +499,26 @@ pub fn parse_create_component_version_error(
                 tmp
             }),
         },
+        "RequestAlreadyInProgressException" => crate::error::CreateComponentVersionError {
+            meta: generic,
+            kind: crate::error::CreateComponentVersionErrorKind::RequestAlreadyInProgressException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::request_already_in_progress_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_request_already_in_progress_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateComponentVersionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateComponentVersionError {
             meta: generic,
             kind: crate::error::CreateComponentVersionErrorKind::ServiceQuotaExceededException({
@@ -639,6 +659,24 @@ pub fn parse_create_deployment_error(
                         crate::http_serde::deser_header_create_deployment_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "RequestAlreadyInProgressException" => crate::error::CreateDeploymentError {
+            meta: generic,
+            kind: crate::error::CreateDeploymentErrorKind::RequestAlreadyInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::request_already_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_request_already_in_progress_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

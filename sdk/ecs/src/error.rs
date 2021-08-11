@@ -6677,7 +6677,8 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Your AWS account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">AWS Support</a>.</p>
+/// <p>Your Amazon Web Services account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
+/// Amazon Web Services Support</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockedException {

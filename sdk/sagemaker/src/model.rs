@@ -1434,9 +1434,26 @@ pub enum AppInstanceType {
     MlM58Xlarge,
     MlM5Large,
     MlM5Xlarge,
+    MlM5D12Xlarge,
+    MlM5D16Xlarge,
+    MlM5D24Xlarge,
+    MlM5D2Xlarge,
+    MlM5D4Xlarge,
+    MlM5D8Xlarge,
+    MlM5DLarge,
+    MlM5DXlarge,
     MlP316Xlarge,
     MlP32Xlarge,
     MlP38Xlarge,
+    MlP3Dn24Xlarge,
+    MlR512Xlarge,
+    MlR516Xlarge,
+    MlR524Xlarge,
+    MlR52Xlarge,
+    MlR54Xlarge,
+    MlR58Xlarge,
+    MlR5Large,
+    MlR5Xlarge,
     MlT32Xlarge,
     MlT3Large,
     MlT3Medium,
@@ -1472,9 +1489,26 @@ impl std::convert::From<&str> for AppInstanceType {
             "ml.m5.8xlarge" => AppInstanceType::MlM58Xlarge,
             "ml.m5.large" => AppInstanceType::MlM5Large,
             "ml.m5.xlarge" => AppInstanceType::MlM5Xlarge,
+            "ml.m5d.12xlarge" => AppInstanceType::MlM5D12Xlarge,
+            "ml.m5d.16xlarge" => AppInstanceType::MlM5D16Xlarge,
+            "ml.m5d.24xlarge" => AppInstanceType::MlM5D24Xlarge,
+            "ml.m5d.2xlarge" => AppInstanceType::MlM5D2Xlarge,
+            "ml.m5d.4xlarge" => AppInstanceType::MlM5D4Xlarge,
+            "ml.m5d.8xlarge" => AppInstanceType::MlM5D8Xlarge,
+            "ml.m5d.large" => AppInstanceType::MlM5DLarge,
+            "ml.m5d.xlarge" => AppInstanceType::MlM5DXlarge,
             "ml.p3.16xlarge" => AppInstanceType::MlP316Xlarge,
             "ml.p3.2xlarge" => AppInstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => AppInstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => AppInstanceType::MlP3Dn24Xlarge,
+            "ml.r5.12xlarge" => AppInstanceType::MlR512Xlarge,
+            "ml.r5.16xlarge" => AppInstanceType::MlR516Xlarge,
+            "ml.r5.24xlarge" => AppInstanceType::MlR524Xlarge,
+            "ml.r5.2xlarge" => AppInstanceType::MlR52Xlarge,
+            "ml.r5.4xlarge" => AppInstanceType::MlR54Xlarge,
+            "ml.r5.8xlarge" => AppInstanceType::MlR58Xlarge,
+            "ml.r5.large" => AppInstanceType::MlR5Large,
+            "ml.r5.xlarge" => AppInstanceType::MlR5Xlarge,
             "ml.t3.2xlarge" => AppInstanceType::MlT32Xlarge,
             "ml.t3.large" => AppInstanceType::MlT3Large,
             "ml.t3.medium" => AppInstanceType::MlT3Medium,
@@ -1518,9 +1552,26 @@ impl AppInstanceType {
             AppInstanceType::MlM58Xlarge => "ml.m5.8xlarge",
             AppInstanceType::MlM5Large => "ml.m5.large",
             AppInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            AppInstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
+            AppInstanceType::MlM5D16Xlarge => "ml.m5d.16xlarge",
+            AppInstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
+            AppInstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
+            AppInstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
+            AppInstanceType::MlM5D8Xlarge => "ml.m5d.8xlarge",
+            AppInstanceType::MlM5DLarge => "ml.m5d.large",
+            AppInstanceType::MlM5DXlarge => "ml.m5d.xlarge",
             AppInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
             AppInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             AppInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            AppInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            AppInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
+            AppInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
+            AppInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
+            AppInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
+            AppInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
+            AppInstanceType::MlR58Xlarge => "ml.r5.8xlarge",
+            AppInstanceType::MlR5Large => "ml.r5.large",
+            AppInstanceType::MlR5Xlarge => "ml.r5.xlarge",
             AppInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
             AppInstanceType::MlT3Large => "ml.t3.large",
             AppInstanceType::MlT3Medium => "ml.t3.medium",
@@ -1555,9 +1606,26 @@ impl AppInstanceType {
             "ml.m5.8xlarge",
             "ml.m5.large",
             "ml.m5.xlarge",
+            "ml.m5d.12xlarge",
+            "ml.m5d.16xlarge",
+            "ml.m5d.24xlarge",
+            "ml.m5d.2xlarge",
+            "ml.m5d.4xlarge",
+            "ml.m5d.8xlarge",
+            "ml.m5d.large",
+            "ml.m5d.xlarge",
             "ml.p3.16xlarge",
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.16xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.8xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
             "ml.t3.2xlarge",
             "ml.t3.large",
             "ml.t3.medium",
@@ -20094,7 +20162,7 @@ impl AsRef<str> for SecondaryStatus {
 /// hyperparameter tuning job can run. It also specifies how long a managed Spot training
 /// job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training or
 /// compilation job. Use this API to cap model training costs.</p>
-/// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
+/// <p>To stop a training job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
 /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
 /// model artifacts, so the results of training are not lost. </p>
 /// <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results
@@ -20111,12 +20179,14 @@ impl AsRef<str> for SecondaryStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StoppingCondition {
-    /// <p>The maximum length of time, in seconds, that a training or compilation job can run. If
-    /// the job does not complete during this time, Amazon SageMaker ends the job.</p>
-    /// <p>When <code>RetryStrategy</code> is specified in the job request,
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
+    /// <p>For compilation jobs, if the job does not complete during this time, you will
+    /// receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as
+    /// necessary based on your model.</p>  
+    /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When
+    /// <code>RetryStrategy</code> is specified in the job request,
     /// <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts
-    /// in total, not each individual attempt.</p>
-    /// <p>The default value is 1 day. The maximum value is 28 days.</p>
+    /// in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
     pub max_runtime_in_seconds: i32,
     /// <p>The maximum length of time, in seconds, that a managed Spot training job has to
     /// complete. It is the amount of time spent waiting for Spot capacity plus the amount of
@@ -20146,12 +20216,14 @@ pub mod stopping_condition {
         pub(crate) max_wait_time_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum length of time, in seconds, that a training or compilation job can run. If
-        /// the job does not complete during this time, Amazon SageMaker ends the job.</p>
-        /// <p>When <code>RetryStrategy</code> is specified in the job request,
+        /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
+        /// <p>For compilation jobs, if the job does not complete during this time, you will
+        /// receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as
+        /// necessary based on your model.</p>  
+        /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When
+        /// <code>RetryStrategy</code> is specified in the job request,
         /// <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts
-        /// in total, not each individual attempt.</p>
-        /// <p>The default value is 1 day. The maximum value is 28 days.</p>
+        /// in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
         pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
             self.max_runtime_in_seconds = Some(input);
             self
@@ -26798,14 +26870,20 @@ pub struct PipelineExecutionStepMetadata {
     pub processing_job: std::option::Option<crate::model::ProcessingJobStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub transform_job: std::option::Option<crate::model::TransformJobStepMetadata>,
-    /// <p>Metadata for the Model step.</p>
+    /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
+    pub tuning_job: std::option::Option<crate::model::TuningJobStepMetaData>,
+    /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
     pub model: std::option::Option<crate::model::ModelStepMetadata>,
-    /// <p>Metadata for the RegisterModel step.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.</p>
     pub register_model: std::option::Option<crate::model::RegisterModelStepMetadata>,
-    /// <p>If this is a Condition step metadata object, details on the condition.</p>
+    /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
     pub condition: std::option::Option<crate::model::ConditionStepMetadata>,
-    /// <p>Metadata about a callback step.</p>
+    /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token,
+    /// and a list of output parameters.</p>
     pub callback: std::option::Option<crate::model::CallbackStepMetadata>,
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of
+    /// output parameters.</p>
+    pub lambda: std::option::Option<crate::model::LambdaStepMetadata>,
 }
 impl std::fmt::Debug for PipelineExecutionStepMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26813,10 +26891,12 @@ impl std::fmt::Debug for PipelineExecutionStepMetadata {
         formatter.field("training_job", &self.training_job);
         formatter.field("processing_job", &self.processing_job);
         formatter.field("transform_job", &self.transform_job);
+        formatter.field("tuning_job", &self.tuning_job);
         formatter.field("model", &self.model);
         formatter.field("register_model", &self.register_model);
         formatter.field("condition", &self.condition);
         formatter.field("callback", &self.callback);
+        formatter.field("lambda", &self.lambda);
         formatter.finish()
     }
 }
@@ -26829,10 +26909,12 @@ pub mod pipeline_execution_step_metadata {
         pub(crate) training_job: std::option::Option<crate::model::TrainingJobStepMetadata>,
         pub(crate) processing_job: std::option::Option<crate::model::ProcessingJobStepMetadata>,
         pub(crate) transform_job: std::option::Option<crate::model::TransformJobStepMetadata>,
+        pub(crate) tuning_job: std::option::Option<crate::model::TuningJobStepMetaData>,
         pub(crate) model: std::option::Option<crate::model::ModelStepMetadata>,
         pub(crate) register_model: std::option::Option<crate::model::RegisterModelStepMetadata>,
         pub(crate) condition: std::option::Option<crate::model::ConditionStepMetadata>,
         pub(crate) callback: std::option::Option<crate::model::CallbackStepMetadata>,
+        pub(crate) lambda: std::option::Option<crate::model::LambdaStepMetadata>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -26871,7 +26953,19 @@ pub mod pipeline_execution_step_metadata {
             self.transform_job = input;
             self
         }
-        /// <p>Metadata for the Model step.</p>
+        /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
+        pub fn tuning_job(mut self, input: crate::model::TuningJobStepMetaData) -> Self {
+            self.tuning_job = Some(input);
+            self
+        }
+        pub fn set_tuning_job(
+            mut self,
+            input: std::option::Option<crate::model::TuningJobStepMetaData>,
+        ) -> Self {
+            self.tuning_job = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
         pub fn model(mut self, input: crate::model::ModelStepMetadata) -> Self {
             self.model = Some(input);
             self
@@ -26883,7 +26977,7 @@ pub mod pipeline_execution_step_metadata {
             self.model = input;
             self
         }
-        /// <p>Metadata for the RegisterModel step.</p>
+        /// <p>The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.</p>
         pub fn register_model(mut self, input: crate::model::RegisterModelStepMetadata) -> Self {
             self.register_model = Some(input);
             self
@@ -26895,7 +26989,7 @@ pub mod pipeline_execution_step_metadata {
             self.register_model = input;
             self
         }
-        /// <p>If this is a Condition step metadata object, details on the condition.</p>
+        /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
         pub fn condition(mut self, input: crate::model::ConditionStepMetadata) -> Self {
             self.condition = Some(input);
             self
@@ -26907,7 +27001,8 @@ pub mod pipeline_execution_step_metadata {
             self.condition = input;
             self
         }
-        /// <p>Metadata about a callback step.</p>
+        /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token,
+        /// and a list of output parameters.</p>
         pub fn callback(mut self, input: crate::model::CallbackStepMetadata) -> Self {
             self.callback = Some(input);
             self
@@ -26919,16 +27014,31 @@ pub mod pipeline_execution_step_metadata {
             self.callback = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of
+        /// output parameters.</p>
+        pub fn lambda(mut self, input: crate::model::LambdaStepMetadata) -> Self {
+            self.lambda = Some(input);
+            self
+        }
+        pub fn set_lambda(
+            mut self,
+            input: std::option::Option<crate::model::LambdaStepMetadata>,
+        ) -> Self {
+            self.lambda = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
         pub fn build(self) -> crate::model::PipelineExecutionStepMetadata {
             crate::model::PipelineExecutionStepMetadata {
                 training_job: self.training_job,
                 processing_job: self.processing_job,
                 transform_job: self.transform_job,
+                tuning_job: self.tuning_job,
                 model: self.model,
                 register_model: self.register_model,
                 condition: self.condition,
                 callback: self.callback,
+                lambda: self.lambda,
             }
         }
     }
@@ -26937,6 +27047,75 @@ impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
     pub fn builder() -> crate::model::pipeline_execution_step_metadata::Builder {
         crate::model::pipeline_execution_step_metadata::Builder::default()
+    }
+}
+
+/// <p>Metadata for a Lambda step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LambdaStepMetadata {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A list of the output parameters of the Lambda step.</p>
+    pub output_parameters: std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
+}
+impl std::fmt::Debug for LambdaStepMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LambdaStepMetadata");
+        formatter.field("arn", &self.arn);
+        formatter.field("output_parameters", &self.output_parameters);
+        formatter.finish()
+    }
+}
+/// See [`LambdaStepMetadata`](crate::model::LambdaStepMetadata)
+pub mod lambda_step_metadata {
+    /// A builder for [`LambdaStepMetadata`](crate::model::LambdaStepMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) output_parameters:
+            std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        pub fn output_parameters(
+            mut self,
+            input: impl Into<crate::model::OutputParameter>,
+        ) -> Self {
+            let mut v = self.output_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.output_parameters = Some(v);
+            self
+        }
+        pub fn set_output_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
+        ) -> Self {
+            self.output_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LambdaStepMetadata`](crate::model::LambdaStepMetadata)
+        pub fn build(self) -> crate::model::LambdaStepMetadata {
+            crate::model::LambdaStepMetadata {
+                arn: self.arn,
+                output_parameters: self.output_parameters,
+            }
+        }
+    }
+}
+impl LambdaStepMetadata {
+    /// Creates a new builder-style object to manufacture [`LambdaStepMetadata`](crate::model::LambdaStepMetadata)
+    pub fn builder() -> crate::model::lambda_step_metadata::Builder {
+        crate::model::lambda_step_metadata::Builder::default()
     }
 }
 
@@ -27216,6 +27395,51 @@ impl ModelStepMetadata {
     /// Creates a new builder-style object to manufacture [`ModelStepMetadata`](crate::model::ModelStepMetadata)
     pub fn builder() -> crate::model::model_step_metadata::Builder {
         crate::model::model_step_metadata::Builder::default()
+    }
+}
+
+/// <p>Metadata for a tuning step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TuningJobStepMetaData {
+    /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TuningJobStepMetaData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TuningJobStepMetaData");
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`TuningJobStepMetaData`](crate::model::TuningJobStepMetaData)
+pub mod tuning_job_step_meta_data {
+    /// A builder for [`TuningJobStepMetaData`](crate::model::TuningJobStepMetaData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TuningJobStepMetaData`](crate::model::TuningJobStepMetaData)
+        pub fn build(self) -> crate::model::TuningJobStepMetaData {
+            crate::model::TuningJobStepMetaData { arn: self.arn }
+        }
+    }
+}
+impl TuningJobStepMetaData {
+    /// Creates a new builder-style object to manufacture [`TuningJobStepMetaData`](crate::model::TuningJobStepMetaData)
+    pub fn builder() -> crate::model::tuning_job_step_meta_data::Builder {
+        crate::model::tuning_job_step_meta_data::Builder::default()
     }
 }
 
@@ -40880,7 +41104,8 @@ impl ImageConfig {
 /// <p>Specifies an authentication configuration for the private docker registry where your
 /// model image is hosted. Specify a value for this property only if you specified
 /// <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field of the
-/// <code>ImageConfig</code> object that you passed to a call to <a>CreateModel</a> and the private Docker registry where the model image is
+/// <code>ImageConfig</code> object that you passed to a call to <code>CreateModel</code>
+/// and the private Docker registry where the model image is
 /// hosted requires authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

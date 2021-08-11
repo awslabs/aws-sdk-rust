@@ -7901,9 +7901,27 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
+        /// <code>clone-group-id</code> - Accepts clone group identifiers.
+        /// The results list will only include information about
+        /// the DB clusters associated with these clone groups.</p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB
         /// cluster Amazon Resource Names (ARNs). The results list will only include information about
         /// the DB clusters identified by these ARNs.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>domain</code> - Accepts Active Directory directory IDs.
+        /// The results list will only include information about
+        /// the DB clusters associated with these domains.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>engine</code> - Accepts engine names.
+        /// The results list will only include information about
+        /// the DB clusters for these engines.</p>
         /// </li>
         /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
@@ -10491,16 +10509,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
-        /// <p>A filter that specifies one or more global DB clusters to describe.</p>
-        /// <p>Supported filters:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB
-        /// cluster Amazon Resource Names (ARNs). The results list will only include information about
-        /// the DB clusters identified by these ARNs.</p>
-        /// </li>
-        /// </ul>
+        /// <p>This parameter isn't currently supported.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self

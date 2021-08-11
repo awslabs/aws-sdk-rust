@@ -148,10 +148,8 @@ pub struct Outpost {
     /// <p>The life cycle status.</p>
     pub life_cycle_status: std::option::Option<std::string::String>,
     /// <p>The Availability Zone.</p>
-    /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone.</p>
-    /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The Outpost tags.</p>
     pub tags:
@@ -264,7 +262,6 @@ pub mod outpost {
             self
         }
         /// <p>The Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
@@ -277,7 +274,6 @@ pub mod outpost {
             self
         }
         /// <p>The ID of the Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_id = Some(input.into());
             self

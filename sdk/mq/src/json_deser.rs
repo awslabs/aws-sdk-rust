@@ -1311,6 +1311,11 @@ pub fn deser_operation_update_broker(
                         builder =
                             builder.set_logs(crate::json_deser::deser_structure_logs(tokens)?);
                     }
+                    "maintenanceWindowStartTime" => {
+                        builder = builder.set_maintenance_window_start_time(
+                            crate::json_deser::deser_structure_weekly_start_time(tokens)?,
+                        );
+                    }
                     "securityGroups" => {
                         builder = builder.set_security_groups(
                             crate::json_deser::deser_list___list_of__string(tokens)?,

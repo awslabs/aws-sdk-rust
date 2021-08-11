@@ -303,9 +303,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.
-        /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-        /// (2019.12.01).</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input);
             self
@@ -372,8 +382,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-        /// access the S3 bucket. If you use S3, you can specify component content up to your service
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
         /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
         /// component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -482,7 +492,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the container recipe (<major>.<minor>.<patch>).</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input);
             self
@@ -533,7 +555,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dockerfile_template_data(input);
             self
         }
-        /// <p>The S3 URI for the Dockerfile that will be used to build your container image.</p>
+        /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
         pub fn dockerfile_template_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dockerfile_template_uri(input);
             self
@@ -1106,7 +1128,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the image recipe.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input);
             self
@@ -1133,9 +1167,9 @@ pub mod fluent_builders {
         /// <p>The parent image of the image recipe. The value of the string can be the ARN of the parent
         /// image or an AMI ID. The format for the ARN follows this example:
         /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in all of
-        /// the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and
-        /// the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// You can provide the specific version that you want to use, or you can use a wildcard in
+        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
+        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_image(input);
             self
@@ -1177,7 +1211,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The working directory to be used during build and test workflows.</p>
+        /// <p>The working directory used during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.working_directory(input);
             self
@@ -1187,6 +1221,21 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_working_directory(input);
+            self
+        }
+        /// <p>Specify additional settings and launch scripts for your build instances.</p>
+        pub fn additional_instance_configuration(
+            mut self,
+            input: crate::model::AdditionalInstanceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.additional_instance_configuration(input);
+            self
+        }
+        pub fn set_additional_instance_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_additional_instance_configuration(input);
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -1262,7 +1311,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_types(input);
             self
         }
-        /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_profile_name(input);
             self
@@ -1274,7 +1323,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_profile_name(input);
             self
         }
-        /// <p>The security group IDs to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(inp);
             self
@@ -1286,7 +1335,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>The subnet ID in which to place the instance used to customize your EC2 AMI.</p>
+        /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input);
             self
@@ -2236,9 +2285,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.
-        /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-        /// (2019.12.01).</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input);
             self
@@ -2272,7 +2329,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_description(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only
+        /// <p>The type of the component denotes whether the component is used to build the image, or only
         /// to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -2313,8 +2370,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-        /// access the S3 bucket. If you use S3, you can specify component content up to your service
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
         /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
         /// component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2480,7 +2537,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Returns the list of component build versions for the specified semantic version.</p>
+        /// <p>Returns the list of component build versions for the specified name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
             self.inner = self.inner.by_name(input);
             self
@@ -3886,7 +3943,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_types(input);
             self
         }
-        /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_profile_name(input);
             self
@@ -3898,7 +3955,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_profile_name(input);
             self
         }
-        /// <p>The security group IDs to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(inp);
             self
@@ -3910,7 +3967,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+        /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input);
             self

@@ -1366,6 +1366,70 @@ impl ListChannelsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAlertsOutput {
+    /// <p>An array of alerts that are associated with this resource.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListAlertsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAlertsOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+pub mod list_alerts_output {
+    /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn items(mut self, input: impl Into<crate::model::Alert>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Alert>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+        pub fn build(self) -> crate::output::ListAlertsOutput {
+            crate::output::ListAlertsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAlertsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+    pub fn builder() -> crate::output::list_alerts_output::Builder {
+        crate::output::list_alerts_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlaybackConfigurationOutput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     pub ad_decision_server_url: std::option::Option<std::string::String>,

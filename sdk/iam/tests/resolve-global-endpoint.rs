@@ -15,8 +15,8 @@ fn correct_endpoint_resolver() {
         .unwrap()
         .make_operation(&conf)
         .expect("valid operation");
-    let conf = operation.config();
-    let resolver = get_endpoint_resolver(&conf).expect("operation should have endpoint resolver");
+    let props = operation.properties();
+    let resolver = get_endpoint_resolver(&props).expect("operation should have endpoint resolver");
     // test regular endpoint
     {
         let ep = resolver

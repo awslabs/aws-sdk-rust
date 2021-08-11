@@ -51,7 +51,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
     }
 }
 
-/// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group <code>DisplayName</code> in the response.</p>
+/// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter
+/// attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group
+/// <code>DisplayName</code> in the response.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroups {
     _private: (),
@@ -77,7 +79,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroups {
     }
 }
 
-/// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the response.</p>
+/// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute
+/// path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the
+/// response.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListUsers {
     _private: (),

@@ -17,7 +17,11 @@ pub struct EnvironmentVariableCredentialsProvider {
 
 impl EnvironmentVariableCredentialsProvider {
     pub fn new() -> Self {
-        EnvironmentVariableCredentialsProvider { env: Env::real() }
+        Self::new_with_env(Env::real())
+    }
+
+    pub fn new_with_env(env: Env) -> Self {
+        Self { env }
     }
 }
 

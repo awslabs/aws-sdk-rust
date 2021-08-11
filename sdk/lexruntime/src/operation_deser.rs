@@ -261,8 +261,9 @@ pub fn parse_get_session_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_post_content(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::PostContentOutput, crate::error::PostContentError> {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::post_content_output::Builder::default();
@@ -890,8 +891,9 @@ pub fn parse_post_text_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_session(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::PutSessionOutput, crate::error::PutSessionError> {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_session_output::Builder::default();

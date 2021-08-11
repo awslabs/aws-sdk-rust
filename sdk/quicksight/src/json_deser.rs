@@ -3724,11 +3724,13 @@ pub fn deser_operation_describe_user(
     Ok(builder)
 }
 
-pub fn deser_structure_domain_not_whitelisted_exceptionjson_err(
+pub fn deser_structure_session_lifetime_in_minutes_invalid_exceptionjson_err(
     input: &[u8],
-    mut builder: crate::error::domain_not_whitelisted_exception::Builder,
-) -> Result<crate::error::domain_not_whitelisted_exception::Builder, smithy_json::deserialize::Error>
-{
+    mut builder: crate::error::session_lifetime_in_minutes_invalid_exception::Builder,
+) -> Result<
+    crate::error::session_lifetime_in_minutes_invalid_exception::Builder,
+    smithy_json::deserialize::Error,
+> {
     let mut tokens_owned =
         smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
             .peekable();
@@ -3771,11 +3773,11 @@ pub fn deser_structure_domain_not_whitelisted_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_identity_type_not_supported_exceptionjson_err(
+pub fn deser_structure_unsupported_pricing_plan_exceptionjson_err(
     input: &[u8],
-    mut builder: crate::error::identity_type_not_supported_exception::Builder,
+    mut builder: crate::error::unsupported_pricing_plan_exception::Builder,
 ) -> Result<
-    crate::error::identity_type_not_supported_exception::Builder,
+    crate::error::unsupported_pricing_plan_exception::Builder,
     smithy_json::deserialize::Error,
 > {
     let mut tokens_owned =
@@ -3790,6 +3792,55 @@ pub fn deser_structure_identity_type_not_supported_exceptionjson_err(
                 match key.to_unescaped()?.as_ref() {
                     "Message" => {
                         builder = builder.set_message(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "RequestId" => {
+                        builder = builder.set_request_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_generate_embed_url_for_anonymous_user(
+    input: &[u8],
+    mut builder: crate::output::generate_embed_url_for_anonymous_user_output::Builder,
+) -> Result<
+    crate::output::generate_embed_url_for_anonymous_user_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "EmbedUrl" => {
+                        builder = builder.set_embed_url(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -3869,13 +3920,60 @@ pub fn deser_structure_quick_sight_user_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_session_lifetime_in_minutes_invalid_exceptionjson_err(
+pub fn deser_operation_generate_embed_url_for_registered_user(
     input: &[u8],
-    mut builder: crate::error::session_lifetime_in_minutes_invalid_exception::Builder,
+    mut builder: crate::output::generate_embed_url_for_registered_user_output::Builder,
 ) -> Result<
-    crate::error::session_lifetime_in_minutes_invalid_exception::Builder,
+    crate::output::generate_embed_url_for_registered_user_output::Builder,
     smithy_json::deserialize::Error,
 > {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "EmbedUrl" => {
+                        builder = builder.set_embed_url(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "RequestId" => {
+                        builder = builder.set_request_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_structure_domain_not_whitelisted_exceptionjson_err(
+    input: &[u8],
+    mut builder: crate::error::domain_not_whitelisted_exception::Builder,
+) -> Result<crate::error::domain_not_whitelisted_exception::Builder, smithy_json::deserialize::Error>
+{
     let mut tokens_owned =
         smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
             .peekable();
@@ -3918,11 +4016,11 @@ pub fn deser_structure_session_lifetime_in_minutes_invalid_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_pricing_plan_exceptionjson_err(
+pub fn deser_structure_identity_type_not_supported_exceptionjson_err(
     input: &[u8],
-    mut builder: crate::error::unsupported_pricing_plan_exception::Builder,
+    mut builder: crate::error::identity_type_not_supported_exception::Builder,
 ) -> Result<
-    crate::error::unsupported_pricing_plan_exception::Builder,
+    crate::error::identity_type_not_supported_exception::Builder,
     smithy_json::deserialize::Error,
 > {
     let mut tokens_owned =
@@ -7641,6 +7739,11 @@ where
                                     crate::json_deser::deser_structure_row_level_permission_data_set(tokens)?
                                 );
                             }
+                            "RowLevelPermissionTagConfiguration" => {
+                                builder = builder.set_row_level_permission_tag_configuration(
+                                    crate::json_deser::deser_structure_row_level_permission_tag_configuration(tokens)?
+                                );
+                            }
                             "ColumnLevelPermissionRules" => {
                                 builder = builder.set_column_level_permission_rules(
                                     crate::json_deser::deser_list_column_level_permission_rule_list(tokens)?
@@ -9850,6 +9953,71 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_row_level_permission_tag_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::RowLevelPermissionTagConfiguration>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::RowLevelPermissionTagConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Status" => {
+                                builder = builder.set_status(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "TagRules" => {
+                                builder = builder.set_tag_rules(
+                                    crate::json_deser::deser_list_row_level_permission_tag_rule_list(tokens)?
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -11079,6 +11247,14 @@ where
                                     crate::json_deser::deser_structure_row_level_permission_data_set(tokens)?
                                 );
                             }
+                            "RowLevelPermissionTagConfigurationApplied" => {
+                                builder = builder
+                                    .set_row_level_permission_tag_configuration_applied(
+                                        smithy_json::deserialize::token::expect_bool_or_null(
+                                            tokens.next(),
+                                        )?,
+                                    );
+                            }
                             "ColumnLevelPermissionRulesApplied" => {
                                 builder = builder.set_column_level_permission_rules_applied(
                                     smithy_json::deserialize::token::expect_bool_or_null(
@@ -12216,6 +12392,47 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_row_level_permission_tag_rule_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_row_level_permission_tag_rule(
+                                tokens,
+                            )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }
@@ -13986,6 +14203,78 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_row_level_permission_tag_rule<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::RowLevelPermissionTagRule>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::RowLevelPermissionTagRule::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TagKey" => {
+                                builder = builder.set_tag_key(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ColumnName" => {
+                                builder = builder.set_column_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "TagMultiValueDelimiter" => {
+                                builder = builder.set_tag_multi_value_delimiter(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "MatchAllValue" => {
+                                builder = builder.set_match_all_value(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

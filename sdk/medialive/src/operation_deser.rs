@@ -4525,11 +4525,12 @@ pub fn parse_describe_input_device_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_input_device_thumbnail(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<
     crate::output::DescribeInputDeviceThumbnailOutput,
     crate::error::DescribeInputDeviceThumbnailError,
 > {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_input_device_thumbnail_output::Builder::default();

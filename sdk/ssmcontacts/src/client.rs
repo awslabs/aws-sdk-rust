@@ -204,6 +204,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_code(input);
             self
         }
+        /// <p>An
+        /// optional field that Incident Manager uses to <code>ENFORCE</code>
+        /// <code>AcceptCode</code> validation when acknowledging an page.
+        /// Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the
+        /// console. Enforcing AcceptCode validation causes Incident Manager to verify that the code
+        /// entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code>
+        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
+        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        pub fn accept_code_validation(mut self, input: crate::model::AcceptCodeValidation) -> Self {
+            self.inner = self.inner.accept_code_validation(input);
+            self
+        }
+        pub fn set_accept_code_validation(
+            mut self,
+            input: std::option::Option<crate::model::AcceptCodeValidation>,
+        ) -> Self {
+            self.inner = self.inner.set_accept_code_validation(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ActivateContactChannel<C = aws_hyper::DynConnector> {
@@ -388,7 +408,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
         pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_id(input);
             self

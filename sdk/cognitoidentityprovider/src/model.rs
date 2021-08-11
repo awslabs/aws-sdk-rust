@@ -54,7 +54,7 @@ impl AsRef<str> for VerifySoftwareTokenResponseType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomDomainConfigType {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate. You use
+    /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use
     /// this certificate for the subdomain of your custom domain.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
@@ -74,7 +74,7 @@ pub mod custom_domain_config_type {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate. You use
+        /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use
         /// this certificate for the subdomain of your custom domain.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
@@ -226,7 +226,7 @@ pub struct UserPoolClientType {
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
     /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-    /// provided by AWS are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
     /// in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
@@ -1636,14 +1636,14 @@ impl MessageTemplateType {
 }
 
 /// <p>The SMS configuration type that includes the settings the Cognito User Pool needs to
-/// call for the Amazon SNS service to send an SMS message from your AWS account. The
-/// Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role
-/// that you provide for your AWS account.</p>
+/// call for the Amazon SNS service to send an SMS message from your account. The
+/// Cognito User Pool makes the request to the Amazon SNS Service by using an IAM role
+/// that you provide for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmsConfigurationType {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
-    /// This is the ARN of the IAM role in your AWS account which Cognito will use to send SMS
+    /// This is the ARN of the IAM role in your account which Cognito will use to send SMS
     /// messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
     pub sns_caller_arn: std::option::Option<std::string::String>,
     /// <p>The external ID is a value that we recommend you use to add security to your IAM role
@@ -1654,7 +1654,7 @@ pub struct SmsConfigurationType {
     /// for SMS MFA, Cognito will create a role with the required permissions and a trust policy
     /// that demonstrates use of the <code>ExternalId</code>.</p>
     /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an
-    /// external ID when granting access to your AWS resources to a third
+    /// external ID when granting access to your Amazon Web Services resources to a third
     /// party</a>
     /// </p>
     pub external_id: std::option::Option<std::string::String>,
@@ -1678,7 +1678,7 @@ pub mod sms_configuration_type {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
-        /// This is the ARN of the IAM role in your AWS account which Cognito will use to send SMS
+        /// This is the ARN of the IAM role in your account which Cognito will use to send SMS
         /// messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
         pub fn sns_caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_caller_arn = Some(input.into());
@@ -1699,7 +1699,7 @@ pub mod sms_configuration_type {
         /// for SMS MFA, Cognito will create a role with the required permissions and a trust policy
         /// that demonstrates use of the <code>ExternalId</code>.</p>
         /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an
-        /// external ID when granting access to your AWS resources to a third
+        /// external ID when granting access to your Amazon Web Services resources to a third
         /// party</a>
         /// </p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1806,13 +1806,13 @@ pub struct EmailConfigurationType {
     /// configuration. Amazon Cognito calls Amazon SES on your behalf to send email
     /// from your verified email address. When you use this option, the email
     /// delivery limits are the same limits that apply to your Amazon SES verified
-    /// email address in your AWS account.</p>
+    /// email address in your account.</p>
     /// <p>If you use this option, you must provide the ARN of an Amazon SES verified
     /// email address for the <code>SourceArn</code> parameter.</p>
     /// <p>Before Amazon Cognito can email your users, it requires additional
     /// permissions to call Amazon SES on your behalf. When you update your user
     /// pool with this option, Amazon Cognito creates a <i>service-linked
-    /// role</i>, which is a type of IAM role, in your AWS account. This
+    /// role</i>, which is a type of IAM role, in your account. This
     /// role contains the permissions that allow Amazon Cognito to access Amazon SES
     /// and send email messages with your address. For more information about the
     /// service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon
@@ -1835,7 +1835,7 @@ pub struct EmailConfigurationType {
     /// <li>
     /// <p>Event publishing – Amazon SES can track the number of send, delivery, open,
     /// click, bounce, and complaint events for each email sent. Use event publishing to
-    /// send information about these events to other AWS services such as SNS and
+    /// send information about these events to other Amazon Web Services services such as SNS and
     /// CloudWatch.</p>
     /// </li>
     /// <li>
@@ -1960,13 +1960,13 @@ pub mod email_configuration_type {
         /// configuration. Amazon Cognito calls Amazon SES on your behalf to send email
         /// from your verified email address. When you use this option, the email
         /// delivery limits are the same limits that apply to your Amazon SES verified
-        /// email address in your AWS account.</p>
+        /// email address in your account.</p>
         /// <p>If you use this option, you must provide the ARN of an Amazon SES verified
         /// email address for the <code>SourceArn</code> parameter.</p>
         /// <p>Before Amazon Cognito can email your users, it requires additional
         /// permissions to call Amazon SES on your behalf. When you update your user
         /// pool with this option, Amazon Cognito creates a <i>service-linked
-        /// role</i>, which is a type of IAM role, in your AWS account. This
+        /// role</i>, which is a type of IAM role, in your account. This
         /// role contains the permissions that allow Amazon Cognito to access Amazon SES
         /// and send email messages with your address. For more information about the
         /// service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon
@@ -2009,7 +2009,7 @@ pub mod email_configuration_type {
         /// <li>
         /// <p>Event publishing – Amazon SES can track the number of send, delivery, open,
         /// click, bounce, and complaint events for each email sent. Use event publishing to
-        /// send information about these events to other AWS services such as SNS and
+        /// send information about these events to other Amazon Web Services services such as SNS and
         /// CloudWatch.</p>
         /// </li>
         /// <li>
@@ -2468,19 +2468,19 @@ impl AsRef<str> for VerifiedAttributeType {
     }
 }
 
-/// <p>Specifies the configuration for AWS Lambda triggers.</p>
+/// <p>Specifies the configuration for Lambda triggers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaConfigType {
-    /// <p>A pre-registration AWS Lambda trigger.</p>
+    /// <p>A pre-registration Lambda trigger.</p>
     pub pre_sign_up: std::option::Option<std::string::String>,
-    /// <p>A custom Message AWS Lambda trigger.</p>
+    /// <p>A custom Message Lambda trigger.</p>
     pub custom_message: std::option::Option<std::string::String>,
-    /// <p>A post-confirmation AWS Lambda trigger.</p>
+    /// <p>A post-confirmation Lambda trigger.</p>
     pub post_confirmation: std::option::Option<std::string::String>,
-    /// <p>A pre-authentication AWS Lambda trigger.</p>
+    /// <p>A pre-authentication Lambda trigger.</p>
     pub pre_authentication: std::option::Option<std::string::String>,
-    /// <p>A post-authentication AWS Lambda trigger.</p>
+    /// <p>A post-authentication Lambda trigger.</p>
     pub post_authentication: std::option::Option<std::string::String>,
     /// <p>Defines the authentication challenge.</p>
     pub define_auth_challenge: std::option::Option<std::string::String>,
@@ -2492,9 +2492,9 @@ pub struct LambdaConfigType {
     pub pre_token_generation: std::option::Option<std::string::String>,
     /// <p>The user migration Lambda config type.</p>
     pub user_migration: std::option::Option<std::string::String>,
-    /// <p>A custom SMS sender AWS Lambda trigger.</p>
+    /// <p>A custom SMS sender Lambda trigger.</p>
     pub custom_sms_sender: std::option::Option<crate::model::CustomSmsLambdaVersionConfigType>,
-    /// <p>A custom email sender AWS Lambda trigger.</p>
+    /// <p>A custom email sender Lambda trigger.</p>
     pub custom_email_sender: std::option::Option<crate::model::CustomEmailLambdaVersionConfigType>,
     /// <p>The Amazon Resource Name of Key Management Service <a href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
     /// keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
@@ -2546,7 +2546,7 @@ pub mod lambda_config_type {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A pre-registration AWS Lambda trigger.</p>
+        /// <p>A pre-registration Lambda trigger.</p>
         pub fn pre_sign_up(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_sign_up = Some(input.into());
             self
@@ -2555,7 +2555,7 @@ pub mod lambda_config_type {
             self.pre_sign_up = input;
             self
         }
-        /// <p>A custom Message AWS Lambda trigger.</p>
+        /// <p>A custom Message Lambda trigger.</p>
         pub fn custom_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_message = Some(input.into());
             self
@@ -2567,7 +2567,7 @@ pub mod lambda_config_type {
             self.custom_message = input;
             self
         }
-        /// <p>A post-confirmation AWS Lambda trigger.</p>
+        /// <p>A post-confirmation Lambda trigger.</p>
         pub fn post_confirmation(mut self, input: impl Into<std::string::String>) -> Self {
             self.post_confirmation = Some(input.into());
             self
@@ -2579,7 +2579,7 @@ pub mod lambda_config_type {
             self.post_confirmation = input;
             self
         }
-        /// <p>A pre-authentication AWS Lambda trigger.</p>
+        /// <p>A pre-authentication Lambda trigger.</p>
         pub fn pre_authentication(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_authentication = Some(input.into());
             self
@@ -2591,7 +2591,7 @@ pub mod lambda_config_type {
             self.pre_authentication = input;
             self
         }
-        /// <p>A post-authentication AWS Lambda trigger.</p>
+        /// <p>A post-authentication Lambda trigger.</p>
         pub fn post_authentication(mut self, input: impl Into<std::string::String>) -> Self {
             self.post_authentication = Some(input.into());
             self
@@ -2666,7 +2666,7 @@ pub mod lambda_config_type {
             self.user_migration = input;
             self
         }
-        /// <p>A custom SMS sender AWS Lambda trigger.</p>
+        /// <p>A custom SMS sender Lambda trigger.</p>
         pub fn custom_sms_sender(
             mut self,
             input: crate::model::CustomSmsLambdaVersionConfigType,
@@ -2681,7 +2681,7 @@ pub mod lambda_config_type {
             self.custom_sms_sender = input;
             self
         }
-        /// <p>A custom email sender AWS Lambda trigger.</p>
+        /// <p>A custom email sender Lambda trigger.</p>
         pub fn custom_email_sender(
             mut self,
             input: crate::model::CustomEmailLambdaVersionConfigType,
@@ -6664,7 +6664,7 @@ pub struct UserPoolDescriptionType {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name in a user pool description.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The AWS Lambda configuration information in a user pool description.</p>
+    /// <p>The Lambda configuration information in a user pool description.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaConfigType>,
     /// <p>The user pool status in a user pool description.</p>
     pub status: std::option::Option<crate::model::StatusType>,
@@ -6717,7 +6717,7 @@ pub mod user_pool_description_type {
             self.name = input;
             self
         }
-        /// <p>The AWS Lambda configuration information in a user pool description.</p>
+        /// <p>The Lambda configuration information in a user pool description.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.lambda_config = Some(input);
             self
@@ -7209,7 +7209,7 @@ impl AsRef<str> for AuthFlowType {
 pub struct DomainDescriptionType {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the user pool owner.</p>
+    /// <p>The account ID for the user pool owner.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The domain string.</p>
     pub domain: std::option::Option<std::string::String>,
@@ -7264,7 +7264,7 @@ pub mod domain_description_type {
             self.user_pool_id = input;
             self
         }
-        /// <p>The AWS account ID for the user pool owner.</p>
+        /// <p>The account ID for the user pool owner.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7431,7 +7431,7 @@ pub struct UserPoolType {
     pub name: std::option::Option<std::string::String>,
     /// <p>The policies associated with the user pool.</p>
     pub policies: std::option::Option<crate::model::UserPoolPolicyType>,
-    /// <p>The AWS Lambda triggers associated with the user pool.</p>
+    /// <p>The Lambda triggers associated with the user pool.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaConfigType>,
     /// <p>The status of a user pool.</p>
     pub status: std::option::Option<crate::model::StatusType>,
@@ -7502,10 +7502,10 @@ pub struct UserPoolType {
     /// SMS messages is not properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
     /// </li>
     /// <li>
-    /// <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach
+    /// <p>SNSSandbox - The account is in SNS Sandbox and messages won’t reach
     /// unverified end users. This parameter won’t get populated
     /// with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions.
-    /// To learn how to move your AWS account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// To learn how to move your account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </li>
     /// </ul>
     pub sms_configuration_failure: std::option::Option<std::string::String>,
@@ -7668,7 +7668,7 @@ pub mod user_pool_type {
             self.policies = input;
             self
         }
-        /// <p>The AWS Lambda triggers associated with the user pool.</p>
+        /// <p>The Lambda triggers associated with the user pool.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.lambda_config = Some(input);
             self
@@ -7945,10 +7945,10 @@ pub mod user_pool_type {
         /// SMS messages is not properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
         /// </li>
         /// <li>
-        /// <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach
+        /// <p>SNSSandbox - The account is in SNS Sandbox and messages won’t reach
         /// unverified end users. This parameter won’t get populated
         /// with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions.
-        /// To learn how to move your AWS account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+        /// To learn how to move your account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
         /// </li>
         /// </ul>
         pub fn sms_configuration_failure(mut self, input: impl Into<std::string::String>) -> Self {

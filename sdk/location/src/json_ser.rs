@@ -573,29 +573,100 @@ pub fn serialize_structure_tag_resource_input(
     }
 }
 
+pub fn serialize_structure_update_geofence_collection_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateGeofenceCollectionInput,
+) {
+    if let Some(var_125) = &input.description {
+        object.key("Description").string(var_125);
+    }
+    if let Some(var_126) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_126.as_str());
+    }
+    if let Some(var_127) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_127);
+    }
+}
+
+pub fn serialize_structure_update_map_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateMapInput,
+) {
+    if let Some(var_128) = &input.description {
+        object.key("Description").string(var_128);
+    }
+    if let Some(var_129) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_129.as_str());
+    }
+}
+
+pub fn serialize_structure_update_place_index_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdatePlaceIndexInput,
+) {
+    if let Some(var_130) = &input.data_source_configuration {
+        let mut object_131 = object.key("DataSourceConfiguration").start_object();
+        crate::json_ser::serialize_structure_data_source_configuration(&mut object_131, var_130);
+        object_131.finish();
+    }
+    if let Some(var_132) = &input.description {
+        object.key("Description").string(var_132);
+    }
+    if let Some(var_133) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_133.as_str());
+    }
+}
+
+pub fn serialize_structure_update_route_calculator_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateRouteCalculatorInput,
+) {
+    if let Some(var_134) = &input.description {
+        object.key("Description").string(var_134);
+    }
+    if let Some(var_135) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_135.as_str());
+    }
+}
+
+pub fn serialize_structure_update_tracker_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateTrackerInput,
+) {
+    if let Some(var_136) = &input.description {
+        object.key("Description").string(var_136);
+    }
+    if let Some(var_137) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_137.as_str());
+    }
+    if let Some(var_138) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_138);
+    }
+}
+
 pub fn serialize_structure_device_position_update(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DevicePositionUpdate,
 ) {
-    if let Some(var_125) = &input.device_id {
-        object.key("DeviceId").string(var_125);
+    if let Some(var_139) = &input.device_id {
+        object.key("DeviceId").string(var_139);
     }
-    if let Some(var_126) = &input.sample_time {
+    if let Some(var_140) = &input.sample_time {
         object
             .key("SampleTime")
-            .instant(var_126, smithy_types::instant::Format::DateTime);
+            .instant(var_140, smithy_types::instant::Format::DateTime);
     }
-    if let Some(var_127) = &input.position {
-        let mut array_128 = object.key("Position").start_array();
-        for item_129 in var_127 {
+    if let Some(var_141) = &input.position {
+        let mut array_142 = object.key("Position").start_array();
+        for item_143 in var_141 {
             {
-                array_128.value().number(
+                array_142.value().number(
                     #[allow(clippy::useless_conversion)]
-                    smithy_types::Number::Float((*item_129).into()),
+                    smithy_types::Number::Float((*item_143).into()),
                 );
             }
         }
-        array_128.finish();
+        array_142.finish();
     }
 }
 
@@ -603,13 +674,13 @@ pub fn serialize_structure_batch_put_geofence_request_entry(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BatchPutGeofenceRequestEntry,
 ) {
-    if let Some(var_130) = &input.geofence_id {
-        object.key("GeofenceId").string(var_130);
+    if let Some(var_144) = &input.geofence_id {
+        object.key("GeofenceId").string(var_144);
     }
-    if let Some(var_131) = &input.geometry {
-        let mut object_132 = object.key("Geometry").start_object();
-        crate::json_ser::serialize_structure_geofence_geometry(&mut object_132, var_131);
-        object_132.finish();
+    if let Some(var_145) = &input.geometry {
+        let mut object_146 = object.key("Geometry").start_object();
+        crate::json_ser::serialize_structure_geofence_geometry(&mut object_146, var_145);
+        object_146.finish();
     }
 }
 
@@ -617,11 +688,11 @@ pub fn serialize_structure_calculate_route_car_mode_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteCarModeOptions,
 ) {
-    if let Some(var_133) = &input.avoid_ferries {
-        object.key("AvoidFerries").boolean(*var_133);
+    if let Some(var_147) = &input.avoid_ferries {
+        object.key("AvoidFerries").boolean(*var_147);
     }
-    if let Some(var_134) = &input.avoid_tolls {
-        object.key("AvoidTolls").boolean(*var_134);
+    if let Some(var_148) = &input.avoid_tolls {
+        object.key("AvoidTolls").boolean(*var_148);
     }
 }
 
@@ -629,21 +700,21 @@ pub fn serialize_structure_calculate_route_truck_mode_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteTruckModeOptions,
 ) {
-    if let Some(var_135) = &input.avoid_ferries {
-        object.key("AvoidFerries").boolean(*var_135);
+    if let Some(var_149) = &input.avoid_ferries {
+        object.key("AvoidFerries").boolean(*var_149);
     }
-    if let Some(var_136) = &input.avoid_tolls {
-        object.key("AvoidTolls").boolean(*var_136);
+    if let Some(var_150) = &input.avoid_tolls {
+        object.key("AvoidTolls").boolean(*var_150);
     }
-    if let Some(var_137) = &input.dimensions {
-        let mut object_138 = object.key("Dimensions").start_object();
-        crate::json_ser::serialize_structure_truck_dimensions(&mut object_138, var_137);
-        object_138.finish();
+    if let Some(var_151) = &input.dimensions {
+        let mut object_152 = object.key("Dimensions").start_object();
+        crate::json_ser::serialize_structure_truck_dimensions(&mut object_152, var_151);
+        object_152.finish();
     }
-    if let Some(var_139) = &input.weight {
-        let mut object_140 = object.key("Weight").start_object();
-        crate::json_ser::serialize_structure_truck_weight(&mut object_140, var_139);
-        object_140.finish();
+    if let Some(var_153) = &input.weight {
+        let mut object_154 = object.key("Weight").start_object();
+        crate::json_ser::serialize_structure_truck_weight(&mut object_154, var_153);
+        object_154.finish();
     }
 }
 
@@ -651,8 +722,8 @@ pub fn serialize_structure_map_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MapConfiguration,
 ) {
-    if let Some(var_141) = &input.style {
-        object.key("Style").string(var_141);
+    if let Some(var_155) = &input.style {
+        object.key("Style").string(var_155);
     }
 }
 
@@ -660,8 +731,8 @@ pub fn serialize_structure_data_source_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataSourceConfiguration,
 ) {
-    if let Some(var_142) = &input.intended_use {
-        object.key("IntendedUse").string(var_142.as_str());
+    if let Some(var_156) = &input.intended_use {
+        object.key("IntendedUse").string(var_156.as_str());
     }
 }
 
@@ -669,29 +740,29 @@ pub fn serialize_structure_geofence_geometry(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GeofenceGeometry,
 ) {
-    if let Some(var_143) = &input.polygon {
-        let mut array_144 = object.key("Polygon").start_array();
-        for item_145 in var_143 {
+    if let Some(var_157) = &input.polygon {
+        let mut array_158 = object.key("Polygon").start_array();
+        for item_159 in var_157 {
             {
-                let mut array_146 = array_144.value().start_array();
-                for item_147 in item_145 {
+                let mut array_160 = array_158.value().start_array();
+                for item_161 in item_159 {
                     {
-                        let mut array_148 = array_146.value().start_array();
-                        for item_149 in item_147 {
+                        let mut array_162 = array_160.value().start_array();
+                        for item_163 in item_161 {
                             {
-                                array_148.value().number(
+                                array_162.value().number(
                                     #[allow(clippy::useless_conversion)]
-                                    smithy_types::Number::Float((*item_149).into()),
+                                    smithy_types::Number::Float((*item_163).into()),
                                 );
                             }
                         }
-                        array_148.finish();
+                        array_162.finish();
                     }
                 }
-                array_146.finish();
+                array_160.finish();
             }
         }
-        array_144.finish();
+        array_158.finish();
     }
 }
 
@@ -699,26 +770,26 @@ pub fn serialize_structure_truck_dimensions(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckDimensions,
 ) {
-    if let Some(var_150) = &input.length {
+    if let Some(var_164) = &input.length {
         object.key("Length").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_150).into()),
+            smithy_types::Number::Float((*var_164).into()),
         );
     }
-    if let Some(var_151) = &input.height {
+    if let Some(var_165) = &input.height {
         object.key("Height").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_151).into()),
+            smithy_types::Number::Float((*var_165).into()),
         );
     }
-    if let Some(var_152) = &input.width {
+    if let Some(var_166) = &input.width {
         object.key("Width").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_152).into()),
+            smithy_types::Number::Float((*var_166).into()),
         );
     }
-    if let Some(var_153) = &input.unit {
-        object.key("Unit").string(var_153.as_str());
+    if let Some(var_167) = &input.unit {
+        object.key("Unit").string(var_167.as_str());
     }
 }
 
@@ -726,13 +797,13 @@ pub fn serialize_structure_truck_weight(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckWeight,
 ) {
-    if let Some(var_154) = &input.total {
+    if let Some(var_168) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_154).into()),
+            smithy_types::Number::Float((*var_168).into()),
         );
     }
-    if let Some(var_155) = &input.unit {
-        object.key("Unit").string(var_155.as_str());
+    if let Some(var_169) = &input.unit {
+        object.key("Unit").string(var_169.as_str());
     }
 }

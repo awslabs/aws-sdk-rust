@@ -129,7 +129,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Batch job ID of the job to cancel.</p>
+        /// <p>The Batch job ID of the job to cancel.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input);
             self
@@ -139,7 +139,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
+        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
         /// logs.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reason(input);
@@ -196,7 +196,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
-        /// <i>AWS Batch User Guide</i>.</p>
+        /// <i>Batch User Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::CeType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -207,10 +207,10 @@ pub mod fluent_builders {
         }
         /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
         /// jobs from a queue and can scale out automatically based on queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
         /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
         /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
@@ -223,7 +223,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
-        /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+        /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn compute_resources(mut self, input: crate::model::ComputeResource) -> Self {
             self.inner = self.inner.compute_resources(input);
             self
@@ -235,13 +235,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_resources(input);
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
-        /// role</a> in the <i>AWS Batch User Guide</i>.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
+        /// role</a> in the <i>Batch User Guide</i>.</p>
         /// <important>
-        /// <p>If your account has already created the AWS Batch service-linked role, that role is used by default for your
-        /// compute environment unless you specify a role here. If the AWS Batch service-linked role does not exist in your
-        /// account, and no role is specified here, the service will try to create the AWS Batch service-linked role in your
+        /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute
+        /// environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your
+        /// account, and no role is specified here, the service attempts to create the Batch service-linked role in your
         /// account.</p>
         /// </important>
         /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
@@ -249,8 +249,8 @@ pub mod fluent_builders {
         /// of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names
         /// and paths</a> in the <i>IAM User Guide</i>.</p>
         /// <note>
-        /// <p>Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
@@ -263,7 +263,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
         /// Reference</i>.</p>
         /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't
         /// propagate to the underlying compute resources.</p>
@@ -345,7 +345,7 @@ pub mod fluent_builders {
         /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
-        /// Fargate compute environments cannot be mixed.</p>
+        /// Fargate compute environments can't be mixed.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
@@ -361,7 +361,7 @@ pub mod fluent_builders {
         /// <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
         /// environments can't be mixed.</p>
         /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
         /// support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn compute_environment_order(
@@ -379,7 +379,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -633,7 +633,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.</p>
+        /// <p>A list of up to 100 job definitions. Each
+        /// entry in the list can either be an ARN of the form
+        /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
+        /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn job_definitions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definitions(inp);
             self
@@ -879,8 +882,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multi_node_job_id(input);
             self
         }
-        /// <p>The job status used to filter jobs in the specified queue. If you don't specify a status, only
-        /// <code>RUNNING</code> jobs are returned.</p>
+        /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
+        /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
+        /// only <code>RUNNING</code> jobs are returned.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.inner = self.inner.job_status(input);
             self
@@ -922,6 +926,55 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used,
+        /// <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP)
+        /// jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+        /// <dl>
+        /// <dt>JOB_NAME</dt>
+        /// <dd>
+        /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*),
+        /// the filter will match any job name that begins with the string before the '*'. This corresponds to the
+        /// <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
+        /// <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
+        /// <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+        /// </dd>
+        /// <dt>JOB_DEFINITION</dt>
+        /// <dd>
+        /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
+        /// <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
+        /// definition name, the results include all the jobs that used any revision of that job definition name. If the value
+        /// ends with an asterisk (*), the filter will match any job definition name that begins with the string before the
+        /// '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
+        /// <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
+        /// order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
+        /// <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
+        /// results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+        /// the ARN is used.</p>
+        /// </dd>
+        /// <dt>BEFORE_CREATED_AT</dt>
+        /// <dd>
+        /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
+        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
+        /// (midnight) on January 1, 1970.</p>
+        /// </dd>
+        /// <dt>AFTER_CREATED_AT</dt>
+        /// <dd>
+        /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
+        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
+        /// (midnight) on January 1, 1970.</p>
+        /// </dd>
+        /// </dl>
+        pub fn filters(mut self, inp: impl Into<crate::model::KeyValuesPair>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuesPair>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<C = aws_hyper::DynConnector> {
@@ -954,7 +1007,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -1010,7 +1063,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
-        /// <i>AWS Batch User Guide</i>.</p>
+        /// <i>Batch User Guide</i>.</p>
         /// <note>
         /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
         /// </note>
@@ -1065,7 +1118,7 @@ pub mod fluent_builders {
         }
         /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
         /// job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the
-        /// <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+        /// <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
         /// <code>container</code>, then you must specify either <code>containerProperties</code> or
         /// <code>nodeProperties</code>.</p>
         /// <note>
@@ -1109,10 +1162,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_propagate_tags(input);
             self
         }
-        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
         /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
         /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
-        /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+        /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
         pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
             self.inner = self.inner.timeout(input);
             self
@@ -1122,7 +1175,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1209,7 +1262,7 @@ pub mod fluent_builders {
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
         /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
-        /// <i>AWS Batch User Guide</i>.</p>
+        /// <i>Batch User Guide</i>.</p>
         pub fn array_properties(mut self, input: crate::model::ArrayProperties) -> Self {
             self.inner = self.inner.array_properties(input);
             self
@@ -1290,8 +1343,8 @@ pub mod fluent_builders {
         /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
         /// that node range.</p>
         /// <note>
-        /// <p>This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
-        /// instead.</p>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
+        /// <code>containerOverrides</code> instead.</p>
         /// </note>
         pub fn node_overrides(mut self, input: crate::model::NodeOverrides) -> Self {
             self.inner = self.inner.node_overrides(input);
@@ -1331,7 +1384,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
-        /// after which AWS Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
+        /// after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
         /// retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration
         /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -1345,7 +1398,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
         /// Reference</i>.</p>
         pub fn tags(
             mut self,
@@ -1396,7 +1449,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -1407,7 +1460,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
-        /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+        /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
         /// Reference</i>.</p>
         pub fn tags(
             mut self,
@@ -1458,7 +1511,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Batch job ID of the job to terminate.</p>
+        /// <p>The Batch job ID of the job to terminate.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input);
             self
@@ -1468,7 +1521,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
+        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
         /// logs.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reason(input);
@@ -1510,7 +1563,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -1578,10 +1631,10 @@ pub mod fluent_builders {
         }
         /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
         /// from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
         /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
         /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
@@ -1595,7 +1648,7 @@ pub mod fluent_builders {
         }
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+        /// Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn compute_resources(mut self, input: crate::model::ComputeResourceUpdate) -> Self {
             self.inner = self.inner.compute_resources(input);
             self
@@ -1607,18 +1660,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_resources(input);
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
-        /// role</a> in the <i>AWS Batch User Guide</i>.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
+        /// role</a> in the <i>Batch User Guide</i>.</p>
         /// <important>
-        /// <p>If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If the
-        /// compute environment has a regular IAM role, it cannot be changed to use a service-linked role.</p>
+        /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
+        /// Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
+        /// role.</p>
         /// </important>
         /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN
         /// (this is recommended) or prefix the role name with the path.</p>
         /// <note>
-        /// <p>Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
@@ -1702,7 +1756,7 @@ pub mod fluent_builders {
         /// the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
         /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
         /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
         /// support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn compute_environment_order(

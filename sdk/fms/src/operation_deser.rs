@@ -79,6 +79,27 @@ pub fn parse_associate_admin_account_error(
                 tmp
             }),
         },
+        "LimitExceededException" => crate::error::AssociateAdminAccountError {
+            meta: generic,
+            kind: crate::error::AssociateAdminAccountErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AssociateAdminAccountError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => {
             crate::error::AssociateAdminAccountError {
                 meta: generic,

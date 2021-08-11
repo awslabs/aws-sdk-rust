@@ -1219,6 +1219,96 @@ impl std::error::Error for DescribeNotebookExecutionError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeReleaseLabelError {
+    pub kind: DescribeReleaseLabelErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReleaseLabelErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeReleaseLabelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReleaseLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeReleaseLabelErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeReleaseLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeReleaseLabelError {
+    fn code(&self) -> Option<&str> {
+        DescribeReleaseLabelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReleaseLabelError {
+    pub fn new(kind: DescribeReleaseLabelErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReleaseLabelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReleaseLabelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReleaseLabelErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReleaseLabelErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReleaseLabelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReleaseLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeReleaseLabelErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeReleaseLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeSecurityConfigurationError {
     pub kind: DescribeSecurityConfigurationErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2290,6 +2380,96 @@ impl std::error::Error for ListNotebookExecutionsError {
             ListNotebookExecutionsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListNotebookExecutionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListNotebookExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListReleaseLabelsError {
+    pub kind: ListReleaseLabelsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListReleaseLabelsErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListReleaseLabelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListReleaseLabelsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListReleaseLabelsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListReleaseLabelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListReleaseLabelsError {
+    fn code(&self) -> Option<&str> {
+        ListReleaseLabelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListReleaseLabelsError {
+    pub fn new(kind: ListReleaseLabelsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListReleaseLabelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListReleaseLabelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReleaseLabelsErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReleaseLabelsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for ListReleaseLabelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListReleaseLabelsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListReleaseLabelsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListReleaseLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

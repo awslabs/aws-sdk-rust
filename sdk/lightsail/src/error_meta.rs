@@ -232,6 +232,55 @@ impl From<smithy_http::result::SdkError<crate::error::CopySnapshotError>> for Er
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateBucketError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateBucketError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateBucketErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateBucketErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CreateBucketErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::CreateBucketErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::CreateBucketErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::CreateBucketAccessKeyError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateBucketAccessKeyError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateBucketAccessKeyErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateBucketAccessKeyErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CreateBucketAccessKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::CreateBucketAccessKeyErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::CreateBucketAccessKeyErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::CreateBucketAccessKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateCertificateError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateCertificateError>) -> Self {
         match err {
@@ -844,6 +893,58 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAutoSnapshotError>> 
                     Error::UnauthenticatedException(inner)
                 }
                 crate::error::DeleteAutoSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteBucketError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBucketError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteBucketErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteBucketErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteBucketErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteBucketErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::DeleteBucketErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::DeleteBucketErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteBucketAccessKeyError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBucketAccessKeyError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteBucketAccessKeyErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteBucketAccessKeyErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteBucketAccessKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteBucketAccessKeyErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::DeleteBucketAccessKeyErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::DeleteBucketAccessKeyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1680,6 +1781,109 @@ impl From<smithy_http::result::SdkError<crate::error::GetBlueprintsError>> for E
                     Error::UnauthenticatedException(inner)
                 }
                 crate::error::GetBlueprintsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetBucketAccessKeysError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetBucketAccessKeysError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetBucketAccessKeysErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetBucketAccessKeysErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::GetBucketAccessKeysErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetBucketAccessKeysErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::GetBucketAccessKeysErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::GetBucketAccessKeysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetBucketBundlesError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetBucketBundlesError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetBucketBundlesErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetBucketBundlesErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::GetBucketBundlesErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::GetBucketBundlesErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::GetBucketBundlesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetBucketMetricDataError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetBucketMetricDataError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetBucketMetricDataErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetBucketMetricDataErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::GetBucketMetricDataErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetBucketMetricDataErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::GetBucketMetricDataErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::GetBucketMetricDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetBucketsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetBucketsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetBucketsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetBucketsErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::GetBucketsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetBucketsErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::GetBucketsErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::GetBucketsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -3560,6 +3764,35 @@ impl From<smithy_http::result::SdkError<crate::error::SetIpAddressTypeError>> fo
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::SetResourceAccessForBucketError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::SetResourceAccessForBucketError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SetResourceAccessForBucketErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::SetResourceAccessForBucketErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::SetResourceAccessForBucketErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::SetResourceAccessForBucketErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::SetResourceAccessForBucketErrorKind::UnauthenticatedException(
+                    inner,
+                ) => Error::UnauthenticatedException(inner),
+                crate::error::SetResourceAccessForBucketErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::StartInstanceError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::StartInstanceError>) -> Self {
         match err {
@@ -3806,6 +4039,58 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
                     Error::UnauthenticatedException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UpdateBucketError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateBucketError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateBucketErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateBucketErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::UpdateBucketErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateBucketErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::UpdateBucketErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::UpdateBucketErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UpdateBucketBundleError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateBucketBundleError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateBucketBundleErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateBucketBundleErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::UpdateBucketBundleErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateBucketBundleErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::UpdateBucketBundleErrorKind::UnauthenticatedException(inner) => {
+                    Error::UnauthenticatedException(inner)
+                }
+                crate::error::UpdateBucketBundleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

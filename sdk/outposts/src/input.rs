@@ -44,7 +44,6 @@ pub mod create_outpost_input {
             self
         }
         /// <p>The Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
@@ -57,7 +56,6 @@ pub mod create_outpost_input {
             self
         }
         /// <p>The ID of the Availability Zone.</p>
-        /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_id = Some(input.into());
             self
@@ -131,28 +129,28 @@ impl CreateOutpostInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -257,28 +255,28 @@ impl DeleteOutpostInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -398,28 +396,28 @@ impl DeleteSiteInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -538,28 +536,28 @@ impl GetOutpostInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -704,28 +702,28 @@ impl GetOutpostInstanceTypesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -817,6 +815,12 @@ pub mod list_outposts_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) life_cycle_status_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) availability_zone_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) availability_zone_id_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -837,6 +841,48 @@ pub mod list_outposts_input {
             self.max_results = input;
             self
         }
+        pub fn life_cycle_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.life_cycle_status_filter.unwrap_or_default();
+            v.push(input.into());
+            self.life_cycle_status_filter = Some(v);
+            self
+        }
+        pub fn set_life_cycle_status_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.life_cycle_status_filter = input;
+            self
+        }
+        pub fn availability_zone_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.availability_zone_filter.unwrap_or_default();
+            v.push(input.into());
+            self.availability_zone_filter = Some(v);
+            self
+        }
+        pub fn set_availability_zone_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zone_filter = input;
+            self
+        }
+        pub fn availability_zone_id_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.availability_zone_id_filter.unwrap_or_default();
+            v.push(input.into());
+            self.availability_zone_id_filter = Some(v);
+            self
+        }
+        pub fn set_availability_zone_id_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zone_id_filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListOutpostsInput`](crate::input::ListOutpostsInput)
         pub fn build(
             self,
@@ -845,6 +891,9 @@ pub mod list_outposts_input {
             Ok(crate::input::ListOutpostsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                life_cycle_status_filter: self.life_cycle_status_filter,
+                availability_zone_filter: self.availability_zone_filter,
+                availability_zone_id_filter: self.availability_zone_id_filter,
             })
         }
     }
@@ -873,28 +922,28 @@ impl ListOutpostsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -923,6 +972,30 @@ impl ListOutpostsInput {
                 "MaxResults",
                 &smithy_types::primitive::Encoder::from(*inner_8).encode(),
             );
+        }
+        if let Some(inner_9) = &self.life_cycle_status_filter {
+            for inner_10 in inner_9 {
+                query.push_kv(
+                    "LifeCycleStatusFilter",
+                    &smithy_http::query::fmt_string(&inner_10),
+                );
+            }
+        }
+        if let Some(inner_11) = &self.availability_zone_filter {
+            for inner_12 in inner_11 {
+                query.push_kv(
+                    "AvailabilityZoneFilter",
+                    &smithy_http::query::fmt_string(&inner_12),
+                );
+            }
+        }
+        if let Some(inner_13) = &self.availability_zone_id_filter {
+            for inner_14 in inner_13 {
+                query.push_kv(
+                    "AvailabilityZoneIdFilter",
+                    &smithy_http::query::fmt_string(&inner_14),
+                );
+            }
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1023,28 +1096,28 @@ impl ListSitesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -1063,13 +1136,13 @@ impl ListSitesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_15));
         }
-        if let Some(inner_10) = &self.max_results {
+        if let Some(inner_16) = &self.max_results {
             query.push_kv(
                 "MaxResults",
-                &smithy_types::primitive::Encoder::from(*inner_10).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_16).encode(),
             );
         }
     }
@@ -1162,28 +1235,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1199,15 +1272,15 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_11 = &self.resource_arn;
-        let input_11 =
-            input_11
+        let input_17 = &self.resource_arn;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_11, false);
+        let resource_arn = smithy_http::label::fmt_string(input_17, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -1330,28 +1403,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1367,15 +1440,15 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_12 = &self.resource_arn;
-        let input_12 =
-            input_12
+        let input_18 = &self.resource_arn;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_12, false);
+        let resource_arn = smithy_http::label::fmt_string(input_18, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -1487,28 +1560,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1524,15 +1597,15 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_13 = &self.resource_arn;
-        let input_13 =
-            input_13
+        let input_19 = &self.resource_arn;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_13, false);
+        let resource_arn = smithy_http::label::fmt_string(input_19, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -1545,9 +1618,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.tag_keys {
-            for inner_15 in inner_14 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_20) = &self.tag_keys {
+            for inner_21 in inner_20 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_21));
             }
         }
     }
@@ -1658,12 +1731,37 @@ pub struct ListOutpostsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>
+    /// A filter for the lifecycle status of the Outpost.
+    /// </p>
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub life_cycle_status_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A filter for the Availibility Zone (<code>us-east-1a</code>) of the Outpost. </p>
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub availability_zone_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>
+    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
+    /// </p>
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub availability_zone_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ListOutpostsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOutpostsInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("life_cycle_status_filter", &self.life_cycle_status_filter);
+        formatter.field("availability_zone_filter", &self.availability_zone_filter);
+        formatter.field(
+            "availability_zone_id_filter",
+            &self.availability_zone_id_filter,
+        );
         formatter.finish()
     }
 }
@@ -1740,10 +1838,8 @@ pub struct CreateOutpostInput {
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone.</p>
-    /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone.</p>
-    /// <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the Outpost.</p>
     pub tags:

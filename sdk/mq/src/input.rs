@@ -31,7 +31,7 @@ pub mod create_broker_input {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
     }
     impl Builder {
-        /// The authentication strategy used to secure the broker.
+        /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -46,7 +46,7 @@ pub mod create_broker_input {
             self.authentication_strategy = input;
             self
         }
-        /// Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+        /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
@@ -55,7 +55,7 @@ pub mod create_broker_input {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+        /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
         pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_name = Some(input.into());
             self
@@ -64,7 +64,7 @@ pub mod create_broker_input {
             self.broker_name = input;
             self
         }
-        /// A list of information about the configuration.
+        /// <p>A list of information about the configuration.</p>
         pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
             self.configuration = Some(input);
             self
@@ -76,7 +76,7 @@ pub mod create_broker_input {
             self.configuration = input;
             self
         }
-        /// The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.
+        /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
@@ -88,7 +88,7 @@ pub mod create_broker_input {
             self.creator_request_id = input;
             self
         }
-        /// Required. The deployment mode of the broker.
+        /// <p>Required. The broker's deployment mode.</p>
         pub fn deployment_mode(mut self, input: crate::model::DeploymentMode) -> Self {
             self.deployment_mode = Some(input);
             self
@@ -100,7 +100,7 @@ pub mod create_broker_input {
             self.deployment_mode = input;
             self
         }
-        /// Encryption options for the broker.
+        /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn encryption_options(mut self, input: crate::model::EncryptionOptions) -> Self {
             self.encryption_options = Some(input);
             self
@@ -112,7 +112,7 @@ pub mod create_broker_input {
             self.encryption_options = input;
             self
         }
-        /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
@@ -124,7 +124,7 @@ pub mod create_broker_input {
             self.engine_type = input;
             self
         }
-        /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -136,7 +136,7 @@ pub mod create_broker_input {
             self.engine_version = input;
             self
         }
-        /// Required. The broker's instance type.
+        /// <p>Required. The broker's instance type.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_instance_type = Some(input.into());
             self
@@ -148,7 +148,7 @@ pub mod create_broker_input {
             self.host_instance_type = input;
             self
         }
-        /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+        /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ldap_server_metadata(
             mut self,
             input: crate::model::LdapServerMetadataInput,
@@ -163,7 +163,7 @@ pub mod create_broker_input {
             self.ldap_server_metadata = input;
             self
         }
-        /// Enables Amazon CloudWatch logging for brokers.
+        /// <p>Enables Amazon CloudWatch logging for brokers.</p>
         pub fn logs(mut self, input: crate::model::Logs) -> Self {
             self.logs = Some(input);
             self
@@ -172,7 +172,7 @@ pub mod create_broker_input {
             self.logs = input;
             self
         }
-        /// The parameters that determine the WeeklyStartTime.
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn maintenance_window_start_time(
             mut self,
             input: crate::model::WeeklyStartTime,
@@ -187,7 +187,7 @@ pub mod create_broker_input {
             self.maintenance_window_start_time = input;
             self
         }
-        /// Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+        /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
@@ -209,7 +209,7 @@ pub mod create_broker_input {
             self.security_groups = input;
             self
         }
-        /// The broker's storage type.
+        /// <p>The broker's storage type.</p>
         pub fn storage_type(mut self, input: crate::model::BrokerStorageType) -> Self {
             self.storage_type = Some(input);
             self
@@ -325,28 +325,28 @@ impl CreateBrokerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -411,7 +411,7 @@ pub mod create_configuration_input {
         >,
     }
     impl Builder {
-        /// The authentication strategy associated with the configuration.
+        /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -426,7 +426,7 @@ pub mod create_configuration_input {
             self.authentication_strategy = input;
             self
         }
-        /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
@@ -438,7 +438,7 @@ pub mod create_configuration_input {
             self.engine_type = input;
             self
         }
-        /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -450,7 +450,7 @@ pub mod create_configuration_input {
             self.engine_version = input;
             self
         }
-        /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+        /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -522,28 +522,28 @@ impl CreateConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -607,7 +607,7 @@ pub mod create_tags_input {
         >,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the resource tag.
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -674,28 +674,28 @@ impl CreateTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -772,7 +772,7 @@ pub mod create_user_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -781,7 +781,7 @@ pub mod create_user_input {
             self.broker_id = input;
             self
         }
-        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn console_access(mut self, input: bool) -> Self {
             self.console_access = Some(input);
             self
@@ -803,7 +803,7 @@ pub mod create_user_input {
             self.groups = input;
             self
         }
-        /// Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.
+        /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
@@ -812,7 +812,7 @@ pub mod create_user_input {
             self.password = input;
             self
         }
-        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
@@ -863,28 +863,28 @@ impl CreateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -976,7 +976,7 @@ pub mod delete_broker_input {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -1020,28 +1020,28 @@ impl DeleteBrokerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1115,7 +1115,7 @@ pub mod delete_tags_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the resource tag.
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -1173,28 +1173,28 @@ impl DeleteTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1277,7 +1277,7 @@ pub mod delete_user_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -1286,7 +1286,7 @@ pub mod delete_user_input {
             self.broker_id = input;
             self
         }
-        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
@@ -1331,28 +1331,28 @@ impl DeleteUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1444,7 +1444,7 @@ pub mod describe_broker_input {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -1490,28 +1490,28 @@ impl DescribeBrokerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1590,7 +1590,7 @@ pub mod describe_broker_engine_types_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Filter response by engine type.
+        /// <p>Filter response by engine type.</p>
         pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_type = Some(input.into());
             self
@@ -1599,7 +1599,7 @@ pub mod describe_broker_engine_types_input {
             self.engine_type = input;
             self
         }
-        /// The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1608,7 +1608,7 @@ pub mod describe_broker_engine_types_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1657,28 +1657,28 @@ impl DescribeBrokerEngineTypesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1759,7 +1759,7 @@ pub mod describe_broker_instance_options_input {
         pub(crate) storage_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Filter response by engine type.
+        /// <p>Filter response by engine type.</p>
         pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_type = Some(input.into());
             self
@@ -1768,7 +1768,7 @@ pub mod describe_broker_instance_options_input {
             self.engine_type = input;
             self
         }
-        /// Filter response by host instance type.
+        /// <p>Filter response by host instance type.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_instance_type = Some(input.into());
             self
@@ -1780,7 +1780,7 @@ pub mod describe_broker_instance_options_input {
             self.host_instance_type = input;
             self
         }
-        /// The maximum number of instance options that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1789,7 +1789,7 @@ pub mod describe_broker_instance_options_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1798,7 +1798,7 @@ pub mod describe_broker_instance_options_input {
             self.next_token = input;
             self
         }
-        /// Filter response by storage type.
+        /// <p>Filter response by storage type.</p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
@@ -1849,28 +1849,28 @@ impl DescribeBrokerInstanceOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1956,7 +1956,7 @@ pub mod describe_configuration_input {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the configuration.
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -2005,28 +2005,28 @@ impl DescribeConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2108,7 +2108,7 @@ pub mod describe_configuration_revision_input {
         pub(crate) configuration_revision: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the configuration.
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -2120,7 +2120,7 @@ pub mod describe_configuration_revision_input {
             self.configuration_id = input;
             self
         }
-        /// The revision of the configuration.
+        /// <p>The revision of the configuration.</p>
         pub fn configuration_revision(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_revision = Some(input.into());
             self
@@ -2171,28 +2171,28 @@ impl DescribeConfigurationRevisionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2290,7 +2290,7 @@ pub mod describe_user_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -2299,7 +2299,7 @@ pub mod describe_user_input {
             self.broker_id = input;
             self
         }
-        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
@@ -2344,28 +2344,28 @@ impl DescribeUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2460,7 +2460,7 @@ pub mod list_brokers_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -2469,7 +2469,7 @@ pub mod list_brokers_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -2514,28 +2514,28 @@ impl ListBrokersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2608,7 +2608,7 @@ pub mod list_configuration_revisions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the configuration.
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -2620,7 +2620,7 @@ pub mod list_configuration_revisions_input {
             self.configuration_id = input;
             self
         }
-        /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -2629,7 +2629,7 @@ pub mod list_configuration_revisions_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -2678,28 +2678,28 @@ impl ListConfigurationRevisionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2794,7 +2794,7 @@ pub mod list_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -2803,7 +2803,7 @@ pub mod list_configurations_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -2850,28 +2850,28 @@ impl ListConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2945,7 +2945,7 @@ pub mod list_tags_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the resource tag.
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -2989,28 +2989,28 @@ impl ListTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3084,7 +3084,7 @@ pub mod list_users_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -3093,7 +3093,7 @@ pub mod list_users_input {
             self.broker_id = input;
             self
         }
-        /// The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -3102,7 +3102,7 @@ pub mod list_users_input {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -3148,28 +3148,28 @@ impl ListUsersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3254,7 +3254,7 @@ pub mod reboot_broker_input {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -3298,28 +3298,28 @@ impl RebootBrokerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3403,10 +3403,12 @@ pub mod update_broker_input {
         pub(crate) host_instance_type: std::option::Option<std::string::String>,
         pub(crate) ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataInput>,
         pub(crate) logs: std::option::Option<crate::model::Logs>,
+        pub(crate) maintenance_window_start_time:
+            std::option::Option<crate::model::WeeklyStartTime>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// The authentication strategy used to secure the broker.
+        /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -3421,7 +3423,7 @@ pub mod update_broker_input {
             self.authentication_strategy = input;
             self
         }
-        /// Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+        /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
@@ -3430,7 +3432,7 @@ pub mod update_broker_input {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -3439,7 +3441,7 @@ pub mod update_broker_input {
             self.broker_id = input;
             self
         }
-        /// A list of information about the configuration.
+        /// <p>A list of information about the configuration.</p>
         pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
             self.configuration = Some(input);
             self
@@ -3451,7 +3453,7 @@ pub mod update_broker_input {
             self.configuration = input;
             self
         }
-        /// The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -3463,7 +3465,7 @@ pub mod update_broker_input {
             self.engine_version = input;
             self
         }
-        /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_instance_type = Some(input.into());
             self
@@ -3475,7 +3477,7 @@ pub mod update_broker_input {
             self.host_instance_type = input;
             self
         }
-        /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+        /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ldap_server_metadata(
             mut self,
             input: crate::model::LdapServerMetadataInput,
@@ -3490,13 +3492,28 @@ pub mod update_broker_input {
             self.ldap_server_metadata = input;
             self
         }
-        /// Enables Amazon CloudWatch logging for brokers.
+        /// <p>Enables Amazon CloudWatch logging for brokers.</p>
         pub fn logs(mut self, input: crate::model::Logs) -> Self {
             self.logs = Some(input);
             self
         }
         pub fn set_logs(mut self, input: std::option::Option<crate::model::Logs>) -> Self {
             self.logs = input;
+            self
+        }
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
+        pub fn maintenance_window_start_time(
+            mut self,
+            input: crate::model::WeeklyStartTime,
+        ) -> Self {
+            self.maintenance_window_start_time = Some(input);
+            self
+        }
+        pub fn set_maintenance_window_start_time(
+            mut self,
+            input: std::option::Option<crate::model::WeeklyStartTime>,
+        ) -> Self {
+            self.maintenance_window_start_time = input;
             self
         }
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3526,6 +3543,7 @@ pub mod update_broker_input {
                 host_instance_type: self.host_instance_type,
                 ldap_server_metadata: self.ldap_server_metadata,
                 logs: self.logs,
+                maintenance_window_start_time: self.maintenance_window_start_time,
                 security_groups: self.security_groups,
             })
         }
@@ -3558,28 +3576,28 @@ impl UpdateBrokerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3655,7 +3673,7 @@ pub mod update_configuration_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the configuration.
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -3667,7 +3685,7 @@ pub mod update_configuration_input {
             self.configuration_id = input;
             self
         }
-        /// Required. The base64-encoded XML configuration.
+        /// <p>Required. The base64-encoded XML configuration.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
@@ -3676,7 +3694,7 @@ pub mod update_configuration_input {
             self.data = input;
             self
         }
-        /// The description of the configuration.
+        /// <p>The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -3727,28 +3745,28 @@ impl UpdateConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3833,7 +3851,7 @@ pub mod update_user_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -3842,7 +3860,7 @@ pub mod update_user_input {
             self.broker_id = input;
             self
         }
-        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn console_access(mut self, input: bool) -> Self {
             self.console_access = Some(input);
             self
@@ -3864,7 +3882,7 @@ pub mod update_user_input {
             self.groups = input;
             self
         }
-        /// The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.
+        /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
@@ -3873,7 +3891,7 @@ pub mod update_user_input {
             self.password = input;
             self
         }
-        /// Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
@@ -3924,28 +3942,28 @@ impl UpdateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4030,19 +4048,19 @@ impl UpdateUserInput {
     }
 }
 
-/// Updates the information for an ActiveMQ user.
+/// <p>Updates the information for an ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: bool,
-    /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.
+    /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub password: std::option::Option<std::string::String>,
-    /// Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateUserInput {
@@ -4057,15 +4075,15 @@ impl std::fmt::Debug for UpdateUserInput {
     }
 }
 
-/// Updates the specified configuration.
+/// <p>Updates the specified configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationInput {
-    /// The unique ID that Amazon MQ generates for the configuration.
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// Required. The base64-encoded XML configuration.
+    /// <p>Required. The base64-encoded XML configuration.</p>
     pub data: std::option::Option<std::string::String>,
-    /// The description of the configuration.
+    /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateConfigurationInput {
@@ -4078,27 +4096,29 @@ impl std::fmt::Debug for UpdateConfigurationInput {
     }
 }
 
-/// Updates the broker using the specified properties.
+/// <p>Updates the broker using the specified properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerInput {
-    /// The authentication strategy used to secure the broker.
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub auto_minor_version_upgrade: bool,
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// A list of information about the configuration.
+    /// <p>A list of information about the configuration.</p>
     pub configuration: std::option::Option<crate::model::ConfigurationId>,
-    /// The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
-    /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataInput>,
-    /// Enables Amazon CloudWatch logging for brokers.
+    /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub logs: std::option::Option<crate::model::Logs>,
-    /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
+    /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UpdateBrokerInput {
@@ -4115,6 +4135,10 @@ impl std::fmt::Debug for UpdateBrokerInput {
         formatter.field("host_instance_type", &self.host_instance_type);
         formatter.field("ldap_server_metadata", &self.ldap_server_metadata);
         formatter.field("logs", &self.logs);
+        formatter.field(
+            "maintenance_window_start_time",
+            &self.maintenance_window_start_time,
+        );
         formatter.field("security_groups", &self.security_groups);
         formatter.finish()
     }
@@ -4123,7 +4147,7 @@ impl std::fmt::Debug for UpdateBrokerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootBrokerInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RebootBrokerInput {
@@ -4137,11 +4161,11 @@ impl std::fmt::Debug for RebootBrokerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListUsersInput {
@@ -4157,7 +4181,7 @@ impl std::fmt::Debug for ListUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// The Amazon Resource Name (ARN) of the resource tag.
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsInput {
@@ -4171,9 +4195,9 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsInput {
-    /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListConfigurationsInput {
@@ -4188,11 +4212,11 @@ impl std::fmt::Debug for ListConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsInput {
-    /// The unique ID that Amazon MQ generates for the configuration.
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListConfigurationRevisionsInput {
@@ -4208,9 +4232,9 @@ impl std::fmt::Debug for ListConfigurationRevisionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBrokersInput {
-    /// The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListBrokersInput {
@@ -4225,9 +4249,9 @@ impl std::fmt::Debug for ListBrokersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeUserInput {
@@ -4242,9 +4266,9 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionInput {
-    /// The unique ID that Amazon MQ generates for the configuration.
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// The revision of the configuration.
+    /// <p>The revision of the configuration.</p>
     pub configuration_revision: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeConfigurationRevisionInput {
@@ -4259,7 +4283,7 @@ impl std::fmt::Debug for DescribeConfigurationRevisionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationInput {
-    /// The unique ID that Amazon MQ generates for the configuration.
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeConfigurationInput {
@@ -4273,15 +4297,15 @@ impl std::fmt::Debug for DescribeConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInstanceOptionsInput {
-    /// Filter response by engine type.
+    /// <p>Filter response by engine type.</p>
     pub engine_type: std::option::Option<std::string::String>,
-    /// Filter response by host instance type.
+    /// <p>Filter response by host instance type.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
-    /// The maximum number of instance options that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// Filter response by storage type.
+    /// <p>Filter response by storage type.</p>
     pub storage_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
@@ -4299,11 +4323,11 @@ impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerEngineTypesInput {
-    /// Filter response by engine type.
+    /// <p>Filter response by engine type.</p>
     pub engine_type: std::option::Option<std::string::String>,
-    /// The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
@@ -4319,7 +4343,7 @@ impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInput {
-    /// The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBrokerInput {
@@ -4333,9 +4357,9 @@ impl std::fmt::Debug for DescribeBrokerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteUserInput {
@@ -4350,9 +4374,9 @@ impl std::fmt::Debug for DeleteUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
-    /// The Amazon Resource Name (ARN) of the resource tag.
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// An array of tag keys to delete
+    /// <p>An array of tag keys to delete</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DeleteTagsInput {
@@ -4367,7 +4391,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBrokerInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteBrokerInput {
@@ -4378,19 +4402,19 @@ impl std::fmt::Debug for DeleteBrokerInput {
     }
 }
 
-/// Creates a new ActiveMQ user.
+/// <p>Creates a new ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+    /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: bool,
-    /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.
+    /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub password: std::option::Option<std::string::String>,
-    /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateUserInput {
@@ -4405,13 +4429,13 @@ impl std::fmt::Debug for CreateUserInput {
     }
 }
 
-/// A map of the key-value pairs for the resource tag.
+/// <p>A map of the key-value pairs for the resource tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
-    /// The Amazon Resource Name (ARN) of the resource tag.
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// The key-value pair for the resource tag.
+    /// <p>The key-value pair for the resource tag.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4424,19 +4448,19 @@ impl std::fmt::Debug for CreateTagsInput {
     }
 }
 
-/// Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).
+/// <p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationInput {
-    /// The authentication strategy associated with the configuration.
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub name: std::option::Option<std::string::String>,
-    /// Create tags when creating the configuration.
+    /// <p>Create tags when creating the configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4452,48 +4476,48 @@ impl std::fmt::Debug for CreateConfigurationInput {
     }
 }
 
-/// Creates a broker using the specified properties.
+/// <p>Creates a broker using the specified properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBrokerInput {
-    /// The authentication strategy used to secure the broker.
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
     pub auto_minor_version_upgrade: bool,
-    /// Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub broker_name: std::option::Option<std::string::String>,
-    /// A list of information about the configuration.
+    /// <p>A list of information about the configuration.</p>
     pub configuration: std::option::Option<crate::model::ConfigurationId>,
-    /// The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
-    /// Required. The deployment mode of the broker.
+    /// <p>Required. The broker's deployment mode.</p>
     pub deployment_mode: std::option::Option<crate::model::DeploymentMode>,
-    /// Encryption options for the broker.
+    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
     pub encryption_options: std::option::Option<crate::model::EncryptionOptions>,
-    /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// Required. The broker's instance type.
+    /// <p>Required. The broker's instance type.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
-    /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataInput>,
-    /// Enables Amazon CloudWatch logging for brokers.
+    /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub logs: std::option::Option<crate::model::Logs>,
-    /// The parameters that determine the WeeklyStartTime.
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
-    /// Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+    /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
     pub publicly_accessible: bool,
-    /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+    /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The broker's storage type.
+    /// <p>The broker's storage type.</p>
     pub storage_type: std::option::Option<crate::model::BrokerStorageType>,
-    /// The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+    /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// Create tags when creating the broker.
+    /// <p>Create tags when creating the broker.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
 }
 impl std::fmt::Debug for CreateBrokerInput {

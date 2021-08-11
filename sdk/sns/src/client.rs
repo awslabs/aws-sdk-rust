@@ -221,8 +221,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_label(input);
             self
         }
-        /// <p>The AWS account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have AWS accounts, but do not need to be signed up for
+        /// <p>The account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have account, but do not need to be signed up for
         /// this service.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -340,9 +340,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
-        /// parameter is <code>true</code> and the request has an AWS signature, then only the topic
+        /// parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic
         /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
-        /// requires AWS authentication. </p>
+        /// requires Amazon Web Services authentication. </p>
         pub fn authenticate_on_unsubscribe(
             mut self,
             input: impl Into<std::string::String>,
@@ -648,9 +648,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
         /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
         /// Reference</i>. </p>
         /// </li>
         /// </ul>
@@ -663,7 +663,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
         /// FIFO topics.</p>
         /// <ul>
         /// <li>
@@ -2189,7 +2189,7 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
-        /// principle to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
+        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
         /// actions.</p>
         /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
         /// <i>Amazon SNS Developer Guide</i>.</p>
@@ -2391,9 +2391,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
         /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
         /// Reference</i>. </p>
         /// </li>
         /// </ul>
@@ -2401,7 +2401,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
         /// FIFO topics.</p>
         /// <ul>
         /// <li>
@@ -2522,7 +2522,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+        /// <code>lambda</code> – delivery of JSON-encoded message to an Lambda
         /// function</p>
         /// </li>
         /// <li>
@@ -2570,7 +2570,7 @@ pub mod fluent_builders {
         /// a mobile app and device.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda
+        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda
         /// function.</p>
         /// </li>
         /// <li>
@@ -2588,7 +2588,7 @@ pub mod fluent_builders {
         }
         /// <p>A map of attributes with their corresponding values.</p>
         /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
+        /// parameters that the <code>Subscribe</code> action uses:</p>
         /// <ul>
         /// <li>
         /// <p>

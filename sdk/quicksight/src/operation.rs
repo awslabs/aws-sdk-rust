@@ -27,15 +27,15 @@ impl smithy_http::response::ParseStrictResponse for CancelIngestion {
     }
 }
 
-/// <p>Creates Amazon QuickSight customizations the current AWS Region. Currently, you can
+/// <p>Creates Amazon QuickSight customizations the current Region;. Currently, you can
 /// add a custom default theme by using the <code>CreateAccountCustomization</code> or
 /// <code>UpdateAccountCustomization</code> API operation. To further customize
 /// QuickSight by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a> in the <i>Amazon QuickSight User
 /// Guide.</i>
 /// </p>
-/// <p>You can create customizations for your AWS account or, if you specify a namespace, for
+/// <p>You can create customizations for your Amazon Web Services account; or, if you specify a namespace, for
 /// a QuickSight namespace instead. Customizations that apply to a namespace always override
-/// customizations that apply to an AWS account. To find out which customizations apply, use
+/// customizations that apply to an Amazon Web Services account;. To find out which customizations apply, use
 /// the <code>DescribeAccountCustomization</code> API operation.</p>
 /// <p>Before you use the <code>CreateAccountCustomization</code> API operation to add a theme
 /// as the namespace default, make sure that you first share the theme with the namespace.
@@ -108,7 +108,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAnalysis {
 /// <p>A dashboard is an entity in QuickSight that identifies QuickSight reports, created
 /// from analyses. You can share QuickSight dashboards. With the right permissions, you can
 /// create scheduled email reports from them. If you have the correct permissions, you can
-/// create a dashboard from a template that exists in a different AWS account.</p>
+/// create a dashboard from a template that exists in a different Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDashboard {
     _private: (),
@@ -304,7 +304,7 @@ impl smithy_http::response::ParseStrictResponse for CreateGroupMembership {
 
 /// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name
 /// (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight.
-/// Assignment names are unique per AWS account. To avoid overwriting rules in other namespaces,
+/// Assignment names are unique per Amazon Web Services account;. To avoid overwriting rules in other namespaces,
 /// use assignment names that are unique.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIAMPolicyAssignment {
@@ -336,7 +336,7 @@ impl smithy_http::response::ParseStrictResponse for CreateIAMPolicyAssignment {
 /// <p>Creates and starts a new SPICE ingestion on a dataset</p>
 /// <p>Any ingestions operating on tagged datasets inherit the same tags automatically for use in
 /// access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I create an IAM policy to control access to Amazon EC2 resources using
-/// tags?</a> in the AWS Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
+/// tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIngestion {
     _private: (),
@@ -368,10 +368,10 @@ impl smithy_http::response::ParseStrictResponse for CreateIngestion {
 /// <p>A namespace allows you to isolate the QuickSight users and groups that are registered
 /// for that namespace. Users that access the namespace can share assets only with other
 /// users or groups in the same namespace. They can't see users and groups in other
-/// namespaces. You can create a namespace after your AWS account is subscribed to
-/// QuickSight. The namespace must be unique within the AWS account. By default, there is a
-/// limit of 100 namespaces per AWS account. To increase your limit, create a ticket with
-/// AWS Support. </p>
+/// namespaces. You can create a namespace after your Amazon Web Services account; is subscribed to
+/// QuickSight. The namespace must be unique within the Amazon Web Services account;. By default, there is a
+/// limit of 100 namespaces per Amazon Web Services account;. To increase your limit, create a ticket with
+/// Amazon Web Services Support. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNamespace {
     _private: (),
@@ -399,7 +399,7 @@ impl smithy_http::response::ParseStrictResponse for CreateNamespace {
     }
 }
 
-/// <p>Creates a template from an existing QuickSight analysis or template. You can use the resulting
+/// <p>Creates a template from an existing Amazon QuickSight analysis or template. You can use the resulting
 /// template to create a dashboard.</p>
 /// <p>A <i>template</i> is an entity in QuickSight that encapsulates the metadata
 /// required to create an analysis and that you can use to create s dashboard. A template adds
@@ -517,8 +517,8 @@ impl smithy_http::response::ParseStrictResponse for CreateThemeAlias {
     }
 }
 
-/// <p>Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS
-/// account and QuickSight namespace.</p>
+/// <p>Deletes all Amazon QuickSight customizations in this Region; for the specified
+/// Amazon Web Services account; and QuickSight namespace.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountCustomization {
     _private: (),
@@ -943,7 +943,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteThemeAlias {
     }
 }
 
-/// <p>Deletes the Amazon QuickSight user that is associated with the identity of the AWS
+/// <p>Deletes the Amazon QuickSight user that is associated with the identity of the
 /// Identity and Access Management (IAM) user or role that's making the call. The IAM user
 /// isn't deleted as a result of this call. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -999,8 +999,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserByPrincipalId {
     }
 }
 
-/// <p>Describes the customizations associated with the provided AWS account and Amazon
-/// QuickSight namespace in an AWS Region. The QuickSight console evaluates which
+/// <p>Describes the customizations associated with the provided Amazon Web Services account; and Amazon
+/// QuickSight namespace in an Region;. The QuickSight console evaluates which
 /// customizations to apply by running this API operation with the <code>Resolved</code> flag
 /// included. </p>
 /// <p>To determine what customizations display when you run this command, it can help to
@@ -1008,20 +1008,20 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserByPrincipalId {
 /// <ul>
 /// <li>
 /// <p>
-/// <code>AWS Account</code> - The AWS account exists at the top of the hierarchy.
-/// It has the potential to use all of the AWS Regions and AWS Services. When you
-/// subscribe to QuickSight, you choose one AWS Region to use as your home Region.
+/// <code>Amazon Web Services account;</code> - The Amazon Web Services account; exists at the top of the hierarchy.
+/// It has the potential to use all of the Regions; and AWS Services. When you
+/// subscribe to QuickSight, you choose one Region; to use as your home Region.
 /// That's where your free SPICE capacity is located. You can use QuickSight in any
-/// supported AWS Region. </p>
+/// supported Region;. </p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight
+/// <code>Region;</code> - In each Region; where you sign in to QuickSight
 /// at least once, QuickSight acts as a separate instance of the same service. If
 /// you have a user directory, it resides in us-east-1, which is the US East (N.
-/// Virginia). Generally speaking, these users have access to QuickSight in any AWS
-/// Region, unless they are constrained to a namespace. </p>
-/// <p>To run the command in a different AWS Region, you change your Region settings.
+/// Virginia). Generally speaking, these users have access to QuickSight in any
+/// Region;, unless they are constrained to a namespace. </p>
+/// <p>To run the command in a different Region;, you change your Region settings.
 /// If you're using the AWS CLI, you can use one of the following options:</p>
 /// <ul>
 /// <li>
@@ -1031,7 +1031,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserByPrincipalId {
 /// <p>Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>. </p>
 /// </li>
 /// <li>
-/// <p>Run <code>aws configure</code> to change your default AWS Region. Use
+/// <p>Run <code>aws configure</code> to change your default Region;. Use
 /// Enter to key the same settings for your keys. For more information, see
 /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.</p>
 /// </li>
@@ -1043,17 +1043,17 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserByPrincipalId {
 /// users and assets (data sources, datasets, dashboards, and so on). To access
 /// assets that are in a specific namespace, users and groups must also be part of
 /// the same namespace. People who share a namespace are completely isolated from
-/// users and assets in other namespaces, even if they are in the same AWS account
-/// and AWS Region.</p>
+/// users and assets in other namespaces, even if they are in the same Amazon Web Services account;
+/// and Region;.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>Applied customizations</code> -  Within an AWS Region, a set of
-/// QuickSight customizations can apply to an AWS account or to a namespace.
+/// <code>Applied customizations</code> -  Within an Region;, a set of
+/// QuickSight customizations can apply to an Amazon Web Services account; or to a namespace.
 /// Settings that you apply to a namespace override settings that you apply to an
-/// AWS account. All settings are isolated to a single AWS Region. To apply them in
-/// other AWS Regions, run the <code>CreateAccountCustomization</code> command in
-/// each AWS Region where you want to apply the same customizations. </p>
+/// Amazon Web Services account;. All settings are isolated to a single Region;. To apply them in
+/// other Regions;, run the <code>CreateAccountCustomization</code> command in
+/// each Region; where you want to apply the same customizations. </p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1084,7 +1084,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAccountCustomization
 }
 
 /// <p>Describes the settings that were used when your QuickSight subscription was first
-/// created in this AWS account.</p>
+/// created in this Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountSettings {
     _private: (),
@@ -1721,6 +1721,100 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
     }
 }
 
+/// <p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>
+/// <p>The following rules apply to the generated URL:</p>
+/// <ul>
+/// <li>
+/// <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p>
+/// </li>
+/// <li>
+/// <p>The URL validity period should not be confused with the actual session lifetime
+/// that can be customized using the <code>
+/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+/// </code> parameter.</p>
+/// <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p>
+/// </li>
+/// <li>
+/// <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p>
+/// </li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User
+/// Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GenerateEmbedUrlForAnonymousUser {
+    _private: (),
+}
+impl GenerateEmbedUrlForAnonymousUser {
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput)
+    pub fn builder() -> crate::input::generate_embed_url_for_anonymous_user_input::Builder {
+        crate::input::generate_embed_url_for_anonymous_user_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GenerateEmbedUrlForAnonymousUser {
+    type Output = std::result::Result<
+        crate::output::GenerateEmbedUrlForAnonymousUserOutput,
+        crate::error::GenerateEmbedUrlForAnonymousUserError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_generate_embed_url_for_anonymous_user_error(response)
+        } else {
+            crate::operation_deser::parse_generate_embed_url_for_anonymous_user_response(response)
+        }
+    }
+}
+
+/// <p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p>
+/// <p>The following rules apply to the generated URL:</p>
+/// <ul>
+/// <li>
+/// <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p>
+/// </li>
+/// <li>
+/// <p>The URL validity period should not be confused with the actual session lifetime
+/// that can be customized using the <code>
+/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+/// </code> parameter.</p>
+/// <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p>
+/// </li>
+/// <li>
+/// <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p>
+/// </li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User
+/// Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GenerateEmbedUrlForRegisteredUser {
+    _private: (),
+}
+impl GenerateEmbedUrlForRegisteredUser {
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput)
+    pub fn builder() -> crate::input::generate_embed_url_for_registered_user_input::Builder {
+        crate::input::generate_embed_url_for_registered_user_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GenerateEmbedUrlForRegisteredUser {
+    type Output = std::result::Result<
+        crate::output::GenerateEmbedUrlForRegisteredUserOutput,
+        crate::error::GenerateEmbedUrlForRegisteredUserError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_generate_embed_url_for_registered_user_error(response)
+        } else {
+            crate::operation_deser::parse_generate_embed_url_for_registered_user_response(response)
+        }
+    }
+}
+
 /// <p>Generates a session URL and authorization code that you can use to embed an Amazon
 /// QuickSight read-only dashboard in your web server code. Before you use this command,
 /// make sure that you have configured the dashboards and permissions. </p>
@@ -1743,6 +1837,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User
 /// Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDashboardEmbedUrl {
     _private: (),
@@ -1822,7 +1917,7 @@ impl smithy_http::response::ParseStrictResponse for GetSessionEmbedUrl {
     }
 }
 
-/// <p>Lists Amazon QuickSight analyses that exist in the specified AWS account.</p>
+/// <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnalyses {
     _private: (),
@@ -1848,7 +1943,7 @@ impl smithy_http::response::ParseStrictResponse for ListAnalyses {
     }
 }
 
-/// <p>Lists dashboards in an AWS account.</p>
+/// <p>Lists dashboards in an Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDashboards {
     _private: (),
@@ -1902,7 +1997,7 @@ impl smithy_http::response::ParseStrictResponse for ListDashboardVersions {
     }
 }
 
-/// <p>Lists all of the datasets belonging to the current AWS account in an AWS Region.</p>
+/// <p>Lists all of the datasets belonging to the current Amazon Web Services account; in an Region;.</p>
 /// <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataSets {
@@ -1929,7 +2024,7 @@ impl smithy_http::response::ParseStrictResponse for ListDataSets {
     }
 }
 
-/// <p>Lists data sources in current AWS Region that belong to this AWS account.</p>
+/// <p>Lists data sources in current Region; that belong to this Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataSources {
     _private: (),
@@ -2149,7 +2244,7 @@ impl smithy_http::response::ParseStrictResponse for ListIngestions {
     }
 }
 
-/// <p>Lists the namespaces for the specified AWS account.</p>
+/// <p>Lists the namespaces for the specified Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListNamespaces {
     _private: (),
@@ -2313,7 +2408,7 @@ impl smithy_http::response::ParseStrictResponse for ListThemeAliases {
     }
 }
 
-/// <p>Lists all the themes in the current AWS account.</p>
+/// <p>Lists all the themes in the current Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListThemes {
     _private: (),
@@ -2339,7 +2434,7 @@ impl smithy_http::response::ParseStrictResponse for ListThemes {
     }
 }
 
-/// <p>Lists all the versions of the themes in the current AWS account.</p>
+/// <p>Lists all the versions of the themes in the current Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListThemeVersions {
     _private: (),
@@ -2474,6 +2569,9 @@ impl smithy_http::response::ParseStrictResponse for RestoreAnalysis {
 }
 
 /// <p>Searches for analyses that belong to the user specified in the filter.</p>
+/// <note>
+/// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SearchAnalyses {
     _private: (),
@@ -2500,6 +2598,9 @@ impl smithy_http::response::ParseStrictResponse for SearchAnalyses {
 }
 
 /// <p>Searches for dashboards that belong to a user. </p>
+/// <note>
+/// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDashboards {
     _private: (),
@@ -2572,7 +2673,7 @@ impl smithy_http::response::ParseStrictResponse for SearchFolders {
 /// resources.</p>
 /// </li>
 /// <li>
-/// <p>QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.</p>
+/// <p>QuickSight doesn't currently support the Tag Editor for Resource Groups.</p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2626,11 +2727,11 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
     }
 }
 
-/// <p>Updates Amazon QuickSight customizations the current AWS Region. Currently, the only
+/// <p>Updates Amazon QuickSight customizations the current Region;. Currently, the only
 /// customization you can use is a theme.</p>
-/// <p>You can use customizations for your AWS account or, if you specify a namespace, for a
+/// <p>You can use customizations for your Amazon Web Services account; or, if you specify a namespace, for a
 /// QuickSight namespace instead. Customizations that apply to a namespace override
-/// customizations that apply to an AWS account. To find out which customizations apply, use
+/// customizations that apply to an Amazon Web Services account;. To find out which customizations apply, use
 /// the <code>DescribeAccountCustomization</code> API operation. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAccountCustomization {
@@ -2659,7 +2760,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAccountCustomization {
     }
 }
 
-/// <p>Updates the Amazon QuickSight settings in your AWS account.</p>
+/// <p>Updates the Amazon QuickSight settings in your Amazon Web Services account;.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAccountSettings {
     _private: (),
@@ -2741,7 +2842,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateAnalysisPermissions {
     }
 }
 
-/// <p>Updates a dashboard in an AWS account.</p>
+/// <p>Updates a dashboard in an Amazon Web Services account;.</p>
+/// <note>
+/// <p>Updating a Dashboard creates a new dashboard version but does not immediately publish
+/// the new version.  You can update the published version of a dashboard by
+/// using the <a>UpdateDashboardPublishedVersion</a> API operation.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDashboard {
     _private: (),

@@ -5618,7 +5618,8 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>You've reached the limit on the number of target groups for your AWS account.</p>
+/// <p>You've reached the limit on the number of target groups for your Amazon Web Services
+/// account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTargetGroupsException {
@@ -5798,7 +5799,8 @@ impl TooManyRulesException {
     }
 }
 
-/// <p>You've reached the limit on the number of load balancers for your AWS account.</p>
+/// <p>You've reached the limit on the number of load balancers for your Amazon Web Services
+/// account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyLoadBalancersException {

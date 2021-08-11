@@ -141,7 +141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
-        /// canary. Artifacts include the log file, screenshots, and HAR files.</p>
+        /// canary. Artifacts include the log file, screenshots, and HAR files.  The name of the
+        /// S3 bucket can't include a period (.).</p>
         pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.artifact_s3_location(input);
             self
@@ -1045,6 +1046,17 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::VpcConfigInput>,
         ) -> Self {
             self.inner = self.inner.set_vpc_config(input);
+            self
+        }
+        pub fn visual_reference(mut self, input: crate::model::VisualReferenceInput) -> Self {
+            self.inner = self.inner.visual_reference(input);
+            self
+        }
+        pub fn set_visual_reference(
+            mut self,
+            input: std::option::Option<crate::model::VisualReferenceInput>,
+        ) -> Self {
+            self.inner = self.inner.set_visual_reference(input);
             self
         }
     }

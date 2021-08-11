@@ -204,7 +204,7 @@ impl smithy_http::response::ParseStrictResponse for DisassociateLenses {
     }
 }
 
-/// <p>Get lens review.</p>
+/// <p>Get the answer to a specific question in a workload review.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAnswer {
     _private: (),
@@ -662,6 +662,10 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 }
 
 /// <p>Deletes specified tags from a resource.</p>
+/// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
+/// <p>
+/// <code>DELETE /tags/WorkloadArn?tagKeys=key1&tagKeys=key2</code>
+/// </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),

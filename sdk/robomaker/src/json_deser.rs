@@ -2263,6 +2263,13 @@ pub fn deser_operation_describe_world(
                                 .transpose()?,
                         );
                     }
+                    "worldDescriptionBody" => {
+                        builder = builder.set_world_description_body(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -2547,6 +2554,13 @@ pub fn deser_operation_describe_world_template(
                     }
                     "tags" => {
                         builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                    }
+                    "version" => {
+                        builder = builder.set_version(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -7126,6 +7140,15 @@ where
                             }
                             "name" => {
                                 builder = builder.set_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "version" => {
+                                builder = builder.set_version(
                                     smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

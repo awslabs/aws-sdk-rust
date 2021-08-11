@@ -420,6 +420,7 @@ pub enum CreateComponentVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -432,6 +433,9 @@ impl std::fmt::Display for CreateComponentVersionError {
             CreateComponentVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateComponentVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateComponentVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateComponentVersionErrorKind::RequestAlreadyInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateComponentVersionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateComponentVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateComponentVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -501,6 +505,12 @@ impl CreateComponentVersionError {
             CreateComponentVersionErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_request_already_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComponentVersionErrorKind::RequestAlreadyInProgressException(_)
+        )
+    }
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -526,6 +536,9 @@ impl std::error::Error for CreateComponentVersionError {
             CreateComponentVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateComponentVersionErrorKind::ConflictException(_inner) => Some(_inner),
             CreateComponentVersionErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateComponentVersionErrorKind::RequestAlreadyInProgressException(_inner) => {
+                Some(_inner)
+            }
             CreateComponentVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateComponentVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateComponentVersionErrorKind::ValidationException(_inner) => Some(_inner),
@@ -545,6 +558,7 @@ pub struct CreateDeploymentError {
 pub enum CreateDeploymentErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
+    RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -556,6 +570,7 @@ impl std::fmt::Display for CreateDeploymentError {
         match &self.kind {
             CreateDeploymentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::RequestAlreadyInProgressException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -619,6 +634,12 @@ impl CreateDeploymentError {
             CreateDeploymentErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_request_already_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::RequestAlreadyInProgressException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -643,6 +664,7 @@ impl std::error::Error for CreateDeploymentError {
         match &self.kind {
             CreateDeploymentErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::RequestAlreadyInProgressException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ValidationException(_inner) => Some(_inner),
@@ -2852,7 +2874,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>AWS IoT Greengrass can't process your request right now. Try again later.</p>
+/// <p>IoT Greengrass can't process your request right now. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -3181,6 +3203,68 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>The request is already in progress. This exception occurs when you use a client token for
+/// multiple requests while IoT Greengrass is still processing an earlier request that uses the same client
+/// token.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequestAlreadyInProgressException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RequestAlreadyInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestAlreadyInProgressException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl RequestAlreadyInProgressException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RequestAlreadyInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RequestAlreadyInProgressException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RequestAlreadyInProgressException {}
+/// See [`RequestAlreadyInProgressException`](crate::error::RequestAlreadyInProgressException)
+pub mod request_already_in_progress_exception {
+    /// A builder for [`RequestAlreadyInProgressException`](crate::error::RequestAlreadyInProgressException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequestAlreadyInProgressException`](crate::error::RequestAlreadyInProgressException)
+        pub fn build(self) -> crate::error::RequestAlreadyInProgressException {
+            crate::error::RequestAlreadyInProgressException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl RequestAlreadyInProgressException {
+    /// Creates a new builder-style object to manufacture [`RequestAlreadyInProgressException`](crate::error::RequestAlreadyInProgressException)
+    pub fn builder() -> crate::error::request_already_in_progress_exception::Builder {
+        crate::error::request_already_in_progress_exception::Builder::default()
+    }
+}
+
 /// <p>Your request exceeds a service quota. For example, you might have the maximum number of
 /// components that you can create.</p>
 #[non_exhaustive]
@@ -3215,8 +3299,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }

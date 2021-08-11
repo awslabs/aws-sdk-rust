@@ -76,6 +76,35 @@ pub struct ProfileSet {
 }
 
 impl ProfileSet {
+    /// Create a new Profile set directly from a HashMap
+    ///
+    /// This method creates a ProfileSet directly from a hashmap with no normalization.
+    ///
+    /// ## Note
+    ///
+    /// This is probably not what you want! In general, [`load`](load) should be used instead
+    /// because it will perform input normalization. However, for tests which operate on the
+    /// normalized profile, this method exists to facilitate easy construction of a ProfileSet
+    pub fn new(
+        profiles: HashMap<String, HashMap<String, String>>,
+        selected_profile: impl Into<Cow<'static, str>>,
+    ) -> Self {
+        let mut base = ProfileSet::empty();
+        base.selected_profile = selected_profile.into();
+        for (name, profile) in profiles {
+            base.profiles.insert(
+                name.clone(),
+                Profile::new(
+                    name,
+                    profile
+                        .into_iter()
+                        .map(|(k, v)| (k.clone(), Property::new(k, v)))
+                        .collect(),
+                ),
+            );
+        }
+        base
+    }
     fn parse(source: Source) -> Result<Self, ProfileParseError> {
         let mut base = ProfileSet::empty();
         base.selected_profile = source.profile;
@@ -101,7 +130,7 @@ impl ProfileSet {
     }
 
     /// Retrieves a key-value pair from the currently selected profile
-    pub fn get(&self, key: &str) -> Option<&Property> {
+    pub fn get(&self, key: &str) -> Option<&str> {
         self.profiles
             .get(self.selected_profile.as_ref())
             .and_then(|profile| profile.get(key))
@@ -110,6 +139,10 @@ impl ProfileSet {
     /// Retrieve a named profile from the profile set
     pub fn get_profile(&self, profile_name: &str) -> Option<&Profile> {
         self.profiles.get(profile_name)
+    }
+
+    pub fn selected_profile(&self) -> &str {
+        self.selected_profile.as_ref()
     }
 }
 
@@ -127,8 +160,12 @@ impl Profile {
         Self { name, properties }
     }
 
-    pub fn get(&self, name: &str) -> Option<&Property> {
-        self.properties.get(name)
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    pub fn get(&self, name: &str) -> Option<&str> {
+        self.properties.get(name).map(|prop| prop.value())
     }
 }
 

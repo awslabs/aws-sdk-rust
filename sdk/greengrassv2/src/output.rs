@@ -121,7 +121,7 @@ impl ResolveComponentCandidatesOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -646,23 +646,19 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the deployment.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
-    /// <p>You can create deployments without names. If you create a deployment without a name, the
-    /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-    /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-    /// deployment target.</p>
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The status of the deployment.</p>
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
-    /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
     /// and each key's value is the version and configuration to deploy for that component.</p>
@@ -684,7 +680,7 @@ pub struct GetDeploymentOutput {
     pub is_latest_for_target: bool,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -736,7 +732,7 @@ pub mod get_deployment_output {
         >,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -767,10 +763,6 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The name of the deployment.</p>
-        /// <p>You can create deployments without names. If you create a deployment without a name, the
-        /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-        /// deployment target.</p>
         pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_name = Some(input.into());
             self
@@ -794,7 +786,7 @@ pub mod get_deployment_output {
             self.deployment_status = input;
             self
         }
-        /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_id = Some(input.into());
             self
@@ -803,7 +795,7 @@ pub mod get_deployment_output {
             self.iot_job_id = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_arn = Some(input.into());
             self
@@ -933,12 +925,12 @@ impl GetDeploymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDeviceOutput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
-    /// <p>The version of the AWS IoT Greengrass Core software that the core device runs. This version is equivalent to
-    /// the version of the AWS IoT Greengrass nucleus component that runs on the core device. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">AWS IoT Greengrass nucleus
-    /// component</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
+    /// the version of the Greengrass nucleus component that runs on the core device. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub core_version: std::option::Option<std::string::String>,
     /// <p>The operating system platform that the core device runs.</p>
     pub platform: std::option::Option<std::string::String>,
@@ -948,11 +940,11 @@ pub struct GetCoreDeviceOutput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
     /// on the core device.</p>
     /// </li>
     /// </ul>
@@ -962,7 +954,7 @@ pub struct GetCoreDeviceOutput {
     pub last_status_update_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -999,7 +991,7 @@ pub mod get_core_device_output {
         >,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -1011,10 +1003,10 @@ pub mod get_core_device_output {
             self.core_device_thing_name = input;
             self
         }
-        /// <p>The version of the AWS IoT Greengrass Core software that the core device runs. This version is equivalent to
-        /// the version of the AWS IoT Greengrass nucleus component that runs on the core device. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">AWS IoT Greengrass nucleus
-        /// component</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
+        /// the version of the Greengrass nucleus component that runs on the core device. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn core_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_version = Some(input.into());
             self
@@ -1045,11 +1037,11 @@ pub mod get_core_device_output {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
         /// on the core device.</p>
         /// </li>
         /// </ul>
@@ -1175,7 +1167,7 @@ pub struct GetComponentOutput {
     pub recipe: std::option::Option<smithy_types::Blob>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1273,14 +1265,14 @@ pub struct DescribeComponentOutput {
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The description of the component version.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The status of the component version in AWS IoT Greengrass V2. This status
+    /// <p>The status of the component version in IoT Greengrass V2. This status
     /// is different from the status of the component on a core device.</p>
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
     /// <p>The platforms that the component version supports.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1381,7 +1373,7 @@ pub mod describe_component_output {
             self.description = input;
             self
         }
-        /// <p>The status of the component version in AWS IoT Greengrass V2. This status
+        /// <p>The status of the component version in IoT Greengrass V2. This status
         /// is different from the status of the component on a core device.</p>
         pub fn status(mut self, input: crate::model::CloudComponentStatus) -> Self {
             self.status = Some(input);
@@ -1512,9 +1504,9 @@ impl DeleteComponentOutput {
 pub struct CreateDeploymentOutput {
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDeploymentOutput {
@@ -1549,7 +1541,7 @@ pub mod create_deployment_output {
             self.deployment_id = input;
             self
         }
-        /// <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_id = Some(input.into());
             self
@@ -1558,7 +1550,7 @@ pub mod create_deployment_output {
             self.iot_job_id = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT job that applies the deployment to target devices.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
         pub fn iot_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_job_arn = Some(input.into());
             self
@@ -1595,7 +1587,7 @@ pub struct CreateComponentVersionOutput {
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub creation_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The status of the component version in AWS IoT Greengrass V2. This status
+    /// <p>The status of the component version in IoT Greengrass V2. This status
     /// is different from the status of the component on a core device.</p>
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
 }
@@ -1668,7 +1660,7 @@ pub mod create_component_version_output {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The status of the component version in AWS IoT Greengrass V2. This status
+        /// <p>The status of the component version in IoT Greengrass V2. This status
         /// is different from the status of the component on a core device.</p>
         pub fn status(mut self, input: crate::model::CloudComponentStatus) -> Self {
             self.status = Some(input);
@@ -1750,7 +1742,7 @@ impl CancelDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceOutput {
     /// <p>The list of errors (if any) for the entries in the request. Each error entry contains the
-    /// name of the AWS IoT thing that failed to disassociate.</p>
+    /// name of the IoT thing that failed to disassociate.</p>
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
     >,
@@ -1811,7 +1803,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name
-    /// of the AWS IoT thing that failed to associate.</p>
+    /// of the IoT thing that failed to associate.</p>
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>,
     >,

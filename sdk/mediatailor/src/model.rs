@@ -2385,6 +2385,119 @@ impl Channel {
     }
 }
 
+/// <p>Alert configuration parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Alert {
+    /// <p>The code for the alert. For example, NOT_PROCESSED.</p>
+    pub alert_code: std::option::Option<std::string::String>,
+    /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
+    pub alert_message: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the alert was last modified.</p>
+    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
+    pub related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Alert {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Alert");
+        formatter.field("alert_code", &self.alert_code);
+        formatter.field("alert_message", &self.alert_message);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("related_resource_arns", &self.related_resource_arns);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+/// See [`Alert`](crate::model::Alert)
+pub mod alert {
+    /// A builder for [`Alert`](crate::model::Alert)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alert_code: std::option::Option<std::string::String>,
+        pub(crate) alert_message: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The code for the alert. For example, NOT_PROCESSED.</p>
+        pub fn alert_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alert_code = Some(input.into());
+            self
+        }
+        pub fn set_alert_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alert_code = input;
+            self
+        }
+        /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
+        pub fn alert_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alert_message = Some(input.into());
+            self
+        }
+        pub fn set_alert_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.alert_message = input;
+            self
+        }
+        /// <p>The timestamp when the alert was last modified.</p>
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        pub fn related_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.related_resource_arns.unwrap_or_default();
+            v.push(input.into());
+            self.related_resource_arns = Some(v);
+            self
+        }
+        pub fn set_related_resource_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.related_resource_arns = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Alert`](crate::model::Alert)
+        pub fn build(self) -> crate::model::Alert {
+            crate::model::Alert {
+                alert_code: self.alert_code,
+                alert_message: self.alert_message,
+                last_modified_time: self.last_modified_time,
+                related_resource_arns: self.related_resource_arns,
+                resource_arn: self.resource_arn,
+            }
+        }
+    }
+}
+impl Alert {
+    /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert)
+    pub fn builder() -> crate::model::alert::Builder {
+        crate::model::alert::Builder::default()
+    }
+}
+
 /// <p>The properties for a schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

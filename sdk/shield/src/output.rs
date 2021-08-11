@@ -197,7 +197,7 @@ impl ListTagsForResourceOutput {
 pub struct ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListResourcesInProtectionGroupOutput {
@@ -231,7 +231,7 @@ pub mod list_resources_in_protection_group_output {
             self.resource_arns = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -261,7 +261,7 @@ impl ListResourcesInProtectionGroupOutput {
 pub struct ListProtectionsOutput {
     /// <p>The array of enabled <a>Protection</a> objects.</p>
     pub protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
     /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -296,7 +296,7 @@ pub mod list_protections_output {
             self.protections = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
         /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -327,7 +327,7 @@ impl ListProtectionsOutput {
 pub struct ListProtectionGroupsOutput {
     /// <p></p>
     pub protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListProtectionGroupsOutput {
@@ -365,7 +365,7 @@ pub mod list_protection_groups_output {
             self.protection_groups = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -660,7 +660,7 @@ impl DisableProactiveEngagementOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscriptionOutput {
-    /// <p>The AWS Shield Advanced subscription details for an account.</p>
+    /// <p>The Shield Advanced subscription details for an account.</p>
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
 impl std::fmt::Debug for DescribeSubscriptionOutput {
@@ -679,7 +679,7 @@ pub mod describe_subscription_output {
         pub(crate) subscription: std::option::Option<crate::model::Subscription>,
     }
     impl Builder {
-        /// <p>The AWS Shield Advanced subscription details for an account.</p>
+        /// <p>The Shield Advanced subscription details for an account.</p>
         pub fn subscription(mut self, input: crate::model::Subscription) -> Self {
             self.subscription = Some(input);
             self
@@ -709,7 +709,7 @@ impl DescribeSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionGroupOutput {
-    /// <p>A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
     pub protection_group: std::option::Option<crate::model::ProtectionGroup>,
 }
 impl std::fmt::Debug for DescribeProtectionGroupOutput {
@@ -728,7 +728,7 @@ pub mod describe_protection_group_output {
         pub(crate) protection_group: std::option::Option<crate::model::ProtectionGroup>,
     }
     impl Builder {
-        /// <p>A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+        /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
         pub fn protection_group(mut self, input: crate::model::ProtectionGroup) -> Self {
             self.protection_group = Some(input);
             self
@@ -807,7 +807,7 @@ impl DescribeProtectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEmergencyContactSettingsOutput {
-    /// <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
 impl std::fmt::Debug for DescribeEmergencyContactSettingsOutput {
@@ -861,9 +861,9 @@ impl DescribeEmergencyContactSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDrtAccessOutput {
-    /// <p>The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The list of Amazon S3 buckets accessed by the DRT.</p>
+    /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
     pub log_bucket_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DescribeDrtAccessOutput {
@@ -884,7 +884,7 @@ pub mod describe_drt_access_output {
         pub(crate) log_bucket_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self

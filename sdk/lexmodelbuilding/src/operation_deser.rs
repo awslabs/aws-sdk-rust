@@ -3646,6 +3646,224 @@ pub fn parse_get_intent_versions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_migration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMigrationOutput, crate::error::GetMigrationError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetMigrationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetMigrationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetMigrationError {
+            meta: generic,
+            kind: crate::error::GetMigrationErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::GetMigrationError {
+            meta: generic,
+            kind: crate::error::GetMigrationErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::GetMigrationError {
+            meta: generic,
+            kind: crate::error::GetMigrationErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_migration_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                                    .map_err(|_|crate::error::GetMigrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GetMigrationError {
+            meta: generic,
+            kind: crate::error::GetMigrationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetMigrationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_migration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMigrationOutput, crate::error::GetMigrationError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_migration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_migration(response.body().as_ref(), output)
+            .map_err(crate::error::GetMigrationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_migrations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMigrationsOutput, crate::error::GetMigrationsError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetMigrationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetMigrationsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetMigrationsError {
+            meta: generic,
+            kind: crate::error::GetMigrationsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::GetMigrationsError {
+            meta: generic,
+            kind: crate::error::GetMigrationsErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::GetMigrationsError {
+            meta: generic,
+            kind: crate::error::GetMigrationsErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMigrationsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_migrations_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                                    .map_err(|_|crate::error::GetMigrationsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetMigrationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_migrations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMigrationsOutput, crate::error::GetMigrationsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_migrations_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_get_migrations(response.body().as_ref(), output)
+                .map_err(crate::error::GetMigrationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_slot_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSlotTypeOutput, crate::error::GetSlotTypeError> {
@@ -4893,6 +5111,147 @@ pub fn parse_start_import_response(
         let _ = response;
         output = crate::json_deser::deser_operation_start_import(response.body().as_ref(), output)
             .map_err(crate::error::StartImportError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_migration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartMigrationOutput, crate::error::StartMigrationError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::StartMigrationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StartMigrationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::StartMigrationError {
+            meta: generic,
+            kind: crate::error::StartMigrationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "BadRequestException" => crate::error::StartMigrationError {
+            meta: generic,
+            kind: crate::error::StartMigrationErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::StartMigrationError {
+            meta: generic,
+            kind: crate::error::StartMigrationErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::StartMigrationError {
+            meta: generic,
+            kind: crate::error::StartMigrationErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMigrationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_start_migration_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                                    .map_err(|_|crate::error::StartMigrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::StartMigrationError {
+            meta: generic,
+            kind: crate::error::StartMigrationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMigrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartMigrationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_migration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartMigrationOutput, crate::error::StartMigrationError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_migration_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_start_migration(response.body().as_ref(), output)
+                .map_err(crate::error::StartMigrationError::unhandled)?;
         output.build()
     })
 }

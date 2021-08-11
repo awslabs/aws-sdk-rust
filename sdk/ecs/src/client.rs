@@ -292,7 +292,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -378,7 +378,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -428,8 +428,8 @@ pub mod fluent_builders {
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
         /// provider must already be created and not already associated with another cluster. New
         /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
         /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
@@ -544,9 +544,9 @@ pub mod fluent_builders {
         /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
-        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment
+        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
         /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
-        /// During a deployment, AWS CodeDeploy determines which task set in your service has the status
+        /// During a deployment, CodeDeploy determines which task set in your service has the status
         /// <code>PRIMARY</code> and associates one target group with it, and then associates
         /// the other target group with the replacement task set. The load balancer can also have up
         /// to two listeners: a required listener for production traffic and an optional listener
@@ -626,12 +626,12 @@ pub mod fluent_builders {
         }
         /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
         /// <note>
         /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for AWS Fargate</i>.</p>
+        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
+        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
@@ -673,7 +673,7 @@ pub mod fluent_builders {
         /// <p>The platform version that your tasks in the service are running on. A platform version
         /// is specified only for tasks using the Fargate launch type. If one isn't
         /// specified, the <code>LATEST</code> platform version is used by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform_version(input);
@@ -883,7 +883,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -989,7 +989,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional non-unique tag that identifies this task set in external systems. If the
         /// task set is associated with a service discovery registry, the tasks in this task set
-        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute set to the provided
+        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided
         /// value.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.external_id(input);
@@ -1078,8 +1078,8 @@ pub mod fluent_builders {
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
         /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
         /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
@@ -1162,7 +1162,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -1558,7 +1558,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container instance ID or full ARN of the container instance to deregister.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_instance(input);
             self
@@ -2175,7 +2175,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The container instance ID or full ARN of the container instance.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_instance(input);
             self
@@ -3417,8 +3417,8 @@ pub mod fluent_builders {
         /// <p>The name of one or more capacity providers to associate with the cluster.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
         /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
         pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -3444,8 +3444,8 @@ pub mod fluent_builders {
         /// <code>UPDATING</code> status can be used.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
         /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
         pub fn default_capacity_provider_strategy(
@@ -3629,7 +3629,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -3703,7 +3703,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
-        /// permission to make AWS API calls on your behalf. The task execution IAM role is required
+        /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
         /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
         /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3721,7 +3721,7 @@ pub mod fluent_builders {
         /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
         /// If no network mode is specified, the default is <code>bridge</code>.</p>
         /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
-        /// For Amazon ECS tasks on Amazon EC2 instances, any network mode can be used. If the network
+        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
         /// mode is set to <code>none</code>, you cannot specify port mappings in your container
         /// definitions, and the tasks containers do not have external connectivity. The
         /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
@@ -3741,17 +3741,8 @@ pub mod fluent_builders {
         /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
         /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the
-        /// <code>ecs-init</code> package, or AWS Fargate infrastructure support the
-        /// <code>awsvpc</code> network mode. </p>
-        /// </note>
         /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
         /// same task on a single container instance when port mappings are used.</p>
-        /// <p>Docker for Windows uses different network modes than Docker for Linux. When you
-        /// register a task definition with Windows containers, you must not specify a network mode.
-        /// If you use the console to register a task definition with Windows containers, you must
-        /// choose the <code><default></code> network mode object. </p>
         /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
         /// settings</a> in the <i>Docker run reference</i>.</p>
         pub fn network_mode(mut self, input: crate::model::NetworkMode) -> Self {
@@ -3938,7 +3929,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -3967,7 +3958,7 @@ pub mod fluent_builders {
         /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
         /// security</a>.</p>
         /// <note>
-        /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
         pub fn pid_mode(mut self, input: crate::model::PidMode) -> Self {
             self.inner = self.inner.pid_mode(input);
@@ -4007,7 +3998,7 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
         pub fn ipc_mode(mut self, input: crate::model::IpcMode) -> Self {
             self.inner = self.inner.ipc_mode(input);
@@ -4053,10 +4044,10 @@ pub mod fluent_builders {
         }
         /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to
         /// expand the total amount of ephemeral storage available, beyond the default amount, for
-        /// tasks hosted on AWS Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
-        /// storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p>
+        /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+        /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// <note>
-        /// <p>This parameter is only supported for tasks hosted on AWS Fargate using platform
+        /// <p>This parameter is only supported for tasks hosted on Fargate using platform
         /// version <code>1.4.0</code> or later.</p>
         /// </note>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -4107,6 +4098,7 @@ pub mod fluent_builders {
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
         /// <code>launchType</code> is specified, the
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn capacity_provider_strategy(
             mut self,
             inp: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -4175,12 +4167,12 @@ pub mod fluent_builders {
         }
         /// <p>The infrastructure on which to run your standalone task. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
         /// infrastructure.</p>
         /// <note>
         /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for AWS Fargate</i>.</p>
+        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
+        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
         /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
         /// cluster.</p>
@@ -4189,6 +4181,7 @@ pub mod fluent_builders {
         /// <p>A task can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
             self.inner = self.inner.launch_type(input);
             self
@@ -4273,7 +4266,7 @@ pub mod fluent_builders {
         /// <p>The platform version the task should run. A platform version is only specified for
         /// tasks using the Fargate launch type. If one is not specified, the
         /// <code>LATEST</code> platform version is used by default. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform_version(input);
@@ -4358,7 +4351,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -4575,7 +4568,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -5045,7 +5038,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
         /// combination of such as a prefix for either keys or values as it is reserved for
-        /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
@@ -5511,8 +5504,8 @@ pub mod fluent_builders {
         /// <code>UPDATING</code> status can be used.</p>
         /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
         /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
         /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
@@ -5603,7 +5596,7 @@ pub mod fluent_builders {
         /// <p>The platform version on which your tasks in the service are running. A platform
         /// version is only specified for tasks using the Fargate launch type. If a
         /// platform version is not specified, the <code>LATEST</code> platform version is used by
-        /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+        /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform_version(input);

@@ -232,12 +232,15 @@ pub struct UnassignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IPv4 Prefix Delegation prefixes that have been unassigned from  the network interface.</p>
+    pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UnassignIpv6AddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnassignIpv6AddressesOutput");
         formatter.field("network_interface_id", &self.network_interface_id);
         formatter.field("unassigned_ipv6_addresses", &self.unassigned_ipv6_addresses);
+        formatter.field("unassigned_ipv6_prefixes", &self.unassigned_ipv6_prefixes);
         formatter.finish()
     }
 }
@@ -249,6 +252,8 @@ pub mod unassign_ipv6_addresses_output {
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
         pub(crate) unassigned_ipv6_addresses:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) unassigned_ipv6_prefixes:
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -277,11 +282,25 @@ pub mod unassign_ipv6_addresses_output {
             self.unassigned_ipv6_addresses = input;
             self
         }
+        pub fn unassigned_ipv6_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.unassigned_ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.unassigned_ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_unassigned_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.unassigned_ipv6_prefixes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UnassignIpv6AddressesOutput`](crate::output::UnassignIpv6AddressesOutput)
         pub fn build(self) -> crate::output::UnassignIpv6AddressesOutput {
             crate::output::UnassignIpv6AddressesOutput {
                 network_interface_id: self.network_interface_id,
                 unassigned_ipv6_addresses: self.unassigned_ipv6_addresses,
+                unassigned_ipv6_prefixes: self.unassigned_ipv6_prefixes,
             }
         }
     }
@@ -933,10 +952,10 @@ pub struct RunInstancesOutput {
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The ID of the account that owns the reservation.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Management Console or Auto Scaling).</p>
+    /// Amazon Web Services Management Console or Auto Scaling).</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
     pub reservation_id: std::option::Option<std::string::String>,
@@ -991,7 +1010,7 @@ pub mod run_instances_output {
             self.instances = input;
             self
         }
-        /// <p>The ID of the account that owns the reservation.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -1001,7 +1020,7 @@ pub mod run_instances_output {
             self
         }
         /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Management Console or Auto Scaling).</p>
+        /// Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
             self
@@ -1504,7 +1523,7 @@ impl ResetFpgaImageAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetEbsDefaultKmsKeyIdOutput {
-    /// <p>The Amazon Resource Name (ARN) of the default CMK for EBS encryption by default.</p>
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResetEbsDefaultKmsKeyIdOutput {
@@ -1523,7 +1542,7 @@ pub mod reset_ebs_default_kms_key_id_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the default CMK for EBS encryption by default.</p>
+        /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -4055,6 +4074,52 @@ impl ModifySnapshotAttributeOutput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifySecurityGroupRulesOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl std::fmt::Debug for ModifySecurityGroupRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifySecurityGroupRulesOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`ModifySecurityGroupRulesOutput`](crate::output::ModifySecurityGroupRulesOutput)
+pub mod modify_security_group_rules_output {
+    /// A builder for [`ModifySecurityGroupRulesOutput`](crate::output::ModifySecurityGroupRulesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifySecurityGroupRulesOutput`](crate::output::ModifySecurityGroupRulesOutput)
+        pub fn build(self) -> crate::output::ModifySecurityGroupRulesOutput {
+            crate::output::ModifySecurityGroupRulesOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl ModifySecurityGroupRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifySecurityGroupRulesOutput`](crate::output::ModifySecurityGroupRulesOutput)
+    pub fn builder() -> crate::output::modify_security_group_rules_output::Builder {
+        crate::output::modify_security_group_rules_output::Builder::default()
+    }
+}
+
 /// <p>Contains the output of ModifyReservedInstances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4349,6 +4414,55 @@ impl ModifyInstanceMetadataOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMetadataOptionsOutput`](crate::output::ModifyInstanceMetadataOptionsOutput)
     pub fn builder() -> crate::output::modify_instance_metadata_options_output::Builder {
         crate::output::modify_instance_metadata_options_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+}
+impl std::fmt::Debug for ModifyInstanceEventWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyInstanceEventWindowOutput");
+        formatter.field("instance_event_window", &self.instance_event_window);
+        formatter.finish()
+    }
+}
+/// See [`ModifyInstanceEventWindowOutput`](crate::output::ModifyInstanceEventWindowOutput)
+pub mod modify_instance_event_window_output {
+    /// A builder for [`ModifyInstanceEventWindowOutput`](crate::output::ModifyInstanceEventWindowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+    }
+    impl Builder {
+        /// <p>Information about the event window.</p>
+        pub fn instance_event_window(mut self, input: crate::model::InstanceEventWindow) -> Self {
+            self.instance_event_window = Some(input);
+            self
+        }
+        pub fn set_instance_event_window(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindow>,
+        ) -> Self {
+            self.instance_event_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyInstanceEventWindowOutput`](crate::output::ModifyInstanceEventWindowOutput)
+        pub fn build(self) -> crate::output::ModifyInstanceEventWindowOutput {
+            crate::output::ModifyInstanceEventWindowOutput {
+                instance_event_window: self.instance_event_window,
+            }
+        }
+    }
+}
+impl ModifyInstanceEventWindowOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyInstanceEventWindowOutput`](crate::output::ModifyInstanceEventWindowOutput)
+    pub fn builder() -> crate::output::modify_instance_event_window_output::Builder {
+        crate::output::modify_instance_event_window_output::Builder::default()
     }
 }
 
@@ -4828,7 +4942,7 @@ impl ModifyFleetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEbsDefaultKmsKeyIdOutput {
-    /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ModifyEbsDefaultKmsKeyIdOutput {
@@ -4847,7 +4961,7 @@ pub mod modify_ebs_default_kms_key_id_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
+        /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5267,7 +5381,7 @@ impl ImportSnapshotOutput {
 pub struct ImportKeyPairOutput {
     /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
     pub key_fingerprint: std::option::Option<std::string::String>,
-    /// <p>The key pair name you provided.</p>
+    /// <p>The key pair name that you provided.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the resulting key pair.</p>
     pub key_pair_id: std::option::Option<std::string::String>,
@@ -5308,7 +5422,7 @@ pub mod import_key_pair_output {
             self.key_fingerprint = input;
             self
         }
-        /// <p>The key pair name you provided.</p>
+        /// <p>The key pair name that you provided.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
@@ -6101,6 +6215,104 @@ impl GetTransitGatewayAttachmentPropagationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayAttachmentPropagationsOutput`](crate::output::GetTransitGatewayAttachmentPropagationsOutput)
     pub fn builder() -> crate::output::get_transit_gateway_attachment_propagations_output::Builder {
         crate::output::get_transit_gateway_attachment_propagations_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSubnetCidrReservationsOutput {
+    /// <p>Information about the IPv4 subnet CIDR reservations.</p>
+    pub subnet_ipv4_cidr_reservations:
+        std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+    /// <p>Information about the IPv6 subnet CIDR reservations.</p>
+    pub subnet_ipv6_cidr_reservations:
+        std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetSubnetCidrReservationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSubnetCidrReservationsOutput");
+        formatter.field(
+            "subnet_ipv4_cidr_reservations",
+            &self.subnet_ipv4_cidr_reservations,
+        );
+        formatter.field(
+            "subnet_ipv6_cidr_reservations",
+            &self.subnet_ipv6_cidr_reservations,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetSubnetCidrReservationsOutput`](crate::output::GetSubnetCidrReservationsOutput)
+pub mod get_subnet_cidr_reservations_output {
+    /// A builder for [`GetSubnetCidrReservationsOutput`](crate::output::GetSubnetCidrReservationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ipv4_cidr_reservations:
+            std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+        pub(crate) subnet_ipv6_cidr_reservations:
+            std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn subnet_ipv4_cidr_reservations(
+            mut self,
+            input: impl Into<crate::model::SubnetCidrReservation>,
+        ) -> Self {
+            let mut v = self.subnet_ipv4_cidr_reservations.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ipv4_cidr_reservations = Some(v);
+            self
+        }
+        pub fn set_subnet_ipv4_cidr_reservations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+        ) -> Self {
+            self.subnet_ipv4_cidr_reservations = input;
+            self
+        }
+        pub fn subnet_ipv6_cidr_reservations(
+            mut self,
+            input: impl Into<crate::model::SubnetCidrReservation>,
+        ) -> Self {
+            let mut v = self.subnet_ipv6_cidr_reservations.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ipv6_cidr_reservations = Some(v);
+            self
+        }
+        pub fn set_subnet_ipv6_cidr_reservations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
+        ) -> Self {
+            self.subnet_ipv6_cidr_reservations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSubnetCidrReservationsOutput`](crate::output::GetSubnetCidrReservationsOutput)
+        pub fn build(self) -> crate::output::GetSubnetCidrReservationsOutput {
+            crate::output::GetSubnetCidrReservationsOutput {
+                subnet_ipv4_cidr_reservations: self.subnet_ipv4_cidr_reservations,
+                subnet_ipv6_cidr_reservations: self.subnet_ipv6_cidr_reservations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetSubnetCidrReservationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetSubnetCidrReservationsOutput`](crate::output::GetSubnetCidrReservationsOutput)
+    pub fn builder() -> crate::output::get_subnet_cidr_reservations_output::Builder {
+        crate::output::get_subnet_cidr_reservations_output::Builder::default()
     }
 }
 
@@ -6920,7 +7132,7 @@ impl GetEbsEncryptionByDefaultOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsDefaultKmsKeyIdOutput {
-    /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetEbsDefaultKmsKeyIdOutput {
@@ -6939,7 +7151,7 @@ pub mod get_ebs_default_kms_key_id_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
+        /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -8716,6 +8928,55 @@ impl DisassociateRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRouteTableOutput`](crate::output::DisassociateRouteTableOutput)
     pub fn builder() -> crate::output::disassociate_route_table_output::Builder {
         crate::output::disassociate_route_table_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+}
+impl std::fmt::Debug for DisassociateInstanceEventWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateInstanceEventWindowOutput");
+        formatter.field("instance_event_window", &self.instance_event_window);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateInstanceEventWindowOutput`](crate::output::DisassociateInstanceEventWindowOutput)
+pub mod disassociate_instance_event_window_output {
+    /// A builder for [`DisassociateInstanceEventWindowOutput`](crate::output::DisassociateInstanceEventWindowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+    }
+    impl Builder {
+        /// <p>Information about the event window.</p>
+        pub fn instance_event_window(mut self, input: crate::model::InstanceEventWindow) -> Self {
+            self.instance_event_window = Some(input);
+            self
+        }
+        pub fn set_instance_event_window(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindow>,
+        ) -> Self {
+            self.instance_event_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateInstanceEventWindowOutput`](crate::output::DisassociateInstanceEventWindowOutput)
+        pub fn build(self) -> crate::output::DisassociateInstanceEventWindowOutput {
+            crate::output::DisassociateInstanceEventWindowOutput {
+                instance_event_window: self.instance_event_window,
+            }
+        }
+    }
+}
+impl DisassociateInstanceEventWindowOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateInstanceEventWindowOutput`](crate::output::DisassociateInstanceEventWindowOutput)
+    pub fn builder() -> crate::output::disassociate_instance_event_window_output::Builder {
+        crate::output::disassociate_instance_event_window_output::Builder::default()
     }
 }
 
@@ -12548,6 +12809,74 @@ impl DescribeSecurityGroupsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSecurityGroupRulesOutput {
+    /// <p>Information about security group rules.</p>
+    pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeSecurityGroupRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSecurityGroupRulesOutput");
+        formatter.field("security_group_rules", &self.security_group_rules);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSecurityGroupRulesOutput`](crate::output::DescribeSecurityGroupRulesOutput)
+pub mod describe_security_group_rules_output {
+    /// A builder for [`DescribeSecurityGroupRulesOutput`](crate::output::DescribeSecurityGroupRulesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_rules:
+            std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn security_group_rules(
+            mut self,
+            input: impl Into<crate::model::SecurityGroupRule>,
+        ) -> Self {
+            let mut v = self.security_group_rules.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_rules = Some(v);
+            self
+        }
+        pub fn set_security_group_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+        ) -> Self {
+            self.security_group_rules = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSecurityGroupRulesOutput`](crate::output::DescribeSecurityGroupRulesOutput)
+        pub fn build(self) -> crate::output::DescribeSecurityGroupRulesOutput {
+            crate::output::DescribeSecurityGroupRulesOutput {
+                security_group_rules: self.security_group_rules,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeSecurityGroupRulesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupRulesOutput`](crate::output::DescribeSecurityGroupRulesOutput)
+    pub fn builder() -> crate::output::describe_security_group_rules_output::Builder {
+        crate::output::describe_security_group_rules_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
     pub security_group_reference_set:
@@ -13081,8 +13410,7 @@ pub struct DescribeReplaceRootVolumeTasksOutput {
     /// <p>Information about the root volume replacement task.</p>
     pub replace_root_volume_tasks:
         std::option::Option<std::vec::Vec<crate::model::ReplaceRootVolumeTask>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-    /// more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeReplaceRootVolumeTasksOutput {
@@ -13120,8 +13448,7 @@ pub mod describe_replace_root_volume_tasks_output {
             self.replace_root_volume_tasks = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-        /// more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -15137,6 +15464,75 @@ impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput)
     pub fn builder() -> crate::output::describe_instances_output::Builder {
         crate::output::describe_instances_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInstanceEventWindowsOutput {
+    /// <p>Information about the event windows.</p>
+    pub instance_event_windows:
+        std::option::Option<std::vec::Vec<crate::model::InstanceEventWindow>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeInstanceEventWindowsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeInstanceEventWindowsOutput");
+        formatter.field("instance_event_windows", &self.instance_event_windows);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeInstanceEventWindowsOutput`](crate::output::DescribeInstanceEventWindowsOutput)
+pub mod describe_instance_event_windows_output {
+    /// A builder for [`DescribeInstanceEventWindowsOutput`](crate::output::DescribeInstanceEventWindowsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_windows:
+            std::option::Option<std::vec::Vec<crate::model::InstanceEventWindow>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn instance_event_windows(
+            mut self,
+            input: impl Into<crate::model::InstanceEventWindow>,
+        ) -> Self {
+            let mut v = self.instance_event_windows.unwrap_or_default();
+            v.push(input.into());
+            self.instance_event_windows = Some(v);
+            self
+        }
+        pub fn set_instance_event_windows(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceEventWindow>>,
+        ) -> Self {
+            self.instance_event_windows = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInstanceEventWindowsOutput`](crate::output::DescribeInstanceEventWindowsOutput)
+        pub fn build(self) -> crate::output::DescribeInstanceEventWindowsOutput {
+            crate::output::DescribeInstanceEventWindowsOutput {
+                instance_event_windows: self.instance_event_windows,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeInstanceEventWindowsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInstanceEventWindowsOutput`](crate::output::DescribeInstanceEventWindowsOutput)
+    pub fn builder() -> crate::output::describe_instance_event_windows_output::Builder {
+        crate::output::describe_instance_event_windows_output::Builder::default()
     }
 }
 
@@ -19647,6 +20043,62 @@ impl DeleteTagsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSubnetCidrReservationOutput {
+    /// <p>Information about the deleted subnet CIDR reservation.</p>
+    pub deleted_subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
+}
+impl std::fmt::Debug for DeleteSubnetCidrReservationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSubnetCidrReservationOutput");
+        formatter.field(
+            "deleted_subnet_cidr_reservation",
+            &self.deleted_subnet_cidr_reservation,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteSubnetCidrReservationOutput`](crate::output::DeleteSubnetCidrReservationOutput)
+pub mod delete_subnet_cidr_reservation_output {
+    /// A builder for [`DeleteSubnetCidrReservationOutput`](crate::output::DeleteSubnetCidrReservationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) deleted_subnet_cidr_reservation:
+            std::option::Option<crate::model::SubnetCidrReservation>,
+    }
+    impl Builder {
+        /// <p>Information about the deleted subnet CIDR reservation.</p>
+        pub fn deleted_subnet_cidr_reservation(
+            mut self,
+            input: crate::model::SubnetCidrReservation,
+        ) -> Self {
+            self.deleted_subnet_cidr_reservation = Some(input);
+            self
+        }
+        pub fn set_deleted_subnet_cidr_reservation(
+            mut self,
+            input: std::option::Option<crate::model::SubnetCidrReservation>,
+        ) -> Self {
+            self.deleted_subnet_cidr_reservation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSubnetCidrReservationOutput`](crate::output::DeleteSubnetCidrReservationOutput)
+        pub fn build(self) -> crate::output::DeleteSubnetCidrReservationOutput {
+            crate::output::DeleteSubnetCidrReservationOutput {
+                deleted_subnet_cidr_reservation: self.deleted_subnet_cidr_reservation,
+            }
+        }
+    }
+}
+impl DeleteSubnetCidrReservationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSubnetCidrReservationOutput`](crate::output::DeleteSubnetCidrReservationOutput)
+    pub fn builder() -> crate::output::delete_subnet_cidr_reservation_output::Builder {
+        crate::output::delete_subnet_cidr_reservation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetOutput {}
 impl std::fmt::Debug for DeleteSubnetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20586,6 +21038,63 @@ impl DeleteInternetGatewayOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteInstanceEventWindowOutput {
+    /// <p>The state of the event window.</p>
+    pub instance_event_window_state:
+        std::option::Option<crate::model::InstanceEventWindowStateChange>,
+}
+impl std::fmt::Debug for DeleteInstanceEventWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteInstanceEventWindowOutput");
+        formatter.field(
+            "instance_event_window_state",
+            &self.instance_event_window_state,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteInstanceEventWindowOutput`](crate::output::DeleteInstanceEventWindowOutput)
+pub mod delete_instance_event_window_output {
+    /// A builder for [`DeleteInstanceEventWindowOutput`](crate::output::DeleteInstanceEventWindowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window_state:
+            std::option::Option<crate::model::InstanceEventWindowStateChange>,
+    }
+    impl Builder {
+        /// <p>The state of the event window.</p>
+        pub fn instance_event_window_state(
+            mut self,
+            input: crate::model::InstanceEventWindowStateChange,
+        ) -> Self {
+            self.instance_event_window_state = Some(input);
+            self
+        }
+        pub fn set_instance_event_window_state(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowStateChange>,
+        ) -> Self {
+            self.instance_event_window_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteInstanceEventWindowOutput`](crate::output::DeleteInstanceEventWindowOutput)
+        pub fn build(self) -> crate::output::DeleteInstanceEventWindowOutput {
+            crate::output::DeleteInstanceEventWindowOutput {
+                instance_event_window_state: self.instance_event_window_state,
+            }
+        }
+    }
+}
+impl DeleteInstanceEventWindowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceEventWindowOutput`](crate::output::DeleteInstanceEventWindowOutput)
+    pub fn builder() -> crate::output::delete_instance_event_window_output::Builder {
+        crate::output::delete_instance_event_window_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFpgaImageOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
@@ -21449,7 +21958,7 @@ pub struct CreateVolumeOutput {
     pub create_time: std::option::Option<smithy_types::Instant>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
     /// volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
@@ -21569,7 +22078,7 @@ pub mod create_volume_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
         /// volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -22497,6 +23006,59 @@ impl CreateTagsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSubnetCidrReservationOutput {
+    /// <p>Information about the created subnet CIDR reservation.</p>
+    pub subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
+}
+impl std::fmt::Debug for CreateSubnetCidrReservationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSubnetCidrReservationOutput");
+        formatter.field("subnet_cidr_reservation", &self.subnet_cidr_reservation);
+        formatter.finish()
+    }
+}
+/// See [`CreateSubnetCidrReservationOutput`](crate::output::CreateSubnetCidrReservationOutput)
+pub mod create_subnet_cidr_reservation_output {
+    /// A builder for [`CreateSubnetCidrReservationOutput`](crate::output::CreateSubnetCidrReservationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_cidr_reservation:
+            std::option::Option<crate::model::SubnetCidrReservation>,
+    }
+    impl Builder {
+        /// <p>Information about the created subnet CIDR reservation.</p>
+        pub fn subnet_cidr_reservation(
+            mut self,
+            input: crate::model::SubnetCidrReservation,
+        ) -> Self {
+            self.subnet_cidr_reservation = Some(input);
+            self
+        }
+        pub fn set_subnet_cidr_reservation(
+            mut self,
+            input: std::option::Option<crate::model::SubnetCidrReservation>,
+        ) -> Self {
+            self.subnet_cidr_reservation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSubnetCidrReservationOutput`](crate::output::CreateSubnetCidrReservationOutput)
+        pub fn build(self) -> crate::output::CreateSubnetCidrReservationOutput {
+            crate::output::CreateSubnetCidrReservationOutput {
+                subnet_cidr_reservation: self.subnet_cidr_reservation,
+            }
+        }
+    }
+}
+impl CreateSubnetCidrReservationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSubnetCidrReservationOutput`](crate::output::CreateSubnetCidrReservationOutput)
+    pub fn builder() -> crate::output::create_subnet_cidr_reservation_output::Builder {
+        crate::output::create_subnet_cidr_reservation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetOutput {
     /// <p>Information about the subnet.</p>
     pub subnet: std::option::Option<crate::model::Subnet>,
@@ -22708,10 +23270,10 @@ pub struct CreateSnapshotOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
     /// volume encryption key for the parent volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the EBS snapshot owner.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub progress: std::option::Option<std::string::String>,
@@ -22723,7 +23285,7 @@ pub struct CreateSnapshotOutput {
     /// <p>The snapshot state.</p>
     pub state: std::option::Option<crate::model::SnapshotState>,
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
+    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
     /// state details to help you diagnose why the error occurred. This parameter is only returned by
     /// <a>DescribeSnapshots</a>.</p>
     pub state_message: std::option::Option<std::string::String>,
@@ -22732,10 +23294,10 @@ pub struct CreateSnapshotOutput {
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured AWS account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
+    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub owner_alias: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
@@ -22819,7 +23381,7 @@ pub mod create_snapshot_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
         /// volume encryption key for the parent volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -22829,7 +23391,7 @@ pub mod create_snapshot_output {
             self.kms_key_id = input;
             self
         }
-        /// <p>The AWS account ID of the EBS snapshot owner.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -22879,7 +23441,7 @@ pub mod create_snapshot_output {
             self
         }
         /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
+        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
         /// state details to help you diagnose why the error occurred. This parameter is only returned by
         /// <a>DescribeSnapshots</a>.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -22912,8 +23474,8 @@ pub mod create_snapshot_output {
             self.volume_size = input;
             self
         }
-        /// <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured AWS account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
+        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
@@ -22922,7 +23484,7 @@ pub mod create_snapshot_output {
             self.owner_alias = input;
             self
         }
-        /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
@@ -24149,6 +24711,55 @@ impl CreateInstanceExportTaskOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+}
+impl std::fmt::Debug for CreateInstanceEventWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateInstanceEventWindowOutput");
+        formatter.field("instance_event_window", &self.instance_event_window);
+        formatter.finish()
+    }
+}
+/// See [`CreateInstanceEventWindowOutput`](crate::output::CreateInstanceEventWindowOutput)
+pub mod create_instance_event_window_output {
+    /// A builder for [`CreateInstanceEventWindowOutput`](crate::output::CreateInstanceEventWindowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+    }
+    impl Builder {
+        /// <p>Information about the event window.</p>
+        pub fn instance_event_window(mut self, input: crate::model::InstanceEventWindow) -> Self {
+            self.instance_event_window = Some(input);
+            self
+        }
+        pub fn set_instance_event_window(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindow>,
+        ) -> Self {
+            self.instance_event_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInstanceEventWindowOutput`](crate::output::CreateInstanceEventWindowOutput)
+        pub fn build(self) -> crate::output::CreateInstanceEventWindowOutput {
+            crate::output::CreateInstanceEventWindowOutput {
+                instance_event_window: self.instance_event_window,
+            }
+        }
+    }
+}
+impl CreateInstanceEventWindowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInstanceEventWindowOutput`](crate::output::CreateInstanceEventWindowOutput)
+    pub fn builder() -> crate::output::create_instance_event_window_output::Builder {
+        crate::output::create_instance_event_window_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageOutput {
     /// <p>The ID of the new AMI.</p>
     pub image_id: std::option::Option<std::string::String>,
@@ -25078,7 +25689,7 @@ impl CopyFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmProductInstanceOutput {
-    /// <p>The account ID of the instance owner. This is only present if the product code is
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
     /// attached to the instance.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The return value of the request. Returns <code>true</code> if the specified product
@@ -25103,7 +25714,7 @@ pub mod confirm_product_instance_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The account ID of the instance owner. This is only present if the product code is
+        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
         /// attached to the instance.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
@@ -25629,10 +26240,17 @@ impl BundleInstanceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AuthorizeSecurityGroupIngressOutput {}
+pub struct AuthorizeSecurityGroupIngressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+    /// <p>Information about the inbound (ingress) security group rules that were added.</p>
+    pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+}
 impl std::fmt::Debug for AuthorizeSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeSecurityGroupIngressOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.field("security_group_rules", &self.security_group_rules);
         formatter.finish()
     }
 }
@@ -25641,11 +26259,43 @@ pub mod authorize_security_group_ingress_output {
     /// A builder for [`AuthorizeSecurityGroupIngressOutput`](crate::output::AuthorizeSecurityGroupIngressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+        pub(crate) security_group_rules:
+            std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+    }
     impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        pub fn security_group_rules(
+            mut self,
+            input: impl Into<crate::model::SecurityGroupRule>,
+        ) -> Self {
+            let mut v = self.security_group_rules.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_rules = Some(v);
+            self
+        }
+        pub fn set_security_group_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+        ) -> Self {
+            self.security_group_rules = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AuthorizeSecurityGroupIngressOutput`](crate::output::AuthorizeSecurityGroupIngressOutput)
         pub fn build(self) -> crate::output::AuthorizeSecurityGroupIngressOutput {
-            crate::output::AuthorizeSecurityGroupIngressOutput {}
+            crate::output::AuthorizeSecurityGroupIngressOutput {
+                r#return: self.r#return,
+                security_group_rules: self.security_group_rules,
+            }
         }
     }
 }
@@ -25658,10 +26308,17 @@ impl AuthorizeSecurityGroupIngressOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AuthorizeSecurityGroupEgressOutput {}
+pub struct AuthorizeSecurityGroupEgressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+    /// <p>Information about the outbound (egress) security group rules that were added.</p>
+    pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+}
 impl std::fmt::Debug for AuthorizeSecurityGroupEgressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeSecurityGroupEgressOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.field("security_group_rules", &self.security_group_rules);
         formatter.finish()
     }
 }
@@ -25670,11 +26327,43 @@ pub mod authorize_security_group_egress_output {
     /// A builder for [`AuthorizeSecurityGroupEgressOutput`](crate::output::AuthorizeSecurityGroupEgressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+        pub(crate) security_group_rules:
+            std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+    }
     impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        pub fn security_group_rules(
+            mut self,
+            input: impl Into<crate::model::SecurityGroupRule>,
+        ) -> Self {
+            let mut v = self.security_group_rules.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_rules = Some(v);
+            self
+        }
+        pub fn set_security_group_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+        ) -> Self {
+            self.security_group_rules = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AuthorizeSecurityGroupEgressOutput`](crate::output::AuthorizeSecurityGroupEgressOutput)
         pub fn build(self) -> crate::output::AuthorizeSecurityGroupEgressOutput {
-            crate::output::AuthorizeSecurityGroupEgressOutput {}
+            crate::output::AuthorizeSecurityGroupEgressOutput {
+                r#return: self.r#return,
+                security_group_rules: self.security_group_rules,
+            }
         }
     }
 }
@@ -26454,6 +27143,55 @@ impl AssociateRouteTableOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+}
+impl std::fmt::Debug for AssociateInstanceEventWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateInstanceEventWindowOutput");
+        formatter.field("instance_event_window", &self.instance_event_window);
+        formatter.finish()
+    }
+}
+/// See [`AssociateInstanceEventWindowOutput`](crate::output::AssociateInstanceEventWindowOutput)
+pub mod associate_instance_event_window_output {
+    /// A builder for [`AssociateInstanceEventWindowOutput`](crate::output::AssociateInstanceEventWindowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
+    }
+    impl Builder {
+        /// <p>Information about the event window.</p>
+        pub fn instance_event_window(mut self, input: crate::model::InstanceEventWindow) -> Self {
+            self.instance_event_window = Some(input);
+            self
+        }
+        pub fn set_instance_event_window(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindow>,
+        ) -> Self {
+            self.instance_event_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateInstanceEventWindowOutput`](crate::output::AssociateInstanceEventWindowOutput)
+        pub fn build(self) -> crate::output::AssociateInstanceEventWindowOutput {
+            crate::output::AssociateInstanceEventWindowOutput {
+                instance_event_window: self.instance_event_window,
+            }
+        }
+    }
+}
+impl AssociateInstanceEventWindowOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateInstanceEventWindowOutput`](crate::output::AssociateInstanceEventWindowOutput)
+    pub fn builder() -> crate::output::associate_instance_event_window_output::Builder {
+        crate::output::associate_instance_event_window_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
     pub iam_instance_profile_association:
@@ -26517,7 +27255,7 @@ pub struct AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
     /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub certificate_s3_object_key: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS KMS CMK used to encrypt the private key of the certificate.</p>
+    /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub encryption_kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociateEnclaveCertificateIamRoleOutput {
@@ -26568,7 +27306,7 @@ pub mod associate_enclave_certificate_iam_role_output {
             self.certificate_s3_object_key = input;
             self
         }
-        /// <p>The ID of the AWS KMS CMK used to encrypt the private key of the certificate.</p>
+        /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
         pub fn encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_kms_key_id = Some(input.into());
             self
@@ -26749,6 +27487,11 @@ pub struct AssignPrivateIpAddressesOutput {
     /// <p>The private IP addresses assigned to the network interface.</p>
     pub assigned_private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
+    /// <p>The IPv4 Prefix Delegation prefixes
+    /// that are
+    /// assigned to the network interface.</p>
+    pub assigned_ipv4_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
 }
 impl std::fmt::Debug for AssignPrivateIpAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26758,6 +27501,7 @@ impl std::fmt::Debug for AssignPrivateIpAddressesOutput {
             "assigned_private_ip_addresses",
             &self.assigned_private_ip_addresses,
         );
+        formatter.field("assigned_ipv4_prefixes", &self.assigned_ipv4_prefixes);
         formatter.finish()
     }
 }
@@ -26770,6 +27514,8 @@ pub mod assign_private_ip_addresses_output {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
         pub(crate) assigned_private_ip_addresses:
             std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
+        pub(crate) assigned_ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
     }
     impl Builder {
         /// <p>The ID of the network interface.</p>
@@ -26800,11 +27546,28 @@ pub mod assign_private_ip_addresses_output {
             self.assigned_private_ip_addresses = input;
             self
         }
+        pub fn assigned_ipv4_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv4PrefixSpecification>,
+        ) -> Self {
+            let mut v = self.assigned_ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.assigned_ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_assigned_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
+        ) -> Self {
+            self.assigned_ipv4_prefixes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssignPrivateIpAddressesOutput`](crate::output::AssignPrivateIpAddressesOutput)
         pub fn build(self) -> crate::output::AssignPrivateIpAddressesOutput {
             crate::output::AssignPrivateIpAddressesOutput {
                 network_interface_id: self.network_interface_id,
                 assigned_private_ip_addresses: self.assigned_private_ip_addresses,
+                assigned_ipv4_prefixes: self.assigned_ipv4_prefixes,
             }
         }
     }
@@ -26822,6 +27585,10 @@ pub struct AssignIpv6AddressesOutput {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
     /// that were assigned to the network interface before the request are not included.</p>
     pub assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IPv6 Prefix Delegation prefixes
+    /// that are
+    /// assigned to the network interface.</p>
+    pub assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
 }
@@ -26829,6 +27596,7 @@ impl std::fmt::Debug for AssignIpv6AddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssignIpv6AddressesOutput");
         formatter.field("assigned_ipv6_addresses", &self.assigned_ipv6_addresses);
+        formatter.field("assigned_ipv6_prefixes", &self.assigned_ipv6_prefixes);
         formatter.field("network_interface_id", &self.network_interface_id);
         formatter.finish()
     }
@@ -26840,6 +27608,7 @@ pub mod assign_ipv6_addresses_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -26854,6 +27623,19 @@ pub mod assign_ipv6_addresses_output {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.assigned_ipv6_addresses = input;
+            self
+        }
+        pub fn assigned_ipv6_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.assigned_ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.assigned_ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_assigned_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assigned_ipv6_prefixes = input;
             self
         }
         /// <p>The ID of the network interface.</p>
@@ -26872,6 +27654,7 @@ pub mod assign_ipv6_addresses_output {
         pub fn build(self) -> crate::output::AssignIpv6AddressesOutput {
             crate::output::AssignIpv6AddressesOutput {
                 assigned_ipv6_addresses: self.assigned_ipv6_addresses,
+                assigned_ipv6_prefixes: self.assigned_ipv6_prefixes,
                 network_interface_id: self.network_interface_id,
             }
         }

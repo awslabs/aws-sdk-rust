@@ -2202,7 +2202,7 @@ impl ThrottlingException {
 }
 
 /// <p>The supplied input
-/// failed to satisfy constraints of an AWS service.</p>
+/// failed to satisfy constraints of an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -2506,7 +2506,7 @@ impl RequestInProgressException {
     }
 }
 
-/// <p>The certificate is in use by another AWS service in the caller's account. Remove the
+/// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the
 /// association and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

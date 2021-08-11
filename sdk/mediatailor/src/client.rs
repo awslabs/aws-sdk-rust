@@ -90,6 +90,9 @@ where
     pub fn get_playback_configuration(&self) -> fluent_builders::GetPlaybackConfiguration<C> {
         fluent_builders::GetPlaybackConfiguration::new(self.handle.clone())
     }
+    pub fn list_alerts(&self) -> fluent_builders::ListAlerts<C> {
+        fluent_builders::ListAlerts::new(self.handle.clone())
+    }
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
@@ -1122,6 +1125,65 @@ pub mod fluent_builders {
         }
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListAlerts<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_alerts_input::Builder,
+    }
+    impl<C> ListAlerts<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAlertsOutput,
+            smithy_http::result::SdkError<crate::error::ListAlertsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }

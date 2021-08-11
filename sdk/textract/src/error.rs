@@ -161,6 +161,152 @@ impl std::error::Error for AnalyzeDocumentError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct AnalyzeExpenseError {
+    pub kind: AnalyzeExpenseErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AnalyzeExpenseErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    BadDocumentException(crate::error::BadDocumentException),
+    DocumentTooLargeException(crate::error::DocumentTooLargeException),
+    InternalServerError(crate::error::InternalServerError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AnalyzeExpenseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            AnalyzeExpenseErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
+            AnalyzeExpenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for AnalyzeExpenseError {
+    fn code(&self) -> Option<&str> {
+        AnalyzeExpenseError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AnalyzeExpenseError {
+    pub fn new(kind: AnalyzeExpenseErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AnalyzeExpenseErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AnalyzeExpenseErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_bad_document_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeExpenseErrorKind::BadDocumentException(_))
+    }
+    pub fn is_document_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::DocumentTooLargeException(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, AnalyzeExpenseErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeExpenseErrorKind::ThrottlingException(_))
+    }
+    pub fn is_unsupported_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_)
+        )
+    }
+}
+impl std::error::Error for AnalyzeExpenseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::BadDocumentException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::InternalServerError(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::ThrottlingException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DetectDocumentTextError {
     pub kind: DetectDocumentTextErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -328,6 +474,7 @@ pub enum GetDocumentAnalysisErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerError(crate::error::InternalServerError),
     InvalidJobIdException(crate::error::InvalidJobIdException),
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
     InvalidParameterException(crate::error::InvalidParameterException),
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
@@ -341,6 +488,7 @@ impl std::fmt::Display for GetDocumentAnalysisError {
             GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetDocumentAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
+            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
             GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
             GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
@@ -413,6 +561,12 @@ impl GetDocumentAnalysisError {
             GetDocumentAnalysisErrorKind::InvalidJobIdException(_)
         )
     }
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_)
+        )
+    }
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -444,6 +598,7 @@ impl std::error::Error for GetDocumentAnalysisError {
             GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetDocumentAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
             GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
+            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
             GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
@@ -467,6 +622,7 @@ pub enum GetDocumentTextDetectionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerError(crate::error::InternalServerError),
     InvalidJobIdException(crate::error::InvalidJobIdException),
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
     InvalidParameterException(crate::error::InvalidParameterException),
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
@@ -480,6 +636,7 @@ impl std::fmt::Display for GetDocumentTextDetectionError {
             GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetDocumentTextDetectionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
+            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
             GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
             GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {
@@ -552,6 +709,12 @@ impl GetDocumentTextDetectionError {
             GetDocumentTextDetectionErrorKind::InvalidJobIdException(_)
         )
     }
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_)
+        )
+    }
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -583,6 +746,7 @@ impl std::error::Error for GetDocumentTextDetectionError {
             GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::InternalServerError(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) => Some(_inner),
+            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {

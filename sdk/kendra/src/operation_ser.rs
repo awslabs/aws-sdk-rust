@@ -122,6 +122,16 @@ pub fn serialize_operation_delete_index(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_delete_principal_mapping(
+    input: &crate::input::DeletePrincipalMappingInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_delete_principal_mapping_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_delete_query_suggestions_block_list(
     input: &crate::input::DeleteQuerySuggestionsBlockListInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -171,6 +181,16 @@ pub fn serialize_operation_describe_index(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_describe_index_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_describe_principal_mapping(
+    input: &crate::input::DescribePrincipalMappingInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_describe_principal_mapping_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -251,6 +271,19 @@ pub fn serialize_operation_list_faqs(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_list_groups_older_than_ordering_id(
+    input: &crate::input::ListGroupsOlderThanOrderingIdInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_groups_older_than_ordering_id_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_list_indices(
     input: &crate::input::ListIndicesInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -290,6 +323,16 @@ pub fn serialize_operation_list_thesauri(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_list_thesauri_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_put_principal_mapping(
+    input: &crate::input::PutPrincipalMappingInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_put_principal_mapping_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

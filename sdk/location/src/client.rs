@@ -178,6 +178,21 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    pub fn update_geofence_collection(&self) -> fluent_builders::UpdateGeofenceCollection<C> {
+        fluent_builders::UpdateGeofenceCollection::new(self.handle.clone())
+    }
+    pub fn update_map(&self) -> fluent_builders::UpdateMap<C> {
+        fluent_builders::UpdateMap::new(self.handle.clone())
+    }
+    pub fn update_place_index(&self) -> fluent_builders::UpdatePlaceIndex<C> {
+        fluent_builders::UpdatePlaceIndex::new(self.handle.clone())
+    }
+    pub fn update_route_calculator(&self) -> fluent_builders::UpdateRouteCalculator<C> {
+        fluent_builders::UpdateRouteCalculator::new(self.handle.clone())
+    }
+    pub fn update_tracker(&self) -> fluent_builders::UpdateTracker<C> {
+        fluent_builders::UpdateTracker::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
@@ -1180,27 +1195,28 @@ pub mod fluent_builders {
         /// <p>Specifies the data provider of geospatial data.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> will return an error.</p>
+        /// <code>HERE</code> returns an error.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Esri</code>
-        /// </p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
+        /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Here</code>
-        /// </p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+        /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE as a data provider can't be used to <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-        /// results for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for
-        /// Amazon Location Service.</p>
+        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// for Amazon Location Service.</p>
         /// </important>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
+        /// on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source(input);
             self
@@ -1232,7 +1248,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies the data storage option for requesting Places.</p>
+        /// <p>Specifies the data storage option requesting Places.</p>
         pub fn data_source_configuration(
             mut self,
             input: crate::model::DataSourceConfiguration,
@@ -1349,9 +1365,20 @@ pub mod fluent_builders {
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
         /// entering <code>HERE</code> returns an error.</p>
         /// </note>
-        /// <p>Valid Values: <code>Esri</code> | <code>Here</code>
-        /// </p>
-        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source(input);
             self
@@ -2307,8 +2334,47 @@ pub mod fluent_builders {
             self.inner = self.inner.set_map_name(input);
             self
         }
-        /// <p>A comma-separated list of fonts to load glyphs from in order of preference.. For
-        /// example, <code>Noto Sans, Arial Unicode</code>.</p>
+        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
+        /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
+        /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
+        /// <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+        /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+        /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
+        /// Regular</code> | <code>Roboto Condensed Light Italic</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
+        /// <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
+        /// | <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO
+        /// Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.font_stack(input);
             self
@@ -2886,6 +2952,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -3321,6 +3393,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -3329,7 +3407,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The mapping from tag key to tag value for each tag associated with the specified resource.</p>
+        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3380,6 +3464,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -3388,7 +3478,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The list of tag keys to remove from the resource.</p>
+        /// <p>The list of tag keys to remove from the specified resource.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
@@ -3398,6 +3488,393 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateGeofenceCollection<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_geofence_collection_input::Builder,
+    }
+    impl<C> UpdateGeofenceCollection<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateGeofenceCollectionOutput,
+            smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the geofence collection to update.</p>
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input);
+            self
+        }
+        pub fn set_collection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_collection_name(input);
+            self
+        }
+        /// <p>Updates the pricing plan for the geofence collection.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan(input);
+            self
+        }
+        /// <p>Updates the data provider for the geofence collection. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
+        /// <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
+        /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
+        /// Amazon Location Service product page.</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your geofence collection. Your data won't be shared with the data
+        /// provider, and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input);
+            self
+        }
+        pub fn set_pricing_plan_data_source(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan_data_source(input);
+            self
+        }
+        /// <p>Updates the description for the geofence collection.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateMap<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_map_input::Builder,
+    }
+    impl<C> UpdateMap<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMapOutput,
+            smithy_http::result::SdkError<crate::error::UpdateMapError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the map resource to update.</p>
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input);
+            self
+        }
+        pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_map_name(input);
+            self
+        }
+        /// <p>Updates the pricing plan for the map resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan(input);
+            self
+        }
+        /// <p>Updates the description for the map resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdatePlaceIndex<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_place_index_input::Builder,
+    }
+    impl<C> UpdatePlaceIndex<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdatePlaceIndexOutput,
+            smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the place index resource to update.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input);
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
+            self
+        }
+        /// <p>Updates the pricing plan for the place index resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan(input);
+            self
+        }
+        /// <p>Updates the description for the place index resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Updates the data storage option for the place index resource.</p>
+        pub fn data_source_configuration(
+            mut self,
+            input: crate::model::DataSourceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.data_source_configuration(input);
+            self
+        }
+        pub fn set_data_source_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source_configuration(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateRouteCalculator<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_route_calculator_input::Builder,
+    }
+    impl<C> UpdateRouteCalculator<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRouteCalculatorOutput,
+            smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the route calculator resource to update.</p>
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input);
+            self
+        }
+        pub fn set_calculator_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculator_name(input);
+            self
+        }
+        /// <p>Updates the pricing plan for the route calculator resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+        /// Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan(input);
+            self
+        }
+        /// <p>Updates the description for the route calculator resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateTracker<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_tracker_input::Builder,
+    }
+    impl<C> UpdateTracker<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateTrackerOutput,
+            smithy_http::result::SdkError<crate::error::UpdateTrackerError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the tracker resource to update.</p>
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input);
+            self
+        }
+        pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_tracker_name(input);
+            self
+        }
+        /// <p>Updates the pricing plan for the tracker resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan(input);
+            self
+        }
+        /// <p>Updates the data provider for the tracker resource. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
+        /// page</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your tracker resource. Your data won't be shared with the data provider,
+        /// and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input);
+            self
+        }
+        pub fn set_pricing_plan_data_source(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pricing_plan_data_source(input);
+            self
+        }
+        /// <p>Updates the description for the tracker resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }

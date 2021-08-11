@@ -8,8 +8,10 @@ pub mod create_fhir_datastore_input {
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_type_version: std::option::Option<crate::model::FhirVersion>,
+        pub(crate) sse_configuration: std::option::Option<crate::model::SseConfiguration>,
         pub(crate) preload_data_config: std::option::Option<crate::model::PreloadDataConfig>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The user generated name for the Data Store.</p>
@@ -36,6 +38,20 @@ pub mod create_fhir_datastore_input {
             self.datastore_type_version = input;
             self
         }
+        /// <p>
+        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
+        /// </p>
+        pub fn sse_configuration(mut self, input: crate::model::SseConfiguration) -> Self {
+            self.sse_configuration = Some(input);
+            self
+        }
+        pub fn set_sse_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SseConfiguration>,
+        ) -> Self {
+            self.sse_configuration = input;
+            self
+        }
         /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
         /// supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn preload_data_config(mut self, input: crate::model::PreloadDataConfig) -> Self {
@@ -58,6 +74,19 @@ pub mod create_fhir_datastore_input {
             self.client_token = input;
             self
         }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFhirDatastoreInput`](crate::input::CreateFhirDatastoreInput)
         pub fn build(
             self,
@@ -68,8 +97,10 @@ pub mod create_fhir_datastore_input {
             Ok(crate::input::CreateFhirDatastoreInput {
                 datastore_name: self.datastore_name,
                 datastore_type_version: self.datastore_type_version,
+                sse_configuration: self.sse_configuration,
                 preload_data_config: self.preload_data_config,
                 client_token: self.client_token,
+                tags: self.tags,
             })
         }
     }
@@ -104,28 +135,28 @@ impl CreateFhirDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -243,28 +274,28 @@ impl DeleteFhirDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -382,28 +413,28 @@ impl DescribeFhirDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -532,28 +563,28 @@ impl DescribeFhirExportJobInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -682,28 +713,28 @@ impl DescribeFhirImportJobInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -847,28 +878,28 @@ impl ListFhirDatastoresInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -925,6 +956,603 @@ impl ListFhirDatastoresInput {
     /// Creates a new builder-style object to manufacture [`ListFhirDatastoresInput`](crate::input::ListFhirDatastoresInput)
     pub fn builder() -> crate::input::list_fhir_datastores_input::Builder {
         crate::input::list_fhir_datastores_input::Builder::default()
+    }
+}
+
+/// See [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+pub mod list_fhir_export_jobs_input {
+    /// A builder for [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) datastore_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) submitted_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) submitted_after: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>
+        /// This parameter limits the response to the export job with the specified Data Store ID.
+        /// </p>
+        pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.datastore_id = Some(input.into());
+            self
+        }
+        pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_id = input;
+            self
+        }
+        /// <p>
+        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
+        /// </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the export job with the specified job name.
+        /// </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the export jobs with the specified job status.
+        /// </p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
+        /// </p>
+        pub fn submitted_before(mut self, input: smithy_types::Instant) -> Self {
+            self.submitted_before = Some(input);
+            self
+        }
+        pub fn set_submitted_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.submitted_before = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
+        /// </p>
+        pub fn submitted_after(mut self, input: smithy_types::Instant) -> Self {
+            self.submitted_after = Some(input);
+            self
+        }
+        pub fn set_submitted_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.submitted_after = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListFhirExportJobsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListFhirExportJobsInput {
+                datastore_id: self.datastore_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                job_name: self.job_name,
+                job_status: self.job_status,
+                submitted_before: self.submitted_before,
+                submitted_after: self.submitted_after,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListFHIRExportJobsInputOperationOutputAlias = crate::operation::ListFHIRExportJobs;
+#[doc(hidden)]
+pub type ListFHIRExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListFhirExportJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListFHIRExportJobs`](crate::operation::ListFHIRExportJobs)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListFHIRExportJobs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_list_fhir_export_jobs(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListFHIRExportJobs::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListFHIRExportJobs",
+                "healthlake",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.0",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "HealthLake.ListFHIRExportJobs",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+    pub fn builder() -> crate::input::list_fhir_export_jobs_input::Builder {
+        crate::input::list_fhir_export_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+pub mod list_fhir_import_jobs_input {
+    /// A builder for [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) datastore_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) submitted_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) submitted_after: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>
+        /// This parameter limits the response to the import job with the specified Data Store ID.
+        /// </p>
+        pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.datastore_id = Some(input.into());
+            self
+        }
+        pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_id = input;
+            self
+        }
+        /// <p>
+        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
+        /// </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the import job with the specified job name.
+        /// </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the import job with the specified job status.
+        /// </p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
+        /// </p>
+        pub fn submitted_before(mut self, input: smithy_types::Instant) -> Self {
+            self.submitted_before = Some(input);
+            self
+        }
+        pub fn set_submitted_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.submitted_before = input;
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
+        /// </p>
+        pub fn submitted_after(mut self, input: smithy_types::Instant) -> Self {
+            self.submitted_after = Some(input);
+            self
+        }
+        pub fn set_submitted_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.submitted_after = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListFhirImportJobsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListFhirImportJobsInput {
+                datastore_id: self.datastore_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                job_name: self.job_name,
+                job_status: self.job_status,
+                submitted_before: self.submitted_before,
+                submitted_after: self.submitted_after,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListFHIRImportJobsInputOperationOutputAlias = crate::operation::ListFHIRImportJobs;
+#[doc(hidden)]
+pub type ListFHIRImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListFhirImportJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListFHIRImportJobs`](crate::operation::ListFHIRImportJobs)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListFHIRImportJobs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_list_fhir_import_jobs(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListFHIRImportJobs::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListFHIRImportJobs",
+                "healthlake",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.0",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "HealthLake.ListFHIRImportJobs",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+    pub fn builder() -> crate::input::list_fhir_import_jobs_input::Builder {
+        crate::input::list_fhir_import_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+pub mod list_tags_for_resource_input {
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListTagsForResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListTagsForResource",
+                "healthlake",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.0",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "HealthLake.ListTagsForResource",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
     }
 }
 
@@ -1039,28 +1667,28 @@ impl StartFhirExportJobInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1128,6 +1756,7 @@ pub mod start_fhir_import_job_input {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
+        pub(crate) job_output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1152,6 +1781,18 @@ pub mod start_fhir_import_job_input {
             input: std::option::Option<crate::model::InputDataConfig>,
         ) -> Self {
             self.input_data_config = input;
+            self
+        }
+        /// <p>The output data configuration that was supplied when the export job was created.</p>
+        pub fn job_output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.job_output_data_config = Some(input);
+            self
+        }
+        pub fn set_job_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.job_output_data_config = input;
             self
         }
         /// <p>The AWS-generated Data Store ID.</p>
@@ -1194,6 +1835,7 @@ pub mod start_fhir_import_job_input {
             Ok(crate::input::StartFhirImportJobInput {
                 job_name: self.job_name,
                 input_data_config: self.input_data_config,
+                job_output_data_config: self.job_output_data_config,
                 datastore_id: self.datastore_id,
                 data_access_role_arn: self.data_access_role_arn,
                 client_token: self.client_token,
@@ -1231,28 +1873,28 @@ impl StartFhirImportJobInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1312,6 +1954,356 @@ impl StartFhirImportJobInput {
     }
 }
 
+/// See [`TagResourceInput`](crate::input::TagResourceInput)
+pub mod tag_resource_input {
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "TagResource",
+                "healthlake",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.0",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "HealthLake.TagResource",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput)
+pub mod untag_resource_input {
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>
+        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UntagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UntagResource",
+                "healthlake",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.0",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "HealthLake.UntagResource",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>
+    /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+    /// </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>
+    /// The keys for the tags to be removed from the Healthlake Data Store.
+    /// </p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p>
+    /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+    /// </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>
+    /// The user specified key and value pair tags being added to a Data Store.
+    /// </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFhirImportJobInput {
@@ -1319,6 +2311,8 @@ pub struct StartFhirImportJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub job_output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The AWS-generated Data Store ID.</p>
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
@@ -1331,6 +2325,7 @@ impl std::fmt::Debug for StartFhirImportJobInput {
         let mut formatter = f.debug_struct("StartFhirImportJobInput");
         formatter.field("job_name", &self.job_name);
         formatter.field("input_data_config", &self.input_data_config);
+        formatter.field("job_output_data_config", &self.job_output_data_config);
         formatter.field("datastore_id", &self.datastore_id);
         formatter.field("data_access_role_arn", &self.data_access_role_arn);
         formatter.field("client_token", &self.client_token);
@@ -1360,6 +2355,114 @@ impl std::fmt::Debug for StartFhirExportJobInput {
         formatter.field("datastore_id", &self.datastore_id);
         formatter.field("data_access_role_arn", &self.data_access_role_arn);
         formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>
+    /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+    /// </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFhirImportJobsInput {
+    /// <p>
+    /// This parameter limits the response to the import job with the specified Data Store ID.
+    /// </p>
+    pub datastore_id: std::option::Option<std::string::String>,
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
+    /// </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>
+    /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
+    /// </p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>
+    /// This parameter limits the response to the import job with the specified job name.
+    /// </p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>
+    /// This parameter limits the response to the import job with the specified job status.
+    /// </p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>
+    /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
+    /// </p>
+    pub submitted_before: std::option::Option<smithy_types::Instant>,
+    /// <p>
+    /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
+    /// </p>
+    pub submitted_after: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for ListFhirImportJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFhirImportJobsInput");
+        formatter.field("datastore_id", &self.datastore_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("submitted_before", &self.submitted_before);
+        formatter.field("submitted_after", &self.submitted_after);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFhirExportJobsInput {
+    /// <p>
+    /// This parameter limits the response to the export job with the specified Data Store ID.
+    /// </p>
+    pub datastore_id: std::option::Option<std::string::String>,
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
+    /// </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>
+    /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
+    /// </p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>
+    /// This parameter limits the response to the export job with the specified job name.
+    /// </p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>
+    /// This parameter limits the response to the export jobs with the specified job status.
+    /// </p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>
+    /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
+    /// </p>
+    pub submitted_before: std::option::Option<smithy_types::Instant>,
+    /// <p>
+    /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
+    /// </p>
+    pub submitted_after: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for ListFhirExportJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFhirExportJobsInput");
+        formatter.field("datastore_id", &self.datastore_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("submitted_before", &self.submitted_before);
+        formatter.field("submitted_after", &self.submitted_after);
         formatter.finish()
     }
 }
@@ -1454,19 +2557,29 @@ pub struct CreateFhirDatastoreInput {
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
     pub datastore_type_version: std::option::Option<crate::model::FhirVersion>,
+    /// <p>
+    /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
+    /// </p>
+    pub sse_configuration: std::option::Option<crate::model::SseConfiguration>,
     /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
     /// supported preloaded data is synthetic data generated from Synthea.</p>
     pub preload_data_config: std::option::Option<crate::model::PreloadDataConfig>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>
+    /// Resource tags that are applied to a Data Store when it is created.
+    /// </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for CreateFhirDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFhirDatastoreInput");
         formatter.field("datastore_name", &self.datastore_name);
         formatter.field("datastore_type_version", &self.datastore_type_version);
+        formatter.field("sse_configuration", &self.sse_configuration);
         formatter.field("preload_data_config", &self.preload_data_config);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

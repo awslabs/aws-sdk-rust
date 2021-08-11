@@ -3806,7 +3806,7 @@ impl std::error::Error for UpdateWebhookError {
     }
 }
 
-/// <p>The specified Amazon Web Services resource cannot be found.</p>
+/// <p>The specified AWS resource cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3986,7 +3986,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.</p>
+/// <p>An AWS service limit was exceeded for the calling AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLimitExceededException {
@@ -4046,8 +4046,8 @@ impl AccountLimitExceededException {
     }
 }
 
-/// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the
-/// same settings already exists.</p>
+/// <p>The specified AWS resource cannot be created, because an AWS resource with the same
+/// settings already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {

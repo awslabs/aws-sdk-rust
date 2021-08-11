@@ -233,8 +233,9 @@ pub fn parse_describe_object_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_output::Builder::default();

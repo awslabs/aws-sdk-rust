@@ -849,6 +849,22 @@ pub fn deser_payload_list_cloud_front_origin_access_identities_list_cloud_front_
     }).transpose()
 }
 
+pub fn deser_payload_list_conflicting_aliases_list_conflicting_aliases_output_conflicting_aliases_list(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ConflictingAliasesList>,
+    crate::error::ListConflictingAliasesError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::xml_deser::deser_member_list_conflicting_aliases_output_conflicting_aliases_list(
+                body,
+            )
+            .map_err(crate::error::ListConflictingAliasesError::unhandled)
+        })
+        .transpose()
+}
+
 pub fn deser_payload_list_distributions_list_distributions_output_distribution_list(
     body: &[u8],
 ) -> std::result::Result<

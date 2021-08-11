@@ -335,7 +335,7 @@ impl AsRef<str> for ProtectionGroupAggregation {
     }
 }
 
-/// <p>Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>
+/// <p>Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmergencyContact {
@@ -416,7 +416,7 @@ impl EmergencyContact {
     }
 }
 
-/// <p>A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+/// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -485,7 +485,7 @@ pub struct Protection {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
+    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -534,7 +534,7 @@ pub mod protection {
             self.name = input;
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
+        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -587,13 +587,13 @@ impl Protection {
     }
 }
 
-/// <p>A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+/// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub protection_group_id: std::option::Option<std::string::String>,
-    /// <p>Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
     /// <li>
     /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
@@ -602,7 +602,7 @@ pub struct ProtectionGroup {
     /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
     /// </li>
     /// <li>
-    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin resources for CloudFront distributions.</p>
+    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
     /// </li>
     /// </ul>
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
@@ -654,7 +654,7 @@ pub mod protection_group {
             self.protection_group_id = input;
             self
         }
-        /// <p>Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
         /// <li>
         /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
@@ -663,7 +663,7 @@ pub mod protection_group {
         /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
         /// </li>
         /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin resources for CloudFront distributions.</p>
+        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
         /// </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
@@ -1134,7 +1134,7 @@ impl AsRef<str> for SubscriptionState {
     }
 }
 
-/// <p>Information about the AWS Shield Advanced subscription for an account.</p>
+/// <p>Information about the Shield Advanced subscription for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
@@ -1142,16 +1142,16 @@ pub struct Subscription {
     pub start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time your subscription will end.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>
+    /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
     pub time_commitment_in_seconds: i64,
     /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     pub auto_renew: std::option::Option<crate::model::AutoRenew>,
     /// <p>Specifies how many protections of a given type you can create.</p>
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-    /// <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p>
+    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub proactive_engagement_status: std::option::Option<crate::model::ProactiveEngagementStatus>,
     /// <p>Limits settings for your subscription. </p>
     pub subscription_limits: std::option::Option<crate::model::SubscriptionLimits>,
@@ -1213,7 +1213,7 @@ pub mod subscription {
             self.end_time = input;
             self
         }
-        /// <p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>
+        /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
         pub fn time_commitment_in_seconds(mut self, input: i64) -> Self {
             self.time_commitment_in_seconds = Some(input);
             self
@@ -1248,9 +1248,9 @@ pub mod subscription {
             self.limits = input;
             self
         }
-        /// <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p>
+        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
         /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-        /// <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
+        /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
         pub fn proactive_engagement_status(
             mut self,
             input: crate::model::ProactiveEngagementStatus,
@@ -1935,7 +1935,11 @@ pub struct AttackDetail {
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-    /// <p>The array of <a>AttackProperty</a> objects.</p>
+    /// <p>The array of objects that provide details of the Shield event. </p>
+    /// <p>For infrastructure  
+    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+    /// in the <i>WAF Developer Guide</i>. </p>
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
     pub mitigations: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
@@ -2136,23 +2140,27 @@ impl Mitigation {
     }
 }
 
-/// <p>Details of the described attack.</p>
+/// <p>Details of a Shield event. This is provided as part of an <a>AttackDetail</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackProperty {
-    /// <p>The type of distributed denial of service (DDoS) event that was observed.
-    /// <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
     /// indicates layer 7 events.</p>
+    /// <p>For infrastructure  
+    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+    /// in the <i>WAF Developer Guide</i>. </p>
     pub attack_layer: std::option::Option<crate::model::AttackLayer>,
-    /// <p>Defines the DDoS attack property information that is provided. The
+    /// <p>Defines the Shield event property information that is provided. The
     /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-    /// values are valid only for WordPress reflective pingback DDoS attacks.</p>
+    /// values are valid only for WordPress reflective pingback events.</p>
     pub attack_property_identifier: std::option::Option<crate::model::AttackPropertyIdentifier>,
-    /// <p>The array of contributor objects that includes the top five contributors to an attack. </p>
+    /// <p>Contributor objects for the top five contributors to a Shield event. </p>
     pub top_contributors: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
-    /// <p>The unit of the <code>Value</code> of the contributions.</p>
+    /// <p>The unit used for the <code>Contributor</code>
+    /// <code>Value</code> property. </p>
     pub unit: std::option::Option<crate::model::Unit>,
-    /// <p>The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.</p>
+    /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub total: i64,
 }
 impl std::fmt::Debug for AttackProperty {
@@ -2183,9 +2191,12 @@ pub mod attack_property {
         pub(crate) total: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The type of distributed denial of service (DDoS) event that was observed.
-        /// <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
         /// indicates layer 7 events.</p>
+        /// <p>For infrastructure  
+        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+        /// in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_layer(mut self, input: crate::model::AttackLayer) -> Self {
             self.attack_layer = Some(input);
             self
@@ -2197,9 +2208,9 @@ pub mod attack_property {
             self.attack_layer = input;
             self
         }
-        /// <p>Defines the DDoS attack property information that is provided. The
+        /// <p>Defines the Shield event property information that is provided. The
         /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-        /// values are valid only for WordPress reflective pingback DDoS attacks.</p>
+        /// values are valid only for WordPress reflective pingback events.</p>
         pub fn attack_property_identifier(
             mut self,
             input: crate::model::AttackPropertyIdentifier,
@@ -2227,7 +2238,8 @@ pub mod attack_property {
             self.top_contributors = input;
             self
         }
-        /// <p>The unit of the <code>Value</code> of the contributions.</p>
+        /// <p>The unit used for the <code>Contributor</code>
+        /// <code>Value</code> property. </p>
         pub fn unit(mut self, input: crate::model::Unit) -> Self {
             self.unit = Some(input);
             self
@@ -2236,7 +2248,7 @@ pub mod attack_property {
             self.unit = input;
             self
         }
-        /// <p>The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.</p>
+        /// <p>The total contributions made to this Shield event by all contributors.</p>
         pub fn total(mut self, input: i64) -> Self {
             self.total = Some(input);
             self

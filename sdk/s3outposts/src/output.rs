@@ -2,7 +2,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsOutput {
-    /// <p>Returns an array of endpoints associated with AWS Outpost.</p>
+    /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// <p>The next endpoint returned in the list.</p>
     pub next_token: std::option::Option<std::string::String>,

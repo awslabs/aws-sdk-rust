@@ -3933,6 +3933,8 @@ pub struct Account {
     pub default_license: std::option::Option<crate::model::License>,
     /// <p>Supported licenses for the Amazon Chime account.</p>
     pub supported_licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
+    /// <p>The status of the account.</p>
+    pub account_status: std::option::Option<crate::model::AccountStatus>,
     /// <p>The sign-in delegate groups associated with the account.</p>
     pub signin_delegate_groups:
         std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
@@ -3947,6 +3949,7 @@ impl std::fmt::Debug for Account {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("default_license", &self.default_license);
         formatter.field("supported_licenses", &self.supported_licenses);
+        formatter.field("account_status", &self.account_status);
         formatter.field("signin_delegate_groups", &self.signin_delegate_groups);
         formatter.finish()
     }
@@ -3964,6 +3967,7 @@ pub mod account {
         pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
         pub(crate) default_license: std::option::Option<crate::model::License>,
         pub(crate) supported_licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
+        pub(crate) account_status: std::option::Option<crate::model::AccountStatus>,
         pub(crate) signin_delegate_groups:
             std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
     }
@@ -4049,6 +4053,18 @@ pub mod account {
             self.supported_licenses = input;
             self
         }
+        /// <p>The status of the account.</p>
+        pub fn account_status(mut self, input: crate::model::AccountStatus) -> Self {
+            self.account_status = Some(input);
+            self
+        }
+        pub fn set_account_status(
+            mut self,
+            input: std::option::Option<crate::model::AccountStatus>,
+        ) -> Self {
+            self.account_status = input;
+            self
+        }
         pub fn signin_delegate_groups(
             mut self,
             input: impl Into<crate::model::SigninDelegateGroup>,
@@ -4075,6 +4091,7 @@ pub mod account {
                 created_timestamp: self.created_timestamp,
                 default_license: self.default_license,
                 supported_licenses: self.supported_licenses,
+                account_status: self.account_status,
                 signin_delegate_groups: self.signin_delegate_groups,
             }
         }
@@ -4131,6 +4148,56 @@ impl SigninDelegateGroup {
     /// Creates a new builder-style object to manufacture [`SigninDelegateGroup`](crate::model::SigninDelegateGroup)
     pub fn builder() -> crate::model::signin_delegate_group::Builder {
         crate::model::signin_delegate_group::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccountStatus {
+    Active,
+    Suspended,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccountStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => AccountStatus::Active,
+            "Suspended" => AccountStatus::Suspended,
+            other => AccountStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccountStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccountStatus::from(s))
+    }
+}
+impl AccountStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccountStatus::Active => "Active",
+            AccountStatus::Suspended => "Suspended",
+            AccountStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Suspended"]
+    }
+}
+impl AsRef<str> for AccountStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4253,6 +4320,789 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TranscriptionConfiguration {
+    /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    pub engine_transcribe_settings: std::option::Option<crate::model::EngineTranscribeSettings>,
+    /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    pub engine_transcribe_medical_settings:
+        std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
+}
+impl std::fmt::Debug for TranscriptionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptionConfiguration");
+        formatter.field(
+            "engine_transcribe_settings",
+            &self.engine_transcribe_settings,
+        );
+        formatter.field(
+            "engine_transcribe_medical_settings",
+            &self.engine_transcribe_medical_settings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+pub mod transcription_configuration {
+    /// A builder for [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) engine_transcribe_settings:
+            std::option::Option<crate::model::EngineTranscribeSettings>,
+        pub(crate) engine_transcribe_medical_settings:
+            std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
+    }
+    impl Builder {
+        /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+        pub fn engine_transcribe_settings(
+            mut self,
+            input: crate::model::EngineTranscribeSettings,
+        ) -> Self {
+            self.engine_transcribe_settings = Some(input);
+            self
+        }
+        pub fn set_engine_transcribe_settings(
+            mut self,
+            input: std::option::Option<crate::model::EngineTranscribeSettings>,
+        ) -> Self {
+            self.engine_transcribe_settings = input;
+            self
+        }
+        /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+        pub fn engine_transcribe_medical_settings(
+            mut self,
+            input: crate::model::EngineTranscribeMedicalSettings,
+        ) -> Self {
+            self.engine_transcribe_medical_settings = Some(input);
+            self
+        }
+        pub fn set_engine_transcribe_medical_settings(
+            mut self,
+            input: std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
+        ) -> Self {
+            self.engine_transcribe_medical_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+        pub fn build(self) -> crate::model::TranscriptionConfiguration {
+            crate::model::TranscriptionConfiguration {
+                engine_transcribe_settings: self.engine_transcribe_settings,
+                engine_transcribe_medical_settings: self.engine_transcribe_medical_settings,
+            }
+        }
+    }
+}
+impl TranscriptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+    pub fn builder() -> crate::model::transcription_configuration::Builder {
+        crate::model::transcription_configuration::Builder::default()
+    }
+}
+
+/// <p>Settings specific to the Amazon Transcribe Medical engine.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EngineTranscribeMedicalSettings {
+    /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+    pub language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
+    /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+    pub specialty: std::option::Option<crate::model::TranscribeMedicalSpecialty>,
+    /// <p>The type of transcription.</p>
+    pub r#type: std::option::Option<crate::model::TranscribeMedicalType>,
+    /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+    pub vocabulary_name: std::option::Option<std::string::String>,
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+    pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
+}
+impl std::fmt::Debug for EngineTranscribeMedicalSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EngineTranscribeMedicalSettings");
+        formatter.field("language_code", &self.language_code);
+        formatter.field("specialty", &self.specialty);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("vocabulary_name", &self.vocabulary_name);
+        formatter.field("region", &self.region);
+        formatter.finish()
+    }
+}
+/// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+pub mod engine_transcribe_medical_settings {
+    /// A builder for [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
+        pub(crate) specialty: std::option::Option<crate::model::TranscribeMedicalSpecialty>,
+        pub(crate) r#type: std::option::Option<crate::model::TranscribeMedicalType>,
+        pub(crate) vocabulary_name: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<crate::model::TranscribeMedicalRegion>,
+    }
+    impl Builder {
+        /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+        pub fn language_code(mut self, input: crate::model::TranscribeMedicalLanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+        pub fn specialty(mut self, input: crate::model::TranscribeMedicalSpecialty) -> Self {
+            self.specialty = Some(input);
+            self
+        }
+        pub fn set_specialty(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeMedicalSpecialty>,
+        ) -> Self {
+            self.specialty = input;
+            self
+        }
+        /// <p>The type of transcription.</p>
+        pub fn r#type(mut self, input: crate::model::TranscribeMedicalType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeMedicalType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_name = Some(input.into());
+            self
+        }
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_name = input;
+            self
+        }
+        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+        pub fn region(mut self, input: crate::model::TranscribeMedicalRegion) -> Self {
+            self.region = Some(input);
+            self
+        }
+        pub fn set_region(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeMedicalRegion>,
+        ) -> Self {
+            self.region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+        pub fn build(self) -> crate::model::EngineTranscribeMedicalSettings {
+            crate::model::EngineTranscribeMedicalSettings {
+                language_code: self.language_code,
+                specialty: self.specialty,
+                r#type: self.r#type,
+                vocabulary_name: self.vocabulary_name,
+                region: self.region,
+            }
+        }
+    }
+}
+impl EngineTranscribeMedicalSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+    pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
+        crate::model::engine_transcribe_medical_settings::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeMedicalRegion {
+    ApSoutheast2,
+    CaCentral1,
+    EuWest1,
+    UsEast1,
+    UsEast2,
+    UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeMedicalRegion {
+    fn from(s: &str) -> Self {
+        match s {
+            "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
+            "ca-central-1" => TranscribeMedicalRegion::CaCentral1,
+            "eu-west-1" => TranscribeMedicalRegion::EuWest1,
+            "us-east-1" => TranscribeMedicalRegion::UsEast1,
+            "us-east-2" => TranscribeMedicalRegion::UsEast2,
+            "us-west-2" => TranscribeMedicalRegion::UsWest2,
+            other => TranscribeMedicalRegion::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeMedicalRegion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeMedicalRegion::from(s))
+    }
+}
+impl TranscribeMedicalRegion {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
+            TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
+            TranscribeMedicalRegion::EuWest1 => "eu-west-1",
+            TranscribeMedicalRegion::UsEast1 => "us-east-1",
+            TranscribeMedicalRegion::UsEast2 => "us-east-2",
+            TranscribeMedicalRegion::UsWest2 => "us-west-2",
+            TranscribeMedicalRegion::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeMedicalRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeMedicalType {
+    Conversation,
+    Dictation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeMedicalType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONVERSATION" => TranscribeMedicalType::Conversation,
+            "DICTATION" => TranscribeMedicalType::Dictation,
+            other => TranscribeMedicalType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeMedicalType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeMedicalType::from(s))
+    }
+}
+impl TranscribeMedicalType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeMedicalType::Conversation => "CONVERSATION",
+            TranscribeMedicalType::Dictation => "DICTATION",
+            TranscribeMedicalType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CONVERSATION", "DICTATION"]
+    }
+}
+impl AsRef<str> for TranscribeMedicalType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeMedicalSpecialty {
+    Cardiology,
+    Neurology,
+    Oncology,
+    PrimaryCare,
+    Radiology,
+    Urology,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeMedicalSpecialty {
+    fn from(s: &str) -> Self {
+        match s {
+            "CARDIOLOGY" => TranscribeMedicalSpecialty::Cardiology,
+            "NEUROLOGY" => TranscribeMedicalSpecialty::Neurology,
+            "ONCOLOGY" => TranscribeMedicalSpecialty::Oncology,
+            "PRIMARYCARE" => TranscribeMedicalSpecialty::PrimaryCare,
+            "RADIOLOGY" => TranscribeMedicalSpecialty::Radiology,
+            "UROLOGY" => TranscribeMedicalSpecialty::Urology,
+            other => TranscribeMedicalSpecialty::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeMedicalSpecialty {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeMedicalSpecialty::from(s))
+    }
+}
+impl TranscribeMedicalSpecialty {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeMedicalSpecialty::Cardiology => "CARDIOLOGY",
+            TranscribeMedicalSpecialty::Neurology => "NEUROLOGY",
+            TranscribeMedicalSpecialty::Oncology => "ONCOLOGY",
+            TranscribeMedicalSpecialty::PrimaryCare => "PRIMARYCARE",
+            TranscribeMedicalSpecialty::Radiology => "RADIOLOGY",
+            TranscribeMedicalSpecialty::Urology => "UROLOGY",
+            TranscribeMedicalSpecialty::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CARDIOLOGY",
+            "NEUROLOGY",
+            "ONCOLOGY",
+            "PRIMARYCARE",
+            "RADIOLOGY",
+            "UROLOGY",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeMedicalSpecialty {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeMedicalLanguageCode {
+    EnUs,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeMedicalLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "en-US" => TranscribeMedicalLanguageCode::EnUs,
+            other => TranscribeMedicalLanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeMedicalLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeMedicalLanguageCode::from(s))
+    }
+}
+impl TranscribeMedicalLanguageCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeMedicalLanguageCode::EnUs => "en-US",
+            TranscribeMedicalLanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["en-US"]
+    }
+}
+impl AsRef<str> for TranscribeMedicalLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Settings specific to the Amazon Transcribe engine.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EngineTranscribeSettings {
+    /// <p>The language code specified for the Amazon Transcribe engine.</p>
+    pub language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
+    /// <p>The filtering method passed to Amazon Transcribe.</p>
+    pub vocabulary_filter_method:
+        std::option::Option<crate::model::TranscribeVocabularyFilterMethod>,
+    /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
+    pub vocabulary_filter_name: std::option::Option<std::string::String>,
+    /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
+    pub vocabulary_name: std::option::Option<std::string::String>,
+    /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+    pub region: std::option::Option<crate::model::TranscribeRegion>,
+}
+impl std::fmt::Debug for EngineTranscribeSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EngineTranscribeSettings");
+        formatter.field("language_code", &self.language_code);
+        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
+        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
+        formatter.field("vocabulary_name", &self.vocabulary_name);
+        formatter.field("region", &self.region);
+        formatter.finish()
+    }
+}
+/// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+pub mod engine_transcribe_settings {
+    /// A builder for [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
+        pub(crate) vocabulary_filter_method:
+            std::option::Option<crate::model::TranscribeVocabularyFilterMethod>,
+        pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_name: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<crate::model::TranscribeRegion>,
+    }
+    impl Builder {
+        /// <p>The language code specified for the Amazon Transcribe engine.</p>
+        pub fn language_code(mut self, input: crate::model::TranscribeLanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeLanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The filtering method passed to Amazon Transcribe.</p>
+        pub fn vocabulary_filter_method(
+            mut self,
+            input: crate::model::TranscribeVocabularyFilterMethod,
+        ) -> Self {
+            self.vocabulary_filter_method = Some(input);
+            self
+        }
+        pub fn set_vocabulary_filter_method(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeVocabularyFilterMethod>,
+        ) -> Self {
+            self.vocabulary_filter_method = input;
+            self
+        }
+        /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_filter_name = Some(input.into());
+            self
+        }
+        pub fn set_vocabulary_filter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_filter_name = input;
+            self
+        }
+        /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_name = Some(input.into());
+            self
+        }
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_name = input;
+            self
+        }
+        /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+        pub fn region(mut self, input: crate::model::TranscribeRegion) -> Self {
+            self.region = Some(input);
+            self
+        }
+        pub fn set_region(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeRegion>,
+        ) -> Self {
+            self.region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+        pub fn build(self) -> crate::model::EngineTranscribeSettings {
+            crate::model::EngineTranscribeSettings {
+                language_code: self.language_code,
+                vocabulary_filter_method: self.vocabulary_filter_method,
+                vocabulary_filter_name: self.vocabulary_filter_name,
+                vocabulary_name: self.vocabulary_name,
+                region: self.region,
+            }
+        }
+    }
+}
+impl EngineTranscribeSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+    pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
+        crate::model::engine_transcribe_settings::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeRegion {
+    ApNortheast1,
+    ApNortheast2,
+    ApSoutheast2,
+    CaCentral1,
+    EuCentral1,
+    EuWest1,
+    EuWest2,
+    SaEast1,
+    UsEast1,
+    UsEast2,
+    UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeRegion {
+    fn from(s: &str) -> Self {
+        match s {
+            "ap-northeast-1" => TranscribeRegion::ApNortheast1,
+            "ap-northeast-2" => TranscribeRegion::ApNortheast2,
+            "ap-southeast-2" => TranscribeRegion::ApSoutheast2,
+            "ca-central-1" => TranscribeRegion::CaCentral1,
+            "eu-central-1" => TranscribeRegion::EuCentral1,
+            "eu-west-1" => TranscribeRegion::EuWest1,
+            "eu-west-2" => TranscribeRegion::EuWest2,
+            "sa-east-1" => TranscribeRegion::SaEast1,
+            "us-east-1" => TranscribeRegion::UsEast1,
+            "us-east-2" => TranscribeRegion::UsEast2,
+            "us-west-2" => TranscribeRegion::UsWest2,
+            other => TranscribeRegion::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeRegion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeRegion::from(s))
+    }
+}
+impl TranscribeRegion {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeRegion::ApNortheast1 => "ap-northeast-1",
+            TranscribeRegion::ApNortheast2 => "ap-northeast-2",
+            TranscribeRegion::ApSoutheast2 => "ap-southeast-2",
+            TranscribeRegion::CaCentral1 => "ca-central-1",
+            TranscribeRegion::EuCentral1 => "eu-central-1",
+            TranscribeRegion::EuWest1 => "eu-west-1",
+            TranscribeRegion::EuWest2 => "eu-west-2",
+            TranscribeRegion::SaEast1 => "sa-east-1",
+            TranscribeRegion::UsEast1 => "us-east-1",
+            TranscribeRegion::UsEast2 => "us-east-2",
+            TranscribeRegion::UsWest2 => "us-west-2",
+            TranscribeRegion::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeVocabularyFilterMethod {
+    Mask,
+    Remove,
+    Tag,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeVocabularyFilterMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "mask" => TranscribeVocabularyFilterMethod::Mask,
+            "remove" => TranscribeVocabularyFilterMethod::Remove,
+            "tag" => TranscribeVocabularyFilterMethod::Tag,
+            other => TranscribeVocabularyFilterMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeVocabularyFilterMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeVocabularyFilterMethod::from(s))
+    }
+}
+impl TranscribeVocabularyFilterMethod {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeVocabularyFilterMethod::Mask => "mask",
+            TranscribeVocabularyFilterMethod::Remove => "remove",
+            TranscribeVocabularyFilterMethod::Tag => "tag",
+            TranscribeVocabularyFilterMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["mask", "remove", "tag"]
+    }
+}
+impl AsRef<str> for TranscribeVocabularyFilterMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeLanguageCode {
+    DeDe,
+    EnAu,
+    EnGb,
+    EnUs,
+    EsUs,
+    FrCa,
+    FrFr,
+    ItIt,
+    JaJp,
+    KoKr,
+    PtBr,
+    ZhCn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => TranscribeLanguageCode::DeDe,
+            "en-AU" => TranscribeLanguageCode::EnAu,
+            "en-GB" => TranscribeLanguageCode::EnGb,
+            "en-US" => TranscribeLanguageCode::EnUs,
+            "es-US" => TranscribeLanguageCode::EsUs,
+            "fr-CA" => TranscribeLanguageCode::FrCa,
+            "fr-FR" => TranscribeLanguageCode::FrFr,
+            "it-IT" => TranscribeLanguageCode::ItIt,
+            "ja-JP" => TranscribeLanguageCode::JaJp,
+            "ko-KR" => TranscribeLanguageCode::KoKr,
+            "pt-BR" => TranscribeLanguageCode::PtBr,
+            "zh-CN" => TranscribeLanguageCode::ZhCn,
+            other => TranscribeLanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeLanguageCode::from(s))
+    }
+}
+impl TranscribeLanguageCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeLanguageCode::DeDe => "de-DE",
+            TranscribeLanguageCode::EnAu => "en-AU",
+            TranscribeLanguageCode::EnGb => "en-GB",
+            TranscribeLanguageCode::EnUs => "en-US",
+            TranscribeLanguageCode::EsUs => "es-US",
+            TranscribeLanguageCode::FrCa => "fr-CA",
+            TranscribeLanguageCode::FrFr => "fr-FR",
+            TranscribeLanguageCode::ItIt => "it-IT",
+            TranscribeLanguageCode::JaJp => "ja-JP",
+            TranscribeLanguageCode::KoKr => "ko-KR",
+            TranscribeLanguageCode::PtBr => "pt-BR",
+            TranscribeLanguageCode::ZhCn => "zh-CN",
+            TranscribeLanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
+            "ko-KR", "pt-BR", "zh-CN",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6274,7 +7124,7 @@ impl Meeting {
     }
 }
 
-/// <p>A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting.</p>
+/// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaPlacement {
@@ -6292,7 +7142,7 @@ pub struct MediaPlacement {
     pub signaling_url: std::option::Option<std::string::String>,
     /// <p>The turn control URL.</p>
     pub turn_control_url: std::option::Option<std::string::String>,
-    /// <p>The event ingestion URL.</p>
+    /// <p>The URL of the S3 bucket used to store the captured media.</p>
     pub event_ingestion_url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MediaPlacement {
@@ -6409,7 +7259,7 @@ pub mod media_placement {
             self.turn_control_url = input;
             self
         }
-        /// <p>The event ingestion URL.</p>
+        /// <p>The URL of the S3 bucket used to store the captured media.</p>
         pub fn event_ingestion_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_ingestion_url = Some(input.into());
             self
@@ -6440,6 +7290,328 @@ impl MediaPlacement {
     /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement)
     pub fn builder() -> crate::model::media_placement::Builder {
         crate::model::media_placement::Builder::default()
+    }
+}
+
+/// <p>A media capture pipeline object. A string consisting of an ID, source type, a source ARN, a sink type, and a sink ARN.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaCapturePipeline {
+    /// <p>The ID of a media capture pipeline.</p>
+    pub media_pipeline_id: std::option::Option<std::string::String>,
+    /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
+    pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
+    /// <p>ARN of the source from which the media artifacts will be saved.</p>
+    pub source_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the media capture pipeline.</p>
+    pub status: std::option::Option<crate::model::MediaPipelineStatus>,
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
+    pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
+    /// <p>ARN of the destination to which the media artifacts are saved.</p>
+    pub sink_arn: std::option::Option<std::string::String>,
+    /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
+    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
+    pub updated_timestamp: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for MediaCapturePipeline {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaCapturePipeline");
+        formatter.field("media_pipeline_id", &self.media_pipeline_id);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("sink_type", &self.sink_type);
+        formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
+pub mod media_capture_pipeline {
+    /// A builder for [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
+        pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
+        pub(crate) source_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::MediaPipelineStatus>,
+        pub(crate) sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
+        pub(crate) sink_arn: std::option::Option<std::string::String>,
+        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_timestamp: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The ID of a media capture pipeline.</p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_pipeline_id = Some(input.into());
+            self
+        }
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_pipeline_id = input;
+            self
+        }
+        /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
+        pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
+        /// <p>ARN of the source from which the media artifacts will be saved.</p>
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
+            self
+        }
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
+            self
+        }
+        /// <p>The status of the media capture pipeline.</p>
+        pub fn status(mut self, input: crate::model::MediaPipelineStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
+        pub fn sink_type(mut self, input: crate::model::MediaPipelineSinkType) -> Self {
+            self.sink_type = Some(input);
+            self
+        }
+        pub fn set_sink_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSinkType>,
+        ) -> Self {
+            self.sink_type = input;
+            self
+        }
+        /// <p>ARN of the destination to which the media artifacts are saved.</p>
+        pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sink_arn = Some(input.into());
+            self
+        }
+        pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sink_arn = input;
+            self
+        }
+        /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
+        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
+        pub fn updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
+        pub fn build(self) -> crate::model::MediaCapturePipeline {
+            crate::model::MediaCapturePipeline {
+                media_pipeline_id: self.media_pipeline_id,
+                source_type: self.source_type,
+                source_arn: self.source_arn,
+                status: self.status,
+                sink_type: self.sink_type,
+                sink_arn: self.sink_arn,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl MediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
+    pub fn builder() -> crate::model::media_capture_pipeline::Builder {
+        crate::model::media_capture_pipeline::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaPipelineSinkType {
+    S3Bucket,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MediaPipelineSinkType {
+    fn from(s: &str) -> Self {
+        match s {
+            "S3Bucket" => MediaPipelineSinkType::S3Bucket,
+            other => MediaPipelineSinkType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MediaPipelineSinkType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaPipelineSinkType::from(s))
+    }
+}
+impl MediaPipelineSinkType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaPipelineSinkType::S3Bucket => "S3Bucket",
+            MediaPipelineSinkType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["S3Bucket"]
+    }
+}
+impl AsRef<str> for MediaPipelineSinkType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaPipelineStatus {
+    Failed,
+    InProgress,
+    Initializing,
+    Stopped,
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MediaPipelineStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Failed" => MediaPipelineStatus::Failed,
+            "InProgress" => MediaPipelineStatus::InProgress,
+            "Initializing" => MediaPipelineStatus::Initializing,
+            "Stopped" => MediaPipelineStatus::Stopped,
+            "Stopping" => MediaPipelineStatus::Stopping,
+            other => MediaPipelineStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MediaPipelineStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaPipelineStatus::from(s))
+    }
+}
+impl MediaPipelineStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaPipelineStatus::Failed => "Failed",
+            MediaPipelineStatus::InProgress => "InProgress",
+            MediaPipelineStatus::Initializing => "Initializing",
+            MediaPipelineStatus::Stopped => "Stopped",
+            MediaPipelineStatus::Stopping => "Stopping",
+            MediaPipelineStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Failed",
+            "InProgress",
+            "Initializing",
+            "Stopped",
+            "Stopping",
+        ]
+    }
+}
+impl AsRef<str> for MediaPipelineStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaPipelineSourceType {
+    ChimeSdkMeeting,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MediaPipelineSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ChimeSdkMeeting" => MediaPipelineSourceType::ChimeSdkMeeting,
+            other => MediaPipelineSourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MediaPipelineSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaPipelineSourceType::from(s))
+    }
+}
+impl MediaPipelineSourceType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaPipelineSourceType::ChimeSdkMeeting => "ChimeSdkMeeting",
+            MediaPipelineSourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ChimeSdkMeeting"]
+    }
+}
+impl AsRef<str> for MediaPipelineSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

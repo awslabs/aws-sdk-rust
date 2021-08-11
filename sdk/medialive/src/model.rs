@@ -8291,6 +8291,9 @@ impl AudioSelector {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelectorSettings {
+    /// Audio Hls Rendition Selection
+    pub audio_hls_rendition_selection:
+        std::option::Option<crate::model::AudioHlsRenditionSelection>,
     /// Audio Language Selection
     pub audio_language_selection: std::option::Option<crate::model::AudioLanguageSelection>,
     /// Audio Pid Selection
@@ -8301,6 +8304,10 @@ pub struct AudioSelectorSettings {
 impl std::fmt::Debug for AudioSelectorSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioSelectorSettings");
+        formatter.field(
+            "audio_hls_rendition_selection",
+            &self.audio_hls_rendition_selection,
+        );
         formatter.field("audio_language_selection", &self.audio_language_selection);
         formatter.field("audio_pid_selection", &self.audio_pid_selection);
         formatter.field("audio_track_selection", &self.audio_track_selection);
@@ -8313,12 +8320,29 @@ pub mod audio_selector_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) audio_hls_rendition_selection:
+            std::option::Option<crate::model::AudioHlsRenditionSelection>,
         pub(crate) audio_language_selection:
             std::option::Option<crate::model::AudioLanguageSelection>,
         pub(crate) audio_pid_selection: std::option::Option<crate::model::AudioPidSelection>,
         pub(crate) audio_track_selection: std::option::Option<crate::model::AudioTrackSelection>,
     }
     impl Builder {
+        /// Audio Hls Rendition Selection
+        pub fn audio_hls_rendition_selection(
+            mut self,
+            input: crate::model::AudioHlsRenditionSelection,
+        ) -> Self {
+            self.audio_hls_rendition_selection = Some(input);
+            self
+        }
+        pub fn set_audio_hls_rendition_selection(
+            mut self,
+            input: std::option::Option<crate::model::AudioHlsRenditionSelection>,
+        ) -> Self {
+            self.audio_hls_rendition_selection = input;
+            self
+        }
         /// Audio Language Selection
         pub fn audio_language_selection(
             mut self,
@@ -8361,6 +8385,7 @@ pub mod audio_selector_settings {
         /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
         pub fn build(self) -> crate::model::AudioSelectorSettings {
             crate::model::AudioSelectorSettings {
+                audio_hls_rendition_selection: self.audio_hls_rendition_selection,
                 audio_language_selection: self.audio_language_selection,
                 audio_pid_selection: self.audio_pid_selection,
                 audio_track_selection: self.audio_track_selection,
@@ -8639,6 +8664,67 @@ impl AudioLanguageSelectionPolicy {
 impl AsRef<str> for AudioLanguageSelectionPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// Audio Hls Rendition Selection
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AudioHlsRenditionSelection {
+    /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    pub group_id: std::option::Option<std::string::String>,
+    /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AudioHlsRenditionSelection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AudioHlsRenditionSelection");
+        formatter.field("group_id", &self.group_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+pub mod audio_hls_rendition_selection {
+    /// A builder for [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+        pub fn build(self) -> crate::model::AudioHlsRenditionSelection {
+            crate::model::AudioHlsRenditionSelection {
+                group_id: self.group_id,
+                name: self.name,
+            }
+        }
+    }
+}
+impl AudioHlsRenditionSelection {
+    /// Creates a new builder-style object to manufacture [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+    pub fn builder() -> crate::model::audio_hls_rendition_selection::Builder {
+        crate::model::audio_hls_rendition_selection::Builder::default()
     }
 }
 
@@ -25992,10 +26078,14 @@ impl CaptionDestinationSettings {
 /// Webvtt Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WebvttDestinationSettings {}
+pub struct WebvttDestinationSettings {
+    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+    pub style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
+}
 impl std::fmt::Debug for WebvttDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebvttDestinationSettings");
+        formatter.field("style_control", &self.style_control);
         formatter.finish()
     }
 }
@@ -26004,11 +26094,27 @@ pub mod webvtt_destination_settings {
     /// A builder for [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
+    }
     impl Builder {
+        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+        pub fn style_control(mut self, input: crate::model::WebvttDestinationStyleControl) -> Self {
+            self.style_control = Some(input);
+            self
+        }
+        pub fn set_style_control(
+            mut self,
+            input: std::option::Option<crate::model::WebvttDestinationStyleControl>,
+        ) -> Self {
+            self.style_control = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
         pub fn build(self) -> crate::model::WebvttDestinationSettings {
-            crate::model::WebvttDestinationSettings {}
+            crate::model::WebvttDestinationSettings {
+                style_control: self.style_control,
+            }
         }
     }
 }
@@ -26016,6 +26122,57 @@ impl WebvttDestinationSettings {
     /// Creates a new builder-style object to manufacture [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
     pub fn builder() -> crate::model::webvtt_destination_settings::Builder {
         crate::model::webvtt_destination_settings::Builder::default()
+    }
+}
+
+/// Webvtt Destination Style Control
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WebvttDestinationStyleControl {
+    NoStyleData,
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WebvttDestinationStyleControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO_STYLE_DATA" => WebvttDestinationStyleControl::NoStyleData,
+            "PASSTHROUGH" => WebvttDestinationStyleControl::Passthrough,
+            other => WebvttDestinationStyleControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WebvttDestinationStyleControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WebvttDestinationStyleControl::from(s))
+    }
+}
+impl WebvttDestinationStyleControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            WebvttDestinationStyleControl::NoStyleData => "NO_STYLE_DATA",
+            WebvttDestinationStyleControl::Passthrough => "PASSTHROUGH",
+            WebvttDestinationStyleControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_STYLE_DATA", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for WebvttDestinationStyleControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

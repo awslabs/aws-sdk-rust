@@ -303,6 +303,8 @@ pub enum OperationType {
     AttachLoadBalancerTlsCertificate,
     AttachStaticIp,
     CloseInstancePublicPorts,
+    CreateBucket,
+    CreateBucketAccessKey,
     CreateCertificate,
     CreateContactMethod,
     CreateContainerService,
@@ -322,6 +324,8 @@ pub enum OperationType {
     CreateRelationalDatabaseFromSnapshot,
     CreateRelationalDatabaseSnapshot,
     DeleteAlarm,
+    DeleteBucket,
+    DeleteBucketAccessKey,
     DeleteCertificate,
     DeleteContactMethod,
     DeleteContainerImage,
@@ -356,11 +360,14 @@ pub enum OperationType {
     ResetDistributionCache,
     SendContactMethodVerification,
     SetIpAddressType,
+    SetResourceAccessForBucket,
     StartInstance,
     StartRelationalDatabase,
     StopInstance,
     StopRelationalDatabase,
     TestAlarm,
+    UpdateBucket,
+    UpdateBucketBundle,
     UpdateContainerService,
     UpdateDistribution,
     UpdateDistributionBundle,
@@ -381,6 +388,8 @@ impl std::convert::From<&str> for OperationType {
             "AttachLoadBalancerTlsCertificate" => OperationType::AttachLoadBalancerTlsCertificate,
             "AttachStaticIp" => OperationType::AttachStaticIp,
             "CloseInstancePublicPorts" => OperationType::CloseInstancePublicPorts,
+            "CreateBucket" => OperationType::CreateBucket,
+            "CreateBucketAccessKey" => OperationType::CreateBucketAccessKey,
             "CreateCertificate" => OperationType::CreateCertificate,
             "CreateContactMethod" => OperationType::CreateContactMethod,
             "CreateContainerService" => OperationType::CreateContainerService,
@@ -404,6 +413,8 @@ impl std::convert::From<&str> for OperationType {
             }
             "CreateRelationalDatabaseSnapshot" => OperationType::CreateRelationalDatabaseSnapshot,
             "DeleteAlarm" => OperationType::DeleteAlarm,
+            "DeleteBucket" => OperationType::DeleteBucket,
+            "DeleteBucketAccessKey" => OperationType::DeleteBucketAccessKey,
             "DeleteCertificate" => OperationType::DeleteCertificate,
             "DeleteContactMethod" => OperationType::DeleteContactMethod,
             "DeleteContainerImage" => OperationType::DeleteContainerImage,
@@ -438,11 +449,14 @@ impl std::convert::From<&str> for OperationType {
             "ResetDistributionCache" => OperationType::ResetDistributionCache,
             "SendContactMethodVerification" => OperationType::SendContactMethodVerification,
             "SetIpAddressType" => OperationType::SetIpAddressType,
+            "SetResourceAccessForBucket" => OperationType::SetResourceAccessForBucket,
             "StartInstance" => OperationType::StartInstance,
             "StartRelationalDatabase" => OperationType::StartRelationalDatabase,
             "StopInstance" => OperationType::StopInstance,
             "StopRelationalDatabase" => OperationType::StopRelationalDatabase,
             "TestAlarm" => OperationType::TestAlarm,
+            "UpdateBucket" => OperationType::UpdateBucket,
+            "UpdateBucketBundle" => OperationType::UpdateBucketBundle,
             "UpdateContainerService" => OperationType::UpdateContainerService,
             "UpdateDistribution" => OperationType::UpdateDistribution,
             "UpdateDistributionBundle" => OperationType::UpdateDistributionBundle,
@@ -473,6 +487,8 @@ impl OperationType {
             OperationType::AttachLoadBalancerTlsCertificate => "AttachLoadBalancerTlsCertificate",
             OperationType::AttachStaticIp => "AttachStaticIp",
             OperationType::CloseInstancePublicPorts => "CloseInstancePublicPorts",
+            OperationType::CreateBucket => "CreateBucket",
+            OperationType::CreateBucketAccessKey => "CreateBucketAccessKey",
             OperationType::CreateCertificate => "CreateCertificate",
             OperationType::CreateContactMethod => "CreateContactMethod",
             OperationType::CreateContainerService => "CreateContainerService",
@@ -496,6 +512,8 @@ impl OperationType {
             }
             OperationType::CreateRelationalDatabaseSnapshot => "CreateRelationalDatabaseSnapshot",
             OperationType::DeleteAlarm => "DeleteAlarm",
+            OperationType::DeleteBucket => "DeleteBucket",
+            OperationType::DeleteBucketAccessKey => "DeleteBucketAccessKey",
             OperationType::DeleteCertificate => "DeleteCertificate",
             OperationType::DeleteContactMethod => "DeleteContactMethod",
             OperationType::DeleteContainerImage => "DeleteContainerImage",
@@ -530,11 +548,14 @@ impl OperationType {
             OperationType::ResetDistributionCache => "ResetDistributionCache",
             OperationType::SendContactMethodVerification => "SendContactMethodVerification",
             OperationType::SetIpAddressType => "SetIpAddressType",
+            OperationType::SetResourceAccessForBucket => "SetResourceAccessForBucket",
             OperationType::StartInstance => "StartInstance",
             OperationType::StartRelationalDatabase => "StartRelationalDatabase",
             OperationType::StopInstance => "StopInstance",
             OperationType::StopRelationalDatabase => "StopRelationalDatabase",
             OperationType::TestAlarm => "TestAlarm",
+            OperationType::UpdateBucket => "UpdateBucket",
+            OperationType::UpdateBucketBundle => "UpdateBucketBundle",
             OperationType::UpdateContainerService => "UpdateContainerService",
             OperationType::UpdateDistribution => "UpdateDistribution",
             OperationType::UpdateDistributionBundle => "UpdateDistributionBundle",
@@ -556,6 +577,8 @@ impl OperationType {
             "AttachLoadBalancerTlsCertificate",
             "AttachStaticIp",
             "CloseInstancePublicPorts",
+            "CreateBucket",
+            "CreateBucketAccessKey",
             "CreateCertificate",
             "CreateContactMethod",
             "CreateContainerService",
@@ -575,6 +598,8 @@ impl OperationType {
             "CreateRelationalDatabaseFromSnapshot",
             "CreateRelationalDatabaseSnapshot",
             "DeleteAlarm",
+            "DeleteBucket",
+            "DeleteBucketAccessKey",
             "DeleteCertificate",
             "DeleteContactMethod",
             "DeleteContainerImage",
@@ -609,11 +634,14 @@ impl OperationType {
             "ResetDistributionCache",
             "SendContactMethodVerification",
             "SetIpAddressType",
+            "SetResourceAccessForBucket",
             "StartInstance",
             "StartRelationalDatabase",
             "StopInstance",
             "StopRelationalDatabase",
             "TestAlarm",
+            "UpdateBucket",
+            "UpdateBucketBundle",
             "UpdateContainerService",
             "UpdateDistribution",
             "UpdateDistributionBundle",
@@ -715,6 +743,7 @@ pub enum RegionName {
     ApSoutheast2,
     CaCentral1,
     EuCentral1,
+    EuNorth1,
     EuWest1,
     EuWest2,
     EuWest3,
@@ -735,6 +764,7 @@ impl std::convert::From<&str> for RegionName {
             "ap-southeast-2" => RegionName::ApSoutheast2,
             "ca-central-1" => RegionName::CaCentral1,
             "eu-central-1" => RegionName::EuCentral1,
+            "eu-north-1" => RegionName::EuNorth1,
             "eu-west-1" => RegionName::EuWest1,
             "eu-west-2" => RegionName::EuWest2,
             "eu-west-3" => RegionName::EuWest3,
@@ -763,6 +793,7 @@ impl RegionName {
             RegionName::ApSoutheast2 => "ap-southeast-2",
             RegionName::CaCentral1 => "ca-central-1",
             RegionName::EuCentral1 => "eu-central-1",
+            RegionName::EuNorth1 => "eu-north-1",
             RegionName::EuWest1 => "eu-west-1",
             RegionName::EuWest2 => "eu-west-2",
             RegionName::EuWest3 => "eu-west-3",
@@ -782,6 +813,7 @@ impl RegionName {
             "ap-southeast-2",
             "ca-central-1",
             "eu-central-1",
+            "eu-north-1",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
@@ -810,6 +842,7 @@ impl AsRef<str> for RegionName {
 )]
 pub enum ResourceType {
     Alarm,
+    Bucket,
     Certificate,
     CloudFormationStackRecord,
     ContactMethod,
@@ -835,6 +868,7 @@ impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "Alarm" => ResourceType::Alarm,
+            "Bucket" => ResourceType::Bucket,
             "Certificate" => ResourceType::Certificate,
             "CloudFormationStackRecord" => ResourceType::CloudFormationStackRecord,
             "ContactMethod" => ResourceType::ContactMethod,
@@ -868,6 +902,7 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Alarm => "Alarm",
+            ResourceType::Bucket => "Bucket",
             ResourceType::Certificate => "Certificate",
             ResourceType::CloudFormationStackRecord => "CloudFormationStackRecord",
             ResourceType::ContactMethod => "ContactMethod",
@@ -892,6 +927,7 @@ impl ResourceType {
     pub fn values() -> &'static [&'static str] {
         &[
             "Alarm",
+            "Bucket",
             "Certificate",
             "CloudFormationStackRecord",
             "ContactMethod",
@@ -2583,8 +2619,7 @@ pub struct ContainerService {
     /// <code>ContainerService</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The power specification of the container service.</p>
     /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the
@@ -3309,7 +3344,9 @@ pub struct ContainerServiceHealthCheckConfig {
     /// <code>/</code>.</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can
-    /// specify values between 200 and 499.</p>
+    /// specify values between <code>200</code> and <code>499</code>. You can specify multiple values
+    /// (for example, <code>200,202</code>) or a range of values (for example,
+    /// <code>200-299</code>).</p>
     pub success_codes: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContainerServiceHealthCheckConfig {
@@ -3389,7 +3426,9 @@ pub mod container_service_health_check_config {
             self
         }
         /// <p>The HTTP codes to use when checking for a successful response from a container. You can
-        /// specify values between 200 and 499.</p>
+        /// specify values between <code>200</code> and <code>499</code>. You can specify multiple values
+        /// (for example, <code>200,202</code>) or a range of values (for example,
+        /// <code>200-299</code>).</p>
         pub fn success_codes(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_codes = Some(input.into());
             self
@@ -4084,8 +4123,7 @@ impl AsRef<str> for ContainerServicePowerName {
 }
 
 /// <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p>
-/// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-/// Dev Guide</a>.</p>
+/// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -4154,6 +4192,658 @@ impl Tag {
     }
 }
 
+/// <p>Describes an Amazon Lightsail bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Bucket {
+    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>An object that describes the access rules of the bucket.</p>
+    pub access_rules: std::option::Option<crate::model::AccessRules>,
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the bundle currently applied to the bucket.</p>
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+    /// bucket.</p>
+    /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of a
+    /// bucket.</p>
+    pub bundle_id: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the distribution was created.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The URL of the bucket.</p>
+    pub url: std::option::Option<std::string::String>,
+    /// <p>Describes the resource location.</p>
+    pub location: std::option::Option<crate::model::ResourceLocation>,
+    /// <p>The name of the bucket.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The support code for a bucket. Include this code in your email to support when you have
+    /// questions about a Lightsail bucket. This code enables our support team to look up your
+    /// Lightsail information more easily.</p>
+    pub support_code: std::option::Option<std::string::String>,
+    /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in
+    /// Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether object versioning is enabled for the bucket.</p>
+    /// <p>The following options can be configured:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Enabled</code> - Object versioning is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Suspended</code> - Object versioning was previously enabled but is currently
+    /// suspended. Existing object versions are retained.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NeverEnabled</code> - Object versioning has never been enabled.</p>
+    /// </li>
+    /// </ul>
+    pub object_versioning: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to
+    /// another bundle.</p>
+    /// <p>You can update a bucket's bundle only one time within a monthly AWS billing
+    /// cycle.</p>
+    /// <p>Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.</p>
+    pub able_to_update_bundle: std::option::Option<bool>,
+    /// <p>An array of strings that specify the AWS account IDs that have read-only access to the
+    /// bucket.</p>
+    pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An array of objects that describe Lightsail instances that have access to the
+    /// bucket.</p>
+    /// <p>Use the <a>SetResourceAccessForBucket</a> action to update the instances that
+    /// have access to a bucket.</p>
+    pub resources_receiving_access:
+        std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
+    /// <p>An object that describes the state of the bucket.</p>
+    pub state: std::option::Option<crate::model::BucketState>,
+}
+impl std::fmt::Debug for Bucket {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Bucket");
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("access_rules", &self.access_rules);
+        formatter.field("arn", &self.arn);
+        formatter.field("bundle_id", &self.bundle_id);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("url", &self.url);
+        formatter.field("location", &self.location);
+        formatter.field("name", &self.name);
+        formatter.field("support_code", &self.support_code);
+        formatter.field("tags", &self.tags);
+        formatter.field("object_versioning", &self.object_versioning);
+        formatter.field("able_to_update_bundle", &self.able_to_update_bundle);
+        formatter.field("readonly_access_accounts", &self.readonly_access_accounts);
+        formatter.field(
+            "resources_receiving_access",
+            &self.resources_receiving_access,
+        );
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`Bucket`](crate::model::Bucket)
+pub mod bucket {
+    /// A builder for [`Bucket`](crate::model::Bucket)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) access_rules: std::option::Option<crate::model::AccessRules>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) bundle_id: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) support_code: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) object_versioning: std::option::Option<std::string::String>,
+        pub(crate) able_to_update_bundle: std::option::Option<bool>,
+        pub(crate) readonly_access_accounts:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resources_receiving_access:
+            std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
+        pub(crate) state: std::option::Option<crate::model::BucketState>,
+    }
+    impl Builder {
+        /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>An object that describes the access rules of the bucket.</p>
+        pub fn access_rules(mut self, input: crate::model::AccessRules) -> Self {
+            self.access_rules = Some(input);
+            self
+        }
+        pub fn set_access_rules(
+            mut self,
+            input: std::option::Option<crate::model::AccessRules>,
+        ) -> Self {
+            self.access_rules = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of the bundle currently applied to the bucket.</p>
+        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+        /// bucket.</p>
+        /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of a
+        /// bucket.</p>
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bundle_id = Some(input.into());
+            self
+        }
+        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bundle_id = input;
+            self
+        }
+        /// <p>The timestamp when the distribution was created.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The URL of the bucket.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// <p>Describes the resource location.</p>
+        pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
+            self.location = Some(input);
+            self
+        }
+        pub fn set_location(
+            mut self,
+            input: std::option::Option<crate::model::ResourceLocation>,
+        ) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>The name of the bucket.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The support code for a bucket. Include this code in your email to support when you have
+        /// questions about a Lightsail bucket. This code enables our support team to look up your
+        /// Lightsail information more easily.</p>
+        pub fn support_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_code = Some(input.into());
+            self
+        }
+        pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.support_code = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Indicates whether object versioning is enabled for the bucket.</p>
+        /// <p>The following options can be configured:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> - Object versioning is enabled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Suspended</code> - Object versioning was previously enabled but is currently
+        /// suspended. Existing object versions are retained.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NeverEnabled</code> - Object versioning has never been enabled.</p>
+        /// </li>
+        /// </ul>
+        pub fn object_versioning(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_versioning = Some(input.into());
+            self
+        }
+        pub fn set_object_versioning(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_versioning = input;
+            self
+        }
+        /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to
+        /// another bundle.</p>
+        /// <p>You can update a bucket's bundle only one time within a monthly AWS billing
+        /// cycle.</p>
+        /// <p>Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.</p>
+        pub fn able_to_update_bundle(mut self, input: bool) -> Self {
+            self.able_to_update_bundle = Some(input);
+            self
+        }
+        pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
+            self.able_to_update_bundle = input;
+            self
+        }
+        pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.readonly_access_accounts.unwrap_or_default();
+            v.push(input.into());
+            self.readonly_access_accounts = Some(v);
+            self
+        }
+        pub fn set_readonly_access_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.readonly_access_accounts = input;
+            self
+        }
+        pub fn resources_receiving_access(
+            mut self,
+            input: impl Into<crate::model::ResourceReceivingAccess>,
+        ) -> Self {
+            let mut v = self.resources_receiving_access.unwrap_or_default();
+            v.push(input.into());
+            self.resources_receiving_access = Some(v);
+            self
+        }
+        pub fn set_resources_receiving_access(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
+        ) -> Self {
+            self.resources_receiving_access = input;
+            self
+        }
+        /// <p>An object that describes the state of the bucket.</p>
+        pub fn state(mut self, input: crate::model::BucketState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(mut self, input: std::option::Option<crate::model::BucketState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Bucket`](crate::model::Bucket)
+        pub fn build(self) -> crate::model::Bucket {
+            crate::model::Bucket {
+                resource_type: self.resource_type,
+                access_rules: self.access_rules,
+                arn: self.arn,
+                bundle_id: self.bundle_id,
+                created_at: self.created_at,
+                url: self.url,
+                location: self.location,
+                name: self.name,
+                support_code: self.support_code,
+                tags: self.tags,
+                object_versioning: self.object_versioning,
+                able_to_update_bundle: self.able_to_update_bundle,
+                readonly_access_accounts: self.readonly_access_accounts,
+                resources_receiving_access: self.resources_receiving_access,
+                state: self.state,
+            }
+        }
+    }
+}
+impl Bucket {
+    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket)
+    pub fn builder() -> crate::model::bucket::Builder {
+        crate::model::bucket::Builder::default()
+    }
+}
+
+/// <p>Describes the state of an Amazon Lightsail bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BucketState {
+    /// <p>The state code of the bucket.</p>
+    /// <p>The following codes are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OK</code> - The bucket is in a running state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to
+    /// delete the bucket and create a new one.</p>
+    /// </li>
+    /// </ul>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A message that describes the state of the bucket.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BucketState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BucketState");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`BucketState`](crate::model::BucketState)
+pub mod bucket_state {
+    /// A builder for [`BucketState`](crate::model::BucketState)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The state code of the bucket.</p>
+        /// <p>The following codes are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OK</code> - The bucket is in a running state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to
+        /// delete the bucket and create a new one.</p>
+        /// </li>
+        /// </ul>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A message that describes the state of the bucket.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BucketState`](crate::model::BucketState)
+        pub fn build(self) -> crate::model::BucketState {
+            crate::model::BucketState {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl BucketState {
+    /// Creates a new builder-style object to manufacture [`BucketState`](crate::model::BucketState)
+    pub fn builder() -> crate::model::bucket_state::Builder {
+        crate::model::bucket_state::Builder::default()
+    }
+}
+
+/// <p>Describes an Amazon Lightsail instance that has access to a Lightsail bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceReceivingAccess {
+    /// <p>The name of the Lightsail instance.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
+    pub resource_type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceReceivingAccess {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceReceivingAccess");
+        formatter.field("name", &self.name);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.finish()
+    }
+}
+/// See [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess)
+pub mod resource_receiving_access {
+    /// A builder for [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Lightsail instance.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess)
+        pub fn build(self) -> crate::model::ResourceReceivingAccess {
+            crate::model::ResourceReceivingAccess {
+                name: self.name,
+                resource_type: self.resource_type,
+            }
+        }
+    }
+}
+impl ResourceReceivingAccess {
+    /// Creates a new builder-style object to manufacture [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess)
+    pub fn builder() -> crate::model::resource_receiving_access::Builder {
+        crate::model::resource_receiving_access::Builder::default()
+    }
+}
+
+/// <p>Describes the anonymous access permissions for an Amazon Lightsail bucket and its
+/// objects.</p>
+/// <p>For more information about bucket access permissions, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions">Understanding bucket permissions in Amazon Lightsail</a> in the </p>
+/// <p>
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessRules {
+    /// <p>Specifies the anonymous access to all objects in a bucket.</p>
+    /// <p>The following options can be specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>public</code> - Sets all objects in the bucket to public (read-only), making
+    /// them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in
+    /// the bucket default to public regardless of the <code>allowPublicOverrides</code>
+    /// value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>private</code> - Sets all objects in the bucket to private, making them readable
+    /// only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the
+    /// <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in
+    /// the bucket default to private unless they are configured with a <code>public-read</code>
+    /// ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the
+    /// world.</p>
+    /// </li>
+    /// </ul>
+    pub get_object: std::option::Option<crate::model::AccessType>,
+    /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are
+    /// applied to individual objects override the <code>getObject</code> option that is currently
+    /// specified.</p>
+    /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set
+    /// individual objects to public (read-only) using the <code>public-read</code> ACL, or to private
+    /// using the <code>private</code> ACL.</p>
+    pub allow_public_overrides: std::option::Option<bool>,
+}
+impl std::fmt::Debug for AccessRules {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessRules");
+        formatter.field("get_object", &self.get_object);
+        formatter.field("allow_public_overrides", &self.allow_public_overrides);
+        formatter.finish()
+    }
+}
+/// See [`AccessRules`](crate::model::AccessRules)
+pub mod access_rules {
+    /// A builder for [`AccessRules`](crate::model::AccessRules)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) get_object: std::option::Option<crate::model::AccessType>,
+        pub(crate) allow_public_overrides: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Specifies the anonymous access to all objects in a bucket.</p>
+        /// <p>The following options can be specified:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>public</code> - Sets all objects in the bucket to public (read-only), making
+        /// them readable by anyone in the world.</p>
+        /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in
+        /// the bucket default to public regardless of the <code>allowPublicOverrides</code>
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>private</code> - Sets all objects in the bucket to private, making them readable
+        /// only by you or anyone you give access to.</p>
+        /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the
+        /// <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in
+        /// the bucket default to private unless they are configured with a <code>public-read</code>
+        /// ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the
+        /// world.</p>
+        /// </li>
+        /// </ul>
+        pub fn get_object(mut self, input: crate::model::AccessType) -> Self {
+            self.get_object = Some(input);
+            self
+        }
+        pub fn set_get_object(
+            mut self,
+            input: std::option::Option<crate::model::AccessType>,
+        ) -> Self {
+            self.get_object = input;
+            self
+        }
+        /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are
+        /// applied to individual objects override the <code>getObject</code> option that is currently
+        /// specified.</p>
+        /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set
+        /// individual objects to public (read-only) using the <code>public-read</code> ACL, or to private
+        /// using the <code>private</code> ACL.</p>
+        pub fn allow_public_overrides(mut self, input: bool) -> Self {
+            self.allow_public_overrides = Some(input);
+            self
+        }
+        pub fn set_allow_public_overrides(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_public_overrides = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessRules`](crate::model::AccessRules)
+        pub fn build(self) -> crate::model::AccessRules {
+            crate::model::AccessRules {
+                get_object: self.get_object,
+                allow_public_overrides: self.allow_public_overrides,
+            }
+        }
+    }
+}
+impl AccessRules {
+    /// Creates a new builder-style object to manufacture [`AccessRules`](crate::model::AccessRules)
+    pub fn builder() -> crate::model::access_rules::Builder {
+        crate::model::access_rules::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccessType {
+    Private,
+    Public,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccessType {
+    fn from(s: &str) -> Self {
+        match s {
+            "private" => AccessType::Private,
+            "public" => AccessType::Public,
+            other => AccessType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccessType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccessType::from(s))
+    }
+}
+impl AccessType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccessType::Private => "private",
+            AccessType::Public => "public",
+            AccessType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["private", "public"]
+    }
+}
+impl AsRef<str> for AccessType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4202,6 +4892,56 @@ impl AlarmState {
     }
 }
 impl AsRef<str> for AlarmState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceBucketAccess {
+    Allow,
+    Deny,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResourceBucketAccess {
+    fn from(s: &str) -> Self {
+        match s {
+            "allow" => ResourceBucketAccess::Allow,
+            "deny" => ResourceBucketAccess::Deny,
+            other => ResourceBucketAccess::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResourceBucketAccess {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceBucketAccess::from(s))
+    }
+}
+impl ResourceBucketAccess {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceBucketAccess::Allow => "allow",
+            ResourceBucketAccess::Deny => "deny",
+            ResourceBucketAccess::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["allow", "deny"]
+    }
+}
+impl AsRef<str> for ResourceBucketAccess {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5050,7 +5790,7 @@ impl AsRef<str> for MetricName {
     }
 }
 
-/// <p>Describes the static IP.</p>
+/// <p>Describes a static IP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticIp {
@@ -5242,8 +5982,7 @@ pub struct RelationalDatabaseSnapshot {
     /// <p>The Lightsail resource type.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
     pub engine: std::option::Option<std::string::String>,
@@ -5549,8 +6288,7 @@ pub struct RelationalDatabase {
     /// <code>RelationalDatabase</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a
     /// database.</p>
@@ -7603,8 +8341,7 @@ pub struct LoadBalancerTlsCertificate {
     /// </ul>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -8978,7 +9715,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateStatus {
     }
 }
 
-/// <p>Describes the Lightsail load balancer.</p>
+/// <p>Describes a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancer {
@@ -8998,8 +9735,7 @@ pub struct LoadBalancer {
     /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The DNS name of your Lightsail load balancer.</p>
     pub dns_name: std::option::Option<std::string::String>,
@@ -10099,7 +10835,7 @@ impl AsRef<str> for LoadBalancerMetricName {
     }
 }
 
-/// <p>Describes the SSH key pair.</p>
+/// <p>Describes an SSH key pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyPair {
@@ -10119,8 +10855,7 @@ pub struct KeyPair {
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fingerprint: std::option::Option<std::string::String>,
@@ -10343,8 +11078,7 @@ pub struct InstanceSnapshot {
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The state the snapshot is in.</p>
     pub state: std::option::Option<crate::model::InstanceSnapshotState>,
@@ -10633,7 +11367,7 @@ impl InstanceSnapshot {
     }
 }
 
-/// <p>Describes a system disk or a block storage disk.</p>
+/// <p>Describes a block storage disk.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Disk {
@@ -10652,8 +11386,7 @@ pub struct Disk {
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An array of objects representing the add-ons enabled on the disk.</p>
     pub add_ons: std::option::Option<std::vec::Vec<crate::model::AddOn>>,
@@ -11193,8 +11926,7 @@ pub struct Instance {
     /// <p>The type of resource (usually <code>Instance</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
     pub blueprint_id: std::option::Option<std::string::String>,
@@ -13934,7 +14666,7 @@ impl AsRef<str> for RecordState {
     }
 }
 
-/// <p>Describes a domain where you are storing recordsets in Lightsail.</p>
+/// <p>Describes a domain where you are storing recordsets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Domain {
@@ -13954,8 +14686,7 @@ pub struct Domain {
     /// <p>The resource type. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
     pub domain_entries: std::option::Option<std::vec::Vec<crate::model::DomainEntry>>,
@@ -14159,8 +14890,7 @@ pub struct LightsailDistribution {
     /// IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for LightsailDistribution {
@@ -14669,7 +15399,7 @@ pub struct DistributionBundle {
     pub price: std::option::Option<f32>,
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub transfer_per_month_in_gb: std::option::Option<i32>,
-    /// <p>Indicates whether the bundle is active, and can be specified for a new
+    /// <p>Indicates whether the bundle is active, and can be specified for a new or existing
     /// distribution.</p>
     pub is_active: std::option::Option<bool>,
 }
@@ -14733,7 +15463,7 @@ pub mod distribution_bundle {
             self.transfer_per_month_in_gb = input;
             self
         }
-        /// <p>Indicates whether the bundle is active, and can be specified for a new
+        /// <p>Indicates whether the bundle is active, and can be specified for a new or existing
         /// distribution.</p>
         pub fn is_active(mut self, input: bool) -> Self {
             self.is_active = Some(input);
@@ -14781,8 +15511,7 @@ pub struct DiskSnapshot {
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The size of the disk in GB.</p>
     pub size_in_gb: std::option::Option<i32>,
@@ -15604,7 +16333,7 @@ impl AsRef<str> for ContactMethodStatus {
 }
 
 /// <p>Describes a CloudFormation stack record created as a result of the <code>create cloud
-/// formation stack</code> operation.</p>
+/// formation stack</code> action.</p>
 /// <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to
 /// create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p>
 #[non_exhaustive]
@@ -15920,8 +16649,7 @@ pub struct CertificateSummary {
     /// <p>An object that describes a certificate in detail.</p>
     pub certificate_detail: std::option::Option<crate::model::Certificate>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for CertificateSummary {
@@ -16141,8 +16869,7 @@ pub struct Certificate {
     /// status is <code>REVOKED</code>.</p>
     pub revocation_reason: std::option::Option<std::string::String>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in
-    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-    /// Dev Guide</a>.</p>
+    /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The support code. Include this code in your email to support when you have questions about
     /// your Lightsail certificate. This code enables our support team to look up your Lightsail
@@ -17253,6 +17980,339 @@ impl AsRef<str> for InstancePlatform {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BucketMetricName {
+    BucketSizeBytes,
+    NumberOfObjects,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BucketMetricName {
+    fn from(s: &str) -> Self {
+        match s {
+            "BucketSizeBytes" => BucketMetricName::BucketSizeBytes,
+            "NumberOfObjects" => BucketMetricName::NumberOfObjects,
+            other => BucketMetricName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BucketMetricName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BucketMetricName::from(s))
+    }
+}
+impl BucketMetricName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BucketMetricName::BucketSizeBytes => "BucketSizeBytes",
+            BucketMetricName::NumberOfObjects => "NumberOfObjects",
+            BucketMetricName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BucketSizeBytes", "NumberOfObjects"]
+    }
+}
+impl AsRef<str> for BucketMetricName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the specifications of a bundle that can be applied to an Amazon Lightsail
+/// bucket.</p>
+/// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+/// bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BucketBundle {
+    /// <p>The ID of the bundle.</p>
+    pub bundle_id: std::option::Option<std::string::String>,
+    /// <p>The name of the bundle.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The monthly price of the bundle, in US dollars.</p>
+    pub price: std::option::Option<f32>,
+    /// <p>The storage size of the bundle, in GB.</p>
+    pub storage_per_month_in_gb: std::option::Option<i32>,
+    /// <p>The monthly network transfer quota of the bundle.</p>
+    pub transfer_per_month_in_gb: std::option::Option<i32>,
+    /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
+    pub is_active: std::option::Option<bool>,
+}
+impl std::fmt::Debug for BucketBundle {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BucketBundle");
+        formatter.field("bundle_id", &self.bundle_id);
+        formatter.field("name", &self.name);
+        formatter.field("price", &self.price);
+        formatter.field("storage_per_month_in_gb", &self.storage_per_month_in_gb);
+        formatter.field("transfer_per_month_in_gb", &self.transfer_per_month_in_gb);
+        formatter.field("is_active", &self.is_active);
+        formatter.finish()
+    }
+}
+/// See [`BucketBundle`](crate::model::BucketBundle)
+pub mod bucket_bundle {
+    /// A builder for [`BucketBundle`](crate::model::BucketBundle)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bundle_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) price: std::option::Option<f32>,
+        pub(crate) storage_per_month_in_gb: std::option::Option<i32>,
+        pub(crate) transfer_per_month_in_gb: std::option::Option<i32>,
+        pub(crate) is_active: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ID of the bundle.</p>
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bundle_id = Some(input.into());
+            self
+        }
+        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bundle_id = input;
+            self
+        }
+        /// <p>The name of the bundle.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The monthly price of the bundle, in US dollars.</p>
+        pub fn price(mut self, input: f32) -> Self {
+            self.price = Some(input);
+            self
+        }
+        pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
+            self.price = input;
+            self
+        }
+        /// <p>The storage size of the bundle, in GB.</p>
+        pub fn storage_per_month_in_gb(mut self, input: i32) -> Self {
+            self.storage_per_month_in_gb = Some(input);
+            self
+        }
+        pub fn set_storage_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_per_month_in_gb = input;
+            self
+        }
+        /// <p>The monthly network transfer quota of the bundle.</p>
+        pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
+            self.transfer_per_month_in_gb = Some(input);
+            self
+        }
+        pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.transfer_per_month_in_gb = input;
+            self
+        }
+        /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
+        pub fn is_active(mut self, input: bool) -> Self {
+            self.is_active = Some(input);
+            self
+        }
+        pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_active = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BucketBundle`](crate::model::BucketBundle)
+        pub fn build(self) -> crate::model::BucketBundle {
+            crate::model::BucketBundle {
+                bundle_id: self.bundle_id,
+                name: self.name,
+                price: self.price,
+                storage_per_month_in_gb: self.storage_per_month_in_gb,
+                transfer_per_month_in_gb: self.transfer_per_month_in_gb,
+                is_active: self.is_active,
+            }
+        }
+    }
+}
+impl BucketBundle {
+    /// Creates a new builder-style object to manufacture [`BucketBundle`](crate::model::BucketBundle)
+    pub fn builder() -> crate::model::bucket_bundle::Builder {
+        crate::model::bucket_bundle::Builder::default()
+    }
+}
+
+/// <p>Describes an access key for an Amazon Lightsail bucket.</p>
+/// <p>Access keys grant full programmatic access to the specified bucket and its objects. You
+/// can have a maximum of two access keys per bucket. Use the <a>CreateBucketAccessKey</a> action to create an access key for a specific bucket. For
+/// more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
+/// <important>
+/// <p>The <code>secretAccessKey</code> value is returned only in response to the
+/// <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you
+/// first create an access key; you cannot get the secret access key later. If you lose the
+/// secret access key, you must create a new access key.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessKey {
+    /// <p>The ID of the access key.</p>
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>The secret access key used to sign requests.</p>
+    /// <p>You should store the secret access key in a safe location. We recommend that you delete
+    /// the access key if the secret access key is compromised.</p>
+    pub secret_access_key: std::option::Option<std::string::String>,
+    /// <p>The status of the access key.</p>
+    /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
+    /// means it is not.</p>
+    pub status: std::option::Option<crate::model::StatusType>,
+    /// <p>The timestamp when the access key was created.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for AccessKey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessKey");
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("status", &self.status);
+        formatter.field("created_at", &self.created_at);
+        formatter.finish()
+    }
+}
+/// See [`AccessKey`](crate::model::AccessKey)
+pub mod access_key {
+    /// A builder for [`AccessKey`](crate::model::AccessKey)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_access_key: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::StatusType>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The ID of the access key.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>The secret access key used to sign requests.</p>
+        /// <p>You should store the secret access key in a safe location. We recommend that you delete
+        /// the access key if the secret access key is compromised.</p>
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
+            self
+        }
+        pub fn set_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_access_key = input;
+            self
+        }
+        /// <p>The status of the access key.</p>
+        /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
+        /// means it is not.</p>
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp when the access key was created.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessKey`](crate::model::AccessKey)
+        pub fn build(self) -> crate::model::AccessKey {
+            crate::model::AccessKey {
+                access_key_id: self.access_key_id,
+                secret_access_key: self.secret_access_key,
+                status: self.status,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl AccessKey {
+    /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey)
+    pub fn builder() -> crate::model::access_key::Builder {
+        crate::model::access_key::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StatusType {
+    Active,
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => StatusType::Active,
+            "Inactive" => StatusType::Inactive,
+            other => StatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StatusType::from(s))
+    }
+}
+impl StatusType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatusType::Active => "Active",
+            StatusType::Inactive => "Inactive",
+            StatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
+}
+impl AsRef<str> for StatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes a blueprint (a virtual private server image).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17742,9 +18802,8 @@ impl AsRef<str> for AutoSnapshotStatus {
 }
 
 /// <p>Describes an alarm.</p>
-/// <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information,
-/// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
-/// in Amazon Lightsail</a>.</p>
+/// <p>An alarm is a way to monitor your Lightsail resource metrics. For more information, see
+/// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarm {

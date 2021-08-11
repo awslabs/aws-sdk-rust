@@ -3743,6 +3743,8 @@ pub struct TemplateSummary {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the template.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>The version of the template that you're using.</p>
+    pub version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,6 +3753,7 @@ impl std::fmt::Debug for TemplateSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("name", &self.name);
+        formatter.field("version", &self.version);
         formatter.finish()
     }
 }
@@ -3764,6 +3767,7 @@ pub mod template_summary {
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
@@ -3805,6 +3809,15 @@ pub mod template_summary {
             self.name = input;
             self
         }
+        /// <p>The version of the template that you're using.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TemplateSummary`](crate::model::TemplateSummary)
         pub fn build(self) -> crate::model::TemplateSummary {
             crate::model::TemplateSummary {
@@ -3812,6 +3825,7 @@ pub mod template_summary {
                 created_at: self.created_at,
                 last_updated_at: self.last_updated_at,
                 name: self.name,
+                version: self.version,
             }
         }
     }

@@ -1029,6 +1029,27 @@ where
                                     crate::json_deser::deser_list_subnet_ids(tokens)?,
                                 );
                             }
+                            "stateDetails" => {
+                                builder = builder.set_state_details(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "failureReason" => {
+                                builder = builder.set_failure_reason(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::FailureReason::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "tags" => {
                                 builder =
                                     builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);

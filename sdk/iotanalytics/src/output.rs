@@ -626,7 +626,7 @@ impl ListDatasetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetContentsOutput {
-    /// <p>Summary information about data set contents that have been created.</p>
+    /// <p>Summary information about dataset contents that have been created.</p>
     pub dataset_content_summaries:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
@@ -768,7 +768,7 @@ pub struct GetDatasetContentOutput {
     pub entries: std::option::Option<std::vec::Vec<crate::model::DatasetEntry>>,
     /// <p>The time when the request was made.</p>
     pub timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The status of the data set content.</p>
+    /// <p>The status of the dataset content.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
 }
 impl std::fmt::Debug for GetDatasetContentOutput {
@@ -813,7 +813,7 @@ pub mod get_dataset_content_output {
             self.timestamp = input;
             self
         }
-        /// <p>The status of the data set content.</p>
+        /// <p>The status of the dataset content.</p>
         pub fn status(mut self, input: crate::model::DatasetContentStatus) -> Self {
             self.status = Some(input);
             self
@@ -891,7 +891,7 @@ impl DescribePipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingOptionsOutput {
-    /// <p>The current settings of the AWS IoT Analytics logging options.</p>
+    /// <p>The current settings of the IoT Analytics logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl std::fmt::Debug for DescribeLoggingOptionsOutput {
@@ -910,7 +910,7 @@ pub mod describe_logging_options_output {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
     impl Builder {
-        /// <p>The current settings of the AWS IoT Analytics logging options.</p>
+        /// <p>The current settings of the IoT Analytics logging options.</p>
         pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
             self.logging_options = Some(input);
             self
@@ -1008,7 +1008,7 @@ impl DescribeDatastoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
-    /// <p>An object that contains information about the data set.</p>
+    /// <p>An object that contains information about the dataset.</p>
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
 impl std::fmt::Debug for DescribeDatasetOutput {
@@ -1027,7 +1027,7 @@ pub mod describe_dataset_output {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
     impl Builder {
-        /// <p>An object that contains information about the data set.</p>
+        /// <p>An object that contains information about the dataset.</p>
         pub fn dataset(mut self, input: crate::model::Dataset) -> Self {
             self.dataset = Some(input);
             self

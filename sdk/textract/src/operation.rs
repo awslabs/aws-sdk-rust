@@ -56,6 +56,45 @@ impl smithy_http::response::ParseStrictResponse for AnalyzeDocument {
     }
 }
 
+/// <p>Analyzes an input document for financially related relationships between text.</p>
+/// <p>Information is returned as <code>ExpenseDocuments</code> and seperated as follows.</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which
+/// store information about the lines of text, such as an item purchased and its price on a receipt.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>SummaryFields</code>- Contains all other information a receipt, such as header information
+/// or the vendors name.</p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AnalyzeExpense {
+    _private: (),
+}
+impl AnalyzeExpense {
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+    pub fn builder() -> crate::input::analyze_expense_input::Builder {
+        crate::input::analyze_expense_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for AnalyzeExpense {
+    type Output =
+        std::result::Result<crate::output::AnalyzeExpenseOutput, crate::error::AnalyzeExpenseError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_analyze_expense_error(response)
+        } else {
+            crate::operation_deser::parse_analyze_expense_response(response)
+        }
+    }
+}
+
 /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the
 /// words that make up a line of text. The input document must be an image in JPEG or PNG
 /// format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a> objects. </p>

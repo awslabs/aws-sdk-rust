@@ -455,6 +455,109 @@ impl TagResourceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutStorageConfigurationOutput {
+    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// </li>
+    /// </ul>
+    pub storage_type: std::option::Option<crate::model::StorageType>,
+    /// <p>Contains information about the storage destination.</p>
+    pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+    /// <p>Contains current status information for the configuration.</p>
+    pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
+}
+impl std::fmt::Debug for PutStorageConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutStorageConfigurationOutput");
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("multi_layer_storage", &self.multi_layer_storage);
+        formatter.field("configuration_status", &self.configuration_status);
+        formatter.finish()
+    }
+}
+/// See [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput)
+pub mod put_storage_configuration_output {
+    /// A builder for [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
+        pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+        pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
+    }
+    impl Builder {
+        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// </li>
+        /// </ul>
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.storage_type = Some(input);
+            self
+        }
+        pub fn set_storage_type(
+            mut self,
+            input: std::option::Option<crate::model::StorageType>,
+        ) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>Contains information about the storage destination.</p>
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.multi_layer_storage = Some(input);
+            self
+        }
+        pub fn set_multi_layer_storage(
+            mut self,
+            input: std::option::Option<crate::model::MultiLayerStorage>,
+        ) -> Self {
+            self.multi_layer_storage = input;
+            self
+        }
+        /// <p>Contains current status information for the configuration.</p>
+        pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
+            self.configuration_status = Some(input);
+            self
+        }
+        pub fn set_configuration_status(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationStatus>,
+        ) -> Self {
+            self.configuration_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput)
+        pub fn build(self) -> crate::output::PutStorageConfigurationOutput {
+            crate::output::PutStorageConfigurationOutput {
+                storage_type: self.storage_type,
+                multi_layer_storage: self.multi_layer_storage,
+                configuration_status: self.configuration_status,
+            }
+        }
+    }
+}
+impl PutStorageConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput)
+    pub fn builder() -> crate::output::put_storage_configuration_output::Builder {
+        crate::output::put_storage_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingOptionsOutput {}
 impl std::fmt::Debug for PutLoggingOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -487,7 +590,7 @@ impl PutLoggingOptionsOutput {
 pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+    /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
     /// <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the
@@ -527,7 +630,7 @@ pub mod put_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+        /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
         /// <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
@@ -572,8 +675,8 @@ impl PutDefaultEncryptionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of key-value pairs that contain metadata for the resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1587,6 +1690,126 @@ impl DisassociateAssetsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStorageConfigurationOutput {
+    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// </li>
+    /// </ul>
+    pub storage_type: std::option::Option<crate::model::StorageType>,
+    /// <p>Contains information about the storage destination.</p>
+    pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+    /// <p>Contains current status information for the configuration.</p>
+    pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
+    /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
+    pub last_update_date: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for DescribeStorageConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeStorageConfigurationOutput");
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("multi_layer_storage", &self.multi_layer_storage);
+        formatter.field("configuration_status", &self.configuration_status);
+        formatter.field("last_update_date", &self.last_update_date);
+        formatter.finish()
+    }
+}
+/// See [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput)
+pub mod describe_storage_configuration_output {
+    /// A builder for [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
+        pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+        pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
+        pub(crate) last_update_date: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// </li>
+        /// </ul>
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.storage_type = Some(input);
+            self
+        }
+        pub fn set_storage_type(
+            mut self,
+            input: std::option::Option<crate::model::StorageType>,
+        ) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>Contains information about the storage destination.</p>
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.multi_layer_storage = Some(input);
+            self
+        }
+        pub fn set_multi_layer_storage(
+            mut self,
+            input: std::option::Option<crate::model::MultiLayerStorage>,
+        ) -> Self {
+            self.multi_layer_storage = input;
+            self
+        }
+        /// <p>Contains current status information for the configuration.</p>
+        pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
+            self.configuration_status = Some(input);
+            self
+        }
+        pub fn set_configuration_status(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationStatus>,
+        ) -> Self {
+            self.configuration_status = input;
+            self
+        }
+        /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
+        pub fn last_update_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_update_date = Some(input);
+            self
+        }
+        pub fn set_last_update_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_update_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeStorageConfigurationOutput {
+            crate::output::DescribeStorageConfigurationOutput {
+                storage_type: self.storage_type,
+                multi_layer_storage: self.multi_layer_storage,
+                configuration_status: self.configuration_status,
+                last_update_date: self.last_update_date,
+            }
+        }
+    }
+}
+impl DescribeStorageConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput)
+    pub fn builder() -> crate::output::describe_storage_configuration_output::Builder {
+        crate::output::describe_storage_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
@@ -1744,14 +1967,14 @@ pub struct DescribePortalOutput {
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
     pub portal_description: std::option::Option<std::string::String>,
-    /// <p>The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
-    /// <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.</p>
+    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
+    /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
     pub portal_client_id: std::option::Option<std::string::String>,
-    /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: std::option::Option<std::string::String>,
-    /// <p>The AWS administrator's contact email address.</p>
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>The current status of the portal, which contains a state and any error message.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
@@ -1761,15 +1984,15 @@ pub struct DescribePortalOutput {
     pub portal_last_update_date: std::option::Option<smithy_types::Instant>,
     /// <p>The portal's logo image, which is available at a URL.</p>
     pub portal_logo_image_location: std::option::Option<crate::model::ImageLocation>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your AWS IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The service to use to authenticate users to the portal.</p>
     pub portal_auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p>
     pub notification_sender_email: std::option::Option<std::string::String>,
-    /// <p>Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.</p>
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl std::fmt::Debug for DescribePortalOutput {
@@ -1861,8 +2084,8 @@ pub mod describe_portal_output {
             self.portal_description = input;
             self
         }
-        /// <p>The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
-        /// <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.</p>
+        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
+        /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
         pub fn portal_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_client_id = Some(input.into());
             self
@@ -1874,9 +2097,9 @@ pub mod describe_portal_output {
             self.portal_client_id = input;
             self
         }
-        /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
@@ -1888,7 +2111,7 @@ pub mod describe_portal_output {
             self.portal_start_url = input;
             self
         }
-        /// <p>The AWS administrator's contact email address.</p>
+        /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_contact_email = Some(input.into());
             self
@@ -1948,9 +2171,9 @@ pub mod describe_portal_output {
             self.portal_logo_image_location = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -1983,7 +2206,7 @@ pub mod describe_portal_output {
             self.notification_sender_email = input;
             self
         }
-        /// <p>Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.alarms = Some(input);
             self
@@ -2078,7 +2301,7 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The JSON document that defines the gateway capability's configuration. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub capability_configuration: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -2141,7 +2364,7 @@ pub mod describe_gateway_capability_configuration_output {
             self
         }
         /// <p>The JSON document that defines the gateway capability's configuration. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.capability_configuration = Some(input.into());
             self
@@ -2361,12 +2584,12 @@ impl DescribeGatewayOutput {
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The key ARN of the customer managed customer master key (CMK) used for AWS KMS encryption
-    /// if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
+    /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the
-    /// <code>ConfigurationState</code>. If
-    /// there's an error, it also contains the <code>ErrorDetails</code>.</p>
+    /// <code>ConfigurationState</code>. If there's an error, it also contains the
+    /// <code>ErrorDetails</code>.</p>
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl std::fmt::Debug for DescribeDefaultEncryptionConfigurationOutput {
@@ -2401,8 +2624,8 @@ pub mod describe_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The key ARN of the customer managed customer master key (CMK) used for AWS KMS encryption
-        /// if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
+        /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -2412,8 +2635,8 @@ pub mod describe_default_encryption_configuration_output {
             self
         }
         /// <p>The status of the account configuration. This contains the
-        /// <code>ConfigurationState</code>. If
-        /// there's an error, it also contains the <code>ErrorDetails</code>.</p>
+        /// <code>ConfigurationState</code>. If there's an error, it also contains the
+        /// <code>ErrorDetails</code>.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
             self.configuration_status = Some(input);
             self
@@ -2459,7 +2682,7 @@ pub struct DescribeDashboardOutput {
     /// <p>The dashboard's description.</p>
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-    /// dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub dashboard_creation_date: std::option::Option<smithy_types::Instant>,
@@ -2557,7 +2780,7 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_definition = Some(input.into());
             self
@@ -3193,10 +3416,10 @@ pub struct DescribeAccessPolicyOutput {
     /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
     /// </p>
     pub access_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy
+    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
     /// applies.</p>
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
-    /// <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides
+    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
     /// access.</p>
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known
@@ -3268,7 +3491,7 @@ pub mod describe_access_policy_output {
             self.access_policy_arn = input;
             self
         }
-        /// <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy
+        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
         /// applies.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
@@ -3281,7 +3504,7 @@ pub mod describe_access_policy_output {
             self.access_policy_identity = input;
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides
+        /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
         /// access.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.access_policy_resource = Some(input);
@@ -3697,14 +3920,14 @@ pub struct CreatePortalOutput {
     /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
     /// </p>
     pub portal_arn: std::option::Option<std::string::String>,
-    /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully
     /// calling this operation) and any error message.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
-    /// <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
+    /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
     pub sso_application_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreatePortalOutput {
@@ -3752,9 +3975,9 @@ pub mod create_portal_output {
             self.portal_arn = input;
             self
         }
-        /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
@@ -3779,7 +4002,7 @@ pub mod create_portal_output {
             self.portal_status = input;
             self
         }
-        /// <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
+        /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
         pub fn sso_application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_application_id = Some(input.into());
             self
@@ -3813,7 +4036,7 @@ impl CreatePortalOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayOutput {
-    /// <p>The ID of the gateway device. You can use this ID when you call other AWS IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p>
@@ -3839,7 +4062,7 @@ pub mod create_gateway_output {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the gateway device. You can use this ID when you call other AWS IoT SiteWise APIs.</p>
+        /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
         pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_id = Some(input.into());
             self
@@ -3948,7 +4171,7 @@ impl CreateDashboardOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetModelOutput {
-    /// <p>The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p>
@@ -3979,7 +4202,7 @@ pub mod create_asset_model_output {
         pub(crate) asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
     }
     impl Builder {
-        /// <p>The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.</p>
+        /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_id = Some(input.into());
             self
@@ -4039,8 +4262,8 @@ impl CreateAssetModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetOutput {
-    /// <p>The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other
-    /// AWS IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
+    /// IoT SiteWise APIs.</p>
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p>
@@ -4071,8 +4294,8 @@ pub mod create_asset_output {
         pub(crate) asset_status: std::option::Option<crate::model::AssetStatus>,
     }
     impl Builder {
-        /// <p>The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other
-        /// AWS IoT SiteWise APIs.</p>
+        /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
+        /// IoT SiteWise APIs.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_id = Some(input.into());
             self

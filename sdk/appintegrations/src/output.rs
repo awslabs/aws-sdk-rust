@@ -292,7 +292,7 @@ pub struct GetEventIntegrationOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
     pub event_integration_arn: std::option::Option<std::string::String>,
-    /// <p>The Eventbridge bus.</p>
+    /// <p>The EventBridge bus.</p>
     pub event_bridge_bus: std::option::Option<std::string::String>,
     /// <p>The event filter.</p>
     pub event_filter: std::option::Option<crate::model::EventFilter>,
@@ -358,7 +358,7 @@ pub mod get_event_integration_output {
             self.event_integration_arn = input;
             self
         }
-        /// <p>The Eventbridge bus.</p>
+        /// <p>The EventBridge bus.</p>
         pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bridge_bus = Some(input.into());
             self

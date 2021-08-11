@@ -1,0 +1,16 @@
+[package]
+name = "aws-auth-providers"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+[dependencies]
+aws-auth = { path = "../aws-auth" }
+aws-types = { path = "../aws-types" }
+aws-sdk-sts = { path = "../sts"}
+aws-hyper = { path = "../aws-hyper"}
+tracing = "0.1"
+
+[dev-dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

@@ -88,28 +88,28 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -275,28 +275,28 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -458,28 +458,28 @@ impl AssociatePhoneNumberWithUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -650,28 +650,28 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -820,28 +820,28 @@ impl BatchCreateAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1022,7 +1022,7 @@ impl BatchCreateChannelMembershipInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1030,28 +1030,28 @@ impl BatchCreateChannelMembershipInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1242,28 +1242,28 @@ impl BatchCreateRoomMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1418,28 +1418,28 @@ impl BatchDeletePhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1569,28 +1569,28 @@ impl BatchSuspendUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1740,28 +1740,28 @@ impl BatchUnsuspendUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1904,28 +1904,28 @@ impl BatchUpdatePhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2058,28 +2058,28 @@ impl BatchUpdateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2205,28 +2205,28 @@ impl CreateAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2382,7 +2382,7 @@ impl CreateAppInstanceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2390,28 +2390,28 @@ impl CreateAppInstanceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2541,7 +2541,7 @@ impl CreateAppInstanceAdminInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2549,28 +2549,28 @@ impl CreateAppInstanceAdminInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2774,7 +2774,7 @@ impl CreateAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2782,28 +2782,28 @@ impl CreateAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2941,28 +2941,28 @@ impl CreateAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3112,28 +3112,28 @@ impl CreateBotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3350,7 +3350,7 @@ impl CreateChannelInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3358,28 +3358,28 @@ impl CreateChannelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3539,7 +3539,7 @@ impl CreateChannelBanInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3547,28 +3547,28 @@ impl CreateChannelBanInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3765,7 +3765,7 @@ impl CreateChannelMembershipInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3773,28 +3773,28 @@ impl CreateChannelMembershipInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3977,7 +3977,7 @@ impl CreateChannelModeratorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3985,28 +3985,28 @@ impl CreateChannelModeratorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4100,6 +4100,196 @@ impl CreateChannelModeratorInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput)
     pub fn builder() -> crate::input::create_channel_moderator_input::Builder {
         crate::input::create_channel_moderator_input::Builder::default()
+    }
+}
+
+/// See [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+pub mod create_media_capture_pipeline_input {
+    /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
+        pub(crate) source_arn: std::option::Option<std::string::String>,
+        pub(crate) sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
+        pub(crate) sink_arn: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
+        /// is the only supported source.</p>
+        pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
+        /// <p>ARN of the source from which the media artifacts are captured.</p>
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
+            self
+        }
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
+            self
+        }
+        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+        pub fn sink_type(mut self, input: crate::model::MediaPipelineSinkType) -> Self {
+            self.sink_type = Some(input);
+            self
+        }
+        pub fn set_sink_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSinkType>,
+        ) -> Self {
+            self.sink_type = input;
+            self
+        }
+        /// <p>The ARN of the sink type.</p>
+        pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sink_arn = Some(input.into());
+            self
+        }
+        pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sink_arn = input;
+            self
+        }
+        /// <p>The token assigned to the client making the pipeline request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateMediaCapturePipelineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateMediaCapturePipelineInput {
+                source_type: self.source_type,
+                source_arn: self.source_arn,
+                sink_type: self.sink_type,
+                sink_arn: self.sink_arn,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateMediaCapturePipelineInputOperationOutputAlias =
+    crate::operation::CreateMediaCapturePipeline;
+#[doc(hidden)]
+pub type CreateMediaCapturePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateMediaCapturePipelineInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMediaCapturePipeline`](crate::operation::CreateMediaCapturePipeline)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateMediaCapturePipeline,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_create_media_capture_pipeline(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateMediaCapturePipeline::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateMediaCapturePipeline",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/media-capture-pipelines").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::create_media_capture_pipeline_input::Builder {
+        crate::input::create_media_capture_pipeline_input::Builder::default()
     }
 }
 
@@ -4278,28 +4468,28 @@ impl CreateMeetingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4448,28 +4638,28 @@ impl CreateMeetingDialOutInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4742,28 +4932,28 @@ impl CreateMeetingWithAttendeesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4896,28 +5086,28 @@ impl CreatePhoneNumberOrderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5129,28 +5319,28 @@ impl CreateProxySessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5306,28 +5496,28 @@ impl CreateRoomInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5490,28 +5680,28 @@ impl CreateRoomMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5689,28 +5879,28 @@ impl CreateSipMediaApplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5853,28 +6043,28 @@ impl CreateSipMediaApplicationCallInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6064,28 +6254,28 @@ impl CreateSipRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6226,28 +6416,28 @@ impl CreateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6408,28 +6598,28 @@ impl CreateVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6560,28 +6750,28 @@ impl CreateVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6686,28 +6876,28 @@ impl DeleteAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6836,7 +7026,7 @@ impl DeleteAppInstanceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6844,28 +7034,28 @@ impl DeleteAppInstanceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7012,7 +7202,7 @@ impl DeleteAppInstanceAdminInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7020,28 +7210,28 @@ impl DeleteAppInstanceAdminInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7191,28 +7381,28 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7345,7 +7535,7 @@ impl DeleteAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7353,28 +7543,28 @@ impl DeleteAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7512,28 +7702,28 @@ impl DeleteAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7688,7 +7878,7 @@ impl DeleteChannelInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7696,28 +7886,28 @@ impl DeleteChannelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7890,7 +8080,7 @@ impl DeleteChannelBanInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7898,28 +8088,28 @@ impl DeleteChannelBanInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8113,7 +8303,7 @@ impl DeleteChannelMembershipInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8121,28 +8311,28 @@ impl DeleteChannelMembershipInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8335,7 +8525,7 @@ impl DeleteChannelMessageInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8343,28 +8533,28 @@ impl DeleteChannelMessageInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8560,7 +8750,7 @@ impl DeleteChannelModeratorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8568,28 +8758,28 @@ impl DeleteChannelModeratorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8769,28 +8959,28 @@ impl DeleteEventsConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8878,6 +9068,158 @@ impl DeleteEventsConfigurationInput {
     }
 }
 
+/// See [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+pub mod delete_media_capture_pipeline_input {
+    /// A builder for [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the media capture pipeline being deleted. </p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_pipeline_id = Some(input.into());
+            self
+        }
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_pipeline_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteMediaCapturePipelineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteMediaCapturePipelineInput {
+                media_pipeline_id: self.media_pipeline_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteMediaCapturePipelineInputOperationOutputAlias =
+    crate::operation::DeleteMediaCapturePipeline;
+#[doc(hidden)]
+pub type DeleteMediaCapturePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteMediaCapturePipelineInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMediaCapturePipeline`](crate::operation::DeleteMediaCapturePipeline)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteMediaCapturePipeline,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteMediaCapturePipeline::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteMediaCapturePipeline",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_65 = &self.media_pipeline_id;
+        let input_65 =
+            input_65
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "media_pipeline_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let media_pipeline_id = smithy_http::label::fmt_string(input_65, false);
+        if media_pipeline_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "media_pipeline_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/media-capture-pipelines/{MediaPipelineId}",
+            MediaPipelineId = media_pipeline_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("DELETE").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::delete_media_capture_pipeline_input::Builder {
+        crate::input::delete_media_capture_pipeline_input::Builder::default()
+    }
+}
+
 /// See [`DeleteMeetingInput`](crate::input::DeleteMeetingInput)
 pub mod delete_meeting_input {
     /// A builder for [`DeleteMeetingInput`](crate::input::DeleteMeetingInput)
@@ -8931,28 +9273,28 @@ impl DeleteMeetingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8968,15 +9310,15 @@ impl DeleteMeetingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_65 = &self.meeting_id;
-        let input_65 =
-            input_65
+        let input_66 = &self.meeting_id;
+        let input_66 =
+            input_66
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_65, false);
+        let meeting_id = smithy_http::label::fmt_string(input_66, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -9078,28 +9420,28 @@ impl DeletePhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9115,15 +9457,15 @@ impl DeletePhoneNumberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_66 = &self.phone_number_id;
-        let input_66 =
-            input_66
+        let input_67 = &self.phone_number_id;
+        let input_67 =
+            input_67
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
                     details: "cannot be empty or unset",
                 })?;
-        let phone_number_id = smithy_http::label::fmt_string(input_66, false);
+        let phone_number_id = smithy_http::label::fmt_string(input_67, false);
         if phone_number_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "phone_number_id",
@@ -9243,28 +9585,28 @@ impl DeleteProxySessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9280,30 +9622,30 @@ impl DeleteProxySessionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_67 = &self.voice_connector_id;
-        let input_67 =
-            input_67
+        let input_68 = &self.voice_connector_id;
+        let input_68 =
+            input_68
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_67, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_68, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_68 = &self.proxy_session_id;
-        let input_68 =
-            input_68
+        let input_69 = &self.proxy_session_id;
+        let input_69 =
+            input_69
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
                     details: "cannot be empty or unset",
                 })?;
-        let proxy_session_id = smithy_http::label::fmt_string(input_68, false);
+        let proxy_session_id = smithy_http::label::fmt_string(input_69, false);
         if proxy_session_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "proxy_session_id",
@@ -9416,28 +9758,28 @@ impl DeleteRoomInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9450,30 +9792,30 @@ impl DeleteRoomInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_69 = &self.account_id;
-        let input_69 =
-            input_69
+        let input_70 = &self.account_id;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_69, false);
+        let account_id = smithy_http::label::fmt_string(input_70, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_70 = &self.room_id;
-        let input_70 =
-            input_70
+        let input_71 = &self.room_id;
+        let input_71 =
+            input_71
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_70, false);
+        let room_id = smithy_http::label::fmt_string(input_71, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
@@ -9599,28 +9941,28 @@ impl DeleteRoomMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9636,45 +9978,45 @@ impl DeleteRoomMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_71 = &self.account_id;
-        let input_71 =
-            input_71
+        let input_72 = &self.account_id;
+        let input_72 =
+            input_72
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_71, false);
+        let account_id = smithy_http::label::fmt_string(input_72, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_72 = &self.room_id;
-        let input_72 =
-            input_72
+        let input_73 = &self.room_id;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_72, false);
+        let room_id = smithy_http::label::fmt_string(input_73, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_73 = &self.member_id;
-        let input_73 =
-            input_73
+        let input_74 = &self.member_id;
+        let input_74 =
+            input_74
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-        let member_id = smithy_http::label::fmt_string(input_73, false);
+        let member_id = smithy_http::label::fmt_string(input_74, false);
         if member_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "member_id",
@@ -9783,28 +10125,28 @@ impl DeleteSipMediaApplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9820,15 +10162,15 @@ impl DeleteSipMediaApplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_74 = &self.sip_media_application_id;
-        let input_74 =
-            input_74
+        let input_75 = &self.sip_media_application_id;
+        let input_75 =
+            input_75
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_74, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_75, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
@@ -9929,28 +10271,28 @@ impl DeleteSipRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9966,15 +10308,15 @@ impl DeleteSipRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_75 = &self.sip_rule_id;
-        let input_75 =
-            input_75
+        let input_76 = &self.sip_rule_id;
+        let input_76 =
+            input_76
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_rule_id = smithy_http::label::fmt_string(input_75, false);
+        let sip_rule_id = smithy_http::label::fmt_string(input_76, false);
         if sip_rule_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_rule_id",
@@ -10076,28 +10418,28 @@ impl DeleteVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10113,15 +10455,15 @@ impl DeleteVoiceConnectorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_76 = &self.voice_connector_id;
-        let input_76 =
-            input_76
+        let input_77 = &self.voice_connector_id;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_76, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_77, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -10231,28 +10573,28 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10268,15 +10610,15 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_77 = &self.voice_connector_id;
-        let input_77 =
-            input_77
+        let input_78 = &self.voice_connector_id;
+        let input_78 =
+            input_78
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_77, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_78, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -10385,28 +10727,28 @@ impl DeleteVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10422,15 +10764,15 @@ impl DeleteVoiceConnectorGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_78 = &self.voice_connector_group_id;
-        let input_78 =
-            input_78
+        let input_79 = &self.voice_connector_group_id;
+        let input_79 =
+            input_79
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_group_id = smithy_http::label::fmt_string(input_78, false);
+        let voice_connector_group_id = smithy_http::label::fmt_string(input_79, false);
         if voice_connector_group_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_group_id",
@@ -10537,28 +10879,28 @@ impl DeleteVoiceConnectorOriginationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10574,15 +10916,15 @@ impl DeleteVoiceConnectorOriginationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_79 = &self.voice_connector_id;
-        let input_79 =
-            input_79
+        let input_80 = &self.voice_connector_id;
+        let input_80 =
+            input_80
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_79, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_80, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -10689,28 +11031,28 @@ impl DeleteVoiceConnectorProxyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10726,15 +11068,15 @@ impl DeleteVoiceConnectorProxyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_80 = &self.voice_connector_id;
-        let input_80 =
-            input_80
+        let input_81 = &self.voice_connector_id;
+        let input_81 =
+            input_81
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_80, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_81, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -10844,28 +11186,28 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10881,15 +11223,15 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_81 = &self.voice_connector_id;
-        let input_81 =
-            input_81
+        let input_82 = &self.voice_connector_id;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_81, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_82, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -10997,28 +11339,28 @@ impl DeleteVoiceConnectorTerminationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11034,15 +11376,15 @@ impl DeleteVoiceConnectorTerminationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_82 = &self.voice_connector_id;
-        let input_82 =
-            input_82
+        let input_83 = &self.voice_connector_id;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_82, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_83, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -11169,28 +11511,28 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11206,15 +11548,15 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_83 = &self.voice_connector_id;
-        let input_83 =
-            input_83
+        let input_84 = &self.voice_connector_id;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_83, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_84, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -11329,7 +11671,7 @@ impl DescribeAppInstanceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -11337,28 +11679,28 @@ impl DescribeAppInstanceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11374,15 +11716,15 @@ impl DescribeAppInstanceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_84 = &self.app_instance_arn;
-        let input_84 =
-            input_84
+        let input_85 = &self.app_instance_arn;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_84, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_85, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -11506,7 +11848,7 @@ impl DescribeAppInstanceAdminInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -11514,28 +11856,28 @@ impl DescribeAppInstanceAdminInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11551,30 +11893,30 @@ impl DescribeAppInstanceAdminInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_85 = &self.app_instance_arn;
-        let input_85 =
-            input_85
+        let input_86 = &self.app_instance_arn;
+        let input_86 =
+            input_86
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_85, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_86, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_86 = &self.app_instance_admin_arn;
-        let input_86 =
-            input_86
+        let input_87 = &self.app_instance_admin_arn;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_admin_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_admin_arn = smithy_http::label::fmt_string(input_86, false);
+        let app_instance_admin_arn = smithy_http::label::fmt_string(input_87, false);
         if app_instance_admin_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_admin_arn",
@@ -11685,7 +12027,7 @@ impl DescribeAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -11693,28 +12035,28 @@ impl DescribeAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11730,15 +12072,15 @@ impl DescribeAppInstanceUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_87 = &self.app_instance_user_arn;
-        let input_87 =
-            input_87
+        let input_88 = &self.app_instance_user_arn;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_user_arn = smithy_http::label::fmt_string(input_87, false);
+        let app_instance_user_arn = smithy_http::label::fmt_string(input_88, false);
         if app_instance_user_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_user_arn",
@@ -11855,7 +12197,7 @@ impl DescribeChannelInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -11863,28 +12205,28 @@ impl DescribeChannelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11900,15 +12242,15 @@ impl DescribeChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_88 = &self.channel_arn;
-        let input_88 =
-            input_88
+        let input_89 = &self.channel_arn;
+        let input_89 =
+            input_89
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_88, false);
+        let channel_arn = smithy_http::label::fmt_string(input_89, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -11923,11 +12265,11 @@ impl DescribeChannelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_89) = &self.chime_bearer {
-            let formatted_90 = AsRef::<str>::as_ref(inner_89);
-            if !formatted_90.is_empty() {
+        if let Some(inner_90) = &self.chime_bearer {
+            let formatted_91 = AsRef::<str>::as_ref(inner_90);
+            if !formatted_91.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_90;
+                let header_value = formatted_91;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12057,7 +12399,7 @@ impl DescribeChannelBanInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -12065,28 +12407,28 @@ impl DescribeChannelBanInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12102,30 +12444,30 @@ impl DescribeChannelBanInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_91 = &self.channel_arn;
-        let input_91 =
-            input_91
+        let input_92 = &self.channel_arn;
+        let input_92 =
+            input_92
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_91, false);
+        let channel_arn = smithy_http::label::fmt_string(input_92, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_92 = &self.member_arn;
-        let input_92 =
-            input_92
+        let input_93 = &self.member_arn;
+        let input_93 =
+            input_93
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let member_arn = smithy_http::label::fmt_string(input_92, false);
+        let member_arn = smithy_http::label::fmt_string(input_93, false);
         if member_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "member_arn",
@@ -12145,11 +12487,11 @@ impl DescribeChannelBanInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_93) = &self.chime_bearer {
-            let formatted_94 = AsRef::<str>::as_ref(inner_93);
-            if !formatted_94.is_empty() {
+        if let Some(inner_94) = &self.chime_bearer {
+            let formatted_95 = AsRef::<str>::as_ref(inner_94);
+            if !formatted_95.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_94;
+                let header_value = formatted_95;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12280,7 +12622,7 @@ impl DescribeChannelMembershipInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -12288,28 +12630,28 @@ impl DescribeChannelMembershipInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12325,30 +12667,30 @@ impl DescribeChannelMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_95 = &self.channel_arn;
-        let input_95 =
-            input_95
+        let input_96 = &self.channel_arn;
+        let input_96 =
+            input_96
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_95, false);
+        let channel_arn = smithy_http::label::fmt_string(input_96, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_96 = &self.member_arn;
-        let input_96 =
-            input_96
+        let input_97 = &self.member_arn;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let member_arn = smithy_http::label::fmt_string(input_96, false);
+        let member_arn = smithy_http::label::fmt_string(input_97, false);
         if member_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "member_arn",
@@ -12368,11 +12710,11 @@ impl DescribeChannelMembershipInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_97) = &self.chime_bearer {
-            let formatted_98 = AsRef::<str>::as_ref(inner_97);
-            if !formatted_98.is_empty() {
+        if let Some(inner_98) = &self.chime_bearer {
+            let formatted_99 = AsRef::<str>::as_ref(inner_98);
+            if !formatted_99.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_98;
+                let header_value = formatted_99;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12509,7 +12851,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -12517,28 +12859,28 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12554,15 +12896,15 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_99 = &self.channel_arn;
-        let input_99 =
-            input_99
+        let input_100 = &self.channel_arn;
+        let input_100 =
+            input_100
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_99, false);
+        let channel_arn = smithy_http::label::fmt_string(input_100, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -12577,11 +12919,11 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_100) = &self.chime_bearer {
-            let formatted_101 = AsRef::<str>::as_ref(inner_100);
-            if !formatted_101.is_empty() {
+        if let Some(inner_101) = &self.chime_bearer {
+            let formatted_102 = AsRef::<str>::as_ref(inner_101);
+            if !formatted_102.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_101;
+                let header_value = formatted_102;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12600,10 +12942,10 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("scope", "app-instance-user-membership");
-        if let Some(inner_102) = &self.app_instance_user_arn {
+        if let Some(inner_103) = &self.app_instance_user_arn {
             query.push_kv(
                 "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_102),
+                &smithy_http::query::fmt_string(&inner_103),
             );
         }
     }
@@ -12730,7 +13072,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -12738,28 +13080,28 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12775,15 +13117,15 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_103 = &self.channel_arn;
-        let input_103 =
-            input_103
+        let input_104 = &self.channel_arn;
+        let input_104 =
+            input_104
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_103, false);
+        let channel_arn = smithy_http::label::fmt_string(input_104, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -12798,11 +13140,11 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_104) = &self.chime_bearer {
-            let formatted_105 = AsRef::<str>::as_ref(inner_104);
-            if !formatted_105.is_empty() {
+        if let Some(inner_105) = &self.chime_bearer {
+            let formatted_106 = AsRef::<str>::as_ref(inner_105);
+            if !formatted_106.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_105;
+                let header_value = formatted_106;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12821,10 +13163,10 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("scope", "app-instance-user-moderated-channel");
-        if let Some(inner_106) = &self.app_instance_user_arn {
+        if let Some(inner_107) = &self.app_instance_user_arn {
             query.push_kv(
                 "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_106),
+                &smithy_http::query::fmt_string(&inner_107),
             );
         }
     }
@@ -12948,7 +13290,7 @@ impl DescribeChannelModeratorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -12956,28 +13298,28 @@ impl DescribeChannelModeratorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12993,30 +13335,30 @@ impl DescribeChannelModeratorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_107 = &self.channel_arn;
-        let input_107 =
-            input_107
+        let input_108 = &self.channel_arn;
+        let input_108 =
+            input_108
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_107, false);
+        let channel_arn = smithy_http::label::fmt_string(input_108, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_108 = &self.channel_moderator_arn;
-        let input_108 =
-            input_108
+        let input_109 = &self.channel_moderator_arn;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_moderator_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_moderator_arn = smithy_http::label::fmt_string(input_108, false);
+        let channel_moderator_arn = smithy_http::label::fmt_string(input_109, false);
         if channel_moderator_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_moderator_arn",
@@ -13036,11 +13378,11 @@ impl DescribeChannelModeratorInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_109) = &self.chime_bearer {
-            let formatted_110 = AsRef::<str>::as_ref(inner_109);
-            if !formatted_110.is_empty() {
+        if let Some(inner_110) = &self.chime_bearer {
+            let formatted_111 = AsRef::<str>::as_ref(inner_110);
+            if !formatted_111.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_110;
+                let header_value = formatted_111;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13157,28 +13499,28 @@ impl DisassociatePhoneNumberFromUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13194,30 +13536,30 @@ impl DisassociatePhoneNumberFromUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_111 = &self.account_id;
-        let input_111 =
-            input_111
+        let input_112 = &self.account_id;
+        let input_112 =
+            input_112
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_111, false);
+        let account_id = smithy_http::label::fmt_string(input_112, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_112 = &self.user_id;
-        let input_112 =
-            input_112
+        let input_113 = &self.user_id;
+        let input_113 =
+            input_113
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_112, false);
+        let user_id = smithy_http::label::fmt_string(input_113, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -13350,28 +13692,28 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13387,15 +13729,15 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_113 = &self.voice_connector_id;
-        let input_113 =
-            input_113
+        let input_114 = &self.voice_connector_id;
+        let input_114 =
+            input_114
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_113, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_114, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -13528,28 +13870,28 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13565,15 +13907,15 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_114 = &self.voice_connector_group_id;
-        let input_114 =
-            input_114
+        let input_115 = &self.voice_connector_group_id;
+        let input_115 =
+            input_115
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_group_id = smithy_http::label::fmt_string(input_114, false);
+        let voice_connector_group_id = smithy_http::label::fmt_string(input_115, false);
         if voice_connector_group_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_group_id",
@@ -13704,28 +14046,28 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13741,15 +14083,15 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_115 = &self.account_id;
-        let input_115 =
-            input_115
+        let input_116 = &self.account_id;
+        let input_116 =
+            input_116
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_115, false);
+        let account_id = smithy_http::label::fmt_string(input_116, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -13852,28 +14194,28 @@ impl GetAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13886,15 +14228,15 @@ impl GetAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_116 = &self.account_id;
-        let input_116 =
-            input_116
+        let input_117 = &self.account_id;
+        let input_117 =
+            input_117
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_116, false);
+        let account_id = smithy_http::label::fmt_string(input_117, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -13993,28 +14335,28 @@ impl GetAccountSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14030,15 +14372,15 @@ impl GetAccountSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_117 = &self.account_id;
-        let input_117 =
-            input_117
+        let input_118 = &self.account_id;
+        let input_118 =
+            input_118
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_117, false);
+        let account_id = smithy_http::label::fmt_string(input_118, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -14148,7 +14490,7 @@ impl GetAppInstanceRetentionSettingsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -14156,28 +14498,28 @@ impl GetAppInstanceRetentionSettingsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14193,15 +14535,15 @@ impl GetAppInstanceRetentionSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_118 = &self.app_instance_arn;
-        let input_118 =
-            input_118
+        let input_119 = &self.app_instance_arn;
+        let input_119 =
+            input_119
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_118, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_119, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -14309,28 +14651,28 @@ impl GetAppInstanceStreamingConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14346,15 +14688,15 @@ impl GetAppInstanceStreamingConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_119 = &self.app_instance_arn;
-        let input_119 =
-            input_119
+        let input_120 = &self.app_instance_arn;
+        let input_120 =
+            input_120
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_119, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_120, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -14466,28 +14808,28 @@ impl GetAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14503,30 +14845,30 @@ impl GetAttendeeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_120 = &self.meeting_id;
-        let input_120 =
-            input_120
+        let input_121 = &self.meeting_id;
+        let input_121 =
+            input_121
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_120, false);
+        let meeting_id = smithy_http::label::fmt_string(input_121, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_121 = &self.attendee_id;
-        let input_121 =
-            input_121
+        let input_122 = &self.attendee_id;
+        let input_122 =
+            input_122
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
                     details: "cannot be empty or unset",
                 })?;
-        let attendee_id = smithy_http::label::fmt_string(input_121, false);
+        let attendee_id = smithy_http::label::fmt_string(input_122, false);
         if attendee_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "attendee_id",
@@ -14636,28 +14978,28 @@ impl GetBotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -14668,30 +15010,30 @@ impl GetBotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_122 = &self.account_id;
-        let input_122 =
-            input_122
+        let input_123 = &self.account_id;
+        let input_123 =
+            input_123
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_122, false);
+        let account_id = smithy_http::label::fmt_string(input_123, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_123 = &self.bot_id;
-        let input_123 =
-            input_123
+        let input_124 = &self.bot_id;
+        let input_124 =
+            input_124
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-        let bot_id = smithy_http::label::fmt_string(input_123, false);
+        let bot_id = smithy_http::label::fmt_string(input_124, false);
         if bot_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bot_id",
@@ -14820,7 +15162,7 @@ impl GetChannelMessageInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -14828,28 +15170,28 @@ impl GetChannelMessageInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14865,30 +15207,30 @@ impl GetChannelMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_124 = &self.channel_arn;
-        let input_124 =
-            input_124
+        let input_125 = &self.channel_arn;
+        let input_125 =
+            input_125
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_124, false);
+        let channel_arn = smithy_http::label::fmt_string(input_125, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_125 = &self.message_id;
-        let input_125 =
-            input_125
+        let input_126 = &self.message_id;
+        let input_126 =
+            input_126
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
                 })?;
-        let message_id = smithy_http::label::fmt_string(input_125, false);
+        let message_id = smithy_http::label::fmt_string(input_126, false);
         if message_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "message_id",
@@ -14908,11 +15250,11 @@ impl GetChannelMessageInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_126) = &self.chime_bearer {
-            let formatted_127 = AsRef::<str>::as_ref(inner_126);
-            if !formatted_127.is_empty() {
+        if let Some(inner_127) = &self.chime_bearer {
+            let formatted_128 = AsRef::<str>::as_ref(inner_127);
+            if !formatted_128.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_127;
+                let header_value = formatted_128;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15028,28 +15370,28 @@ impl GetEventsConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15065,30 +15407,30 @@ impl GetEventsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_128 = &self.account_id;
-        let input_128 =
-            input_128
+        let input_129 = &self.account_id;
+        let input_129 =
+            input_129
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_128, false);
+        let account_id = smithy_http::label::fmt_string(input_129, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_129 = &self.bot_id;
-        let input_129 =
-            input_129
+        let input_130 = &self.bot_id;
+        let input_130 =
+            input_130
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-        let bot_id = smithy_http::label::fmt_string(input_129, false);
+        let bot_id = smithy_http::label::fmt_string(input_130, false);
         if bot_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bot_id",
@@ -15179,28 +15521,28 @@ impl GetGlobalSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15249,6 +15591,158 @@ impl GetGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetGlobalSettingsInput`](crate::input::GetGlobalSettingsInput)
     pub fn builder() -> crate::input::get_global_settings_input::Builder {
         crate::input::get_global_settings_input::Builder::default()
+    }
+}
+
+/// See [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+pub mod get_media_capture_pipeline_input {
+    /// A builder for [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the pipeline that you want to get.</p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_pipeline_id = Some(input.into());
+            self
+        }
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_pipeline_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMediaCapturePipelineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMediaCapturePipelineInput {
+                media_pipeline_id: self.media_pipeline_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMediaCapturePipelineInputOperationOutputAlias =
+    crate::operation::GetMediaCapturePipeline;
+#[doc(hidden)]
+pub type GetMediaCapturePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMediaCapturePipelineInput {
+    /// Consumes the builder and constructs an Operation<[`GetMediaCapturePipeline`](crate::operation::GetMediaCapturePipeline)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMediaCapturePipeline,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetMediaCapturePipeline::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetMediaCapturePipeline",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_131 = &self.media_pipeline_id;
+        let input_131 =
+            input_131
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "media_pipeline_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let media_pipeline_id = smithy_http::label::fmt_string(input_131, false);
+        if media_pipeline_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "media_pipeline_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/media-capture-pipelines/{MediaPipelineId}",
+            MediaPipelineId = media_pipeline_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::get_media_capture_pipeline_input::Builder {
+        crate::input::get_media_capture_pipeline_input::Builder::default()
     }
 }
 
@@ -15305,28 +15799,28 @@ impl GetMeetingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15339,15 +15833,15 @@ impl GetMeetingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_130 = &self.meeting_id;
-        let input_130 =
-            input_130
+        let input_132 = &self.meeting_id;
+        let input_132 =
+            input_132
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_130, false);
+        let meeting_id = smithy_http::label::fmt_string(input_132, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -15437,7 +15931,7 @@ impl GetMessagingSessionEndpointInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -15445,28 +15939,28 @@ impl GetMessagingSessionEndpointInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15576,28 +16070,28 @@ impl GetPhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15613,15 +16107,15 @@ impl GetPhoneNumberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_131 = &self.phone_number_id;
-        let input_131 =
-            input_131
+        let input_133 = &self.phone_number_id;
+        let input_133 =
+            input_133
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
                     details: "cannot be empty or unset",
                 })?;
-        let phone_number_id = smithy_http::label::fmt_string(input_131, false);
+        let phone_number_id = smithy_http::label::fmt_string(input_133, false);
         if phone_number_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "phone_number_id",
@@ -15727,28 +16221,28 @@ impl GetPhoneNumberOrderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15764,15 +16258,15 @@ impl GetPhoneNumberOrderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_132 = &self.phone_number_order_id;
-        let input_132 =
-            input_132
+        let input_134 = &self.phone_number_order_id;
+        let input_134 =
+            input_134
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_order_id",
                     details: "cannot be empty or unset",
                 })?;
-        let phone_number_order_id = smithy_http::label::fmt_string(input_132, false);
+        let phone_number_order_id = smithy_http::label::fmt_string(input_134, false);
         if phone_number_order_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "phone_number_order_id",
@@ -15862,28 +16356,28 @@ impl GetPhoneNumberSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16007,28 +16501,28 @@ impl GetProxySessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16044,30 +16538,30 @@ impl GetProxySessionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_133 = &self.voice_connector_id;
-        let input_133 =
-            input_133
+        let input_135 = &self.voice_connector_id;
+        let input_135 =
+            input_135
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_133, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_135, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_134 = &self.proxy_session_id;
-        let input_134 =
-            input_134
+        let input_136 = &self.proxy_session_id;
+        let input_136 =
+            input_136
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
                     details: "cannot be empty or unset",
                 })?;
-        let proxy_session_id = smithy_http::label::fmt_string(input_134, false);
+        let proxy_session_id = smithy_http::label::fmt_string(input_136, false);
         if proxy_session_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "proxy_session_id",
@@ -16171,28 +16665,28 @@ impl GetRetentionSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16208,15 +16702,15 @@ impl GetRetentionSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_135 = &self.account_id;
-        let input_135 =
-            input_135
+        let input_137 = &self.account_id;
+        let input_137 =
+            input_137
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_135, false);
+        let account_id = smithy_http::label::fmt_string(input_137, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -16325,28 +16819,28 @@ impl GetRoomInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -16357,30 +16851,30 @@ impl GetRoomInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_136 = &self.account_id;
-        let input_136 =
-            input_136
+        let input_138 = &self.account_id;
+        let input_138 =
+            input_138
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_136, false);
+        let account_id = smithy_http::label::fmt_string(input_138, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_137 = &self.room_id;
-        let input_137 =
-            input_137
+        let input_139 = &self.room_id;
+        let input_139 =
+            input_139
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_137, false);
+        let room_id = smithy_http::label::fmt_string(input_139, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
@@ -16487,28 +16981,28 @@ impl GetSipMediaApplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16524,15 +17018,15 @@ impl GetSipMediaApplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_138 = &self.sip_media_application_id;
-        let input_138 =
-            input_138
+        let input_140 = &self.sip_media_application_id;
+        let input_140 =
+            input_140
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_138, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_140, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
@@ -16642,28 +17136,28 @@ impl GetSipMediaApplicationLoggingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16679,15 +17173,15 @@ impl GetSipMediaApplicationLoggingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_139 = &self.sip_media_application_id;
-        let input_139 =
-            input_139
+        let input_141 = &self.sip_media_application_id;
+        let input_141 =
+            input_141
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_139, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_141, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
@@ -16789,28 +17283,28 @@ impl GetSipRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16823,15 +17317,15 @@ impl GetSipRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_140 = &self.sip_rule_id;
-        let input_140 =
-            input_140
+        let input_142 = &self.sip_rule_id;
+        let input_142 =
+            input_142
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_rule_id = smithy_http::label::fmt_string(input_140, false);
+        let sip_rule_id = smithy_http::label::fmt_string(input_142, false);
         if sip_rule_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_rule_id",
@@ -16936,28 +17430,28 @@ impl GetUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -16968,30 +17462,30 @@ impl GetUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_141 = &self.account_id;
-        let input_141 =
-            input_141
+        let input_143 = &self.account_id;
+        let input_143 =
+            input_143
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_141, false);
+        let account_id = smithy_http::label::fmt_string(input_143, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_142 = &self.user_id;
-        let input_142 =
-            input_142
+        let input_144 = &self.user_id;
+        let input_144 =
+            input_144
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_142, false);
+        let user_id = smithy_http::label::fmt_string(input_144, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -17106,28 +17600,28 @@ impl GetUserSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17143,30 +17637,30 @@ impl GetUserSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_143 = &self.account_id;
-        let input_143 =
-            input_143
+        let input_145 = &self.account_id;
+        let input_145 =
+            input_145
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_143, false);
+        let account_id = smithy_http::label::fmt_string(input_145, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_144 = &self.user_id;
-        let input_144 =
-            input_144
+        let input_146 = &self.user_id;
+        let input_146 =
+            input_146
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_144, false);
+        let user_id = smithy_http::label::fmt_string(input_146, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -17273,28 +17767,28 @@ impl GetVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17310,15 +17804,15 @@ impl GetVoiceConnectorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_145 = &self.voice_connector_id;
-        let input_145 =
-            input_145
+        let input_147 = &self.voice_connector_id;
+        let input_147 =
+            input_147
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_145, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_147, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -17428,28 +17922,28 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17465,15 +17959,15 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_146 = &self.voice_connector_id;
-        let input_146 =
-            input_146
+        let input_148 = &self.voice_connector_id;
+        let input_148 =
+            input_148
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_146, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_148, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -17580,28 +18074,28 @@ impl GetVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17617,15 +18111,15 @@ impl GetVoiceConnectorGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_147 = &self.voice_connector_group_id;
-        let input_147 =
-            input_147
+        let input_149 = &self.voice_connector_group_id;
+        let input_149 =
+            input_149
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_group_id = smithy_http::label::fmt_string(input_147, false);
+        let voice_connector_group_id = smithy_http::label::fmt_string(input_149, false);
         if voice_connector_group_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_group_id",
@@ -17733,28 +18227,28 @@ impl GetVoiceConnectorLoggingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17770,15 +18264,15 @@ impl GetVoiceConnectorLoggingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_148 = &self.voice_connector_id;
-        let input_148 =
-            input_148
+        let input_150 = &self.voice_connector_id;
+        let input_150 =
+            input_150
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_148, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_150, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -17885,28 +18379,28 @@ impl GetVoiceConnectorOriginationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17922,15 +18416,15 @@ impl GetVoiceConnectorOriginationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_149 = &self.voice_connector_id;
-        let input_149 =
-            input_149
+        let input_151 = &self.voice_connector_id;
+        let input_151 =
+            input_151
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_149, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_151, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -18036,28 +18530,28 @@ impl GetVoiceConnectorProxyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18073,15 +18567,15 @@ impl GetVoiceConnectorProxyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_150 = &self.voice_connector_id;
-        let input_150 =
-            input_150
+        let input_152 = &self.voice_connector_id;
+        let input_152 =
+            input_152
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_150, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_152, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -18189,28 +18683,28 @@ impl GetVoiceConnectorStreamingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18226,15 +18720,15 @@ impl GetVoiceConnectorStreamingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_151 = &self.voice_connector_id;
-        let input_151 =
-            input_151
+        let input_153 = &self.voice_connector_id;
+        let input_153 =
+            input_153
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_151, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_153, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -18341,28 +18835,28 @@ impl GetVoiceConnectorTerminationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18378,15 +18872,15 @@ impl GetVoiceConnectorTerminationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_152 = &self.voice_connector_id;
-        let input_152 =
-            input_152
+        let input_154 = &self.voice_connector_id;
+        let input_154 =
+            input_154
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_152, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_154, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -18493,28 +18987,28 @@ impl GetVoiceConnectorTerminationHealthInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18530,15 +19024,15 @@ impl GetVoiceConnectorTerminationHealthInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_153 = &self.voice_connector_id;
-        let input_153 =
-            input_153
+        let input_155 = &self.voice_connector_id;
+        let input_155 =
+            input_155
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_153, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_155, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -18668,28 +19162,28 @@ impl InviteUsersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18705,15 +19199,15 @@ impl InviteUsersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_154 = &self.account_id;
-        let input_154 =
-            input_154
+        let input_156 = &self.account_id;
+        let input_156 =
+            input_156
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_154, false);
+        let account_id = smithy_http::label::fmt_string(input_156, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -18852,28 +19346,28 @@ impl ListAccountsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18894,19 +19388,19 @@ impl ListAccountsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_155) = &self.name {
-            query.push_kv("name", &smithy_http::query::fmt_string(&inner_155));
+        if let Some(inner_157) = &self.name {
+            query.push_kv("name", &smithy_http::query::fmt_string(&inner_157));
         }
-        if let Some(inner_156) = &self.user_email {
-            query.push_kv("user-email", &smithy_http::query::fmt_string(&inner_156));
+        if let Some(inner_158) = &self.user_email {
+            query.push_kv("user-email", &smithy_http::query::fmt_string(&inner_158));
         }
-        if let Some(inner_157) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_157));
+        if let Some(inner_159) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_159));
         }
-        if let Some(inner_158) = &self.max_results {
+        if let Some(inner_160) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_158).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_160).encode(),
             );
         }
     }
@@ -19027,7 +19521,7 @@ impl ListAppInstanceAdminsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -19035,28 +19529,28 @@ impl ListAppInstanceAdminsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19072,15 +19566,15 @@ impl ListAppInstanceAdminsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_159 = &self.app_instance_arn;
-        let input_159 =
-            input_159
+        let input_161 = &self.app_instance_arn;
+        let input_161 =
+            input_161
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_159, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_161, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -19097,14 +19591,14 @@ impl ListAppInstanceAdminsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_160) = &self.max_results {
+        if let Some(inner_162) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_160).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_162).encode(),
             );
         }
-        if let Some(inner_161) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_161));
+        if let Some(inner_163) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_163));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19210,7 +19704,7 @@ impl ListAppInstancesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -19218,28 +19712,28 @@ impl ListAppInstancesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19260,14 +19754,14 @@ impl ListAppInstancesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_162) = &self.max_results {
+        if let Some(inner_164) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_162).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_164).encode(),
             );
         }
-        if let Some(inner_163) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_163));
+        if let Some(inner_165) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_165));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19387,7 +19881,7 @@ impl ListAppInstanceUsersInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -19395,28 +19889,28 @@ impl ListAppInstanceUsersInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19437,20 +19931,20 @@ impl ListAppInstanceUsersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_164) = &self.app_instance_arn {
+        if let Some(inner_166) = &self.app_instance_arn {
             query.push_kv(
                 "app-instance-arn",
-                &smithy_http::query::fmt_string(&inner_164),
+                &smithy_http::query::fmt_string(&inner_166),
             );
         }
-        if let Some(inner_165) = &self.max_results {
+        if let Some(inner_167) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_165).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_167).encode(),
             );
         }
-        if let Some(inner_166) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_166));
+        if let Some(inner_168) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_168));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19562,28 +20056,28 @@ impl ListAttendeesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19599,15 +20093,15 @@ impl ListAttendeesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_167 = &self.meeting_id;
-        let input_167 =
-            input_167
+        let input_169 = &self.meeting_id;
+        let input_169 =
+            input_169
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_167, false);
+        let meeting_id = smithy_http::label::fmt_string(input_169, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -19624,13 +20118,13 @@ impl ListAttendeesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_168) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_168));
+        if let Some(inner_170) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_170));
         }
-        if let Some(inner_169) = &self.max_results {
+        if let Some(inner_171) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_169).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_171).encode(),
             );
         }
     }
@@ -19734,28 +20228,28 @@ impl ListAttendeeTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19771,30 +20265,30 @@ impl ListAttendeeTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_170 = &self.meeting_id;
-        let input_170 =
-            input_170
+        let input_172 = &self.meeting_id;
+        let input_172 =
+            input_172
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_170, false);
+        let meeting_id = smithy_http::label::fmt_string(input_172, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_171 = &self.attendee_id;
-        let input_171 =
-            input_171
+        let input_173 = &self.attendee_id;
+        let input_173 =
+            input_173
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
                     details: "cannot be empty or unset",
                 })?;
-        let attendee_id = smithy_http::label::fmt_string(input_171, false);
+        let attendee_id = smithy_http::label::fmt_string(input_173, false);
         if attendee_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "attendee_id",
@@ -19918,28 +20412,28 @@ impl ListBotsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -19950,15 +20444,15 @@ impl ListBotsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_172 = &self.account_id;
-        let input_172 =
-            input_172
+        let input_174 = &self.account_id;
+        let input_174 =
+            input_174
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_172, false);
+        let account_id = smithy_http::label::fmt_string(input_174, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -19971,14 +20465,14 @@ impl ListBotsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_173) = &self.max_results {
+        if let Some(inner_175) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_173).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_175).encode(),
             );
         }
-        if let Some(inner_174) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_174));
+        if let Some(inner_176) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_176));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20106,7 +20600,7 @@ impl ListChannelBansInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -20114,28 +20608,28 @@ impl ListChannelBansInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20151,15 +20645,15 @@ impl ListChannelBansInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_175 = &self.channel_arn;
-        let input_175 =
-            input_175
+        let input_177 = &self.channel_arn;
+        let input_177 =
+            input_177
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_175, false);
+        let channel_arn = smithy_http::label::fmt_string(input_177, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -20178,11 +20672,11 @@ impl ListChannelBansInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_176) = &self.chime_bearer {
-            let formatted_177 = AsRef::<str>::as_ref(inner_176);
-            if !formatted_177.is_empty() {
+        if let Some(inner_178) = &self.chime_bearer {
+            let formatted_179 = AsRef::<str>::as_ref(inner_178);
+            if !formatted_179.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_177;
+                let header_value = formatted_179;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20200,14 +20694,14 @@ impl ListChannelBansInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_178) = &self.max_results {
+        if let Some(inner_180) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_178).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_180).encode(),
             );
         }
-        if let Some(inner_179) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_179));
+        if let Some(inner_181) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_181));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20352,7 +20846,7 @@ impl ListChannelMembershipsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -20360,28 +20854,28 @@ impl ListChannelMembershipsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20397,15 +20891,15 @@ impl ListChannelMembershipsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_180 = &self.channel_arn;
-        let input_180 =
-            input_180
+        let input_182 = &self.channel_arn;
+        let input_182 =
+            input_182
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_180, false);
+        let channel_arn = smithy_http::label::fmt_string(input_182, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -20424,11 +20918,11 @@ impl ListChannelMembershipsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_181) = &self.chime_bearer {
-            let formatted_182 = AsRef::<str>::as_ref(inner_181);
-            if !formatted_182.is_empty() {
+        if let Some(inner_183) = &self.chime_bearer {
+            let formatted_184 = AsRef::<str>::as_ref(inner_183);
+            if !formatted_184.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_182;
+                let header_value = formatted_184;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20446,17 +20940,17 @@ impl ListChannelMembershipsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_183) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_183));
+        if let Some(inner_185) = &self.r#type {
+            query.push_kv("type", &smithy_http::query::fmt_string(&inner_185));
         }
-        if let Some(inner_184) = &self.max_results {
+        if let Some(inner_186) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_184).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_186).encode(),
             );
         }
-        if let Some(inner_185) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_185));
+        if let Some(inner_187) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_187));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20592,7 +21086,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -20600,28 +21094,28 @@ impl ListChannelMembershipsForAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20644,11 +21138,11 @@ impl ListChannelMembershipsForAppInstanceUserInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_186) = &self.chime_bearer {
-            let formatted_187 = AsRef::<str>::as_ref(inner_186);
-            if !formatted_187.is_empty() {
+        if let Some(inner_188) = &self.chime_bearer {
+            let formatted_189 = AsRef::<str>::as_ref(inner_188);
+            if !formatted_189.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_187;
+                let header_value = formatted_189;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20667,20 +21161,20 @@ impl ListChannelMembershipsForAppInstanceUserInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("scope", "app-instance-user-memberships");
-        if let Some(inner_188) = &self.app_instance_user_arn {
+        if let Some(inner_190) = &self.app_instance_user_arn {
             query.push_kv(
                 "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_188),
+                &smithy_http::query::fmt_string(&inner_190),
             );
         }
-        if let Some(inner_189) = &self.max_results {
+        if let Some(inner_191) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_189).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_191).encode(),
             );
         }
-        if let Some(inner_190) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_190));
+        if let Some(inner_192) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_192));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20846,7 +21340,7 @@ impl ListChannelMessagesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -20854,28 +21348,28 @@ impl ListChannelMessagesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20891,15 +21385,15 @@ impl ListChannelMessagesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_191 = &self.channel_arn;
-        let input_191 =
-            input_191
+        let input_193 = &self.channel_arn;
+        let input_193 =
+            input_193
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_191, false);
+        let channel_arn = smithy_http::label::fmt_string(input_193, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -20918,11 +21412,11 @@ impl ListChannelMessagesInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_192) = &self.chime_bearer {
-            let formatted_193 = AsRef::<str>::as_ref(inner_192);
-            if !formatted_193.is_empty() {
+        if let Some(inner_194) = &self.chime_bearer {
+            let formatted_195 = AsRef::<str>::as_ref(inner_194);
+            if !formatted_195.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_193;
+                let header_value = formatted_195;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20940,35 +21434,35 @@ impl ListChannelMessagesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_194) = &self.sort_order {
-            query.push_kv("sort-order", &smithy_http::query::fmt_string(&inner_194));
+        if let Some(inner_196) = &self.sort_order {
+            query.push_kv("sort-order", &smithy_http::query::fmt_string(&inner_196));
         }
-        if let Some(inner_195) = &self.not_before {
+        if let Some(inner_197) = &self.not_before {
             query.push_kv(
                 "not-before",
                 &smithy_http::query::fmt_timestamp(
-                    inner_195,
+                    inner_197,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_196) = &self.not_after {
+        if let Some(inner_198) = &self.not_after {
             query.push_kv(
                 "not-after",
                 &smithy_http::query::fmt_timestamp(
-                    inner_196,
+                    inner_198,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_197) = &self.max_results {
+        if let Some(inner_199) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_197).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_199).encode(),
             );
         }
-        if let Some(inner_198) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_198));
+        if let Some(inner_200) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_200));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -21097,7 +21591,7 @@ impl ListChannelModeratorsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -21105,28 +21599,28 @@ impl ListChannelModeratorsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21142,15 +21636,15 @@ impl ListChannelModeratorsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_199 = &self.channel_arn;
-        let input_199 =
-            input_199
+        let input_201 = &self.channel_arn;
+        let input_201 =
+            input_201
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_199, false);
+        let channel_arn = smithy_http::label::fmt_string(input_201, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -21169,11 +21663,11 @@ impl ListChannelModeratorsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_200) = &self.chime_bearer {
-            let formatted_201 = AsRef::<str>::as_ref(inner_200);
-            if !formatted_201.is_empty() {
+        if let Some(inner_202) = &self.chime_bearer {
+            let formatted_203 = AsRef::<str>::as_ref(inner_202);
+            if !formatted_203.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_201;
+                let header_value = formatted_203;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21191,14 +21685,14 @@ impl ListChannelModeratorsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_202) = &self.max_results {
+        if let Some(inner_204) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_202).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_204).encode(),
             );
         }
-        if let Some(inner_203) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_203));
+        if let Some(inner_205) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_205));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -21344,7 +21838,7 @@ impl ListChannelsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -21352,28 +21846,28 @@ impl ListChannelsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21396,11 +21890,11 @@ impl ListChannelsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_204) = &self.chime_bearer {
-            let formatted_205 = AsRef::<str>::as_ref(inner_204);
-            if !formatted_205.is_empty() {
+        if let Some(inner_206) = &self.chime_bearer {
+            let formatted_207 = AsRef::<str>::as_ref(inner_206);
+            if !formatted_207.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_205;
+                let header_value = formatted_207;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21418,23 +21912,23 @@ impl ListChannelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_206) = &self.app_instance_arn {
+        if let Some(inner_208) = &self.app_instance_arn {
             query.push_kv(
                 "app-instance-arn",
-                &smithy_http::query::fmt_string(&inner_206),
+                &smithy_http::query::fmt_string(&inner_208),
             );
         }
-        if let Some(inner_207) = &self.privacy {
-            query.push_kv("privacy", &smithy_http::query::fmt_string(&inner_207));
+        if let Some(inner_209) = &self.privacy {
+            query.push_kv("privacy", &smithy_http::query::fmt_string(&inner_209));
         }
-        if let Some(inner_208) = &self.max_results {
+        if let Some(inner_210) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_208).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_210).encode(),
             );
         }
-        if let Some(inner_209) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_209));
+        if let Some(inner_211) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_211));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -21568,7 +22062,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -21576,28 +22070,28 @@ impl ListChannelsModeratedByAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21620,11 +22114,11 @@ impl ListChannelsModeratedByAppInstanceUserInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_210) = &self.chime_bearer {
-            let formatted_211 = AsRef::<str>::as_ref(inner_210);
-            if !formatted_211.is_empty() {
+        if let Some(inner_212) = &self.chime_bearer {
+            let formatted_213 = AsRef::<str>::as_ref(inner_212);
+            if !formatted_213.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_211;
+                let header_value = formatted_213;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21643,20 +22137,20 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("scope", "app-instance-user-moderated-channels");
-        if let Some(inner_212) = &self.app_instance_user_arn {
+        if let Some(inner_214) = &self.app_instance_user_arn {
             query.push_kv(
                 "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_212),
+                &smithy_http::query::fmt_string(&inner_214),
             );
         }
-        if let Some(inner_213) = &self.max_results {
+        if let Some(inner_215) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_213).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_215).encode(),
             );
         }
-        if let Some(inner_214) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_214));
+        if let Some(inner_216) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_216));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -21691,6 +22185,159 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput)
     pub fn builder() -> crate::input::list_channels_moderated_by_app_instance_user_input::Builder {
         crate::input::list_channels_moderated_by_app_instance_user_input::Builder::default()
+    }
+}
+
+/// See [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+pub mod list_media_capture_pipelines_input {
+    /// A builder for [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The token used to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMediaCapturePipelinesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMediaCapturePipelinesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMediaCapturePipelinesInputOperationOutputAlias =
+    crate::operation::ListMediaCapturePipelines;
+#[doc(hidden)]
+pub type ListMediaCapturePipelinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListMediaCapturePipelinesInput {
+    /// Consumes the builder and constructs an Operation<[`ListMediaCapturePipelines`](crate::operation::ListMediaCapturePipelines)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListMediaCapturePipelines,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListMediaCapturePipelines::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListMediaCapturePipelines",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/media-capture-pipelines").expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        if let Some(inner_217) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_217));
+        }
+        if let Some(inner_218) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_218).encode(),
+            );
+        }
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+    pub fn builder() -> crate::input::list_media_capture_pipelines_input::Builder {
+        crate::input::list_media_capture_pipelines_input::Builder::default()
     }
 }
 
@@ -21758,28 +22405,28 @@ impl ListMeetingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21800,13 +22447,13 @@ impl ListMeetingsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_215) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_215));
+        if let Some(inner_219) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_219));
         }
-        if let Some(inner_216) = &self.max_results {
+        if let Some(inner_220) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_216).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_220).encode(),
             );
         }
     }
@@ -21899,28 +22546,28 @@ impl ListMeetingTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21936,15 +22583,15 @@ impl ListMeetingTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_217 = &self.meeting_id;
-        let input_217 =
-            input_217
+        let input_221 = &self.meeting_id;
+        let input_221 =
+            input_221
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_217, false);
+        let meeting_id = smithy_http::label::fmt_string(input_221, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -22054,28 +22701,28 @@ impl ListPhoneNumberOrdersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22096,13 +22743,13 @@ impl ListPhoneNumberOrdersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_218) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_218));
+        if let Some(inner_222) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_222));
         }
-        if let Some(inner_219) = &self.max_results {
+        if let Some(inner_223) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_219).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_223).encode(),
             );
         }
     }
@@ -22259,28 +22906,28 @@ impl ListPhoneNumbersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22301,26 +22948,26 @@ impl ListPhoneNumbersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_220) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_220));
+        if let Some(inner_224) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_224));
         }
-        if let Some(inner_221) = &self.product_type {
-            query.push_kv("product-type", &smithy_http::query::fmt_string(&inner_221));
+        if let Some(inner_225) = &self.product_type {
+            query.push_kv("product-type", &smithy_http::query::fmt_string(&inner_225));
         }
-        if let Some(inner_222) = &self.filter_name {
-            query.push_kv("filter-name", &smithy_http::query::fmt_string(&inner_222));
+        if let Some(inner_226) = &self.filter_name {
+            query.push_kv("filter-name", &smithy_http::query::fmt_string(&inner_226));
         }
-        if let Some(inner_223) = &self.filter_value {
-            query.push_kv("filter-value", &smithy_http::query::fmt_string(&inner_223));
+        if let Some(inner_227) = &self.filter_value {
+            query.push_kv("filter-value", &smithy_http::query::fmt_string(&inner_227));
         }
-        if let Some(inner_224) = &self.max_results {
+        if let Some(inner_228) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_224).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_228).encode(),
             );
         }
-        if let Some(inner_225) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_225));
+        if let Some(inner_229) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_229));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -22451,28 +23098,28 @@ impl ListProxySessionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22488,15 +23135,15 @@ impl ListProxySessionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_226 = &self.voice_connector_id;
-        let input_226 =
-            input_226
+        let input_230 = &self.voice_connector_id;
+        let input_230 =
+            input_230
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_226, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_230, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -22513,16 +23160,16 @@ impl ListProxySessionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_227) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_227));
+        if let Some(inner_231) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_231));
         }
-        if let Some(inner_228) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_228));
+        if let Some(inner_232) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_232));
         }
-        if let Some(inner_229) = &self.max_results {
+        if let Some(inner_233) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_229).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_233).encode(),
             );
         }
     }
@@ -22648,28 +23295,28 @@ impl ListRoomMembershipsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22685,30 +23332,30 @@ impl ListRoomMembershipsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_230 = &self.account_id;
-        let input_230 =
-            input_230
+        let input_234 = &self.account_id;
+        let input_234 =
+            input_234
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_230, false);
+        let account_id = smithy_http::label::fmt_string(input_234, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_231 = &self.room_id;
-        let input_231 =
-            input_231
+        let input_235 = &self.room_id;
+        let input_235 =
+            input_235
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_231, false);
+        let room_id = smithy_http::label::fmt_string(input_235, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
@@ -22726,14 +23373,14 @@ impl ListRoomMembershipsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_232) = &self.max_results {
+        if let Some(inner_236) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_232).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_236).encode(),
             );
         }
-        if let Some(inner_233) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_233));
+        if let Some(inner_237) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_237));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -22856,28 +23503,28 @@ impl ListRoomsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -22888,15 +23535,15 @@ impl ListRoomsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_234 = &self.account_id;
-        let input_234 =
-            input_234
+        let input_238 = &self.account_id;
+        let input_238 =
+            input_238
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_234, false);
+        let account_id = smithy_http::label::fmt_string(input_238, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -22913,17 +23560,17 @@ impl ListRoomsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_235) = &self.member_id {
-            query.push_kv("member-id", &smithy_http::query::fmt_string(&inner_235));
+        if let Some(inner_239) = &self.member_id {
+            query.push_kv("member-id", &smithy_http::query::fmt_string(&inner_239));
         }
-        if let Some(inner_236) = &self.max_results {
+        if let Some(inner_240) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_236).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_240).encode(),
             );
         }
-        if let Some(inner_237) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_237));
+        if let Some(inner_241) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_241));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23027,28 +23674,28 @@ impl ListSipMediaApplicationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23069,14 +23716,14 @@ impl ListSipMediaApplicationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_238) = &self.max_results {
+        if let Some(inner_242) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_238).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_242).encode(),
             );
         }
-        if let Some(inner_239) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_239));
+        if let Some(inner_243) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_243));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23191,28 +23838,28 @@ impl ListSipRulesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23233,20 +23880,20 @@ impl ListSipRulesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_240) = &self.sip_media_application_id {
+        if let Some(inner_244) = &self.sip_media_application_id {
             query.push_kv(
                 "sip-media-application",
-                &smithy_http::query::fmt_string(&inner_240),
+                &smithy_http::query::fmt_string(&inner_244),
             );
         }
-        if let Some(inner_241) = &self.max_results {
+        if let Some(inner_245) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_241).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_245).encode(),
             );
         }
-        if let Some(inner_242) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_242));
+        if let Some(inner_246) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_246));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23342,28 +23989,28 @@ impl ListSupportedPhoneNumberCountriesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23384,8 +24031,8 @@ impl ListSupportedPhoneNumberCountriesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_243) = &self.product_type {
-            query.push_kv("product-type", &smithy_http::query::fmt_string(&inner_243));
+        if let Some(inner_247) = &self.product_type {
+            query.push_kv("product-type", &smithy_http::query::fmt_string(&inner_247));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23477,28 +24124,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23519,8 +24166,8 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_244) = &self.resource_arn {
-            query.push_kv("arn", &smithy_http::query::fmt_string(&inner_244));
+        if let Some(inner_248) = &self.resource_arn {
+            query.push_kv("arn", &smithy_http::query::fmt_string(&inner_248));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23654,28 +24301,28 @@ impl ListUsersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -23686,15 +24333,15 @@ impl ListUsersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_245 = &self.account_id;
-        let input_245 =
-            input_245
+        let input_249 = &self.account_id;
+        let input_249 =
+            input_249
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_245, false);
+        let account_id = smithy_http::label::fmt_string(input_249, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -23711,20 +24358,20 @@ impl ListUsersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_246) = &self.user_email {
-            query.push_kv("user-email", &smithy_http::query::fmt_string(&inner_246));
+        if let Some(inner_250) = &self.user_email {
+            query.push_kv("user-email", &smithy_http::query::fmt_string(&inner_250));
         }
-        if let Some(inner_247) = &self.user_type {
-            query.push_kv("user-type", &smithy_http::query::fmt_string(&inner_247));
+        if let Some(inner_251) = &self.user_type {
+            query.push_kv("user-type", &smithy_http::query::fmt_string(&inner_251));
         }
-        if let Some(inner_248) = &self.max_results {
+        if let Some(inner_252) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_248).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_252).encode(),
             );
         }
-        if let Some(inner_249) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_249));
+        if let Some(inner_253) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_253));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23828,28 +24475,28 @@ impl ListVoiceConnectorGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23870,13 +24517,13 @@ impl ListVoiceConnectorGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_250) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_250));
+        if let Some(inner_254) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_254));
         }
-        if let Some(inner_251) = &self.max_results {
+        if let Some(inner_255) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_251).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_255).encode(),
             );
         }
     }
@@ -23980,28 +24627,28 @@ impl ListVoiceConnectorsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24022,13 +24669,13 @@ impl ListVoiceConnectorsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_252) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_252));
+        if let Some(inner_256) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_256));
         }
-        if let Some(inner_253) = &self.max_results {
+        if let Some(inner_257) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_253).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_257).encode(),
             );
         }
     }
@@ -24128,28 +24775,28 @@ impl ListVoiceConnectorTerminationCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24165,15 +24812,15 @@ impl ListVoiceConnectorTerminationCredentialsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_254 = &self.voice_connector_id;
-        let input_254 =
-            input_254
+        let input_258 = &self.voice_connector_id;
+        let input_258 =
+            input_258
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_254, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_258, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -24285,28 +24932,28 @@ impl LogoutUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24319,30 +24966,30 @@ impl LogoutUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_255 = &self.account_id;
-        let input_255 =
-            input_255
+        let input_259 = &self.account_id;
+        let input_259 =
+            input_259
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_255, false);
+        let account_id = smithy_http::label::fmt_string(input_259, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_256 = &self.user_id;
-        let input_256 =
-            input_256
+        let input_260 = &self.user_id;
+        let input_260 =
+            input_260
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_256, false);
+        let user_id = smithy_http::label::fmt_string(input_260, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -24482,7 +25129,7 @@ impl PutAppInstanceRetentionSettingsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -24490,28 +25137,28 @@ impl PutAppInstanceRetentionSettingsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24527,15 +25174,15 @@ impl PutAppInstanceRetentionSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_257 = &self.app_instance_arn;
-        let input_257 =
-            input_257
+        let input_261 = &self.app_instance_arn;
+        let input_261 =
+            input_261
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_257, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_261, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -24668,28 +25315,28 @@ impl PutAppInstanceStreamingConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24705,15 +25352,15 @@ impl PutAppInstanceStreamingConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_258 = &self.app_instance_arn;
-        let input_258 =
-            input_258
+        let input_262 = &self.app_instance_arn;
+        let input_262 =
+            input_262
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_258, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_262, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -24861,28 +25508,28 @@ impl PutEventsConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24898,30 +25545,30 @@ impl PutEventsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_259 = &self.account_id;
-        let input_259 =
-            input_259
+        let input_263 = &self.account_id;
+        let input_263 =
+            input_263
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_259, false);
+        let account_id = smithy_http::label::fmt_string(input_263, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_260 = &self.bot_id;
-        let input_260 =
-            input_260
+        let input_264 = &self.bot_id;
+        let input_264 =
+            input_264
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-        let bot_id = smithy_http::label::fmt_string(input_260, false);
+        let bot_id = smithy_http::label::fmt_string(input_264, false);
         if bot_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bot_id",
@@ -25042,28 +25689,28 @@ impl PutRetentionSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25079,15 +25726,15 @@ impl PutRetentionSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_261 = &self.account_id;
-        let input_261 =
-            input_261
+        let input_265 = &self.account_id;
+        let input_265 =
+            input_265
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_261, false);
+        let account_id = smithy_http::label::fmt_string(input_265, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -25218,28 +25865,28 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25255,15 +25902,15 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_262 = &self.sip_media_application_id;
-        let input_262 =
-            input_262
+        let input_266 = &self.sip_media_application_id;
+        let input_266 =
+            input_266
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_262, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_266, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
@@ -25394,28 +26041,28 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25431,15 +26078,15 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_263 = &self.voice_connector_id;
-        let input_263 =
-            input_263
+        let input_267 = &self.voice_connector_id;
+        let input_267 =
+            input_267
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_263, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_267, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -25564,28 +26211,28 @@ impl PutVoiceConnectorLoggingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25601,15 +26248,15 @@ impl PutVoiceConnectorLoggingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_264 = &self.voice_connector_id;
-        let input_264 =
-            input_264
+        let input_268 = &self.voice_connector_id;
+        let input_268 =
+            input_268
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_264, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_268, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -25734,28 +26381,28 @@ impl PutVoiceConnectorOriginationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25771,15 +26418,15 @@ impl PutVoiceConnectorOriginationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_265 = &self.voice_connector_id;
-        let input_265 =
-            input_265
+        let input_269 = &self.voice_connector_id;
+        let input_269 =
+            input_269
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_265, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_269, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -25946,28 +26593,28 @@ impl PutVoiceConnectorProxyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25983,15 +26630,15 @@ impl PutVoiceConnectorProxyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_266 = &self.voice_connector_id;
-        let input_266 =
-            input_266
+        let input_270 = &self.voice_connector_id;
+        let input_270 =
+            input_270
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_266, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_270, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -26119,28 +26766,28 @@ impl PutVoiceConnectorStreamingConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -26156,15 +26803,15 @@ impl PutVoiceConnectorStreamingConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_267 = &self.voice_connector_id;
-        let input_267 =
-            input_267
+        let input_271 = &self.voice_connector_id;
+        let input_271 =
+            input_271
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_267, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_271, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -26289,28 +26936,28 @@ impl PutVoiceConnectorTerminationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -26326,15 +26973,15 @@ impl PutVoiceConnectorTerminationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_268 = &self.voice_connector_id;
-        let input_268 =
-            input_268
+        let input_272 = &self.voice_connector_id;
+        let input_272 =
+            input_272
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_268, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_272, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -26459,28 +27106,28 @@ impl PutVoiceConnectorTerminationCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -26496,15 +27143,15 @@ impl PutVoiceConnectorTerminationCredentialsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_269 = &self.voice_connector_id;
-        let input_269 =
-            input_269
+        let input_273 = &self.voice_connector_id;
+        let input_273 =
+            input_273
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_269, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_273, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -26637,7 +27284,7 @@ impl RedactChannelMessageInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -26645,28 +27292,28 @@ impl RedactChannelMessageInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -26682,30 +27329,30 @@ impl RedactChannelMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_270 = &self.channel_arn;
-        let input_270 =
-            input_270
+        let input_274 = &self.channel_arn;
+        let input_274 =
+            input_274
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_270, false);
+        let channel_arn = smithy_http::label::fmt_string(input_274, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_271 = &self.message_id;
-        let input_271 =
-            input_271
+        let input_275 = &self.message_id;
+        let input_275 =
+            input_275
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
                 })?;
-        let message_id = smithy_http::label::fmt_string(input_271, false);
+        let message_id = smithy_http::label::fmt_string(input_275, false);
         if message_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "message_id",
@@ -26725,11 +27372,11 @@ impl RedactChannelMessageInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_272) = &self.chime_bearer {
-            let formatted_273 = AsRef::<str>::as_ref(inner_272);
-            if !formatted_273.is_empty() {
+        if let Some(inner_276) = &self.chime_bearer {
+            let formatted_277 = AsRef::<str>::as_ref(inner_276);
+            if !formatted_277.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_273;
+                let header_value = formatted_277;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26865,28 +27512,28 @@ impl RedactConversationMessageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -26902,45 +27549,45 @@ impl RedactConversationMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_274 = &self.account_id;
-        let input_274 =
-            input_274
+        let input_278 = &self.account_id;
+        let input_278 =
+            input_278
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_274, false);
+        let account_id = smithy_http::label::fmt_string(input_278, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_275 = &self.conversation_id;
-        let input_275 =
-            input_275
+        let input_279 = &self.conversation_id;
+        let input_279 =
+            input_279
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "conversation_id",
                     details: "cannot be empty or unset",
                 })?;
-        let conversation_id = smithy_http::label::fmt_string(input_275, false);
+        let conversation_id = smithy_http::label::fmt_string(input_279, false);
         if conversation_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "conversation_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_276 = &self.message_id;
-        let input_276 =
-            input_276
+        let input_280 = &self.message_id;
+        let input_280 =
+            input_280
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
                 })?;
-        let message_id = smithy_http::label::fmt_string(input_276, false);
+        let message_id = smithy_http::label::fmt_string(input_280, false);
         if message_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "message_id",
@@ -27072,28 +27719,28 @@ impl RedactRoomMessageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -27109,45 +27756,45 @@ impl RedactRoomMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_277 = &self.account_id;
-        let input_277 =
-            input_277
+        let input_281 = &self.account_id;
+        let input_281 =
+            input_281
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_277, false);
+        let account_id = smithy_http::label::fmt_string(input_281, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_278 = &self.room_id;
-        let input_278 =
-            input_278
+        let input_282 = &self.room_id;
+        let input_282 =
+            input_282
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_278, false);
+        let room_id = smithy_http::label::fmt_string(input_282, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_279 = &self.message_id;
-        let input_279 =
-            input_279
+        let input_283 = &self.message_id;
+        let input_283 =
+            input_283
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
                 })?;
-        let message_id = smithy_http::label::fmt_string(input_279, false);
+        let message_id = smithy_http::label::fmt_string(input_283, false);
         if message_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "message_id",
@@ -27269,28 +27916,28 @@ impl RegenerateSecurityTokenInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -27306,30 +27953,30 @@ impl RegenerateSecurityTokenInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_280 = &self.account_id;
-        let input_280 =
-            input_280
+        let input_284 = &self.account_id;
+        let input_284 =
+            input_284
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_280, false);
+        let account_id = smithy_http::label::fmt_string(input_284, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_281 = &self.bot_id;
-        let input_281 =
-            input_281
+        let input_285 = &self.bot_id;
+        let input_285 =
+            input_285
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-        let bot_id = smithy_http::label::fmt_string(input_281, false);
+        let bot_id = smithy_http::label::fmt_string(input_285, false);
         if bot_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bot_id",
@@ -27449,28 +28096,28 @@ impl ResetPersonalPinInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -27486,30 +28133,30 @@ impl ResetPersonalPinInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_282 = &self.account_id;
-        let input_282 =
-            input_282
+        let input_286 = &self.account_id;
+        let input_286 =
+            input_286
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_282, false);
+        let account_id = smithy_http::label::fmt_string(input_286, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_283 = &self.user_id;
-        let input_283 =
-            input_283
+        let input_287 = &self.user_id;
+        let input_287 =
+            input_287
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_283, false);
+        let user_id = smithy_http::label::fmt_string(input_287, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -27621,28 +28268,28 @@ impl RestorePhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -27658,15 +28305,15 @@ impl RestorePhoneNumberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_284 = &self.phone_number_id;
-        let input_284 =
-            input_284
+        let input_288 = &self.phone_number_id;
+        let input_288 =
+            input_288
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
                     details: "cannot be empty or unset",
                 })?;
-        let phone_number_id = smithy_http::label::fmt_string(input_284, false);
+        let phone_number_id = smithy_http::label::fmt_string(input_288, false);
         if phone_number_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "phone_number_id",
@@ -27858,28 +28505,28 @@ impl SearchAvailablePhoneNumbersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -27901,38 +28548,38 @@ impl SearchAvailablePhoneNumbersInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("type", "phone-numbers");
-        if let Some(inner_285) = &self.area_code {
-            query.push_kv("area-code", &smithy_http::query::fmt_string(&inner_285));
+        if let Some(inner_289) = &self.area_code {
+            query.push_kv("area-code", &smithy_http::query::fmt_string(&inner_289));
         }
-        if let Some(inner_286) = &self.city {
-            query.push_kv("city", &smithy_http::query::fmt_string(&inner_286));
+        if let Some(inner_290) = &self.city {
+            query.push_kv("city", &smithy_http::query::fmt_string(&inner_290));
         }
-        if let Some(inner_287) = &self.country {
-            query.push_kv("country", &smithy_http::query::fmt_string(&inner_287));
+        if let Some(inner_291) = &self.country {
+            query.push_kv("country", &smithy_http::query::fmt_string(&inner_291));
         }
-        if let Some(inner_288) = &self.state {
-            query.push_kv("state", &smithy_http::query::fmt_string(&inner_288));
+        if let Some(inner_292) = &self.state {
+            query.push_kv("state", &smithy_http::query::fmt_string(&inner_292));
         }
-        if let Some(inner_289) = &self.toll_free_prefix {
+        if let Some(inner_293) = &self.toll_free_prefix {
             query.push_kv(
                 "toll-free-prefix",
-                &smithy_http::query::fmt_string(&inner_289),
+                &smithy_http::query::fmt_string(&inner_293),
             );
         }
-        if let Some(inner_290) = &self.phone_number_type {
+        if let Some(inner_294) = &self.phone_number_type {
             query.push_kv(
                 "phone-number-type",
-                &smithy_http::query::fmt_string(&inner_290),
+                &smithy_http::query::fmt_string(&inner_294),
             );
         }
-        if let Some(inner_291) = &self.max_results {
+        if let Some(inner_295) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_291).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_295).encode(),
             );
         }
-        if let Some(inner_292) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_292));
+        if let Some(inner_296) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_296));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -28108,7 +28755,7 @@ impl SendChannelMessageInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -28116,28 +28763,28 @@ impl SendChannelMessageInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -28153,15 +28800,15 @@ impl SendChannelMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_293 = &self.channel_arn;
-        let input_293 =
-            input_293
+        let input_297 = &self.channel_arn;
+        let input_297 =
+            input_297
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_293, false);
+        let channel_arn = smithy_http::label::fmt_string(input_297, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -28180,11 +28827,11 @@ impl SendChannelMessageInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_294) = &self.chime_bearer {
-            let formatted_295 = AsRef::<str>::as_ref(inner_294);
-            if !formatted_295.is_empty() {
+        if let Some(inner_298) = &self.chime_bearer {
+            let formatted_299 = AsRef::<str>::as_ref(inner_298);
+            if !formatted_299.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_295;
+                let header_value = formatted_299;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -28231,6 +28878,335 @@ impl SendChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`SendChannelMessageInput`](crate::input::SendChannelMessageInput)
     pub fn builder() -> crate::input::send_channel_message_input::Builder {
         crate::input::send_channel_message_input::Builder::default()
+    }
+}
+
+/// See [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput)
+pub mod start_meeting_transcription_input {
+    /// A builder for [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) meeting_id: std::option::Option<std::string::String>,
+        pub(crate) transcription_configuration:
+            std::option::Option<crate::model::TranscriptionConfiguration>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the meeting being transcribed.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.meeting_id = Some(input.into());
+            self
+        }
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.meeting_id = input;
+            self
+        }
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+        pub fn transcription_configuration(
+            mut self,
+            input: crate::model::TranscriptionConfiguration,
+        ) -> Self {
+            self.transcription_configuration = Some(input);
+            self
+        }
+        pub fn set_transcription_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptionConfiguration>,
+        ) -> Self {
+            self.transcription_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartMeetingTranscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartMeetingTranscriptionInput {
+                meeting_id: self.meeting_id,
+                transcription_configuration: self.transcription_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartMeetingTranscriptionInputOperationOutputAlias =
+    crate::operation::StartMeetingTranscription;
+#[doc(hidden)]
+pub type StartMeetingTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartMeetingTranscriptionInput {
+    /// Consumes the builder and constructs an Operation<[`StartMeetingTranscription`](crate::operation::StartMeetingTranscription)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::StartMeetingTranscription,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_start_meeting_transcription(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::StartMeetingTranscription::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "StartMeetingTranscription",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_300 = &self.meeting_id;
+        let input_300 =
+            input_300
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "meeting_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let meeting_id = smithy_http::label::fmt_string(input_300, false);
+        if meeting_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "meeting_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/meetings/{MeetingId}/transcription",
+            MeetingId = meeting_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        query.push_kv("operation", "start");
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput)
+    pub fn builder() -> crate::input::start_meeting_transcription_input::Builder {
+        crate::input::start_meeting_transcription_input::Builder::default()
+    }
+}
+
+/// See [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput)
+pub mod stop_meeting_transcription_input {
+    /// A builder for [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) meeting_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the meeting for which you stop transcription.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.meeting_id = Some(input.into());
+            self
+        }
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.meeting_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopMeetingTranscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopMeetingTranscriptionInput {
+                meeting_id: self.meeting_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopMeetingTranscriptionInputOperationOutputAlias =
+    crate::operation::StopMeetingTranscription;
+#[doc(hidden)]
+pub type StopMeetingTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StopMeetingTranscriptionInput {
+    /// Consumes the builder and constructs an Operation<[`StopMeetingTranscription`](crate::operation::StopMeetingTranscription)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::StopMeetingTranscription,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::StopMeetingTranscription::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "StopMeetingTranscription",
+                "chime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_301 = &self.meeting_id;
+        let input_301 =
+            input_301
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "meeting_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let meeting_id = smithy_http::label::fmt_string(input_301, false);
+        if meeting_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "meeting_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/meetings/{MeetingId}/transcription",
+            MeetingId = meeting_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        query.push_kv("operation", "stop");
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput)
+    pub fn builder() -> crate::input::stop_meeting_transcription_input::Builder {
+        crate::input::stop_meeting_transcription_input::Builder::default()
     }
 }
 
@@ -28316,28 +29292,28 @@ impl TagAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -28353,30 +29329,30 @@ impl TagAttendeeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_296 = &self.meeting_id;
-        let input_296 =
-            input_296
+        let input_302 = &self.meeting_id;
+        let input_302 =
+            input_302
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_296, false);
+        let meeting_id = smithy_http::label::fmt_string(input_302, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_297 = &self.attendee_id;
-        let input_297 =
-            input_297
+        let input_303 = &self.attendee_id;
+        let input_303 =
+            input_303
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
                     details: "cannot be empty or unset",
                 })?;
-        let attendee_id = smithy_http::label::fmt_string(input_297, false);
+        let attendee_id = smithy_http::label::fmt_string(input_303, false);
         if attendee_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "attendee_id",
@@ -28501,28 +29477,28 @@ impl TagMeetingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -28535,15 +29511,15 @@ impl TagMeetingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_298 = &self.meeting_id;
-        let input_298 =
-            input_298
+        let input_304 = &self.meeting_id;
+        let input_304 =
+            input_304
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_298, false);
+        let meeting_id = smithy_http::label::fmt_string(input_304, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -28663,28 +29639,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -28823,28 +29799,28 @@ impl UntagAttendeeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -28860,30 +29836,30 @@ impl UntagAttendeeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_299 = &self.meeting_id;
-        let input_299 =
-            input_299
+        let input_305 = &self.meeting_id;
+        let input_305 =
+            input_305
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_299, false);
+        let meeting_id = smithy_http::label::fmt_string(input_305, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_300 = &self.attendee_id;
-        let input_300 =
-            input_300
+        let input_306 = &self.attendee_id;
+        let input_306 =
+            input_306
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
                     details: "cannot be empty or unset",
                 })?;
-        let attendee_id = smithy_http::label::fmt_string(input_300, false);
+        let attendee_id = smithy_http::label::fmt_string(input_306, false);
         if attendee_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "attendee_id",
@@ -29008,28 +29984,28 @@ impl UntagMeetingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29045,15 +30021,15 @@ impl UntagMeetingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_301 = &self.meeting_id;
-        let input_301 =
-            input_301
+        let input_307 = &self.meeting_id;
+        let input_307 =
+            input_307
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 })?;
-        let meeting_id = smithy_http::label::fmt_string(input_301, false);
+        let meeting_id = smithy_http::label::fmt_string(input_307, false);
         if meeting_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "meeting_id",
@@ -29173,28 +30149,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29332,28 +30308,28 @@ impl UpdateAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29369,15 +30345,15 @@ impl UpdateAccountInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_302 = &self.account_id;
-        let input_302 =
-            input_302
+        let input_308 = &self.account_id;
+        let input_308 =
+            input_308
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_302, false);
+        let account_id = smithy_http::label::fmt_string(input_308, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -29493,28 +30469,28 @@ impl UpdateAccountSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29530,15 +30506,15 @@ impl UpdateAccountSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_303 = &self.account_id;
-        let input_303 =
-            input_303
+        let input_309 = &self.account_id;
+        let input_309 =
+            input_309
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_303, false);
+        let account_id = smithy_http::label::fmt_string(input_309, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
@@ -29672,7 +30648,7 @@ impl UpdateAppInstanceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -29680,28 +30656,28 @@ impl UpdateAppInstanceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29717,15 +30693,15 @@ impl UpdateAppInstanceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_304 = &self.app_instance_arn;
-        let input_304 =
-            input_304
+        let input_310 = &self.app_instance_arn;
+        let input_310 =
+            input_310
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_arn = smithy_http::label::fmt_string(input_304, false);
+        let app_instance_arn = smithy_http::label::fmt_string(input_310, false);
         if app_instance_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_arn",
@@ -29859,7 +30835,7 @@ impl UpdateAppInstanceUserInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("identity-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -29867,28 +30843,28 @@ impl UpdateAppInstanceUserInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -29904,15 +30880,15 @@ impl UpdateAppInstanceUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_305 = &self.app_instance_user_arn;
-        let input_305 =
-            input_305
+        let input_311 = &self.app_instance_user_arn;
+        let input_311 =
+            input_311
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let app_instance_user_arn = smithy_http::label::fmt_string(input_305, false);
+        let app_instance_user_arn = smithy_http::label::fmt_string(input_311, false);
         if app_instance_user_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "app_instance_user_arn",
@@ -30038,28 +31014,28 @@ impl UpdateBotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -30070,30 +31046,30 @@ impl UpdateBotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_306 = &self.account_id;
-        let input_306 =
-            input_306
+        let input_312 = &self.account_id;
+        let input_312 =
+            input_312
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_306, false);
+        let account_id = smithy_http::label::fmt_string(input_312, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_307 = &self.bot_id;
-        let input_307 =
-            input_307
+        let input_313 = &self.bot_id;
+        let input_313 =
+            input_313
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-        let bot_id = smithy_http::label::fmt_string(input_307, false);
+        let bot_id = smithy_http::label::fmt_string(input_313, false);
         if bot_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bot_id",
@@ -30245,7 +31221,7 @@ impl UpdateChannelInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -30253,28 +31229,28 @@ impl UpdateChannelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -30290,15 +31266,15 @@ impl UpdateChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_308 = &self.channel_arn;
-        let input_308 =
-            input_308
+        let input_314 = &self.channel_arn;
+        let input_314 =
+            input_314
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_308, false);
+        let channel_arn = smithy_http::label::fmt_string(input_314, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -30313,11 +31289,11 @@ impl UpdateChannelInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_309) = &self.chime_bearer {
-            let formatted_310 = AsRef::<str>::as_ref(inner_309);
-            if !formatted_310.is_empty() {
+        if let Some(inner_315) = &self.chime_bearer {
+            let formatted_316 = AsRef::<str>::as_ref(inner_315);
+            if !formatted_316.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_310;
+                let header_value = formatted_316;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -30472,7 +31448,7 @@ impl UpdateChannelMessageInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -30480,28 +31456,28 @@ impl UpdateChannelMessageInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -30517,30 +31493,30 @@ impl UpdateChannelMessageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_311 = &self.channel_arn;
-        let input_311 =
-            input_311
+        let input_317 = &self.channel_arn;
+        let input_317 =
+            input_317
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_311, false);
+        let channel_arn = smithy_http::label::fmt_string(input_317, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_312 = &self.message_id;
-        let input_312 =
-            input_312
+        let input_318 = &self.message_id;
+        let input_318 =
+            input_318
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
                 })?;
-        let message_id = smithy_http::label::fmt_string(input_312, false);
+        let message_id = smithy_http::label::fmt_string(input_318, false);
         if message_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "message_id",
@@ -30560,11 +31536,11 @@ impl UpdateChannelMessageInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_313) = &self.chime_bearer {
-            let formatted_314 = AsRef::<str>::as_ref(inner_313);
-            if !formatted_314.is_empty() {
+        if let Some(inner_319) = &self.chime_bearer {
+            let formatted_320 = AsRef::<str>::as_ref(inner_319);
+            if !formatted_320.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_314;
+                let header_value = formatted_320;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -30684,7 +31660,7 @@ impl UpdateChannelReadMarkerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("messaging-");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -30692,28 +31668,28 @@ impl UpdateChannelReadMarkerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -30729,15 +31705,15 @@ impl UpdateChannelReadMarkerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_315 = &self.channel_arn;
-        let input_315 =
-            input_315
+        let input_321 = &self.channel_arn;
+        let input_321 =
+            input_321
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let channel_arn = smithy_http::label::fmt_string(input_315, false);
+        let channel_arn = smithy_http::label::fmt_string(input_321, false);
         if channel_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "channel_arn",
@@ -30756,11 +31732,11 @@ impl UpdateChannelReadMarkerInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_316) = &self.chime_bearer {
-            let formatted_317 = AsRef::<str>::as_ref(inner_316);
-            if !formatted_317.is_empty() {
+        if let Some(inner_322) = &self.chime_bearer {
+            let formatted_323 = AsRef::<str>::as_ref(inner_322);
+            if !formatted_323.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_317;
+                let header_value = formatted_323;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -30885,28 +31861,28 @@ impl UpdateGlobalSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31044,28 +32020,28 @@ impl UpdatePhoneNumberInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31081,15 +32057,15 @@ impl UpdatePhoneNumberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_318 = &self.phone_number_id;
-        let input_318 =
-            input_318
+        let input_324 = &self.phone_number_id;
+        let input_324 =
+            input_324
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
                     details: "cannot be empty or unset",
                 })?;
-        let phone_number_id = smithy_http::label::fmt_string(input_318, false);
+        let phone_number_id = smithy_http::label::fmt_string(input_324, false);
         if phone_number_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "phone_number_id",
@@ -31197,28 +32173,28 @@ impl UpdatePhoneNumberSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31371,28 +32347,28 @@ impl UpdateProxySessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31408,30 +32384,30 @@ impl UpdateProxySessionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_319 = &self.voice_connector_id;
-        let input_319 =
-            input_319
+        let input_325 = &self.voice_connector_id;
+        let input_325 =
+            input_325
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_319, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_325, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_320 = &self.proxy_session_id;
-        let input_320 =
-            input_320
+        let input_326 = &self.proxy_session_id;
+        let input_326 =
+            input_326
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
                     details: "cannot be empty or unset",
                 })?;
-        let proxy_session_id = smithy_http::label::fmt_string(input_320, false);
+        let proxy_session_id = smithy_http::label::fmt_string(input_326, false);
         if proxy_session_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "proxy_session_id",
@@ -31558,28 +32534,28 @@ impl UpdateRoomInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31592,30 +32568,30 @@ impl UpdateRoomInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_321 = &self.account_id;
-        let input_321 =
-            input_321
+        let input_327 = &self.account_id;
+        let input_327 =
+            input_327
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_321, false);
+        let account_id = smithy_http::label::fmt_string(input_327, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_322 = &self.room_id;
-        let input_322 =
-            input_322
+        let input_328 = &self.room_id;
+        let input_328 =
+            input_328
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_322, false);
+        let room_id = smithy_http::label::fmt_string(input_328, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
@@ -31758,28 +32734,28 @@ impl UpdateRoomMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -31795,45 +32771,45 @@ impl UpdateRoomMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_323 = &self.account_id;
-        let input_323 =
-            input_323
+        let input_329 = &self.account_id;
+        let input_329 =
+            input_329
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_323, false);
+        let account_id = smithy_http::label::fmt_string(input_329, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_324 = &self.room_id;
-        let input_324 =
-            input_324
+        let input_330 = &self.room_id;
+        let input_330 =
+            input_330
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 })?;
-        let room_id = smithy_http::label::fmt_string(input_324, false);
+        let room_id = smithy_http::label::fmt_string(input_330, false);
         if room_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "room_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_325 = &self.member_id;
-        let input_325 =
-            input_325
+        let input_331 = &self.member_id;
+        let input_331 =
+            input_331
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-        let member_id = smithy_http::label::fmt_string(input_325, false);
+        let member_id = smithy_http::label::fmt_string(input_331, false);
         if member_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "member_id",
@@ -31976,28 +32952,28 @@ impl UpdateSipMediaApplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32013,15 +32989,15 @@ impl UpdateSipMediaApplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_326 = &self.sip_media_application_id;
-        let input_326 =
-            input_326
+        let input_332 = &self.sip_media_application_id;
+        let input_332 =
+            input_332
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_326, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_332, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
@@ -32169,28 +33145,28 @@ impl UpdateSipMediaApplicationCallInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32206,30 +33182,30 @@ impl UpdateSipMediaApplicationCallInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_327 = &self.sip_media_application_id;
-        let input_327 =
-            input_327
+        let input_333 = &self.sip_media_application_id;
+        let input_333 =
+            input_333
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_media_application_id = smithy_http::label::fmt_string(input_327, false);
+        let sip_media_application_id = smithy_http::label::fmt_string(input_333, false);
         if sip_media_application_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_media_application_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_328 = &self.transaction_id;
-        let input_328 =
-            input_328
+        let input_334 = &self.transaction_id;
+        let input_334 =
+            input_334
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "transaction_id",
                     details: "cannot be empty or unset",
                 })?;
-        let transaction_id = smithy_http::label::fmt_string(input_328, false);
+        let transaction_id = smithy_http::label::fmt_string(input_334, false);
         if transaction_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "transaction_id",
@@ -32374,28 +33350,28 @@ impl UpdateSipRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32411,15 +33387,15 @@ impl UpdateSipRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_329 = &self.sip_rule_id;
-        let input_329 =
-            input_329
+        let input_335 = &self.sip_rule_id;
+        let input_335 =
+            input_335
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
                     details: "cannot be empty or unset",
                 })?;
-        let sip_rule_id = smithy_http::label::fmt_string(input_329, false);
+        let sip_rule_id = smithy_http::label::fmt_string(input_335, false);
         if sip_rule_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "sip_rule_id",
@@ -32574,28 +33550,28 @@ impl UpdateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32608,30 +33584,30 @@ impl UpdateUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_330 = &self.account_id;
-        let input_330 =
-            input_330
+        let input_336 = &self.account_id;
+        let input_336 =
+            input_336
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_330, false);
+        let account_id = smithy_http::label::fmt_string(input_336, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_331 = &self.user_id;
-        let input_331 =
-            input_331
+        let input_337 = &self.user_id;
+        let input_337 =
+            input_337
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_331, false);
+        let user_id = smithy_http::label::fmt_string(input_337, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -32763,28 +33739,28 @@ impl UpdateUserSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32800,30 +33776,30 @@ impl UpdateUserSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_332 = &self.account_id;
-        let input_332 =
-            input_332
+        let input_338 = &self.account_id;
+        let input_338 =
+            input_338
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let account_id = smithy_http::label::fmt_string(input_332, false);
+        let account_id = smithy_http::label::fmt_string(input_338, false);
         if account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_333 = &self.user_id;
-        let input_333 =
-            input_333
+        let input_339 = &self.user_id;
+        let input_339 =
+            input_339
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 })?;
-        let user_id = smithy_http::label::fmt_string(input_333, false);
+        let user_id = smithy_http::label::fmt_string(input_339, false);
         if user_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_id",
@@ -32955,28 +33931,28 @@ impl UpdateVoiceConnectorInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -32992,15 +33968,15 @@ impl UpdateVoiceConnectorInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_334 = &self.voice_connector_id;
-        let input_334 =
-            input_334
+        let input_340 = &self.voice_connector_id;
+        let input_340 =
+            input_340
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_id = smithy_http::label::fmt_string(input_334, false);
+        let voice_connector_id = smithy_http::label::fmt_string(input_340, false);
         if voice_connector_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_id",
@@ -33141,28 +34117,28 @@ impl UpdateVoiceConnectorGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -33178,15 +34154,15 @@ impl UpdateVoiceConnectorGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_335 = &self.voice_connector_group_id;
-        let input_335 =
-            input_335
+        let input_341 = &self.voice_connector_group_id;
+        let input_341 =
+            input_341
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
                     details: "cannot be empty or unset",
                 })?;
-        let voice_connector_group_id = smithy_http::label::fmt_string(input_335, false);
+        let voice_connector_group_id = smithy_http::label::fmt_string(input_341, false);
         if voice_connector_group_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "voice_connector_group_id",
@@ -33776,6 +34752,40 @@ impl std::fmt::Debug for TagAttendeeInput {
         formatter.field("meeting_id", &self.meeting_id);
         formatter.field("attendee_id", &self.attendee_id);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopMeetingTranscriptionInput {
+    /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    pub meeting_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StopMeetingTranscriptionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
+        formatter.field("meeting_id", &self.meeting_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartMeetingTranscriptionInput {
+    /// <p>The unique ID of the meeting being transcribed.</p>
+    pub meeting_id: std::option::Option<std::string::String>,
+    /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
+}
+impl std::fmt::Debug for StartMeetingTranscriptionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartMeetingTranscriptionInput");
+        formatter.field("meeting_id", &self.meeting_id);
+        formatter.field(
+            "transcription_configuration",
+            &self.transcription_configuration,
+        );
         formatter.finish()
     }
 }
@@ -34503,6 +35513,23 @@ impl std::fmt::Debug for ListMeetingsInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMediaCapturePipelinesInput {
+    /// <p>The token used to retrieve the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListMediaCapturePipelinesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMediaCapturePipelinesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserInput {
     /// <p>The ARN of the user in the moderated channel.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -35152,6 +36179,20 @@ impl std::fmt::Debug for GetMeetingInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMediaCapturePipelineInput {
+    /// <p>The ID of the pipeline that you want to get.</p>
+    pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMediaCapturePipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMediaCapturePipelineInput");
+        formatter.field("media_pipeline_id", &self.media_pipeline_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGlobalSettingsInput {}
 impl std::fmt::Debug for GetGlobalSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35739,6 +36780,20 @@ impl std::fmt::Debug for DeleteMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMeetingInput");
         formatter.field("meeting_id", &self.meeting_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMediaCapturePipelineInput {
+    /// <p>The ID of the media capture pipeline being deleted. </p>
+    pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMediaCapturePipelineInput");
+        formatter.field("media_pipeline_id", &self.media_pipeline_id);
         formatter.finish()
     }
 }
@@ -36351,6 +37406,33 @@ impl std::fmt::Debug for CreateMeetingInput {
             "notifications_configuration",
             &self.notifications_configuration,
         );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaCapturePipelineInput {
+    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
+    /// is the only supported source.</p>
+    pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
+    /// <p>ARN of the source from which the media artifacts are captured.</p>
+    pub source_arn: std::option::Option<std::string::String>,
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
+    /// <p>The ARN of the sink type.</p>
+    pub sink_arn: std::option::Option<std::string::String>,
+    /// <p>The token assigned to the client making the pipeline request.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateMediaCapturePipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaCapturePipelineInput");
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("sink_type", &self.sink_type);
+        formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

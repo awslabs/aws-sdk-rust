@@ -11,7 +11,7 @@ pub mod cancel_ingestion_input {
         pub(crate) ingestion_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -80,28 +80,28 @@ impl CancelIngestionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -214,7 +214,7 @@ pub mod create_account_customization_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to customize QuickSight for.</p>
+        /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -235,8 +235,8 @@ pub mod create_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current AWS Region. You can add
-        /// these to an AWS account and a QuickSight namespace. </p>
+        /// <p>The QuickSight customizations you're adding in the current Region;. You can add
+        /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -312,28 +312,28 @@ impl CreateAccountCustomizationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -428,7 +428,7 @@ pub mod create_analysis_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account where you are creating an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account; where you are creating an analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -568,28 +568,28 @@ impl CreateAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -695,7 +695,7 @@ pub mod create_dashboard_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account where you want to create the dashboard.</p>
+        /// <p>The ID of the Amazon Web Services account; where you want to create the dashboard.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -758,8 +758,8 @@ pub mod create_dashboard_input {
         /// entity. If you need to create a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code>ARN can contain any AWS Account and any
-        /// QuickSight-supported AWS Region. </p>
+        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
+        /// QuickSight-supported Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -839,7 +839,7 @@ pub mod create_dashboard_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same AWS account where you create the
+        /// entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
@@ -897,28 +897,28 @@ impl CreateDashboardInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1028,12 +1028,14 @@ pub mod create_data_set_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) row_level_permission_data_set:
             std::option::Option<crate::model::RowLevelPermissionDataSet>,
+        pub(crate) row_level_permission_tag_configuration:
+            std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -1045,7 +1047,7 @@ pub mod create_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>An ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1173,6 +1175,21 @@ pub mod create_data_set_input {
             self.row_level_permission_data_set = input;
             self
         }
+        /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+        pub fn row_level_permission_tag_configuration(
+            mut self,
+            input: crate::model::RowLevelPermissionTagConfiguration,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = Some(input);
+            self
+        }
+        pub fn set_row_level_permission_tag_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = input;
+            self
+        }
         pub fn column_level_permission_rules(
             mut self,
             input: impl Into<crate::model::ColumnLevelPermissionRule>,
@@ -1218,6 +1235,7 @@ pub mod create_data_set_input {
                 field_folders: self.field_folders,
                 permissions: self.permissions,
                 row_level_permission_data_set: self.row_level_permission_data_set,
+                row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
                 tags: self.tags,
             })
@@ -1250,28 +1268,28 @@ impl CreateDataSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1363,7 +1381,7 @@ pub mod create_data_source_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -1375,7 +1393,7 @@ pub mod create_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the data source. This ID is unique per AWS Region for each AWS account. </p>
+        /// <p>An ID for the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1542,28 +1560,28 @@ impl CreateDataSourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1777,28 +1795,28 @@ impl CreateFolderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1980,28 +1998,28 @@ impl CreateFolderMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2151,8 +2169,8 @@ pub mod create_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -2214,28 +2232,28 @@ impl CreateGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2353,8 +2371,8 @@ pub mod create_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -2415,28 +2433,28 @@ impl CreateGroupMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2564,7 +2582,7 @@ pub mod create_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account where you want to assign an IAM policy to QuickSight users or
+        /// <p>The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
         /// groups.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -2577,7 +2595,7 @@ pub mod create_iam_policy_assignment_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The name of the assignment, also called a rule. It must be unique within an AWS account.</p>
+        /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -2702,28 +2720,28 @@ impl CreateIamPolicyAssignmentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2840,7 +2858,7 @@ pub mod create_ingestion_input {
             self.ingestion_id = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -2891,28 +2909,28 @@ impl CreateIngestionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3028,7 +3046,7 @@ pub mod create_namespace_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to create the QuickSight namespace in.</p>
+        /// <p>The ID for the Amazon Web Services account; that you want to create the QuickSight namespace in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3117,28 +3135,28 @@ impl CreateNamespaceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3226,8 +3244,8 @@ pub mod create_template_input {
         pub(crate) version_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3239,8 +3257,8 @@ pub mod create_template_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the template that you want to create. This template is unique per AWS Region in
-        /// each AWS account.</p>
+        /// <p>An ID for the template that you want to create. This template is unique per Region; in
+        /// each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -3277,7 +3295,7 @@ pub mod create_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -3365,28 +3383,28 @@ impl CreateTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3486,7 +3504,7 @@ pub mod create_template_alias_input {
         pub(crate) template_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template that you creating an alias for.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template that you creating an alias for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3509,7 +3527,7 @@ pub mod create_template_alias_input {
         }
         /// <p>The name that you want to give to the template alias that you're creating. Don't start the
         /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-        /// are reserved by QuickSight. </p>
+        /// are reserved by Amazon QuickSight. </p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
@@ -3570,28 +3588,28 @@ impl CreateTemplateAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3712,7 +3730,7 @@ pub mod create_theme_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account where you want to store the new theme. </p>
+        /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3724,8 +3742,8 @@ pub mod create_theme_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per AWS Region in
-        /// each AWS account.</p>
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Region; in
+        /// each Amazon Web Services account;.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
@@ -3856,28 +3874,28 @@ impl CreateThemeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3977,7 +3995,7 @@ pub mod create_theme_alias_input {
         pub(crate) theme_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme for the new theme alias.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme for the new theme alias.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4061,28 +4079,28 @@ impl CreateThemeAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4196,8 +4214,8 @@ pub mod delete_account_customization_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to delete QuickSight customizations from in
-        /// this AWS Region.</p>
+        /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+        /// this Region;.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4257,28 +4275,28 @@ impl DeleteAccountCustomizationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4369,7 +4387,7 @@ pub mod delete_analysis_input {
         pub(crate) force_delete_without_recovery: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account where you want to delete an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account; where you want to delete an analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4457,28 +4475,28 @@ impl DeleteAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4594,7 +4612,7 @@ pub mod delete_dashboard_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
         /// deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -4665,28 +4683,28 @@ impl DeleteDashboardInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4794,7 +4812,7 @@ pub mod delete_data_set_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4806,7 +4824,7 @@ pub mod delete_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -4851,28 +4869,28 @@ impl DeleteDataSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4970,7 +4988,7 @@ pub mod delete_data_source_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4982,7 +5000,7 @@ pub mod delete_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -5032,28 +5050,28 @@ impl DeleteDataSourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5208,28 +5226,28 @@ impl DeleteFolderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5412,28 +5430,28 @@ impl DeleteFolderMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5573,8 +5591,8 @@ pub mod delete_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -5632,28 +5650,28 @@ impl DeleteGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5787,8 +5805,8 @@ pub mod delete_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -5849,28 +5867,28 @@ impl DeleteGroupMembershipInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5993,7 +6011,7 @@ pub mod delete_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID where you want to delete the IAM policy assignment.</p>
+        /// <p>The Amazon Web Services account; ID where you want to delete the IAM policy assignment.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6066,28 +6084,28 @@ impl DeleteIamPolicyAssignmentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6194,7 +6212,7 @@ pub mod delete_namespace_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to delete the QuickSight namespace from.</p>
+        /// <p>The ID for the Amazon Web Services account; that you want to delete the QuickSight namespace from.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6253,28 +6271,28 @@ impl DeleteNamespaceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6373,7 +6391,7 @@ pub mod delete_template_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template that you're deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6444,28 +6462,28 @@ impl DeleteTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6574,7 +6592,7 @@ pub mod delete_template_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the item to delete.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the item to delete.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6646,28 +6664,28 @@ impl DeleteTemplateAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6782,7 +6800,7 @@ pub mod delete_theme_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6852,28 +6870,28 @@ impl DeleteThemeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6982,7 +7000,7 @@ pub mod delete_theme_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme alias to delete.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme alias to delete.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7051,28 +7069,28 @@ impl DeleteThemeAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7196,8 +7214,8 @@ pub mod delete_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7255,28 +7273,28 @@ impl DeleteUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7400,8 +7418,8 @@ pub mod delete_user_by_principal_id_input {
             self.principal_id = input;
             self
         }
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7462,28 +7480,28 @@ impl DeleteUserByPrincipalIdInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7598,7 +7616,7 @@ pub mod describe_account_customization_input {
         pub(crate) resolved: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to describe QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -7674,28 +7692,28 @@ impl DescribeAccountCustomizationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7789,7 +7807,7 @@ pub mod describe_account_settings_input {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that contains the settings that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account; that contains the settings that you want to list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7839,28 +7857,28 @@ impl DescribeAccountSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7942,8 +7960,8 @@ pub mod describe_analysis_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analysis. You must be using the AWS
-        /// account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analysis. You must be using the
+        /// Amazon Web Services account; that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8003,28 +8021,28 @@ impl DescribeAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8122,8 +8140,8 @@ pub mod describe_analysis_permissions_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analysis whose permissions you're
-        /// describing. You must be using the AWS account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
+        /// describing. You must be using the Amazon Web Services account; that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8184,28 +8202,28 @@ impl DescribeAnalysisPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8305,7 +8323,7 @@ pub mod describe_dashboard_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -8386,28 +8404,28 @@ impl DescribeDashboardInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8518,7 +8536,7 @@ pub mod describe_dashboard_permissions_input {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're describing
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're describing
         /// permissions for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -8579,28 +8597,28 @@ impl DescribeDashboardPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8698,7 +8716,7 @@ pub mod describe_data_set_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8710,7 +8728,7 @@ pub mod describe_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -8757,28 +8775,28 @@ impl DescribeDataSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8876,7 +8894,7 @@ pub mod describe_data_set_permissions_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8888,7 +8906,7 @@ pub mod describe_data_set_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -8936,28 +8954,28 @@ impl DescribeDataSetPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9055,7 +9073,7 @@ pub mod describe_data_source_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -9067,7 +9085,7 @@ pub mod describe_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9117,28 +9135,28 @@ impl DescribeDataSourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9236,7 +9254,7 @@ pub mod describe_data_source_permissions_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -9248,7 +9266,7 @@ pub mod describe_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9299,28 +9317,28 @@ impl DescribeDataSourcePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9477,28 +9495,28 @@ impl DescribeFolderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9656,28 +9674,28 @@ impl DescribeFolderPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9835,28 +9853,28 @@ impl DescribeFolderResolvedPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9964,8 +9982,8 @@ pub mod describe_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10023,28 +10041,28 @@ impl DescribeGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10159,7 +10177,7 @@ pub mod describe_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the assignment that you want to describe.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the assignment that you want to describe.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10232,28 +10250,28 @@ impl DescribeIamPolicyAssignmentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10361,7 +10379,7 @@ pub mod describe_ingestion_input {
         pub(crate) ingestion_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10430,28 +10448,28 @@ impl DescribeIngestionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10565,7 +10583,7 @@ pub mod describe_namespace_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that contains the QuickSight namespace that you want to describe.</p>
+        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10624,28 +10642,28 @@ impl DescribeNamespaceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10745,7 +10763,7 @@ pub mod describe_template_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10828,28 +10846,28 @@ impl DescribeTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10961,7 +10979,7 @@ pub mod describe_template_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template alias that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -11034,28 +11052,28 @@ impl DescribeTemplateAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11169,7 +11187,7 @@ pub mod describe_template_permissions_input {
         pub(crate) template_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11229,28 +11247,28 @@ impl DescribeTemplatePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11350,7 +11368,7 @@ pub mod describe_theme_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11431,28 +11449,28 @@ impl DescribeThemeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11564,7 +11582,7 @@ pub mod describe_theme_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme alias that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -11634,28 +11652,28 @@ impl DescribeThemeAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11769,7 +11787,7 @@ pub mod describe_theme_permissions_input {
         pub(crate) theme_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11829,28 +11847,28 @@ impl DescribeThemePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11958,8 +11976,8 @@ pub mod describe_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12017,28 +12035,28 @@ impl DescribeUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12142,6 +12160,435 @@ impl DescribeUserInput {
     }
 }
 
+/// See [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput)
+pub mod generate_embed_url_for_anonymous_user_input {
+    /// A builder for [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) session_lifetime_in_minutes: std::option::Option<i64>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) session_tags: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
+        pub(crate) authorized_resource_arns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) experience_configuration:
+            std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
+    }
+    impl Builder {
+        /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.session_lifetime_in_minutes = Some(input);
+            self
+        }
+        pub fn set_session_lifetime_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+            self.session_lifetime_in_minutes = input;
+            self
+        }
+        /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        pub fn session_tags(mut self, input: impl Into<crate::model::SessionTag>) -> Self {
+            let mut v = self.session_tags.unwrap_or_default();
+            v.push(input.into());
+            self.session_tags = Some(v);
+            self
+        }
+        pub fn set_session_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
+        ) -> Self {
+            self.session_tags = input;
+            self
+        }
+        pub fn authorized_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.authorized_resource_arns.unwrap_or_default();
+            v.push(input.into());
+            self.authorized_resource_arns = Some(v);
+            self
+        }
+        pub fn set_authorized_resource_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.authorized_resource_arns = input;
+            self
+        }
+        /// <p>The configuration of the experience you are embedding.</p>
+        pub fn experience_configuration(
+            mut self,
+            input: crate::model::AnonymousUserEmbeddingExperienceConfiguration,
+        ) -> Self {
+            self.experience_configuration = Some(input);
+            self
+        }
+        pub fn set_experience_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
+        ) -> Self {
+            self.experience_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GenerateEmbedUrlForAnonymousUserInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GenerateEmbedUrlForAnonymousUserInput {
+                aws_account_id: self.aws_account_id,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+                namespace: self.namespace,
+                session_tags: self.session_tags,
+                authorized_resource_arns: self.authorized_resource_arns,
+                experience_configuration: self.experience_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GenerateEmbedUrlForAnonymousUserInputOperationOutputAlias =
+    crate::operation::GenerateEmbedUrlForAnonymousUser;
+#[doc(hidden)]
+pub type GenerateEmbedUrlForAnonymousUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GenerateEmbedUrlForAnonymousUserInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateEmbedUrlForAnonymousUser`](crate::operation::GenerateEmbedUrlForAnonymousUser)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateEmbedUrlForAnonymousUser,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_generate_embed_url_for_anonymous_user(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateEmbedUrlForAnonymousUser::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateEmbedUrlForAnonymousUser",
+                "quicksight",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_147 = &self.aws_account_id;
+        let input_147 =
+            input_147
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "aws_account_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_147, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/accounts/{AwsAccountId}/embed-url/anonymous-user",
+            AwsAccountId = aws_account_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput)
+    pub fn builder() -> crate::input::generate_embed_url_for_anonymous_user_input::Builder {
+        crate::input::generate_embed_url_for_anonymous_user_input::Builder::default()
+    }
+}
+
+/// See [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput)
+pub mod generate_embed_url_for_registered_user_input {
+    /// A builder for [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) session_lifetime_in_minutes: std::option::Option<i64>,
+        pub(crate) user_arn: std::option::Option<std::string::String>,
+        pub(crate) experience_configuration:
+            std::option::Option<crate::model::RegisteredUserEmbeddingExperienceConfiguration>,
+    }
+    impl Builder {
+        /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.session_lifetime_in_minutes = Some(input);
+            self
+        }
+        pub fn set_session_lifetime_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+            self.session_lifetime_in_minutes = input;
+            self
+        }
+        /// <p>The Amazon Resource Name for the registered user.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_arn = Some(input.into());
+            self
+        }
+        pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_arn = input;
+            self
+        }
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+        pub fn experience_configuration(
+            mut self,
+            input: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
+        ) -> Self {
+            self.experience_configuration = Some(input);
+            self
+        }
+        pub fn set_experience_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::RegisteredUserEmbeddingExperienceConfiguration,
+            >,
+        ) -> Self {
+            self.experience_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GenerateEmbedUrlForRegisteredUserInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GenerateEmbedUrlForRegisteredUserInput {
+                aws_account_id: self.aws_account_id,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+                user_arn: self.user_arn,
+                experience_configuration: self.experience_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GenerateEmbedUrlForRegisteredUserInputOperationOutputAlias =
+    crate::operation::GenerateEmbedUrlForRegisteredUser;
+#[doc(hidden)]
+pub type GenerateEmbedUrlForRegisteredUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GenerateEmbedUrlForRegisteredUserInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateEmbedUrlForRegisteredUser`](crate::operation::GenerateEmbedUrlForRegisteredUser)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateEmbedUrlForRegisteredUser,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_generate_embed_url_for_registered_user(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateEmbedUrlForRegisteredUser::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateEmbedUrlForRegisteredUser",
+                "quicksight",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_148 = &self.aws_account_id;
+        let input_148 =
+            input_148
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "aws_account_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_148, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/accounts/{AwsAccountId}/embed-url/registered-user",
+            AwsAccountId = aws_account_id
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput)
+    pub fn builder() -> crate::input::generate_embed_url_for_registered_user_input::Builder {
+        crate::input::generate_embed_url_for_registered_user_input::Builder::default()
+    }
+}
+
 /// See [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput)
 pub mod get_dashboard_embed_url_input {
     /// A builder for [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput)
@@ -12161,7 +12608,7 @@ pub mod get_dashboard_embed_url_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that contains the dashboard that you're embedding.</p>
+        /// <p>The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12173,7 +12620,7 @@ pub mod get_dashboard_embed_url_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dashboard, also added to the AWS Identity and Access Management (IAM)
+        /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
         /// policy.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_id = Some(input.into());
@@ -12264,9 +12711,7 @@ pub mod get_dashboard_embed_url_input {
             self.user_arn = input;
             self
         }
-        /// <p>The QuickSight namespace that contains the dashboard IDs in this request.
-        /// If you're not using a custom namespace, set this to
-        /// "<code>default</code>".</p>
+        /// <p>The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -12334,28 +12779,28 @@ impl GetDashboardEmbedUrlInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12371,30 +12816,30 @@ impl GetDashboardEmbedUrlInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_147 = &self.aws_account_id;
-        let input_147 =
-            input_147
+        let input_149 = &self.aws_account_id;
+        let input_149 =
+            input_149
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_147, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_149, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_148 = &self.dashboard_id;
-        let input_148 =
-            input_148
+        let input_150 = &self.dashboard_id;
+        let input_150 =
+            input_150
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_148, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_150, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
@@ -12412,13 +12857,13 @@ impl GetDashboardEmbedUrlInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_149) = &self.identity_type {
-            query.push_kv("creds-type", &smithy_http::query::fmt_string(&inner_149));
+        if let Some(inner_151) = &self.identity_type {
+            query.push_kv("creds-type", &smithy_http::query::fmt_string(&inner_151));
         }
-        if let Some(inner_150) = &self.session_lifetime_in_minutes {
+        if let Some(inner_152) = &self.session_lifetime_in_minutes {
             query.push_kv(
                 "session-lifetime",
-                &smithy_types::primitive::Encoder::from(*inner_150).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_152).encode(),
             );
         }
         if self.undo_redo_disabled {
@@ -12439,17 +12884,17 @@ impl GetDashboardEmbedUrlInput {
                 &smithy_types::primitive::Encoder::from(self.state_persistence_enabled).encode(),
             );
         }
-        if let Some(inner_151) = &self.user_arn {
-            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_151));
+        if let Some(inner_153) = &self.user_arn {
+            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_153));
         }
-        if let Some(inner_152) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_152));
+        if let Some(inner_154) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_154));
         }
-        if let Some(inner_153) = &self.additional_dashboard_ids {
-            for inner_154 in inner_153 {
+        if let Some(inner_155) = &self.additional_dashboard_ids {
+            for inner_156 in inner_155 {
                 query.push_kv(
                     "additional-dashboard-ids",
-                    &smithy_http::query::fmt_string(&inner_154),
+                    &smithy_http::query::fmt_string(&inner_156),
                 );
             }
         }
@@ -12500,7 +12945,7 @@ pub mod get_session_embed_url_input {
         pub(crate) user_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+        /// <p>The ID for the Amazon Web Services account; associated with your QuickSight subscription.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12574,7 +13019,7 @@ pub mod get_session_embed_url_input {
         /// <p>Invited nonfederated users</p>
         /// </li>
         /// <li>
-        /// <p>AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+        /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
         /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
         /// federation</p>
         /// </li>
@@ -12629,28 +13074,28 @@ impl GetSessionEmbedUrlInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12666,15 +13111,15 @@ impl GetSessionEmbedUrlInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_155 = &self.aws_account_id;
-        let input_155 =
-            input_155
+        let input_157 = &self.aws_account_id;
+        let input_157 =
+            input_157
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_155, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_157, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -12691,17 +13136,17 @@ impl GetSessionEmbedUrlInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_156) = &self.entry_point {
-            query.push_kv("entry-point", &smithy_http::query::fmt_string(&inner_156));
+        if let Some(inner_158) = &self.entry_point {
+            query.push_kv("entry-point", &smithy_http::query::fmt_string(&inner_158));
         }
-        if let Some(inner_157) = &self.session_lifetime_in_minutes {
+        if let Some(inner_159) = &self.session_lifetime_in_minutes {
             query.push_kv(
                 "session-lifetime",
-                &smithy_types::primitive::Encoder::from(*inner_157).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_159).encode(),
             );
         }
-        if let Some(inner_158) = &self.user_arn {
-            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_158));
+        if let Some(inner_160) = &self.user_arn {
+            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_160));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12749,7 +13194,7 @@ pub mod list_analyses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analyses.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analyses.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12816,28 +13261,28 @@ impl ListAnalysesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12853,15 +13298,15 @@ impl ListAnalysesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_159 = &self.aws_account_id;
-        let input_159 =
-            input_159
+        let input_161 = &self.aws_account_id;
+        let input_161 =
+            input_161
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_159, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_161, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -12878,13 +13323,13 @@ impl ListAnalysesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_160) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_160));
+        if let Some(inner_162) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_162));
         }
-        if let Some(inner_161) = &self.max_results {
+        if let Some(inner_163) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_161).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_163).encode(),
             );
         }
     }
@@ -12933,7 +13378,7 @@ pub mod list_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboards that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboards that you're
         /// listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -13003,28 +13448,28 @@ impl ListDashboardsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13040,15 +13485,15 @@ impl ListDashboardsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_162 = &self.aws_account_id;
-        let input_162 =
-            input_162
+        let input_164 = &self.aws_account_id;
+        let input_164 =
+            input_164
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_162, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_164, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -13065,13 +13510,13 @@ impl ListDashboardsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_163) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_163));
+        if let Some(inner_165) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_165));
         }
-        if let Some(inner_164) = &self.max_results {
+        if let Some(inner_166) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_164).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_166).encode(),
             );
         }
     }
@@ -13121,7 +13566,7 @@ pub mod list_dashboard_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're listing versions
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're listing versions
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -13201,28 +13646,28 @@ impl ListDashboardVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13238,30 +13683,30 @@ impl ListDashboardVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_165 = &self.aws_account_id;
-        let input_165 =
-            input_165
+        let input_167 = &self.aws_account_id;
+        let input_167 =
+            input_167
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_165, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_167, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_166 = &self.dashboard_id;
-        let input_166 =
-            input_166
+        let input_168 = &self.dashboard_id;
+        let input_168 =
+            input_168
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_166, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_168, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
@@ -13279,13 +13724,13 @@ impl ListDashboardVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_167) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_167));
+        if let Some(inner_169) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_169));
         }
-        if let Some(inner_168) = &self.max_results {
+        if let Some(inner_170) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_168).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_170).encode(),
             );
         }
     }
@@ -13334,7 +13779,7 @@ pub mod list_data_sets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -13401,28 +13846,28 @@ impl ListDataSetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13438,15 +13883,15 @@ impl ListDataSetsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_169 = &self.aws_account_id;
-        let input_169 =
-            input_169
+        let input_171 = &self.aws_account_id;
+        let input_171 =
+            input_171
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_169, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_171, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -13463,13 +13908,13 @@ impl ListDataSetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_170) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_170));
+        if let Some(inner_172) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_172));
         }
-        if let Some(inner_171) = &self.max_results {
+        if let Some(inner_173) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_171).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_173).encode(),
             );
         }
     }
@@ -13518,7 +13963,7 @@ pub mod list_data_sources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -13587,28 +14032,28 @@ impl ListDataSourcesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13624,15 +14069,15 @@ impl ListDataSourcesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_172 = &self.aws_account_id;
-        let input_172 =
-            input_172
+        let input_174 = &self.aws_account_id;
+        let input_174 =
+            input_174
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_172, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_174, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -13649,13 +14094,13 @@ impl ListDataSourcesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_173) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_173));
+        if let Some(inner_175) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_175));
         }
-        if let Some(inner_174) = &self.max_results {
+        if let Some(inner_176) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_174).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_176).encode(),
             );
         }
     }
@@ -13784,28 +14229,28 @@ impl ListFolderMembersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13821,30 +14266,30 @@ impl ListFolderMembersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_175 = &self.aws_account_id;
-        let input_175 =
-            input_175
+        let input_177 = &self.aws_account_id;
+        let input_177 =
+            input_177
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_175, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_177, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_176 = &self.folder_id;
-        let input_176 =
-            input_176
+        let input_178 = &self.folder_id;
+        let input_178 =
+            input_178
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-        let folder_id = smithy_http::label::fmt_string(input_176, false);
+        let folder_id = smithy_http::label::fmt_string(input_178, false);
         if folder_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "folder_id",
@@ -13862,13 +14307,13 @@ impl ListFolderMembersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_177) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_177));
+        if let Some(inner_179) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_179));
         }
-        if let Some(inner_178) = &self.max_results {
+        if let Some(inner_180) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_178).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_180).encode(),
             );
         }
     }
@@ -13984,28 +14429,28 @@ impl ListFoldersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14021,15 +14466,15 @@ impl ListFoldersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_179 = &self.aws_account_id;
-        let input_179 =
-            input_179
+        let input_181 = &self.aws_account_id;
+        let input_181 =
+            input_181
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_179, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_181, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -14046,13 +14491,13 @@ impl ListFoldersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_180) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_180));
+        if let Some(inner_182) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_182));
         }
-        if let Some(inner_181) = &self.max_results {
+        if let Some(inner_183) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_181).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_183).encode(),
             );
         }
     }
@@ -14130,8 +14575,8 @@ pub mod list_group_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14193,28 +14638,28 @@ impl ListGroupMembershipsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14230,45 +14675,45 @@ impl ListGroupMembershipsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_182 = &self.aws_account_id;
-        let input_182 =
-            input_182
+        let input_184 = &self.aws_account_id;
+        let input_184 =
+            input_184
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_182, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_184, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_183 = &self.namespace;
-        let input_183 =
-            input_183
+        let input_185 = &self.namespace;
+        let input_185 =
+            input_185
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_183, false);
+        let namespace = smithy_http::label::fmt_string(input_185, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_184 = &self.group_name;
-        let input_184 =
-            input_184
+        let input_186 = &self.group_name;
+        let input_186 =
+            input_186
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let group_name = smithy_http::label::fmt_string(input_184, false);
+        let group_name = smithy_http::label::fmt_string(input_186, false);
         if group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "group_name",
@@ -14287,13 +14732,13 @@ impl ListGroupMembershipsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_185) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_185));
+        if let Some(inner_187) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_187));
         }
-        if let Some(inner_186) = &self.max_results {
+        if let Some(inner_188) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_186).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_188).encode(),
             );
         }
     }
@@ -14343,8 +14788,8 @@ pub mod list_groups_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14421,28 +14866,28 @@ impl ListGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14458,30 +14903,30 @@ impl ListGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_187 = &self.aws_account_id;
-        let input_187 =
-            input_187
+        let input_189 = &self.aws_account_id;
+        let input_189 =
+            input_189
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_187, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_189, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_188 = &self.namespace;
-        let input_188 =
-            input_188
+        let input_190 = &self.namespace;
+        let input_190 =
+            input_190
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_188, false);
+        let namespace = smithy_http::label::fmt_string(input_190, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
@@ -14499,13 +14944,13 @@ impl ListGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_189) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_189));
+        if let Some(inner_191) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_191));
         }
-        if let Some(inner_190) = &self.max_results {
+        if let Some(inner_192) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_190).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_192).encode(),
             );
         }
     }
@@ -14556,7 +15001,7 @@ pub mod list_iam_policy_assignments_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains these IAM policy assignments.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains these IAM policy assignments.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14652,28 +15097,28 @@ impl ListIamPolicyAssignmentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14689,30 +15134,30 @@ impl ListIamPolicyAssignmentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_191 = &self.aws_account_id;
-        let input_191 =
-            input_191
+        let input_193 = &self.aws_account_id;
+        let input_193 =
+            input_193
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_191, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_193, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_192 = &self.namespace;
-        let input_192 =
-            input_192
+        let input_194 = &self.namespace;
+        let input_194 =
+            input_194
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_192, false);
+        let namespace = smithy_http::label::fmt_string(input_194, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
@@ -14730,13 +15175,13 @@ impl ListIamPolicyAssignmentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_193) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_193));
+        if let Some(inner_195) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_195));
         }
-        if let Some(inner_194) = &self.max_results {
+        if let Some(inner_196) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_194).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_196).encode(),
             );
         }
     }
@@ -14787,7 +15232,7 @@ pub mod list_iam_policy_assignments_for_user_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the assignments.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the assignments.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14877,28 +15322,28 @@ impl ListIamPolicyAssignmentsForUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14914,45 +15359,45 @@ impl ListIamPolicyAssignmentsForUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_195 = &self.aws_account_id;
-        let input_195 =
-            input_195
+        let input_197 = &self.aws_account_id;
+        let input_197 =
+            input_197
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_195, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_197, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_196 = &self.namespace;
-        let input_196 =
-            input_196
+        let input_198 = &self.namespace;
+        let input_198 =
+            input_198
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_196, false);
+        let namespace = smithy_http::label::fmt_string(input_198, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_197 = &self.user_name;
-        let input_197 =
-            input_197
+        let input_199 = &self.user_name;
+        let input_199 =
+            input_199
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-        let user_name = smithy_http::label::fmt_string(input_197, false);
+        let user_name = smithy_http::label::fmt_string(input_199, false);
         if user_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_name",
@@ -14964,13 +15409,13 @@ impl ListIamPolicyAssignmentsForUserInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_198) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_198));
+        if let Some(inner_200) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_200));
         }
-        if let Some(inner_199) = &self.max_results {
+        if let Some(inner_201) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_199).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_201).encode(),
             );
         }
     }
@@ -15038,7 +15483,7 @@ pub mod list_ingestions_input {
             self.next_token = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15099,28 +15544,28 @@ impl ListIngestionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15136,30 +15581,30 @@ impl ListIngestionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_200 = &self.aws_account_id;
-        let input_200 =
-            input_200
+        let input_202 = &self.aws_account_id;
+        let input_202 =
+            input_202
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_200, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_202, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_201 = &self.data_set_id;
-        let input_201 =
-            input_201
+        let input_203 = &self.data_set_id;
+        let input_203 =
+            input_203
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-        let data_set_id = smithy_http::label::fmt_string(input_201, false);
+        let data_set_id = smithy_http::label::fmt_string(input_203, false);
         if data_set_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "data_set_id",
@@ -15177,13 +15622,13 @@ impl ListIngestionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_202) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_202));
+        if let Some(inner_204) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_204));
         }
-        if let Some(inner_203) = &self.max_results {
+        if let Some(inner_205) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_203).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_205).encode(),
             );
         }
     }
@@ -15232,7 +15677,7 @@ pub mod list_namespaces_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that contains the QuickSight namespaces that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespaces that you want to list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15301,28 +15746,28 @@ impl ListNamespacesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15338,15 +15783,15 @@ impl ListNamespacesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_204 = &self.aws_account_id;
-        let input_204 =
-            input_204
+        let input_206 = &self.aws_account_id;
+        let input_206 =
+            input_206
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_204, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_206, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -15363,13 +15808,13 @@ impl ListNamespacesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_205) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_205));
+        if let Some(inner_207) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_207));
         }
-        if let Some(inner_206) = &self.max_results {
+        if let Some(inner_208) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_206).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_208).encode(),
             );
         }
     }
@@ -15462,28 +15907,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15499,15 +15944,15 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_207 = &self.resource_arn;
-        let input_207 =
-            input_207
+        let input_209 = &self.resource_arn;
+        let input_209 =
+            input_209
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_207, false);
+        let resource_arn = smithy_http::label::fmt_string(input_209, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -15567,7 +16012,7 @@ pub mod list_template_aliases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template aliases that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15646,28 +16091,28 @@ impl ListTemplateAliasesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15683,30 +16128,30 @@ impl ListTemplateAliasesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_208 = &self.aws_account_id;
-        let input_208 =
-            input_208
+        let input_210 = &self.aws_account_id;
+        let input_210 =
+            input_210
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_208, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_210, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_209 = &self.template_id;
-        let input_209 =
-            input_209
+        let input_211 = &self.template_id;
+        let input_211 =
+            input_211
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let template_id = smithy_http::label::fmt_string(input_209, false);
+        let template_id = smithy_http::label::fmt_string(input_211, false);
         if template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_id",
@@ -15724,13 +16169,13 @@ impl ListTemplateAliasesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_210) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_210));
+        if let Some(inner_212) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_212));
         }
-        if let Some(inner_211) = &self.max_results {
+        if let Some(inner_213) = &self.max_results {
             query.push_kv(
                 "max-result",
-                &smithy_types::primitive::Encoder::from(*inner_211).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_213).encode(),
             );
         }
     }
@@ -15779,7 +16224,7 @@ pub mod list_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15846,28 +16291,28 @@ impl ListTemplatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15883,15 +16328,15 @@ impl ListTemplatesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_212 = &self.aws_account_id;
-        let input_212 =
-            input_212
+        let input_214 = &self.aws_account_id;
+        let input_214 =
+            input_214
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_212, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_214, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -15908,13 +16353,13 @@ impl ListTemplatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_213) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_213));
+        if let Some(inner_215) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_215));
         }
-        if let Some(inner_214) = &self.max_results {
+        if let Some(inner_216) = &self.max_results {
             query.push_kv(
                 "max-result",
-                &smithy_types::primitive::Encoder::from(*inner_214).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_216).encode(),
             );
         }
     }
@@ -15964,7 +16409,7 @@ pub mod list_template_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16043,28 +16488,28 @@ impl ListTemplateVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16080,30 +16525,30 @@ impl ListTemplateVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_215 = &self.aws_account_id;
-        let input_215 =
-            input_215
+        let input_217 = &self.aws_account_id;
+        let input_217 =
+            input_217
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_215, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_217, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_216 = &self.template_id;
-        let input_216 =
-            input_216
+        let input_218 = &self.template_id;
+        let input_218 =
+            input_218
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let template_id = smithy_http::label::fmt_string(input_216, false);
+        let template_id = smithy_http::label::fmt_string(input_218, false);
         if template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_id",
@@ -16121,13 +16566,13 @@ impl ListTemplateVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_217) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_217));
+        if let Some(inner_219) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_219));
         }
-        if let Some(inner_218) = &self.max_results {
+        if let Some(inner_220) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_218).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_220).encode(),
             );
         }
     }
@@ -16177,7 +16622,7 @@ pub mod list_theme_aliases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme aliases that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16256,28 +16701,28 @@ impl ListThemeAliasesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16293,30 +16738,30 @@ impl ListThemeAliasesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_219 = &self.aws_account_id;
-        let input_219 =
-            input_219
+        let input_221 = &self.aws_account_id;
+        let input_221 =
+            input_221
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_219, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_221, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_220 = &self.theme_id;
-        let input_220 =
-            input_220
+        let input_222 = &self.theme_id;
+        let input_222 =
+            input_222
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-        let theme_id = smithy_http::label::fmt_string(input_220, false);
+        let theme_id = smithy_http::label::fmt_string(input_222, false);
         if theme_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "theme_id",
@@ -16334,13 +16779,13 @@ impl ListThemeAliasesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_221) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_221));
+        if let Some(inner_223) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_223));
         }
-        if let Some(inner_222) = &self.max_results {
+        if let Some(inner_224) = &self.max_results {
             query.push_kv(
                 "max-result",
-                &smithy_types::primitive::Encoder::from(*inner_222).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_224).encode(),
             );
         }
     }
@@ -16390,7 +16835,7 @@ pub mod list_themes_input {
         pub(crate) r#type: std::option::Option<crate::model::ThemeType>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16432,7 +16877,7 @@ pub mod list_themes_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p>
+        /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ThemeType) -> Self {
@@ -16481,28 +16926,28 @@ impl ListThemesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16518,15 +16963,15 @@ impl ListThemesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_223 = &self.aws_account_id;
-        let input_223 =
-            input_223
+        let input_225 = &self.aws_account_id;
+        let input_225 =
+            input_225
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_223, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_225, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -16543,17 +16988,17 @@ impl ListThemesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_224) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_224));
+        if let Some(inner_226) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_226));
         }
-        if let Some(inner_225) = &self.max_results {
+        if let Some(inner_227) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_225).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_227).encode(),
             );
         }
-        if let Some(inner_226) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_226));
+        if let Some(inner_228) = &self.r#type {
+            query.push_kv("type", &smithy_http::query::fmt_string(&inner_228));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16602,7 +17047,7 @@ pub mod list_theme_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16681,28 +17126,28 @@ impl ListThemeVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16718,30 +17163,30 @@ impl ListThemeVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_227 = &self.aws_account_id;
-        let input_227 =
-            input_227
+        let input_229 = &self.aws_account_id;
+        let input_229 =
+            input_229
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_227, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_229, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_228 = &self.theme_id;
-        let input_228 =
-            input_228
+        let input_230 = &self.theme_id;
+        let input_230 =
+            input_230
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-        let theme_id = smithy_http::label::fmt_string(input_228, false);
+        let theme_id = smithy_http::label::fmt_string(input_230, false);
         if theme_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "theme_id",
@@ -16759,13 +17204,13 @@ impl ListThemeVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_229) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_229));
+        if let Some(inner_231) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_231));
         }
-        if let Some(inner_230) = &self.max_results {
+        if let Some(inner_232) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_230).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_232).encode(),
             );
         }
     }
@@ -16825,7 +17270,7 @@ pub mod list_user_groups_input {
             self.user_name = input;
             self
         }
-        /// <p>The AWS account ID that the user is in. Currently, you use the ID for the AWS account
+        /// <p>The Amazon Web Services account; ID that the user is in. Currently, you use the ID for the Amazon Web Services account;
         /// that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -16906,28 +17351,28 @@ impl ListUserGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16943,45 +17388,45 @@ impl ListUserGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_231 = &self.aws_account_id;
-        let input_231 =
-            input_231
+        let input_233 = &self.aws_account_id;
+        let input_233 =
+            input_233
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_231, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_233, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_232 = &self.namespace;
-        let input_232 =
-            input_232
+        let input_234 = &self.namespace;
+        let input_234 =
+            input_234
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_232, false);
+        let namespace = smithy_http::label::fmt_string(input_234, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_233 = &self.user_name;
-        let input_233 =
-            input_233
+        let input_235 = &self.user_name;
+        let input_235 =
+            input_235
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-        let user_name = smithy_http::label::fmt_string(input_233, false);
+        let user_name = smithy_http::label::fmt_string(input_235, false);
         if user_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_name",
@@ -17000,13 +17445,13 @@ impl ListUserGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_234) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_234));
+        if let Some(inner_236) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_236));
         }
-        if let Some(inner_235) = &self.max_results {
+        if let Some(inner_237) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_235).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_237).encode(),
             );
         }
     }
@@ -17056,8 +17501,8 @@ pub mod list_users_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17134,28 +17579,28 @@ impl ListUsersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -17169,30 +17614,30 @@ impl ListUsersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_236 = &self.aws_account_id;
-        let input_236 =
-            input_236
+        let input_238 = &self.aws_account_id;
+        let input_238 =
+            input_238
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_236, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_238, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_237 = &self.namespace;
-        let input_237 =
-            input_237
+        let input_239 = &self.namespace;
+        let input_239 =
+            input_239
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_237, false);
+        let namespace = smithy_http::label::fmt_string(input_239, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
@@ -17210,13 +17655,13 @@ impl ListUsersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_238) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_238));
+        if let Some(inner_240) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_240));
         }
-        if let Some(inner_239) = &self.max_results {
+        if let Some(inner_241) = &self.max_results {
             query.push_kv(
                 "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_239).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_241).encode(),
             );
         }
     }
@@ -17370,8 +17815,8 @@ pub mod register_user_input {
             self.session_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17429,8 +17874,7 @@ pub mod register_user_input {
         /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning QuickSight users to one of the
         /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions that use
-        /// SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
@@ -17546,28 +17990,28 @@ impl RegisterUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17583,30 +18027,30 @@ impl RegisterUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_240 = &self.aws_account_id;
-        let input_240 =
-            input_240
+        let input_242 = &self.aws_account_id;
+        let input_242 =
+            input_242
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_240, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_242, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_241 = &self.namespace;
-        let input_241 =
-            input_241
+        let input_243 = &self.namespace;
+        let input_243 =
+            input_243
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_241, false);
+        let namespace = smithy_http::label::fmt_string(input_243, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
@@ -17665,7 +18109,7 @@ pub mod restore_analysis_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analysis.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17724,28 +18168,28 @@ impl RestoreAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17761,30 +18205,30 @@ impl RestoreAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_242 = &self.aws_account_id;
-        let input_242 =
-            input_242
+        let input_244 = &self.aws_account_id;
+        let input_244 =
+            input_244
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_242, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_244, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_243 = &self.analysis_id;
-        let input_243 =
-            input_243
+        let input_245 = &self.analysis_id;
+        let input_245 =
+            input_245
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-        let analysis_id = smithy_http::label::fmt_string(input_243, false);
+        let analysis_id = smithy_http::label::fmt_string(input_245, false);
         if analysis_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "analysis_id",
@@ -17845,7 +18289,7 @@ pub mod search_analyses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analyses that you're searching
+        /// <p>The ID of the Amazon Web Services account; that contains the analyses that you're searching
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -17931,28 +18375,28 @@ impl SearchAnalysesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17968,15 +18412,15 @@ impl SearchAnalysesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_244 = &self.aws_account_id;
-        let input_244 =
-            input_244
+        let input_246 = &self.aws_account_id;
+        let input_246 =
+            input_246
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_244, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_246, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -18036,7 +18480,7 @@ pub mod search_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the user whose dashboards you're searching
+        /// <p>The ID of the Amazon Web Services account; that contains the user whose dashboards you're searching
         /// for. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -18122,28 +18566,28 @@ impl SearchDashboardsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18159,15 +18603,15 @@ impl SearchDashboardsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_245 = &self.aws_account_id;
-        let input_245 =
-            input_245
+        let input_247 = &self.aws_account_id;
+        let input_247 =
+            input_247
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_245, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_247, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -18311,28 +18755,28 @@ impl SearchFoldersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18348,15 +18792,15 @@ impl SearchFoldersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_246 = &self.aws_account_id;
-        let input_246 =
-            input_246
+        let input_248 = &self.aws_account_id;
+        let input_248 =
+            input_248
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_246, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_248, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -18475,28 +18919,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18512,15 +18956,15 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_247 = &self.resource_arn;
-        let input_247 =
-            input_247
+        let input_249 = &self.resource_arn;
+        let input_249 =
+            input_249
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_247, false);
+        let resource_arn = smithy_http::label::fmt_string(input_249, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -18636,28 +19080,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18673,15 +19117,15 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_248 = &self.resource_arn;
-        let input_248 =
-            input_248
+        let input_250 = &self.resource_arn;
+        let input_250 =
+            input_250
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let resource_arn = smithy_http::label::fmt_string(input_248, false);
+        let resource_arn = smithy_http::label::fmt_string(input_250, false);
         if resource_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "resource_arn",
@@ -18698,9 +19142,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_249) = &self.tag_keys {
-            for inner_250 in inner_249 {
-                query.push_kv("keys", &smithy_http::query::fmt_string(&inner_250));
+        if let Some(inner_251) = &self.tag_keys {
+            for inner_252 in inner_251 {
+                query.push_kv("keys", &smithy_http::query::fmt_string(&inner_252));
             }
         }
     }
@@ -18749,7 +19193,7 @@ pub mod update_account_customization_input {
         pub(crate) account_customization: std::option::Option<crate::model::AccountCustomization>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that you want to update QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -18771,7 +19215,7 @@ pub mod update_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+        /// <p>The QuickSight customizations you're updating in the current Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -18827,28 +19271,28 @@ impl UpdateAccountCustomizationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18864,15 +19308,15 @@ impl UpdateAccountCustomizationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_251 = &self.aws_account_id;
-        let input_251 =
-            input_251
+        let input_253 = &self.aws_account_id;
+        let input_253 =
+            input_253
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_251, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_253, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -18889,8 +19333,8 @@ impl UpdateAccountCustomizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_252) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_252));
+        if let Some(inner_254) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_254));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18938,7 +19382,7 @@ pub mod update_account_settings_input {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the AWS account that contains the QuickSight settings that you want to
+        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to
         /// list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -18951,8 +19395,8 @@ pub mod update_account_settings_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The default namespace for this AWS account. Currently, the default is
-        /// <code>default</code>. AWS Identity and Access Management (IAM) users that register
+        /// <p>The default namespace for this Amazon Web Services account;. Currently, the default is
+        /// <code>default</code>. Identity and Access Management (IAM) users that register
         /// for the first time with QuickSight provide an email that becomes associated with the
         /// default namespace.</p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18966,8 +19410,8 @@ pub mod update_account_settings_input {
             self.default_namespace = input;
             self
         }
-        /// <p>The email address that you want QuickSight to send notifications to regarding your AWS
-        /// account or QuickSight subscription.</p>
+        /// <p>The email address that you want QuickSight to send notifications to regarding your
+        /// Amazon Web Services account; or QuickSight subscription.</p>
         pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_email = Some(input.into());
             self
@@ -19021,28 +19465,28 @@ impl UpdateAccountSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19058,15 +19502,15 @@ impl UpdateAccountSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_253 = &self.aws_account_id;
-        let input_253 =
-            input_253
+        let input_255 = &self.aws_account_id;
+        let input_255 =
+            input_255
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_253, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_255, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
@@ -19128,7 +19572,7 @@ pub mod update_analysis_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analysis that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analysis that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -19241,28 +19685,28 @@ impl UpdateAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19278,30 +19722,30 @@ impl UpdateAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_254 = &self.aws_account_id;
-        let input_254 =
-            input_254
+        let input_256 = &self.aws_account_id;
+        let input_256 =
+            input_256
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_254, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_256, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_255 = &self.analysis_id;
-        let input_255 =
-            input_255
+        let input_257 = &self.analysis_id;
+        let input_257 =
+            input_257
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-        let analysis_id = smithy_http::label::fmt_string(input_255, false);
+        let analysis_id = smithy_http::label::fmt_string(input_257, false);
         if analysis_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "analysis_id",
@@ -19364,8 +19808,8 @@ pub mod update_analysis_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the analysis whose permissions you're
-        /// updating. You must be using the AWS account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
+        /// updating. You must be using the Amazon Web Services account; that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -19463,28 +19907,28 @@ impl UpdateAnalysisPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19500,30 +19944,30 @@ impl UpdateAnalysisPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_256 = &self.aws_account_id;
-        let input_256 =
-            input_256
+        let input_258 = &self.aws_account_id;
+        let input_258 =
+            input_258
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_256, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_258, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_257 = &self.analysis_id;
-        let input_257 =
-            input_257
+        let input_259 = &self.analysis_id;
+        let input_259 =
+            input_259
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-        let analysis_id = smithy_http::label::fmt_string(input_257, false);
+        let analysis_id = smithy_http::label::fmt_string(input_259, false);
         if analysis_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "analysis_id",
@@ -19589,7 +20033,7 @@ pub mod update_dashboard_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -19626,8 +20070,8 @@ pub mod update_dashboard_input {
         /// entity. If you need to update a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-        /// QuickSight-supported AWS Region. </p>
+        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
+        /// QuickSight-supported Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -19708,7 +20152,7 @@ pub mod update_dashboard_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same AWS account where you create the
+        /// with the entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
@@ -19764,28 +20208,28 @@ impl UpdateDashboardInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19801,30 +20245,30 @@ impl UpdateDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_258 = &self.aws_account_id;
-        let input_258 =
-            input_258
+        let input_260 = &self.aws_account_id;
+        let input_260 =
+            input_260
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_258, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_260, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_259 = &self.dashboard_id;
-        let input_259 =
-            input_259
+        let input_261 = &self.dashboard_id;
+        let input_261 =
+            input_261
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_259, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_261, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
@@ -19887,7 +20331,7 @@ pub mod update_dashboard_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard whose permissions you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard whose permissions you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -19986,28 +20430,28 @@ impl UpdateDashboardPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20023,30 +20467,30 @@ impl UpdateDashboardPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_260 = &self.aws_account_id;
-        let input_260 =
-            input_260
+        let input_262 = &self.aws_account_id;
+        let input_262 =
+            input_262
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_260, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_262, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_261 = &self.dashboard_id;
-        let input_261 =
-            input_261
+        let input_263 = &self.dashboard_id;
+        let input_263 =
+            input_263
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_261, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_263, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
@@ -20106,7 +20550,7 @@ pub mod update_dashboard_published_version_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -20177,28 +20621,28 @@ impl UpdateDashboardPublishedVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20214,45 +20658,45 @@ impl UpdateDashboardPublishedVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_262 = &self.aws_account_id;
-        let input_262 =
-            input_262
+        let input_264 = &self.aws_account_id;
+        let input_264 =
+            input_264
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_262, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_264, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_263 = &self.dashboard_id;
-        let input_263 =
-            input_263
+        let input_265 = &self.dashboard_id;
+        let input_265 =
+            input_265
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_263, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_265, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_264 = &self.version_number;
-        let input_264 =
-            input_264
+        let input_266 = &self.version_number;
+        let input_266 =
+            input_266
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "version_number",
                     details: "cannot be empty or unset",
                 })?;
-        let mut version_number_encoder = smithy_types::primitive::Encoder::from(*input_264);
+        let mut version_number_encoder = smithy_types::primitive::Encoder::from(*input_266);
         let version_number = version_number_encoder.encode();
         if version_number.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
@@ -20325,11 +20769,13 @@ pub mod update_data_set_input {
         >,
         pub(crate) row_level_permission_data_set:
             std::option::Option<crate::model::RowLevelPermissionDataSet>,
+        pub(crate) row_level_permission_tag_configuration:
+            std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -20341,8 +20787,8 @@ pub mod update_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to update. This ID is unique per AWS Region for each
-        /// AWS account.</p>
+        /// <p>The ID for the dataset that you want to update. This ID is unique per Region; for each
+        /// Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -20457,6 +20903,21 @@ pub mod update_data_set_input {
             self.row_level_permission_data_set = input;
             self
         }
+        /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+        pub fn row_level_permission_tag_configuration(
+            mut self,
+            input: crate::model::RowLevelPermissionTagConfiguration,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = Some(input);
+            self
+        }
+        pub fn set_row_level_permission_tag_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = input;
+            self
+        }
         pub fn column_level_permission_rules(
             mut self,
             input: impl Into<crate::model::ColumnLevelPermissionRule>,
@@ -20488,6 +20949,7 @@ pub mod update_data_set_input {
                 column_groups: self.column_groups,
                 field_folders: self.field_folders,
                 row_level_permission_data_set: self.row_level_permission_data_set,
+                row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
             })
         }
@@ -20519,28 +20981,28 @@ impl UpdateDataSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20556,30 +21018,30 @@ impl UpdateDataSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_265 = &self.aws_account_id;
-        let input_265 =
-            input_265
+        let input_267 = &self.aws_account_id;
+        let input_267 =
+            input_267
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_265, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_267, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_266 = &self.data_set_id;
-        let input_266 =
-            input_266
+        let input_268 = &self.data_set_id;
+        let input_268 =
+            input_268
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-        let data_set_id = smithy_http::label::fmt_string(input_266, false);
+        let data_set_id = smithy_http::label::fmt_string(input_268, false);
         if data_set_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "data_set_id",
@@ -20642,7 +21104,7 @@ pub mod update_data_set_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -20654,8 +21116,8 @@ pub mod update_data_set_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per AWS
-        /// Region for each AWS account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+        /// Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -20740,28 +21202,28 @@ impl UpdateDataSetPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20777,30 +21239,30 @@ impl UpdateDataSetPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_267 = &self.aws_account_id;
-        let input_267 =
-            input_267
+        let input_269 = &self.aws_account_id;
+        let input_269 =
+            input_269
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_267, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_269, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_268 = &self.data_set_id;
-        let input_268 =
-            input_268
+        let input_270 = &self.data_set_id;
+        let input_270 =
+            input_270
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-        let data_set_id = smithy_http::label::fmt_string(input_268, false);
+        let data_set_id = smithy_http::label::fmt_string(input_270, false);
         if data_set_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "data_set_id",
@@ -20865,7 +21327,7 @@ pub mod update_data_source_input {
         pub(crate) ssl_properties: std::option::Option<crate::model::SslProperties>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -20877,7 +21339,7 @@ pub mod update_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account. </p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -20998,28 +21460,28 @@ impl UpdateDataSourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21035,30 +21497,30 @@ impl UpdateDataSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_269 = &self.aws_account_id;
-        let input_269 =
-            input_269
+        let input_271 = &self.aws_account_id;
+        let input_271 =
+            input_271
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_269, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_271, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_270 = &self.data_source_id;
-        let input_270 =
-            input_270
+        let input_272 = &self.data_source_id;
+        let input_272 =
+            input_272
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-        let data_source_id = smithy_http::label::fmt_string(input_270, false);
+        let data_source_id = smithy_http::label::fmt_string(input_272, false);
         if data_source_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "data_source_id",
@@ -21121,7 +21583,7 @@ pub mod update_data_source_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21133,7 +21595,7 @@ pub mod update_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account. </p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -21222,28 +21684,28 @@ impl UpdateDataSourcePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21259,30 +21721,30 @@ impl UpdateDataSourcePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_271 = &self.aws_account_id;
-        let input_271 =
-            input_271
+        let input_273 = &self.aws_account_id;
+        let input_273 =
+            input_273
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_271, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_273, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_272 = &self.data_source_id;
-        let input_272 =
-            input_272
+        let input_274 = &self.data_source_id;
+        let input_274 =
+            input_274
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-        let data_source_id = smithy_http::label::fmt_string(input_272, false);
+        let data_source_id = smithy_http::label::fmt_string(input_274, false);
         if data_source_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "data_source_id",
@@ -21412,28 +21874,28 @@ impl UpdateFolderInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21449,30 +21911,30 @@ impl UpdateFolderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_273 = &self.aws_account_id;
-        let input_273 =
-            input_273
+        let input_275 = &self.aws_account_id;
+        let input_275 =
+            input_275
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_273, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_275, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_274 = &self.folder_id;
-        let input_274 =
-            input_274
+        let input_276 = &self.folder_id;
+        let input_276 =
+            input_276
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-        let folder_id = smithy_http::label::fmt_string(input_274, false);
+        let folder_id = smithy_http::label::fmt_string(input_276, false);
         if folder_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "folder_id",
@@ -21632,28 +22094,28 @@ impl UpdateFolderPermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21669,30 +22131,30 @@ impl UpdateFolderPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_275 = &self.aws_account_id;
-        let input_275 =
-            input_275
+        let input_277 = &self.aws_account_id;
+        let input_277 =
+            input_277
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_275, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_277, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_276 = &self.folder_id;
-        let input_276 =
-            input_276
+        let input_278 = &self.folder_id;
+        let input_278 =
+            input_278
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-        let folder_id = smithy_http::label::fmt_string(input_276, false);
+        let folder_id = smithy_http::label::fmt_string(input_278, false);
         if folder_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "folder_id",
@@ -21771,8 +22233,8 @@ pub mod update_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21834,28 +22296,28 @@ impl UpdateGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21871,45 +22333,45 @@ impl UpdateGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_277 = &self.aws_account_id;
-        let input_277 =
-            input_277
+        let input_279 = &self.aws_account_id;
+        let input_279 =
+            input_279
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_277, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_279, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_278 = &self.namespace;
-        let input_278 =
-            input_278
+        let input_280 = &self.namespace;
+        let input_280 =
+            input_280
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_278, false);
+        let namespace = smithy_http::label::fmt_string(input_280, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_279 = &self.group_name;
-        let input_279 =
-            input_279
+        let input_281 = &self.group_name;
+        let input_281 =
+            input_281
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let group_name = smithy_http::label::fmt_string(input_279, false);
+        let group_name = smithy_http::label::fmt_string(input_281, false);
         if group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "group_name",
@@ -21975,7 +22437,7 @@ pub mod update_iam_policy_assignment_input {
         >,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+        /// <p>The ID of the Amazon Web Services account; that contains the IAM policy assignment. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21987,7 +22449,7 @@ pub mod update_iam_policy_assignment_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The name of the assignment, also called a rule. This name must be unique within an AWS account.</p>
+        /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account;.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -22112,28 +22574,28 @@ impl UpdateIamPolicyAssignmentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22149,45 +22611,45 @@ impl UpdateIamPolicyAssignmentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_280 = &self.aws_account_id;
-        let input_280 =
-            input_280
+        let input_282 = &self.aws_account_id;
+        let input_282 =
+            input_282
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_280, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_282, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_281 = &self.namespace;
-        let input_281 =
-            input_281
+        let input_283 = &self.namespace;
+        let input_283 =
+            input_283
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_281, false);
+        let namespace = smithy_http::label::fmt_string(input_283, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_282 = &self.assignment_name;
-        let input_282 =
-            input_282
+        let input_284 = &self.assignment_name;
+        let input_284 =
+            input_284
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "assignment_name",
                     details: "cannot be empty or unset",
                 })?;
-        let assignment_name = smithy_http::label::fmt_string(input_282, false);
+        let assignment_name = smithy_http::label::fmt_string(input_284, false);
         if assignment_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "assignment_name",
@@ -22243,7 +22705,7 @@ pub mod update_template_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22270,7 +22732,7 @@ pub mod update_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -22352,28 +22814,28 @@ impl UpdateTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22389,30 +22851,30 @@ impl UpdateTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_283 = &self.aws_account_id;
-        let input_283 =
-            input_283
+        let input_285 = &self.aws_account_id;
+        let input_285 =
+            input_285
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_283, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_285, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_284 = &self.template_id;
-        let input_284 =
-            input_284
+        let input_286 = &self.template_id;
+        let input_286 =
+            input_286
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let template_id = smithy_http::label::fmt_string(input_284, false);
+        let template_id = smithy_http::label::fmt_string(input_286, false);
         if template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_id",
@@ -22473,7 +22935,7 @@ pub mod update_template_alias_input {
         pub(crate) template_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22558,28 +23020,28 @@ impl UpdateTemplateAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22595,45 +23057,45 @@ impl UpdateTemplateAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_285 = &self.aws_account_id;
-        let input_285 =
-            input_285
+        let input_287 = &self.aws_account_id;
+        let input_287 =
+            input_287
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_285, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_287, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_286 = &self.template_id;
-        let input_286 =
-            input_286
+        let input_288 = &self.template_id;
+        let input_288 =
+            input_288
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let template_id = smithy_http::label::fmt_string(input_286, false);
+        let template_id = smithy_http::label::fmt_string(input_288, false);
         if template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_287 = &self.alias_name;
-        let input_287 =
-            input_287
+        let input_289 = &self.alias_name;
+        let input_289 =
+            input_289
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-        let alias_name = smithy_http::label::fmt_string(input_287, false);
+        let alias_name = smithy_http::label::fmt_string(input_289, false);
         if alias_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "alias_name",
@@ -22697,7 +23159,7 @@ pub mod update_template_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the template.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the template.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22794,28 +23256,28 @@ impl UpdateTemplatePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22831,30 +23293,30 @@ impl UpdateTemplatePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_288 = &self.aws_account_id;
-        let input_288 =
-            input_288
+        let input_290 = &self.aws_account_id;
+        let input_290 =
+            input_290
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_288, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_290, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_289 = &self.template_id;
-        let input_289 =
-            input_289
+        let input_291 = &self.template_id;
+        let input_291 =
+            input_291
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let template_id = smithy_http::label::fmt_string(input_289, false);
+        let template_id = smithy_http::label::fmt_string(input_291, false);
         if template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_id",
@@ -22917,7 +23379,7 @@ pub mod update_theme_input {
         pub(crate) configuration: std::option::Option<crate::model::ThemeConfiguration>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22948,7 +23410,7 @@ pub mod update_theme_input {
             self
         }
         /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-        /// All themes initially inherit from a default QuickSight theme.</p>
+        /// All themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
@@ -23029,28 +23491,28 @@ impl UpdateThemeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23066,30 +23528,30 @@ impl UpdateThemeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_290 = &self.aws_account_id;
-        let input_290 =
-            input_290
+        let input_292 = &self.aws_account_id;
+        let input_292 =
+            input_292
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_290, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_292, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_291 = &self.theme_id;
-        let input_291 =
-            input_291
+        let input_293 = &self.theme_id;
+        let input_293 =
+            input_293
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-        let theme_id = smithy_http::label::fmt_string(input_291, false);
+        let theme_id = smithy_http::label::fmt_string(input_293, false);
         if theme_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "theme_id",
@@ -23150,7 +23612,7 @@ pub mod update_theme_alias_input {
         pub(crate) theme_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23232,28 +23694,28 @@ impl UpdateThemeAliasInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23269,45 +23731,45 @@ impl UpdateThemeAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_292 = &self.aws_account_id;
-        let input_292 =
-            input_292
+        let input_294 = &self.aws_account_id;
+        let input_294 =
+            input_294
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_292, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_294, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_293 = &self.theme_id;
-        let input_293 =
-            input_293
+        let input_295 = &self.theme_id;
+        let input_295 =
+            input_295
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-        let theme_id = smithy_http::label::fmt_string(input_293, false);
+        let theme_id = smithy_http::label::fmt_string(input_295, false);
         if theme_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "theme_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_294 = &self.alias_name;
-        let input_294 =
-            input_294
+        let input_296 = &self.alias_name;
+        let input_296 =
+            input_296
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-        let alias_name = smithy_http::label::fmt_string(input_294, false);
+        let alias_name = smithy_http::label::fmt_string(input_296, false);
         if alias_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "alias_name",
@@ -23371,7 +23833,7 @@ pub mod update_theme_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that contains the theme.</p>
+        /// <p>The ID of the Amazon Web Services account; that contains the theme.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23467,28 +23929,28 @@ impl UpdateThemePermissionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23504,30 +23966,30 @@ impl UpdateThemePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_295 = &self.aws_account_id;
-        let input_295 =
-            input_295
+        let input_297 = &self.aws_account_id;
+        let input_297 =
+            input_297
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_295, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_297, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_296 = &self.theme_id;
-        let input_296 =
-            input_296
+        let input_298 = &self.theme_id;
+        let input_298 =
+            input_298
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-        let theme_id = smithy_http::label::fmt_string(input_296, false);
+        let theme_id = smithy_http::label::fmt_string(input_298, false);
         if theme_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "theme_id",
@@ -23604,8 +24066,8 @@ pub mod update_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-        /// account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23687,8 +24149,7 @@ pub mod update_user_input {
         /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning QuickSight users to one of the
         /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions that use
-        /// SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
@@ -23820,28 +24281,28 @@ impl UpdateUserInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23857,45 +24318,45 @@ impl UpdateUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_297 = &self.aws_account_id;
-        let input_297 =
-            input_297
+        let input_299 = &self.aws_account_id;
+        let input_299 =
+            input_299
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-        let aws_account_id = smithy_http::label::fmt_string(input_297, false);
+        let aws_account_id = smithy_http::label::fmt_string(input_299, false);
         if aws_account_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "aws_account_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_298 = &self.namespace;
-        let input_298 =
-            input_298
+        let input_300 = &self.namespace;
+        let input_300 =
+            input_300
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-        let namespace = smithy_http::label::fmt_string(input_298, false);
+        let namespace = smithy_http::label::fmt_string(input_300, false);
         if namespace.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "namespace",
                 details: "cannot be empty or unset",
             });
         }
-        let input_299 = &self.user_name;
-        let input_299 =
-            input_299
+        let input_301 = &self.user_name;
+        let input_301 =
+            input_301
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-        let user_name = smithy_http::label::fmt_string(input_299, false);
+        let user_name = smithy_http::label::fmt_string(input_301, false);
         if user_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "user_name",
@@ -23950,8 +24411,8 @@ impl UpdateUserInput {
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -24002,8 +24463,7 @@ pub struct UpdateUserInput {
     /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
     /// override the permissions typically granted by assigning QuickSight users to one of the
     /// default security cohorts in QuickSight (admin, author, reader).</p>
-    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions that use
-    /// SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>A flag that you use to indicate that you want to remove all custom permissions
     /// from this user. Using this parameter resets the user to the state
@@ -24064,7 +24524,7 @@ impl std::fmt::Debug for UpdateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemePermissionsInput {
-    /// <p>The ID of the AWS account that contains the theme.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -24087,7 +24547,7 @@ impl std::fmt::Debug for UpdateThemePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeAliasInput {
-    /// <p>The ID of the AWS account that contains the theme alias that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -24110,14 +24570,14 @@ impl std::fmt::Debug for UpdateThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeInput {
-    /// <p>The ID of the AWS account that contains the theme that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-    /// All themes initially inherit from a default QuickSight theme.</p>
+    /// All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub base_theme_id: std::option::Option<std::string::String>,
     /// <p>A description of the theme version that you're updating Every time that you call
     /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
@@ -24142,7 +24602,7 @@ impl std::fmt::Debug for UpdateThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplatePermissionsInput {
-    /// <p>The ID of the AWS account that contains the template.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -24165,7 +24625,7 @@ impl std::fmt::Debug for UpdateTemplatePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateAliasInput {
-    /// <p>The ID of the AWS account that contains the template alias that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -24191,7 +24651,7 @@ impl std::fmt::Debug for UpdateTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateInput {
-    /// <p>The ID of the AWS account that contains the template that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -24201,7 +24661,7 @@ pub struct UpdateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -24229,9 +24689,9 @@ impl std::fmt::Debug for UpdateTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIamPolicyAssignmentInput {
-    /// <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+    /// <p>The ID of the Amazon Web Services account; that contains the IAM policy assignment. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an AWS account.</p>
+    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account;.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -24281,8 +24741,8 @@ pub struct UpdateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The description for the group that you want to update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -24344,9 +24804,9 @@ impl std::fmt::Debug for UpdateFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourcePermissionsInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account. </p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -24367,9 +24827,9 @@ impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account. </p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -24402,10 +24862,10 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetPermissionsInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per AWS
-    /// Region for each AWS account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+    /// Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The resource permissions that you want to grant to the dataset.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -24426,10 +24886,10 @@ impl std::fmt::Debug for UpdateDataSetPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to update. This ID is unique per AWS Region for each
-    /// AWS account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Region; for each
+    /// Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -24451,6 +24911,9 @@ pub struct UpdateDataSetInput {
     >,
     /// <p>The row-level security configuration for the data you want to create.</p>
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    pub row_level_permission_tag_configuration:
+        std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code>
     /// <a>ColumnLevelPermissionRule</a>
     /// </code>.</p>
@@ -24473,6 +24936,10 @@ impl std::fmt::Debug for UpdateDataSetInput {
             &self.row_level_permission_data_set,
         );
         formatter.field(
+            "row_level_permission_tag_configuration",
+            &self.row_level_permission_tag_configuration,
+        );
+        formatter.field(
             "column_level_permission_rules",
             &self.column_level_permission_rules,
         );
@@ -24483,7 +24950,7 @@ impl std::fmt::Debug for UpdateDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPublishedVersionInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -24504,7 +24971,7 @@ impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPermissionsInput {
-    /// <p>The ID of the AWS account that contains the dashboard whose permissions you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard whose permissions you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -24528,7 +24995,7 @@ impl std::fmt::Debug for UpdateDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -24541,8 +25008,8 @@ pub struct UpdateDashboardInput {
     /// entity. If you need to update a dashboard from an analysis, first convert the analysis
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-    /// QuickSight-supported AWS Region. </p>
+    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
+    /// QuickSight-supported Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -24580,7 +25047,7 @@ pub struct UpdateDashboardInput {
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
     /// you add a value for this field, it overrides the value that was originally associated
-    /// with the entity. The theme ARN must exist in the same AWS account where you create the
+    /// with the entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
@@ -24602,8 +25069,8 @@ impl std::fmt::Debug for UpdateDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisPermissionsInput {
-    /// <p>The ID of the AWS account that contains the analysis whose permissions you're
-    /// updating. You must be using the AWS account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
+    /// updating. You must be using the Amazon Web Services account; that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
     /// analysis URL.</p>
@@ -24629,7 +25096,7 @@ impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisInput {
-    /// <p>The ID of the AWS account that contains the analysis that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analysis that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
     /// analysis.</p>
@@ -24664,16 +25131,16 @@ impl std::fmt::Debug for UpdateAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
-    /// <p>The ID for the AWS account that contains the QuickSight settings that you want to
+    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to
     /// list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The default namespace for this AWS account. Currently, the default is
-    /// <code>default</code>. AWS Identity and Access Management (IAM) users that register
+    /// <p>The default namespace for this Amazon Web Services account;. Currently, the default is
+    /// <code>default</code>. Identity and Access Management (IAM) users that register
     /// for the first time with QuickSight provide an email that becomes associated with the
     /// default namespace.</p>
     pub default_namespace: std::option::Option<std::string::String>,
-    /// <p>The email address that you want QuickSight to send notifications to regarding your AWS
-    /// account or QuickSight subscription.</p>
+    /// <p>The email address that you want QuickSight to send notifications to regarding your
+    /// Amazon Web Services account; or QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAccountSettingsInput {
@@ -24689,12 +25156,12 @@ impl std::fmt::Debug for UpdateAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationInput {
-    /// <p>The ID for the AWS account that you want to update QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to update QuickSight customizations for.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+    /// <p>The QuickSight customizations you're updating in the current Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
 }
 impl std::fmt::Debug for UpdateAccountCustomizationInput {
@@ -24767,7 +25234,7 @@ impl std::fmt::Debug for SearchFoldersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDashboardsInput {
-    /// <p>The ID of the AWS account that contains the user whose dashboards you're searching
+    /// <p>The ID of the Amazon Web Services account; that contains the user whose dashboards you're searching
     /// for. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for
@@ -24794,7 +25261,7 @@ impl std::fmt::Debug for SearchDashboardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAnalysesInput {
-    /// <p>The ID of the AWS account that contains the analyses that you're searching
+    /// <p>The ID of the Amazon Web Services account; that contains the analyses that you're searching
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The structure for the search filters that you want to apply to your search. </p>
@@ -24818,7 +25285,7 @@ impl std::fmt::Debug for SearchAnalysesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreAnalysisInput {
-    /// <p>The ID of the AWS account that contains the analysis.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're restoring.</p>
     pub analysis_id: std::option::Option<std::string::String>,
@@ -24892,8 +25359,8 @@ pub struct RegisterUserInput {
     /// </a> in the <i>AWS CLI Reference.</i>
     /// </p>
     pub session_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -24927,8 +25394,7 @@ pub struct RegisterUserInput {
     /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
     /// override the permissions typically granted by assigning QuickSight users to one of the
     /// default security cohorts in QuickSight (admin, author, reader).</p>
-    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions that use
-    /// SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
@@ -24977,8 +25443,8 @@ impl std::fmt::Debug for RegisterUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25003,7 +25469,7 @@ impl std::fmt::Debug for ListUsersInput {
 pub struct ListUserGroupsInput {
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that the user is in. Currently, you use the ID for the AWS account
+    /// <p>The Amazon Web Services account; ID that the user is in. Currently, you use the ID for the Amazon Web Services account;
     /// that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -25028,7 +25494,7 @@ impl std::fmt::Debug for ListUserGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeVersionsInput {
-    /// <p>The ID of the AWS account that contains the themes that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25051,7 +25517,7 @@ impl std::fmt::Debug for ListThemeVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemesInput {
-    /// <p>The ID of the AWS account that contains the themes that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25069,7 +25535,7 @@ pub struct ListThemesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p>
+    /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ThemeType>,
@@ -25088,7 +25554,7 @@ impl std::fmt::Debug for ListThemesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeAliasesInput {
-    /// <p>The ID of the AWS account that contains the theme aliases that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme aliases that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25111,7 +25577,7 @@ impl std::fmt::Debug for ListThemeAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsInput {
-    /// <p>The ID of the AWS account that contains the templates that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25134,7 +25600,7 @@ impl std::fmt::Debug for ListTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
-    /// <p>The ID of the AWS account that contains the templates that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25154,7 +25620,7 @@ impl std::fmt::Debug for ListTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateAliasesInput {
-    /// <p>The ID of the AWS account that contains the template aliases that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template aliases that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25191,7 +25657,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesInput {
-    /// <p>The ID for the AWS account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespaces that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25215,7 +25681,7 @@ pub struct ListIngestionsInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -25234,7 +25700,7 @@ impl std::fmt::Debug for ListIngestionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsForUserInput {
-    /// <p>The ID of the AWS account that contains the assignments.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the assignments.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
     pub user_name: std::option::Option<std::string::String>,
@@ -25260,7 +25726,7 @@ impl std::fmt::Debug for ListIamPolicyAssignmentsForUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsInput {
-    /// <p>The ID of the AWS account that contains these IAM policy assignments.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains these IAM policy assignments.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The status of the assignments.</p>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
@@ -25286,8 +25752,8 @@ impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25316,8 +25782,8 @@ pub struct ListGroupMembershipsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return from this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25380,7 +25846,7 @@ impl std::fmt::Debug for ListFolderMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25400,7 +25866,7 @@ impl std::fmt::Debug for ListDataSourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25420,7 +25886,7 @@ impl std::fmt::Debug for ListDataSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardVersionsInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're listing versions
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're listing versions
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -25444,7 +25910,7 @@ impl std::fmt::Debug for ListDashboardVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsInput {
-    /// <p>The ID of the AWS account that contains the dashboards that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboards that you're
     /// listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -25465,7 +25931,7 @@ impl std::fmt::Debug for ListDashboardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalysesInput {
-    /// <p>The ID of the AWS account that contains the analyses.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analyses.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25485,7 +25951,7 @@ impl std::fmt::Debug for ListAnalysesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlInput {
-    /// <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account; associated with your QuickSight subscription.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
     /// the following paths:</p>
@@ -25535,7 +26001,7 @@ pub struct GetSessionEmbedUrlInput {
     /// <p>Invited nonfederated users</p>
     /// </li>
     /// <li>
-    /// <p>AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+    /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
     /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
     /// federation</p>
     /// </li>
@@ -25561,9 +26027,9 @@ impl std::fmt::Debug for GetSessionEmbedUrlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashboardEmbedUrlInput {
-    /// <p>The ID for the AWS account that contains the dashboard that you're embedding.</p>
+    /// <p>The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dashboard, also added to the AWS Identity and Access Management (IAM)
+    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
     /// policy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The authentication method that the user uses to sign in.</p>
@@ -25602,9 +26068,7 @@ pub struct GetDashboardEmbedUrlInput {
     /// <p>Omit this parameter for users in the third group – IAM users and IAM
     /// role-based sessions.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The QuickSight namespace that contains the dashboard IDs in this request.
-    /// If you're not using a custom namespace, set this to
-    /// "<code>default</code>".</p>
+    /// <p>The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
     /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
     /// anonymous users. The <code>IdentityType</code> parameter must be set to
@@ -25636,11 +26100,73 @@ impl std::fmt::Debug for GetDashboardEmbedUrlInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateEmbedUrlForRegisteredUserInput {
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub session_lifetime_in_minutes: std::option::Option<i64>,
+    /// <p>The Amazon Resource Name for the registered user.</p>
+    pub user_arn: std::option::Option<std::string::String>,
+    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    pub experience_configuration:
+        std::option::Option<crate::model::RegisteredUserEmbeddingExperienceConfiguration>,
+}
+impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserInput");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field(
+            "session_lifetime_in_minutes",
+            &self.session_lifetime_in_minutes,
+        );
+        formatter.field("user_arn", &self.user_arn);
+        formatter.field("experience_configuration", &self.experience_configuration);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateEmbedUrlForAnonymousUserInput {
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub session_lifetime_in_minutes: std::option::Option<i64>,
+    /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
+    /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
+    pub session_tags: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
+    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    pub authorized_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The configuration of the experience you are embedding.</p>
+    pub experience_configuration:
+        std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
+}
+impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserInput");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field(
+            "session_lifetime_in_minutes",
+            &self.session_lifetime_in_minutes,
+        );
+        formatter.field("namespace", &self.namespace);
+        formatter.field("session_tags", &self.session_tags);
+        formatter.field("authorized_resource_arns", &self.authorized_resource_arns);
+        formatter.field("experience_configuration", &self.experience_configuration);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
     /// <p>The name of the user that you want to describe.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25658,7 +26184,7 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemePermissionsInput {
-    /// <p>The ID of the AWS account that contains the theme that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25675,7 +26201,7 @@ impl std::fmt::Debug for DescribeThemePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeAliasInput {
-    /// <p>The ID of the AWS account that contains the theme alias that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
@@ -25696,7 +26222,7 @@ impl std::fmt::Debug for DescribeThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeInput {
-    /// <p>The ID of the AWS account that contains the theme that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25723,7 +26249,7 @@ impl std::fmt::Debug for DescribeThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplatePermissionsInput {
-    /// <p>The ID of the AWS account that contains the template that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25740,7 +26266,7 @@ impl std::fmt::Debug for DescribeTemplatePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateAliasInput {
-    /// <p>The ID of the AWS account that contains the template alias that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
@@ -25764,7 +26290,7 @@ impl std::fmt::Debug for DescribeTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateInput {
-    /// <p>The ID of the AWS account that contains the template that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25791,7 +26317,7 @@ impl std::fmt::Debug for DescribeTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceInput {
-    /// <p>The ID for the AWS account that contains the QuickSight namespace that you want to describe.</p>
+    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to describe.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25808,7 +26334,7 @@ impl std::fmt::Debug for DescribeNamespaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIngestionInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub data_set_id: std::option::Option<std::string::String>,
@@ -25828,7 +26354,7 @@ impl std::fmt::Debug for DescribeIngestionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamPolicyAssignmentInput {
-    /// <p>The ID of the AWS account that contains the assignment that you want to describe.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the assignment that you want to describe.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the assignment, also called a rule.</p>
     pub assignment_name: std::option::Option<std::string::String>,
@@ -25850,8 +26376,8 @@ impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
 pub struct DescribeGroupInput {
     /// <p>The name of the group that you want to describe.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25920,9 +26446,9 @@ impl std::fmt::Debug for DescribeFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourcePermissionsInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
@@ -25937,9 +26463,9 @@ impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourceInput {
@@ -25954,9 +26480,9 @@ impl std::fmt::Debug for DescribeDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetPermissionsInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetPermissionsInput {
@@ -25971,9 +26497,9 @@ impl std::fmt::Debug for DescribeDataSetPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetInput {
@@ -25988,7 +26514,7 @@ impl std::fmt::Debug for DescribeDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardPermissionsInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're describing
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're describing
     /// permissions for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
@@ -26006,7 +26532,7 @@ impl std::fmt::Debug for DescribeDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -26031,8 +26557,8 @@ impl std::fmt::Debug for DescribeDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisPermissionsInput {
-    /// <p>The ID of the AWS account that contains the analysis whose permissions you're
-    /// describing. You must be using the AWS account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
+    /// describing. You must be using the Amazon Web Services account; that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
     /// analysis URL.</p>
@@ -26050,8 +26576,8 @@ impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisInput {
-    /// <p>The ID of the AWS account that contains the analysis. You must be using the AWS
-    /// account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the analysis. You must be using the
+    /// Amazon Web Services account; that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
     /// analysis.</p>
@@ -26069,7 +26595,7 @@ impl std::fmt::Debug for DescribeAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsInput {
-    /// <p>The ID for the AWS account that contains the settings that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account; that contains the settings that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAccountSettingsInput {
@@ -26083,7 +26609,7 @@ impl std::fmt::Debug for DescribeAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationInput {
-    /// <p>The ID for the AWS account that you want to describe QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you want to describe QuickSight customizations
@@ -26112,8 +26638,8 @@ impl std::fmt::Debug for DescribeAccountCustomizationInput {
 pub struct DeleteUserByPrincipalIdInput {
     /// <p>The principal ID of the user.</p>
     pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26133,8 +26659,8 @@ impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
 pub struct DeleteUserInput {
     /// <p>The name of the user that you want to delete.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26152,7 +26678,7 @@ impl std::fmt::Debug for DeleteUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeAliasInput {
-    /// <p>The ID of the AWS account that contains the theme alias to delete.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme alias to delete.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme that the specified alias is for.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -26172,7 +26698,7 @@ impl std::fmt::Debug for DeleteThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeInput {
-    /// <p>The ID of the AWS account that contains the theme that you're deleting.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the theme that you want to delete.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -26195,7 +26721,7 @@ impl std::fmt::Debug for DeleteThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateAliasInput {
-    /// <p>The ID of the AWS account that contains the item to delete.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the item to delete.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template that the specified alias is for.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -26218,7 +26744,7 @@ impl std::fmt::Debug for DeleteTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateInput {
-    /// <p>The ID of the AWS account that contains the template that you're deleting.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template that you're deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template you want to delete.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -26240,7 +26766,7 @@ impl std::fmt::Debug for DeleteTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceInput {
-    /// <p>The ID for the AWS account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account; that you want to delete the QuickSight namespace from.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to delete.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26257,7 +26783,7 @@ impl std::fmt::Debug for DeleteNamespaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIamPolicyAssignmentInput {
-    /// <p>The AWS account ID where you want to delete the IAM policy assignment.</p>
+    /// <p>The Amazon Web Services account; ID where you want to delete the IAM policy assignment.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the assignment. </p>
     pub assignment_name: std::option::Option<std::string::String>,
@@ -26281,8 +26807,8 @@ pub struct DeleteGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to delete the user from.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26303,8 +26829,8 @@ impl std::fmt::Debug for DeleteGroupMembershipInput {
 pub struct DeleteGroupInput {
     /// <p>The name of the group that you want to delete.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26363,9 +26889,9 @@ impl std::fmt::Debug for DeleteFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSourceInput {
@@ -26380,9 +26906,9 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSetInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSetInput {
@@ -26397,7 +26923,7 @@ impl std::fmt::Debug for DeleteDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDashboardInput {
-    /// <p>The ID of the AWS account that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
     /// deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -26419,7 +26945,7 @@ impl std::fmt::Debug for DeleteDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisInput {
-    /// <p>The ID of the AWS account where you want to delete an analysis.</p>
+    /// <p>The ID of the Amazon Web Services account; where you want to delete an analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're deleting.</p>
     pub analysis_id: std::option::Option<std::string::String>,
@@ -26449,8 +26975,8 @@ impl std::fmt::Debug for DeleteAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationInput {
-    /// <p>The ID for the AWS account that you want to delete QuickSight customizations from in
-    /// this AWS Region.</p>
+    /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+    /// this Region;.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26467,7 +26993,7 @@ impl std::fmt::Debug for DeleteAccountCustomizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeAliasInput {
-    /// <p>The ID of the AWS account that contains the theme for the new theme alias.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the theme for the new theme alias.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the theme alias.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -26492,10 +27018,10 @@ impl std::fmt::Debug for CreateThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeInput {
-    /// <p>The ID of the AWS account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the theme that you want to create. The theme ID is unique per AWS Region in
-    /// each AWS account.</p>
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Region; in
+    /// each Amazon Web Services account;.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>A display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
@@ -26536,13 +27062,13 @@ impl std::fmt::Debug for CreateThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateAliasInput {
-    /// <p>The ID of the AWS account that contains the template that you creating an alias for.</p>
+    /// <p>The ID of the Amazon Web Services account; that contains the template that you creating an alias for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the
     /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-    /// are reserved by QuickSight. </p>
+    /// are reserved by Amazon QuickSight. </p>
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the template.</p>
     pub template_version_number: std::option::Option<i64>,
@@ -26561,11 +27087,11 @@ impl std::fmt::Debug for CreateTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateInput {
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the template that you want to create. This template is unique per AWS Region in
-    /// each AWS account.</p>
+    /// <p>An ID for the template that you want to create. This template is unique per Region; in
+    /// each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -26577,7 +27103,7 @@ pub struct CreateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -26607,7 +27133,7 @@ impl std::fmt::Debug for CreateTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceInput {
-    /// <p>The ID for the AWS account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account; that you want to create the QuickSight namespace in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26635,7 +27161,7 @@ pub struct CreateIngestionInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateIngestionInput {
@@ -26651,10 +27177,10 @@ impl std::fmt::Debug for CreateIngestionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentInput {
-    /// <p>The ID of the AWS account where you want to assign an IAM policy to QuickSight users or
+    /// <p>The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
     /// groups.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the assignment, also called a rule. It must be unique within an AWS account.</p>
+    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -26704,8 +27230,8 @@ pub struct CreateGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to add the user to.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26729,8 +27255,8 @@ pub struct CreateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>A description for the group that you want to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that the group is in. Currently, you use the ID for the AWS
-    /// account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26807,9 +27333,9 @@ impl std::fmt::Debug for CreateFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the data source. This ID is unique per AWS Region for each AWS account. </p>
+    /// <p>An ID for the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -26856,9 +27382,9 @@ impl std::fmt::Debug for CreateDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>An ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -26882,6 +27408,9 @@ pub struct CreateDataSetInput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The row-level security configuration for the data that you want to create.</p>
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    pub row_level_permission_tag_configuration:
+        std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code>
     /// <a>ColumnLevelPermissionRule</a>
     /// </code>.</p>
@@ -26907,6 +27436,10 @@ impl std::fmt::Debug for CreateDataSetInput {
             &self.row_level_permission_data_set,
         );
         formatter.field(
+            "row_level_permission_tag_configuration",
+            &self.row_level_permission_tag_configuration,
+        );
+        formatter.field(
             "column_level_permission_rules",
             &self.column_level_permission_rules,
         );
@@ -26918,7 +27451,7 @@ impl std::fmt::Debug for CreateDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDashboardInput {
-    /// <p>The ID of the AWS account where you want to create the dashboard.</p>
+    /// <p>The ID of the Amazon Web Services account; where you want to create the dashboard.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -26939,8 +27472,8 @@ pub struct CreateDashboardInput {
     /// entity. If you need to create a dashboard from an analysis, first convert the analysis
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code>ARN can contain any AWS Account and any
-    /// QuickSight-supported AWS Region. </p>
+    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
+    /// QuickSight-supported Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -26977,7 +27510,7 @@ pub struct CreateDashboardInput {
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
     /// you add a value for this field, it overrides the value that is used in the source
-    /// entity. The theme ARN must exist in the same AWS account where you create the
+    /// entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
@@ -27001,7 +27534,7 @@ impl std::fmt::Debug for CreateDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnalysisInput {
-    /// <p>The ID of the AWS account where you are creating an analysis.</p>
+    /// <p>The ID of the Amazon Web Services account; where you are creating an analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
     /// analysis.</p>
@@ -27014,7 +27547,7 @@ pub struct CreateAnalysisInput {
     pub parameters: std::option::Option<crate::model::Parameters>,
     /// <p>A structure that describes the principals and the resource-level permissions on an
     /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
-    /// providing a list of AWS Identity and Access Management (IAM) action information for each
+    /// providing a list of Identity and Access Management (IAM) action information for each
     /// principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -27046,12 +27579,12 @@ impl std::fmt::Debug for CreateAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountCustomizationInput {
-    /// <p>The ID for the AWS account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you want to add customizations to.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're adding in the current AWS Region. You can add
-    /// these to an AWS account and a QuickSight namespace. </p>
+    /// <p>The QuickSight customizations you're adding in the current Region;. You can add
+    /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
     /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
     /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -27076,7 +27609,7 @@ impl std::fmt::Debug for CreateAccountCustomizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelIngestionInput {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub data_set_id: std::option::Option<std::string::String>,

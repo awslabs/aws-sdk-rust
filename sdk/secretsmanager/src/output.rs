@@ -1126,7 +1126,7 @@ pub struct GetResourcePolicyOutput {
     /// attached secret. These permissions are combined with any permissions that are associated with
     /// the user or role that attempts to access this secret. The combined permissions specify who can
     /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-    /// AWS Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
+    /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetResourcePolicyOutput {
@@ -1171,7 +1171,7 @@ pub mod get_resource_policy_output {
         /// attached secret. These permissions are combined with any permissions that are associated with
         /// the user or role that attempts to access this secret. The combined permissions specify who can
         /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-        /// AWS Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
+        /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
@@ -1258,10 +1258,10 @@ pub struct DescribeSecretOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
     /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
     /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-    /// default AWS KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+    /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
     /// <p>To enable rotation, use <a>RotateSecret</a> with
@@ -1389,10 +1389,10 @@ pub mod describe_secret_output {
             self.description = input;
             self
         }
-        /// <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
+        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
         /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
         /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-        /// default AWS KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+        /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self

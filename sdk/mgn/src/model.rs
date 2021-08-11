@@ -184,7 +184,6 @@ impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
 pub enum ReplicationConfigurationEbsEncryption {
     Custom,
     Default,
-    None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -193,7 +192,6 @@ impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
         match s {
             "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
             "DEFAULT" => ReplicationConfigurationEbsEncryption::Default,
-            "NONE" => ReplicationConfigurationEbsEncryption::None,
             other => ReplicationConfigurationEbsEncryption::Unknown(other.to_owned()),
         }
     }
@@ -210,12 +208,11 @@ impl ReplicationConfigurationEbsEncryption {
         match self {
             ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
             ReplicationConfigurationEbsEncryption::Default => "DEFAULT",
-            ReplicationConfigurationEbsEncryption::None => "NONE",
             ReplicationConfigurationEbsEncryption::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["CUSTOM", "DEFAULT", "NONE"]
+        &["CUSTOM", "DEFAULT"]
     }
 }
 impl AsRef<str> for ReplicationConfigurationEbsEncryption {

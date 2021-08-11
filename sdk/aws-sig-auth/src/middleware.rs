@@ -151,13 +151,13 @@ mod test {
         );
         let mut config = OperationSigningConfig::default_config();
         config.signing_options.content_sha256_header = true;
-        req.config_mut().insert(config);
+        req.properties_mut().insert(config);
         errs.push(
             signer
                 .apply(req.try_clone().expect("can clone"))
                 .expect_err("no cred provider"),
         );
-        req.config_mut()
+        req.properties_mut()
             .insert(Credentials::from_keys("AKIAfoo", "bar", None));
         let req = signer.apply(req).expect("signing succeeded");
         // make sure we got the correct error types in any order

@@ -443,7 +443,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment Templates</a> in the <i>AWS Proton Administration
+        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>AWS Proton Administrator
         /// Guide</i>.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input);
@@ -490,8 +490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a> in the
-        /// <i>AWS Proton Administration Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the
+        /// <i>AWS Proton Administrator Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input);
             self
@@ -500,8 +500,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf. You
+        /// must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.proton_service_role_arn(input);
             self
@@ -515,8 +515,7 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
         /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and value. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
-        /// connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+        /// parameter and value. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -531,7 +530,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_account_connection_id(input);
             self
         }
-        /// <p>Create tags for your environment. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+        /// <p>Create tags for your environment. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -704,7 +703,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning(input);
             self
         }
-        /// <p>Create tags for your environment template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+        /// <p>Create tags for your environment template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -780,7 +779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>majorVersion</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, exclude <code>majorVersion</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
+        /// <code>majorVersion</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.major_version(input);
             self
@@ -903,9 +903,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template doesn’t include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>AWS Proton
-        /// Administration Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a
-        /// service</a> in the <i>AWS Proton User Guide</i>.</p>
+        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more
+        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
+        /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>AWS Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input);
             self
@@ -914,10 +914,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>The ARN of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set up repository connection</a> in the
-        /// <i>AWS Proton Administration Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting started</a> in the <i>AWS Proton User
-        /// Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a
-        /// service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the
+        /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with AWS Proton</a> in the <i>AWS Proton
+        /// User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
+        /// a service pipeline.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_connection_arn(input);
             self
@@ -942,8 +942,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_id(input);
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in AWS Proton. <i>Don't</i> include this parameter
-        /// if your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in AWS Proton. <i>Don't</i> include this
+        /// parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.branch_name(input);
             self
@@ -952,7 +952,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p>Create tags for your service. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+        /// <p>Create tags for your service. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1037,8 +1037,8 @@ pub mod fluent_builders {
         }
         /// <p>AWS Proton includes a service pipeline for your service by default. When included, this parameter indicates that an AWS Proton service
         /// pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service template
-        /// bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template
+        /// bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.inner = self.inner.pipeline_provisioning(input);
             self
@@ -1050,7 +1050,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_provisioning(input);
             self
         }
-        /// <p>Create tags for your service template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+        /// <p>Create tags for your service template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -2506,7 +2506,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the resource for the listed tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -2808,7 +2808,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_minor_version(input);
             self
         }
-        /// <p>The ARN of the AWS Proton service role that allows AWS Proton to make API calls to other services your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make API calls to other services your
+        /// behalf.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.proton_service_role_arn(input);
             self
@@ -2870,7 +2871,7 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the environment account connection.</p>
         /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current
-        /// environment account connection was created in and associated with the current environment.</p>
+        /// environment account connection was created in and is associated with the current environment.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3135,7 +3136,7 @@ pub mod fluent_builders {
         }
         /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the
         /// list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">AWS Proton Administration
+        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">AWS Proton Administrator
         /// Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">AWS Proton User Guide</a>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input);

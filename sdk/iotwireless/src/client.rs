@@ -1738,7 +1738,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device id. For a wireless gateway, it is the wireless gateway id.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+        /// it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
             self
@@ -1750,7 +1751,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_identifier(input);
             self
         }
-        /// <p>The type of the resource, currently support WirelessDevice and WirelessGateway.</p>
+        /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input);
             self
@@ -2691,7 +2692,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device id. For a wireless gateway, it is the wireless gateway id.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+        /// it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
             self
@@ -2703,7 +2705,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_identifier(input);
             self
         }
-        /// <p>The type of the resource, currently support WirelessDevice and WirelessGateway.</p>
+        /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input);
             self
@@ -2788,7 +2790,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device id. For a wireless gateway, it is the wireless gateway id.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+        /// it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
             self
@@ -2800,7 +2803,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_identifier(input);
             self
         }
-        /// <p>The type of the resource, currently support WirelessDevice and WirelessGateway.</p>
+        /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input);
             self
@@ -2862,7 +2865,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transmit_mode(input);
             self
         }
-        /// <p>The message payload to send.</p>
+        /// <p>The binary to be sent to the end device, encoded in base64.</p>
         pub fn payload_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.payload_data(input);
             self

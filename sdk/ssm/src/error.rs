@@ -14458,8 +14458,8 @@ impl TooManyUpdates {
     }
 }
 
-/// <p>The specified service setting was not found. Either the service name or the setting has not
-/// been provisioned by the AWS service team.</p>
+/// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
+/// been provisioned by the Amazon Web Services service team.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSettingNotFound {
@@ -14579,7 +14579,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>The specified sync name was not found.</p>
+/// <p>The specified sync name wasn't found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncNotFoundException {
@@ -14784,10 +14784,10 @@ impl ResourceDataSyncConflictException {
     }
 }
 
-/// <p>Error returned when the ID specified for a resource, such as a maintenance window or Patch
+/// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
 /// baseline, doesn't exist.</p>
-/// <p>For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-/// <i>AWS General Reference</i>.</p>
+/// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
+/// <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoesNotExistException {
@@ -14908,7 +14908,7 @@ impl OpsMetadataTooManyUpdatesException {
     }
 }
 
-/// <p>The OpsMetadata object does not exist. </p>
+/// <p>The OpsMetadata object doesn't exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataNotFoundException {
@@ -15402,11 +15402,23 @@ impl OpsItemAlreadyExistsException {
 }
 
 /// <p>The following problems can cause this exception:</p>
-/// <p>You do not have permission to access the instance.</p>
-/// <p>SSM Agent is not running. Verify that SSM Agent is running.</p>
-/// <p>SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-/// <p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-/// Invalid states are: Shutting-down and Terminated.</p>
+/// <ul>
+/// <li>
+/// <p>You don't have permission to access the instance.</p>
+/// </li>
+/// <li>
+/// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
+/// running.</p>
+/// </li>
+/// <li>
+/// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
+/// </li>
+/// <li>
+/// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+/// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
+/// <code>Shutting-down</code> and <code>Terminated</code>.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceId {
@@ -15466,7 +15478,7 @@ impl InvalidInstanceId {
     }
 }
 
-/// <p>The document version is not valid or does not exist.</p>
+/// <p>The document version isn't valid or doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentVersion {
@@ -15587,14 +15599,12 @@ impl InvalidDocumentOperation {
     }
 }
 
-/// <p>The specified document does not exist.</p>
+/// <p>The specified SSM document doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocument {
-    /// <p>The document does not exist or the document is not available to the user. This exception can
-    /// be issued by CreateAssociation, CreateAssociationBatch, DeleteAssociation, DeleteDocument,
-    /// DescribeAssociation, DescribeDocument, GetDocument, SendCommand, or UpdateAssociationStatus.
-    /// </p>
+    /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception
+    /// can be issued by various API operations. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocument {
@@ -15628,10 +15638,8 @@ pub mod invalid_document {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The document does not exist or the document is not available to the user. This exception can
-        /// be issued by CreateAssociation, CreateAssociationBatch, DeleteAssociation, DeleteDocument,
-        /// DescribeAssociation, DescribeDocument, GetDocument, SendCommand, or UpdateAssociationStatus.
-        /// </p>
+        /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception
+        /// can be issued by various API operations. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -15655,7 +15663,7 @@ impl InvalidDocument {
     }
 }
 
-/// <p>The version of the document schema is not supported.</p>
+/// <p>The version of the document schema isn't supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentSchemaVersion {
@@ -15775,7 +15783,7 @@ impl MaxDocumentSizeExceeded {
     }
 }
 
-/// <p>The content for the document is not valid.</p>
+/// <p>The content for the document isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentContent {
@@ -16080,7 +16088,7 @@ impl StatusUnchanged {
     }
 }
 
-/// <p>The specified association does not exist.</p>
+/// <p>The specified association doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationDoesNotExist {
@@ -16140,7 +16148,7 @@ impl AssociationDoesNotExist {
     }
 }
 
-/// <p>The update is not valid.</p>
+/// <p>The update isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUpdate {
@@ -16200,7 +16208,7 @@ impl InvalidUpdate {
     }
 }
 
-/// <p>The target is not valid or does not exist. It might not be configured for Systems Manager or you might
+/// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
 /// not have permission to perform the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16321,8 +16329,8 @@ impl InvalidSchedule {
     }
 }
 
-/// <p>You must specify values for all required parameters in the Systems Manager document. You can only
-/// supply values to parameters defined in the Systems Manager document.</p>
+/// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
+/// document). You can only supply values to parameters defined in the SSM document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameters {
@@ -16382,7 +16390,7 @@ impl InvalidParameters {
     }
 }
 
-/// <p>The output location is not valid or does not exist.</p>
+/// <p>The output location isn't valid or doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOutputLocation {
@@ -16442,7 +16450,7 @@ impl InvalidOutputLocation {
     }
 }
 
-/// <p>The version you specified is not valid. Use ListAssociationVersions to view all versions of
+/// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of
 /// an association according to the association ID. Or, use the <code>$LATEST</code> parameter to
 /// view the latest version of the association.</p>
 #[non_exhaustive]
@@ -16565,8 +16573,8 @@ impl AssociationVersionLimitExceeded {
     }
 }
 
-/// <p>The specified parameter version was not found. Verify the parameter name and version, and
-/// try again.</p>
+/// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
+/// again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterVersionNotFound {
@@ -16626,7 +16634,7 @@ impl ParameterVersionNotFound {
     }
 }
 
-/// <p>The parameter could not be found. Verify the name and try again.</p>
+/// <p>The parameter couldn't be found. Verify the name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterNotFound {
@@ -16686,7 +16694,7 @@ impl ParameterNotFound {
     }
 }
 
-/// <p>The specified update status operation is not valid.</p>
+/// <p>The specified update status operation isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationStatusUpdateException {
@@ -16807,9 +16815,9 @@ impl AutomationExecutionNotFoundException {
     }
 }
 
-/// <p>The specified target instance for the session is not fully configured for use with Session Manager.
-/// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
-/// Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is also returned if you
+/// <p>The specified target instance for the session isn't fully configured for use with Session Manager. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
+/// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
 /// attempt to start a session on an instance that is located in a different account or Region</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16870,7 +16878,7 @@ impl TargetNotConnected {
     }
 }
 
-/// <p>The supplied parameters for invoking the specified Automation document are incorrect. For
+/// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For
 /// example, they may not match the set of parameters permitted for the specified Automation
 /// document.</p>
 #[non_exhaustive]
@@ -17054,7 +17062,7 @@ impl AutomationExecutionLimitExceededException {
     }
 }
 
-/// <p>An Automation document with the specified name and version could not be found.</p>
+/// <p>An Automation runbook with the specified name and version couldn't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionVersionNotFoundException {
@@ -17114,7 +17122,7 @@ impl AutomationDefinitionVersionNotFoundException {
     }
 }
 
-/// <p>An Automation document with the specified name could not be found.</p>
+/// <p>An Automation runbook with the specified name couldn't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionNotFoundException {
@@ -17235,7 +17243,7 @@ impl AutomationDefinitionNotApprovedException {
     }
 }
 
-/// <p>The association is not valid or does not exist. </p>
+/// <p>The association isn't valid or doesn't exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAssociation {
@@ -17295,8 +17303,8 @@ impl InvalidAssociation {
     }
 }
 
-/// <p>The document does not support the platform type of the given instance ID(s). For example,
-/// you sent an document for a Windows instance to a Linux instance.</p>
+/// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
+/// sent an document for a Windows instance to a Linux instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlatformType {
@@ -17356,10 +17364,9 @@ impl UnsupportedPlatformType {
     }
 }
 
-/// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role
-/// for notifications that includes the required trust policy. For information about configuring the
-/// IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS
-/// Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+/// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about
+/// configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRole {
@@ -17419,7 +17426,7 @@ impl InvalidRole {
     }
 }
 
-/// <p>The S3 bucket does not exist.</p>
+/// <p>The S3 bucket doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOutputFolder {
@@ -17479,8 +17486,8 @@ impl InvalidOutputFolder {
     }
 }
 
-/// <p>One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN)
-/// was provided for an Amazon SNS topic.</p>
+/// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN)
+/// was provided for an Amazon Simple Notification Service topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNotificationConfig {
@@ -17540,7 +17547,7 @@ impl InvalidNotificationConfig {
     }
 }
 
-/// <p>You cannot specify an instance ID in more than one association.</p>
+/// <p>You can't specify an instance ID in more than one association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateInstanceId {
@@ -17600,7 +17607,7 @@ impl DuplicateInstanceId {
     }
 }
 
-/// <p>The signal is not valid for the current Automation execution.</p>
+/// <p>The signal isn't valid for the current Automation execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationSignalException {
@@ -17721,7 +17728,7 @@ impl AutomationStepNotFoundException {
     }
 }
 
-/// <p>The resource type is not valid. For example, if you are attempting to tag an instance, the
+/// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
 /// instance must be a registered, managed instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17782,7 +17789,7 @@ impl InvalidResourceType {
     }
 }
 
-/// <p>The resource ID is not valid. Verify that you entered the correct ID and try again.</p>
+/// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceId {
@@ -17844,8 +17851,8 @@ impl InvalidResourceId {
 
 /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
 /// many maintenance windows or patch baselines have been created.</p>
-/// <p>For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-/// <i>AWS General Reference</i>.</p>
+/// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
+/// <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
@@ -17905,8 +17912,8 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the
-/// corresponding service is not available. </p>
+/// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a
+/// region where the corresponding service isn't available. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureNotAvailableException {
@@ -18027,7 +18034,7 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>The parameter type is not supported.</p>
+/// <p>The parameter type isn't supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedParameterType {
@@ -18148,11 +18155,11 @@ impl PoliciesLimitExceededException {
     }
 }
 
-/// <p>The parameter name is not valid.</p>
+/// <p>The parameter name isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterPatternMismatchException {
-    /// <p>The parameter name is not valid.</p>
+    /// <p>The parameter name isn't valid.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterPatternMismatchException {
@@ -18186,7 +18193,7 @@ pub mod parameter_pattern_mismatch_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The parameter name is not valid.</p>
+        /// <p>The parameter name isn't valid.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -18213,7 +18220,7 @@ impl ParameterPatternMismatchException {
 /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this
 /// number of versions has been created, Parameter Store deletes the oldest version when a new one is
 /// created. However, if the oldest version has a <i>label</i> attached to it,
-/// Parameter Store will not delete the version and instead presents this error message:</p>
+/// Parameter Store won't delete the version and instead presents this error message:</p>
 /// <p>
 /// <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
 /// operation: You attempted to create a new version of <i>parameter-name</i> by
@@ -18225,9 +18232,7 @@ impl ParameterPatternMismatchException {
 /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to
 /// them from being deleted. To continue creating new parameters, first move the label from the
 /// oldest version of the parameter to a newer one for use in your operations. For information about
-/// moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a
-/// parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a
-/// parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>. </p>
+/// moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterMaxVersionLimitExceeded {
@@ -18287,7 +18292,7 @@ impl ParameterMaxVersionLimitExceeded {
     }
 }
 
-/// <p>You have exceeded the number of parameters for this AWS account. Delete one or more
+/// <p>You have exceeded the number of parameters for this account. Delete one or more
 /// parameters and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18408,7 +18413,7 @@ impl ParameterAlreadyExists {
     }
 }
 
-/// <p>The policy type is not supported. Parameter Store supports the following policy types:
+/// <p>The policy type isn't supported. Parameter Store supports the following policy types:
 /// Expiration, ExpirationNotification, and NoChangeNotification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18529,7 +18534,7 @@ impl InvalidPolicyAttributeException {
     }
 }
 
-/// <p>The query key ID is not valid.</p>
+/// <p>The query key ID isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyId {
@@ -18589,11 +18594,11 @@ impl InvalidKeyId {
     }
 }
 
-/// <p>The request does not meet the regular expression requirement.</p>
+/// <p>The request doesn't meet the regular expression requirement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAllowedPatternException {
-    /// <p>The request does not meet the regular expression requirement.</p>
+    /// <p>The request doesn't meet the regular expression requirement.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAllowedPatternException {
@@ -18627,7 +18632,7 @@ pub mod invalid_allowed_pattern_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request does not meet the regular expression requirement.</p>
+        /// <p>The request doesn't meet the regular expression requirement.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -18712,13 +18717,13 @@ impl IncompatiblePolicyException {
     }
 }
 
-/// <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you
+/// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
 /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
 /// must create a new, unique parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyTypeMismatchException {
-    /// <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you
+    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
     /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
     /// must create a new, unique parameter.</p>
     pub message: std::option::Option<std::string::String>,
@@ -18754,7 +18759,7 @@ pub mod hierarchy_type_mismatch_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you
+        /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
         /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
         /// must create a new, unique parameter.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18781,12 +18786,12 @@ impl HierarchyTypeMismatchException {
 }
 
 /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-/// constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>. </p>
+/// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyLevelLimitExceededException {
     /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-    /// constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>. </p>
+    /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HierarchyLevelLimitExceededException {
@@ -18821,7 +18826,7 @@ pub mod hierarchy_level_limit_exceeded_exception {
     }
     impl Builder {
         /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-        /// constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>. </p>
+        /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -18906,8 +18911,8 @@ impl UnsupportedInventorySchemaVersionException {
     }
 }
 
-/// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> is
-/// not allowed for this inventory type. You can only use the <code>Context</code> attribute with
+/// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
+/// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with
 /// inventory types like <code>AWS:ComplianceItem</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19244,7 +19249,7 @@ impl ItemContentMismatchException {
     }
 }
 
-/// <p>The parameter type name is not valid.</p>
+/// <p>The parameter type name isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTypeNameException {
@@ -19304,7 +19309,7 @@ impl InvalidTypeNameException {
     }
 }
 
-/// <p>One or more content items is not valid.</p>
+/// <p>One or more content items isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidItemContentException {
@@ -19559,7 +19564,7 @@ impl ComplianceTypeCountLimitExceededException {
     }
 }
 
-/// <p>The permission type is not supported. <i>Share</i> is the only supported
+/// <p>The permission type isn't supported. <i>Share</i> is the only supported
 /// permission type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19620,9 +19625,9 @@ impl InvalidPermissionType {
     }
 }
 
-/// <p>The document cannot be shared with more AWS user accounts. You can share a document with a
-/// maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this
-/// limit, contact AWS Support.</p>
+/// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document
+/// with a maximum of 20 accounts. You can publicly share up to five documents. If you need to
+/// increase this limit, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentPermissionLimit {
@@ -19682,7 +19687,7 @@ impl DocumentPermissionLimit {
     }
 }
 
-/// <p>You can have at most 500 active Systems Manager documents.</p>
+/// <p>You can have at most 500 active SSM documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentLimitExceeded {
@@ -19742,7 +19747,7 @@ impl DocumentLimitExceeded {
     }
 }
 
-/// <p>The specified token is not valid.</p>
+/// <p>The specified token isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextToken {
@@ -19802,7 +19807,7 @@ impl InvalidNextToken {
     }
 }
 
-/// <p>The filter name is not valid. Verify the you entered the correct name and try again.</p>
+/// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilter {
@@ -19862,7 +19867,7 @@ impl InvalidFilter {
     }
 }
 
-/// <p>The specified key is not valid.</p>
+/// <p>The specified key isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterKey {
@@ -19922,7 +19927,7 @@ impl InvalidFilterKey {
     }
 }
 
-/// <p>The specified command ID is not valid. Verify the ID and try again.</p>
+/// <p>The specified command ID isn't valid. Verify the ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCommandId {
@@ -20042,7 +20047,7 @@ impl ParameterVersionLabelLimitExceeded {
     }
 }
 
-/// <p>The filter value is not valid. Verify the value and try again.</p>
+/// <p>The filter value isn't valid. Verify the value and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterValue {
@@ -20102,12 +20107,12 @@ impl InvalidFilterValue {
     }
 }
 
-/// <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path
+/// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
 /// filter, valid options are Recursive and OneLevel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterOption {
-    /// <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
     /// filter, valid options are Recursive and OneLevel.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -20142,7 +20147,7 @@ pub mod invalid_filter_option {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path
+        /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
         /// filter, valid options are Recursive and OneLevel.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
@@ -20167,8 +20172,8 @@ impl InvalidFilterOption {
     }
 }
 
-/// <p>The specified aggregator is not valid for inventory groups. Verify that the aggregator uses
-/// a valid inventory type such as <code>AWS:Application</code> or
+/// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a
+/// valid inventory type such as <code>AWS:Application</code> or
 /// <code>AWS:InstanceInformation</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20229,7 +20234,7 @@ impl InvalidAggregatorException {
     }
 }
 
-/// <p>The specified inventory item result attribute is not valid.</p>
+/// <p>The specified inventory item result attribute isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResultAttributeException {
@@ -20289,7 +20294,7 @@ impl InvalidResultAttributeException {
     }
 }
 
-/// <p>The specified inventory group is not valid.</p>
+/// <p>The specified inventory group isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryGroupException {
@@ -20349,7 +20354,7 @@ impl InvalidInventoryGroupException {
     }
 }
 
-/// <p>The operating systems you specified is not supported, or the operation is not supported for
+/// <p>The operating systems you specified isn't supported, or the operation isn't supported for
 /// the operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20410,10 +20415,10 @@ impl UnsupportedOperatingSystem {
     }
 }
 
-/// <p>Microsoft application patching is only available on EC2 instances and advanced instances. To
-/// patch Microsoft applications on on-premises servers and VMs, you must enable advanced instances.
-/// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using the
-/// advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+/// <p>Patching for applications released by Microsoft is only available on EC2 instances and
+/// advanced instances. To patch applications released by Microsoft on on-premises servers and VMs,
+/// you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
+/// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureRequiredException {
@@ -20473,7 +20478,7 @@ impl UnsupportedFeatureRequiredException {
     }
 }
 
-/// <p>The command ID and instance ID you specified did not match any invocations. Verify the
+/// <p>The command ID and instance ID you specified didn't match any invocations. Verify the
 /// command ID and the instance ID and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20534,7 +20539,7 @@ impl InvocationDoesNotExist {
     }
 }
 
-/// <p>The plugin name is not valid.</p>
+/// <p>The plugin name isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPluginName {
@@ -20594,7 +20599,7 @@ impl InvalidPluginName {
     }
 }
 
-/// <p>The calendar entry contained in the specified Systems Manager document is not supported.</p>
+/// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedCalendarException {
@@ -20654,7 +20659,7 @@ impl UnsupportedCalendarException {
     }
 }
 
-/// <p>The document type is not valid. Valid document types are described in the
+/// <p>The SSM document type isn't valid. Valid document types are described in the
 /// <code>DocumentType</code> property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20715,7 +20720,7 @@ impl InvalidDocumentType {
     }
 }
 
-/// <p>The association was not found using the parameters you specified in the call. Verify the
+/// <p>The association wasn't found using the parameters you specified in the call. Verify the
 /// information and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20777,7 +20782,7 @@ impl OpsItemRelatedItemAssociationNotFoundException {
     }
 }
 
-/// <p>The ID specified for the delete operation does not exist or is not valid. Verify the ID and
+/// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and
 /// try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20838,7 +20843,7 @@ impl InvalidDeletionIdException {
     }
 }
 
-/// <p>The specified filter value is not valid.</p>
+/// <p>The specified filter value isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceInformationFilterValue {
@@ -20898,7 +20903,7 @@ impl InvalidInstanceInformationFilterValue {
     }
 }
 
-/// <p>The specified execution ID does not exist. Verify the ID number and try again.</p>
+/// <p>The specified execution ID doesn't exist. Verify the ID number and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecutionDoesNotExist {
@@ -21080,7 +21085,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>The delete inventory option specified is not valid. Verify the option and try again.</p>
+/// <p>The delete inventory option specified isn't valid. Verify the option and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOptionException {
@@ -21140,7 +21145,7 @@ impl InvalidOptionException {
     }
 }
 
-/// <p>The request is not valid.</p>
+/// <p>The request isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryRequestException {
@@ -21200,7 +21205,7 @@ impl InvalidInventoryRequestException {
     }
 }
 
-/// <p>One or more of the parameters specified for the delete operation is not valid. Verify all
+/// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all
 /// parameters and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -21321,7 +21326,7 @@ impl AssociatedInstances {
     }
 }
 
-/// <p>The activation ID is not valid. Verify the you entered the correct ActivationId or
+/// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or
 /// ActivationCode and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -21382,8 +21387,8 @@ impl InvalidActivationId {
     }
 }
 
-/// <p>The activation is not valid. The activation might have been deleted, or the ActivationId and
-/// the ActivationCode do not match.</p>
+/// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and
+/// the ActivationCode don't match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActivation {

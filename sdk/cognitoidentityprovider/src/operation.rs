@@ -97,8 +97,7 @@ impl smithy_http::response::ParseStrictResponse for AdminConfirmSignUp {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -407,8 +406,7 @@ impl smithy_http::response::ParseStrictResponse for AdminGetUser {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -625,8 +623,7 @@ impl smithy_http::response::ParseStrictResponse for AdminRemoveUserFromGroup {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -671,8 +668,7 @@ impl smithy_http::response::ParseStrictResponse for AdminResetUserPassword {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -881,8 +877,7 @@ impl smithy_http::response::ParseStrictResponse for AdminUpdateDeviceStatus {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -1215,8 +1210,7 @@ impl smithy_http::response::ParseStrictResponse for CreateUserImportJob {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -1765,8 +1759,7 @@ impl smithy_http::response::ParseStrictResponse for ForgetDevice {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -1998,8 +1991,7 @@ impl smithy_http::response::ParseStrictResponse for GetUser {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2099,8 +2091,7 @@ impl smithy_http::response::ParseStrictResponse for GlobalSignOut {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2329,7 +2320,7 @@ impl smithy_http::response::ParseStrictResponse for ListUserPoolClients {
     }
 }
 
-/// <p>Lists the user pools associated with an AWS account.</p>
+/// <p>Lists the user pools associated with an account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserPools {
     _private: (),
@@ -2419,8 +2410,7 @@ impl smithy_http::response::ParseStrictResponse for ListUsersInGroup {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2464,8 +2454,7 @@ impl smithy_http::response::ParseStrictResponse for ResendConfirmationCode {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2643,8 +2632,7 @@ impl smithy_http::response::ParseStrictResponse for SetUserMFAPreference {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2720,8 +2708,7 @@ impl smithy_http::response::ParseStrictResponse for SetUserSettings {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -2935,10 +2922,6 @@ impl smithy_http::response::ParseStrictResponse for UpdateDeviceStatus {
 
 /// <p>Updates the specified group with the specified attributes.</p>
 /// <p>Calling this action requires developer credentials.</p>
-/// <important>
-/// <p>If you don't provide a value for an attribute, it will be set to the default
-/// value.</p>
-/// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGroup {
     _private: (),
@@ -3033,8 +3016,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateResourceServer {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -3080,8 +3062,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateUserAttributes {
 /// Cognito  will use the the registered number automatically. Otherwise, Cognito users that must
 /// receive SMS messages might be unable to sign up, activate their accounts, or sign
 /// in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other AWS
-/// service, Amazon SNS might place your account in SMS sandbox. In <i>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your account in SMS sandbox. In <i>
 /// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
 /// mode</a>
 /// </i>, you’ll have limitations, such as sending messages
@@ -3156,7 +3137,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateUserPoolClient {
 /// pool.</p>
 /// <p>A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up
 /// and sign-in pages for your application. When you set up a custom domain, you provide a
-/// certificate that you manage with AWS Certificate Manager (ACM). When necessary, you can
+/// certificate that you manage with Certificate Manager (ACM). When necessary, you can
 /// use this operation to change the certificate that you applied to your custom
 /// domain.</p>
 /// <p>Usually, this is unnecessary following routine certificate renewal with ACM. When you
@@ -3166,7 +3147,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateUserPoolClient {
 /// certificate a new ARN. To apply the new certificate to your custom domain, you must
 /// provide this ARN to Amazon Cognito.</p>
 /// <p>When you add your new certificate in ACM, you must choose US East (N. Virginia) as the
-/// AWS Region.</p>
+/// Region.</p>
 /// <p>After you submit your request, Amazon Cognito requires up to 1 hour to distribute your
 /// new certificate to your custom domain.</p>
 /// <p>For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using Your Own Domain for the Hosted UI</a>.</p>

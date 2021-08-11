@@ -1358,6 +1358,266 @@ pub fn parse_copy_snapshot_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_bucket_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateBucketError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateBucketError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateBucketError {
+            meta: generic,
+            kind: crate::error::CreateBucketErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::CreateBucketError {
+            meta: generic,
+            kind: crate::error::CreateBucketErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::CreateBucketError {
+            meta: generic,
+            kind: crate::error::CreateBucketErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::CreateBucketError {
+            meta: generic,
+            kind: crate::error::CreateBucketErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateBucketError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_bucket_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_bucket_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_create_bucket(response.body().as_ref(), output)
+            .map_err(crate::error::CreateBucketError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_bucket_access_key_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateBucketAccessKeyOutput,
+    crate::error::CreateBucketAccessKeyError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateBucketAccessKeyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::CreateBucketAccessKeyErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::CreateBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::CreateBucketAccessKeyErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::CreateBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::CreateBucketAccessKeyErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::CreateBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::CreateBucketAccessKeyErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::CreateBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::CreateBucketAccessKeyErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateBucketAccessKeyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_bucket_access_key_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateBucketAccessKeyOutput,
+    crate::error::CreateBucketAccessKeyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_bucket_access_key_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_create_bucket_access_key(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBucketAccessKeyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_certificate_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCertificateOutput, crate::error::CreateCertificateError>
@@ -5245,6 +5505,287 @@ pub fn parse_delete_auto_snapshot_response(
             output,
         )
         .map_err(crate::error::DeleteAutoSnapshotError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_bucket_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteBucketError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteBucketError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteBucketError {
+            meta: generic,
+            kind: crate::error::DeleteBucketErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::DeleteBucketError {
+            meta: generic,
+            kind: crate::error::DeleteBucketErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::DeleteBucketError {
+            meta: generic,
+            kind: crate::error::DeleteBucketErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::DeleteBucketError {
+            meta: generic,
+            kind: crate::error::DeleteBucketErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::DeleteBucketError {
+            meta: generic,
+            kind: crate::error::DeleteBucketErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteBucketError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_bucket_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_bucket_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_delete_bucket(response.body().as_ref(), output)
+            .map_err(crate::error::DeleteBucketError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_bucket_access_key_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteBucketAccessKeyOutput,
+    crate::error::DeleteBucketAccessKeyError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteBucketAccessKeyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::DeleteBucketAccessKeyErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::DeleteBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::DeleteBucketAccessKeyErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::DeleteBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::DeleteBucketAccessKeyErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::DeleteBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::DeleteBucketAccessKeyErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::DeleteBucketAccessKeyError {
+            meta: generic,
+            kind: crate::error::DeleteBucketAccessKeyErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteBucketAccessKeyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_bucket_access_key_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteBucketAccessKeyOutput,
+    crate::error::DeleteBucketAccessKeyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_bucket_access_key_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_delete_bucket_access_key(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBucketAccessKeyError::unhandled)?;
         output.build()
     })
 }
@@ -10127,6 +10668,550 @@ pub fn parse_get_blueprints_response(
         output =
             crate::json_deser::deser_operation_get_blueprints(response.body().as_ref(), output)
                 .map_err(crate::error::GetBlueprintsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_access_keys_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketAccessKeysOutput,
+    crate::error::GetBucketAccessKeysError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetBucketAccessKeysError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetBucketAccessKeysError {
+            meta: generic,
+            kind: crate::error::GetBucketAccessKeysErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetBucketAccessKeysError {
+            meta: generic,
+            kind: crate::error::GetBucketAccessKeysErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GetBucketAccessKeysError {
+            meta: generic,
+            kind: crate::error::GetBucketAccessKeysErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::GetBucketAccessKeysError {
+            meta: generic,
+            kind: crate::error::GetBucketAccessKeysErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::GetBucketAccessKeysError {
+            meta: generic,
+            kind: crate::error::GetBucketAccessKeysErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetBucketAccessKeysError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_access_keys_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketAccessKeysOutput,
+    crate::error::GetBucketAccessKeysError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_bucket_access_keys_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_bucket_access_keys(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketAccessKeysError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_bundles_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetBucketBundlesOutput, crate::error::GetBucketBundlesError>
+{
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetBucketBundlesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetBucketBundlesError {
+            meta: generic,
+            kind: crate::error::GetBucketBundlesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetBucketBundlesError {
+            meta: generic,
+            kind: crate::error::GetBucketBundlesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::GetBucketBundlesError {
+            meta: generic,
+            kind: crate::error::GetBucketBundlesErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::GetBucketBundlesError {
+            meta: generic,
+            kind: crate::error::GetBucketBundlesErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetBucketBundlesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_bundles_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetBucketBundlesOutput, crate::error::GetBucketBundlesError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_bucket_bundles_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_get_bucket_bundles(response.body().as_ref(), output)
+                .map_err(crate::error::GetBucketBundlesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_metric_data_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketMetricDataOutput,
+    crate::error::GetBucketMetricDataError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetBucketMetricDataError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetBucketMetricDataError {
+            meta: generic,
+            kind: crate::error::GetBucketMetricDataErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetBucketMetricDataError {
+            meta: generic,
+            kind: crate::error::GetBucketMetricDataErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GetBucketMetricDataError {
+            meta: generic,
+            kind: crate::error::GetBucketMetricDataErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::GetBucketMetricDataError {
+            meta: generic,
+            kind: crate::error::GetBucketMetricDataErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::GetBucketMetricDataError {
+            meta: generic,
+            kind: crate::error::GetBucketMetricDataErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetBucketMetricDataError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_metric_data_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketMetricDataOutput,
+    crate::error::GetBucketMetricDataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_bucket_metric_data_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_bucket_metric_data(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketMetricDataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_buckets_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetBucketsOutput, crate::error::GetBucketsError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetBucketsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetBucketsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetBucketsError {
+            meta: generic,
+            kind: crate::error::GetBucketsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetBucketsError {
+            meta: generic,
+            kind: crate::error::GetBucketsErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GetBucketsError {
+            meta: generic,
+            kind: crate::error::GetBucketsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::GetBucketsError {
+            meta: generic,
+            kind: crate::error::GetBucketsErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::GetBucketsError {
+            meta: generic,
+            kind: crate::error::GetBucketsErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBucketsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetBucketsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_buckets_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetBucketsOutput, crate::error::GetBucketsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_buckets_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_buckets(response.body().as_ref(), output)
+            .map_err(crate::error::GetBucketsError::unhandled)?;
         output.build()
     })
 }
@@ -21398,6 +22483,155 @@ pub fn parse_set_ip_address_type_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_set_resource_access_for_bucket_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SetResourceAccessForBucketOutput,
+    crate::error::SetResourceAccessForBucketError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::SetResourceAccessForBucketError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::SetResourceAccessForBucketError {
+            meta: generic,
+            kind: crate::error::SetResourceAccessForBucketErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::SetResourceAccessForBucketError {
+            meta: generic,
+            kind: crate::error::SetResourceAccessForBucketErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::SetResourceAccessForBucketError {
+            meta: generic,
+            kind: crate::error::SetResourceAccessForBucketErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::SetResourceAccessForBucketError {
+            meta: generic,
+            kind: crate::error::SetResourceAccessForBucketErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::SetResourceAccessForBucketError {
+            meta: generic,
+            kind: crate::error::SetResourceAccessForBucketErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::SetResourceAccessForBucketError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_set_resource_access_for_bucket_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SetResourceAccessForBucketOutput,
+    crate::error::SetResourceAccessForBucketError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::set_resource_access_for_bucket_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_set_resource_access_for_bucket(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SetResourceAccessForBucketError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartInstanceOutput, crate::error::StartInstanceError> {
@@ -22813,6 +24047,287 @@ pub fn parse_untag_resource_response(
         output =
             crate::json_deser::deser_operation_untag_resource(response.body().as_ref(), output)
                 .map_err(crate::error::UntagResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_bucket_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateBucketOutput, crate::error::UpdateBucketError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::UpdateBucketError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateBucketError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateBucketError {
+            meta: generic,
+            kind: crate::error::UpdateBucketErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::UpdateBucketError {
+            meta: generic,
+            kind: crate::error::UpdateBucketErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::UpdateBucketError {
+            meta: generic,
+            kind: crate::error::UpdateBucketErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::UpdateBucketError {
+            meta: generic,
+            kind: crate::error::UpdateBucketErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::UpdateBucketError {
+            meta: generic,
+            kind: crate::error::UpdateBucketErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateBucketError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_bucket_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateBucketOutput, crate::error::UpdateBucketError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_bucket_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_update_bucket(response.body().as_ref(), output)
+            .map_err(crate::error::UpdateBucketError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_bucket_bundle_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateBucketBundleOutput,
+    crate::error::UpdateBucketBundleError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateBucketBundleError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateBucketBundleError {
+            meta: generic,
+            kind: crate::error::UpdateBucketBundleErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::UpdateBucketBundleError {
+            meta: generic,
+            kind: crate::error::UpdateBucketBundleErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::UpdateBucketBundleError {
+            meta: generic,
+            kind: crate::error::UpdateBucketBundleErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => crate::error::UpdateBucketBundleError {
+            meta: generic,
+            kind: crate::error::UpdateBucketBundleErrorKind::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthenticatedException" => crate::error::UpdateBucketBundleError {
+            meta: generic,
+            kind: crate::error::UpdateBucketBundleErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthenticated_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateBucketBundleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_bucket_bundle_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateBucketBundleOutput,
+    crate::error::UpdateBucketBundleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_bucket_bundle_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_update_bucket_bundle(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateBucketBundleError::unhandled)?;
         output.build()
     })
 }

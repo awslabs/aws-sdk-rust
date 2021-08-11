@@ -788,6 +788,16 @@ pub struct ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image semantic versions.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub image_version_list: std::option::Option<std::vec::Vec<crate::model::ImageVersion>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional
     /// elements that the service has not included in this request. Use this token with the next
@@ -1470,6 +1480,10 @@ pub struct ListComponentsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of component semantic versions.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// </note>
     pub component_version_list: std::option::Option<std::vec::Vec<crate::model::ComponentVersion>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional
     /// elements that the service has not included in this request. Use this token with the next

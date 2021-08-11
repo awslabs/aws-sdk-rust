@@ -120,6 +120,7 @@ pub struct CreateReplicationConfigurationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplicationConfigurationTemplateErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
     UninitializedAccountException(crate::error::UninitializedAccountException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -128,6 +129,9 @@ pub enum CreateReplicationConfigurationTemplateErrorKind {
 impl std::fmt::Display for CreateReplicationConfigurationTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(
                 _inner,
             ) => _inner.fmt(f),
@@ -185,6 +189,12 @@ impl CreateReplicationConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_)
+        )
+    }
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -201,6 +211,9 @@ impl CreateReplicationConfigurationTemplateError {
 impl std::error::Error for CreateReplicationConfigurationTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
             CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(
                 _inner,
             ) => Some(_inner),
@@ -2317,6 +2330,7 @@ pub struct UpdateReplicationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReplicationConfigurationErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     UninitializedAccountException(crate::error::UninitializedAccountException),
@@ -2327,6 +2341,7 @@ pub enum UpdateReplicationConfigurationErrorKind {
 impl std::fmt::Display for UpdateReplicationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateReplicationConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateReplicationConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateReplicationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
@@ -2383,6 +2398,12 @@ impl UpdateReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReplicationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2411,6 +2432,7 @@ impl UpdateReplicationConfigurationError {
 impl std::error::Error for UpdateReplicationConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateReplicationConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateReplicationConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateReplicationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
@@ -2433,6 +2455,7 @@ pub struct UpdateReplicationConfigurationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReplicationConfigurationTemplateErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     UninitializedAccountException(crate::error::UninitializedAccountException),
     ValidationException(crate::error::ValidationException),
@@ -2442,6 +2465,9 @@ pub enum UpdateReplicationConfigurationTemplateErrorKind {
 impl std::fmt::Display for UpdateReplicationConfigurationTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2502,6 +2528,12 @@ impl UpdateReplicationConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2524,6 +2556,9 @@ impl UpdateReplicationConfigurationTemplateError {
 impl std::error::Error for UpdateReplicationConfigurationTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
             UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
@@ -2929,6 +2964,78 @@ impl ConflictException {
     }
 }
 
+/// <p>Operating denied due to a file permission or access check error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    pub message: std::option::Option<std::string::String>,
+    pub code: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+                code: self.code,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>Reached throttling quota exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2959,8 +3066,8 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3058,8 +3165,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -3105,77 +3212,5 @@ impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException)
     pub fn builder() -> crate::error::internal_server_exception::Builder {
         crate::error::internal_server_exception::Builder::default()
-    }
-}
-
-/// <p>Operating denied due to a file permission or access check error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
-    pub message: std::option::Option<std::string::String>,
-    pub code: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
-    }
-}
-impl AccessDeniedException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
-pub mod access_denied_exception {
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-                code: self.code,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
     }
 }

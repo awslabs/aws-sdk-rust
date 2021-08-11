@@ -809,16 +809,42 @@ pub fn serialize_structure_social_provider_settings(
         );
         object_166.finish();
     }
+    if let Some(var_167) = &input.sign_in_with_apple {
+        let mut object_168 = object.key("SignInWithApple").start_object();
+        crate::json_ser::serialize_structure_backend_auth_apple_provider_config(
+            &mut object_168,
+            var_167,
+        );
+        object_168.finish();
+    }
 }
 
 pub fn serialize_structure_backend_auth_social_provider_config(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendAuthSocialProviderConfig,
 ) {
-    if let Some(var_167) = &input.client_id {
-        object.key("client_id").string(var_167);
+    if let Some(var_169) = &input.client_id {
+        object.key("client_id").string(var_169);
     }
-    if let Some(var_168) = &input.client_secret {
-        object.key("client_secret").string(var_168);
+    if let Some(var_170) = &input.client_secret {
+        object.key("client_secret").string(var_170);
+    }
+}
+
+pub fn serialize_structure_backend_auth_apple_provider_config(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::BackendAuthAppleProviderConfig,
+) {
+    if let Some(var_171) = &input.client_id {
+        object.key("client_id").string(var_171);
+    }
+    if let Some(var_172) = &input.key_id {
+        object.key("key_id").string(var_172);
+    }
+    if let Some(var_173) = &input.private_key {
+        object.key("private_key").string(var_173);
+    }
+    if let Some(var_174) = &input.team_id {
+        object.key("team_id").string(var_174);
     }
 }

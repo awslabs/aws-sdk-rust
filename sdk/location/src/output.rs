@@ -745,6 +745,99 @@ impl DeleteTrackerOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateTrackerOutput {
+    /// <p>The name of the updated tracker resource.</p>
+    pub tracker_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
+    /// AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub tracker_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateTrackerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateTrackerOutput");
+        formatter.field("tracker_name", &self.tracker_name);
+        formatter.field("tracker_arn", &self.tracker_arn);
+        formatter.field("update_time", &self.update_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
+pub mod update_tracker_output {
+    /// A builder for [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tracker_name: std::option::Option<std::string::String>,
+        pub(crate) tracker_arn: std::option::Option<std::string::String>,
+        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the updated tracker resource.</p>
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tracker_name = Some(input.into());
+            self
+        }
+        pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracker_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
+        /// AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tracker_arn = Some(input.into());
+            self
+        }
+        pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracker_arn = input;
+            self
+        }
+        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
+        pub fn build(self) -> crate::output::UpdateTrackerOutput {
+            crate::output::UpdateTrackerOutput {
+                tracker_name: self.tracker_name,
+                tracker_arn: self.tracker_arn,
+                update_time: self.update_time,
+            }
+        }
+    }
+}
+impl UpdateTrackerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
+    pub fn builder() -> crate::output::update_tracker_output::Builder {
+        crate::output::update_tracker_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
@@ -958,7 +1051,7 @@ pub struct CalculateRouteOutput {
     /// <p>Contains details about each path between a pair of positions included along a route
     /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
     /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The
-    /// number of legs returned corresponds to one less than the total number of positions in
+    /// number of legs returned corresponds to one fewer than the total number of positions in
     /// the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one
     /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
@@ -971,7 +1064,7 @@ pub struct CalculateRouteOutput {
     /// </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two
-    /// legs with the positions snapped to a nearby road.:</p>
+    /// legs with the positions snapped to a nearby road:</p>
     /// <ul>
     /// <li>
     /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
@@ -985,8 +1078,7 @@ pub struct CalculateRouteOutput {
     pub legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
     /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-    /// <code>DurationSeconds</code>
-    /// </p>
+    /// <code>DurationSeconds</code>.</p>
     pub summary: std::option::Option<crate::model::CalculateRouteSummary>,
 }
 impl std::fmt::Debug for CalculateRouteOutput {
@@ -1022,8 +1114,7 @@ pub mod calculate_route_output {
         }
         /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
         /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-        /// <code>DurationSeconds</code>
-        /// </p>
+        /// <code>DurationSeconds</code>.</p>
         pub fn summary(mut self, input: crate::model::CalculateRouteSummary) -> Self {
             self.summary = Some(input);
             self
@@ -1273,6 +1364,107 @@ impl DeleteRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput)
     pub fn builder() -> crate::output::delete_route_calculator_output::Builder {
         crate::output::delete_route_calculator_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRouteCalculatorOutput {
+    /// <p>The name of the updated route calculator resource.</p>
+    pub calculator_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
+    /// across AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
+    /// calculator/ExampleCalculator</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub calculator_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateRouteCalculatorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRouteCalculatorOutput");
+        formatter.field("calculator_name", &self.calculator_name);
+        formatter.field("calculator_arn", &self.calculator_arn);
+        formatter.field("update_time", &self.update_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
+pub mod update_route_calculator_output {
+    /// A builder for [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculator_name: std::option::Option<std::string::String>,
+        pub(crate) calculator_arn: std::option::Option<std::string::String>,
+        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the updated route calculator resource.</p>
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculator_name = Some(input.into());
+            self
+        }
+        pub fn set_calculator_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculator_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
+        /// across AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
+        /// calculator/ExampleCalculator</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculator_arn = Some(input.into());
+            self
+        }
+        pub fn set_calculator_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculator_arn = input;
+            self
+        }
+        /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
+        pub fn build(self) -> crate::output::UpdateRouteCalculatorOutput {
+            crate::output::UpdateRouteCalculatorOutput {
+                calculator_name: self.calculator_name,
+                calculator_arn: self.calculator_arn,
+                update_time: self.update_time,
+            }
+        }
+    }
+}
+impl UpdateRouteCalculatorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
+    pub fn builder() -> crate::output::update_route_calculator_output::Builder {
+        crate::output::update_route_calculator_output::Builder::default()
     }
 }
 
@@ -1739,7 +1931,7 @@ pub struct CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across all AWS. </p>
+    /// across AWS. </p>
     /// <ul>
     /// <li>
     /// <p>Format example:
@@ -1782,7 +1974,7 @@ pub mod create_place_index_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across all AWS. </p>
+        /// across AWS. </p>
         /// <ul>
         /// <li>
         /// <p>Format example:
@@ -1859,11 +2051,106 @@ impl DeletePlaceIndexOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePlaceIndexOutput {
+    /// <p>The name of the updated place index resource.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
+    /// resource across AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
+    /// index/ExamplePlaceIndex</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub index_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
+    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdatePlaceIndexOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePlaceIndexOutput");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("index_arn", &self.index_arn);
+        formatter.field("update_time", &self.update_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
+pub mod update_place_index_output {
+    /// A builder for [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) index_arn: std::option::Option<std::string::String>,
+        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the updated place index resource.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
+        /// resource across AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
+        /// index/ExamplePlaceIndex</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_arn = Some(input.into());
+            self
+        }
+        pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_arn = input;
+            self
+        }
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
+        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
+        pub fn build(self) -> crate::output::UpdatePlaceIndexOutput {
+            crate::output::UpdatePlaceIndexOutput {
+                index_name: self.index_name,
+                index_arn: self.index_arn,
+                update_time: self.update_time,
+            }
+        }
+    }
+}
+impl UpdatePlaceIndexOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
+    pub fn builder() -> crate::output::update_place_index_output::Builder {
+        crate::output::update_place_index_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across all AWS. </p>
+    /// across AWS. </p>
     /// <ul>
     /// <li>
     /// <p>Format example:
@@ -1951,7 +2238,7 @@ pub mod describe_place_index_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across all AWS. </p>
+        /// across AWS. </p>
         /// <ul>
         /// <li>
         /// <p>Format example:
@@ -2413,8 +2700,8 @@ impl ListMapsOutput {
 pub struct CreateMapOutput {
     /// <p>The name of the map resource.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a
-    /// resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
+    /// all AWS.</p>
     /// <ul>
     /// <li>
     /// <p>Format example:
@@ -2456,8 +2743,8 @@ pub mod create_map_output {
             self.map_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a
-        /// resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
+        /// all AWS.</p>
         /// <ul>
         /// <li>
         /// <p>Format example:
@@ -2534,11 +2821,104 @@ impl DeleteMapOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMapOutput {
+    /// <p>The name of the updated map resource.</p>
+    pub map_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
+    /// across AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub map_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateMapOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMapOutput");
+        formatter.field("map_name", &self.map_name);
+        formatter.field("map_arn", &self.map_arn);
+        formatter.field("update_time", &self.update_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateMapOutput`](crate::output::UpdateMapOutput)
+pub mod update_map_output {
+    /// A builder for [`UpdateMapOutput`](crate::output::UpdateMapOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) map_name: std::option::Option<std::string::String>,
+        pub(crate) map_arn: std::option::Option<std::string::String>,
+        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the updated map resource.</p>
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_name = Some(input.into());
+            self
+        }
+        pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
+        /// across AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_arn = Some(input.into());
+            self
+        }
+        pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_arn = input;
+            self
+        }
+        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMapOutput`](crate::output::UpdateMapOutput)
+        pub fn build(self) -> crate::output::UpdateMapOutput {
+            crate::output::UpdateMapOutput {
+                map_name: self.map_name,
+                map_arn: self.map_arn,
+                update_time: self.update_time,
+            }
+        }
+    }
+}
+impl UpdateMapOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMapOutput`](crate::output::UpdateMapOutput)
+    pub fn builder() -> crate::output::update_map_output::Builder {
+        crate::output::update_map_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a
-    /// resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
+    /// all AWS.</p>
     /// <ul>
     /// <li>
     /// <p>Format example:
@@ -2610,8 +2990,8 @@ pub mod describe_map_output {
             self.map_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a
-        /// resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
+        /// all AWS.</p>
         /// <ul>
         /// <li>
         /// <p>Format example:
@@ -3452,6 +3832,109 @@ impl DeleteGeofenceCollectionOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateGeofenceCollectionOutput {
+    /// <p>The name of the updated geofence collection.</p>
+    pub collection_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
+    /// resource across AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example:
+    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub collection_arn: std::option::Option<std::string::String>,
+    /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateGeofenceCollectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateGeofenceCollectionOutput");
+        formatter.field("collection_name", &self.collection_name);
+        formatter.field("collection_arn", &self.collection_arn);
+        formatter.field("update_time", &self.update_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
+pub mod update_geofence_collection_output {
+    /// A builder for [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection_name: std::option::Option<std::string::String>,
+        pub(crate) collection_arn: std::option::Option<std::string::String>,
+        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the updated geofence collection.</p>
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_name = Some(input.into());
+            self
+        }
+        pub fn set_collection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
+        /// resource across AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example:
+        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_arn = Some(input.into());
+            self
+        }
+        pub fn set_collection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_arn = input;
+            self
+        }
+        /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
+        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.update_time = Some(input);
+            self
+        }
+        pub fn set_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
+        pub fn build(self) -> crate::output::UpdateGeofenceCollectionOutput {
+            crate::output::UpdateGeofenceCollectionOutput {
+                collection_name: self.collection_name,
+                collection_arn: self.collection_arn,
+                update_time: self.update_time,
+            }
+        }
+    }
+}
+impl UpdateGeofenceCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
+    pub fn builder() -> crate::output::update_geofence_collection_output::Builder {
+        crate::output::update_geofence_collection_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
@@ -3728,7 +4211,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The mapping from tag key to tag value for each tag associated with the specified resource.</p>
+    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

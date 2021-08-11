@@ -730,6 +730,26 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeProjectError>> for
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeStorageConfigurationError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeStorageConfigurationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeStorageConfigurationErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DescribeStorageConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DisassociateAssetsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DisassociateAssetsError>) -> Self {
         match err {
@@ -1130,6 +1150,41 @@ impl From<smithy_http::result::SdkError<crate::error::PutLoggingOptionsError>> f
                     Error::ThrottlingException(inner)
                 }
                 crate::error::PutLoggingOptionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::PutStorageConfigurationError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutStorageConfigurationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutStorageConfigurationErrorKind::ConflictingOperationException(
+                    inner,
+                ) => Error::ConflictingOperationException(inner),
+                crate::error::PutStorageConfigurationErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::PutStorageConfigurationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::PutStorageConfigurationErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::PutStorageConfigurationErrorKind::ResourceAlreadyExistsException(
+                    inner,
+                ) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::PutStorageConfigurationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::PutStorageConfigurationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::PutStorageConfigurationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualInterfaceAttributesOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -80,15 +80,17 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -118,6 +120,7 @@ impl std::fmt::Debug for UpdateVirtualInterfaceAttributesOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -153,10 +156,11 @@ pub mod update_virtual_interface_attributes_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -434,7 +438,7 @@ pub mod update_virtual_interface_attributes_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -443,8 +447,7 @@ pub mod update_virtual_interface_attributes_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -454,6 +457,19 @@ pub mod update_virtual_interface_attributes_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -495,6 +511,7 @@ pub mod update_virtual_interface_attributes_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -518,7 +535,7 @@ pub struct UpdateLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the LAG.</p>
+    /// <p>The ID of the account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -557,14 +574,17 @@ pub struct UpdateLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device: std::option::Option<std::string::String>,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -599,6 +619,7 @@ impl std::fmt::Debug for UpdateLagOutput {
         formatter.field("minimum_links", &self.minimum_links);
         formatter.field("aws_device", &self.aws_device);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("connections", &self.connections);
         formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
@@ -628,6 +649,7 @@ pub mod update_lag_output {
         pub(crate) minimum_links: std::option::Option<i32>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
         pub(crate) allows_hosted_connections: std::option::Option<bool>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -670,7 +692,7 @@ pub mod update_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the LAG.</p>
+        /// <p>The ID of the account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -740,7 +762,7 @@ pub mod update_lag_output {
             self.location = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -758,7 +780,7 @@ pub mod update_lag_output {
             self.minimum_links = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device = Some(input.into());
             self
@@ -767,7 +789,7 @@ pub mod update_lag_output {
             self.aws_device = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -777,6 +799,19 @@ pub mod update_lag_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
@@ -896,6 +931,7 @@ pub mod update_lag_output {
                 minimum_links: self.minimum_links.unwrap_or_default(),
                 aws_device: self.aws_device,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 connections: self.connections,
                 allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
                 jumbo_frame_capable: self.jumbo_frame_capable,
@@ -973,11 +1009,11 @@ impl UpdateDirectConnectGatewayAssociationOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -1023,7 +1059,7 @@ pub struct UpdateConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -1031,7 +1067,7 @@ pub struct UpdateConnectionOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -1041,8 +1077,11 @@ pub struct UpdateConnectionOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -1077,6 +1116,7 @@ impl std::fmt::Debug for UpdateConnectionOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -1107,6 +1147,7 @@ pub mod update_connection_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -1116,7 +1157,7 @@ pub mod update_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -1202,7 +1243,7 @@ pub mod update_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -1238,7 +1279,7 @@ pub mod update_connection_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -1286,7 +1327,7 @@ pub mod update_connection_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -1296,6 +1337,19 @@ pub mod update_connection_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -1400,6 +1454,7 @@ pub mod update_connection_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -1721,11 +1776,11 @@ impl DisassociateMacSecKeyOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectionFromLagOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -1771,7 +1826,7 @@ pub struct DisassociateConnectionFromLagOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -1779,7 +1834,7 @@ pub struct DisassociateConnectionFromLagOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -1789,8 +1844,11 @@ pub struct DisassociateConnectionFromLagOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -1825,6 +1883,7 @@ impl std::fmt::Debug for DisassociateConnectionFromLagOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -1855,6 +1914,7 @@ pub mod disassociate_connection_from_lag_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -1864,7 +1924,7 @@ pub mod disassociate_connection_from_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -1950,7 +2010,7 @@ pub mod disassociate_connection_from_lag_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -1986,7 +2046,7 @@ pub mod disassociate_connection_from_lag_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -2034,7 +2094,7 @@ pub mod disassociate_connection_from_lag_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -2044,6 +2104,19 @@ pub mod disassociate_connection_from_lag_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -2148,6 +2221,7 @@ pub mod disassociate_connection_from_lag_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -3209,7 +3283,7 @@ pub struct DeleteLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the LAG.</p>
+    /// <p>The ID of the account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -3248,14 +3322,17 @@ pub struct DeleteLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device: std::option::Option<std::string::String>,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -3290,6 +3367,7 @@ impl std::fmt::Debug for DeleteLagOutput {
         formatter.field("minimum_links", &self.minimum_links);
         formatter.field("aws_device", &self.aws_device);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("connections", &self.connections);
         formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
@@ -3319,6 +3397,7 @@ pub mod delete_lag_output {
         pub(crate) minimum_links: std::option::Option<i32>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
         pub(crate) allows_hosted_connections: std::option::Option<bool>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -3361,7 +3440,7 @@ pub mod delete_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the LAG.</p>
+        /// <p>The ID of the account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -3431,7 +3510,7 @@ pub mod delete_lag_output {
             self.location = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -3449,7 +3528,7 @@ pub mod delete_lag_output {
             self.minimum_links = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device = Some(input.into());
             self
@@ -3458,7 +3537,7 @@ pub mod delete_lag_output {
             self.aws_device = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -3468,6 +3547,19 @@ pub mod delete_lag_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
@@ -3587,6 +3679,7 @@ pub mod delete_lag_output {
                 minimum_links: self.minimum_links.unwrap_or_default(),
                 aws_device: self.aws_device,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 connections: self.connections,
                 allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
                 jumbo_frame_capable: self.jumbo_frame_capable,
@@ -3883,11 +3976,11 @@ impl DeleteDirectConnectGatewayOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -3933,7 +4026,7 @@ pub struct DeleteConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -3941,7 +4034,7 @@ pub struct DeleteConnectionOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -3951,8 +4044,11 @@ pub struct DeleteConnectionOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -3987,6 +4083,7 @@ impl std::fmt::Debug for DeleteConnectionOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -4017,6 +4114,7 @@ pub mod delete_connection_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -4026,7 +4124,7 @@ pub mod delete_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -4112,7 +4210,7 @@ pub mod delete_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -4148,7 +4246,7 @@ pub mod delete_connection_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -4196,7 +4294,7 @@ pub mod delete_connection_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -4206,6 +4304,19 @@ pub mod delete_connection_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -4310,6 +4421,7 @@ pub mod delete_connection_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -4430,7 +4542,7 @@ impl CreateTransitVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicVirtualInterfaceOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -4507,15 +4619,17 @@ pub struct CreatePublicVirtualInterfaceOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -4545,6 +4659,7 @@ impl std::fmt::Debug for CreatePublicVirtualInterfaceOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -4580,10 +4695,11 @@ pub mod create_public_virtual_interface_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -4861,7 +4977,7 @@ pub mod create_public_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -4870,8 +4986,7 @@ pub mod create_public_virtual_interface_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -4881,6 +4996,19 @@ pub mod create_public_virtual_interface_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -4922,6 +5050,7 @@ pub mod create_public_virtual_interface_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -4938,7 +5067,7 @@ impl CreatePublicVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrivateVirtualInterfaceOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -5015,15 +5144,17 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -5053,6 +5184,7 @@ impl std::fmt::Debug for CreatePrivateVirtualInterfaceOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -5088,10 +5220,11 @@ pub mod create_private_virtual_interface_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -5369,7 +5502,7 @@ pub mod create_private_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -5378,8 +5511,7 @@ pub mod create_private_virtual_interface_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -5389,6 +5521,19 @@ pub mod create_private_virtual_interface_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -5430,6 +5575,7 @@ pub mod create_private_virtual_interface_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -5453,7 +5599,7 @@ pub struct CreateLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the LAG.</p>
+    /// <p>The ID of the account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -5492,14 +5638,17 @@ pub struct CreateLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device: std::option::Option<std::string::String>,
-    /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -5534,6 +5683,7 @@ impl std::fmt::Debug for CreateLagOutput {
         formatter.field("minimum_links", &self.minimum_links);
         formatter.field("aws_device", &self.aws_device);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("connections", &self.connections);
         formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
@@ -5563,6 +5713,7 @@ pub mod create_lag_output {
         pub(crate) minimum_links: std::option::Option<i32>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
         pub(crate) allows_hosted_connections: std::option::Option<bool>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -5605,7 +5756,7 @@ pub mod create_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the LAG.</p>
+        /// <p>The ID of the account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -5675,7 +5826,7 @@ pub mod create_lag_output {
             self.location = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -5693,7 +5844,7 @@ pub mod create_lag_output {
             self.minimum_links = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device = Some(input.into());
             self
@@ -5702,7 +5853,7 @@ pub mod create_lag_output {
             self.aws_device = input;
             self
         }
-        /// <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -5712,6 +5863,19 @@ pub mod create_lag_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
@@ -5831,6 +5995,7 @@ pub mod create_lag_output {
                 minimum_links: self.minimum_links.unwrap_or_default(),
                 aws_device: self.aws_device,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 connections: self.connections,
                 allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
                 jumbo_frame_capable: self.jumbo_frame_capable,
@@ -5892,7 +6057,7 @@ pub struct CreateInterconnectOutput {
     /// </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -5906,8 +6071,11 @@ pub struct CreateInterconnectOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the interconnect.</p>
@@ -5929,6 +6097,7 @@ impl std::fmt::Debug for CreateInterconnectOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -5952,6 +6121,7 @@ pub mod create_interconnect_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -6024,7 +6194,7 @@ pub mod create_interconnect_output {
             self.interconnect_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -6090,7 +6260,7 @@ pub mod create_interconnect_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -6100,6 +6270,19 @@ pub mod create_interconnect_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
@@ -6153,6 +6336,7 @@ pub mod create_interconnect_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -6332,11 +6516,11 @@ impl CreateDirectConnectGatewayOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -6382,7 +6566,7 @@ pub struct CreateConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -6390,7 +6574,7 @@ pub struct CreateConnectionOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -6400,8 +6584,11 @@ pub struct CreateConnectionOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -6436,6 +6623,7 @@ impl std::fmt::Debug for CreateConnectionOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -6466,6 +6654,7 @@ pub mod create_connection_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -6475,7 +6664,7 @@ pub mod create_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -6561,7 +6750,7 @@ pub mod create_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -6597,7 +6786,7 @@ pub mod create_connection_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -6645,7 +6834,7 @@ pub mod create_connection_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -6655,6 +6844,19 @@ pub mod create_connection_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -6759,6 +6961,7 @@ pub mod create_connection_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -7342,7 +7545,7 @@ impl ConfirmConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateVirtualInterfaceOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -7419,15 +7622,17 @@ pub struct AssociateVirtualInterfaceOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -7457,6 +7662,7 @@ impl std::fmt::Debug for AssociateVirtualInterfaceOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -7492,10 +7698,11 @@ pub mod associate_virtual_interface_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -7773,7 +7980,7 @@ pub mod associate_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -7782,8 +7989,7 @@ pub mod associate_virtual_interface_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -7793,6 +7999,19 @@ pub mod associate_virtual_interface_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -7834,6 +8053,7 @@ pub mod associate_virtual_interface_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -7913,11 +8133,11 @@ impl AssociateMacSecKeyOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateHostedConnectionOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -7963,7 +8183,7 @@ pub struct AssociateHostedConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -7971,7 +8191,7 @@ pub struct AssociateHostedConnectionOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -7981,8 +8201,11 @@ pub struct AssociateHostedConnectionOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -8017,6 +8240,7 @@ impl std::fmt::Debug for AssociateHostedConnectionOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -8047,6 +8271,7 @@ pub mod associate_hosted_connection_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -8056,7 +8281,7 @@ pub mod associate_hosted_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -8142,7 +8367,7 @@ pub mod associate_hosted_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -8178,7 +8403,7 @@ pub mod associate_hosted_connection_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -8226,7 +8451,7 @@ pub mod associate_hosted_connection_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -8236,6 +8461,19 @@ pub mod associate_hosted_connection_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -8340,6 +8578,7 @@ pub mod associate_hosted_connection_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -8358,11 +8597,11 @@ impl AssociateHostedConnectionOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionWithLagOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -8408,7 +8647,7 @@ pub struct AssociateConnectionWithLagOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -8416,7 +8655,7 @@ pub struct AssociateConnectionWithLagOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -8426,8 +8665,11 @@ pub struct AssociateConnectionWithLagOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -8462,6 +8704,7 @@ impl std::fmt::Debug for AssociateConnectionWithLagOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -8492,6 +8735,7 @@ pub mod associate_connection_with_lag_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -8501,7 +8745,7 @@ pub mod associate_connection_with_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -8587,7 +8831,7 @@ pub mod associate_connection_with_lag_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -8623,7 +8867,7 @@ pub mod associate_connection_with_lag_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -8671,7 +8915,7 @@ pub mod associate_connection_with_lag_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -8681,6 +8925,19 @@ pub mod associate_connection_with_lag_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -8785,6 +9042,7 @@ pub mod associate_connection_with_lag_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -8856,7 +9114,7 @@ impl AllocateTransitVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePublicVirtualInterfaceOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -8933,15 +9191,17 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -8971,6 +9231,7 @@ impl std::fmt::Debug for AllocatePublicVirtualInterfaceOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -9006,10 +9267,11 @@ pub mod allocate_public_virtual_interface_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -9287,7 +9549,7 @@ pub mod allocate_public_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -9296,8 +9558,7 @@ pub mod allocate_public_virtual_interface_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -9307,6 +9568,19 @@ pub mod allocate_public_virtual_interface_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -9348,6 +9622,7 @@ pub mod allocate_public_virtual_interface_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -9364,7 +9639,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePrivateVirtualInterfaceOutput {
-    /// <p>The ID of the AWS account that owns the virtual interface.</p>
+    /// <p>The ID of the account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -9441,15 +9716,17 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.</p>
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The AWS Region where the virtual interface is located.</p>
+    /// <p>The Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The
-    /// Direct Connect endpoint on which the virtual interface terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -9479,6 +9756,7 @@ impl std::fmt::Debug for AllocatePrivateVirtualInterfaceOutput {
         formatter.field("bgp_peers", &self.bgp_peers);
         formatter.field("region", &self.region);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -9514,10 +9792,11 @@ pub mod allocate_private_virtual_interface_output {
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the virtual interface.</p>
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -9795,7 +10074,7 @@ pub mod allocate_private_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The AWS Region where the virtual interface is located.</p>
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -9804,8 +10083,7 @@ pub mod allocate_private_virtual_interface_output {
             self.region = input;
             self
         }
-        /// <p>The
-        /// Direct Connect endpoint on which the virtual interface terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -9815,6 +10093,19 @@ pub mod allocate_private_virtual_interface_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -9856,6 +10147,7 @@ pub mod allocate_private_virtual_interface_output {
                 bgp_peers: self.bgp_peers,
                 region: self.region,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
             }
         }
@@ -9868,11 +10160,11 @@ impl AllocatePrivateVirtualInterfaceOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostedConnectionOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -9918,7 +10210,7 @@ pub struct AllocateHostedConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -9926,7 +10218,7 @@ pub struct AllocateHostedConnectionOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -9936,8 +10228,11 @@ pub struct AllocateHostedConnectionOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -9972,6 +10267,7 @@ impl std::fmt::Debug for AllocateHostedConnectionOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -10002,6 +10298,7 @@ pub mod allocate_hosted_connection_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -10011,7 +10308,7 @@ pub mod allocate_hosted_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -10097,7 +10394,7 @@ pub mod allocate_hosted_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -10133,7 +10430,7 @@ pub mod allocate_hosted_connection_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -10181,7 +10478,7 @@ pub mod allocate_hosted_connection_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -10191,6 +10488,19 @@ pub mod allocate_hosted_connection_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -10295,6 +10605,7 @@ pub mod allocate_hosted_connection_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
@@ -10313,11 +10624,11 @@ impl AllocateHostedConnectionOutput {
     }
 }
 
-/// <p>Information about an AWS Direct Connect connection.</p>
+/// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateConnectionOnInterconnectOutput {
-    /// <p>The ID of the AWS account that owns the connection.</p>
+    /// <p>The ID of the account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -10363,7 +10674,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The AWS Region where the connection is located.</p>
+    /// <p>The Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -10371,7 +10682,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
     pub loa_issue_time: std::option::Option<smithy_types::Instant>,
@@ -10381,8 +10692,11 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub jumbo_frame_capable: std::option::Option<bool>,
-    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
@@ -10417,6 +10731,7 @@ impl std::fmt::Debug for AllocateConnectionOnInterconnectOutput {
         formatter.field("aws_device", &self.aws_device);
         formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
         formatter.field("aws_device_v2", &self.aws_device_v2);
+        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
         formatter.field("tags", &self.tags);
         formatter.field("provider_name", &self.provider_name);
@@ -10447,6 +10762,7 @@ pub mod allocate_connection_on_interconnect_output {
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
+        pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -10456,7 +10772,7 @@ pub mod allocate_connection_on_interconnect_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the AWS account that owns the connection.</p>
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
@@ -10542,7 +10858,7 @@ pub mod allocate_connection_on_interconnect_output {
             self.connection_state = input;
             self
         }
-        /// <p>The AWS Region where the connection is located.</p>
+        /// <p>The Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -10578,7 +10894,7 @@ pub mod allocate_connection_on_interconnect_output {
             self.vlan = input;
             self
         }
-        /// <p>The name of the AWS Direct Connect service provider associated with the connection.</p>
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_name = Some(input.into());
             self
@@ -10626,7 +10942,7 @@ pub mod allocate_connection_on_interconnect_output {
             self.jumbo_frame_capable = input;
             self
         }
-        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_device_v2 = Some(input.into());
             self
@@ -10636,6 +10952,19 @@ pub mod allocate_connection_on_interconnect_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_device_v2 = input;
+            self
+        }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
+        pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_logical_device_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_logical_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_logical_device_id = input;
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -10740,6 +11069,7 @@ pub mod allocate_connection_on_interconnect_output {
                 aws_device: self.aws_device,
                 jumbo_frame_capable: self.jumbo_frame_capable,
                 aws_device_v2: self.aws_device_v2,
+                aws_logical_device_id: self.aws_logical_device_id,
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,

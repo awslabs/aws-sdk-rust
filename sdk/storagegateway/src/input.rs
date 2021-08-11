@@ -24,7 +24,7 @@ pub mod activate_gateway_input {
         /// <code>ActivateGateway</code> API call determine the actual configuration of your
         /// gateway.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-        /// key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+        /// key</a> in the <i>Storage Gateway User Guide</i>.</p>
         pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.activation_key = Some(input.into());
             self
@@ -61,14 +61,15 @@ pub mod activate_gateway_input {
             self.gateway_timezone = input;
             self
         }
-        /// <p>A value that indicates the AWS Region where you want to store your data. The gateway AWS
-        /// Region specified must be the same AWS Region as the AWS Region in your <code>Host</code>
-        /// header in the request. For more information about available AWS Regions and endpoints for
-        /// AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General
+        /// <p>A value that indicates the Region where you want to store your data.
+        /// The gateway Region specified must be the same Region
+        /// as the Region in your <code>Host</code>
+        /// header in the request. For more information about available Regions and endpoints for
+        /// Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
         /// Reference</i>.</p>
-        /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General
+        /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
         /// Reference</i>.
         /// </p>
         pub fn gateway_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +87,7 @@ pub mod activate_gateway_input {
         /// all later functions of the gateway and cannot be changed after activation. The default
         /// value is <code>CACHED</code>.</p>
         /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-        /// <code>FILE_S3</code>
+        /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
         /// </p>
         pub fn gateway_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_type = Some(input.into());
@@ -186,28 +187,28 @@ impl ActivateGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -278,7 +279,7 @@ pub mod add_cache_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -339,28 +340,28 @@ impl AddCacheInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -491,28 +492,28 @@ impl AddTagsToResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -583,7 +584,7 @@ pub mod add_upload_buffer_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -645,28 +646,28 @@ impl AddUploadBufferInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -737,7 +738,7 @@ pub mod add_working_storage_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -800,28 +801,28 @@ impl AddWorkingStorageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -973,28 +974,28 @@ impl AssignTapePoolInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1068,6 +1069,8 @@ pub mod associate_file_system_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) audit_destination_arn: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
+        pub(crate) endpoint_network_configuration:
+            std::option::Option<crate::model::EndpointNetworkConfiguration>,
     }
     impl Builder {
         /// <p>The user name of the user credential that has permission to access the root share D$ of
@@ -1090,7 +1093,7 @@ pub mod associate_file_system_input {
             self.password = input;
             self
         }
-        /// <p>A unique string value that you supply that is used by the file gateway to ensure
+        /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure
         /// idempotent file system association creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -1101,7 +1104,7 @@ pub mod associate_file_system_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1111,7 +1114,7 @@ pub mod associate_file_system_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the
-        /// Amazon FSx file gateway.</p>
+        /// FSx File Gateway.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
@@ -1145,7 +1148,7 @@ pub mod associate_file_system_input {
             self.audit_destination_arn = input;
             self
         }
-        /// <p>The refresh cache information for the file share.</p>
+        /// <p>The refresh cache information for the file share or FSx file systems.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
             self.cache_attributes = Some(input);
             self
@@ -1155,6 +1158,24 @@ pub mod associate_file_system_input {
             input: std::option::Option<crate::model::CacheAttributes>,
         ) -> Self {
             self.cache_attributes = input;
+            self
+        }
+        /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p>
+        /// <note>
+        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+        /// </note>
+        pub fn endpoint_network_configuration(
+            mut self,
+            input: crate::model::EndpointNetworkConfiguration,
+        ) -> Self {
+            self.endpoint_network_configuration = Some(input);
+            self
+        }
+        pub fn set_endpoint_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EndpointNetworkConfiguration>,
+        ) -> Self {
+            self.endpoint_network_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateFileSystemInput`](crate::input::AssociateFileSystemInput)
@@ -1173,6 +1194,7 @@ pub mod associate_file_system_input {
                 tags: self.tags,
                 audit_destination_arn: self.audit_destination_arn,
                 cache_attributes: self.cache_attributes,
+                endpoint_network_configuration: self.endpoint_network_configuration,
             })
         }
     }
@@ -1204,28 +1226,28 @@ impl AssociateFileSystemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1400,28 +1422,28 @@ impl AttachVolumeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1492,7 +1514,7 @@ pub mod cancel_archival_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1551,28 +1573,28 @@ impl CancelArchivalInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1643,7 +1665,7 @@ pub mod cancel_retrieval_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1702,28 +1724,28 @@ impl CancelRetrievalInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1802,7 +1824,7 @@ pub mod create_cachedi_scsi_volume_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1887,7 +1909,7 @@ pub mod create_cachedi_scsi_volume_input {
             self.client_token = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -1899,8 +1921,7 @@ pub mod create_cachedi_scsi_volume_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -1973,28 +1994,28 @@ impl CreateCachediScsiVolumeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2078,9 +2099,11 @@ pub mod create_nfs_file_share_input {
         pub(crate) file_share_name: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
         pub(crate) notification_policy: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+        pub(crate) bucket_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique string value that you supply that is used by file gateway to ensure idempotent
+        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
         /// file share creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -2105,7 +2128,7 @@ pub mod create_nfs_file_share_input {
             self.nfs_file_share_defaults = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the file gateway on which you want to create a file
+        /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file
         /// share.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
@@ -2115,7 +2138,7 @@ pub mod create_nfs_file_share_input {
             self.gateway_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -2127,8 +2150,7 @@ pub mod create_nfs_file_share_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -2138,7 +2160,7 @@ pub mod create_nfs_file_share_input {
             self.kms_key = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
+        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
         /// when it accesses the underlying storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
@@ -2150,6 +2172,16 @@ pub mod create_nfs_file_share_input {
         }
         /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
         /// the S3 bucket name. It must end with a "/".</p>
+        /// <note>
+        /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
+        /// bucket region as shown:</p>
+        /// <p>
+        /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+        /// </code>
+        /// </p>
+        /// <p>If you specify a bucket attached to an access point, the bucket policy must be
+        /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// </note>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
@@ -2158,7 +2190,7 @@ pub mod create_nfs_file_share_input {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -2175,7 +2207,7 @@ pub mod create_nfs_file_share_input {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -2341,6 +2373,39 @@ pub mod create_nfs_file_share_input {
             self.notification_policy = input;
             self
         }
+        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to
+        /// Amazon S3.</p>
+        /// <note>
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = Some(input.into());
+            self
+        }
+        pub fn set_vpc_endpoint_dns_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_dns_name = input;
+            self
+        }
+        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
+        /// <note>
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_region = Some(input.into());
+            self
+        }
+        pub fn set_bucket_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_region = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateNfsFileShareInput`](crate::input::CreateNfsFileShareInput)
         pub fn build(
             self,
@@ -2367,6 +2432,8 @@ pub mod create_nfs_file_share_input {
                 file_share_name: self.file_share_name,
                 cache_attributes: self.cache_attributes,
                 notification_policy: self.notification_policy,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
+                bucket_region: self.bucket_region,
             })
         }
     }
@@ -2398,28 +2465,28 @@ impl CreateNfsFileShareInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2508,9 +2575,12 @@ pub mod create_smb_file_share_input {
         pub(crate) file_share_name: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
         pub(crate) notification_policy: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+        pub(crate) bucket_region: std::option::Option<std::string::String>,
+        pub(crate) oplocks_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A unique string value that you supply that is used by file gateway to ensure idempotent
+        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
         /// file share creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -2520,7 +2590,7 @@ pub mod create_smb_file_share_input {
             self.client_token = input;
             self
         }
-        /// <p>The ARN of the file gateway on which you want to create a file share.</p>
+        /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2529,7 +2599,7 @@ pub mod create_smb_file_share_input {
             self.gateway_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -2541,8 +2611,7 @@ pub mod create_smb_file_share_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -2552,7 +2621,7 @@ pub mod create_smb_file_share_input {
             self.kms_key = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
+        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
         /// when it accesses the underlying storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
@@ -2564,6 +2633,16 @@ pub mod create_smb_file_share_input {
         }
         /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
         /// the S3 bucket name. It must end with a "/".</p>
+        /// <note>
+        /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
+        /// bucket region as shown:</p>
+        /// <p>
+        /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+        /// </code>
+        /// </p>
+        /// <p>If you specify a bucket attached to an access point, the bucket policy must be
+        /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// </note>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
@@ -2572,7 +2651,7 @@ pub mod create_smb_file_share_input {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -2589,7 +2668,7 @@ pub mod create_smb_file_share_input {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -2650,7 +2729,7 @@ pub mod create_smb_file_share_input {
         /// share. Set it to <code>false</code> to map file and directory permissions to the POSIX
         /// permissions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-        /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+        /// control access to an SMB file share</a> in the <i>Storage Gateway User
         /// Guide</i>.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -2824,6 +2903,53 @@ pub mod create_smb_file_share_input {
             self.notification_policy = input;
             self
         }
+        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p>
+        /// <note>
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = Some(input.into());
+            self
+        }
+        pub fn set_vpc_endpoint_dns_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_dns_name = input;
+            self
+        }
+        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
+        /// <note>
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_region = Some(input.into());
+            self
+        }
+        pub fn set_bucket_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_region = input;
+            self
+        }
+        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+        /// <note>
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+        /// access to files with the same name in different case.</p>
+        /// </note>
+        /// <p>Valid Values: <code>true</code> | <code>false</code>
+        /// </p>
+        pub fn oplocks_enabled(mut self, input: bool) -> Self {
+            self.oplocks_enabled = Some(input);
+            self
+        }
+        pub fn set_oplocks_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.oplocks_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSmbFileShareInput`](crate::input::CreateSmbFileShareInput)
         pub fn build(
             self,
@@ -2855,6 +2981,9 @@ pub mod create_smb_file_share_input {
                 file_share_name: self.file_share_name,
                 cache_attributes: self.cache_attributes,
                 notification_policy: self.notification_policy,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
+                bucket_region: self.bucket_region,
+                oplocks_enabled: self.oplocks_enabled,
             })
         }
     }
@@ -2886,28 +3015,28 @@ impl CreateSmbFileShareInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2990,7 +3119,7 @@ pub mod create_snapshot_input {
         }
         /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
         /// Block Store snapshots panel in the <b>Description</b> field, and
-        /// in the AWS Storage Gateway snapshot <b>Details</b> pane,
+        /// in the Storage Gateway snapshot <b>Details</b> pane,
         /// <b>Description</b> field.</p>
         pub fn snapshot_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_description = Some(input.into());
@@ -3057,28 +3186,28 @@ impl CreateSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3161,7 +3290,7 @@ pub mod create_snapshot_from_volume_recovery_point_input {
         }
         /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
         /// Block Store snapshots panel in the <b>Description</b> field, and
-        /// in the AWS Storage Gateway snapshot <b>Details</b> pane,
+        /// in the Storage Gateway snapshot <b>Details</b> pane,
         /// <b>Description</b> field.</p>
         pub fn snapshot_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_description = Some(input.into());
@@ -3230,28 +3359,28 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3329,7 +3458,7 @@ pub mod create_storedi_scsi_volume_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -3403,7 +3532,7 @@ pub mod create_storedi_scsi_volume_input {
             self.network_interface_id = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -3415,8 +3544,7 @@ pub mod create_storedi_scsi_volume_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -3488,28 +3616,28 @@ impl CreateStorediScsiVolumeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3606,9 +3734,9 @@ pub mod create_tape_pool_input {
             self
         }
         /// <p>Tape retention lock can be configured in two modes. When configured in governance mode,
-        /// AWS accounts with specific IAM permissions are authorized to remove the tape retention lock
+        /// accounts with specific IAM permissions are authorized to remove the tape retention lock
         /// from archived virtual tapes. When configured in compliance mode, the tape retention lock
-        /// cannot be removed by any user, including the root AWS account.</p>
+        /// cannot be removed by any user, including the root account.</p>
         pub fn retention_lock_type(mut self, input: crate::model::RetentionLockType) -> Self {
             self.retention_lock_type = Some(input);
             self
@@ -3686,28 +3814,28 @@ impl CreateTapePoolInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3787,7 +3915,7 @@ pub mod create_tapes_input {
     impl Builder {
         /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and AWS Region.</p>
+        /// gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -3848,7 +3976,7 @@ pub mod create_tapes_input {
             self.tape_barcode_prefix = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -3860,8 +3988,7 @@ pub mod create_tapes_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -3955,28 +4082,28 @@ impl CreateTapesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4054,7 +4181,7 @@ pub mod create_tape_with_barcode_input {
     impl Builder {
         /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tape with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and AWS Region.</p>
+        /// gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4088,7 +4215,7 @@ pub mod create_tape_with_barcode_input {
             self.tape_barcode = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -4100,8 +4227,7 @@ pub mod create_tape_with_barcode_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -4195,28 +4321,28 @@ impl CreateTapeWithBarcodeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4286,7 +4412,7 @@ pub mod delete_automatic_tape_creation_policy_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4339,28 +4465,28 @@ impl DeleteAutomaticTapeCreationPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4431,7 +4557,7 @@ pub mod delete_bandwidth_rate_limit_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4497,28 +4623,28 @@ impl DeleteBandwidthRateLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4651,28 +4777,28 @@ impl DeleteChapCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4755,8 +4881,8 @@ pub mod delete_file_share_input {
             self
         }
         /// <p>If this value is set to <code>true</code>, the operation deletes a file share
-        /// immediately and aborts all data uploads to AWS. Otherwise, the file share is not deleted
-        /// until all data is uploaded to AWS. This process aborts the data upload process, and the
+        /// immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted
+        /// until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the
         /// file share enters the <code>FORCE_DELETING</code> status.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -4808,28 +4934,28 @@ impl DeleteFileShareInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4899,7 +5025,7 @@ pub mod delete_gateway_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4946,28 +5072,28 @@ impl DeleteGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5085,28 +5211,28 @@ impl DeleteSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5179,7 +5305,7 @@ pub mod delete_tape_input {
     impl Builder {
         /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is
         /// associated with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and AWS Region.</p>
+        /// gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5249,28 +5375,28 @@ impl DeleteTapeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5403,28 +5529,28 @@ impl DeleteTapeArchiveInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5541,28 +5667,28 @@ impl DeleteTapePoolInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5679,28 +5805,28 @@ impl DeleteVolumeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5770,7 +5896,7 @@ pub mod describe_availability_monitor_test_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5821,28 +5947,28 @@ impl DescribeAvailabilityMonitorTestInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5912,7 +6038,7 @@ pub mod describe_bandwidth_rate_limit_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5963,28 +6089,28 @@ impl DescribeBandwidthRateLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6054,7 +6180,7 @@ pub mod describe_bandwidth_rate_limit_schedule_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6107,28 +6233,28 @@ impl DescribeBandwidthRateLimitScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6198,7 +6324,7 @@ pub mod describe_cache_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6245,28 +6371,28 @@ impl DescribeCacheInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6390,28 +6516,28 @@ impl DescribeCachediScsiVolumesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6531,28 +6657,28 @@ impl DescribeChapCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6680,28 +6806,28 @@ impl DescribeFileSystemAssociationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6771,7 +6897,7 @@ pub mod describe_gateway_information_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6822,28 +6948,28 @@ impl DescribeGatewayInformationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6913,7 +7039,7 @@ pub mod describe_maintenance_start_time_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6964,28 +7090,28 @@ impl DescribeMaintenanceStartTimeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7107,28 +7233,28 @@ impl DescribeNfsFileSharesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7250,28 +7376,28 @@ impl DescribeSmbFileSharesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7341,7 +7467,7 @@ pub mod describe_smb_settings_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -7390,28 +7516,28 @@ impl DescribeSmbSettingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7531,28 +7657,28 @@ impl DescribeSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7676,28 +7802,28 @@ impl DescribeStorediScsiVolumesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7843,28 +7969,28 @@ impl DescribeTapeArchivesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7936,7 +8062,7 @@ pub mod describe_tape_recovery_points_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8009,28 +8135,28 @@ impl DescribeTapeRecoveryPointsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8103,7 +8229,7 @@ pub mod describe_tapes_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8190,28 +8316,28 @@ impl DescribeTapesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8281,7 +8407,7 @@ pub mod describe_upload_buffer_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8330,28 +8456,28 @@ impl DescribeUploadBufferInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8424,7 +8550,7 @@ pub mod describe_vtl_devices_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8509,28 +8635,28 @@ impl DescribeVtlDevicesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8600,7 +8726,7 @@ pub mod describe_working_storage_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8649,28 +8775,28 @@ impl DescribeWorkingStorageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8802,28 +8928,28 @@ impl DetachVolumeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8893,7 +9019,7 @@ pub mod disable_gateway_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -8941,28 +9067,28 @@ impl DisableGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9049,8 +9175,7 @@ pub mod disassociate_file_system_input {
         }
         /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system
         /// immediately. It ends all data uploads to the file system, and the file system association
-        /// enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon
-        /// FSx file system does not disassociate until all data is uploaded.</p>
+        /// enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
@@ -9100,28 +9225,28 @@ impl DisassociateFileSystemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9197,7 +9322,7 @@ pub mod join_domain_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -9318,28 +9443,28 @@ impl JoinDomainInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9409,7 +9534,7 @@ pub mod list_automatic_tape_creation_policies_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -9462,28 +9587,28 @@ impl ListAutomaticTapeCreationPoliciesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9626,28 +9751,28 @@ impl ListFileSharesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9719,7 +9844,7 @@ pub mod list_file_system_associations_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -9790,28 +9915,28 @@ impl ListFileSystemAssociationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9940,28 +10065,28 @@ impl ListGatewaysInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10031,7 +10156,7 @@ pub mod list_local_disks_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -10079,28 +10204,28 @@ impl ListLocalDisksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10242,28 +10367,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10405,28 +10530,28 @@ impl ListTapePoolsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10569,28 +10694,28 @@ impl ListTapesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -10707,28 +10832,28 @@ impl ListVolumeInitiatorsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10798,7 +10923,7 @@ pub mod list_volume_recovery_points_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -10848,28 +10973,28 @@ impl ListVolumeRecoveryPointsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10941,7 +11066,7 @@ pub mod list_volumes_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -11010,28 +11135,28 @@ impl ListVolumesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11152,28 +11277,28 @@ impl NotifyWhenUploadedInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11326,28 +11451,28 @@ impl RefreshCacheInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11480,28 +11605,28 @@ impl RemoveTagsFromResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11571,7 +11696,7 @@ pub mod reset_cache_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -11618,28 +11743,28 @@ impl ResetCacheInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11721,7 +11846,7 @@ pub mod retrieve_tape_archive_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to.
         /// Use the <a>ListGateways</a> operation to return a list of gateways for your
-        /// account and AWS Region.</p>
+        /// account and Region.</p>
         /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape
         /// gateway.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11773,28 +11898,28 @@ impl RetrieveTapeArchiveInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11875,7 +12000,7 @@ pub mod retrieve_tape_recovery_point_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -11927,28 +12052,28 @@ impl RetrieveTapeRecoveryPointInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12019,7 +12144,7 @@ pub mod set_local_console_password_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12082,28 +12207,28 @@ impl SetLocalConsolePasswordInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12173,7 +12298,7 @@ pub mod set_smb_guest_password_input {
         pub(crate) password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated
+        /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated
         /// with.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
@@ -12233,28 +12358,28 @@ impl SetSmbGuestPasswordInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12324,7 +12449,7 @@ pub mod shutdown_gateway_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12372,28 +12497,28 @@ impl ShutdownGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12463,7 +12588,7 @@ pub mod start_availability_monitor_test_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12514,28 +12639,28 @@ impl StartAvailabilityMonitorTestInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12605,7 +12730,7 @@ pub mod start_gateway_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12652,28 +12777,28 @@ impl StartGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12761,7 +12886,7 @@ pub mod update_automatic_tape_creation_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12815,28 +12940,28 @@ impl UpdateAutomaticTapeCreationPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12908,7 +13033,7 @@ pub mod update_bandwidth_rate_limit_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -12986,28 +13111,28 @@ impl UpdateBandwidthRateLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13079,7 +13204,7 @@ pub mod update_bandwidth_rate_limit_schedule_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -13149,28 +13274,28 @@ impl UpdateBandwidthRateLimitScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13346,28 +13471,28 @@ impl UpdateChapCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13487,7 +13612,7 @@ pub mod update_file_system_association_input {
             self.audit_destination_arn = input;
             self
         }
-        /// <p>The refresh cache information for the file share.</p>
+        /// <p>The refresh cache information for the file share or FSx file systems.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
             self.cache_attributes = Some(input);
             self
@@ -13545,28 +13670,28 @@ impl UpdateFileSystemAssociationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13636,10 +13761,11 @@ pub mod update_gateway_information_input {
         pub(crate) gateway_name: std::option::Option<std::string::String>,
         pub(crate) gateway_timezone: std::option::Option<std::string::String>,
         pub(crate) cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+        pub(crate) gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -13685,6 +13811,18 @@ pub mod update_gateway_information_input {
             self.cloud_watch_log_group_arn = input;
             self
         }
+        /// <p>Specifies the size of the gateway's metadata cache.</p>
+        pub fn gateway_capacity(mut self, input: crate::model::GatewayCapacity) -> Self {
+            self.gateway_capacity = Some(input);
+            self
+        }
+        pub fn set_gateway_capacity(
+            mut self,
+            input: std::option::Option<crate::model::GatewayCapacity>,
+        ) -> Self {
+            self.gateway_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput)
         pub fn build(
             self,
@@ -13697,6 +13835,7 @@ pub mod update_gateway_information_input {
                 gateway_name: self.gateway_name,
                 gateway_timezone: self.gateway_timezone,
                 cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
+                gateway_capacity: self.gateway_capacity,
             })
         }
     }
@@ -13729,28 +13868,28 @@ impl UpdateGatewayInformationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13820,7 +13959,7 @@ pub mod update_gateway_software_now_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -13870,28 +14009,28 @@ impl UpdateGatewaySoftwareNowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13965,7 +14104,7 @@ pub mod update_maintenance_start_time_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -14063,28 +14202,28 @@ impl UpdateMaintenanceStartTimeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14178,7 +14317,7 @@ pub mod update_nfs_file_share_input {
             self.file_share_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -14190,8 +14329,7 @@ pub mod update_nfs_file_share_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -14216,7 +14354,7 @@ pub mod update_nfs_file_share_input {
             self.nfs_file_share_defaults = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -14233,7 +14371,7 @@ pub mod update_nfs_file_share_input {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -14439,28 +14577,28 @@ impl UpdateNfsFileShareInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14544,6 +14682,7 @@ pub mod update_smb_file_share_input {
         pub(crate) file_share_name: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
         pub(crate) notification_policy: std::option::Option<std::string::String>,
+        pub(crate) oplocks_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
@@ -14558,7 +14697,7 @@ pub mod update_smb_file_share_input {
             self.file_share_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -14570,8 +14709,7 @@ pub mod update_smb_file_share_input {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -14581,7 +14719,7 @@ pub mod update_smb_file_share_input {
             self.kms_key = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -14598,7 +14736,7 @@ pub mod update_smb_file_share_input {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -14659,7 +14797,7 @@ pub mod update_smb_file_share_input {
         /// share. Set it to <code>false</code> to map file and directory permissions to the POSIX
         /// permissions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-        /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+        /// control access to an SMB file share</a> in the <i>Storage Gateway User
         /// Guide</i>.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -14805,6 +14943,21 @@ pub mod update_smb_file_share_input {
             self.notification_policy = input;
             self
         }
+        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+        /// <note>
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+        /// access to files with the same name in different case.</p>
+        /// </note>
+        /// <p>Valid Values: <code>true</code> | <code>false</code>
+        /// </p>
+        pub fn oplocks_enabled(mut self, input: bool) -> Self {
+            self.oplocks_enabled = Some(input);
+            self
+        }
+        pub fn set_oplocks_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.oplocks_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSmbFileShareInput`](crate::input::UpdateSmbFileShareInput)
         pub fn build(
             self,
@@ -14831,6 +14984,7 @@ pub mod update_smb_file_share_input {
                 file_share_name: self.file_share_name,
                 cache_attributes: self.cache_attributes,
                 notification_policy: self.notification_policy,
+                oplocks_enabled: self.oplocks_enabled,
             })
         }
     }
@@ -14862,28 +15016,28 @@ impl UpdateSmbFileShareInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14954,7 +15108,7 @@ pub mod update_smb_file_share_visibility_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -15015,28 +15169,28 @@ impl UpdateSmbFileShareVisibilityInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15107,7 +15261,7 @@ pub mod update_smb_security_strategy_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -15119,7 +15273,7 @@ pub mod update_smb_security_strategy_input {
         /// <p>Specifies the type of security strategy.</p>
         /// <p>ClientSpecified: if you use this option, requests are established based on what is
         /// negotiated by the client. This option is recommended when you want to maximize
-        /// compatibility across different clients in your environment.</p>
+        /// compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
         /// <p>MandatorySigning: if you use this option, file gateway only allows connections from
         /// SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on
         /// Microsoft Windows Vista, Windows Server 2008 or newer.</p>
@@ -15181,28 +15335,28 @@ impl UpdateSmbSecurityStrategyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15371,28 +15525,28 @@ impl UpdateSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15527,28 +15681,28 @@ impl UpdateVtlDeviceTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15691,12 +15845,12 @@ impl std::fmt::Debug for UpdateSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbSecurityStrategyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the type of security strategy.</p>
     /// <p>ClientSpecified: if you use this option, requests are established based on what is
     /// negotiated by the client. This option is recommended when you want to maximize
-    /// compatibility across different clients in your environment.</p>
+    /// compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from
     /// SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on
     /// Microsoft Windows Vista, Windows Server 2008 or newer.</p>
@@ -15719,7 +15873,7 @@ impl std::fmt::Debug for UpdateSmbSecurityStrategyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The shares on this gateway appear when listing shares.</p>
     pub file_shares_visible: std::option::Option<bool>,
@@ -15739,23 +15893,22 @@ impl std::fmt::Debug for UpdateSmbFileShareVisibilityInput {
 pub struct UpdateSmbFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code>
     /// to set write status to read-only, otherwise set to <code>false</code>.</p>
@@ -15785,7 +15938,7 @@ pub struct UpdateSmbFileShareInput {
     /// share. Set it to <code>false</code> to map file and directory permissions to the POSIX
     /// permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-    /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+    /// control access to an SMB file share</a> in the <i>Storage Gateway User
     /// Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
@@ -15846,6 +15999,14 @@ pub struct UpdateSmbFileShareInput {
     /// <code>{}</code>
     /// </p>
     pub notification_policy: std::option::Option<std::string::String>,
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+    /// <note>
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+    /// access to files with the same name in different case.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub oplocks_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdateSmbFileShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15868,6 +16029,7 @@ impl std::fmt::Debug for UpdateSmbFileShareInput {
         formatter.field("file_share_name", &self.file_share_name);
         formatter.field("cache_attributes", &self.cache_attributes);
         formatter.field("notification_policy", &self.notification_policy);
+        formatter.field("oplocks_enabled", &self.oplocks_enabled);
         formatter.finish()
     }
 }
@@ -15878,27 +16040,26 @@ impl std::fmt::Debug for UpdateSmbFileShareInput {
 pub struct UpdateNfsFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The default values for the file share. Optional.</p>
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
-    /// <p>The list of clients that are allowed to access the file gateway. The list must contain
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain
     /// either valid IP addresses or valid CIDR blocks.</p>
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user mapped to anonymous user.</p>
@@ -16020,7 +16181,7 @@ impl std::fmt::Debug for UpdateNfsFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>,
     /// where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time
@@ -16055,7 +16216,7 @@ impl std::fmt::Debug for UpdateMaintenanceStartTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
@@ -16070,7 +16231,7 @@ impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
@@ -16082,6 +16243,8 @@ pub struct UpdateGatewayInformationInput {
     /// Logs?</a>
     /// </p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    pub gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
 }
 impl std::fmt::Debug for UpdateGatewayInformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16090,6 +16253,7 @@ impl std::fmt::Debug for UpdateGatewayInformationInput {
         formatter.field("gateway_name", &self.gateway_name);
         formatter.field("gateway_timezone", &self.gateway_timezone);
         formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
+        formatter.field("gateway_capacity", &self.gateway_capacity);
         formatter.finish()
     }
 }
@@ -16107,7 +16271,7 @@ pub struct UpdateFileSystemAssociationInput {
     pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub audit_destination_arn: std::option::Option<std::string::String>,
-    /// <p>The refresh cache information for the file share.</p>
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
 }
 impl std::fmt::Debug for UpdateFileSystemAssociationInput {
@@ -16191,7 +16355,7 @@ impl std::fmt::Debug for UpdateChapCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>
     /// An array containing bandwidth rate limit schedule intervals for a gateway.
@@ -16229,7 +16393,7 @@ impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
     pub average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
@@ -16260,7 +16424,7 @@ pub struct UpdateAutomaticTapeCreationPolicyInput {
     pub automatic_tape_creation_rules:
         std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyInput {
@@ -16280,7 +16444,7 @@ impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartGatewayInput {
@@ -16295,7 +16459,7 @@ impl std::fmt::Debug for StartGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartAvailabilityMonitorTestInput {
@@ -16312,7 +16476,7 @@ impl std::fmt::Debug for StartAvailabilityMonitorTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShutdownGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ShutdownGatewayInput {
@@ -16327,7 +16491,7 @@ impl std::fmt::Debug for ShutdownGatewayInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSmbGuestPasswordInput {
-    /// <p>The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated
+    /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated
     /// with.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The password that you want to set for your SMB server.</p>
@@ -16347,7 +16511,7 @@ impl std::fmt::Debug for SetSmbGuestPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The password you want to set for your VM local console.</p>
     pub local_console_password: std::option::Option<std::string::String>,
@@ -16369,7 +16533,7 @@ pub struct RetrieveTapeRecoveryPointInput {
     /// recovery point.</p>
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RetrieveTapeRecoveryPointInput {
@@ -16390,7 +16554,7 @@ pub struct RetrieveTapeArchiveInput {
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to.
     /// Use the <a>ListGateways</a> operation to return a list of gateways for your
-    /// account and AWS Region.</p>
+    /// account and Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape
     /// gateway.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -16408,7 +16572,7 @@ impl std::fmt::Debug for RetrieveTapeArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResetCacheInput {
@@ -16445,8 +16609,7 @@ pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is
-    /// [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon
-    /// S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that
+    /// [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that
     /// the file share has access to is refreshed.</p>
     pub folder_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh
@@ -16501,7 +16664,7 @@ impl std::fmt::Debug for NotifyWhenUploadedInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A string that indicates the position at which to begin the returned list of volumes.
     /// Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
@@ -16524,7 +16687,7 @@ impl std::fmt::Debug for ListVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListVolumeRecoveryPointsInput {
@@ -16641,7 +16804,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocalDisksInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListLocalDisksInput {
@@ -16688,7 +16851,7 @@ impl std::fmt::Debug for ListGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSystemAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
     pub limit: std::option::Option<i32>,
@@ -16734,7 +16897,7 @@ impl std::fmt::Debug for ListFileSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutomaticTapeCreationPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesInput {
@@ -16750,7 +16913,7 @@ impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain that you want the gateway to join.</p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -16795,8 +16958,7 @@ pub struct DisassociateFileSystemInput {
     pub file_system_association_arn: std::option::Option<std::string::String>,
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system
     /// immediately. It ends all data uploads to the file system, and the file system association
-    /// enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon
-    /// FSx file system does not disassociate until all data is uploaded.</p>
+    /// enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub force_delete: bool,
 }
 impl std::fmt::Debug for DisassociateFileSystemInput {
@@ -16816,7 +16978,7 @@ impl std::fmt::Debug for DisassociateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisableGatewayInput {
@@ -16855,7 +17017,7 @@ impl std::fmt::Debug for DetachVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeWorkingStorageInput {
@@ -16871,7 +17033,7 @@ impl std::fmt::Debug for DescribeWorkingStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a
     /// VTL device.</p>
@@ -16902,7 +17064,7 @@ impl std::fmt::Debug for DescribeVtlDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeUploadBufferInput {
@@ -16918,7 +17080,7 @@ impl std::fmt::Debug for DescribeUploadBufferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual
     /// tapes you want to describe. If this parameter is not specified, Tape gateway returns a
@@ -16951,7 +17113,7 @@ impl std::fmt::Debug for DescribeTapesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An opaque string that indicates the position at which to begin describing the virtual
     /// tape recovery points.</p>
@@ -17031,7 +17193,7 @@ impl std::fmt::Debug for DescribeSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeSmbSettingsInput {
@@ -17079,7 +17241,7 @@ impl std::fmt::Debug for DescribeNfsFileSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeMaintenanceStartTimeInput {
@@ -17095,7 +17257,7 @@ impl std::fmt::Debug for DescribeMaintenanceStartTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeGatewayInformationInput {
@@ -17159,7 +17321,7 @@ impl std::fmt::Debug for DescribeCachediScsiVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeCacheInput {
@@ -17174,7 +17336,7 @@ impl std::fmt::Debug for DescribeCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleInput {
@@ -17190,7 +17352,7 @@ impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBandwidthRateLimitInput {
@@ -17205,7 +17367,7 @@ impl std::fmt::Debug for DescribeBandwidthRateLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAvailabilityMonitorTestInput {
@@ -17278,7 +17440,7 @@ impl std::fmt::Debug for DeleteTapeArchiveInput {
 pub struct DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is
     /// associated with. Use the <a>ListGateways</a> operation to return a list of
-    /// gateways for your account and AWS Region.</p>
+    /// gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
     pub tape_arn: std::option::Option<std::string::String>,
@@ -17320,7 +17482,7 @@ impl std::fmt::Debug for DeleteSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteGatewayInput {
@@ -17338,8 +17500,8 @@ pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share
-    /// immediately and aborts all data uploads to AWS. Otherwise, the file share is not deleted
-    /// until all data is uploaded to AWS. This process aborts the data upload process, and the
+    /// immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted
+    /// until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the
     /// file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
@@ -17397,7 +17559,7 @@ impl std::fmt::Debug for DeleteChapCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to
     /// delete.</p>
@@ -17418,7 +17580,7 @@ impl std::fmt::Debug for DeleteBandwidthRateLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutomaticTapeCreationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyInput {
@@ -17435,7 +17597,7 @@ impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyInput {
 pub struct CreateTapeWithBarcodeInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
     /// virtual tape with. Use the <a>ListGateways</a> operation to return a list of
-    /// gateways for your account and AWS Region.</p>
+    /// gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the virtual tape that you want to create.</p>
     /// <note>
@@ -17448,13 +17610,12 @@ pub struct CreateTapeWithBarcodeInput {
     /// deleted.</p>
     /// </note>
     pub tape_barcode: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this
@@ -17498,7 +17659,7 @@ impl std::fmt::Debug for CreateTapeWithBarcodeInput {
 pub struct CreateTapesInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
     /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of
-    /// gateways for your account and AWS Region.</p>
+    /// gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the virtual tapes that you want to create.</p>
     /// <note>
@@ -17521,13 +17682,12 @@ pub struct CreateTapesInput {
     /// from A to Z.</p>
     /// </note>
     pub tape_barcode_prefix: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this
@@ -17577,9 +17737,9 @@ pub struct CreateTapePoolInput {
     /// Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub storage_class: std::option::Option<crate::model::TapeStorageClass>,
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode,
-    /// AWS accounts with specific IAM permissions are authorized to remove the tape retention lock
+    /// accounts with specific IAM permissions are authorized to remove the tape retention lock
     /// from archived virtual tapes. When configured in compliance mode, the tape retention lock
-    /// cannot be removed by any user, including the root AWS account.</p>
+    /// cannot be removed by any user, including the root account.</p>
     pub retention_lock_type: std::option::Option<crate::model::RetentionLockType>,
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to
     /// 100 years (36,500 days).</p>
@@ -17641,7 +17801,7 @@ impl std::fmt::Debug for CreateTapePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the gateway local disk that is configured as a stored volume.
     /// Use <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
@@ -17670,13 +17830,12 @@ pub struct CreateStorediScsiVolumeInput {
     /// the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value
@@ -17713,7 +17872,7 @@ pub struct CreateSnapshotFromVolumeRecoveryPointInput {
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
     /// Block Store snapshots panel in the <b>Description</b> field, and
-    /// in the AWS Storage Gateway snapshot <b>Details</b> pane,
+    /// in the Storage Gateway snapshot <b>Details</b> pane,
     /// <b>Description</b> field.</p>
     pub snapshot_description: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value
@@ -17757,7 +17916,7 @@ pub struct CreateSnapshotInput {
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
     /// Block Store snapshots panel in the <b>Description</b> field, and
-    /// in the AWS Storage Gateway snapshot <b>Details</b> pane,
+    /// in the Storage Gateway snapshot <b>Details</b> pane,
     /// <b>Description</b> field.</p>
     pub snapshot_description: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value
@@ -17784,34 +17943,43 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmbFileShareInput {
-    /// <p>A unique string value that you supply that is used by file gateway to ensure idempotent
+    /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
     /// file share creation.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the file gateway on which you want to create a file share.</p>
+    /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
+    /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
     /// when it accesses the underlying storage.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
     /// the S3 bucket name. It must end with a "/".</p>
+    /// <note>
+    /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
+    /// bucket region as shown:</p>
+    /// <p>
+    /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+    /// </code>
+    /// </p>
+    /// <p>If you specify a bucket attached to an access point, the bucket policy must be
+    /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code>
     /// to set the write status to read-only, otherwise set to <code>false</code>.</p>
@@ -17841,7 +18009,7 @@ pub struct CreateSmbFileShareInput {
     /// share. Set it to <code>false</code> to map file and directory permissions to the POSIX
     /// permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-    /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+    /// control access to an SMB file share</a> in the <i>Storage Gateway User
     /// Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
@@ -17919,6 +18087,26 @@ pub struct CreateSmbFileShareInput {
     /// <code>{}</code>
     /// </p>
     pub notification_policy: std::option::Option<std::string::String>,
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub bucket_region: std::option::Option<std::string::String>,
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+    /// <note>
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+    /// access to files with the same name in different case.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub oplocks_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateSmbFileShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17946,6 +18134,9 @@ impl std::fmt::Debug for CreateSmbFileShareInput {
         formatter.field("file_share_name", &self.file_share_name);
         formatter.field("cache_attributes", &self.cache_attributes);
         formatter.field("notification_policy", &self.notification_policy);
+        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
+        formatter.field("bucket_region", &self.bucket_region);
+        formatter.field("oplocks_enabled", &self.oplocks_enabled);
         formatter.finish()
     }
 }
@@ -17954,39 +18145,48 @@ impl std::fmt::Debug for CreateSmbFileShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNfsFileShareInput {
-    /// <p>A unique string value that you supply that is used by file gateway to ensure idempotent
+    /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
     /// file share creation.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>File share default values. Optional.</p>
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
-    /// <p>The Amazon Resource Name (ARN) of the file gateway on which you want to create a file
+    /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file
     /// share.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
+    /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
     /// when it accesses the underlying storage.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
     /// the S3 bucket name. It must end with a "/".</p>
+    /// <note>
+    /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
+    /// bucket region as shown:</p>
+    /// <p>
+    /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+    /// </code>
+    /// </p>
+    /// <p>If you specify a bucket attached to an access point, the bucket policy must be
+    /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
-    /// <p>The list of clients that are allowed to access the file gateway. The list must contain
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain
     /// either valid IP addresses or valid CIDR blocks.</p>
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that maps a user to anonymous user.</p>
@@ -18068,6 +18268,19 @@ pub struct CreateNfsFileShareInput {
     /// <code>{}</code>
     /// </p>
     pub notification_policy: std::option::Option<std::string::String>,
+    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to
+    /// Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub bucket_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateNfsFileShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18090,6 +18303,8 @@ impl std::fmt::Debug for CreateNfsFileShareInput {
         formatter.field("file_share_name", &self.file_share_name);
         formatter.field("cache_attributes", &self.cache_attributes);
         formatter.field("notification_policy", &self.notification_policy);
+        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
+        formatter.field("bucket_region", &self.bucket_region);
         formatter.finish()
     }
 }
@@ -18098,7 +18313,7 @@ impl std::fmt::Debug for CreateNfsFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     pub volume_size_in_bytes: i64,
@@ -18128,13 +18343,12 @@ pub struct CreateCachediScsiVolumeInput {
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the
     /// same <code>ClientToken</code> you specified in the initial request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value
@@ -18169,7 +18383,7 @@ impl std::fmt::Debug for CreateCachediScsiVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRetrievalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval
     /// for.</p>
@@ -18189,7 +18403,7 @@ impl std::fmt::Debug for CancelRetrievalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelArchivalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving
     /// for.</p>
@@ -18252,21 +18466,27 @@ pub struct AssociateFileSystemInput {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The password of the user credential.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>A unique string value that you supply that is used by the file gateway to ensure
+    /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure
     /// idempotent file system association creation.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the
-    /// Amazon FSx file gateway.</p>
+    /// FSx File Gateway.</p>
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub audit_destination_arn: std::option::Option<std::string::String>,
-    /// <p>The refresh cache information for the file share.</p>
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
+    /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p>
+    /// <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// </note>
+    pub endpoint_network_configuration:
+        std::option::Option<crate::model::EndpointNetworkConfiguration>,
 }
 impl std::fmt::Debug for AssociateFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18279,6 +18499,10 @@ impl std::fmt::Debug for AssociateFileSystemInput {
         formatter.field("tags", &self.tags);
         formatter.field("audit_destination_arn", &self.audit_destination_arn);
         formatter.field("cache_attributes", &self.cache_attributes);
+        formatter.field(
+            "endpoint_network_configuration",
+            &self.endpoint_network_configuration,
+        );
         formatter.finish()
     }
 }
@@ -18331,7 +18555,7 @@ impl std::fmt::Debug for AssignTapePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage.
     /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs
@@ -18351,7 +18575,7 @@ impl std::fmt::Debug for AddWorkingStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage.
     /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs
@@ -18396,7 +18620,7 @@ impl std::fmt::Debug for AddTagsToResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage.
     /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs
@@ -18461,7 +18685,7 @@ pub struct ActivateGatewayInput {
     /// <code>ActivateGateway</code> API call determine the actual configuration of your
     /// gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-    /// key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+    /// key</a> in the <i>Storage Gateway User Guide</i>.</p>
     pub activation_key: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
@@ -18471,14 +18695,15 @@ pub struct ActivateGatewayInput {
     /// used, for example, for scheduling snapshots and your gateway's maintenance
     /// schedule.</p>
     pub gateway_timezone: std::option::Option<std::string::String>,
-    /// <p>A value that indicates the AWS Region where you want to store your data. The gateway AWS
-    /// Region specified must be the same AWS Region as the AWS Region in your <code>Host</code>
-    /// header in the request. For more information about available AWS Regions and endpoints for
-    /// AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-    /// Storage Gateway endpoints and quotas</a> in the <i>AWS General
+    /// <p>A value that indicates the Region where you want to store your data.
+    /// The gateway Region specified must be the same Region
+    /// as the Region in your <code>Host</code>
+    /// header in the request. For more information about available Regions and endpoints for
+    /// Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+    /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
     /// Reference</i>.</p>
-    /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-    /// Storage Gateway endpoints and quotas</a> in the <i>AWS General
+    /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+    /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
     /// Reference</i>.
     /// </p>
     pub gateway_region: std::option::Option<std::string::String>,
@@ -18486,7 +18711,7 @@ pub struct ActivateGatewayInput {
     /// all later functions of the gateway and cannot be changed after activation. The default
     /// value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-    /// <code>FILE_S3</code>
+    /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
     /// </p>
     pub gateway_type: std::option::Option<std::string::String>,
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is

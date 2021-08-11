@@ -17,6 +17,7 @@ pub enum Error {
     OperationNotFoundException(crate::error::OperationNotFoundException),
     OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
+    StackNotFoundException(crate::error::StackNotFoundException),
     StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
     StaleRequestException(crate::error::StaleRequestException),
@@ -43,6 +44,7 @@ impl std::fmt::Display for Error {
             Error::OperationNotFoundException(inner) => inner.fmt(f),
             Error::OperationStatusCheckFailedException(inner) => inner.fmt(f),
             Error::StackInstanceNotFoundException(inner) => inner.fmt(f),
+            Error::StackNotFoundException(inner) => inner.fmt(f),
             Error::StackSetNotEmptyException(inner) => inner.fmt(f),
             Error::StackSetNotFoundException(inner) => inner.fmt(f),
             Error::StaleRequestException(inner) => inner.fmt(f),
@@ -627,6 +629,23 @@ impl From<smithy_http::result::SdkError<crate::error::GetTemplateSummaryError>> 
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ImportStacksToStackSetError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportStacksToStackSetError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ImportStacksToStackSetErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(inner) => Error::OperationIdAlreadyExistsException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::OperationInProgressException(inner) => Error::OperationInProgressException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException(inner) => Error::StackNotFoundException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException(inner) => Error::StackSetNotFoundException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::StaleRequestException(inner) => Error::StaleRequestException(inner),
+                crate::error::ImportStacksToStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

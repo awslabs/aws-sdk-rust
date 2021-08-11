@@ -131,7 +131,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_filter(input);
             self
         }
-        /// <p>The Eventbridge bus.</p>
+        /// <p>The EventBridge bus.</p>
         pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bridge_bus(input);
             self

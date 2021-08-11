@@ -389,6 +389,13 @@ pub fn deser_operation_create_ledger(
                             smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
                         );
                     }
+                    "KmsKeyArn" => {
+                        builder = builder.set_kms_key_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "Name" => {
                         builder = builder.set_name(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -550,6 +557,13 @@ pub fn deser_operation_describe_ledger(
                     "DeletionProtection" => {
                         builder = builder.set_deletion_protection(
                             smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                        );
+                    }
+                    "EncryptionDescription" => {
+                        builder = builder.set_encryption_description(
+                            crate::json_deser::deser_structure_ledger_encryption_description(
+                                tokens,
+                            )?,
                         );
                     }
                     "Name" => {
@@ -1052,6 +1066,13 @@ pub fn deser_operation_update_ledger(
                             smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
                         );
                     }
+                    "EncryptionDescription" => {
+                        builder = builder.set_encryption_description(
+                            crate::json_deser::deser_structure_ledger_encryption_description(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "Name" => {
                         builder = builder.set_name(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -1376,6 +1397,72 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_ledger_encryption_description<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LedgerEncryptionDescription>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LedgerEncryptionDescription::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "KmsKeyArn" => {
+                                builder = builder.set_kms_key_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EncryptionStatus" => {
+                                builder = builder.set_encryption_status(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::EncryptionStatus::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "InaccessibleKmsKeyDateTime" => {
+                                builder = builder.set_inaccessible_kms_key_date_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

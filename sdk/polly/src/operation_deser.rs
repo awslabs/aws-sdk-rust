@@ -856,9 +856,10 @@ pub fn parse_start_speech_synthesis_task_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_synthesize_speech(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>
 {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::synthesize_speech_output::Builder::default();

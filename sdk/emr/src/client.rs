@@ -81,6 +81,9 @@ where
     pub fn describe_notebook_execution(&self) -> fluent_builders::DescribeNotebookExecution<C> {
         fluent_builders::DescribeNotebookExecution::new(self.handle.clone())
     }
+    pub fn describe_release_label(&self) -> fluent_builders::DescribeReleaseLabel<C> {
+        fluent_builders::DescribeReleaseLabel::new(self.handle.clone())
+    }
     pub fn describe_security_configuration(
         &self,
     ) -> fluent_builders::DescribeSecurityConfiguration<C> {
@@ -120,6 +123,9 @@ where
     }
     pub fn list_notebook_executions(&self) -> fluent_builders::ListNotebookExecutions<C> {
         fluent_builders::ListNotebookExecutions::new(self.handle.clone())
+    }
+    pub fn list_release_labels(&self) -> fluent_builders::ListReleaseLabels<C> {
+        fluent_builders::ListReleaseLabels::new(self.handle.clone())
     }
     pub fn list_security_configurations(&self) -> fluent_builders::ListSecurityConfigurations<C> {
         fluent_builders::ListSecurityConfigurations::new(self.handle.clone())
@@ -617,7 +623,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role provides a
-        /// way for Amazon EMR Studio to interoperate with other AWS services.</p>
+        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(input);
             self
@@ -735,8 +741,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the AWS SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
+        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input);
@@ -746,7 +752,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input);
@@ -772,8 +778,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-        /// or group. Session policies refine Studio user permissions without the need to use multiple
-        /// IAM user roles.</p>
+        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
         pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_policy_arn(input);
             self
@@ -909,7 +914,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input);
@@ -920,7 +925,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input);
@@ -1111,6 +1116,68 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_notebook_execution_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeReleaseLabel<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_release_label_input::Builder,
+    }
+    impl<C> DescribeReleaseLabel<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeReleaseLabelOutput,
+            smithy_http::result::SdkError<crate::error::DescribeReleaseLabelError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The target release label to be described.</p>
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input);
+            self
+        }
+        pub fn set_release_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_release_label(input);
+            self
+        }
+        /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Reserved for future use. Currently set to null.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1361,7 +1428,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input);
@@ -1371,7 +1438,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input);
@@ -1502,7 +1569,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_before(input);
             self
         }
-        /// <p>The cluster state filters to apply when listing clusters.</p>
+        /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
         pub fn cluster_states(mut self, inp: impl Into<crate::model::ClusterState>) -> Self {
             self.inner = self.inner.cluster_states(inp);
             self
@@ -1874,6 +1941,68 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListReleaseLabels<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_release_labels_input::Builder,
+    }
+    impl<C> ListReleaseLabels<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListReleaseLabelsOutput,
+            smithy_http::result::SdkError<crate::error::ListReleaseLabelsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
+        pub fn filters(mut self, input: crate::model::ReleaseLabelFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ReleaseLabelFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (AWS AccountID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListSecurityConfigurations<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::list_security_configurations_input::Builder,
@@ -1980,7 +2109,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_step_ids(input);
             self
         }
-        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+        /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input);
             self
@@ -2134,8 +2263,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256
-        /// steps. </p>
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
         pub fn step_concurrency_level(mut self, input: i32) -> Self {
             self.inner = self.inner.step_concurrency_level(input);
             self
@@ -2185,7 +2313,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The unique identifier of the instance fleet.</p>
+        /// <p>The configuration parameters of the instance fleet.</p>
         pub fn instance_fleet(mut self, input: crate::model::InstanceFleetModifyConfig) -> Self {
             self.inner = self.inner.instance_fleet(input);
             self
@@ -2635,7 +2763,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_uri(input);
             self
         }
-        /// <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not
+        /// <p>The KMS key used for encrypting log files. If a value is not
         /// provided, the logs remain encrypted by AES-256. This attribute is only available with
         /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2834,10 +2962,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configurations(input);
             self
         }
-        /// <p>A value of <code>true</code> indicates that all IAM users in the AWS account can perform
-        /// cluster actions if they have the proper IAM policy permissions. This is the default. A
-        /// value of <code>false</code> indicates that only the IAM user who created the cluster can
-        /// perform actions.</p>
+        /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>false</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.inner = self.inner.visible_to_all_users(input);
             self
@@ -2861,7 +2987,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_role(input);
             self
         }
-        /// <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on
+        /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
         /// your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(input);
@@ -3131,10 +3257,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_ids(input);
             self
         }
-        /// <p>A value of <code>true</code> indicates that all IAM users in the AWS account can perform
-        /// cluster actions if they have the proper IAM policy permissions. This is the default. A
-        /// value of <code>false</code> indicates that only the IAM user who created the cluster can
-        /// perform actions.</p>
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the account can perform
+        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
+        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.inner = self.inner.visible_to_all_users(input);
             self
@@ -3493,7 +3618,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input);
@@ -3503,7 +3628,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input);

@@ -261,6 +261,22 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateIamInstanceProfil
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::AssociateInstanceEventWindowError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateInstanceEventWindowError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateInstanceEventWindowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::AssociateRouteTableError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::AssociateRouteTableError>) -> Self {
         match err {
@@ -765,6 +781,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateImageError>> for Err
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateInstanceEventWindowError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateInstanceEventWindowError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateInstanceEventWindowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateInstanceExportTaskError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::CreateInstanceExportTaskError>,
@@ -1096,6 +1126,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSubnetError>> for Er
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateSubnetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::CreateSubnetCidrReservationError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateSubnetCidrReservationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSubnetCidrReservationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1537,6 +1581,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteFpgaImageError>> for
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DeleteInstanceEventWindowError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteInstanceEventWindowError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteInstanceEventWindowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DeleteInternetGatewayError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteInternetGatewayError>) -> Self {
         match err {
@@ -1824,6 +1882,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSubnetError>> for Er
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteSubnetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteSubnetCidrReservationError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteSubnetCidrReservationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteSubnetCidrReservationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -2840,6 +2912,22 @@ impl
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeInstanceEventWindowsError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeInstanceEventWindowsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeInstanceEventWindowsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DescribeInstancesError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeInstancesError>) -> Self {
         match err {
@@ -3397,6 +3485,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSecurityGroupRefer
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeSecurityGroupReferencesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribeSecurityGroupRulesError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeSecurityGroupRulesError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSecurityGroupRulesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -4260,6 +4362,22 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateIamInstancePro
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DisassociateInstanceEventWindowError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisassociateInstanceEventWindowError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DisassociateInstanceEventWindowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DisassociateRouteTableError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DisassociateRouteTableError>) -> Self {
         match err {
@@ -4794,6 +4912,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetSerialConsoleAccessStat
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GetSubnetCidrReservationsError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetSubnetCidrReservationsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetSubnetCidrReservationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetTransitGatewayAttachmentPropagationsError>>
     for Error
 {
@@ -5178,6 +5310,20 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyInstanceEventStartTi
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ModifyInstanceEventWindowError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyInstanceEventWindowError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifyInstanceEventWindowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ModifyInstanceMetadataOptionsError>>
     for Error
 {
@@ -5257,6 +5403,20 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyReservedInstancesErr
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyReservedInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ModifySecurityGroupRulesError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifySecurityGroupRulesError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifySecurityGroupRulesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

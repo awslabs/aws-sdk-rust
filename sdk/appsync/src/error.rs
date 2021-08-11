@@ -4560,7 +4560,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>An internal AWS AppSync error occurred. Try your request again.</p>
+/// <p>An internal AppSync error occurred. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {

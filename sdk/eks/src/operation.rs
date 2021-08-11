@@ -2,7 +2,7 @@
 /// <p>Associate encryption configuration to an existing cluster.</p>
 /// <p>You can use this API to enable encryption on existing clusters which do not have
 /// encryption already enabled. This allows you to implement a defense-in-depth security
-/// strategy without migrating applications to new EKS clusters.</p>
+/// strategy without migrating applications to new Amazon EKS clusters.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateEncryptionConfig {
     _private: (),
@@ -99,7 +99,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAddon {
 /// <p>Creates an Amazon EKS control plane. </p>
 /// <p>The Amazon EKS control plane consists of control plane instances that run the Kubernetes
 /// software, such as <code>etcd</code> and the API server. The control plane runs in an
-/// account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server
+/// account managed by Amazon Web Services, and the Kubernetes API is exposed via the Amazon EKS API server
 /// endpoint. Each Amazon EKS cluster control plane is single-tenant and unique and runs on its
 /// own set of Amazon EC2 instances.</p>
 /// <p>The cluster control plane is provisioned across multiple Availability Zones and
@@ -107,7 +107,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAddon {
 /// subnets to provide connectivity from the control plane instances to the nodes (for
 /// example, to support <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code>
 /// data flows).</p>
-/// <p>Amazon EKS nodes run in your AWS account and connect to your cluster's control plane via
+/// <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane via
 /// the Kubernetes API server endpoint and a certificate file that is created for your
 /// cluster.</p>
 /// <p>Cluster creation typically takes several minutes. After you create an Amazon EKS cluster,
@@ -139,7 +139,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCluster {
     }
 }
 
-/// <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least one Fargate
+/// <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at least one Fargate
 /// profile in a cluster to be able to run pods on Fargate.</p>
 /// <p>The Fargate profile allows an administrator to declare which pods run on Fargate and specify
 /// which pods run on which Fargate profile. This declaration is done through the profile’s
@@ -162,7 +162,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCluster {
 /// <p>If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you must
 /// wait for that Fargate profile to finish deleting before you can create any other profiles
 /// in that cluster.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFargateProfile {
     _private: (),
@@ -197,7 +197,7 @@ impl smithy_http::response::ParseStrictResponse for CreateFargateProfile {
 /// template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
 /// template support</a>.</p>
 /// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that
-/// are managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
+/// are managed by Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
 /// optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
 /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -288,7 +288,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteCluster {
     }
 }
 
-/// <p>Deletes an AWS Fargate profile.</p>
+/// <p>Deletes an Fargate profile.</p>
 /// <p>When you delete a Fargate profile, any pods running on Fargate that were created with the
 /// profile are deleted. If those pods match another Fargate profile, then they are scheduled
 /// on Fargate with that profile. If they no longer match any Fargate profiles, then they are not
@@ -441,7 +441,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeCluster {
     }
 }
 
-/// <p>Returns descriptive information about an AWS Fargate profile.</p>
+/// <p>Returns descriptive information about an Fargate profile.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFargateProfile {
     _private: (),
@@ -557,7 +557,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeUpdate {
 
 /// <p>Disassociates an identity provider configuration from a cluster. If you disassociate
 /// an identity provider from your cluster, users included in the provider can no longer
-/// access the cluster. However, you can still access the cluster with AWS IAM
+/// access the cluster. However, you can still access the cluster with Amazon Web Services IAM
 /// users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfig {
@@ -612,7 +612,7 @@ impl smithy_http::response::ParseStrictResponse for ListAddons {
     }
 }
 
-/// <p>Lists the Amazon EKS clusters in your AWS account in the specified Region.</p>
+/// <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the specified Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListClusters {
     _private: (),
@@ -638,7 +638,7 @@ impl smithy_http::response::ParseStrictResponse for ListClusters {
     }
 }
 
-/// <p>Lists the AWS Fargate profiles associated with the specified cluster in your AWS
+/// <p>Lists the Fargate profiles associated with the specified cluster in your Amazon Web Services
 /// account in the specified Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListFargateProfiles {
@@ -696,7 +696,7 @@ impl smithy_http::response::ParseStrictResponse for ListIdentityProviderConfigs 
 }
 
 /// <p>Lists the Amazon EKS managed node groups associated with the specified cluster in your
-/// AWS account in the specified Region. Self-managed node groups are not listed.</p>
+/// Amazon Web Services account in the specified Region. Self-managed node groups are not listed.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListNodegroups {
     _private: (),
@@ -750,7 +750,7 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
-/// <p>Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS
+/// <p>Lists the updates associated with an Amazon EKS cluster or managed node group in your Amazon Web Services
 /// account, in the specified Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListUpdates {
@@ -873,12 +873,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateAddon {
 /// </i>.</p>
 /// <note>
 /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-/// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+/// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
 /// </note>
 /// <p>You can also use this API operation to enable or disable public and private access to
 /// your cluster's Kubernetes API server endpoint. By default, public access is enabled, and
-/// private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-/// Endpoint Access Control</a> in the <i>
+/// private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+/// endpoint access control</a> in the <i>
 /// <i>Amazon EKS User Guide</i>
 /// </i>. </p>
 /// <important>

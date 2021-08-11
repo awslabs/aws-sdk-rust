@@ -1,7 +1,12 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 //! This module provides types useful for static tests.
 #![allow(missing_docs, missing_debug_implementations)]
 
-use crate::*;
+use crate::{Builder, Error, Operation, ParseHttpResponse, ProvideErrorKind};
+use smithy_http::operation;
 
 #[derive(Debug)]
 #[non_exhaustive]
@@ -24,10 +29,10 @@ impl ProvideErrorKind for TestOperationError {
 #[derive(Clone)]
 #[non_exhaustive]
 pub struct TestOperation;
-impl ParseHttpResponse<SdkBody> for TestOperation {
+impl ParseHttpResponse for TestOperation {
     type Output = Result<(), TestOperationError>;
 
-    fn parse_unloaded(&self, _: &mut http::Response<SdkBody>) -> Option<Self::Output> {
+    fn parse_unloaded(&self, _: &mut operation::Response) -> Option<Self::Output> {
         unreachable!("only used for static tests")
     }
 
@@ -51,7 +56,7 @@ fn sanity_retry() {
 // Statically check that a hyper client can actually be used to build a Client.
 #[allow(dead_code)]
 #[cfg(all(test, feature = "hyper"))]
-fn sanity_hyper<C>(hc: hyper::Client<C, SdkBody>)
+fn sanity_hyper<C>(hc: hyper::Client<C, smithy_http::body::SdkBody>)
 where
     C: hyper::client::connect::Connect + Clone + Send + Sync + 'static,
 {

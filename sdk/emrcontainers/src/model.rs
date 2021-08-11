@@ -1003,6 +1003,14 @@ pub struct Endpoint {
     /// <p>The subnet IDs of the endpoint.
     /// </p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>
+    /// Additional details of the endpoint state.
+    /// </p>
+    pub state_details: std::option::Option<std::string::String>,
+    /// <p>
+    /// The reasons why the endpoint has failed.
+    /// </p>
+    pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The tags of the endpoint.
     /// </p>
     pub tags:
@@ -1025,6 +1033,8 @@ impl std::fmt::Debug for Endpoint {
         formatter.field("created_at", &self.created_at);
         formatter.field("security_group", &self.security_group);
         formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("state_details", &self.state_details);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -1050,6 +1060,8 @@ pub mod endpoint {
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) security_group: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) state_details: std::option::Option<std::string::String>,
+        pub(crate) failure_reason: std::option::Option<crate::model::FailureReason>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1210,6 +1222,34 @@ pub mod endpoint {
             self.subnet_ids = input;
             self
         }
+        /// <p>
+        /// Additional details of the endpoint state.
+        /// </p>
+        pub fn state_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_details = Some(input.into());
+            self
+        }
+        pub fn set_state_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_details = input;
+            self
+        }
+        /// <p>
+        /// The reasons why the endpoint has failed.
+        /// </p>
+        pub fn failure_reason(mut self, input: crate::model::FailureReason) -> Self {
+            self.failure_reason = Some(input);
+            self
+        }
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<crate::model::FailureReason>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1246,6 +1286,8 @@ pub mod endpoint {
                 created_at: self.created_at,
                 security_group: self.security_group,
                 subnet_ids: self.subnet_ids,
+                state_details: self.state_details,
+                failure_reason: self.failure_reason,
                 tags: self.tags,
             }
         }
@@ -1255,6 +1297,67 @@ impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint)
     pub fn builder() -> crate::model::endpoint::Builder {
         crate::model::endpoint::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FailureReason {
+    ClusterUnavailable,
+    InternalError,
+    UserError,
+    ValidationError,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FailureReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLUSTER_UNAVAILABLE" => FailureReason::ClusterUnavailable,
+            "INTERNAL_ERROR" => FailureReason::InternalError,
+            "USER_ERROR" => FailureReason::UserError,
+            "VALIDATION_ERROR" => FailureReason::ValidationError,
+            other => FailureReason::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FailureReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FailureReason::from(s))
+    }
+}
+impl FailureReason {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FailureReason::ClusterUnavailable => "CLUSTER_UNAVAILABLE",
+            FailureReason::InternalError => "INTERNAL_ERROR",
+            FailureReason::UserError => "USER_ERROR",
+            FailureReason::ValidationError => "VALIDATION_ERROR",
+            FailureReason::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CLUSTER_UNAVAILABLE",
+            "INTERNAL_ERROR",
+            "USER_ERROR",
+            "VALIDATION_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for FailureReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1618,67 +1721,6 @@ impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun)
     pub fn builder() -> crate::model::job_run::Builder {
         crate::model::job_run::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FailureReason {
-    ClusterUnavailable,
-    InternalError,
-    UserError,
-    ValidationError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLUSTER_UNAVAILABLE" => FailureReason::ClusterUnavailable,
-            "INTERNAL_ERROR" => FailureReason::InternalError,
-            "USER_ERROR" => FailureReason::UserError,
-            "VALIDATION_ERROR" => FailureReason::ValidationError,
-            other => FailureReason::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FailureReason {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureReason::from(s))
-    }
-}
-impl FailureReason {
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureReason::ClusterUnavailable => "CLUSTER_UNAVAILABLE",
-            FailureReason::InternalError => "INTERNAL_ERROR",
-            FailureReason::UserError => "USER_ERROR",
-            FailureReason::ValidationError => "VALIDATION_ERROR",
-            FailureReason::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CLUSTER_UNAVAILABLE",
-            "INTERNAL_ERROR",
-            "USER_ERROR",
-            "VALIDATION_ERROR",
-        ]
-    }
-}
-impl AsRef<str> for FailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

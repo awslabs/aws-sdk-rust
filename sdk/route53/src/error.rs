@@ -9,6 +9,7 @@ pub struct ActivateKeySigningKeyError {
 #[derive(std::fmt::Debug)]
 pub enum ActivateKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
+    InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
@@ -20,6 +21,7 @@ impl std::fmt::Display for ActivateKeySigningKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            ActivateKeySigningKeyErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
@@ -78,6 +80,9 @@ impl ActivateKeySigningKeyError {
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidInput(_))
+    }
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
@@ -104,6 +109,7 @@ impl std::error::Error for ActivateKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            ActivateKeySigningKeyErrorKind::InvalidInput(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
@@ -1656,6 +1662,7 @@ pub struct DeactivateKeySigningKeyError {
 #[derive(std::fmt::Debug)]
 pub enum DeactivateKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
+    InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
@@ -1668,6 +1675,7 @@ impl std::fmt::Display for DeactivateKeySigningKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            DeactivateKeySigningKeyErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_inner) => {
@@ -1729,6 +1737,12 @@ impl DeactivateKeySigningKeyError {
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::InvalidInput(_)
+        )
+    }
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
@@ -1764,6 +1778,7 @@ impl std::error::Error for DeactivateKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            DeactivateKeySigningKeyErrorKind::InvalidInput(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_inner) => Some(_inner),
@@ -1979,6 +1994,7 @@ pub struct DeleteKeySigningKeyError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
+    InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
@@ -1990,6 +2006,7 @@ impl std::fmt::Display for DeleteKeySigningKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            DeleteKeySigningKeyErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
@@ -2048,6 +2065,9 @@ impl DeleteKeySigningKeyError {
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidInput(_))
+    }
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
@@ -2074,6 +2094,7 @@ impl std::error::Error for DeleteKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            DeleteKeySigningKeyErrorKind::InvalidInput(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
@@ -2638,6 +2659,7 @@ pub enum DisableHostedZoneDNSSECErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     DnssecNotFound(crate::error::DnssecNotFound),
     InvalidArgument(crate::error::InvalidArgument),
+    InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidKmsArn(crate::error::InvalidKmsArn),
     KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
@@ -2651,6 +2673,7 @@ impl std::fmt::Display for DisableHostedZoneDNSSECError {
             DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            DisableHostedZoneDNSSECErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_inner) => {
@@ -2723,6 +2746,12 @@ impl DisableHostedZoneDNSSECError {
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_)
         )
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::InvalidInput(_)
+        )
+    }
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
@@ -2754,6 +2783,7 @@ impl std::error::Error for DisableHostedZoneDNSSECError {
             DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => Some(_inner),
+            DisableHostedZoneDNSSECErrorKind::InvalidInput(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_inner) => Some(_inner),
@@ -2893,6 +2923,7 @@ pub enum EnableHostedZoneDNSSECErrorKind {
     DnssecNotFound(crate::error::DnssecNotFound),
     HostedZonePartiallyDelegated(crate::error::HostedZonePartiallyDelegated),
     InvalidArgument(crate::error::InvalidArgument),
+    InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidKmsArn(crate::error::InvalidKmsArn),
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
@@ -2907,6 +2938,7 @@ impl std::fmt::Display for EnableHostedZoneDNSSECError {
             EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            EnableHostedZoneDNSSECErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_inner) => {
@@ -2985,6 +3017,9 @@ impl EnableHostedZoneDNSSECError {
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_)
         )
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, EnableHostedZoneDNSSECErrorKind::InvalidInput(_))
+    }
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
@@ -3017,6 +3052,7 @@ impl std::error::Error for EnableHostedZoneDNSSECError {
             EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => Some(_inner),
+            EnableHostedZoneDNSSECErrorKind::InvalidInput(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_inner) => {
@@ -3272,6 +3308,7 @@ pub struct GetDNSSECError {
 #[derive(std::fmt::Debug)]
 pub enum GetDNSSECErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
+    InvalidInput(crate::error::InvalidInput),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3280,6 +3317,7 @@ impl std::fmt::Display for GetDNSSECError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetDNSSECErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            GetDNSSECErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             GetDNSSECErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
             GetDNSSECErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3332,6 +3370,9 @@ impl GetDNSSECError {
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, GetDNSSECErrorKind::InvalidArgument(_))
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetDNSSECErrorKind::InvalidInput(_))
+    }
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, GetDNSSECErrorKind::NoSuchHostedZone(_))
     }
@@ -3340,6 +3381,7 @@ impl std::error::Error for GetDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetDNSSECErrorKind::InvalidArgument(_inner) => Some(_inner),
+            GetDNSSECErrorKind::InvalidInput(_inner) => Some(_inner),
             GetDNSSECErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
             GetDNSSECErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -9097,7 +9139,7 @@ impl TrafficPolicyInstanceAlreadyExists {
 /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
 /// <p>For information about how to get the current limit for an account, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
-/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
+/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrafficPolicyInstances {
@@ -9227,7 +9269,7 @@ impl TrafficPolicyAlreadyExists {
 /// <p>To get the current limit for an account, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
 /// </p>
-/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
+/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrafficPolicies {
@@ -9295,7 +9337,7 @@ impl TooManyTrafficPolicies {
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
 /// To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-/// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
+/// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitsExceeded {
@@ -9741,6 +9783,10 @@ impl NoSuchCloudWatchLogsLogGroup {
 /// <li>
 /// <p>The resource policy hasn't finished propagating yet.</p>
 /// </li>
+/// <li>
+/// <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the
+/// log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p>
+/// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9989,7 +10035,7 @@ impl InvalidKeySigningKeyName {
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
 /// <p>To get the current limit on hosted zones that can be associated with a reusable delegation set, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.</p>
-/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
+/// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHostedZones {
@@ -10199,9 +10245,9 @@ impl ConflictingDomainExists {
 /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
 /// <p>For information about how to get the current limit for an account, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a
-/// higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
-/// <p>You have reached the maximum number of active health checks for an AWS account. To request a higher limit,
-/// <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.</p>
+/// higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+/// <p>You have reached the maximum number of active health checks for an account. To request a higher limit,
+/// <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHealthChecks {

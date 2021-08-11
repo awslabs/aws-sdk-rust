@@ -9941,6 +9941,332 @@ pub fn parse_describe_user_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_embed_url_for_anonymous_user_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateEmbedUrlForAnonymousUserOutput,
+    crate::error::GenerateEmbedUrlForAnonymousUserError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalFailureException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "SessionLifetimeInMinutesInvalidException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_session_lifetime_in_minutes_invalid_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedPricingPlanException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unsupported_pricing_plan_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedUserEditionException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unsupported_user_edition_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GenerateEmbedUrlForAnonymousUserError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_embed_url_for_anonymous_user_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateEmbedUrlForAnonymousUserOutput,
+    crate::error::GenerateEmbedUrlForAnonymousUserError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::generate_embed_url_for_anonymous_user_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_generate_embed_url_for_anonymous_user(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
+        output = output.set_status(Some(response.status().as_u16() as _));
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_embed_url_for_registered_user_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateEmbedUrlForRegisteredUserOutput,
+    crate::error::GenerateEmbedUrlForRegisteredUserError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalFailureException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "QuickSightUserNotFoundException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::quick_sight_user_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_quick_sight_user_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "SessionLifetimeInMinutesInvalidException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_session_lifetime_in_minutes_invalid_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedPricingPlanException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unsupported_pricing_plan_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedUserEditionException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unsupported_user_edition_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GenerateEmbedUrlForRegisteredUserError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_embed_url_for_registered_user_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateEmbedUrlForRegisteredUserOutput,
+    crate::error::GenerateEmbedUrlForRegisteredUserError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::generate_embed_url_for_registered_user_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_generate_embed_url_for_registered_user(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
+        output = output.set_status(Some(response.status().as_u16() as _));
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dashboard_embed_url_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

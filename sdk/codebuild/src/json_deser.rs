@@ -3838,6 +3838,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "bucketOwnerAccess" => {
+                                builder = builder.set_bucket_owner_access(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BucketOwnerAccess::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4952,6 +4965,19 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "bucketOwnerAccess" => {
+                                builder = builder.set_bucket_owner_access(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BucketOwnerAccess::from(u.as_ref())
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }
@@ -6091,6 +6117,19 @@ where
                                     smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "bucketOwnerAccess" => {
+                                builder = builder.set_bucket_owner_access(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BucketOwnerAccess::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

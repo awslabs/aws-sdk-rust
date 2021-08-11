@@ -783,7 +783,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -836,7 +836,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -889,7 +889,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -939,14 +939,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_old_password(input);
             self
         }
-        /// <p>The new password. The new password must conform to the AWS account's password
+        /// <p>The new password. The new password must conform to the account's password
         /// policy, if one exists.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// that is used to validate this parameter is a string of characters. That string can include almost any printable
         /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
         /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
         /// characters. Any of these characters are valid in a password. However, many tools, such
-        /// as the AWS Management Console, might restrict the ability to type certain characters because they have
+        /// as the Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
         pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.new_password(input);
@@ -1234,7 +1234,7 @@ pub mod fluent_builders {
         /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
         /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
         /// characters. Any of these characters are valid in a password. However, many tools, such
-        /// as the AWS Management Console, might restrict the ability to type certain characters because they have
+        /// as the Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input);
@@ -1290,9 +1290,9 @@ pub mod fluent_builders {
         /// tokens. Per the OIDC standard, path components are allowed but query parameters are not.
         /// Typically the URL consists of only a hostname, like
         /// <code>https://server.example.org</code> or <code>https://example.com</code>.</p>
-        /// <p>You cannot register the same provider multiple times in a single AWS account. If you
+        /// <p>You cannot register the same provider multiple times in a single account. If you
         /// try to submit a URL that has already been used for an OpenID Connect provider in the
-        /// AWS account, you will get an error.</p>
+        /// account, you will get an error.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.url(input);
             self
@@ -1428,12 +1428,13 @@ pub mod fluent_builders {
         }
         /// <p>The JSON policy document that you want to use as the content for the new
         /// policy.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
         /// IAM.</p>
-        /// <p>To learn more about JSON policy grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar of the IAM JSON policy language</a> in the
-        /// <i>IAM User Guide</i>. </p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+        /// <p>To learn more about JSON policy grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar of the IAM JSON
+        /// policy language</a> in the <i>IAM User Guide</i>. </p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -1526,7 +1527,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
         /// version.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -1537,10 +1538,11 @@ pub mod fluent_builders {
         }
         /// <p>The JSON policy document that you want to use as the content for this new version of
         /// the policy.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
         /// IAM.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -1644,8 +1646,8 @@ pub mod fluent_builders {
         /// <p>The trust relationship policy document that grants an entity permission to assume the
         /// role.</p>
         /// <p>In IAM, you must provide a JSON policy that has been converted to a string. However,
-        /// for AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON
-        /// or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before
+        /// for CloudFormation templates formatted in YAML, you can provide the policy in JSON
+        /// or YAML format. CloudFormation always converts a YAML policy to JSON format before
         /// submitting it to IAM.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
@@ -1690,7 +1692,7 @@ pub mod fluent_builders {
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
         /// If you do not specify a value for this setting, the default maximum of one hour is
         /// applied. This setting can have a value from 1 hour to 12 hours.</p>
-        /// <p>Anyone who assumes the role from the AWS CLI or API can use the
+        /// <p>Anyone who assumes the role from the  or API can use the
         /// <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI
         /// parameter to request a longer session. The <code>MaxSessionDuration</code> setting
         /// determines the maximum duration that can be requested using the
@@ -1851,11 +1853,11 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The service principal for the AWS service to which this role is attached. You use a
+        /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a
         /// string similar to a URL but without the http:// in front. For example:
         /// <code>elasticbeanstalk.amazonaws.com</code>. </p>
         /// <p>Service principals are unique and case-sensitive. To find the exact service principal
-        /// for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS services
+        /// for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services
         /// that work with IAM</a> in the <i>IAM User Guide</i>. Look for
         /// the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that
         /// service.</p>
@@ -1944,7 +1946,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The name of the AWS service that is to be associated with the credentials. The
+        /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The
         /// service you specify here is the only service that can be accessed using these
         /// credentials.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2589,7 +2591,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -2632,7 +2634,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
         /// version.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -3335,7 +3337,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -3388,7 +3390,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -3441,7 +3443,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -3615,9 +3617,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The path of the AWS Organizations entity (root, OU, or account). You can build an entity path using
-        /// the known structure of your organization. For example, assume that your account ID is
-        /// <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The
+        /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path
+        /// using the known structure of your organization. For example, assume that your account ID
+        /// is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The
         /// organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is
         /// <code>o-a1b2c3d4e5</code>. Your entity path is
         /// <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
@@ -3629,10 +3631,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_path(input);
             self
         }
-        /// <p>The identifier of the AWS Organizations service control policy (SCP). This parameter is
+        /// <p>The identifier of the Organizations service control policy (SCP). This parameter is
         /// optional.</p>
         /// <p>This ID is used to generate information about when an account principal that is
-        /// limited by the SCP attempted to access an AWS service.</p>
+        /// limited by the SCP attempted to access an Amazon Web Services service.</p>
         pub fn organizations_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organizations_policy_id(input);
             self
@@ -3677,7 +3679,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
-        /// information about when the resource was last used in an attempt to access an AWS
+        /// information about when the resource was last used in an attempt to access an Amazon Web Services
         /// service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input);
@@ -3993,7 +3995,7 @@ pub mod fluent_builders {
         /// that are found in policies attached to that entity. Note that all parameters are shown
         /// in unencoded form here for clarity, but must be URL encoded to be included as a part of
         /// a real HTML request.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_source_arn(input);
             self
@@ -4314,7 +4316,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
         /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4446,7 +4448,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -4489,7 +4491,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -4641,7 +4643,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
         /// information about.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.saml_provider_arn(input);
             self
@@ -4815,14 +4817,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The service namespace for an AWS service. Provide the service namespace to learn
+        /// <p>The service namespace for an Amazon Web Services service. Provide the service namespace to learn
         /// when the IAM entity last attempted to access the specified service.</p>
-        /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+        /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
         /// <i>IAM User Guide</i>. Choose the name of the service to view
         /// details for that service. In the first paragraph, find the service prefix. For example,
         /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_namespace(input);
             self
@@ -5496,7 +5498,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -5978,8 +5980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM instance profile whose tags you want to see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_profile_name(input);
             self
@@ -6003,10 +6005,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -6123,8 +6126,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the IAM virtual MFA device whose tags you want to see.
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.serial_number(input);
             self
@@ -6148,10 +6151,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -6229,8 +6233,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to
         /// see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6257,10 +6261,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -6305,8 +6310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The scope to use for filtering the results.</p>
-        /// <p>To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To
-        /// list only the customer managed policies in your AWS account, set <code>Scope</code> to
+        /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To
+        /// list only the customer managed policies in your account, set <code>Scope</code> to
         /// <code>Local</code>.</p>
         /// <p>This parameter is optional. If it is not included, or if it is set to
         /// <code>All</code>, all policies are returned.</p>
@@ -6446,13 +6451,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The service namespace for the AWS services whose policies you want to list.</p>
-        /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+        /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
+        /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
         /// <i>IAM User Guide</i>. Choose the name of the service to view
         /// details for that service. In the first paragraph, find the service prefix. For example,
         /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn service_namespaces(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_namespaces(inp);
             self
@@ -6497,8 +6502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -6519,10 +6524,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -6568,7 +6574,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -6807,10 +6813,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -6888,8 +6895,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags
         /// you want to see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.saml_provider_arn(input);
             self
@@ -6913,10 +6920,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -7037,8 +7045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM server certificate whose tags you want to see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_name(input);
             self
@@ -7062,10 +7070,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -7122,8 +7131,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>Filters the returned results to only those for the specified AWS service. If not
-        /// specified, then AWS returns service-specific credentials for all services.</p>
+        /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not
+        /// specified, then Amazon Web Services returns service-specific credentials for all services.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input);
             self
@@ -7236,7 +7245,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM user to list SSH public keys for. If none is specified, the
-        /// <code>UserName</code> field is determined implicitly based on the AWS access key
+        /// <code>UserName</code> field is determined implicitly based on the Amazon Web Services access key
         /// used to sign the request.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -7456,8 +7465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM user whose tags you want to see.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input);
             self
@@ -7478,10 +7487,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>(Optional) Use this only when paginating results to indicate the
-        /// maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-        /// <p>If you do not include this parameter, it defaults to 100. Note that
-        /// IAM might return fewer results, even when more results are available. In that case, the
+        /// <p>Use this only when paginating results to indicate the
+        /// maximum number of items you want in the response. If additional items exist beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+        /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that case, the
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
@@ -7623,10 +7633,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy document.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
-        /// IAM.</p>
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// =            IAM.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -7764,9 +7773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy document.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
         /// IAM.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
@@ -7905,9 +7913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy document.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
         /// IAM.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
@@ -7972,7 +7979,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the
         /// client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -8287,7 +8294,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
         /// set.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -8339,13 +8346,12 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The version of the global endpoint token. Version 1 tokens are valid only in AWS
-        /// Regions that are available by default. These tokens do not work in manually enabled
-        /// Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions.
-        /// However, version 2 tokens are longer and might affect systems where you temporarily
-        /// store tokens.</p>
+        /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by default. These tokens do not work in
+        /// manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid
+        /// in all Regions. However, version 2 tokens are longer and might affect systems where you
+        /// temporarily store tokens.</p>
         /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-        /// deactivating STS in an AWS region</a> in the
+        /// deactivating STS in an Region</a> in the
         /// <i>IAM User Guide</i>.</p>
         pub fn global_endpoint_token_version(
             mut self,
@@ -8400,6 +8406,8 @@ pub mod fluent_builders {
         /// policies, such as you could include in a call to <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or one of
         /// the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API operations. In other words, do not use policies designed to
         /// restrict what a user can do while using the temporary credentials.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -8434,6 +8442,8 @@ pub mod fluent_builders {
         /// entities</a> in the <i>IAM User Guide</i>. The policy input is
         /// specified as a string that contains the complete, valid JSON text of a permissions
         /// boundary policy.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -8479,7 +8489,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_names(input);
             self
         }
-        /// <p>A list of ARNs of AWS resources to include in the simulation. If this parameter is
+        /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is
         /// not provided, then the value defaults to <code>*</code> (all resources). Each API in the
         /// <code>ActionNames</code> parameter is evaluated for each resource in this list. The
         /// simulation determines the access result (allowed or denied) of each combination and
@@ -8490,7 +8500,7 @@ pub mod fluent_builders {
         /// policy as a string in the <code>ResourcePolicy</code> parameter.</p>
         /// <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to all of the
         /// resources included in the simulation or you receive an invalid input error.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -8505,6 +8515,8 @@ pub mod fluent_builders {
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
         /// resource in the simulation is treated as if it had this policy attached. You can include
         /// only one resource-based policy in a simulation.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -8532,7 +8544,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_policy(input);
             self
         }
-        /// <p>An ARN representing the AWS account ID that specifies the owner of any simulated
+        /// <p>An ARN representing the account ID that specifies the owner of any simulated
         /// resource that does not identify its owner in the resource ARN. Examples of resource ARNs
         /// include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
         /// used as the account owner of any <code>ResourcePolicy</code> included in the simulation.
@@ -8711,7 +8723,9 @@ pub mod fluent_builders {
         /// includes all policies that are associated with that entity. If you specify a user, the
         /// simulation also includes all policies that are attached to any groups the user belongs
         /// to.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_source_arn(input);
             self
@@ -8763,6 +8777,8 @@ pub mod fluent_builders {
         /// entities</a> in the <i>IAM User Guide</i>. The policy input is
         /// specified as a string containing the complete, valid JSON text of a permissions boundary
         /// policy.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -8807,7 +8823,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_names(input);
             self
         }
-        /// <p>A list of ARNs of AWS resources to include in the simulation. If this parameter is
+        /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is
         /// not provided, then the value defaults to <code>*</code> (all resources). Each API in the
         /// <code>ActionNames</code> parameter is evaluated for each resource in this list. The
         /// simulation determines the access result (allowed or denied) of each combination and
@@ -8816,7 +8832,7 @@ pub mod fluent_builders {
         /// <p>The simulation does not automatically retrieve policies for the specified resources.
         /// If you want to include a resource policy in the simulation, then you must include the
         /// policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -8831,6 +8847,8 @@ pub mod fluent_builders {
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
         /// resource in the simulation is treated as if it had this policy attached. You can include
         /// only one resource-based policy in a simulation.</p>
+        /// <p>The maximum length of the policy document that you can pass in this operation,
+        /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
         /// <ul>
@@ -8858,7 +8876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_policy(input);
             self
         }
-        /// <p>An AWS account ID that specifies the owner of any simulated resource that does not
+        /// <p>An account ID that specifies the owner of any simulated resource that does not
         /// identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket
         /// or object. If <code>ResourceOwner</code> is specified, it is also used as the account
         /// owner of any <code>ResourcePolicy</code> included in the simulation. If the
@@ -8892,7 +8910,7 @@ pub mod fluent_builders {
         /// the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is required so
         /// that the resource-based policy's <code>Principal</code> element has a value to use in
         /// evaluating the policy.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.caller_arn(input);
             self
@@ -9038,8 +9056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM instance profile to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_profile_name(input);
             self
@@ -9098,8 +9116,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the IAM virtual MFA device to which you want to add tags.
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.serial_number(input);
             self
@@ -9157,8 +9175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -9219,8 +9237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -9330,8 +9348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.saml_provider_arn(input);
             self
@@ -9389,8 +9407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM server certificate to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_name(input);
             self
@@ -9448,8 +9466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM user to which you want to add tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input);
             self
@@ -9503,8 +9521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_profile_name(input);
             self
@@ -9563,8 +9581,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove
         /// tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.serial_number(input);
             self
@@ -9622,8 +9640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -9685,8 +9703,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the IAM customer managed policy from which you want to remove
         /// tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input);
             self
@@ -9798,8 +9816,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SAML identity provider in IAM from which you want to remove
         /// tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.saml_provider_arn(input);
             self
@@ -9857,8 +9875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_name(input);
             self
@@ -9916,8 +9934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IAM user from which you want to remove tags.</p>
-        /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input);
             self
@@ -9997,7 +10015,7 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status you want to assign to the secret access key. <code>Active</code> means
-        /// that the key can be used for programmatic calls to AWS, while <code>Inactive</code>
+        /// that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code>
         /// means that the key cannot be used.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.inner = self.inner.status(input);
@@ -10109,7 +10127,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_require_lowercase_characters(input);
             self
         }
-        /// <p> Allows all IAM users in your account to use the AWS Management Console to change their own
+        /// <p> Allows all IAM users in your account to use the Management Console to change their own
         /// passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change their own
         /// passwords</a> in the <i>IAM User Guide</i>.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
@@ -10207,9 +10225,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy that grants an entity permission to assume the role.</p>
-        /// <p>You must provide policies in JSON format in IAM. However, for AWS CloudFormation
-        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-        /// CloudFormation always converts a YAML policy to JSON format before submitting it to
+        /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+        /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
         /// IAM.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// used to validate this parameter is a string of characters consisting of the following:</p>
@@ -10371,7 +10388,7 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>However, the format can be further restricted by the account administrator by setting
-        /// a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
+        /// a password policy on the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input);
             self
@@ -10425,7 +10442,7 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which
         /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the
         /// <a>ListOpenIDConnectProviders</a> operation.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -10506,7 +10523,7 @@ pub mod fluent_builders {
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
         /// If you do not specify a value for this setting, the default maximum of one hour is
         /// applied. This setting can have a value from 1 hour to 12 hours.</p>
-        /// <p>Anyone who assumes the role from the AWS CLI or API can use the
+        /// <p>Anyone who assumes the role from the CLI or API can use the
         /// <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI
         /// parameter to request a longer session. The <code>MaxSessionDuration</code> setting
         /// determines the maximum duration that can be requested using the
@@ -10623,7 +10640,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.saml_provider_arn(input);
             self
@@ -10842,7 +10859,7 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
-        /// certificate can be used for programmatic calls to AWS <code>Inactive</code> means that
+        /// certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that
         /// the certificate cannot be used.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.inner = self.inner.status(input);
@@ -10910,7 +10927,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
-        /// be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means that
+        /// be used for authentication with an CodeCommit repository. <code>Inactive</code> means that
         /// the key cannot be used.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.inner = self.inner.status(input);

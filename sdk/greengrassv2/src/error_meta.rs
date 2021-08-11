@@ -5,6 +5,7 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -17,6 +18,7 @@ impl std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::RequestAlreadyInProgressException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -105,29 +107,16 @@ impl From<smithy_http::result::SdkError<crate::error::CancelDeploymentError>> fo
 impl From<smithy_http::result::SdkError<crate::error::CreateComponentVersionError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateComponentVersionError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateComponentVersionErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::CreateComponentVersionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::CreateComponentVersionErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::CreateComponentVersionErrorKind::ServiceQuotaExceededException(
-                    inner,
-                ) => Error::ServiceQuotaExceededException(inner),
-                crate::error::CreateComponentVersionErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::CreateComponentVersionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateComponentVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateComponentVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateComponentVersionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::CreateComponentVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::CreateComponentVersionErrorKind::RequestAlreadyInProgressException(inner) => Error::RequestAlreadyInProgressException(inner),
+                crate::error::CreateComponentVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateComponentVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateComponentVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateComponentVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -142,6 +131,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDeploymentError>> fo
                 crate::error::CreateDeploymentErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
+                crate::error::CreateDeploymentErrorKind::RequestAlreadyInProgressException(
+                    inner,
+                ) => Error::RequestAlreadyInProgressException(inner),
                 crate::error::CreateDeploymentErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

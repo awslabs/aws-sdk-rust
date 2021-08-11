@@ -5773,7 +5773,7 @@ impl InternalServerException {
 }
 
 /// <p>
-/// Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again.
+/// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

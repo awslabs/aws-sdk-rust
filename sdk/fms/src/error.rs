@@ -11,6 +11,7 @@ pub enum AssociateAdminAccountErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     InvalidInputException(crate::error::InvalidInputException),
     InvalidOperationException(crate::error::InvalidOperationException),
+    LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -21,6 +22,7 @@ impl std::fmt::Display for AssociateAdminAccountError {
             AssociateAdminAccountErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             AssociateAdminAccountErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             AssociateAdminAccountErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            AssociateAdminAccountErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             AssociateAdminAccountErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             AssociateAdminAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -88,6 +90,12 @@ impl AssociateAdminAccountError {
             AssociateAdminAccountErrorKind::InvalidOperationException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateAdminAccountErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -101,6 +109,7 @@ impl std::error::Error for AssociateAdminAccountError {
             AssociateAdminAccountErrorKind::InternalErrorException(_inner) => Some(_inner),
             AssociateAdminAccountErrorKind::InvalidInputException(_inner) => Some(_inner),
             AssociateAdminAccountErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            AssociateAdminAccountErrorKind::LimitExceededException(_inner) => Some(_inner),
             AssociateAdminAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2710,9 +2719,9 @@ impl ResourceNotFoundException {
 
 /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
 /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-/// was already set as the AWS Firewall Manager administrator. Or you might have tried to access a Region
+/// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
 /// that's disabled by default, and that you need to enable for the Firewall Manager         
-/// administrator account and for AWS Organizations before you can access it.</p>
+/// administrator account and for Organizations before you can access it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -2894,9 +2903,9 @@ impl InternalErrorException {
 }
 
 /// <p>The operation exceeds a resource limit, for example, the maximum number of
-/// <code>policy</code> objects that you can create for an AWS account. For more information,
+/// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
 /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-/// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+/// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

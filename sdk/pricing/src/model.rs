@@ -194,7 +194,7 @@ impl AttributeValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
-    /// <p>The code for the AWS service.</p>
+    /// <p>The code for the Amazon Web Services service.</p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The attributes that are available for this service.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -217,7 +217,7 @@ pub mod service {
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The code for the AWS service.</p>
+        /// <p>The code for the Amazon Web Services service.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self

@@ -2,7 +2,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
+    /// <p> Information about a repository's webhook that is associated with a project in AWS CodeBuild.
     /// </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
@@ -22,7 +22,7 @@ pub mod update_webhook_output {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
     impl Builder {
-        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
+        /// <p> Information about a repository's webhook that is associated with a project in AWS CodeBuild.
         /// </p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
@@ -546,7 +546,7 @@ pub struct ListSharedReportGroupsOutput {
     /// all of the items in the list, keep calling this operation with each subsequent next
     /// token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
+    /// <p> The list of ARNs for the report groups shared with the current AWS account or user.
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -621,8 +621,8 @@ pub struct ListSharedProjectsOutput {
     /// all of the items in the list, keep calling this operation with each subsequent next
     /// token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or
-    /// user. </p>
+    /// <p> The list of ARNs for the build projects shared with the current AWS account or user.
+    /// </p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ListSharedProjectsOutput {
@@ -776,7 +776,7 @@ pub struct ListReportsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>
-    /// The list of returned ARNs for the reports in the current Amazon Web Services account.
+    /// The list of returned ARNs for the reports in the current AWS account.
     /// </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -854,7 +854,7 @@ pub struct ListReportGroupsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>
-    /// The list of ARNs for the report groups in the current Amazon Web Services account.
+    /// The list of ARNs for the report groups in the current AWS account.
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -995,7 +995,7 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCuratedEnvironmentImagesOutput {
     /// <p>Information about supported platforms for Docker images that are managed by
-    /// CodeBuild.</p>
+    /// AWS CodeBuild.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
 }
 impl std::fmt::Debug for ListCuratedEnvironmentImagesOutput {
@@ -1927,7 +1927,7 @@ impl DeleteBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookOutput {
     /// <p>Information about a webhook that connects repository events to a build project in
-    /// CodeBuild.</p>
+    /// AWS CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl std::fmt::Debug for CreateWebhookOutput {
@@ -1947,7 +1947,7 @@ pub mod create_webhook_output {
     }
     impl Builder {
         /// <p>Information about a webhook that connects repository events to a build project in
-        /// CodeBuild.</p>
+        /// AWS CodeBuild.</p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
             self

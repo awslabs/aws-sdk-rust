@@ -13,17 +13,17 @@ impl GetRawMessageContent {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetRawMessageContent {
+impl smithy_http::response::ParseHttpResponse for GetRawMessageContent {
     type Output = std::result::Result<
         crate::output::GetRawMessageContentOutput,
         crate::error::GetRawMessageContentError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_raw_message_content(

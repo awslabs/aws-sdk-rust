@@ -2006,6 +2006,13 @@ where
                                     crate::json_deser::deser_structure_esam_settings(tokens)?,
                                 );
                             }
+                            "extendedDataServices" => {
+                                builder = builder.set_extended_data_services(
+                                    crate::json_deser::deser_structure_extended_data_services(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "inputs" => {
                                 builder = builder.set_inputs(
                                     crate::json_deser::deser_list___list_of_input(tokens)?,
@@ -2210,6 +2217,13 @@ where
                             "esam" => {
                                 builder = builder.set_esam(
                                     crate::json_deser::deser_structure_esam_settings(tokens)?,
+                                );
+                            }
+                            "extendedDataServices" => {
+                                builder = builder.set_extended_data_services(
+                                    crate::json_deser::deser_structure_extended_data_services(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "inputs" => {
@@ -2759,6 +2773,67 @@ where
                             "signalProcessingNotification" => {
                                 builder = builder.set_signal_processing_notification(
                                     crate::json_deser::deser_structure_esam_signal_processing_notification(tokens)?
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_extended_data_services<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::ExtendedDataServices>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ExtendedDataServices::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "copyProtectionAction" => {
+                                builder = builder.set_copy_protection_action(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CopyProtectionAction::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "vchipAction" => {
+                                builder = builder.set_vchip_action(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::VchipAction::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7165,6 +7240,13 @@ where
                                     )?,
                                 );
                             }
+                            "srtDestinationSettings" => {
+                                builder = builder.set_srt_destination_settings(
+                                    crate::json_deser::deser_structure_srt_destination_settings(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "teletextDestinationSettings" => {
                                 builder = builder.set_teletext_destination_settings(
                                     crate::json_deser::deser_structure_teletext_destination_settings(tokens)?
@@ -11353,6 +11435,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "targetDurationCompatibilityMode" => {
+                                builder = builder.set_target_duration_compatibility_mode(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmafTargetDurationCompatibilityMode::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "writeDashManifest" => {
                                 builder = builder.set_write_dash_manifest(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -11907,6 +12004,21 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::HlsStreamInfResolution::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "targetDurationCompatibilityMode" => {
+                                builder = builder.set_target_duration_compatibility_mode(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HlsTargetDurationCompatibilityMode::from(
+                                                u.as_ref(),
+                                            )
                                         })
                                     })
                                     .transpose()?,
@@ -13988,6 +14100,55 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::SccDestinationFramerate::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_srt_destination_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::SrtDestinationSettings>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SrtDestinationSettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "stylePassthrough" => {
+                                builder = builder.set_style_passthrough(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::SrtStylePassthrough::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

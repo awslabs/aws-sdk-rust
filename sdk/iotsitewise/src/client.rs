@@ -134,6 +134,11 @@ where
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C> {
         fluent_builders::DescribeProject::new(self.handle.clone())
     }
+    pub fn describe_storage_configuration(
+        &self,
+    ) -> fluent_builders::DescribeStorageConfiguration<C> {
+        fluent_builders::DescribeStorageConfiguration::new(self.handle.clone())
+    }
     pub fn disassociate_assets(&self) -> fluent_builders::DisassociateAssets<C> {
         fluent_builders::DisassociateAssets::new(self.handle.clone())
     }
@@ -193,6 +198,9 @@ where
     }
     pub fn put_logging_options(&self) -> fluent_builders::PutLoggingOptions<C> {
         fluent_builders::PutLoggingOptions::new(self.handle.clone())
+    }
+    pub fn put_storage_configuration(&self) -> fluent_builders::PutStorageConfiguration<C> {
+        fluent_builders::PutStorageConfiguration::new(self.handle.clone())
     }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C> {
         fluent_builders::TagResource::new(self.handle.clone())
@@ -273,7 +281,7 @@ pub mod fluent_builders {
         }
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
         /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input);
             self
@@ -504,7 +512,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.inner = self.inner.access_policy_identity(input);
             self
@@ -516,7 +524,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_policy_identity(input);
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+        /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.inner = self.inner.access_policy_resource(input);
             self
@@ -551,7 +559,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of key-value pairs that contain metadata for the access policy. For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-        /// AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -632,8 +640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -708,9 +716,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(
             mut self,
             inp: impl Into<crate::model::AssetModelPropertyDefinition>,
@@ -727,9 +735,9 @@ pub mod fluent_builders {
         }
         /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
         /// whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(
             mut self,
             inp: impl Into<crate::model::AssetModelHierarchyDefinition>,
@@ -774,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -859,7 +867,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_definition(input);
             self
@@ -881,8 +889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -954,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1026,7 +1034,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_description(input);
             self
         }
-        /// <p>The AWS administrator's contact email address.</p>
+        /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.portal_contact_email(input);
             self
@@ -1060,9 +1068,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image_file(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
             self
@@ -1072,8 +1080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1096,15 +1104,15 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses AWS SSO, you must enable AWS SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS SSO</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than
+        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
+        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
         /// the China Regions.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage
+        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
         /// user permissions. This option is only available in the China Regions.</p>
         /// </li>
         /// </ul>
@@ -1124,8 +1132,9 @@ pub mod fluent_builders {
         }
         /// <p>The email address that sends alarm notifications.</p>
         /// <important>
-        /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
+        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+        /// address in Amazon SES</a>.</p>
         /// </important>
         pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_sender_email(input);
@@ -1138,8 +1147,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.inner = self.inner.alarms(input);
             self
@@ -1220,8 +1230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1926,7 +1936,7 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the capability configuration.
         /// For example, if you configure OPC-UA
-        /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2056,6 +2066,38 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeStorageConfiguration<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_storage_configuration_input::Builder,
+    }
+    impl<C> DescribeStorageConfiguration<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeStorageConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::DescribeStorageConfigurationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DisassociateAssets<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::disassociate_assets_input::Builder,
@@ -2098,7 +2140,7 @@ pub mod fluent_builders {
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
         /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
         /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input);
             self
@@ -2178,10 +2220,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input);
             self
@@ -2267,7 +2309,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2327,10 +2369,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input);
             self
@@ -2392,10 +2434,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input);
             self
@@ -2460,7 +2502,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2520,10 +2562,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input);
             self
@@ -2602,8 +2644,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.
-        /// If not specified, the default value is 10.</p>
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -2655,7 +2696,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
         /// if you specify <code>identityId</code>.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.inner = self.inner.identity_type(input);
@@ -2721,7 +2762,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2772,7 +2813,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2853,7 +2894,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -2903,7 +2944,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2998,7 +3039,7 @@ pub mod fluent_builders {
         /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
         /// parameter is required if you choose <code>CHILD</code> for
         /// <code>traversalDirection</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input);
             self
@@ -3042,7 +3083,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3102,7 +3143,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3153,7 +3194,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3204,7 +3245,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3264,7 +3305,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3324,7 +3365,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -3419,8 +3460,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
+        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
             self
@@ -3475,6 +3516,73 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct PutStorageConfiguration<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::put_storage_configuration_input::Builder,
+    }
+    impl<C> PutStorageConfiguration<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutStorageConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::PutStorageConfigurationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// </li>
+        /// </ul>
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
+            self
+        }
+        pub fn set_storage_type(
+            mut self,
+            input: std::option::Option<crate::model::StorageType>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_type(input);
+            self
+        }
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
+        /// you must specify a <code>MultiLayerStorage</code> object.</p>
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.inner = self.inner.multi_layer_storage(input);
+            self
+        }
+        pub fn set_multi_layer_storage(
+            mut self,
+            input: std::option::Option<crate::model::MultiLayerStorage>,
+        ) -> Self {
+            self.inner = self.inner.set_multi_layer_storage(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct TagResource<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::tag_resource_input::Builder,
@@ -3515,8 +3623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-        /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3631,7 +3739,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_policy_id(input);
             self
         }
-        /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.inner = self.inner.access_policy_identity(input);
             self
@@ -3643,7 +3751,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_policy_identity(input);
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+        /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.inner = self.inner.access_policy_resource(input);
             self
@@ -3804,9 +3912,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(
             mut self,
             inp: impl Into<crate::model::AssetModelProperty>,
@@ -3823,9 +3931,9 @@ pub mod fluent_builders {
         }
         /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
         /// model whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(
             mut self,
             inp: impl Into<crate::model::AssetModelHierarchy>,
@@ -3917,10 +4025,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input);
@@ -3934,8 +4042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, AWS IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// When the notification state is enabled, IoT SiteWise publishes property value
+        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn property_notification_state(
             mut self,
@@ -4026,7 +4134,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_definition(input);
             self
@@ -4140,7 +4248,7 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the gateway capability configuration to be updated.
         /// For example, if you configure OPC-UA
-        /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4155,7 +4263,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.capability_configuration(input);
             self
@@ -4229,7 +4337,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_description(input);
             self
         }
-        /// <p>The AWS administrator's contact email address.</p>
+        /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.portal_contact_email(input);
             self
@@ -4261,9 +4369,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
             self
@@ -4293,8 +4401,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.inner = self.inner.alarms(input);
             self

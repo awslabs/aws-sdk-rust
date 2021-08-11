@@ -278,6 +278,92 @@ pub fn parse_add_partner_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_data_share_consumer_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateDataShareConsumerOutput,
+    crate::error::AssociateDataShareConsumerError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::AssociateDataShareConsumerError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::AssociateDataShareConsumerError {
+            meta: generic,
+            kind: crate::error::AssociateDataShareConsumerErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNamespaceFault" => crate::error::AssociateDataShareConsumerError {
+            meta: generic,
+            kind: crate::error::AssociateDataShareConsumerErrorKind::InvalidNamespaceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_namespace_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_namespace_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AssociateDataShareConsumerError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_data_share_consumer_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateDataShareConsumerOutput,
+    crate::error::AssociateDataShareConsumerError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_data_share_consumer_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_associate_data_share_consumer(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_cluster_security_group_ingress_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -372,6 +458,67 @@ pub fn parse_authorize_cluster_security_group_ingress_response(
             output,
         )
         .map_err(crate::error::AuthorizeClusterSecurityGroupIngressError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_authorize_data_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AuthorizeDataShareOutput,
+    crate::error::AuthorizeDataShareError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::AuthorizeDataShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::AuthorizeDataShareError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::AuthorizeDataShareError {
+            meta: generic,
+            kind: crate::error::AuthorizeDataShareErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AuthorizeDataShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AuthorizeDataShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_authorize_data_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AuthorizeDataShareOutput,
+    crate::error::AuthorizeDataShareError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::authorize_data_share_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_authorize_data_share(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AuthorizeDataShareError::unhandled)?;
         output.build()
     })
 }
@@ -1007,6 +1154,92 @@ pub fn parse_copy_cluster_snapshot_response(
             output,
         )
         .map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_authentication_profile_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateAuthenticationProfileOutput,
+    crate::error::CreateAuthenticationProfileError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateAuthenticationProfileError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthenticationProfileAlreadyExistsFault" => crate::error::CreateAuthenticationProfileError { meta: generic, kind: crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AuthenticationProfileQuotaExceededFault" => crate::error::CreateAuthenticationProfileError { meta: generic, kind: crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidAuthenticationProfileRequestFault" => crate::error::CreateAuthenticationProfileError { meta: generic, kind: crate::error::CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_authentication_profile_request_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_authentication_profile_request_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateAuthenticationProfileError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_authentication_profile_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateAuthenticationProfileOutput,
+    crate::error::CreateAuthenticationProfileError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_authentication_profile_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_create_authentication_profile(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
         output.build()
     })
 }
@@ -3403,6 +3636,139 @@ pub fn parse_create_usage_limit_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_deauthorize_data_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeauthorizeDataShareOutput,
+    crate::error::DeauthorizeDataShareError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeauthorizeDataShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeauthorizeDataShareError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::DeauthorizeDataShareError {
+            meta: generic,
+            kind: crate::error::DeauthorizeDataShareErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeauthorizeDataShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeauthorizeDataShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deauthorize_data_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeauthorizeDataShareOutput,
+    crate::error::DeauthorizeDataShareError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::deauthorize_data_share_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_deauthorize_data_share(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeauthorizeDataShareError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_authentication_profile_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAuthenticationProfileOutput,
+    crate::error::DeleteAuthenticationProfileError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteAuthenticationProfileError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteAuthenticationProfileError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthenticationProfileNotFoundFault" => crate::error::DeleteAuthenticationProfileError { meta: generic, kind: crate::error::DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidAuthenticationProfileRequestFault" => crate::error::DeleteAuthenticationProfileError { meta: generic, kind: crate::error::DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_authentication_profile_request_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_authentication_profile_request_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteAuthenticationProfileError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_authentication_profile_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAuthenticationProfileOutput,
+    crate::error::DeleteAuthenticationProfileError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_authentication_profile_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_delete_authentication_profile(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteAuthenticationProfileError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
@@ -4701,6 +5067,74 @@ pub fn parse_describe_account_attributes_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_authentication_profiles_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeAuthenticationProfilesOutput,
+    crate::error::DescribeAuthenticationProfilesError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeAuthenticationProfilesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeAuthenticationProfilesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthenticationProfileNotFoundFault" => crate::error::DescribeAuthenticationProfilesError { meta: generic, kind: crate::error::DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuthenticationProfilesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidAuthenticationProfileRequestFault" => crate::error::DescribeAuthenticationProfilesError { meta: generic, kind: crate::error::DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_authentication_profile_request_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_authentication_profile_request_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuthenticationProfilesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeAuthenticationProfilesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_authentication_profiles_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeAuthenticationProfilesOutput,
+    crate::error::DescribeAuthenticationProfilesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_authentication_profiles_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_authentication_profiles(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAuthenticationProfilesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_cluster_db_revisions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5368,6 +5802,199 @@ pub fn parse_describe_cluster_versions_response(
             output,
         )
         .map_err(crate::error::DescribeClusterVersionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesOutput,
+    crate::error::DescribeDataSharesError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeDataSharesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeDataSharesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::DescribeDataSharesError {
+            meta: generic,
+            kind: crate::error::DescribeDataSharesErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeDataSharesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeDataSharesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesOutput,
+    crate::error::DescribeDataSharesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_data_shares_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_data_shares(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDataSharesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_for_consumer_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesForConsumerOutput,
+    crate::error::DescribeDataSharesForConsumerError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeDataSharesForConsumerError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeDataSharesForConsumerError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNamespaceFault" => crate::error::DescribeDataSharesForConsumerError {
+            meta: generic,
+            kind: crate::error::DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_namespace_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_namespace_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeDataSharesForConsumerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeDataSharesForConsumerError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_for_consumer_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesForConsumerOutput,
+    crate::error::DescribeDataSharesForConsumerError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_data_shares_for_consumer_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_data_shares_for_consumer(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDataSharesForConsumerError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_for_producer_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesForProducerOutput,
+    crate::error::DescribeDataSharesForProducerError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeDataSharesForProducerError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeDataSharesForProducerError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNamespaceFault" => crate::error::DescribeDataSharesForProducerError {
+            meta: generic,
+            kind: crate::error::DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_namespace_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_namespace_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeDataSharesForProducerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeDataSharesForProducerError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_shares_for_producer_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataSharesForProducerOutput,
+    crate::error::DescribeDataSharesForProducerError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_data_shares_for_producer_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_data_shares_for_producer(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDataSharesForProducerError::unhandled)?;
         output.build()
     })
 }
@@ -7074,6 +7701,92 @@ pub fn parse_disable_snapshot_copy_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_data_share_consumer_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateDataShareConsumerOutput,
+    crate::error::DisassociateDataShareConsumerError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DisassociateDataShareConsumerError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::DisassociateDataShareConsumerError {
+            meta: generic,
+            kind: crate::error::DisassociateDataShareConsumerErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNamespaceFault" => crate::error::DisassociateDataShareConsumerError {
+            meta: generic,
+            kind: crate::error::DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_namespace_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_namespace_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DisassociateDataShareConsumerError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_data_share_consumer_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateDataShareConsumerOutput,
+    crate::error::DisassociateDataShareConsumerError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_data_share_consumer_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_disassociate_data_share_consumer(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableLoggingOutput, crate::error::EnableLoggingError> {
@@ -7796,6 +8509,92 @@ pub fn parse_modify_aqua_configuration_response(
             output,
         )
         .map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_authentication_profile_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyAuthenticationProfileOutput,
+    crate::error::ModifyAuthenticationProfileError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ModifyAuthenticationProfileError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthenticationProfileNotFoundFault" => crate::error::ModifyAuthenticationProfileError { meta: generic, kind: crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AuthenticationProfileQuotaExceededFault" => crate::error::ModifyAuthenticationProfileError { meta: generic, kind: crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authentication_profile_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authentication_profile_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidAuthenticationProfileRequestFault" => crate::error::ModifyAuthenticationProfileError { meta: generic, kind: crate::error::ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_authentication_profile_request_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_authentication_profile_request_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ModifyAuthenticationProfileError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_authentication_profile_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyAuthenticationProfileOutput,
+    crate::error::ModifyAuthenticationProfileError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_authentication_profile_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_modify_authentication_profile(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
         output.build()
     })
 }
@@ -9953,6 +10752,59 @@ pub fn parse_reboot_cluster_response(
         let _ = response;
         output = crate::xml_deser::deser_operation_reboot_cluster(response.body().as_ref(), output)
             .map_err(crate::error::RebootClusterError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_reject_data_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RejectDataShareOutput, crate::error::RejectDataShareError> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::RejectDataShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RejectDataShareError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidDataShareFault" => crate::error::RejectDataShareError {
+            meta: generic,
+            kind: crate::error::RejectDataShareErrorKind::InvalidDataShareFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_data_share_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RejectDataShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RejectDataShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_reject_data_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RejectDataShareOutput, crate::error::RejectDataShareError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::reject_data_share_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_reject_data_share(response.body().as_ref(), output)
+                .map_err(crate::error::RejectDataShareError::unhandled)?;
         output.build()
     })
 }

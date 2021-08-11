@@ -521,12 +521,12 @@ pub mod fluent_builders {
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
         /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
-        /// invokes the AWS Lambda function that is specified for the <i>post
+        /// invokes the Lambda function that is specified for the <i>post
         /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
         /// passes a JSON payload, which the function receives as input. In this payload, the
         /// <code>clientMetadata</code> attribute provides the data that you assigned to the
         /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
-        /// AWS Lambda, you can process the ClientMetadata value to enhance your workflow for your
+        /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
         /// specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -536,7 +536,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -757,13 +757,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
         /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
         /// this function, it passes a JSON payload, which the function receives as input. This
         /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
         /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
-        /// function code in AWS Lambda, you can process the <code>clientMetadata</code> value to
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
         /// enhance your workflow for your specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -773,7 +773,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -1404,8 +1404,8 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for certain custom
         /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
-        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the AWS Lambda
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
         /// functions that are specified for various triggers. The ClientMetadata value is passed as
         /// input to the functions for only the following triggers:</p>
         /// <ul>
@@ -1423,7 +1423,7 @@ pub mod fluent_builders {
         /// payload, which the function receives as input. This payload contains a
         /// <code>validationData</code> attribute, which provides the data that you assigned to
         /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
-        /// AWS Lambda, you can process the <code>validationData</code> value to enhance your
+        /// Lambda, you can process the <code>validationData</code> value to enhance your
         /// workflow for your specific needs.</p>
         /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
         /// functions for the following triggers, but it does not provide the ClientMetadata value
@@ -1456,7 +1456,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -1927,13 +1927,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
         /// invokes this function, it passes a JSON payload, which the function receives as input.
         /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
         /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
-        /// request. In your function code in AWS Lambda, you can process the
+        /// request. In your function code in Lambda, you can process the
         /// <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -1944,7 +1944,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -2135,7 +2135,7 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
         /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
         /// <i>custom message</i>, <i>post authentication</i>,
@@ -2145,7 +2145,7 @@ pub mod fluent_builders {
         /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
         /// function receives as input. This payload contains a <code>clientMetadata</code>
         /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you can
+        /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
         /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -2156,7 +2156,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -2608,13 +2608,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
         /// function that is assigned to the <i>custom message</i> trigger. When
         /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
         /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
         /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// AdminUpdateUserAttributes request. In your function code in AWS Lambda, you can process
+        /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
         /// the <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -2625,7 +2625,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -3007,13 +3007,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
         /// Cognito invokes this function, it passes a JSON payload, which the function receives as
         /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
         /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
-        /// request. In your function code in AWS Lambda, you can process the
+        /// request. In your function code in Lambda, you can process the
         /// <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -3024,7 +3024,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -3169,13 +3169,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
         /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
         /// invokes this function, it passes a JSON payload, which the function receives as input.
         /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
         /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
-        /// function code in AWS Lambda, you can process the <code>clientMetadata</code> value to
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
         /// enhance your workflow for your specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -3185,7 +3185,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -3722,7 +3722,7 @@ pub mod fluent_builders {
         /// <p></p>
         /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
         /// AddPermission </a>. </p>
-        /// <p>For adding permission using the AWS CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
+        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
         /// </a>.</p>
         /// </note>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
@@ -4290,7 +4290,7 @@ pub mod fluent_builders {
         }
         /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
         /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by AWS are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
         /// in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.allowed_o_auth_scopes(inp);
@@ -5320,14 +5320,14 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
         /// are assigned to the following triggers: <i>pre sign-up</i>,
         /// <i>custom message</i>, and <i>user migration</i>. When
         /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
         /// function receives as input. This payload contains a <code>clientMetadata</code>
         /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your ForgotPassword request. In your function code in AWS Lambda, you can process the
+        /// your ForgotPassword request. In your function code in Lambda, you can process the
         /// <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -5338,7 +5338,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -5752,13 +5752,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
         /// function that is assigned to the <i>custom message</i> trigger. When
         /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
         /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
         /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// GetUserAttributeVerificationCode request. In your function code in AWS Lambda, you can
+        /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
         /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -5769,7 +5769,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -6019,8 +6019,8 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for certain custom
         /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
-        /// When you use the InitiateAuth API action, Amazon Cognito invokes the AWS Lambda
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
         /// functions that are specified for various triggers. The ClientMetadata value is passed as
         /// input to the functions for only the following triggers:</p>
         /// <ul>
@@ -6037,8 +6037,7 @@ pub mod fluent_builders {
         /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
         /// payload, which the function receives as input. This payload contains a
         /// <code>validationData</code> attribute, which provides the data that you assigned to
-        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in AWS
-        /// Lambda, you can process the <code>validationData</code> value to enhance your workflow
+        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
         /// for your specific needs.</p>
         /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
         /// for the following triggers, but it does not provide the ClientMetadata value as
@@ -6071,7 +6070,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -6917,13 +6916,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
         /// invokes this function, it passes a JSON payload, which the function receives as input.
         /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
         /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
-        /// request. In your function code in AWS Lambda, you can process the
+        /// request. In your function code in Lambda, you can process the
         /// <code>clientMetadata</code> value to enhance your workflow for your specific
         /// needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
@@ -6934,7 +6933,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -7124,7 +7123,7 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
         /// that are assigned to the following triggers: <i>post authentication</i>,
         /// <i>pre token generation</i>, <i>define auth
@@ -7133,7 +7132,7 @@ pub mod fluent_builders {
         /// functions, it passes a JSON payload, which the function receives as input. This payload
         /// contains a <code>clientMetadata</code> attribute, which provides the data that you
         /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
-        /// function code in AWS Lambda, you can process the <code>clientMetadata</code> value to
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
         /// enhance your workflow for your specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -7143,7 +7142,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -7749,14 +7748,14 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
         /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
         /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
         /// invokes any of these functions, it passes a JSON payload, which the function receives as
         /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
         /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
-        /// function code in AWS Lambda, you can process the <code>clientMetadata</code> value to
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
         /// enhance your workflow for your specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -7766,7 +7765,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -8466,13 +8465,13 @@ pub mod fluent_builders {
         }
         /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
         /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
         /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
         /// invokes this function, it passes a JSON payload, which the function receives as input.
         /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
         /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
-        /// In your function code in AWS Lambda, you can process the <code>clientMetadata</code>
+        /// In your function code in Lambda, you can process the <code>clientMetadata</code>
         /// value to enhance your workflow for your specific needs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
         /// <i>Amazon Cognito Developer Guide</i>.</p>
@@ -8482,7 +8481,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to AWS Lambda triggers that are assigned to a user pool to
+        /// available only to Lambda triggers that are assigned to a user pool to
         /// support custom workflows. If your user pool configuration does not include
         /// triggers, the ClientMetadata parameter serves no purpose.</p>
         /// </li>
@@ -8565,7 +8564,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policies(input);
             self
         }
-        /// <p>The AWS Lambda configuration information from the request to update the user
+        /// <p>The Lambda configuration information from the request to update the user
         /// pool.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.inner = self.inner.lambda_config(input);
@@ -9075,7 +9074,7 @@ pub mod fluent_builders {
         }
         /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
         /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by AWS are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
         /// in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.allowed_o_auth_scopes(inp);

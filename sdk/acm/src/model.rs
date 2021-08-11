@@ -337,7 +337,7 @@ impl AsRef<str> for ValidationMethod {
 }
 
 /// <p>Object containing
-/// expiration events options associated with an AWS account.</p>
+/// expiration events options associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiryEventsConfiguration {
@@ -578,6 +578,7 @@ pub enum KeyAlgorithm {
     EcSecp521r1,
     Rsa1024,
     Rsa2048,
+    Rsa3072,
     Rsa4096,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -590,6 +591,7 @@ impl std::convert::From<&str> for KeyAlgorithm {
             "EC_secp521r1" => KeyAlgorithm::EcSecp521r1,
             "RSA_1024" => KeyAlgorithm::Rsa1024,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
+            "RSA_3072" => KeyAlgorithm::Rsa3072,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
             other => KeyAlgorithm::Unknown(other.to_owned()),
         }
@@ -610,6 +612,7 @@ impl KeyAlgorithm {
             KeyAlgorithm::EcSecp521r1 => "EC_secp521r1",
             KeyAlgorithm::Rsa1024 => "RSA_1024",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
+            KeyAlgorithm::Rsa3072 => "RSA_3072",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
             KeyAlgorithm::Unknown(s) => s.as_ref(),
         }
@@ -621,6 +624,7 @@ impl KeyAlgorithm {
             "EC_secp521r1",
             "RSA_1024",
             "RSA_2048",
+            "RSA_3072",
             "RSA_4096",
         ]
     }
@@ -893,7 +897,7 @@ impl AsRef<str> for CertificateStatus {
 pub struct CertificateDetail {
     /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>.</p>
+    /// the <i>Amazon Web Services General Reference</i>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name for the certificate, such as www.example.com or
     /// example.com.</p>
@@ -939,19 +943,19 @@ pub struct CertificateDetail {
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>The algorithm that was used to sign the certificate.</p>
     pub signature_algorithm: std::option::Option<std::string::String>,
-    /// <p>A list of ARNs for the AWS resources that are using the certificate. A certificate can
-    /// be used by multiple AWS resources. </p>
+    /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can
+    /// be used by multiple Amazon Web Services resources. </p>
     pub in_use_by: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The reason the certificate request failed. This value exists only when the certificate
     /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request
-    /// Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+    /// Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The source of the certificate. For certificates provided by ACM, this value is
     /// <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide
     /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
     /// imported certificates. For more information about the differences between certificates that
     /// you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-    /// <i>AWS Certificate Manager User Guide</i>. </p>
+    /// <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This field
     /// exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -1051,7 +1055,7 @@ pub mod certificate_detail {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>.</p>
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
@@ -1254,7 +1258,7 @@ pub mod certificate_detail {
         }
         /// <p>The reason the certificate request failed. This value exists only when the certificate
         /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request
-        /// Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+        /// Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
         pub fn failure_reason(mut self, input: crate::model::FailureReason) -> Self {
             self.failure_reason = Some(input);
             self
@@ -1271,7 +1275,7 @@ pub mod certificate_detail {
         /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
         /// imported certificates. For more information about the differences between certificates that
         /// you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-        /// <i>AWS Certificate Manager User Guide</i>. </p>
+        /// <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
         pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
             self.r#type = Some(input);
             self
@@ -2065,7 +2069,7 @@ impl DomainValidation {
     }
 }
 
-/// <p>Contains a DNS record value that you can use to can use to validate ownership or control
+/// <p>Contains a DNS record value that you can use to validate ownership or control
 /// of a domain. This is used by the <a>DescribeCertificate</a> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

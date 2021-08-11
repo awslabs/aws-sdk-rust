@@ -108,6 +108,11 @@ where
     ) -> fluent_builders::AssociateIamInstanceProfile<C> {
         fluent_builders::AssociateIamInstanceProfile::new(self.handle.clone())
     }
+    pub fn associate_instance_event_window(
+        &self,
+    ) -> fluent_builders::AssociateInstanceEventWindow<C> {
+        fluent_builders::AssociateInstanceEventWindow::new(self.handle.clone())
+    }
     pub fn associate_route_table(&self) -> fluent_builders::AssociateRouteTable<C> {
         fluent_builders::AssociateRouteTable::new(self.handle.clone())
     }
@@ -240,6 +245,9 @@ where
     pub fn create_image(&self) -> fluent_builders::CreateImage<C> {
         fluent_builders::CreateImage::new(self.handle.clone())
     }
+    pub fn create_instance_event_window(&self) -> fluent_builders::CreateInstanceEventWindow<C> {
+        fluent_builders::CreateInstanceEventWindow::new(self.handle.clone())
+    }
     pub fn create_instance_export_task(&self) -> fluent_builders::CreateInstanceExportTask<C> {
         fluent_builders::CreateInstanceExportTask::new(self.handle.clone())
     }
@@ -329,6 +337,11 @@ where
     }
     pub fn create_subnet(&self) -> fluent_builders::CreateSubnet<C> {
         fluent_builders::CreateSubnet::new(self.handle.clone())
+    }
+    pub fn create_subnet_cidr_reservation(
+        &self,
+    ) -> fluent_builders::CreateSubnetCidrReservation<C> {
+        fluent_builders::CreateSubnetCidrReservation::new(self.handle.clone())
     }
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C> {
         fluent_builders::CreateTags::new(self.handle.clone())
@@ -448,6 +461,9 @@ where
     pub fn delete_fpga_image(&self) -> fluent_builders::DeleteFpgaImage<C> {
         fluent_builders::DeleteFpgaImage::new(self.handle.clone())
     }
+    pub fn delete_instance_event_window(&self) -> fluent_builders::DeleteInstanceEventWindow<C> {
+        fluent_builders::DeleteInstanceEventWindow::new(self.handle.clone())
+    }
     pub fn delete_internet_gateway(&self) -> fluent_builders::DeleteInternetGateway<C> {
         fluent_builders::DeleteInternetGateway::new(self.handle.clone())
     }
@@ -525,6 +541,11 @@ where
     }
     pub fn delete_subnet(&self) -> fluent_builders::DeleteSubnet<C> {
         fluent_builders::DeleteSubnet::new(self.handle.clone())
+    }
+    pub fn delete_subnet_cidr_reservation(
+        &self,
+    ) -> fluent_builders::DeleteSubnetCidrReservation<C> {
+        fluent_builders::DeleteSubnetCidrReservation::new(self.handle.clone())
     }
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C> {
         fluent_builders::DeleteTags::new(self.handle.clone())
@@ -789,6 +810,11 @@ where
     ) -> fluent_builders::DescribeInstanceEventNotificationAttributes<C> {
         fluent_builders::DescribeInstanceEventNotificationAttributes::new(self.handle.clone())
     }
+    pub fn describe_instance_event_windows(
+        &self,
+    ) -> fluent_builders::DescribeInstanceEventWindows<C> {
+        fluent_builders::DescribeInstanceEventWindows::new(self.handle.clone())
+    }
     pub fn describe_instances(&self) -> fluent_builders::DescribeInstances<C> {
         fluent_builders::DescribeInstances::new(self.handle.clone())
     }
@@ -938,6 +964,9 @@ where
         &self,
     ) -> fluent_builders::DescribeSecurityGroupReferences<C> {
         fluent_builders::DescribeSecurityGroupReferences::new(self.handle.clone())
+    }
+    pub fn describe_security_group_rules(&self) -> fluent_builders::DescribeSecurityGroupRules<C> {
+        fluent_builders::DescribeSecurityGroupRules::new(self.handle.clone())
     }
     pub fn describe_security_groups(&self) -> fluent_builders::DescribeSecurityGroups<C> {
         fluent_builders::DescribeSecurityGroups::new(self.handle.clone())
@@ -1176,6 +1205,11 @@ where
     ) -> fluent_builders::DisassociateIamInstanceProfile<C> {
         fluent_builders::DisassociateIamInstanceProfile::new(self.handle.clone())
     }
+    pub fn disassociate_instance_event_window(
+        &self,
+    ) -> fluent_builders::DisassociateInstanceEventWindow<C> {
+        fluent_builders::DisassociateInstanceEventWindow::new(self.handle.clone())
+    }
     pub fn disassociate_route_table(&self) -> fluent_builders::DisassociateRouteTable<C> {
         fluent_builders::DisassociateRouteTable::new(self.handle.clone())
     }
@@ -1323,6 +1357,9 @@ where
     ) -> fluent_builders::GetSerialConsoleAccessStatus<C> {
         fluent_builders::GetSerialConsoleAccessStatus::new(self.handle.clone())
     }
+    pub fn get_subnet_cidr_reservations(&self) -> fluent_builders::GetSubnetCidrReservations<C> {
+        fluent_builders::GetSubnetCidrReservations::new(self.handle.clone())
+    }
     pub fn get_transit_gateway_attachment_propagations(
         &self,
     ) -> fluent_builders::GetTransitGatewayAttachmentPropagations<C> {
@@ -1426,6 +1463,9 @@ where
     ) -> fluent_builders::ModifyInstanceEventStartTime<C> {
         fluent_builders::ModifyInstanceEventStartTime::new(self.handle.clone())
     }
+    pub fn modify_instance_event_window(&self) -> fluent_builders::ModifyInstanceEventWindow<C> {
+        fluent_builders::ModifyInstanceEventWindow::new(self.handle.clone())
+    }
     pub fn modify_instance_metadata_options(
         &self,
     ) -> fluent_builders::ModifyInstanceMetadataOptions<C> {
@@ -1447,6 +1487,9 @@ where
     }
     pub fn modify_reserved_instances(&self) -> fluent_builders::ModifyReservedInstances<C> {
         fluent_builders::ModifyReservedInstances::new(self.handle.clone())
+    }
+    pub fn modify_security_group_rules(&self) -> fluent_builders::ModifySecurityGroupRules<C> {
+        fluent_builders::ModifySecurityGroupRules::new(self.handle.clone())
     }
     pub fn modify_snapshot_attribute(&self) -> fluent_builders::ModifySnapshotAttribute<C> {
         fluent_builders::ModifySnapshotAttribute::new(self.handle.clone())
@@ -2593,6 +2636,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ipv6_addresses(input);
             self
         }
+        /// <p>The number of IPv6 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code>
+        /// option.</p>
+        pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.ipv6_prefix_count(input);
+            self
+        }
+        pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv6_prefix_count(input);
+            self
+        }
+        /// <p>One or more IPv6 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+        pub fn ipv6_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv6_prefixes(inp);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv6_prefixes(input);
+            self
+        }
         /// <p>The ID of the network interface.</p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_interface_id(input);
@@ -2681,6 +2747,27 @@ pub mod fluent_builders {
             input: std::option::Option<i32>,
         ) -> Self {
             self.inner = self.inner.set_secondary_private_ip_address_count(input);
+            self
+        }
+        /// <p>One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+        pub fn ipv4_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv4_prefixes(inp);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv4_prefixes(input);
+            self
+        }
+        /// <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+        pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.ipv4_prefix_count(input);
+            self
+        }
+        pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv4_prefix_count(input);
             self
         }
     }
@@ -3047,6 +3134,76 @@ pub mod fluent_builders {
         }
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateInstanceEventWindow<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::associate_instance_event_window_input::Builder,
+    }
+    impl<C> AssociateInstanceEventWindow<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateInstanceEventWindowOutput,
+            smithy_http::result::SdkError<crate::error::AssociateInstanceEventWindowError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_event_window_id(input);
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_event_window_id(input);
+            self
+        }
+        /// <p>One or more targets associated with the specified event window.</p>
+        pub fn association_target(
+            mut self,
+            input: crate::model::InstanceEventWindowAssociationRequest,
+        ) -> Self {
+            self.inner = self.inner.association_target(input);
+            self
+        }
+        pub fn set_association_target(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowAssociationRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_association_target(input);
             self
         }
     }
@@ -4061,6 +4218,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_permissions(input);
             self
         }
+        /// <p>The tags applied to the security group rule.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
         /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
         pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cidr_ip(input);
@@ -4245,7 +4417,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_security_group_name(input);
             self
         }
-        /// <p>[nondefault VPC] The AWS account ID for the source security group, if the source security group is
+        /// <p>[nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is
         /// in a different account. You can't specify this parameter in combination with the following parameters:
         /// the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range.
         /// Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
@@ -4285,6 +4457,21 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>[VPC Only] The tags applied to the security group rule.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
             self
         }
     }
@@ -5158,12 +5345,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only
-        /// specify this parameter when copying a snapshot from an AWS Region to an Outpost.
+        /// specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost.
         /// The snapshot must be in the Region for the destination Outpost. You cannot copy a
         /// snapshot from an Outpost to a Region, from one Outpost to another, or within the same
         /// Outpost.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
-        /// Copying snapshots from an AWS Region to an Outpost</a> in the
+        /// Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn destination_outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_outpost_arn(input);
@@ -5180,8 +5367,8 @@ pub mod fluent_builders {
         /// copy operation. This parameter is only valid for specifying the destination Region in a
         /// <code>PresignedUrl</code> parameter, where it is required.</p>
         /// <p>The snapshot copy is sent to the regional endpoint that you sent the HTTP
-        /// request to (for example, <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is
-        /// specified using the <code>--region</code> parameter or the default Region in your AWS
+        /// request to (for example, <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is
+        /// specified using the <code>--region</code> parameter or the default Region in your Amazon Web Services
         /// configuration file.</p>
         pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_region(input);
@@ -5207,10 +5394,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is
+        /// <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code> is
         /// specified, the encrypted state must be <code>true</code>.</p>
-        /// <p>You can specify the CMK using any of the following:</p>
+        /// <p>You can specify the KMS key using any of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p>
@@ -5225,7 +5412,7 @@ pub mod fluent_builders {
         /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p>
         /// </li>
         /// </ul>
-        /// <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
+        /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
         /// the action can appear to complete, but eventually fails.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -5242,10 +5429,10 @@ pub mod fluent_builders {
         /// <p>The <code>PresignedUrl</code> should use the snapshot source endpoint, the
         /// <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
         /// <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters. The
-        /// <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS
+        /// <code>PresignedUrl</code> must be signed using Amazon Web Services Signature Version 4. Because EBS
         /// snapshots are stored in Amazon S3, the signing algorithm for this parameter uses the same logic
         /// that is described in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query
-        /// Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>. An
+        /// Parameters (Amazon Web Services Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>. An
         /// invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to fail
         /// asynchronously, and the snapshot will move to an <code>error</code> state.</p>
         pub fn presigned_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5405,11 +5592,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
+        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
+        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn tenancy(mut self, input: crate::model::CapacityReservationTenancy) -> Self {
@@ -5630,8 +5817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -6305,8 +6492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -6630,8 +6817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -6753,10 +6940,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fields to include in the flow log record, in the order in which they should
-        /// appear. For a list of available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a>. If you
-        /// omit this parameter, the flow log is created using the default format. If you specify this parameter, you must specify at least one field.</p>
+        /// appear. For a list of available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>. If you
+        /// omit this parameter, the flow log is created using the default format. If you specify this parameter,
+        /// you must specify at least one field.</p>
         /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces. For
-        /// the AWS CLI, use single quotation marks (' ') to surround the parameter value.</p>
+        /// the CLI, use single quotation marks (' ') to surround the parameter value.</p>
         pub fn log_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_format(input);
             self
@@ -7016,6 +7204,132 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
         /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateInstanceEventWindow<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_instance_event_window_input::Builder,
+    }
+    impl<C> CreateInstanceEventWindow<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateInstanceEventWindowOutput,
+            smithy_http::result::SdkError<crate::error::CreateInstanceEventWindowError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The name of the event window.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The time range for the event window. If you specify a time range, you can't specify a cron
+        /// expression.</p>
+        pub fn time_ranges(
+            mut self,
+            inp: impl Into<crate::model::InstanceEventWindowTimeRangeRequest>,
+        ) -> Self {
+            self.inner = self.inner.time_ranges(inp);
+            self
+        }
+        pub fn set_time_ranges(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::InstanceEventWindowTimeRangeRequest>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_time_ranges(input);
+            self
+        }
+        /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If
+        /// you specify a cron expression, you can't specify a time range.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Only hour and day of the week values are supported.</p>
+        /// </li>
+        /// <li>
+        /// <p>For day of the week values, you can specify either integers <code>0</code> through
+        /// <code>6</code>, or alternative single values <code>SUN</code> through
+        /// <code>SAT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The minute, month, and year must be specified by <code>*</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or
+        /// <code>0-4,20-23</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each hour range must be >= 2 hours, for example, <code>0-2</code> or
+        /// <code>20-23</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The event window must be >= 4 hours. The combined total time ranges in the event
+        /// window must be >= 4 hours.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia
+        /// website</i>.</p>
+        pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cron_expression(input);
+            self
+        }
+        pub fn set_cron_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_cron_expression(input);
+            self
+        }
+        /// <p>The tags to apply to the event window.</p>
         pub fn tag_specifications(
             mut self,
             inp: impl Into<crate::model::TagSpecification>,
@@ -7820,8 +8134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         /// <p>Constraint: Maximum 64 ASCII characters.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
@@ -8127,7 +8441,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address of the AWS resource that is the source of the path.</p>
+        /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
         pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_ip(input);
             self
@@ -8136,7 +8450,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_ip(input);
             self
         }
-        /// <p>The IP address of the AWS resource that is the destination of the path.</p>
+        /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
         pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_ip(input);
             self
@@ -8148,7 +8462,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_ip(input);
             self
         }
-        /// <p>The AWS resource that is the source of the path.</p>
+        /// <p>The Amazon Web Services resource that is the source of the path.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source(input);
             self
@@ -8157,7 +8471,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source(input);
             self
         }
-        /// <p>The AWS resource that is the destination of the path.</p>
+        /// <p>The Amazon Web Services resource that is the destination of the path.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination(input);
             self
@@ -8211,7 +8525,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -8358,6 +8672,54 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_private_ip_address_count(input);
             self
         }
+        /// <p>One or moreIPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+        pub fn ipv4_prefixes(
+            mut self,
+            inp: impl Into<crate::model::Ipv4PrefixSpecificationRequest>,
+        ) -> Self {
+            self.inner = self.inner.ipv4_prefixes(inp);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv4_prefixes(input);
+            self
+        }
+        /// <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+        pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.ipv4_prefix_count(input);
+            self
+        }
+        pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv4_prefix_count(input);
+            self
+        }
+        /// <p>One or moreIPv6 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+        pub fn ipv6_prefixes(
+            mut self,
+            inp: impl Into<crate::model::Ipv6PrefixSpecificationRequest>,
+        ) -> Self {
+            self.inner = self.inner.ipv6_prefixes(inp);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv6_prefixes(input);
+            self
+        }
+        /// <p>The number of IPv6 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
+        pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.ipv6_prefix_count(input);
+            self
+        }
+        pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv6_prefix_count(input);
+            self
+        }
         /// <p>Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
         /// <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">
         /// Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To create a trunk network interface, specify
@@ -8451,7 +8813,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_interface_id(input);
             self
         }
-        /// <p>The account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(input);
             self
@@ -8639,7 +9001,7 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// If you do not specify a client token, a randomly generated token is used for the request
-        /// to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        /// to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -9264,7 +9626,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local  
+        /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local  
         /// snapshot.</p>
         /// <ul>
         /// <li>
@@ -9282,9 +9644,7 @@ pub mod fluent_builders {
         /// the same Outpost as the volume.</p>
         /// </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-        /// Creating local snapshots from volumes on an Outpost</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_arn(input);
             self
@@ -9293,7 +9653,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outpost_arn(input);
             self
         }
-        /// <p>The ID of the EBS volume.</p>
+        /// <p>The ID of the Amazon EBS volume.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_id(input);
             self
@@ -9384,7 +9744,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_specification(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local  
+        /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local  
         /// snapshots.</p>
         /// <ul>
         /// <li>
@@ -9403,7 +9763,7 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-        /// Creating multi-volume local snapshots from instances on an Outpost</a> in the
+        /// Create multi-volume local snapshots from instances on an Outpost</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_arn(input);
@@ -9638,7 +9998,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone or Local Zone for the subnet.</p>
-        /// <p>Default: AWS selects one for you. If you create more than one subnet in your VPC, we
+        /// <p>Default: Amazon Web Services selects one for you. If you create more than one subnet in your VPC, we
         /// do not necessarily select a different zone for each subnet.</p>
         /// <p>To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
         /// <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones,
@@ -9666,15 +10026,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_availability_zone_id(input);
-            self
-        }
-        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-        pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr_block(input);
-            self
-        }
-        pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cidr_block(input);
             self
         }
         /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a
@@ -9707,6 +10058,133 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr_block(input);
+            self
+        }
+        pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr_block(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateSubnetCidrReservation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_subnet_cidr_reservation_input::Builder,
+    }
+    impl<C> CreateSubnetCidrReservation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSubnetCidrReservationOutput,
+            smithy_http::result::SdkError<crate::error::CreateSubnetCidrReservationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The tags to assign to the subnet CIDR reservation.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>The ID of the subnet.</p>
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input);
+            self
+        }
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subnet_id(input);
+            self
+        }
+        /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(input);
+            self
+        }
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>The type of reservation.</p>
+        /// <p>The following are valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>prefix</code>: The Amazon EC2
+        /// Prefix
+        /// Delegation feature assigns the IP addresses to network interfaces that are
+        /// associated with an instance. For information about Prefix
+        /// Delegation,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation
+        /// for Amazon EC2 network interfaces</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>explicit</code>: You manually assign the IP addresses to resources that
+        /// reside in your subnet. </p>
+        /// </li>
+        /// </ul>
+        pub fn reservation_type(mut self, input: crate::model::SubnetCidrReservationType) -> Self {
+            self.inner = self.inner.reservation_type(input);
+            self
+        }
+        pub fn set_reservation_type(
+            mut self,
+            input: std::option::Option<crate::model::SubnetCidrReservationType>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_type(input);
+            self
+        }
+        /// <p>The
+        /// description
+        /// to assign to the subnet CIDR reservation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request,
@@ -11219,8 +11697,9 @@ pub mod fluent_builders {
         /// <code>io2</code>: 100-64,000 IOPS</p>
         /// </li>
         /// </ul>
-        /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for  
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance
+        /// <p>
+        /// <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on  
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families support performance
         /// up to 32,000 IOPS.</p>
         /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes.
         /// The default for <code>gp3</code> volumes is 3,000 IOPS.
@@ -11233,10 +11712,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iops(input);
             self
         }
-        /// <p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is
+        /// <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code> is
         /// specified, the encrypted state must be <code>true</code>.</p>
-        /// <p>You can specify the CMK using any of the following:</p>
+        /// <p>You can specify the KMS key using any of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p>
@@ -11251,7 +11730,7 @@ pub mod fluent_builders {
         /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p>
         /// </li>
         /// </ul>
-        /// <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
+        /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
         /// the action can appear to complete, but eventually fails.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -11395,6 +11874,17 @@ pub mod fluent_builders {
         }
         pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_throughput(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+        /// Idempotency</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -11975,8 +12465,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>The AWS account ID of the owner of the accepter VPC.</p>
-        /// <p>Default: Your AWS account ID</p>
+        /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+        /// <p>Default: Your Amazon Web Services account ID</p>
         pub fn peer_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_owner_id(input);
             self
@@ -12826,6 +13316,71 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_fpga_image_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteInstanceEventWindow<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_instance_event_window_input::Builder,
+    }
+    impl<C> DeleteInstanceEventWindow<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteInstanceEventWindowOutput,
+            smithy_http::result::SdkError<crate::error::DeleteInstanceEventWindowError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to force delete the event window. Use the force delete parameter
+        /// if the event window is currently associated with targets.</p>
+        pub fn force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete(input);
+            self
+        }
+        pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_delete(input);
+            self
+        }
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_event_window_id(input);
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_event_window_id(input);
             self
         }
     }
@@ -14171,6 +14726,61 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteSubnetCidrReservation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_subnet_cidr_reservation_input::Builder,
+    }
+    impl<C> DeleteSubnetCidrReservation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSubnetCidrReservationOutput,
+            smithy_http::result::SdkError<crate::error::DeleteSubnetCidrReservationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the subnet CIDR reservation.</p>
+        pub fn subnet_cidr_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_cidr_reservation_id(input);
+            self
+        }
+        pub fn set_subnet_cidr_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_subnet_cidr_reservation_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteTags<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::delete_tags_input::Builder,
@@ -14230,7 +14840,7 @@ pub mod fluent_builders {
         /// key regardless of its value. If you specify a tag key with an empty string as the tag
         /// value, we delete the tag only if its value is an empty string.</p>
         /// <p>If you omit this parameter, we delete all user-defined tags for the specified
-        /// resources. We do not delete AWS-generated tags (tags that have the <code>aws:</code>
+        /// resources. We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code>
         /// prefix).</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -15958,7 +16568,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface-owner-id</code> - The account ID of the owner.</p>
+        /// <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -16545,7 +17155,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the Capacity Reservation.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -16566,11 +17176,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
+        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
+        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -16727,7 +17337,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the owner of the carrier gateway.</p>
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -17704,7 +18314,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the DHCP options set.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -18153,7 +18763,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.</p>
+        /// <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -20085,6 +20695,146 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeInstanceEventWindows<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_instance_event_windows_input::Builder,
+    }
+    impl<C> DescribeInstanceEventWindows<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeInstanceEventWindowsOutput,
+            smithy_http::result::SdkError<crate::error::DescribeInstanceEventWindowsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The IDs of the event windows.</p>
+        pub fn instance_event_window_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_event_window_ids(inp);
+            self
+        }
+        pub fn set_instance_event_window_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_event_window_ids(input);
+            self
+        }
+        /// <p>One or more filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dedicated-host-id</code> - The event windows associated with the specified
+        /// Dedicated Host ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>event-window-name</code> - The event windows associated with the specified
+        /// names. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>instance-id</code> - The event windows associated with the specified instance
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>instance-tag</code> - The event windows associated with the specified tag and
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>instance-tag-key</code> - The event windows associated with the specified tag
+        /// key, regardless of the value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>instance-tag-value</code> - The event windows associated with the specified tag
+        /// value, regardless of the key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag</code>:<key> - The key/value combination of a tag assigned to the
+        /// event window. Use the tag key in the filter name and the tag value as the filter
+        /// value. For example, to find all resources that have a tag with the key
+        /// <code>Owner</code> and the value <code>CMX</code>, specify <code>tag:Owner</code>
+        /// for the filter name and <code>CMX</code> for the filter value. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag-key</code> - The key of a tag assigned to the event window. Use this filter
+        /// to find all event windows that have a tag with a specific key, regardless of the tag
+        /// value. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag-value</code> - The value of a tag assigned to the event window. Use this
+        /// filter to find all event windows that have a tag with a specific value, regardless of
+        /// the tag key. </p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>NextToken</code> value. This value can
+        /// be between 20 and 500. You cannot specify this parameter and the event window IDs parameter
+        /// in the same call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeInstances<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::describe_instances_input::Builder,
@@ -20448,7 +21198,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The account ID of the instance owner.</p>
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -20498,7 +21248,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>requester-id</code> - The ID of the entity that launched the instance on
-        /// your behalf (for example, Management Console, Auto Scaling, and so
+        /// your behalf (for example, Amazon Web Services Management Console, Auto Scaling, and so
         /// on).</p>
         /// </li>
         /// <li>
@@ -21251,7 +22001,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the internet gateway.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -21482,7 +22232,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key pair names.</p>
-        /// <p>Default: Describes all your key pairs.</p>
+        /// <p>Default: Describes all of your key pairs.</p>
         pub fn key_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_names(inp);
             self
@@ -22867,7 +23617,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the network ACL.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the network ACL.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23301,7 +24051,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+        /// <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23482,7 +24232,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The account ID of the network interface owner.</p>
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the network interface owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23495,12 +24245,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>requester-id</code> - The alias or account ID of the principal or service that created the network interface.</p>
+        /// <code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service
-        /// (for example, Management Console, Auto Scaling, and so on).</p>
+        /// (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -24116,8 +24866,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -24848,7 +25598,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the route table.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -24865,8 +25615,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-        /// service specified in a route in the table.</p>
+        /// <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service
+        /// specified in a route in the table.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25300,6 +26050,109 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeSecurityGroupRules<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_security_group_rules_input::Builder,
+    }
+    impl<C> DescribeSecurityGroupRules<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSecurityGroupRulesOutput,
+            smithy_http::result::SdkError<crate::error::DescribeSecurityGroupRulesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>One or more filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>group-id</code> - The ID of the security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>security-group-rule-id</code> - The ID of the security group rule.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag</code>:<key> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The IDs of the security group rules.</p>
+        pub fn security_group_rule_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_rule_ids(inp);
+            self
+        }
+        pub fn set_security_group_rule_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rule_ids(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another request with the returned <code>NextToken</code> value. This value
+        /// can be between 5 and 1000. If this parameter is not specified, then all results are
+        /// returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeSecurityGroups<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::describe_security_groups_input::Builder,
@@ -25379,7 +26232,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>egress.ip-permission.user-id</code> - The ID of an AWS account that
+        /// <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that
         /// has been referenced in an outbound security group rule.</p>
         /// </li>
         /// <li>
@@ -25432,12 +26285,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+        /// <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been
         /// referenced in an inbound security group rule.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the owner of the security group.</p>
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25465,7 +26318,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
-        /// <p>Default: Describes all your security groups.</p>
+        /// <p>Default: Describes all of your security groups.</p>
         pub fn group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_ids(inp);
             self
@@ -25480,7 +26333,7 @@ pub mod fluent_builders {
         /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either
         /// the security group name or the security group ID. For security groups in a nondefault VPC, use
         /// the <code>group-name</code> filter to describe security groups by name.</p>
-        /// <p>Default: Describes all your security groups.</p>
+        /// <p>Default: Describes all of your security groups.</p>
         pub fn group_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_names(inp);
             self
@@ -25635,12 +26488,12 @@ pub mod fluent_builders {
         /// <p>
         /// <code>owner-alias</code> - The owner alias, from an Amazon-maintained list  
         /// (<code>amazon</code>).
-        /// This is not the user-configured AWS account alias set using the IAM console.
+        /// This is not the user-configured Amazon Web Services account alias set using the IAM console.
         /// We recommend that you use the related parameter instead of this filter.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the owner. We recommend that
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that
         /// you use the related parameter instead of this filter.</p>
         /// </li>
         /// <li>
@@ -25721,7 +26574,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of
-        /// AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
+        /// Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
         pub fn owner_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_ids(inp);
             self
@@ -25733,7 +26586,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner_ids(input);
             self
         }
-        /// <p>The IDs of the AWS accounts that can create volumes from the snapshot.</p>
+        /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
         pub fn restorable_by_user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.restorable_by_user_ids(inp);
             self
@@ -26765,7 +27618,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the subnet.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the subnet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -29745,7 +30598,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the
+        /// <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the
         /// accepter VPC.</p>
         /// </li>
         /// <li>
@@ -29764,7 +30617,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the
+        /// <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the
         /// requester VPC.</p>
         /// </li>
         /// <li>
@@ -29933,11 +30786,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>isDefault</code> - Indicates whether the VPC is the default VPC.</p>
+        /// <code>is-default</code> - Indicates whether the VPC is the default VPC.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the VPC.</p>
+        /// <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -31263,6 +32116,76 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DisassociateInstanceEventWindow<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::disassociate_instance_event_window_input::Builder,
+    }
+    impl<C> DisassociateInstanceEventWindow<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateInstanceEventWindowOutput,
+            smithy_http::result::SdkError<crate::error::DisassociateInstanceEventWindowError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_event_window_id(input);
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_event_window_id(input);
+            self
+        }
+        /// <p>One or more targets to disassociate from the specified event window.</p>
+        pub fn association_target(
+            mut self,
+            input: crate::model::InstanceEventWindowDisassociationRequest,
+        ) -> Self {
+            self.inner = self.inner.association_target(input);
+            self
+        }
+        pub fn set_association_target(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowDisassociationRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_association_target(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DisassociateRouteTable<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::disassociate_route_table_input::Builder,
@@ -31718,7 +32641,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify
-        /// a snapshot that was shared with you from another AWS account.</p>
+        /// a snapshot that was shared with you from another Amazon Web Services account.</p>
         pub fn source_snapshot_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_snapshot_ids(inp);
             self
@@ -33641,6 +34564,109 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetSubnetCidrReservations<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_subnet_cidr_reservations_input::Builder,
+    }
+    impl<C> GetSubnetCidrReservations<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSubnetCidrReservationsOutput,
+            smithy_http::result::SdkError<crate::error::GetSubnetCidrReservationsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>One or more filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>reservationType</code> - The type of reservation (<code>prefix</code> |
+        /// <code>explicit</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>subnet-id</code> - The ID of the subnet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag</code>:<key> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The ID of the subnet.</p>
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input);
+            self
+        }
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subnet_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayAttachmentPropagations<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::get_transit_gateway_attachment_propagations_input::Builder,
@@ -35418,10 +36444,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is
+        /// <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code> is
         /// specified, the encrypted state must be <code>true</code>.</p>
-        /// <p>You can specify the CMK using any of the following:</p>
+        /// <p>You can specify the KMS key using any of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p>
@@ -35436,9 +36462,9 @@ pub mod fluent_builders {
         /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p>
         /// </li>
         /// </ul>
-        /// <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
+        /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid,
         /// the action can appear to complete, but eventually fails.</p>  
-        /// <p>Amazon EBS does not support asymmetric CMKs.</p>
+        /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
             self
@@ -36580,6 +37606,127 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ModifyInstanceEventWindow<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::modify_instance_event_window_input::Builder,
+    }
+    impl<C> ModifyInstanceEventWindow<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyInstanceEventWindowOutput,
+            smithy_http::result::SdkError<crate::error::ModifyInstanceEventWindowError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The name of the event window.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_event_window_id(input);
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_event_window_id(input);
+            self
+        }
+        /// <p>The time ranges of the event window.</p>
+        pub fn time_ranges(
+            mut self,
+            inp: impl Into<crate::model::InstanceEventWindowTimeRangeRequest>,
+        ) -> Self {
+            self.inner = self.inner.time_ranges(inp);
+            self
+        }
+        pub fn set_time_ranges(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::InstanceEventWindowTimeRangeRequest>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_time_ranges(input);
+            self
+        }
+        /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Only hour and day of the week values are supported.</p>
+        /// </li>
+        /// <li>
+        /// <p>For day of the week values, you can specify either integers <code>0</code> through
+        /// <code>6</code>, or alternative single values <code>SUN</code> through
+        /// <code>SAT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The minute, month, and year must be specified by <code>*</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or
+        /// <code>0-4,20-23</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each hour range must be >= 2 hours, for example, <code>0-2</code> or
+        /// <code>20-23</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The event window must be >= 4 hours. The combined total time ranges in the event
+        /// window must be >= 4 hours.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia
+        /// website</i>.</p>
+        pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cron_expression(input);
+            self
+        }
+        pub fn set_cron_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_cron_expression(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceMetadataOptions<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::modify_instance_metadata_options_input::Builder,
@@ -37159,6 +38306,73 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesConfiguration>>,
         ) -> Self {
             self.inner = self.inner.set_target_configurations(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ModifySecurityGroupRules<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::modify_security_group_rules_input::Builder,
+    }
+    impl<C> ModifySecurityGroupRules<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifySecurityGroupRulesOutput,
+            smithy_http::result::SdkError<crate::error::ModifySecurityGroupRulesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the security group.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input);
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>Information about the security group properties to update.</p>
+        pub fn security_group_rules(
+            mut self,
+            inp: impl Into<crate::model::SecurityGroupRuleUpdate>,
+        ) -> Self {
+            self.inner = self.inner.security_group_rules(inp);
+            self
+        }
+        pub fn set_security_group_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRuleUpdate>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rules(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
             self
         }
     }
@@ -38235,7 +39449,7 @@ pub mod fluent_builders {
         /// <code>standard</code>: 1-1,024</p>
         /// </li>
         /// </ul>
-        /// <p>Default: If no size is specified, the existing size is retained.</p>
+        /// <p>Default: The existing size is retained.</p>
         pub fn size(mut self, input: i32) -> Self {
             self.inner = self.inner.size(input);
             self
@@ -38245,7 +39459,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        /// <p>Default: If no type is specified, the existing type is retained.</p>
+        /// <p>Default: The existing type is retained.</p>
         pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
             self.inner = self.inner.volume_type(input);
             self
@@ -38273,7 +39487,8 @@ pub mod fluent_builders {
         /// <code>io2</code>: 100-64,000 IOPS</p>
         /// </li>
         /// </ul>
-        /// <p>Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified that supports different values.</p>
+        /// <p>Default: The existing value is retained if you keep the same volume type. If you change
+        /// the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.inner = self.inner.iops(input);
             self
@@ -38284,7 +39499,8 @@ pub mod fluent_builders {
         }
         /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes.
         /// The maximum value is 1,000.</p>
-        /// <p>Default: If no throughput value is specified, the existing value is retained.</p>
+        /// <p>Default: The existing value is retained if the source and target volume type is <code>gp3</code>.
+        /// Otherwise, the default value is 125.</p>
         /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
         pub fn throughput(mut self, input: i32) -> Self {
             self.inner = self.inner.throughput(input);
@@ -42645,6 +43861,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_permissions(input);
             self
         }
+        /// <p>The IDs of the security group rules.</p>
+        pub fn security_group_rule_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_rule_ids(inp);
+            self
+        }
+        pub fn set_security_group_rule_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rule_ids(input);
+            self
+        }
         /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
         pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cidr_ip(input);
@@ -42818,7 +44046,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_security_group_name(input);
             self
         }
-        /// <p>[EC2-Classic] The AWS account ID of the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+        /// <p>[EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
         pub fn source_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -42852,6 +44080,18 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The IDs of the security group rules.</p>
+        pub fn security_group_rule_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_rule_ids(inp);
+            self
+        }
+        pub fn set_security_group_rule_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rule_ids(input);
             self
         }
     }
@@ -44083,7 +45323,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -44393,18 +45633,6 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the network interface.</p>
-        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_interface_id(input);
-            self
-        }
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_network_interface_id(input);
-            self
-        }
         /// <p>The IPv6 addresses to unassign from the network interface.</p>
         pub fn ipv6_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ipv6_addresses(inp);
@@ -44415,6 +45643,30 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_ipv6_addresses(input);
+            self
+        }
+        /// <p>One or moreIPv6 Prefix Delegation prefixes to unassign from the network interface.</p>
+        pub fn ipv6_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv6_prefixes(inp);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv6_prefixes(input);
+            self
+        }
+        /// <p>The ID of the network interface.</p>
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_interface_id(input);
+            self
+        }
+        pub fn set_network_interface_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_network_interface_id(input);
             self
         }
     }
@@ -44471,6 +45723,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_private_ip_addresses(input);
+            self
+        }
+        /// <p>The IPv4 Prefix Delegation prefixes to unassign from  the network interface.</p>
+        pub fn ipv4_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv4_prefixes(inp);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv4_prefixes(input);
             self
         }
     }
@@ -44594,7 +45858,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The IP permissions for the security group rule.</p>
+        /// <p>The IP permissions for the security group rule. You must specify either the IP permissions
+        /// or the description.</p>
         pub fn ip_permissions(mut self, inp: impl Into<crate::model::IpPermission>) -> Self {
             self.inner = self.inner.ip_permissions(inp);
             self
@@ -44604,6 +45869,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
         ) -> Self {
             self.inner = self.inner.set_ip_permissions(input);
+            self
+        }
+        /// <p>The description for the egress security group rules. You must specify either the
+        /// description or the IP permissions.</p>
+        pub fn security_group_rule_descriptions(
+            mut self,
+            inp: impl Into<crate::model::SecurityGroupRuleDescription>,
+        ) -> Self {
+            self.inner = self.inner.security_group_rule_descriptions(inp);
+            self
+        }
+        pub fn set_security_group_rule_descriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRuleDescription>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rule_descriptions(input);
             self
         }
     }
@@ -44672,7 +45953,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The IP permissions for the security group rule. </p>
+        /// <p>The IP permissions for the security group rule. You must specify either IP permissions
+        /// or a description.</p>
         pub fn ip_permissions(mut self, inp: impl Into<crate::model::IpPermission>) -> Self {
             self.inner = self.inner.ip_permissions(inp);
             self
@@ -44682,6 +45964,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
         ) -> Self {
             self.inner = self.inner.set_ip_permissions(input);
+            self
+        }
+        /// <p>[VPC only] The description for the ingress security group rules. You must specify either
+        /// a description or IP permissions.</p>
+        pub fn security_group_rule_descriptions(
+            mut self,
+            inp: impl Into<crate::model::SecurityGroupRuleDescription>,
+        ) -> Self {
+            self.inner = self.inner.security_group_rule_descriptions(inp);
+            self
+        }
+        pub fn set_security_group_rule_descriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRuleDescription>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_rule_descriptions(input);
             self
         }
     }

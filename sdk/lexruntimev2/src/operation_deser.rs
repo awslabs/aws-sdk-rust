@@ -293,8 +293,9 @@ pub fn parse_get_session_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_session(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::PutSessionOutput, crate::error::PutSessionError> {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_session_output::Builder::default();
@@ -745,11 +746,12 @@ pub fn parse_recognize_text_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_recognize_utterance(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<
     crate::output::RecognizeUtteranceOutput,
     crate::error::RecognizeUtteranceError,
 > {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::recognize_utterance_output::Builder::default();

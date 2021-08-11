@@ -59,6 +59,162 @@ impl TagResourceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartMigrationOutput {
+    /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    pub v1_bot_name: std::option::Option<std::string::String>,
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
+    pub v1_bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
+    pub v1_bot_locale: std::option::Option<crate::model::Locale>,
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
+    pub v2_bot_id: std::option::Option<std::string::String>,
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub v2_bot_role: std::option::Option<std::string::String>,
+    /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    pub migration_id: std::option::Option<std::string::String>,
+    /// <p>The strategy used to conduct the migration.</p>
+    pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+    /// <p>The date and time that the migration started.</p>
+    pub migration_timestamp: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for StartMigrationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartMigrationOutput");
+        formatter.field("v1_bot_name", &self.v1_bot_name);
+        formatter.field("v1_bot_version", &self.v1_bot_version);
+        formatter.field("v1_bot_locale", &self.v1_bot_locale);
+        formatter.field("v2_bot_id", &self.v2_bot_id);
+        formatter.field("v2_bot_role", &self.v2_bot_role);
+        formatter.field("migration_id", &self.migration_id);
+        formatter.field("migration_strategy", &self.migration_strategy);
+        formatter.field("migration_timestamp", &self.migration_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`StartMigrationOutput`](crate::output::StartMigrationOutput)
+pub mod start_migration_output {
+    /// A builder for [`StartMigrationOutput`](crate::output::StartMigrationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) v1_bot_name: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_version: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_locale: std::option::Option<crate::model::Locale>,
+        pub(crate) v2_bot_id: std::option::Option<std::string::String>,
+        pub(crate) v2_bot_role: std::option::Option<std::string::String>,
+        pub(crate) migration_id: std::option::Option<std::string::String>,
+        pub(crate) migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+        pub(crate) migration_timestamp: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+        pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_name = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v1_bot_name = input;
+            self
+        }
+        /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
+        pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_version = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.v1_bot_version = input;
+            self
+        }
+        /// <p>The locale used for the Amazon Lex V1 bot. </p>
+        pub fn v1_bot_locale(mut self, input: crate::model::Locale) -> Self {
+            self.v1_bot_locale = Some(input);
+            self
+        }
+        pub fn set_v1_bot_locale(
+            mut self,
+            input: std::option::Option<crate::model::Locale>,
+        ) -> Self {
+            self.v1_bot_locale = input;
+            self
+        }
+        /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
+        pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_id = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_id = input;
+            self
+        }
+        /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+        pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_role = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_role = input;
+            self
+        }
+        /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+        pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.migration_id = Some(input.into());
+            self
+        }
+        pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.migration_id = input;
+            self
+        }
+        /// <p>The strategy used to conduct the migration.</p>
+        pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
+            self.migration_strategy = Some(input);
+            self
+        }
+        pub fn set_migration_strategy(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStrategy>,
+        ) -> Self {
+            self.migration_strategy = input;
+            self
+        }
+        /// <p>The date and time that the migration started.</p>
+        pub fn migration_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.migration_timestamp = Some(input);
+            self
+        }
+        pub fn set_migration_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.migration_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartMigrationOutput`](crate::output::StartMigrationOutput)
+        pub fn build(self) -> crate::output::StartMigrationOutput {
+            crate::output::StartMigrationOutput {
+                v1_bot_name: self.v1_bot_name,
+                v1_bot_version: self.v1_bot_version,
+                v1_bot_locale: self.v1_bot_locale,
+                v2_bot_id: self.v2_bot_id,
+                v2_bot_role: self.v2_bot_role,
+                migration_id: self.migration_id,
+                migration_strategy: self.migration_strategy,
+                migration_timestamp: self.migration_timestamp,
+            }
+        }
+    }
+}
+impl StartMigrationOutput {
+    /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::output::StartMigrationOutput)
+    pub fn builder() -> crate::output::start_migration_output::Builder {
+        crate::output::start_migration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportOutput {
     /// <p>The name given to the import job.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1958,6 +2114,316 @@ impl GetSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput)
     pub fn builder() -> crate::output::get_slot_type_output::Builder {
         crate::output::get_slot_type_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMigrationsOutput {
+    /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see
+    /// details of the migration, use the <code>migrationId</code> from the
+    /// summary in a call to the
+    /// operation.</p>
+    pub migration_summaries: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
+    /// <p>If the response is truncated, it includes a pagination token that you
+    /// can specify in your next request to fetch the next page of
+    /// migrations.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMigrationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMigrationsOutput");
+        formatter.field("migration_summaries", &self.migration_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
+pub mod get_migrations_output {
+    /// A builder for [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) migration_summaries:
+            std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn migration_summaries(
+            mut self,
+            input: impl Into<crate::model::MigrationSummary>,
+        ) -> Self {
+            let mut v = self.migration_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.migration_summaries = Some(v);
+            self
+        }
+        pub fn set_migration_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
+        ) -> Self {
+            self.migration_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, it includes a pagination token that you
+        /// can specify in your next request to fetch the next page of
+        /// migrations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
+        pub fn build(self) -> crate::output::GetMigrationsOutput {
+            crate::output::GetMigrationsOutput {
+                migration_summaries: self.migration_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetMigrationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
+    pub fn builder() -> crate::output::get_migrations_output::Builder {
+        crate::output::get_migrations_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMigrationOutput {
+    /// <p>The unique identifier of the migration. This is the same as the
+    /// identifier used when calling the <code>GetMigration</code>
+    /// operation.</p>
+    pub migration_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    pub v1_bot_name: std::option::Option<std::string::String>,
+    /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    pub v1_bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    pub v1_bot_locale: std::option::Option<crate::model::Locale>,
+    /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being
+    /// migrated to.</p>
+    pub v2_bot_id: std::option::Option<std::string::String>,
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub v2_bot_role: std::option::Option<std::string::String>,
+    /// <p>Indicates the status of the migration. When the status is
+    /// <code>COMPLETE</code> the migration is finished and the bot is available
+    /// in Amazon Lex V2. There may be alerts and warnings that need to be resolved to
+    /// complete the migration.</p>
+    pub migration_status: std::option::Option<crate::model::MigrationStatus>,
+    /// <p>The strategy used to conduct the migration.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates
+    /// the Amazon Lex V1 bot to the new bot.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot
+    /// metadata and the locale being migrated. It doesn't change any other
+    /// locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale
+    /// is created in the Amazon Lex V2 bot.</p>
+    /// </li>
+    /// </ul>
+    pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+    /// <p>The date and time that the migration started.</p>
+    pub migration_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>A list of alerts and warnings that indicate issues with the migration
+    /// for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1
+    /// feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2
+    /// developer guide</i>.</p>
+    pub alerts: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
+}
+impl std::fmt::Debug for GetMigrationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMigrationOutput");
+        formatter.field("migration_id", &self.migration_id);
+        formatter.field("v1_bot_name", &self.v1_bot_name);
+        formatter.field("v1_bot_version", &self.v1_bot_version);
+        formatter.field("v1_bot_locale", &self.v1_bot_locale);
+        formatter.field("v2_bot_id", &self.v2_bot_id);
+        formatter.field("v2_bot_role", &self.v2_bot_role);
+        formatter.field("migration_status", &self.migration_status);
+        formatter.field("migration_strategy", &self.migration_strategy);
+        formatter.field("migration_timestamp", &self.migration_timestamp);
+        formatter.field("alerts", &self.alerts);
+        formatter.finish()
+    }
+}
+/// See [`GetMigrationOutput`](crate::output::GetMigrationOutput)
+pub mod get_migration_output {
+    /// A builder for [`GetMigrationOutput`](crate::output::GetMigrationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) migration_id: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_name: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_version: std::option::Option<std::string::String>,
+        pub(crate) v1_bot_locale: std::option::Option<crate::model::Locale>,
+        pub(crate) v2_bot_id: std::option::Option<std::string::String>,
+        pub(crate) v2_bot_role: std::option::Option<std::string::String>,
+        pub(crate) migration_status: std::option::Option<crate::model::MigrationStatus>,
+        pub(crate) migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
+        pub(crate) migration_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) alerts: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the migration. This is the same as the
+        /// identifier used when calling the <code>GetMigration</code>
+        /// operation.</p>
+        pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.migration_id = Some(input.into());
+            self
+        }
+        pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.migration_id = input;
+            self
+        }
+        /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+        pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_name = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v1_bot_name = input;
+            self
+        }
+        /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+        pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v1_bot_version = Some(input.into());
+            self
+        }
+        pub fn set_v1_bot_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.v1_bot_version = input;
+            self
+        }
+        /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+        pub fn v1_bot_locale(mut self, input: crate::model::Locale) -> Self {
+            self.v1_bot_locale = Some(input);
+            self
+        }
+        pub fn set_v1_bot_locale(
+            mut self,
+            input: std::option::Option<crate::model::Locale>,
+        ) -> Self {
+            self.v1_bot_locale = input;
+            self
+        }
+        /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being
+        /// migrated to.</p>
+        pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_id = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_id = input;
+            self
+        }
+        /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+        pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.v2_bot_role = Some(input.into());
+            self
+        }
+        pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v2_bot_role = input;
+            self
+        }
+        /// <p>Indicates the status of the migration. When the status is
+        /// <code>COMPLETE</code> the migration is finished and the bot is available
+        /// in Amazon Lex V2. There may be alerts and warnings that need to be resolved to
+        /// complete the migration.</p>
+        pub fn migration_status(mut self, input: crate::model::MigrationStatus) -> Self {
+            self.migration_status = Some(input);
+            self
+        }
+        pub fn set_migration_status(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStatus>,
+        ) -> Self {
+            self.migration_status = input;
+            self
+        }
+        /// <p>The strategy used to conduct the migration.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates
+        /// the Amazon Lex V1 bot to the new bot.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot
+        /// metadata and the locale being migrated. It doesn't change any other
+        /// locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale
+        /// is created in the Amazon Lex V2 bot.</p>
+        /// </li>
+        /// </ul>
+        pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
+            self.migration_strategy = Some(input);
+            self
+        }
+        pub fn set_migration_strategy(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStrategy>,
+        ) -> Self {
+            self.migration_strategy = input;
+            self
+        }
+        /// <p>The date and time that the migration started.</p>
+        pub fn migration_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.migration_timestamp = Some(input);
+            self
+        }
+        pub fn set_migration_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.migration_timestamp = input;
+            self
+        }
+        pub fn alerts(mut self, input: impl Into<crate::model::MigrationAlert>) -> Self {
+            let mut v = self.alerts.unwrap_or_default();
+            v.push(input.into());
+            self.alerts = Some(v);
+            self
+        }
+        pub fn set_alerts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
+        ) -> Self {
+            self.alerts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMigrationOutput`](crate::output::GetMigrationOutput)
+        pub fn build(self) -> crate::output::GetMigrationOutput {
+            crate::output::GetMigrationOutput {
+                migration_id: self.migration_id,
+                v1_bot_name: self.v1_bot_name,
+                v1_bot_version: self.v1_bot_version,
+                v1_bot_locale: self.v1_bot_locale,
+                v2_bot_id: self.v2_bot_id,
+                v2_bot_role: self.v2_bot_role,
+                migration_status: self.migration_status,
+                migration_strategy: self.migration_strategy,
+                migration_timestamp: self.migration_timestamp,
+                alerts: self.alerts,
+            }
+        }
+    }
+}
+impl GetMigrationOutput {
+    /// Creates a new builder-style object to manufacture [`GetMigrationOutput`](crate::output::GetMigrationOutput)
+    pub fn builder() -> crate::output::get_migration_output::Builder {
+        crate::output::get_migration_output::Builder::default()
     }
 }
 

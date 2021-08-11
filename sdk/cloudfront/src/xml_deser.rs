@@ -39,10 +39,10 @@ pub fn deser_structure_access_denied_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_policy_already_exists_xml_err(
+pub fn deser_structure_illegal_update_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cache_policy_already_exists::Builder,
-) -> Result<crate::error::cache_policy_already_exists::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::illegal_update::Builder,
+) -> Result<crate::error::illegal_update::Builder, smithy_xml::decode::XmlError> {
     if inp.is_empty() {
         return Ok(builder);
     }
@@ -52,7 +52,7 @@ pub fn deser_structure_cache_policy_already_exists_xml_err(
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#CachePolicyAlreadyExists$Message */ =>  {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#IllegalUpdate$Message */ =>  {
                 let var_2 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -63,39 +63,6 @@ pub fn deser_structure_cache_policy_already_exists_xml_err(
                     )
                 ;
                 builder = builder.set_message(var_2);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_inconsistent_quantities_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::inconsistent_quantities::Builder,
-) -> Result<crate::error::inconsistent_quantities::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#InconsistentQuantities$Message */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_3);
             }
             ,
             _ => {}
@@ -119,6 +86,39 @@ pub fn deser_structure_invalid_argument_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidArgument$Message */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_3);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_no_such_distribution_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::no_such_distribution::Builder,
+) -> Result<crate::error::no_such_distribution::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchDistribution$Message */ =>  {
                 let var_4 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -129,6 +129,105 @@ pub fn deser_structure_invalid_argument_xml_err(
                     )
                 ;
                 builder = builder.set_message(var_4);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_too_many_distribution_cnam_es_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::too_many_distribution_cnam_es::Builder,
+) -> Result<crate::error::too_many_distribution_cnam_es::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionCNAMEs$Message */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_5);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_cache_policy_already_exists_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::cache_policy_already_exists::Builder,
+) -> Result<crate::error::cache_policy_already_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#CachePolicyAlreadyExists$Message */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_6);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_inconsistent_quantities_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::inconsistent_quantities::Builder,
+) -> Result<crate::error::inconsistent_quantities::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#InconsistentQuantities$Message */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_7);
             }
             ,
             _ => {}
@@ -152,7 +251,7 @@ pub fn deser_structure_too_many_cache_policies_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCachePolicies$Message */ =>  {
-                let var_5 =
+                let var_8 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -161,7 +260,7 @@ pub fn deser_structure_too_many_cache_policies_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_5);
+                builder = builder.set_message(var_8);
             }
             ,
             _ => {}
@@ -185,7 +284,7 @@ pub fn deser_structure_too_many_cookies_in_cache_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCookiesInCachePolicy$Message */ =>  {
-                let var_6 =
+                let var_9 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -194,7 +293,7 @@ pub fn deser_structure_too_many_cookies_in_cache_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_6);
+                builder = builder.set_message(var_9);
             }
             ,
             _ => {}
@@ -218,7 +317,7 @@ pub fn deser_structure_too_many_headers_in_cache_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyHeadersInCachePolicy$Message */ =>  {
-                let var_7 =
+                let var_10 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -227,7 +326,7 @@ pub fn deser_structure_too_many_headers_in_cache_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_7);
+                builder = builder.set_message(var_10);
             }
             ,
             _ => {}
@@ -254,7 +353,7 @@ pub fn deser_structure_too_many_query_strings_in_cache_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyQueryStringsInCachePolicy$Message */ =>  {
-                let var_8 =
+                let var_11 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -263,7 +362,7 @@ pub fn deser_structure_too_many_query_strings_in_cache_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_8);
+                builder = builder.set_message(var_11);
             }
             ,
             _ => {}
@@ -290,7 +389,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_already_exists_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#CloudFrontOriginAccessIdentityAlreadyExists$Message */ =>  {
-                let var_9 =
+                let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -299,7 +398,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_already_exists_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_9);
+                builder = builder.set_message(var_12);
             }
             ,
             _ => {}
@@ -323,7 +422,7 @@ pub fn deser_structure_missing_body_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#MissingBody$Message */ =>  {
-                let var_10 =
+                let var_13 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -332,7 +431,7 @@ pub fn deser_structure_missing_body_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_10);
+                builder = builder.set_message(var_13);
             }
             ,
             _ => {}
@@ -359,7 +458,7 @@ pub fn deser_structure_too_many_cloud_front_origin_access_identities_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCloudFrontOriginAccessIdentities$Message */ =>  {
-                let var_11 =
+                let var_14 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -368,7 +467,7 @@ pub fn deser_structure_too_many_cloud_front_origin_access_identities_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_11);
+                builder = builder.set_message(var_14);
             }
             ,
             _ => {}
@@ -392,7 +491,7 @@ pub fn deser_structure_cname_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#CNAMEAlreadyExists$Message */ =>  {
-                let var_12 =
+                let var_15 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -401,7 +500,7 @@ pub fn deser_structure_cname_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_12);
+                builder = builder.set_message(var_15);
             }
             ,
             _ => {}
@@ -425,7 +524,7 @@ pub fn deser_structure_distribution_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#DistributionAlreadyExists$Message */ =>  {
-                let var_13 =
+                let var_16 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -434,7 +533,7 @@ pub fn deser_structure_distribution_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_13);
+                builder = builder.set_message(var_16);
             }
             ,
             _ => {}
@@ -461,7 +560,7 @@ pub fn deser_structure_illegal_field_level_encryption_config_association_with_ca
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior$Message */ =>  {
-                let var_14 =
+                let var_17 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -470,7 +569,7 @@ pub fn deser_structure_illegal_field_level_encryption_config_association_with_ca
                         ?
                     )
                 ;
-                builder = builder.set_message(var_14);
+                builder = builder.set_message(var_17);
             }
             ,
             _ => {}
@@ -494,7 +593,7 @@ pub fn deser_structure_invalid_default_root_object_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidDefaultRootObject$Message */ =>  {
-                let var_15 =
+                let var_18 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -503,7 +602,7 @@ pub fn deser_structure_invalid_default_root_object_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_15);
+                builder = builder.set_message(var_18);
             }
             ,
             _ => {}
@@ -527,7 +626,7 @@ pub fn deser_structure_invalid_error_code_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidErrorCode$Message */ =>  {
-                let var_16 =
+                let var_19 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -536,7 +635,7 @@ pub fn deser_structure_invalid_error_code_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_16);
+                builder = builder.set_message(var_19);
             }
             ,
             _ => {}
@@ -560,7 +659,7 @@ pub fn deser_structure_invalid_forward_cookies_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidForwardCookies$Message */ =>  {
-                let var_17 =
+                let var_20 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -569,7 +668,7 @@ pub fn deser_structure_invalid_forward_cookies_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_17);
+                builder = builder.set_message(var_20);
             }
             ,
             _ => {}
@@ -593,7 +692,7 @@ pub fn deser_structure_invalid_function_association_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidFunctionAssociation$Message */ =>  {
-                let var_18 =
+                let var_21 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -602,7 +701,7 @@ pub fn deser_structure_invalid_function_association_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_18);
+                builder = builder.set_message(var_21);
             }
             ,
             _ => {}
@@ -627,7 +726,7 @@ pub fn deser_structure_invalid_geo_restriction_parameter_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidGeoRestrictionParameter$Message */ =>  {
-                let var_19 =
+                let var_22 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -636,7 +735,7 @@ pub fn deser_structure_invalid_geo_restriction_parameter_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_19);
+                builder = builder.set_message(var_22);
             }
             ,
             _ => {}
@@ -660,7 +759,7 @@ pub fn deser_structure_invalid_headers_for_s3_origin_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidHeadersForS3Origin$Message */ =>  {
-                let var_20 =
+                let var_23 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -669,7 +768,7 @@ pub fn deser_structure_invalid_headers_for_s3_origin_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_20);
+                builder = builder.set_message(var_23);
             }
             ,
             _ => {}
@@ -694,7 +793,7 @@ pub fn deser_structure_invalid_lambda_function_association_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidLambdaFunctionAssociation$Message */ =>  {
-                let var_21 =
+                let var_24 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -703,7 +802,7 @@ pub fn deser_structure_invalid_lambda_function_association_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_21);
+                builder = builder.set_message(var_24);
             }
             ,
             _ => {}
@@ -727,7 +826,7 @@ pub fn deser_structure_invalid_location_code_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidLocationCode$Message */ =>  {
-                let var_22 =
+                let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -736,7 +835,7 @@ pub fn deser_structure_invalid_location_code_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_22);
+                builder = builder.set_message(var_25);
             }
             ,
             _ => {}
@@ -760,7 +859,7 @@ pub fn deser_structure_invalid_minimum_protocol_version_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidMinimumProtocolVersion$Message */ =>  {
-                let var_23 =
+                let var_26 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -769,7 +868,7 @@ pub fn deser_structure_invalid_minimum_protocol_version_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_23);
+                builder = builder.set_message(var_26);
             }
             ,
             _ => {}
@@ -793,7 +892,7 @@ pub fn deser_structure_invalid_origin_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidOrigin$Message */ =>  {
-                let var_24 =
+                let var_27 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -802,7 +901,7 @@ pub fn deser_structure_invalid_origin_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_24);
+                builder = builder.set_message(var_27);
             }
             ,
             _ => {}
@@ -826,7 +925,7 @@ pub fn deser_structure_invalid_origin_access_identity_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidOriginAccessIdentity$Message */ =>  {
-                let var_25 =
+                let var_28 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -835,7 +934,7 @@ pub fn deser_structure_invalid_origin_access_identity_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_25);
+                builder = builder.set_message(var_28);
             }
             ,
             _ => {}
@@ -859,7 +958,7 @@ pub fn deser_structure_invalid_origin_keepalive_timeout_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidOriginKeepaliveTimeout$Message */ =>  {
-                let var_26 =
+                let var_29 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -868,7 +967,7 @@ pub fn deser_structure_invalid_origin_keepalive_timeout_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_26);
+                builder = builder.set_message(var_29);
             }
             ,
             _ => {}
@@ -892,7 +991,7 @@ pub fn deser_structure_invalid_origin_read_timeout_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidOriginReadTimeout$Message */ =>  {
-                let var_27 =
+                let var_30 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -901,7 +1000,7 @@ pub fn deser_structure_invalid_origin_read_timeout_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_27);
+                builder = builder.set_message(var_30);
             }
             ,
             _ => {}
@@ -925,7 +1024,7 @@ pub fn deser_structure_invalid_protocol_settings_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidProtocolSettings$Message */ =>  {
-                let var_28 =
+                let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -934,7 +1033,7 @@ pub fn deser_structure_invalid_protocol_settings_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_28);
+                builder = builder.set_message(var_31);
             }
             ,
             _ => {}
@@ -958,7 +1057,7 @@ pub fn deser_structure_invalid_query_string_parameters_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidQueryStringParameters$Message */ =>  {
-                let var_29 =
+                let var_32 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -967,7 +1066,7 @@ pub fn deser_structure_invalid_query_string_parameters_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_29);
+                builder = builder.set_message(var_32);
             }
             ,
             _ => {}
@@ -991,7 +1090,7 @@ pub fn deser_structure_invalid_relative_path_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidRelativePath$Message */ =>  {
-                let var_30 =
+                let var_33 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1000,7 +1099,7 @@ pub fn deser_structure_invalid_relative_path_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_30);
+                builder = builder.set_message(var_33);
             }
             ,
             _ => {}
@@ -1024,7 +1123,7 @@ pub fn deser_structure_invalid_required_protocol_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidRequiredProtocol$Message */ =>  {
-                let var_31 =
+                let var_34 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1033,7 +1132,7 @@ pub fn deser_structure_invalid_required_protocol_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_31);
+                builder = builder.set_message(var_34);
             }
             ,
             _ => {}
@@ -1057,7 +1156,7 @@ pub fn deser_structure_invalid_response_code_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidResponseCode$Message */ =>  {
-                let var_32 =
+                let var_35 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1066,7 +1165,7 @@ pub fn deser_structure_invalid_response_code_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_32);
+                builder = builder.set_message(var_35);
             }
             ,
             _ => {}
@@ -1090,7 +1189,7 @@ pub fn deser_structure_invalid_ttl_order_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidTTLOrder$Message */ =>  {
-                let var_33 =
+                let var_36 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1099,7 +1198,7 @@ pub fn deser_structure_invalid_ttl_order_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_33);
+                builder = builder.set_message(var_36);
             }
             ,
             _ => {}
@@ -1123,7 +1222,7 @@ pub fn deser_structure_invalid_viewer_certificate_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidViewerCertificate$Message */ =>  {
-                let var_34 =
+                let var_37 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1132,7 +1231,7 @@ pub fn deser_structure_invalid_viewer_certificate_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_34);
+                builder = builder.set_message(var_37);
             }
             ,
             _ => {}
@@ -1156,7 +1255,7 @@ pub fn deser_structure_invalid_web_acl_id_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidWebACLId$Message */ =>  {
-                let var_35 =
+                let var_38 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1165,7 +1264,7 @@ pub fn deser_structure_invalid_web_acl_id_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_35);
+                builder = builder.set_message(var_38);
             }
             ,
             _ => {}
@@ -1189,7 +1288,7 @@ pub fn deser_structure_no_such_cache_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchCachePolicy$Message */ =>  {
-                let var_36 =
+                let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1198,7 +1297,7 @@ pub fn deser_structure_no_such_cache_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_36);
+                builder = builder.set_message(var_39);
             }
             ,
             _ => {}
@@ -1225,7 +1324,7 @@ pub fn deser_structure_no_such_field_level_encryption_config_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchFieldLevelEncryptionConfig$Message */ =>  {
-                let var_37 =
+                let var_40 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1234,7 +1333,7 @@ pub fn deser_structure_no_such_field_level_encryption_config_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_37);
+                builder = builder.set_message(var_40);
             }
             ,
             _ => {}
@@ -1258,7 +1357,7 @@ pub fn deser_structure_no_such_origin_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchOrigin$Message */ =>  {
-                let var_38 =
+                let var_41 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1267,7 +1366,7 @@ pub fn deser_structure_no_such_origin_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_38);
+                builder = builder.set_message(var_41);
             }
             ,
             _ => {}
@@ -1291,7 +1390,7 @@ pub fn deser_structure_no_such_origin_request_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchOriginRequestPolicy$Message */ =>  {
-                let var_39 =
+                let var_42 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1300,7 +1399,7 @@ pub fn deser_structure_no_such_origin_request_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_39);
+                builder = builder.set_message(var_42);
             }
             ,
             _ => {}
@@ -1324,7 +1423,7 @@ pub fn deser_structure_no_such_realtime_log_config_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchRealtimeLogConfig$Message */ =>  {
-                let var_40 =
+                let var_43 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1333,7 +1432,7 @@ pub fn deser_structure_no_such_realtime_log_config_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_40);
+                builder = builder.set_message(var_43);
             }
             ,
             _ => {}
@@ -1358,7 +1457,7 @@ pub fn deser_structure_realtime_log_config_owner_mismatch_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#RealtimeLogConfigOwnerMismatch$Message */ =>  {
-                let var_41 =
+                let var_44 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1367,7 +1466,7 @@ pub fn deser_structure_realtime_log_config_owner_mismatch_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_41);
+                builder = builder.set_message(var_44);
             }
             ,
             _ => {}
@@ -1391,7 +1490,7 @@ pub fn deser_structure_too_many_cache_behaviors_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCacheBehaviors$Message */ =>  {
-                let var_42 =
+                let var_45 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1400,7 +1499,7 @@ pub fn deser_structure_too_many_cache_behaviors_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_42);
+                builder = builder.set_message(var_45);
             }
             ,
             _ => {}
@@ -1424,7 +1523,7 @@ pub fn deser_structure_too_many_certificates_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCertificates$Message */ =>  {
-                let var_43 =
+                let var_46 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1433,7 +1532,7 @@ pub fn deser_structure_too_many_certificates_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_43);
+                builder = builder.set_message(var_46);
             }
             ,
             _ => {}
@@ -1458,7 +1557,7 @@ pub fn deser_structure_too_many_cookie_names_in_white_list_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCookieNamesInWhiteList$Message */ =>  {
-                let var_44 =
+                let var_47 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1467,40 +1566,7 @@ pub fn deser_structure_too_many_cookie_names_in_white_list_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_44);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_too_many_distribution_cnam_es_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::too_many_distribution_cnam_es::Builder,
-) -> Result<crate::error::too_many_distribution_cnam_es::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionCNAMEs$Message */ =>  {
-                let var_45 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_45);
+                builder = builder.set_message(var_47);
             }
             ,
             _ => {}
@@ -1524,7 +1590,7 @@ pub fn deser_structure_too_many_distributions_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributions$Message */ =>  {
-                let var_46 =
+                let var_48 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1533,7 +1599,7 @@ pub fn deser_structure_too_many_distributions_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_46);
+                builder = builder.set_message(var_48);
             }
             ,
             _ => {}
@@ -1560,7 +1626,7 @@ pub fn deser_structure_too_many_distributions_associated_to_cache_policy_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsAssociatedToCachePolicy$Message */ =>  {
-                let var_47 =
+                let var_49 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1569,7 +1635,7 @@ pub fn deser_structure_too_many_distributions_associated_to_cache_policy_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_47);
+                builder = builder.set_message(var_49);
             }
             ,
             _ => {}
@@ -1596,7 +1662,7 @@ pub fn deser_structure_too_many_distributions_associated_to_field_level_encrypti
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsAssociatedToFieldLevelEncryptionConfig$Message */ =>  {
-                let var_48 =
+                let var_50 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1605,7 +1671,7 @@ pub fn deser_structure_too_many_distributions_associated_to_field_level_encrypti
                         ?
                     )
                 ;
-                builder = builder.set_message(var_48);
+                builder = builder.set_message(var_50);
             }
             ,
             _ => {}
@@ -1632,7 +1698,7 @@ pub fn deser_structure_too_many_distributions_associated_to_key_group_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsAssociatedToKeyGroup$Message */ =>  {
-                let var_49 =
+                let var_51 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1641,7 +1707,7 @@ pub fn deser_structure_too_many_distributions_associated_to_key_group_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_49);
+                builder = builder.set_message(var_51);
             }
             ,
             _ => {}
@@ -1668,7 +1734,7 @@ pub fn deser_structure_too_many_distributions_associated_to_origin_request_polic
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginRequestPolicy$Message */ =>  {
-                let var_50 =
+                let var_52 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1677,7 +1743,7 @@ pub fn deser_structure_too_many_distributions_associated_to_origin_request_polic
                         ?
                     )
                 ;
-                builder = builder.set_message(var_50);
+                builder = builder.set_message(var_52);
             }
             ,
             _ => {}
@@ -1704,7 +1770,7 @@ pub fn deser_structure_too_many_distributions_with_function_associations_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsWithFunctionAssociations$Message */ =>  {
-                let var_51 =
+                let var_53 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1713,7 +1779,7 @@ pub fn deser_structure_too_many_distributions_with_function_associations_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_51);
+                builder = builder.set_message(var_53);
             }
             ,
             _ => {}
@@ -1740,7 +1806,7 @@ pub fn deser_structure_too_many_distributions_with_lambda_associations_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsWithLambdaAssociations$Message */ =>  {
-                let var_52 =
+                let var_54 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1749,7 +1815,7 @@ pub fn deser_structure_too_many_distributions_with_lambda_associations_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_52);
+                builder = builder.set_message(var_54);
             }
             ,
             _ => {}
@@ -1776,7 +1842,7 @@ pub fn deser_structure_too_many_distributions_with_single_function_arn_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyDistributionsWithSingleFunctionARN$Message */ =>  {
-                let var_53 =
+                let var_55 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1785,7 +1851,7 @@ pub fn deser_structure_too_many_distributions_with_single_function_arn_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_53);
+                builder = builder.set_message(var_55);
             }
             ,
             _ => {}
@@ -1809,7 +1875,7 @@ pub fn deser_structure_too_many_function_associations_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFunctionAssociations$Message */ =>  {
-                let var_54 =
+                let var_56 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1818,7 +1884,7 @@ pub fn deser_structure_too_many_function_associations_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_54);
+                builder = builder.set_message(var_56);
             }
             ,
             _ => {}
@@ -1843,7 +1909,7 @@ pub fn deser_structure_too_many_headers_in_forwarded_values_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyHeadersInForwardedValues$Message */ =>  {
-                let var_55 =
+                let var_57 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1852,7 +1918,7 @@ pub fn deser_structure_too_many_headers_in_forwarded_values_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_55);
+                builder = builder.set_message(var_57);
             }
             ,
             _ => {}
@@ -1879,7 +1945,7 @@ pub fn deser_structure_too_many_key_groups_associated_to_distribution_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyKeyGroupsAssociatedToDistribution$Message */ =>  {
-                let var_56 =
+                let var_58 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1888,7 +1954,7 @@ pub fn deser_structure_too_many_key_groups_associated_to_distribution_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_56);
+                builder = builder.set_message(var_58);
             }
             ,
             _ => {}
@@ -1915,7 +1981,7 @@ pub fn deser_structure_too_many_lambda_function_associations_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyLambdaFunctionAssociations$Message */ =>  {
-                let var_57 =
+                let var_59 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1924,7 +1990,7 @@ pub fn deser_structure_too_many_lambda_function_associations_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_57);
+                builder = builder.set_message(var_59);
             }
             ,
             _ => {}
@@ -1948,7 +2014,7 @@ pub fn deser_structure_too_many_origin_custom_headers_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyOriginCustomHeaders$Message */ =>  {
-                let var_58 =
+                let var_60 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1957,7 +2023,7 @@ pub fn deser_structure_too_many_origin_custom_headers_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_58);
+                builder = builder.set_message(var_60);
             }
             ,
             _ => {}
@@ -1984,7 +2050,7 @@ pub fn deser_structure_too_many_origin_groups_per_distribution_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyOriginGroupsPerDistribution$Message */ =>  {
-                let var_59 =
+                let var_61 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1993,7 +2059,7 @@ pub fn deser_structure_too_many_origin_groups_per_distribution_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_59);
+                builder = builder.set_message(var_61);
             }
             ,
             _ => {}
@@ -2017,7 +2083,7 @@ pub fn deser_structure_too_many_origins_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyOrigins$Message */ =>  {
-                let var_60 =
+                let var_62 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2026,7 +2092,7 @@ pub fn deser_structure_too_many_origins_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_60);
+                builder = builder.set_message(var_62);
             }
             ,
             _ => {}
@@ -2050,7 +2116,7 @@ pub fn deser_structure_too_many_query_string_parameters_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyQueryStringParameters$Message */ =>  {
-                let var_61 =
+                let var_63 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2059,7 +2125,7 @@ pub fn deser_structure_too_many_query_string_parameters_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_61);
+                builder = builder.set_message(var_63);
             }
             ,
             _ => {}
@@ -2083,7 +2149,7 @@ pub fn deser_structure_too_many_trusted_signers_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyTrustedSigners$Message */ =>  {
-                let var_62 =
+                let var_64 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2092,7 +2158,7 @@ pub fn deser_structure_too_many_trusted_signers_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_62);
+                builder = builder.set_message(var_64);
             }
             ,
             _ => {}
@@ -2116,7 +2182,7 @@ pub fn deser_structure_trusted_key_group_does_not_exist_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TrustedKeyGroupDoesNotExist$Message */ =>  {
-                let var_63 =
+                let var_65 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2125,7 +2191,7 @@ pub fn deser_structure_trusted_key_group_does_not_exist_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_63);
+                builder = builder.set_message(var_65);
             }
             ,
             _ => {}
@@ -2149,7 +2215,7 @@ pub fn deser_structure_trusted_signer_does_not_exist_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TrustedSignerDoesNotExist$Message */ =>  {
-                let var_64 =
+                let var_66 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2158,7 +2224,7 @@ pub fn deser_structure_trusted_signer_does_not_exist_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_64);
+                builder = builder.set_message(var_66);
             }
             ,
             _ => {}
@@ -2182,7 +2248,7 @@ pub fn deser_structure_invalid_tagging_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidTagging$Message */ =>  {
-                let var_65 =
+                let var_67 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2191,7 +2257,7 @@ pub fn deser_structure_invalid_tagging_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_65);
+                builder = builder.set_message(var_67);
             }
             ,
             _ => {}
@@ -2218,7 +2284,7 @@ pub fn deser_structure_field_level_encryption_config_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FieldLevelEncryptionConfigAlreadyExists$Message */ =>  {
-                let var_66 =
+                let var_68 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2227,7 +2293,7 @@ pub fn deser_structure_field_level_encryption_config_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_66);
+                builder = builder.set_message(var_68);
             }
             ,
             _ => {}
@@ -2254,7 +2320,7 @@ pub fn deser_structure_no_such_field_level_encryption_profile_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchFieldLevelEncryptionProfile$Message */ =>  {
-                let var_67 =
+                let var_69 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2263,7 +2329,7 @@ pub fn deser_structure_no_such_field_level_encryption_profile_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_67);
+                builder = builder.set_message(var_69);
             }
             ,
             _ => {}
@@ -2287,7 +2353,7 @@ pub fn deser_structure_query_arg_profile_empty_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#QueryArgProfileEmpty$Message */ =>  {
-                let var_68 =
+                let var_70 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2296,7 +2362,7 @@ pub fn deser_structure_query_arg_profile_empty_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_68);
+                builder = builder.set_message(var_70);
             }
             ,
             _ => {}
@@ -2323,7 +2389,7 @@ pub fn deser_structure_too_many_field_level_encryption_configs_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionConfigs$Message */ =>  {
-                let var_69 =
+                let var_71 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2332,7 +2398,7 @@ pub fn deser_structure_too_many_field_level_encryption_configs_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_69);
+                builder = builder.set_message(var_71);
             }
             ,
             _ => {}
@@ -2359,7 +2425,7 @@ pub fn deser_structure_too_many_field_level_encryption_content_type_profiles_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionContentTypeProfiles$Message */ =>  {
-                let var_70 =
+                let var_72 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2368,7 +2434,7 @@ pub fn deser_structure_too_many_field_level_encryption_content_type_profiles_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_70);
+                builder = builder.set_message(var_72);
             }
             ,
             _ => {}
@@ -2395,7 +2461,7 @@ pub fn deser_structure_too_many_field_level_encryption_query_arg_profiles_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionQueryArgProfiles$Message */ =>  {
-                let var_71 =
+                let var_73 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2404,7 +2470,7 @@ pub fn deser_structure_too_many_field_level_encryption_query_arg_profiles_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_71);
+                builder = builder.set_message(var_73);
             }
             ,
             _ => {}
@@ -2431,7 +2497,7 @@ pub fn deser_structure_field_level_encryption_profile_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FieldLevelEncryptionProfileAlreadyExists$Message */ =>  {
-                let var_72 =
+                let var_74 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2440,7 +2506,7 @@ pub fn deser_structure_field_level_encryption_profile_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_72);
+                builder = builder.set_message(var_74);
             }
             ,
             _ => {}
@@ -2467,7 +2533,7 @@ pub fn deser_structure_field_level_encryption_profile_size_exceeded_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FieldLevelEncryptionProfileSizeExceeded$Message */ =>  {
-                let var_73 =
+                let var_75 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2476,7 +2542,7 @@ pub fn deser_structure_field_level_encryption_profile_size_exceeded_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_73);
+                builder = builder.set_message(var_75);
             }
             ,
             _ => {}
@@ -2500,7 +2566,7 @@ pub fn deser_structure_no_such_public_key_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchPublicKey$Message */ =>  {
-                let var_74 =
+                let var_76 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2509,7 +2575,7 @@ pub fn deser_structure_no_such_public_key_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_74);
+                builder = builder.set_message(var_76);
             }
             ,
             _ => {}
@@ -2536,7 +2602,7 @@ pub fn deser_structure_too_many_field_level_encryption_encryption_entities_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionEncryptionEntities$Message */ =>  {
-                let var_75 =
+                let var_77 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2545,7 +2611,7 @@ pub fn deser_structure_too_many_field_level_encryption_encryption_entities_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_75);
+                builder = builder.set_message(var_77);
             }
             ,
             _ => {}
@@ -2572,7 +2638,7 @@ pub fn deser_structure_too_many_field_level_encryption_field_patterns_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionFieldPatterns$Message */ =>  {
-                let var_76 =
+                let var_78 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2581,7 +2647,7 @@ pub fn deser_structure_too_many_field_level_encryption_field_patterns_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_76);
+                builder = builder.set_message(var_78);
             }
             ,
             _ => {}
@@ -2608,7 +2674,7 @@ pub fn deser_structure_too_many_field_level_encryption_profiles_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFieldLevelEncryptionProfiles$Message */ =>  {
-                let var_77 =
+                let var_79 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2617,7 +2683,7 @@ pub fn deser_structure_too_many_field_level_encryption_profiles_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_77);
+                builder = builder.set_message(var_79);
             }
             ,
             _ => {}
@@ -2641,7 +2707,7 @@ pub fn deser_structure_function_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FunctionAlreadyExists$Message */ =>  {
-                let var_78 =
+                let var_80 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2650,7 +2716,7 @@ pub fn deser_structure_function_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_78);
+                builder = builder.set_message(var_80);
             }
             ,
             _ => {}
@@ -2674,7 +2740,7 @@ pub fn deser_structure_function_size_limit_exceeded_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FunctionSizeLimitExceeded$Message */ =>  {
-                let var_79 =
+                let var_81 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2683,7 +2749,7 @@ pub fn deser_structure_function_size_limit_exceeded_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_79);
+                builder = builder.set_message(var_81);
             }
             ,
             _ => {}
@@ -2707,7 +2773,7 @@ pub fn deser_structure_too_many_functions_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyFunctions$Message */ =>  {
-                let var_80 =
+                let var_82 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2716,7 +2782,40 @@ pub fn deser_structure_too_many_functions_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_80);
+                builder = builder.set_message(var_82);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_unsupported_operation_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::unsupported_operation::Builder,
+) -> Result<crate::error::unsupported_operation::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudfront#UnsupportedOperation$Message */ =>  {
+                let var_83 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_83);
             }
             ,
             _ => {}
@@ -2740,7 +2839,7 @@ pub fn deser_structure_batch_too_large_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#BatchTooLarge$Message */ =>  {
-                let var_81 =
+                let var_84 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2749,40 +2848,7 @@ pub fn deser_structure_batch_too_large_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_81);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_no_such_distribution_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::no_such_distribution::Builder,
-) -> Result<crate::error::no_such_distribution::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchDistribution$Message */ =>  {
-                let var_82 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_82);
+                builder = builder.set_message(var_84);
             }
             ,
             _ => {}
@@ -2807,7 +2873,7 @@ pub fn deser_structure_too_many_invalidations_in_progress_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyInvalidationsInProgress$Message */ =>  {
-                let var_83 =
+                let var_85 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2816,7 +2882,7 @@ pub fn deser_structure_too_many_invalidations_in_progress_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_83);
+                builder = builder.set_message(var_85);
             }
             ,
             _ => {}
@@ -2840,7 +2906,7 @@ pub fn deser_structure_key_group_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#KeyGroupAlreadyExists$Message */ =>  {
-                let var_84 =
+                let var_86 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2849,7 +2915,7 @@ pub fn deser_structure_key_group_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_84);
+                builder = builder.set_message(var_86);
             }
             ,
             _ => {}
@@ -2873,7 +2939,7 @@ pub fn deser_structure_too_many_key_groups_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyKeyGroups$Message */ =>  {
-                let var_85 =
+                let var_87 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2882,7 +2948,7 @@ pub fn deser_structure_too_many_key_groups_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_85);
+                builder = builder.set_message(var_87);
             }
             ,
             _ => {}
@@ -2907,7 +2973,7 @@ pub fn deser_structure_too_many_public_keys_in_key_group_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyPublicKeysInKeyGroup$Message */ =>  {
-                let var_86 =
+                let var_88 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2916,40 +2982,7 @@ pub fn deser_structure_too_many_public_keys_in_key_group_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_86);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_unsupported_operation_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::unsupported_operation::Builder,
-) -> Result<crate::error::unsupported_operation::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#UnsupportedOperation$Message */ =>  {
-                let var_87 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_87);
+                builder = builder.set_message(var_88);
             }
             ,
             _ => {}
@@ -2974,7 +3007,7 @@ pub fn deser_structure_origin_request_policy_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#OriginRequestPolicyAlreadyExists$Message */ =>  {
-                let var_88 =
+                let var_89 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2983,7 +3016,7 @@ pub fn deser_structure_origin_request_policy_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_88);
+                builder = builder.set_message(var_89);
             }
             ,
             _ => {}
@@ -3010,7 +3043,7 @@ pub fn deser_structure_too_many_cookies_in_origin_request_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyCookiesInOriginRequestPolicy$Message */ =>  {
-                let var_89 =
+                let var_90 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3019,7 +3052,7 @@ pub fn deser_structure_too_many_cookies_in_origin_request_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_89);
+                builder = builder.set_message(var_90);
             }
             ,
             _ => {}
@@ -3046,7 +3079,7 @@ pub fn deser_structure_too_many_headers_in_origin_request_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyHeadersInOriginRequestPolicy$Message */ =>  {
-                let var_90 =
+                let var_91 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3055,7 +3088,7 @@ pub fn deser_structure_too_many_headers_in_origin_request_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_90);
+                builder = builder.set_message(var_91);
             }
             ,
             _ => {}
@@ -3079,7 +3112,7 @@ pub fn deser_structure_too_many_origin_request_policies_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyOriginRequestPolicies$Message */ =>  {
-                let var_91 =
+                let var_92 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3088,7 +3121,7 @@ pub fn deser_structure_too_many_origin_request_policies_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_91);
+                builder = builder.set_message(var_92);
             }
             ,
             _ => {}
@@ -3115,7 +3148,7 @@ pub fn deser_structure_too_many_query_strings_in_origin_request_policy_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyQueryStringsInOriginRequestPolicy$Message */ =>  {
-                let var_92 =
+                let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3124,7 +3157,7 @@ pub fn deser_structure_too_many_query_strings_in_origin_request_policy_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_92);
+                builder = builder.set_message(var_93);
             }
             ,
             _ => {}
@@ -3148,7 +3181,7 @@ pub fn deser_structure_public_key_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#PublicKeyAlreadyExists$Message */ =>  {
-                let var_93 =
+                let var_94 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3157,7 +3190,7 @@ pub fn deser_structure_public_key_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_93);
+                builder = builder.set_message(var_94);
             }
             ,
             _ => {}
@@ -3181,7 +3214,7 @@ pub fn deser_structure_too_many_public_keys_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyPublicKeys$Message */ =>  {
-                let var_94 =
+                let var_95 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3190,7 +3223,7 @@ pub fn deser_structure_too_many_public_keys_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_94);
+                builder = builder.set_message(var_95);
             }
             ,
             _ => {}
@@ -3215,7 +3248,7 @@ pub fn deser_structure_realtime_log_config_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#RealtimeLogConfigAlreadyExists$Message */ =>  {
-                let var_95 =
+                let var_96 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3224,7 +3257,7 @@ pub fn deser_structure_realtime_log_config_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_95);
+                builder = builder.set_message(var_96);
             }
             ,
             _ => {}
@@ -3248,7 +3281,7 @@ pub fn deser_structure_too_many_realtime_log_configs_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyRealtimeLogConfigs$Message */ =>  {
-                let var_96 =
+                let var_97 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3257,7 +3290,7 @@ pub fn deser_structure_too_many_realtime_log_configs_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_96);
+                builder = builder.set_message(var_97);
             }
             ,
             _ => {}
@@ -3287,13 +3320,13 @@ pub fn deser_operation_create_realtime_log_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront#CreateRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
-                let var_97 =
+                let var_98 =
                     Some(
                         crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config(var_97);
+                builder = builder.set_realtime_log_config(var_98);
             }
             ,
             _ => {}
@@ -3320,7 +3353,7 @@ pub fn deser_structure_streaming_distribution_already_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#StreamingDistributionAlreadyExists$Message */ =>  {
-                let var_98 =
+                let var_99 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3329,7 +3362,7 @@ pub fn deser_structure_streaming_distribution_already_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_98);
+                builder = builder.set_message(var_99);
             }
             ,
             _ => {}
@@ -3356,7 +3389,7 @@ pub fn deser_structure_too_many_streaming_distribution_cnam_es_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyStreamingDistributionCNAMEs$Message */ =>  {
-                let var_99 =
+                let var_100 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3365,7 +3398,7 @@ pub fn deser_structure_too_many_streaming_distribution_cnam_es_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_99);
+                builder = builder.set_message(var_100);
             }
             ,
             _ => {}
@@ -3389,7 +3422,7 @@ pub fn deser_structure_too_many_streaming_distributions_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TooManyStreamingDistributions$Message */ =>  {
-                let var_100 =
+                let var_101 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3398,7 +3431,7 @@ pub fn deser_structure_too_many_streaming_distributions_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_100);
+                builder = builder.set_message(var_101);
             }
             ,
             _ => {}
@@ -3422,7 +3455,7 @@ pub fn deser_structure_cache_policy_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#CachePolicyInUse$Message */ =>  {
-                let var_101 =
+                let var_102 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3431,7 +3464,7 @@ pub fn deser_structure_cache_policy_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_101);
+                builder = builder.set_message(var_102);
             }
             ,
             _ => {}
@@ -3455,7 +3488,7 @@ pub fn deser_structure_illegal_delete_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#IllegalDelete$Message */ =>  {
-                let var_102 =
+                let var_103 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3464,7 +3497,7 @@ pub fn deser_structure_illegal_delete_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_102);
+                builder = builder.set_message(var_103);
             }
             ,
             _ => {}
@@ -3488,7 +3521,7 @@ pub fn deser_structure_invalid_if_match_version_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidIfMatchVersion$Message */ =>  {
-                let var_103 =
+                let var_104 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3497,7 +3530,7 @@ pub fn deser_structure_invalid_if_match_version_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_103);
+                builder = builder.set_message(var_104);
             }
             ,
             _ => {}
@@ -3521,7 +3554,7 @@ pub fn deser_structure_precondition_failed_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#PreconditionFailed$Message */ =>  {
-                let var_104 =
+                let var_105 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3530,7 +3563,7 @@ pub fn deser_structure_precondition_failed_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_104);
+                builder = builder.set_message(var_105);
             }
             ,
             _ => {}
@@ -3557,7 +3590,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#CloudFrontOriginAccessIdentityInUse$Message */ =>  {
-                let var_105 =
+                let var_106 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3566,7 +3599,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_105);
+                builder = builder.set_message(var_106);
             }
             ,
             _ => {}
@@ -3593,7 +3626,7 @@ pub fn deser_structure_no_such_cloud_front_origin_access_identity_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchCloudFrontOriginAccessIdentity$Message */ =>  {
-                let var_106 =
+                let var_107 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3602,7 +3635,7 @@ pub fn deser_structure_no_such_cloud_front_origin_access_identity_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_106);
+                builder = builder.set_message(var_107);
             }
             ,
             _ => {}
@@ -3626,7 +3659,7 @@ pub fn deser_structure_distribution_not_disabled_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#DistributionNotDisabled$Message */ =>  {
-                let var_107 =
+                let var_108 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3635,7 +3668,7 @@ pub fn deser_structure_distribution_not_disabled_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_107);
+                builder = builder.set_message(var_108);
             }
             ,
             _ => {}
@@ -3660,7 +3693,7 @@ pub fn deser_structure_field_level_encryption_config_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FieldLevelEncryptionConfigInUse$Message */ =>  {
-                let var_108 =
+                let var_109 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3669,7 +3702,7 @@ pub fn deser_structure_field_level_encryption_config_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_108);
+                builder = builder.set_message(var_109);
             }
             ,
             _ => {}
@@ -3696,7 +3729,7 @@ pub fn deser_structure_field_level_encryption_profile_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FieldLevelEncryptionProfileInUse$Message */ =>  {
-                let var_109 =
+                let var_110 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3705,7 +3738,7 @@ pub fn deser_structure_field_level_encryption_profile_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_109);
+                builder = builder.set_message(var_110);
             }
             ,
             _ => {}
@@ -3729,7 +3762,7 @@ pub fn deser_structure_function_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#FunctionInUse$Message */ =>  {
-                let var_110 =
+                let var_111 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3738,7 +3771,7 @@ pub fn deser_structure_function_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_110);
+                builder = builder.set_message(var_111);
             }
             ,
             _ => {}
@@ -3762,7 +3795,7 @@ pub fn deser_structure_no_such_function_exists_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchFunctionExists$Message */ =>  {
-                let var_111 =
+                let var_112 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3771,7 +3804,7 @@ pub fn deser_structure_no_such_function_exists_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_111);
+                builder = builder.set_message(var_112);
             }
             ,
             _ => {}
@@ -3795,7 +3828,7 @@ pub fn deser_structure_no_such_resource_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchResource$Message */ =>  {
-                let var_112 =
+                let var_113 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3804,7 +3837,7 @@ pub fn deser_structure_no_such_resource_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_112);
+                builder = builder.set_message(var_113);
             }
             ,
             _ => {}
@@ -3828,7 +3861,7 @@ pub fn deser_structure_resource_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#ResourceInUse$Message */ =>  {
-                let var_113 =
+                let var_114 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3837,7 +3870,7 @@ pub fn deser_structure_resource_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_113);
+                builder = builder.set_message(var_114);
             }
             ,
             _ => {}
@@ -3861,7 +3894,7 @@ pub fn deser_structure_origin_request_policy_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#OriginRequestPolicyInUse$Message */ =>  {
-                let var_114 =
+                let var_115 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3870,7 +3903,7 @@ pub fn deser_structure_origin_request_policy_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_114);
+                builder = builder.set_message(var_115);
             }
             ,
             _ => {}
@@ -3894,7 +3927,7 @@ pub fn deser_structure_public_key_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#PublicKeyInUse$Message */ =>  {
-                let var_115 =
+                let var_116 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3903,7 +3936,7 @@ pub fn deser_structure_public_key_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_115);
+                builder = builder.set_message(var_116);
             }
             ,
             _ => {}
@@ -3927,7 +3960,7 @@ pub fn deser_structure_realtime_log_config_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#RealtimeLogConfigInUse$Message */ =>  {
-                let var_116 =
+                let var_117 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3936,7 +3969,7 @@ pub fn deser_structure_realtime_log_config_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_116);
+                builder = builder.set_message(var_117);
             }
             ,
             _ => {}
@@ -3960,7 +3993,7 @@ pub fn deser_structure_no_such_streaming_distribution_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchStreamingDistribution$Message */ =>  {
-                let var_117 =
+                let var_118 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3969,7 +4002,7 @@ pub fn deser_structure_no_such_streaming_distribution_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_117);
+                builder = builder.set_message(var_118);
             }
             ,
             _ => {}
@@ -3994,7 +4027,7 @@ pub fn deser_structure_streaming_distribution_not_disabled_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#StreamingDistributionNotDisabled$Message */ =>  {
-                let var_118 =
+                let var_119 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4003,7 +4036,7 @@ pub fn deser_structure_streaming_distribution_not_disabled_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_118);
+                builder = builder.set_message(var_119);
             }
             ,
             _ => {}
@@ -4027,7 +4060,7 @@ pub fn deser_structure_no_such_invalidation_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#NoSuchInvalidation$Message */ =>  {
-                let var_119 =
+                let var_120 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4036,7 +4069,7 @@ pub fn deser_structure_no_such_invalidation_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_119);
+                builder = builder.set_message(var_120);
             }
             ,
             _ => {}
@@ -4065,13 +4098,13 @@ pub fn deser_operation_get_realtime_log_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront#GetRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
-                let var_120 =
+                let var_121 =
                     Some(
                         crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config(var_120);
+                builder = builder.set_realtime_log_config(var_121);
             }
             ,
             _ => {}
@@ -4095,39 +4128,6 @@ pub fn deser_structure_test_function_failed_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#TestFunctionFailed$Message */ =>  {
-                let var_121 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_121);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_illegal_update_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::illegal_update::Builder,
-) -> Result<crate::error::illegal_update::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudfront#IllegalUpdate$Message */ =>  {
                 let var_122 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4845,6 +4845,23 @@ pub fn deser_member_list_cloud_front_origin_access_identities_output_cloud_front
         )));
     }
     crate::xml_deser::deser_structure_cloud_front_origin_access_identity_list(&mut decoder)
+}
+
+pub fn deser_member_list_conflicting_aliases_output_conflicting_aliases_list(
+    inp: &[u8],
+) -> Result<crate::model::ConflictingAliasesList, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("ConflictingAliasesList")) {
+        return Err(smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected ConflictingAliasesList got {:?}",
+            start_el
+        )));
+    }
+    crate::xml_deser::deser_structure_conflicting_aliases_list(&mut decoder)
 }
 
 pub fn deser_member_list_distributions_output_distribution_list(
@@ -7042,14 +7059,14 @@ pub fn deser_structure_cloud_front_origin_access_identity_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution_list(
+pub fn deser_structure_conflicting_aliases_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::ConflictingAliasesList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DistributionList::builder();
+    let mut builder = crate::model::ConflictingAliasesList::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#DistributionList$Marker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#ConflictingAliasesList$NextMarker */ =>  {
                 let var_240 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -7059,23 +7076,25 @@ pub fn deser_structure_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_240);
+                builder = builder.set_next_marker(var_240);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#DistributionList$NextMarker */ =>  {
+            s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#ConflictingAliasesList$MaxItems */ =>  {
                 let var_241 =
                     Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_241);
+                builder = builder.set_max_items(var_241);
             }
             ,
-            s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#DistributionList$MaxItems */ =>  {
+            s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#ConflictingAliasesList$Quantity */ =>  {
                 let var_242 =
                     Some(
                          {
@@ -7087,26 +7106,60 @@ pub fn deser_structure_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_242);
+                builder = builder.set_quantity(var_242);
             }
             ,
-            s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#DistributionList$IsTruncated */ =>  {
+            s if s.matches("Items") /* Items com.amazonaws.cloudfront#ConflictingAliasesList$Items */ =>  {
                 let var_243 =
                     Some(
-                         {
-                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
+                        crate::xml_deser::deser_list_conflicting_aliases(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_243);
+                builder = builder.set_items(var_243);
             }
             ,
-            s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#DistributionList$Quantity */ =>  {
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_distribution_list(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::DistributionList::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#DistributionList$Marker */ =>  {
                 let var_244 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_marker(var_244);
+            }
+            ,
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#DistributionList$NextMarker */ =>  {
+                let var_245 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_marker(var_245);
+            }
+            ,
+            s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#DistributionList$MaxItems */ =>  {
+                let var_246 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7117,17 +7170,47 @@ pub fn deser_structure_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_244);
+                builder = builder.set_max_items(var_246);
+            }
+            ,
+            s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#DistributionList$IsTruncated */ =>  {
+                let var_247 =
+                    Some(
+                         {
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_truncated(var_247);
+            }
+            ,
+            s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#DistributionList$Quantity */ =>  {
+                let var_248 =
+                    Some(
+                         {
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_quantity(var_248);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#DistributionList$Items */ =>  {
-                let var_245 =
+                let var_249 =
                     Some(
                         crate::xml_deser::deser_list_distribution_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_245);
+                builder = builder.set_items(var_249);
             }
             ,
             _ => {}
@@ -7144,7 +7227,7 @@ pub fn deser_structure_distribution_id_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#DistributionIdList$Marker */ =>  {
-                let var_246 =
+                let var_250 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7153,11 +7236,11 @@ pub fn deser_structure_distribution_id_list(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_246);
+                builder = builder.set_marker(var_250);
             }
             ,
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#DistributionIdList$NextMarker */ =>  {
-                let var_247 =
+                let var_251 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7166,11 +7249,11 @@ pub fn deser_structure_distribution_id_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_247);
+                builder = builder.set_next_marker(var_251);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#DistributionIdList$MaxItems */ =>  {
-                let var_248 =
+                let var_252 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7181,11 +7264,11 @@ pub fn deser_structure_distribution_id_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_248);
+                builder = builder.set_max_items(var_252);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#DistributionIdList$IsTruncated */ =>  {
-                let var_249 =
+                let var_253 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7196,11 +7279,11 @@ pub fn deser_structure_distribution_id_list(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_249);
+                builder = builder.set_is_truncated(var_253);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#DistributionIdList$Quantity */ =>  {
-                let var_250 =
+                let var_254 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7211,17 +7294,17 @@ pub fn deser_structure_distribution_id_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_250);
+                builder = builder.set_quantity(var_254);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#DistributionIdList$Items */ =>  {
-                let var_251 =
+                let var_255 =
                     Some(
                         crate::xml_deser::deser_list_distribution_id_list_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_251);
+                builder = builder.set_items(var_255);
             }
             ,
             _ => {}
@@ -7238,7 +7321,7 @@ pub fn deser_structure_field_level_encryption_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#FieldLevelEncryptionList$NextMarker */ =>  {
-                let var_252 =
+                let var_256 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7247,11 +7330,11 @@ pub fn deser_structure_field_level_encryption_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_252);
+                builder = builder.set_next_marker(var_256);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#FieldLevelEncryptionList$MaxItems */ =>  {
-                let var_253 =
+                let var_257 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7262,11 +7345,11 @@ pub fn deser_structure_field_level_encryption_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_253);
+                builder = builder.set_max_items(var_257);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#FieldLevelEncryptionList$Quantity */ =>  {
-                let var_254 =
+                let var_258 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7277,17 +7360,17 @@ pub fn deser_structure_field_level_encryption_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_254);
+                builder = builder.set_quantity(var_258);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldLevelEncryptionList$Items */ =>  {
-                let var_255 =
+                let var_259 =
                     Some(
                         crate::xml_deser::deser_list_field_level_encryption_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_255);
+                builder = builder.set_items(var_259);
             }
             ,
             _ => {}
@@ -7304,7 +7387,7 @@ pub fn deser_structure_field_level_encryption_profile_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#FieldLevelEncryptionProfileList$NextMarker */ =>  {
-                let var_256 =
+                let var_260 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7313,11 +7396,11 @@ pub fn deser_structure_field_level_encryption_profile_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_256);
+                builder = builder.set_next_marker(var_260);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#FieldLevelEncryptionProfileList$MaxItems */ =>  {
-                let var_257 =
+                let var_261 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7328,11 +7411,11 @@ pub fn deser_structure_field_level_encryption_profile_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_257);
+                builder = builder.set_max_items(var_261);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#FieldLevelEncryptionProfileList$Quantity */ =>  {
-                let var_258 =
+                let var_262 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7343,17 +7426,17 @@ pub fn deser_structure_field_level_encryption_profile_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_258);
+                builder = builder.set_quantity(var_262);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldLevelEncryptionProfileList$Items */ =>  {
-                let var_259 =
+                let var_263 =
                     Some(
                         crate::xml_deser::deser_list_field_level_encryption_profile_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_259);
+                builder = builder.set_items(var_263);
             }
             ,
             _ => {}
@@ -7370,7 +7453,7 @@ pub fn deser_structure_function_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#FunctionList$NextMarker */ =>  {
-                let var_260 =
+                let var_264 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7379,11 +7462,11 @@ pub fn deser_structure_function_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_260);
+                builder = builder.set_next_marker(var_264);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#FunctionList$MaxItems */ =>  {
-                let var_261 =
+                let var_265 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7394,11 +7477,11 @@ pub fn deser_structure_function_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_261);
+                builder = builder.set_max_items(var_265);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#FunctionList$Quantity */ =>  {
-                let var_262 =
+                let var_266 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7409,17 +7492,17 @@ pub fn deser_structure_function_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_262);
+                builder = builder.set_quantity(var_266);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FunctionList$Items */ =>  {
-                let var_263 =
+                let var_267 =
                     Some(
                         crate::xml_deser::deser_list_function_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_263);
+                builder = builder.set_items(var_267);
             }
             ,
             _ => {}
@@ -7436,7 +7519,7 @@ pub fn deser_structure_invalidation_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#InvalidationList$Marker */ =>  {
-                let var_264 =
+                let var_268 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7445,11 +7528,11 @@ pub fn deser_structure_invalidation_list(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_264);
+                builder = builder.set_marker(var_268);
             }
             ,
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#InvalidationList$NextMarker */ =>  {
-                let var_265 =
+                let var_269 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7458,11 +7541,11 @@ pub fn deser_structure_invalidation_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_265);
+                builder = builder.set_next_marker(var_269);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#InvalidationList$MaxItems */ =>  {
-                let var_266 =
+                let var_270 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7473,11 +7556,11 @@ pub fn deser_structure_invalidation_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_266);
+                builder = builder.set_max_items(var_270);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#InvalidationList$IsTruncated */ =>  {
-                let var_267 =
+                let var_271 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7488,11 +7571,11 @@ pub fn deser_structure_invalidation_list(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_267);
+                builder = builder.set_is_truncated(var_271);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#InvalidationList$Quantity */ =>  {
-                let var_268 =
+                let var_272 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7503,17 +7586,17 @@ pub fn deser_structure_invalidation_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_268);
+                builder = builder.set_quantity(var_272);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#InvalidationList$Items */ =>  {
-                let var_269 =
+                let var_273 =
                     Some(
                         crate::xml_deser::deser_list_invalidation_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_269);
+                builder = builder.set_items(var_273);
             }
             ,
             _ => {}
@@ -7530,7 +7613,7 @@ pub fn deser_structure_key_group_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#KeyGroupList$NextMarker */ =>  {
-                let var_270 =
+                let var_274 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7539,11 +7622,11 @@ pub fn deser_structure_key_group_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_270);
+                builder = builder.set_next_marker(var_274);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#KeyGroupList$MaxItems */ =>  {
-                let var_271 =
+                let var_275 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7554,11 +7637,11 @@ pub fn deser_structure_key_group_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_271);
+                builder = builder.set_max_items(var_275);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#KeyGroupList$Quantity */ =>  {
-                let var_272 =
+                let var_276 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7569,17 +7652,17 @@ pub fn deser_structure_key_group_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_272);
+                builder = builder.set_quantity(var_276);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyGroupList$Items */ =>  {
-                let var_273 =
+                let var_277 =
                     Some(
                         crate::xml_deser::deser_list_key_group_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_273);
+                builder = builder.set_items(var_277);
             }
             ,
             _ => {}
@@ -7596,7 +7679,7 @@ pub fn deser_structure_origin_request_policy_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#OriginRequestPolicyList$NextMarker */ =>  {
-                let var_274 =
+                let var_278 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7605,11 +7688,11 @@ pub fn deser_structure_origin_request_policy_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_274);
+                builder = builder.set_next_marker(var_278);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#OriginRequestPolicyList$MaxItems */ =>  {
-                let var_275 =
+                let var_279 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7620,11 +7703,11 @@ pub fn deser_structure_origin_request_policy_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_275);
+                builder = builder.set_max_items(var_279);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#OriginRequestPolicyList$Quantity */ =>  {
-                let var_276 =
+                let var_280 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7635,17 +7718,17 @@ pub fn deser_structure_origin_request_policy_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_276);
+                builder = builder.set_quantity(var_280);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginRequestPolicyList$Items */ =>  {
-                let var_277 =
+                let var_281 =
                     Some(
                         crate::xml_deser::deser_list_origin_request_policy_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_277);
+                builder = builder.set_items(var_281);
             }
             ,
             _ => {}
@@ -7662,7 +7745,7 @@ pub fn deser_structure_public_key_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#PublicKeyList$NextMarker */ =>  {
-                let var_278 =
+                let var_282 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7671,11 +7754,11 @@ pub fn deser_structure_public_key_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_278);
+                builder = builder.set_next_marker(var_282);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#PublicKeyList$MaxItems */ =>  {
-                let var_279 =
+                let var_283 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7686,11 +7769,11 @@ pub fn deser_structure_public_key_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_279);
+                builder = builder.set_max_items(var_283);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#PublicKeyList$Quantity */ =>  {
-                let var_280 =
+                let var_284 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7701,17 +7784,17 @@ pub fn deser_structure_public_key_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_280);
+                builder = builder.set_quantity(var_284);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#PublicKeyList$Items */ =>  {
-                let var_281 =
+                let var_285 =
                     Some(
                         crate::xml_deser::deser_list_public_key_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_281);
+                builder = builder.set_items(var_285);
             }
             ,
             _ => {}
@@ -7728,7 +7811,7 @@ pub fn deser_structure_realtime_log_configs(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#RealtimeLogConfigs$MaxItems */ =>  {
-                let var_282 =
+                let var_286 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7739,21 +7822,21 @@ pub fn deser_structure_realtime_log_configs(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_282);
+                builder = builder.set_max_items(var_286);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#RealtimeLogConfigs$Items */ =>  {
-                let var_283 =
+                let var_287 =
                     Some(
                         crate::xml_deser::deser_list_realtime_log_config_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_283);
+                builder = builder.set_items(var_287);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#RealtimeLogConfigs$IsTruncated */ =>  {
-                let var_284 =
+                let var_288 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7764,11 +7847,11 @@ pub fn deser_structure_realtime_log_configs(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_284);
+                builder = builder.set_is_truncated(var_288);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#RealtimeLogConfigs$Marker */ =>  {
-                let var_285 =
+                let var_289 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7777,11 +7860,11 @@ pub fn deser_structure_realtime_log_configs(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_285);
+                builder = builder.set_marker(var_289);
             }
             ,
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#RealtimeLogConfigs$NextMarker */ =>  {
-                let var_286 =
+                let var_290 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7790,7 +7873,7 @@ pub fn deser_structure_realtime_log_configs(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_286);
+                builder = builder.set_next_marker(var_290);
             }
             ,
             _ => {}
@@ -7807,7 +7890,7 @@ pub fn deser_structure_streaming_distribution_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.cloudfront#StreamingDistributionList$Marker */ =>  {
-                let var_287 =
+                let var_291 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7816,11 +7899,11 @@ pub fn deser_structure_streaming_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_287);
+                builder = builder.set_marker(var_291);
             }
             ,
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.cloudfront#StreamingDistributionList$NextMarker */ =>  {
-                let var_288 =
+                let var_292 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7829,11 +7912,11 @@ pub fn deser_structure_streaming_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_next_marker(var_288);
+                builder = builder.set_next_marker(var_292);
             }
             ,
             s if s.matches("MaxItems") /* MaxItems com.amazonaws.cloudfront#StreamingDistributionList$MaxItems */ =>  {
-                let var_289 =
+                let var_293 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7844,11 +7927,11 @@ pub fn deser_structure_streaming_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_max_items(var_289);
+                builder = builder.set_max_items(var_293);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.cloudfront#StreamingDistributionList$IsTruncated */ =>  {
-                let var_290 =
+                let var_294 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7859,11 +7942,11 @@ pub fn deser_structure_streaming_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_290);
+                builder = builder.set_is_truncated(var_294);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#StreamingDistributionList$Quantity */ =>  {
-                let var_291 =
+                let var_295 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7874,17 +7957,17 @@ pub fn deser_structure_streaming_distribution_list(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_291);
+                builder = builder.set_quantity(var_295);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#StreamingDistributionList$Items */ =>  {
-                let var_292 =
+                let var_296 =
                     Some(
                         crate::xml_deser::deser_list_streaming_distribution_summary_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_292);
+                builder = builder.set_items(var_296);
             }
             ,
             _ => {}
@@ -7901,13 +7984,13 @@ pub fn deser_structure_tags(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Tags$Items */ =>  {
-                let var_293 =
+                let var_297 =
                     Some(
                         crate::xml_deser::deser_list_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_293);
+                builder = builder.set_items(var_297);
             }
             ,
             _ => {}
@@ -7924,17 +8007,17 @@ pub fn deser_structure_test_result(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionSummary") /* FunctionSummary com.amazonaws.cloudfront#TestResult$FunctionSummary */ =>  {
-                let var_294 =
+                let var_298 =
                     Some(
                         crate::xml_deser::deser_structure_function_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_summary(var_294);
+                builder = builder.set_function_summary(var_298);
             }
             ,
             s if s.matches("ComputeUtilization") /* ComputeUtilization com.amazonaws.cloudfront#TestResult$ComputeUtilization */ =>  {
-                let var_295 =
+                let var_299 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7943,21 +8026,21 @@ pub fn deser_structure_test_result(
                         ?
                     )
                 ;
-                builder = builder.set_compute_utilization(var_295);
+                builder = builder.set_compute_utilization(var_299);
             }
             ,
             s if s.matches("FunctionExecutionLogs") /* FunctionExecutionLogs com.amazonaws.cloudfront#TestResult$FunctionExecutionLogs */ =>  {
-                let var_296 =
+                let var_300 =
                     Some(
                         crate::xml_deser::deser_list_function_execution_log_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_execution_logs(var_296);
+                builder = builder.set_function_execution_logs(var_300);
             }
             ,
             s if s.matches("FunctionErrorMessage") /* FunctionErrorMessage com.amazonaws.cloudfront#TestResult$FunctionErrorMessage */ =>  {
-                let var_297 =
+                let var_301 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7966,11 +8049,11 @@ pub fn deser_structure_test_result(
                         ?
                     )
                 ;
-                builder = builder.set_function_error_message(var_297);
+                builder = builder.set_function_error_message(var_301);
             }
             ,
             s if s.matches("FunctionOutput") /* FunctionOutput com.amazonaws.cloudfront#TestResult$FunctionOutput */ =>  {
-                let var_298 =
+                let var_302 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7979,7 +8062,7 @@ pub fn deser_structure_test_result(
                         ?
                     )
                 ;
-                builder = builder.set_function_output(var_298);
+                builder = builder.set_function_output(var_302);
             }
             ,
             _ => {}
@@ -8037,7 +8120,7 @@ pub fn deser_structure_active_trusted_signers(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#ActiveTrustedSigners$Enabled */ =>  {
-                let var_299 =
+                let var_303 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8048,11 +8131,11 @@ pub fn deser_structure_active_trusted_signers(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_299);
+                builder = builder.set_enabled(var_303);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#ActiveTrustedSigners$Quantity */ =>  {
-                let var_300 =
+                let var_304 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8063,17 +8146,17 @@ pub fn deser_structure_active_trusted_signers(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_300);
+                builder = builder.set_quantity(var_304);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ActiveTrustedSigners$Items */ =>  {
-                let var_301 =
+                let var_305 =
                     Some(
                         crate::xml_deser::deser_list_signer_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_301);
+                builder = builder.set_items(var_305);
             }
             ,
             _ => {}
@@ -8090,7 +8173,7 @@ pub fn deser_structure_active_trusted_key_groups(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#ActiveTrustedKeyGroups$Enabled */ =>  {
-                let var_302 =
+                let var_306 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8101,11 +8184,11 @@ pub fn deser_structure_active_trusted_key_groups(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_302);
+                builder = builder.set_enabled(var_306);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#ActiveTrustedKeyGroups$Quantity */ =>  {
-                let var_303 =
+                let var_307 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8116,17 +8199,17 @@ pub fn deser_structure_active_trusted_key_groups(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_303);
+                builder = builder.set_quantity(var_307);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ActiveTrustedKeyGroups$Items */ =>  {
-                let var_304 =
+                let var_308 =
                     Some(
                         crate::xml_deser::deser_list_kg_key_pair_ids_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_304);
+                builder = builder.set_items(var_308);
             }
             ,
             _ => {}
@@ -8162,7 +8245,7 @@ pub fn deser_structure_function_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#FunctionConfig$Comment */ =>  {
-                let var_305 =
+                let var_309 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8171,11 +8254,11 @@ pub fn deser_structure_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_305);
+                builder = builder.set_comment(var_309);
             }
             ,
             s if s.matches("Runtime") /* Runtime com.amazonaws.cloudfront#FunctionConfig$Runtime */ =>  {
-                let var_306 =
+                let var_310 =
                     Some(
                         Result::<crate::model::FunctionRuntime, smithy_xml::decode::XmlError>::Ok(
                             crate::model::FunctionRuntime::from(
@@ -8185,7 +8268,7 @@ pub fn deser_structure_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_runtime(var_306);
+                builder = builder.set_runtime(var_310);
             }
             ,
             _ => {}
@@ -8202,7 +8285,7 @@ pub fn deser_structure_function_metadata(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionARN") /* FunctionARN com.amazonaws.cloudfront#FunctionMetadata$FunctionARN */ =>  {
-                let var_307 =
+                let var_311 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8211,11 +8294,11 @@ pub fn deser_structure_function_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_function_arn(var_307);
+                builder = builder.set_function_arn(var_311);
             }
             ,
             s if s.matches("Stage") /* Stage com.amazonaws.cloudfront#FunctionMetadata$Stage */ =>  {
-                let var_308 =
+                let var_312 =
                     Some(
                         Result::<crate::model::FunctionStage, smithy_xml::decode::XmlError>::Ok(
                             crate::model::FunctionStage::from(
@@ -8225,11 +8308,11 @@ pub fn deser_structure_function_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_stage(var_308);
+                builder = builder.set_stage(var_312);
             }
             ,
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#FunctionMetadata$CreatedTime */ =>  {
-                let var_309 =
+                let var_313 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8239,11 +8322,11 @@ pub fn deser_structure_function_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_created_time(var_309);
+                builder = builder.set_created_time(var_313);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FunctionMetadata$LastModifiedTime */ =>  {
-                let var_310 =
+                let var_314 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8253,7 +8336,7 @@ pub fn deser_structure_function_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_310);
+                builder = builder.set_last_modified_time(var_314);
             }
             ,
             _ => {}
@@ -8270,17 +8353,17 @@ pub fn deser_structure_invalidation_batch(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Paths") /* Paths com.amazonaws.cloudfront#InvalidationBatch$Paths */ =>  {
-                let var_311 =
+                let var_315 =
                     Some(
                         crate::xml_deser::deser_structure_paths(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_paths(var_311);
+                builder = builder.set_paths(var_315);
             }
             ,
             s if s.matches("CallerReference") /* CallerReference com.amazonaws.cloudfront#InvalidationBatch$CallerReference */ =>  {
-                let var_312 =
+                let var_316 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8289,7 +8372,7 @@ pub fn deser_structure_invalidation_batch(
                         ?
                     )
                 ;
-                builder = builder.set_caller_reference(var_312);
+                builder = builder.set_caller_reference(var_316);
             }
             ,
             _ => {}
@@ -8306,7 +8389,7 @@ pub fn deser_structure_realtime_metrics_subscription_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RealtimeMetricsSubscriptionStatus") /* RealtimeMetricsSubscriptionStatus com.amazonaws.cloudfront#RealtimeMetricsSubscriptionConfig$RealtimeMetricsSubscriptionStatus */ =>  {
-                let var_313 =
+                let var_317 =
                     Some(
                         Result::<crate::model::RealtimeMetricsSubscriptionStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::RealtimeMetricsSubscriptionStatus::from(
@@ -8316,7 +8399,7 @@ pub fn deser_structure_realtime_metrics_subscription_config(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_metrics_subscription_status(var_313);
+                builder = builder.set_realtime_metrics_subscription_status(var_317);
             }
             ,
             _ => {}
@@ -8333,7 +8416,7 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EnableAcceptEncodingGzip") /* EnableAcceptEncodingGzip com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$EnableAcceptEncodingGzip */ =>  {
-                let var_314 =
+                let var_318 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8344,11 +8427,11 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
                         ?
                     )
                 ;
-                builder = builder.set_enable_accept_encoding_gzip(var_314);
+                builder = builder.set_enable_accept_encoding_gzip(var_318);
             }
             ,
             s if s.matches("EnableAcceptEncodingBrotli") /* EnableAcceptEncodingBrotli com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$EnableAcceptEncodingBrotli */ =>  {
-                let var_315 =
+                let var_319 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8359,37 +8442,37 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
                         ?
                     )
                 ;
-                builder = builder.set_enable_accept_encoding_brotli(var_315);
+                builder = builder.set_enable_accept_encoding_brotli(var_319);
             }
             ,
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$HeadersConfig */ =>  {
-                let var_316 =
+                let var_320 =
                     Some(
                         crate::xml_deser::deser_structure_cache_policy_headers_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers_config(var_316);
+                builder = builder.set_headers_config(var_320);
             }
             ,
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$CookiesConfig */ =>  {
-                let var_317 =
+                let var_321 =
                     Some(
                         crate::xml_deser::deser_structure_cache_policy_cookies_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies_config(var_317);
+                builder = builder.set_cookies_config(var_321);
             }
             ,
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$QueryStringsConfig */ =>  {
-                let var_318 =
+                let var_322 =
                     Some(
                         crate::xml_deser::deser_structure_cache_policy_query_strings_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings_config(var_318);
+                builder = builder.set_query_strings_config(var_322);
             }
             ,
             _ => {}
@@ -8406,7 +8489,7 @@ pub fn deser_structure_aliases(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#Aliases$Quantity */ =>  {
-                let var_319 =
+                let var_323 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8417,17 +8500,17 @@ pub fn deser_structure_aliases(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_319);
+                builder = builder.set_quantity(var_323);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Aliases$Items */ =>  {
-                let var_320 =
+                let var_324 =
                     Some(
                         crate::xml_deser::deser_list_alias_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_320);
+                builder = builder.set_items(var_324);
             }
             ,
             _ => {}
@@ -8444,7 +8527,7 @@ pub fn deser_structure_origins(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#Origins$Quantity */ =>  {
-                let var_321 =
+                let var_325 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8455,17 +8538,17 @@ pub fn deser_structure_origins(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_321);
+                builder = builder.set_quantity(var_325);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Origins$Items */ =>  {
-                let var_322 =
+                let var_326 =
                     Some(
                         crate::xml_deser::deser_list_origin_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_322);
+                builder = builder.set_items(var_326);
             }
             ,
             _ => {}
@@ -8482,7 +8565,7 @@ pub fn deser_structure_origin_groups(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#OriginGroups$Quantity */ =>  {
-                let var_323 =
+                let var_327 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8493,17 +8576,17 @@ pub fn deser_structure_origin_groups(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_323);
+                builder = builder.set_quantity(var_327);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginGroups$Items */ =>  {
-                let var_324 =
+                let var_328 =
                     Some(
                         crate::xml_deser::deser_list_origin_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_324);
+                builder = builder.set_items(var_328);
             }
             ,
             _ => {}
@@ -8520,7 +8603,7 @@ pub fn deser_structure_default_cache_behavior(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetOriginId") /* TargetOriginId com.amazonaws.cloudfront#DefaultCacheBehavior$TargetOriginId */ =>  {
-                let var_325 =
+                let var_329 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8529,31 +8612,31 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_target_origin_id(var_325);
+                builder = builder.set_target_origin_id(var_329);
             }
             ,
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#DefaultCacheBehavior$TrustedSigners */ =>  {
-                let var_326 =
+                let var_330 =
                     Some(
                         crate::xml_deser::deser_structure_trusted_signers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_signers(var_326);
+                builder = builder.set_trusted_signers(var_330);
             }
             ,
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#DefaultCacheBehavior$TrustedKeyGroups */ =>  {
-                let var_327 =
+                let var_331 =
                     Some(
                         crate::xml_deser::deser_structure_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_key_groups(var_327);
+                builder = builder.set_trusted_key_groups(var_331);
             }
             ,
             s if s.matches("ViewerProtocolPolicy") /* ViewerProtocolPolicy com.amazonaws.cloudfront#DefaultCacheBehavior$ViewerProtocolPolicy */ =>  {
-                let var_328 =
+                let var_332 =
                     Some(
                         Result::<crate::model::ViewerProtocolPolicy, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ViewerProtocolPolicy::from(
@@ -8563,21 +8646,21 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_viewer_protocol_policy(var_328);
+                builder = builder.set_viewer_protocol_policy(var_332);
             }
             ,
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#DefaultCacheBehavior$AllowedMethods */ =>  {
-                let var_329 =
+                let var_333 =
                     Some(
                         crate::xml_deser::deser_structure_allowed_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_methods(var_329);
+                builder = builder.set_allowed_methods(var_333);
             }
             ,
             s if s.matches("SmoothStreaming") /* SmoothStreaming com.amazonaws.cloudfront#DefaultCacheBehavior$SmoothStreaming */ =>  {
-                let var_330 =
+                let var_334 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8588,11 +8671,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_smooth_streaming(var_330);
+                builder = builder.set_smooth_streaming(var_334);
             }
             ,
             s if s.matches("Compress") /* Compress com.amazonaws.cloudfront#DefaultCacheBehavior$Compress */ =>  {
-                let var_331 =
+                let var_335 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8603,31 +8686,31 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_compress(var_331);
+                builder = builder.set_compress(var_335);
             }
             ,
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#DefaultCacheBehavior$LambdaFunctionAssociations */ =>  {
-                let var_332 =
+                let var_336 =
                     Some(
                         crate::xml_deser::deser_structure_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_associations(var_332);
+                builder = builder.set_lambda_function_associations(var_336);
             }
             ,
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#DefaultCacheBehavior$FunctionAssociations */ =>  {
-                let var_333 =
+                let var_337 =
                     Some(
                         crate::xml_deser::deser_structure_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_associations(var_333);
+                builder = builder.set_function_associations(var_337);
             }
             ,
             s if s.matches("FieldLevelEncryptionId") /* FieldLevelEncryptionId com.amazonaws.cloudfront#DefaultCacheBehavior$FieldLevelEncryptionId */ =>  {
-                let var_334 =
+                let var_338 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8636,11 +8719,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_field_level_encryption_id(var_334);
+                builder = builder.set_field_level_encryption_id(var_338);
             }
             ,
             s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#DefaultCacheBehavior$RealtimeLogConfigArn */ =>  {
-                let var_335 =
+                let var_339 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8649,11 +8732,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config_arn(var_335);
+                builder = builder.set_realtime_log_config_arn(var_339);
             }
             ,
             s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#DefaultCacheBehavior$CachePolicyId */ =>  {
-                let var_336 =
+                let var_340 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8662,11 +8745,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_cache_policy_id(var_336);
+                builder = builder.set_cache_policy_id(var_340);
             }
             ,
             s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#DefaultCacheBehavior$OriginRequestPolicyId */ =>  {
-                let var_337 =
+                let var_341 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8675,21 +8758,21 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_origin_request_policy_id(var_337);
+                builder = builder.set_origin_request_policy_id(var_341);
             }
             ,
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#DefaultCacheBehavior$ForwardedValues */ =>  {
-                let var_338 =
+                let var_342 =
                     Some(
                         crate::xml_deser::deser_structure_forwarded_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_forwarded_values(var_338);
+                builder = builder.set_forwarded_values(var_342);
             }
             ,
             s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#DefaultCacheBehavior$MinTTL */ =>  {
-                let var_339 =
+                let var_343 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8700,11 +8783,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_min_ttl(var_339);
+                builder = builder.set_min_ttl(var_343);
             }
             ,
             s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#DefaultCacheBehavior$DefaultTTL */ =>  {
-                let var_340 =
+                let var_344 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8715,11 +8798,11 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_default_ttl(var_340);
+                builder = builder.set_default_ttl(var_344);
             }
             ,
             s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#DefaultCacheBehavior$MaxTTL */ =>  {
-                let var_341 =
+                let var_345 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8730,7 +8813,7 @@ pub fn deser_structure_default_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_max_ttl(var_341);
+                builder = builder.set_max_ttl(var_345);
             }
             ,
             _ => {}
@@ -8747,7 +8830,7 @@ pub fn deser_structure_cache_behaviors(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#CacheBehaviors$Quantity */ =>  {
-                let var_342 =
+                let var_346 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8758,17 +8841,17 @@ pub fn deser_structure_cache_behaviors(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_342);
+                builder = builder.set_quantity(var_346);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CacheBehaviors$Items */ =>  {
-                let var_343 =
+                let var_347 =
                     Some(
                         crate::xml_deser::deser_list_cache_behavior_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_343);
+                builder = builder.set_items(var_347);
             }
             ,
             _ => {}
@@ -8785,7 +8868,7 @@ pub fn deser_structure_custom_error_responses(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#CustomErrorResponses$Quantity */ =>  {
-                let var_344 =
+                let var_348 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8796,17 +8879,17 @@ pub fn deser_structure_custom_error_responses(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_344);
+                builder = builder.set_quantity(var_348);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CustomErrorResponses$Items */ =>  {
-                let var_345 =
+                let var_349 =
                     Some(
                         crate::xml_deser::deser_list_custom_error_response_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_345);
+                builder = builder.set_items(var_349);
             }
             ,
             _ => {}
@@ -8823,7 +8906,7 @@ pub fn deser_structure_logging_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#LoggingConfig$Enabled */ =>  {
-                let var_346 =
+                let var_350 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8834,11 +8917,11 @@ pub fn deser_structure_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_346);
+                builder = builder.set_enabled(var_350);
             }
             ,
             s if s.matches("IncludeCookies") /* IncludeCookies com.amazonaws.cloudfront#LoggingConfig$IncludeCookies */ =>  {
-                let var_347 =
+                let var_351 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8849,11 +8932,11 @@ pub fn deser_structure_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_include_cookies(var_347);
+                builder = builder.set_include_cookies(var_351);
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.cloudfront#LoggingConfig$Bucket */ =>  {
-                let var_348 =
+                let var_352 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8862,11 +8945,11 @@ pub fn deser_structure_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_348);
+                builder = builder.set_bucket(var_352);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.cloudfront#LoggingConfig$Prefix */ =>  {
-                let var_349 =
+                let var_353 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8875,7 +8958,7 @@ pub fn deser_structure_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_349);
+                builder = builder.set_prefix(var_353);
             }
             ,
             _ => {}
@@ -8892,7 +8975,7 @@ pub fn deser_structure_viewer_certificate(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CloudFrontDefaultCertificate") /* CloudFrontDefaultCertificate com.amazonaws.cloudfront#ViewerCertificate$CloudFrontDefaultCertificate */ =>  {
-                let var_350 =
+                let var_354 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8903,64 +8986,10 @@ pub fn deser_structure_viewer_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_cloud_front_default_certificate(var_350);
+                builder = builder.set_cloud_front_default_certificate(var_354);
             }
             ,
             s if s.matches("IAMCertificateId") /* IAMCertificateId com.amazonaws.cloudfront#ViewerCertificate$IAMCertificateId */ =>  {
-                let var_351 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_iam_certificate_id(var_351);
-            }
-            ,
-            s if s.matches("ACMCertificateArn") /* ACMCertificateArn com.amazonaws.cloudfront#ViewerCertificate$ACMCertificateArn */ =>  {
-                let var_352 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_acm_certificate_arn(var_352);
-            }
-            ,
-            s if s.matches("SSLSupportMethod") /* SSLSupportMethod com.amazonaws.cloudfront#ViewerCertificate$SSLSupportMethod */ =>  {
-                let var_353 =
-                    Some(
-                        Result::<crate::model::SslSupportMethod, smithy_xml::decode::XmlError>::Ok(
-                            crate::model::SslSupportMethod::from(
-                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_ssl_support_method(var_353);
-            }
-            ,
-            s if s.matches("MinimumProtocolVersion") /* MinimumProtocolVersion com.amazonaws.cloudfront#ViewerCertificate$MinimumProtocolVersion */ =>  {
-                let var_354 =
-                    Some(
-                        Result::<crate::model::MinimumProtocolVersion, smithy_xml::decode::XmlError>::Ok(
-                            crate::model::MinimumProtocolVersion::from(
-                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_minimum_protocol_version(var_354);
-            }
-            ,
-            s if s.matches("Certificate") /* Certificate com.amazonaws.cloudfront#ViewerCertificate$Certificate */ =>  {
                 let var_355 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -8970,11 +8999,65 @@ pub fn deser_structure_viewer_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_certificate(var_355);
+                builder = builder.set_iam_certificate_id(var_355);
+            }
+            ,
+            s if s.matches("ACMCertificateArn") /* ACMCertificateArn com.amazonaws.cloudfront#ViewerCertificate$ACMCertificateArn */ =>  {
+                let var_356 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_acm_certificate_arn(var_356);
+            }
+            ,
+            s if s.matches("SSLSupportMethod") /* SSLSupportMethod com.amazonaws.cloudfront#ViewerCertificate$SSLSupportMethod */ =>  {
+                let var_357 =
+                    Some(
+                        Result::<crate::model::SslSupportMethod, smithy_xml::decode::XmlError>::Ok(
+                            crate::model::SslSupportMethod::from(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ssl_support_method(var_357);
+            }
+            ,
+            s if s.matches("MinimumProtocolVersion") /* MinimumProtocolVersion com.amazonaws.cloudfront#ViewerCertificate$MinimumProtocolVersion */ =>  {
+                let var_358 =
+                    Some(
+                        Result::<crate::model::MinimumProtocolVersion, smithy_xml::decode::XmlError>::Ok(
+                            crate::model::MinimumProtocolVersion::from(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum_protocol_version(var_358);
+            }
+            ,
+            s if s.matches("Certificate") /* Certificate com.amazonaws.cloudfront#ViewerCertificate$Certificate */ =>  {
+                let var_359 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_certificate(var_359);
             }
             ,
             s if s.matches("CertificateSource") /* CertificateSource com.amazonaws.cloudfront#ViewerCertificate$CertificateSource */ =>  {
-                let var_356 =
+                let var_360 =
                     Some(
                         Result::<crate::model::CertificateSource, smithy_xml::decode::XmlError>::Ok(
                             crate::model::CertificateSource::from(
@@ -8984,7 +9067,7 @@ pub fn deser_structure_viewer_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_certificate_source(var_356);
+                builder = builder.set_certificate_source(var_360);
             }
             ,
             _ => {}
@@ -9001,13 +9084,13 @@ pub fn deser_structure_restrictions(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("GeoRestriction") /* GeoRestriction com.amazonaws.cloudfront#Restrictions$GeoRestriction */ =>  {
-                let var_357 =
+                let var_361 =
                     Some(
                         crate::xml_deser::deser_structure_geo_restriction(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_geo_restriction(var_357);
+                builder = builder.set_geo_restriction(var_361);
             }
             ,
             _ => {}
@@ -9024,7 +9107,7 @@ pub fn deser_structure_query_arg_profile_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ForwardWhenQueryArgProfileIsUnknown") /* ForwardWhenQueryArgProfileIsUnknown com.amazonaws.cloudfront#QueryArgProfileConfig$ForwardWhenQueryArgProfileIsUnknown */ =>  {
-                let var_358 =
+                let var_362 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9035,17 +9118,17 @@ pub fn deser_structure_query_arg_profile_config(
                         ?
                     )
                 ;
-                builder = builder.set_forward_when_query_arg_profile_is_unknown(var_358);
+                builder = builder.set_forward_when_query_arg_profile_is_unknown(var_362);
             }
             ,
             s if s.matches("QueryArgProfiles") /* QueryArgProfiles com.amazonaws.cloudfront#QueryArgProfileConfig$QueryArgProfiles */ =>  {
-                let var_359 =
+                let var_363 =
                     Some(
                         crate::xml_deser::deser_structure_query_arg_profiles(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_arg_profiles(var_359);
+                builder = builder.set_query_arg_profiles(var_363);
             }
             ,
             _ => {}
@@ -9062,7 +9145,7 @@ pub fn deser_structure_content_type_profile_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ForwardWhenContentTypeIsUnknown") /* ForwardWhenContentTypeIsUnknown com.amazonaws.cloudfront#ContentTypeProfileConfig$ForwardWhenContentTypeIsUnknown */ =>  {
-                let var_360 =
+                let var_364 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9073,17 +9156,17 @@ pub fn deser_structure_content_type_profile_config(
                         ?
                     )
                 ;
-                builder = builder.set_forward_when_content_type_is_unknown(var_360);
+                builder = builder.set_forward_when_content_type_is_unknown(var_364);
             }
             ,
             s if s.matches("ContentTypeProfiles") /* ContentTypeProfiles com.amazonaws.cloudfront#ContentTypeProfileConfig$ContentTypeProfiles */ =>  {
-                let var_361 =
+                let var_365 =
                     Some(
                         crate::xml_deser::deser_structure_content_type_profiles(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_content_type_profiles(var_361);
+                builder = builder.set_content_type_profiles(var_365);
             }
             ,
             _ => {}
@@ -9100,7 +9183,7 @@ pub fn deser_structure_encryption_entities(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#EncryptionEntities$Quantity */ =>  {
-                let var_362 =
+                let var_366 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9111,17 +9194,17 @@ pub fn deser_structure_encryption_entities(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_362);
+                builder = builder.set_quantity(var_366);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#EncryptionEntities$Items */ =>  {
-                let var_363 =
+                let var_367 =
                     Some(
                         crate::xml_deser::deser_list_encryption_entity_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_363);
+                builder = builder.set_items(var_367);
             }
             ,
             _ => {}
@@ -9160,7 +9243,7 @@ pub fn deser_structure_origin_request_policy_headers_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HeaderBehavior") /* HeaderBehavior com.amazonaws.cloudfront#OriginRequestPolicyHeadersConfig$HeaderBehavior */ =>  {
-                let var_364 =
+                let var_368 =
                     Some(
                         Result::<crate::model::OriginRequestPolicyHeaderBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OriginRequestPolicyHeaderBehavior::from(
@@ -9170,17 +9253,17 @@ pub fn deser_structure_origin_request_policy_headers_config(
                         ?
                     )
                 ;
-                builder = builder.set_header_behavior(var_364);
+                builder = builder.set_header_behavior(var_368);
             }
             ,
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#OriginRequestPolicyHeadersConfig$Headers */ =>  {
-                let var_365 =
+                let var_369 =
                     Some(
                         crate::xml_deser::deser_structure_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers(var_365);
+                builder = builder.set_headers(var_369);
             }
             ,
             _ => {}
@@ -9197,7 +9280,7 @@ pub fn deser_structure_origin_request_policy_cookies_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CookieBehavior") /* CookieBehavior com.amazonaws.cloudfront#OriginRequestPolicyCookiesConfig$CookieBehavior */ =>  {
-                let var_366 =
+                let var_370 =
                     Some(
                         Result::<crate::model::OriginRequestPolicyCookieBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OriginRequestPolicyCookieBehavior::from(
@@ -9207,17 +9290,17 @@ pub fn deser_structure_origin_request_policy_cookies_config(
                         ?
                     )
                 ;
-                builder = builder.set_cookie_behavior(var_366);
+                builder = builder.set_cookie_behavior(var_370);
             }
             ,
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#OriginRequestPolicyCookiesConfig$Cookies */ =>  {
-                let var_367 =
+                let var_371 =
                     Some(
                         crate::xml_deser::deser_structure_cookie_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies(var_367);
+                builder = builder.set_cookies(var_371);
             }
             ,
             _ => {}
@@ -9234,7 +9317,7 @@ pub fn deser_structure_origin_request_policy_query_strings_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryStringBehavior") /* QueryStringBehavior com.amazonaws.cloudfront#OriginRequestPolicyQueryStringsConfig$QueryStringBehavior */ =>  {
-                let var_368 =
+                let var_372 =
                     Some(
                         Result::<crate::model::OriginRequestPolicyQueryStringBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OriginRequestPolicyQueryStringBehavior::from(
@@ -9244,17 +9327,17 @@ pub fn deser_structure_origin_request_policy_query_strings_config(
                         ?
                     )
                 ;
-                builder = builder.set_query_string_behavior(var_368);
+                builder = builder.set_query_string_behavior(var_372);
             }
             ,
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#OriginRequestPolicyQueryStringsConfig$QueryStrings */ =>  {
-                let var_369 =
+                let var_373 =
                     Some(
                         crate::xml_deser::deser_structure_query_string_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings(var_369);
+                builder = builder.set_query_strings(var_373);
             }
             ,
             _ => {}
@@ -9271,7 +9354,7 @@ pub fn deser_structure_s3_origin(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#S3Origin$DomainName */ =>  {
-                let var_370 =
+                let var_374 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9280,11 +9363,11 @@ pub fn deser_structure_s3_origin(
                         ?
                     )
                 ;
-                builder = builder.set_domain_name(var_370);
+                builder = builder.set_domain_name(var_374);
             }
             ,
             s if s.matches("OriginAccessIdentity") /* OriginAccessIdentity com.amazonaws.cloudfront#S3Origin$OriginAccessIdentity */ =>  {
-                let var_371 =
+                let var_375 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9293,7 +9376,7 @@ pub fn deser_structure_s3_origin(
                         ?
                     )
                 ;
-                builder = builder.set_origin_access_identity(var_371);
+                builder = builder.set_origin_access_identity(var_375);
             }
             ,
             _ => {}
@@ -9310,7 +9393,7 @@ pub fn deser_structure_streaming_logging_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#StreamingLoggingConfig$Enabled */ =>  {
-                let var_372 =
+                let var_376 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9321,11 +9404,11 @@ pub fn deser_structure_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_372);
+                builder = builder.set_enabled(var_376);
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.cloudfront#StreamingLoggingConfig$Bucket */ =>  {
-                let var_373 =
+                let var_377 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9334,11 +9417,11 @@ pub fn deser_structure_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_373);
+                builder = builder.set_bucket(var_377);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.cloudfront#StreamingLoggingConfig$Prefix */ =>  {
-                let var_374 =
+                let var_378 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9347,7 +9430,7 @@ pub fn deser_structure_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_374);
+                builder = builder.set_prefix(var_378);
             }
             ,
             _ => {}
@@ -9364,7 +9447,7 @@ pub fn deser_structure_trusted_signers(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#TrustedSigners$Enabled */ =>  {
-                let var_375 =
+                let var_379 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9375,11 +9458,11 @@ pub fn deser_structure_trusted_signers(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_375);
+                builder = builder.set_enabled(var_379);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#TrustedSigners$Quantity */ =>  {
-                let var_376 =
+                let var_380 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9390,17 +9473,17 @@ pub fn deser_structure_trusted_signers(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_376);
+                builder = builder.set_quantity(var_380);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedSigners$Items */ =>  {
-                let var_377 =
+                let var_381 =
                     Some(
                         crate::xml_deser::deser_list_aws_account_number_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_377);
+                builder = builder.set_items(var_381);
             }
             ,
             _ => {}
@@ -9440,6 +9523,25 @@ pub fn deser_list_cloud_front_origin_access_identity_summary_list(
             s if s.matches("CloudFrontOriginAccessIdentitySummary") /* member com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummaryList$member */ =>  {
                 out.push(
                     crate::xml_deser::deser_structure_cloud_front_origin_access_identity_summary(&mut tag)
+                    ?
+                );
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(out)
+}
+
+pub fn deser_list_conflicting_aliases(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<std::vec::Vec<crate::model::ConflictingAlias>, smithy_xml::decode::XmlError> {
+    let mut out = std::vec::Vec::new();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("ConflictingAlias") /* member com.amazonaws.cloudfront#ConflictingAliases$member */ =>  {
+                out.push(
+                    crate::xml_deser::deser_structure_conflicting_alias(&mut tag)
                     ?
                 );
             }
@@ -9716,7 +9818,7 @@ pub fn deser_structure_end_point(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StreamType") /* StreamType com.amazonaws.cloudfront#EndPoint$StreamType */ =>  {
-                let var_378 =
+                let var_382 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9725,17 +9827,17 @@ pub fn deser_structure_end_point(
                         ?
                     )
                 ;
-                builder = builder.set_stream_type(var_378);
+                builder = builder.set_stream_type(var_382);
             }
             ,
             s if s.matches("KinesisStreamConfig") /* KinesisStreamConfig com.amazonaws.cloudfront#EndPoint$KinesisStreamConfig */ =>  {
-                let var_379 =
+                let var_383 =
                     Some(
                         crate::xml_deser::deser_structure_kinesis_stream_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_kinesis_stream_config(var_379);
+                builder = builder.set_kinesis_stream_config(var_383);
             }
             ,
             _ => {}
@@ -9790,7 +9892,7 @@ pub fn deser_structure_alias_icp_recordal(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CNAME") /* CNAME com.amazonaws.cloudfront#AliasICPRecordal$CNAME */ =>  {
-                let var_380 =
+                let var_384 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9799,11 +9901,11 @@ pub fn deser_structure_alias_icp_recordal(
                         ?
                     )
                 ;
-                builder = builder.set_cname(var_380);
+                builder = builder.set_cname(var_384);
             }
             ,
             s if s.matches("ICPRecordalStatus") /* ICPRecordalStatus com.amazonaws.cloudfront#AliasICPRecordal$ICPRecordalStatus */ =>  {
-                let var_381 =
+                let var_385 =
                     Some(
                         Result::<crate::model::IcpRecordalStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::IcpRecordalStatus::from(
@@ -9813,7 +9915,7 @@ pub fn deser_structure_alias_icp_recordal(
                         ?
                     )
                 ;
-                builder = builder.set_icp_recordal_status(var_381);
+                builder = builder.set_icp_recordal_status(var_385);
             }
             ,
             _ => {}
@@ -9830,7 +9932,7 @@ pub fn deser_structure_paths(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#Paths$Quantity */ =>  {
-                let var_382 =
+                let var_386 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9841,17 +9943,17 @@ pub fn deser_structure_paths(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_382);
+                builder = builder.set_quantity(var_386);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Paths$Items */ =>  {
-                let var_383 =
+                let var_387 =
                     Some(
                         crate::xml_deser::deser_list_path_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_383);
+                builder = builder.set_items(var_387);
             }
             ,
             _ => {}
@@ -9868,7 +9970,7 @@ pub fn deser_structure_cache_policy_headers_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HeaderBehavior") /* HeaderBehavior com.amazonaws.cloudfront#CachePolicyHeadersConfig$HeaderBehavior */ =>  {
-                let var_384 =
+                let var_388 =
                     Some(
                         Result::<crate::model::CachePolicyHeaderBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::CachePolicyHeaderBehavior::from(
@@ -9878,17 +9980,17 @@ pub fn deser_structure_cache_policy_headers_config(
                         ?
                     )
                 ;
-                builder = builder.set_header_behavior(var_384);
+                builder = builder.set_header_behavior(var_388);
             }
             ,
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#CachePolicyHeadersConfig$Headers */ =>  {
-                let var_385 =
+                let var_389 =
                     Some(
                         crate::xml_deser::deser_structure_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers(var_385);
+                builder = builder.set_headers(var_389);
             }
             ,
             _ => {}
@@ -9905,7 +10007,7 @@ pub fn deser_structure_cache_policy_cookies_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CookieBehavior") /* CookieBehavior com.amazonaws.cloudfront#CachePolicyCookiesConfig$CookieBehavior */ =>  {
-                let var_386 =
+                let var_390 =
                     Some(
                         Result::<crate::model::CachePolicyCookieBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::CachePolicyCookieBehavior::from(
@@ -9915,17 +10017,17 @@ pub fn deser_structure_cache_policy_cookies_config(
                         ?
                     )
                 ;
-                builder = builder.set_cookie_behavior(var_386);
+                builder = builder.set_cookie_behavior(var_390);
             }
             ,
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#CachePolicyCookiesConfig$Cookies */ =>  {
-                let var_387 =
+                let var_391 =
                     Some(
                         crate::xml_deser::deser_structure_cookie_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies(var_387);
+                builder = builder.set_cookies(var_391);
             }
             ,
             _ => {}
@@ -9942,7 +10044,7 @@ pub fn deser_structure_cache_policy_query_strings_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryStringBehavior") /* QueryStringBehavior com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStringBehavior */ =>  {
-                let var_388 =
+                let var_392 =
                     Some(
                         Result::<crate::model::CachePolicyQueryStringBehavior, smithy_xml::decode::XmlError>::Ok(
                             crate::model::CachePolicyQueryStringBehavior::from(
@@ -9952,17 +10054,17 @@ pub fn deser_structure_cache_policy_query_strings_config(
                         ?
                     )
                 ;
-                builder = builder.set_query_string_behavior(var_388);
+                builder = builder.set_query_string_behavior(var_392);
             }
             ,
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStrings */ =>  {
-                let var_389 =
+                let var_393 =
                     Some(
                         crate::xml_deser::deser_structure_query_string_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings(var_389);
+                builder = builder.set_query_strings(var_393);
             }
             ,
             _ => {}
@@ -10039,7 +10141,7 @@ pub fn deser_structure_trusted_key_groups(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#TrustedKeyGroups$Enabled */ =>  {
-                let var_390 =
+                let var_394 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10050,11 +10152,11 @@ pub fn deser_structure_trusted_key_groups(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_390);
+                builder = builder.set_enabled(var_394);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#TrustedKeyGroups$Quantity */ =>  {
-                let var_391 =
+                let var_395 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10065,17 +10167,17 @@ pub fn deser_structure_trusted_key_groups(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_391);
+                builder = builder.set_quantity(var_395);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedKeyGroups$Items */ =>  {
-                let var_392 =
+                let var_396 =
                     Some(
                         crate::xml_deser::deser_list_trusted_key_group_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_392);
+                builder = builder.set_items(var_396);
             }
             ,
             _ => {}
@@ -10092,7 +10194,7 @@ pub fn deser_structure_allowed_methods(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#AllowedMethods$Quantity */ =>  {
-                let var_393 =
+                let var_397 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10103,27 +10205,27 @@ pub fn deser_structure_allowed_methods(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_393);
+                builder = builder.set_quantity(var_397);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#AllowedMethods$Items */ =>  {
-                let var_394 =
+                let var_398 =
                     Some(
                         crate::xml_deser::deser_list_methods_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_394);
+                builder = builder.set_items(var_398);
             }
             ,
             s if s.matches("CachedMethods") /* CachedMethods com.amazonaws.cloudfront#AllowedMethods$CachedMethods */ =>  {
-                let var_395 =
+                let var_399 =
                     Some(
                         crate::xml_deser::deser_structure_cached_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cached_methods(var_395);
+                builder = builder.set_cached_methods(var_399);
             }
             ,
             _ => {}
@@ -10140,7 +10242,7 @@ pub fn deser_structure_lambda_function_associations(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#LambdaFunctionAssociations$Quantity */ =>  {
-                let var_396 =
+                let var_400 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10151,17 +10253,17 @@ pub fn deser_structure_lambda_function_associations(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_396);
+                builder = builder.set_quantity(var_400);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#LambdaFunctionAssociations$Items */ =>  {
-                let var_397 =
+                let var_401 =
                     Some(
                         crate::xml_deser::deser_list_lambda_function_association_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_397);
+                builder = builder.set_items(var_401);
             }
             ,
             _ => {}
@@ -10178,7 +10280,7 @@ pub fn deser_structure_function_associations(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#FunctionAssociations$Quantity */ =>  {
-                let var_398 =
+                let var_402 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10189,17 +10291,17 @@ pub fn deser_structure_function_associations(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_398);
+                builder = builder.set_quantity(var_402);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FunctionAssociations$Items */ =>  {
-                let var_399 =
+                let var_403 =
                     Some(
                         crate::xml_deser::deser_list_function_association_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_399);
+                builder = builder.set_items(var_403);
             }
             ,
             _ => {}
@@ -10216,7 +10318,7 @@ pub fn deser_structure_forwarded_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryString") /* QueryString com.amazonaws.cloudfront#ForwardedValues$QueryString */ =>  {
-                let var_400 =
+                let var_404 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10227,37 +10329,37 @@ pub fn deser_structure_forwarded_values(
                         ?
                     )
                 ;
-                builder = builder.set_query_string(var_400);
+                builder = builder.set_query_string(var_404);
             }
             ,
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#ForwardedValues$Cookies */ =>  {
-                let var_401 =
+                let var_405 =
                     Some(
                         crate::xml_deser::deser_structure_cookie_preference(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies(var_401);
+                builder = builder.set_cookies(var_405);
             }
             ,
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#ForwardedValues$Headers */ =>  {
-                let var_402 =
+                let var_406 =
                     Some(
                         crate::xml_deser::deser_structure_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers(var_402);
+                builder = builder.set_headers(var_406);
             }
             ,
             s if s.matches("QueryStringCacheKeys") /* QueryStringCacheKeys com.amazonaws.cloudfront#ForwardedValues$QueryStringCacheKeys */ =>  {
-                let var_403 =
+                let var_407 =
                     Some(
                         crate::xml_deser::deser_structure_query_string_cache_keys(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_string_cache_keys(var_403);
+                builder = builder.set_query_string_cache_keys(var_407);
             }
             ,
             _ => {}
@@ -10312,7 +10414,7 @@ pub fn deser_structure_geo_restriction(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RestrictionType") /* RestrictionType com.amazonaws.cloudfront#GeoRestriction$RestrictionType */ =>  {
-                let var_404 =
+                let var_408 =
                     Some(
                         Result::<crate::model::GeoRestrictionType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::GeoRestrictionType::from(
@@ -10322,11 +10424,11 @@ pub fn deser_structure_geo_restriction(
                         ?
                     )
                 ;
-                builder = builder.set_restriction_type(var_404);
+                builder = builder.set_restriction_type(var_408);
             }
             ,
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#GeoRestriction$Quantity */ =>  {
-                let var_405 =
+                let var_409 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10337,17 +10439,17 @@ pub fn deser_structure_geo_restriction(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_405);
+                builder = builder.set_quantity(var_409);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#GeoRestriction$Items */ =>  {
-                let var_406 =
+                let var_410 =
                     Some(
                         crate::xml_deser::deser_list_location_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_406);
+                builder = builder.set_items(var_410);
             }
             ,
             _ => {}
@@ -10364,7 +10466,7 @@ pub fn deser_structure_query_arg_profiles(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#QueryArgProfiles$Quantity */ =>  {
-                let var_407 =
+                let var_411 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10375,17 +10477,17 @@ pub fn deser_structure_query_arg_profiles(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_407);
+                builder = builder.set_quantity(var_411);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryArgProfiles$Items */ =>  {
-                let var_408 =
+                let var_412 =
                     Some(
                         crate::xml_deser::deser_list_query_arg_profile_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_408);
+                builder = builder.set_items(var_412);
             }
             ,
             _ => {}
@@ -10402,7 +10504,7 @@ pub fn deser_structure_content_type_profiles(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#ContentTypeProfiles$Quantity */ =>  {
-                let var_409 =
+                let var_413 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10413,17 +10515,17 @@ pub fn deser_structure_content_type_profiles(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_409);
+                builder = builder.set_quantity(var_413);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ContentTypeProfiles$Items */ =>  {
-                let var_410 =
+                let var_414 =
                     Some(
                         crate::xml_deser::deser_list_content_type_profile_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_410);
+                builder = builder.set_items(var_414);
             }
             ,
             _ => {}
@@ -10459,7 +10561,7 @@ pub fn deser_structure_headers(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#Headers$Quantity */ =>  {
-                let var_411 =
+                let var_415 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10470,17 +10572,17 @@ pub fn deser_structure_headers(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_411);
+                builder = builder.set_quantity(var_415);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Headers$Items */ =>  {
-                let var_412 =
+                let var_416 =
                     Some(
                         crate::xml_deser::deser_list_header_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_412);
+                builder = builder.set_items(var_416);
             }
             ,
             _ => {}
@@ -10497,7 +10599,7 @@ pub fn deser_structure_cookie_names(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#CookieNames$Quantity */ =>  {
-                let var_413 =
+                let var_417 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10508,17 +10610,17 @@ pub fn deser_structure_cookie_names(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_413);
+                builder = builder.set_quantity(var_417);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CookieNames$Items */ =>  {
-                let var_414 =
+                let var_418 =
                     Some(
                         crate::xml_deser::deser_list_cookie_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_414);
+                builder = builder.set_items(var_418);
             }
             ,
             _ => {}
@@ -10535,7 +10637,7 @@ pub fn deser_structure_query_string_names(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#QueryStringNames$Quantity */ =>  {
-                let var_415 =
+                let var_419 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10546,17 +10648,17 @@ pub fn deser_structure_query_string_names(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_415);
+                builder = builder.set_quantity(var_419);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryStringNames$Items */ =>  {
-                let var_416 =
+                let var_420 =
                     Some(
                         crate::xml_deser::deser_list_query_string_names_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_416);
+                builder = builder.set_items(var_420);
             }
             ,
             _ => {}
@@ -10595,7 +10697,7 @@ pub fn deser_structure_cache_policy_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Type") /* Type com.amazonaws.cloudfront#CachePolicySummary$Type */ =>  {
-                let var_417 =
+                let var_421 =
                     Some(
                         Result::<crate::model::CachePolicyType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::CachePolicyType::from(
@@ -10605,17 +10707,17 @@ pub fn deser_structure_cache_policy_summary(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_417);
+                builder = builder.set_type(var_421);
             }
             ,
             s if s.matches("CachePolicy") /* CachePolicy com.amazonaws.cloudfront#CachePolicySummary$CachePolicy */ =>  {
-                let var_418 =
+                let var_422 =
                     Some(
                         crate::xml_deser::deser_structure_cache_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_policy(var_418);
+                builder = builder.set_cache_policy(var_422);
             }
             ,
             _ => {}
@@ -10632,7 +10734,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummary$Id */ =>  {
-                let var_419 =
+                let var_423 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10641,11 +10743,11 @@ pub fn deser_structure_cloud_front_origin_access_identity_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_419);
+                builder = builder.set_id(var_423);
             }
             ,
             s if s.matches("S3CanonicalUserId") /* S3CanonicalUserId com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummary$S3CanonicalUserId */ =>  {
-                let var_420 =
+                let var_424 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10654,11 +10756,11 @@ pub fn deser_structure_cloud_front_origin_access_identity_summary(
                         ?
                     )
                 ;
-                builder = builder.set_s3_canonical_user_id(var_420);
+                builder = builder.set_s3_canonical_user_id(var_424);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummary$Comment */ =>  {
-                let var_421 =
+                let var_425 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10667,7 +10769,59 @@ pub fn deser_structure_cloud_front_origin_access_identity_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_421);
+                builder = builder.set_comment(var_425);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_conflicting_alias(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::ConflictingAlias, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::ConflictingAlias::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Alias") /* Alias com.amazonaws.cloudfront#ConflictingAlias$Alias */ =>  {
+                let var_426 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_alias(var_426);
+            }
+            ,
+            s if s.matches("DistributionId") /* DistributionId com.amazonaws.cloudfront#ConflictingAlias$DistributionId */ =>  {
+                let var_427 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_distribution_id(var_427);
+            }
+            ,
+            s if s.matches("AccountId") /* AccountId com.amazonaws.cloudfront#ConflictingAlias$AccountId */ =>  {
+                let var_428 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_account_id(var_428);
             }
             ,
             _ => {}
@@ -10684,7 +10838,7 @@ pub fn deser_structure_distribution_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#DistributionSummary$Id */ =>  {
-                let var_422 =
+                let var_429 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10693,11 +10847,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_422);
+                builder = builder.set_id(var_429);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.cloudfront#DistributionSummary$ARN */ =>  {
-                let var_423 =
+                let var_430 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10706,11 +10860,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_423);
+                builder = builder.set_arn(var_430);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.cloudfront#DistributionSummary$Status */ =>  {
-                let var_424 =
+                let var_431 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10719,11 +10873,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_424);
+                builder = builder.set_status(var_431);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#DistributionSummary$LastModifiedTime */ =>  {
-                let var_425 =
+                let var_432 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10733,83 +10887,10 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_425);
+                builder = builder.set_last_modified_time(var_432);
             }
             ,
             s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#DistributionSummary$DomainName */ =>  {
-                let var_426 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_domain_name(var_426);
-            }
-            ,
-            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionSummary$Aliases */ =>  {
-                let var_427 =
-                    Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_aliases(var_427);
-            }
-            ,
-            s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionSummary$Origins */ =>  {
-                let var_428 =
-                    Some(
-                        crate::xml_deser::deser_structure_origins(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_origins(var_428);
-            }
-            ,
-            s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionSummary$OriginGroups */ =>  {
-                let var_429 =
-                    Some(
-                        crate::xml_deser::deser_structure_origin_groups(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_origin_groups(var_429);
-            }
-            ,
-            s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionSummary$DefaultCacheBehavior */ =>  {
-                let var_430 =
-                    Some(
-                        crate::xml_deser::deser_structure_default_cache_behavior(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_default_cache_behavior(var_430);
-            }
-            ,
-            s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionSummary$CacheBehaviors */ =>  {
-                let var_431 =
-                    Some(
-                        crate::xml_deser::deser_structure_cache_behaviors(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_behaviors(var_431);
-            }
-            ,
-            s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionSummary$CustomErrorResponses */ =>  {
-                let var_432 =
-                    Some(
-                        crate::xml_deser::deser_structure_custom_error_responses(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_error_responses(var_432);
-            }
-            ,
-            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#DistributionSummary$Comment */ =>  {
                 let var_433 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -10819,11 +10900,84 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_433);
+                builder = builder.set_domain_name(var_433);
+            }
+            ,
+            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionSummary$Aliases */ =>  {
+                let var_434 =
+                    Some(
+                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_aliases(var_434);
+            }
+            ,
+            s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionSummary$Origins */ =>  {
+                let var_435 =
+                    Some(
+                        crate::xml_deser::deser_structure_origins(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_origins(var_435);
+            }
+            ,
+            s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionSummary$OriginGroups */ =>  {
+                let var_436 =
+                    Some(
+                        crate::xml_deser::deser_structure_origin_groups(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_groups(var_436);
+            }
+            ,
+            s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionSummary$DefaultCacheBehavior */ =>  {
+                let var_437 =
+                    Some(
+                        crate::xml_deser::deser_structure_default_cache_behavior(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_default_cache_behavior(var_437);
+            }
+            ,
+            s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionSummary$CacheBehaviors */ =>  {
+                let var_438 =
+                    Some(
+                        crate::xml_deser::deser_structure_cache_behaviors(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_behaviors(var_438);
+            }
+            ,
+            s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionSummary$CustomErrorResponses */ =>  {
+                let var_439 =
+                    Some(
+                        crate::xml_deser::deser_structure_custom_error_responses(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_custom_error_responses(var_439);
+            }
+            ,
+            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#DistributionSummary$Comment */ =>  {
+                let var_440 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_comment(var_440);
             }
             ,
             s if s.matches("PriceClass") /* PriceClass com.amazonaws.cloudfront#DistributionSummary$PriceClass */ =>  {
-                let var_434 =
+                let var_441 =
                     Some(
                         Result::<crate::model::PriceClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::PriceClass::from(
@@ -10833,11 +10987,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_price_class(var_434);
+                builder = builder.set_price_class(var_441);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#DistributionSummary$Enabled */ =>  {
-                let var_435 =
+                let var_442 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10848,31 +11002,31 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_435);
+                builder = builder.set_enabled(var_442);
             }
             ,
             s if s.matches("ViewerCertificate") /* ViewerCertificate com.amazonaws.cloudfront#DistributionSummary$ViewerCertificate */ =>  {
-                let var_436 =
+                let var_443 =
                     Some(
                         crate::xml_deser::deser_structure_viewer_certificate(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_viewer_certificate(var_436);
+                builder = builder.set_viewer_certificate(var_443);
             }
             ,
             s if s.matches("Restrictions") /* Restrictions com.amazonaws.cloudfront#DistributionSummary$Restrictions */ =>  {
-                let var_437 =
+                let var_444 =
                     Some(
                         crate::xml_deser::deser_structure_restrictions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_restrictions(var_437);
+                builder = builder.set_restrictions(var_444);
             }
             ,
             s if s.matches("WebACLId") /* WebACLId com.amazonaws.cloudfront#DistributionSummary$WebACLId */ =>  {
-                let var_438 =
+                let var_445 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10881,11 +11035,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_web_acl_id(var_438);
+                builder = builder.set_web_acl_id(var_445);
             }
             ,
             s if s.matches("HttpVersion") /* HttpVersion com.amazonaws.cloudfront#DistributionSummary$HttpVersion */ =>  {
-                let var_439 =
+                let var_446 =
                     Some(
                         Result::<crate::model::HttpVersion, smithy_xml::decode::XmlError>::Ok(
                             crate::model::HttpVersion::from(
@@ -10895,11 +11049,11 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_http_version(var_439);
+                builder = builder.set_http_version(var_446);
             }
             ,
             s if s.matches("IsIPV6Enabled") /* IsIPV6Enabled com.amazonaws.cloudfront#DistributionSummary$IsIPV6Enabled */ =>  {
-                let var_440 =
+                let var_447 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10910,17 +11064,17 @@ pub fn deser_structure_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_is_ipv6_enabled(var_440);
+                builder = builder.set_is_ipv6_enabled(var_447);
             }
             ,
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#DistributionSummary$AliasICPRecordals */ =>  {
-                let var_441 =
+                let var_448 =
                     Some(
                         crate::xml_deser::deser_list_alias_icp_recordals(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alias_icp_recordals(var_441);
+                builder = builder.set_alias_icp_recordals(var_448);
             }
             ,
             _ => {}
@@ -10937,7 +11091,7 @@ pub fn deser_structure_field_level_encryption_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#FieldLevelEncryptionSummary$Id */ =>  {
-                let var_442 =
+                let var_449 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10946,11 +11100,11 @@ pub fn deser_structure_field_level_encryption_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_442);
+                builder = builder.set_id(var_449);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryptionSummary$LastModifiedTime */ =>  {
-                let var_443 =
+                let var_450 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10960,11 +11114,11 @@ pub fn deser_structure_field_level_encryption_summary(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_443);
+                builder = builder.set_last_modified_time(var_450);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#FieldLevelEncryptionSummary$Comment */ =>  {
-                let var_444 =
+                let var_451 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10973,27 +11127,27 @@ pub fn deser_structure_field_level_encryption_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_444);
+                builder = builder.set_comment(var_451);
             }
             ,
             s if s.matches("QueryArgProfileConfig") /* QueryArgProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionSummary$QueryArgProfileConfig */ =>  {
-                let var_445 =
+                let var_452 =
                     Some(
                         crate::xml_deser::deser_structure_query_arg_profile_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_arg_profile_config(var_445);
+                builder = builder.set_query_arg_profile_config(var_452);
             }
             ,
             s if s.matches("ContentTypeProfileConfig") /* ContentTypeProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionSummary$ContentTypeProfileConfig */ =>  {
-                let var_446 =
+                let var_453 =
                     Some(
                         crate::xml_deser::deser_structure_content_type_profile_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_content_type_profile_config(var_446);
+                builder = builder.set_content_type_profile_config(var_453);
             }
             ,
             _ => {}
@@ -11010,7 +11164,7 @@ pub fn deser_structure_field_level_encryption_profile_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$Id */ =>  {
-                let var_447 =
+                let var_454 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11019,11 +11173,11 @@ pub fn deser_structure_field_level_encryption_profile_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_447);
+                builder = builder.set_id(var_454);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$LastModifiedTime */ =>  {
-                let var_448 =
+                let var_455 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11033,11 +11187,11 @@ pub fn deser_structure_field_level_encryption_profile_summary(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_448);
+                builder = builder.set_last_modified_time(var_455);
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$Name */ =>  {
-                let var_449 =
+                let var_456 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11046,21 +11200,21 @@ pub fn deser_structure_field_level_encryption_profile_summary(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_449);
+                builder = builder.set_name(var_456);
             }
             ,
             s if s.matches("EncryptionEntities") /* EncryptionEntities com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$EncryptionEntities */ =>  {
-                let var_450 =
+                let var_457 =
                     Some(
                         crate::xml_deser::deser_structure_encryption_entities(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_encryption_entities(var_450);
+                builder = builder.set_encryption_entities(var_457);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$Comment */ =>  {
-                let var_451 =
+                let var_458 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11069,7 +11223,7 @@ pub fn deser_structure_field_level_encryption_profile_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_451);
+                builder = builder.set_comment(var_458);
             }
             ,
             _ => {}
@@ -11086,7 +11240,7 @@ pub fn deser_structure_invalidation_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#InvalidationSummary$Id */ =>  {
-                let var_452 =
+                let var_459 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11095,11 +11249,11 @@ pub fn deser_structure_invalidation_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_452);
+                builder = builder.set_id(var_459);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.cloudfront#InvalidationSummary$CreateTime */ =>  {
-                let var_453 =
+                let var_460 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11109,11 +11263,11 @@ pub fn deser_structure_invalidation_summary(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_453);
+                builder = builder.set_create_time(var_460);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.cloudfront#InvalidationSummary$Status */ =>  {
-                let var_454 =
+                let var_461 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11122,7 +11276,7 @@ pub fn deser_structure_invalidation_summary(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_454);
+                builder = builder.set_status(var_461);
             }
             ,
             _ => {}
@@ -11139,13 +11293,13 @@ pub fn deser_structure_key_group_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyGroup") /* KeyGroup com.amazonaws.cloudfront#KeyGroupSummary$KeyGroup */ =>  {
-                let var_455 =
+                let var_462 =
                     Some(
                         crate::xml_deser::deser_structure_key_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_key_group(var_455);
+                builder = builder.set_key_group(var_462);
             }
             ,
             _ => {}
@@ -11162,7 +11316,7 @@ pub fn deser_structure_origin_request_policy_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Type") /* Type com.amazonaws.cloudfront#OriginRequestPolicySummary$Type */ =>  {
-                let var_456 =
+                let var_463 =
                     Some(
                         Result::<crate::model::OriginRequestPolicyType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OriginRequestPolicyType::from(
@@ -11172,17 +11326,17 @@ pub fn deser_structure_origin_request_policy_summary(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_456);
+                builder = builder.set_type(var_463);
             }
             ,
             s if s.matches("OriginRequestPolicy") /* OriginRequestPolicy com.amazonaws.cloudfront#OriginRequestPolicySummary$OriginRequestPolicy */ =>  {
-                let var_457 =
+                let var_464 =
                     Some(
                         crate::xml_deser::deser_structure_origin_request_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origin_request_policy(var_457);
+                builder = builder.set_origin_request_policy(var_464);
             }
             ,
             _ => {}
@@ -11199,7 +11353,7 @@ pub fn deser_structure_public_key_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#PublicKeySummary$Id */ =>  {
-                let var_458 =
+                let var_465 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11208,11 +11362,11 @@ pub fn deser_structure_public_key_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_458);
+                builder = builder.set_id(var_465);
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#PublicKeySummary$Name */ =>  {
-                let var_459 =
+                let var_466 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11221,11 +11375,11 @@ pub fn deser_structure_public_key_summary(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_459);
+                builder = builder.set_name(var_466);
             }
             ,
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#PublicKeySummary$CreatedTime */ =>  {
-                let var_460 =
+                let var_467 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11235,11 +11389,11 @@ pub fn deser_structure_public_key_summary(
                         ?
                     )
                 ;
-                builder = builder.set_created_time(var_460);
+                builder = builder.set_created_time(var_467);
             }
             ,
             s if s.matches("EncodedKey") /* EncodedKey com.amazonaws.cloudfront#PublicKeySummary$EncodedKey */ =>  {
-                let var_461 =
+                let var_468 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11248,11 +11402,11 @@ pub fn deser_structure_public_key_summary(
                         ?
                     )
                 ;
-                builder = builder.set_encoded_key(var_461);
+                builder = builder.set_encoded_key(var_468);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#PublicKeySummary$Comment */ =>  {
-                let var_462 =
+                let var_469 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11261,7 +11415,7 @@ pub fn deser_structure_public_key_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_462);
+                builder = builder.set_comment(var_469);
             }
             ,
             _ => {}
@@ -11278,7 +11432,7 @@ pub fn deser_structure_streaming_distribution_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#StreamingDistributionSummary$Id */ =>  {
-                let var_463 =
+                let var_470 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11287,93 +11441,10 @@ pub fn deser_structure_streaming_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_463);
+                builder = builder.set_id(var_470);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.cloudfront#StreamingDistributionSummary$ARN */ =>  {
-                let var_464 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_arn(var_464);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.cloudfront#StreamingDistributionSummary$Status */ =>  {
-                let var_465 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_465);
-            }
-            ,
-            s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#StreamingDistributionSummary$LastModifiedTime */ =>  {
-                let var_466 =
-                    Some(
-                        smithy_types::Instant::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , smithy_types::instant::Format::DateTime
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_last_modified_time(var_466);
-            }
-            ,
-            s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#StreamingDistributionSummary$DomainName */ =>  {
-                let var_467 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_domain_name(var_467);
-            }
-            ,
-            s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionSummary$S3Origin */ =>  {
-                let var_468 =
-                    Some(
-                        crate::xml_deser::deser_structure_s3_origin(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_s3_origin(var_468);
-            }
-            ,
-            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionSummary$Aliases */ =>  {
-                let var_469 =
-                    Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_aliases(var_469);
-            }
-            ,
-            s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionSummary$TrustedSigners */ =>  {
-                let var_470 =
-                    Some(
-                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_trusted_signers(var_470);
-            }
-            ,
-            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#StreamingDistributionSummary$Comment */ =>  {
                 let var_471 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -11383,11 +11454,94 @@ pub fn deser_structure_streaming_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_471);
+                builder = builder.set_arn(var_471);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.cloudfront#StreamingDistributionSummary$Status */ =>  {
+                let var_472 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_472);
+            }
+            ,
+            s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#StreamingDistributionSummary$LastModifiedTime */ =>  {
+                let var_473 =
+                    Some(
+                        smithy_types::Instant::from_str(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , smithy_types::instant::Format::DateTime
+                        )
+                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_last_modified_time(var_473);
+            }
+            ,
+            s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#StreamingDistributionSummary$DomainName */ =>  {
+                let var_474 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_domain_name(var_474);
+            }
+            ,
+            s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionSummary$S3Origin */ =>  {
+                let var_475 =
+                    Some(
+                        crate::xml_deser::deser_structure_s3_origin(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_s3_origin(var_475);
+            }
+            ,
+            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionSummary$Aliases */ =>  {
+                let var_476 =
+                    Some(
+                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_aliases(var_476);
+            }
+            ,
+            s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionSummary$TrustedSigners */ =>  {
+                let var_477 =
+                    Some(
+                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_trusted_signers(var_477);
+            }
+            ,
+            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#StreamingDistributionSummary$Comment */ =>  {
+                let var_478 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_comment(var_478);
             }
             ,
             s if s.matches("PriceClass") /* PriceClass com.amazonaws.cloudfront#StreamingDistributionSummary$PriceClass */ =>  {
-                let var_472 =
+                let var_479 =
                     Some(
                         Result::<crate::model::PriceClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::PriceClass::from(
@@ -11397,11 +11551,11 @@ pub fn deser_structure_streaming_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_price_class(var_472);
+                builder = builder.set_price_class(var_479);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#StreamingDistributionSummary$Enabled */ =>  {
-                let var_473 =
+                let var_480 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11412,7 +11566,7 @@ pub fn deser_structure_streaming_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_473);
+                builder = builder.set_enabled(var_480);
             }
             ,
             _ => {}
@@ -11429,7 +11583,7 @@ pub fn deser_structure_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.cloudfront#Tag$Key */ =>  {
-                let var_474 =
+                let var_481 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11438,11 +11592,11 @@ pub fn deser_structure_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_474);
+                builder = builder.set_key(var_481);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.cloudfront#Tag$Value */ =>  {
-                let var_475 =
+                let var_482 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11451,7 +11605,7 @@ pub fn deser_structure_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_475);
+                builder = builder.set_value(var_482);
             }
             ,
             _ => {}
@@ -11468,7 +11622,7 @@ pub fn deser_structure_kinesis_stream_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleARN") /* RoleARN com.amazonaws.cloudfront#KinesisStreamConfig$RoleARN */ =>  {
-                let var_476 =
+                let var_483 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11477,11 +11631,11 @@ pub fn deser_structure_kinesis_stream_config(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_476);
+                builder = builder.set_role_arn(var_483);
             }
             ,
             s if s.matches("StreamARN") /* StreamARN com.amazonaws.cloudfront#KinesisStreamConfig$StreamARN */ =>  {
-                let var_477 =
+                let var_484 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11490,7 +11644,7 @@ pub fn deser_structure_kinesis_stream_config(
                         ?
                     )
                 ;
-                builder = builder.set_stream_arn(var_477);
+                builder = builder.set_stream_arn(var_484);
             }
             ,
             _ => {}
@@ -11507,7 +11661,7 @@ pub fn deser_structure_signer(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AwsAccountNumber") /* AwsAccountNumber com.amazonaws.cloudfront#Signer$AwsAccountNumber */ =>  {
-                let var_478 =
+                let var_485 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11516,17 +11670,17 @@ pub fn deser_structure_signer(
                         ?
                     )
                 ;
-                builder = builder.set_aws_account_number(var_478);
+                builder = builder.set_aws_account_number(var_485);
             }
             ,
             s if s.matches("KeyPairIds") /* KeyPairIds com.amazonaws.cloudfront#Signer$KeyPairIds */ =>  {
-                let var_479 =
+                let var_486 =
                     Some(
                         crate::xml_deser::deser_structure_key_pair_ids(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_key_pair_ids(var_479);
+                builder = builder.set_key_pair_ids(var_486);
             }
             ,
             _ => {}
@@ -11543,7 +11697,7 @@ pub fn deser_structure_kg_key_pair_ids(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyGroupId") /* KeyGroupId com.amazonaws.cloudfront#KGKeyPairIds$KeyGroupId */ =>  {
-                let var_480 =
+                let var_487 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11552,17 +11706,17 @@ pub fn deser_structure_kg_key_pair_ids(
                         ?
                     )
                 ;
-                builder = builder.set_key_group_id(var_480);
+                builder = builder.set_key_group_id(var_487);
             }
             ,
             s if s.matches("KeyPairIds") /* KeyPairIds com.amazonaws.cloudfront#KGKeyPairIds$KeyPairIds */ =>  {
-                let var_481 =
+                let var_488 =
                     Some(
                         crate::xml_deser::deser_structure_key_pair_ids(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_key_pair_ids(var_481);
+                builder = builder.set_key_pair_ids(var_488);
             }
             ,
             _ => {}
@@ -11601,7 +11755,7 @@ pub fn deser_structure_origin(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#Origin$Id */ =>  {
-                let var_482 =
+                let var_489 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11610,11 +11764,11 @@ pub fn deser_structure_origin(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_482);
+                builder = builder.set_id(var_489);
             }
             ,
             s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#Origin$DomainName */ =>  {
-                let var_483 =
+                let var_490 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11623,11 +11777,11 @@ pub fn deser_structure_origin(
                         ?
                     )
                 ;
-                builder = builder.set_domain_name(var_483);
+                builder = builder.set_domain_name(var_490);
             }
             ,
             s if s.matches("OriginPath") /* OriginPath com.amazonaws.cloudfront#Origin$OriginPath */ =>  {
-                let var_484 =
+                let var_491 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11636,41 +11790,41 @@ pub fn deser_structure_origin(
                         ?
                     )
                 ;
-                builder = builder.set_origin_path(var_484);
+                builder = builder.set_origin_path(var_491);
             }
             ,
             s if s.matches("CustomHeaders") /* CustomHeaders com.amazonaws.cloudfront#Origin$CustomHeaders */ =>  {
-                let var_485 =
+                let var_492 =
                     Some(
                         crate::xml_deser::deser_structure_custom_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_headers(var_485);
+                builder = builder.set_custom_headers(var_492);
             }
             ,
             s if s.matches("S3OriginConfig") /* S3OriginConfig com.amazonaws.cloudfront#Origin$S3OriginConfig */ =>  {
-                let var_486 =
+                let var_493 =
                     Some(
                         crate::xml_deser::deser_structure_s3_origin_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_origin_config(var_486);
+                builder = builder.set_s3_origin_config(var_493);
             }
             ,
             s if s.matches("CustomOriginConfig") /* CustomOriginConfig com.amazonaws.cloudfront#Origin$CustomOriginConfig */ =>  {
-                let var_487 =
+                let var_494 =
                     Some(
                         crate::xml_deser::deser_structure_custom_origin_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_origin_config(var_487);
+                builder = builder.set_custom_origin_config(var_494);
             }
             ,
             s if s.matches("ConnectionAttempts") /* ConnectionAttempts com.amazonaws.cloudfront#Origin$ConnectionAttempts */ =>  {
-                let var_488 =
+                let var_495 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11681,11 +11835,11 @@ pub fn deser_structure_origin(
                         ?
                     )
                 ;
-                builder = builder.set_connection_attempts(var_488);
+                builder = builder.set_connection_attempts(var_495);
             }
             ,
             s if s.matches("ConnectionTimeout") /* ConnectionTimeout com.amazonaws.cloudfront#Origin$ConnectionTimeout */ =>  {
-                let var_489 =
+                let var_496 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11696,17 +11850,17 @@ pub fn deser_structure_origin(
                         ?
                     )
                 ;
-                builder = builder.set_connection_timeout(var_489);
+                builder = builder.set_connection_timeout(var_496);
             }
             ,
             s if s.matches("OriginShield") /* OriginShield com.amazonaws.cloudfront#Origin$OriginShield */ =>  {
-                let var_490 =
+                let var_497 =
                     Some(
                         crate::xml_deser::deser_structure_origin_shield(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origin_shield(var_490);
+                builder = builder.set_origin_shield(var_497);
             }
             ,
             _ => {}
@@ -11723,7 +11877,7 @@ pub fn deser_structure_origin_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#OriginGroup$Id */ =>  {
-                let var_491 =
+                let var_498 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11732,27 +11886,27 @@ pub fn deser_structure_origin_group(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_491);
+                builder = builder.set_id(var_498);
             }
             ,
             s if s.matches("FailoverCriteria") /* FailoverCriteria com.amazonaws.cloudfront#OriginGroup$FailoverCriteria */ =>  {
-                let var_492 =
+                let var_499 =
                     Some(
                         crate::xml_deser::deser_structure_origin_group_failover_criteria(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_criteria(var_492);
+                builder = builder.set_failover_criteria(var_499);
             }
             ,
             s if s.matches("Members") /* Members com.amazonaws.cloudfront#OriginGroup$Members */ =>  {
-                let var_493 =
+                let var_500 =
                     Some(
                         crate::xml_deser::deser_structure_origin_group_members(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_members(var_493);
+                builder = builder.set_members(var_500);
             }
             ,
             _ => {}
@@ -11814,7 +11968,7 @@ pub fn deser_structure_cached_methods(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#CachedMethods$Quantity */ =>  {
-                let var_494 =
+                let var_501 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11825,17 +11979,17 @@ pub fn deser_structure_cached_methods(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_494);
+                builder = builder.set_quantity(var_501);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CachedMethods$Items */ =>  {
-                let var_495 =
+                let var_502 =
                     Some(
                         crate::xml_deser::deser_list_methods_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_495);
+                builder = builder.set_items(var_502);
             }
             ,
             _ => {}
@@ -11890,7 +12044,7 @@ pub fn deser_structure_cookie_preference(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Forward") /* Forward com.amazonaws.cloudfront#CookiePreference$Forward */ =>  {
-                let var_496 =
+                let var_503 =
                     Some(
                         Result::<crate::model::ItemSelection, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ItemSelection::from(
@@ -11900,17 +12054,17 @@ pub fn deser_structure_cookie_preference(
                         ?
                     )
                 ;
-                builder = builder.set_forward(var_496);
+                builder = builder.set_forward(var_503);
             }
             ,
             s if s.matches("WhitelistedNames") /* WhitelistedNames com.amazonaws.cloudfront#CookiePreference$WhitelistedNames */ =>  {
-                let var_497 =
+                let var_504 =
                     Some(
                         crate::xml_deser::deser_structure_cookie_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_whitelisted_names(var_497);
+                builder = builder.set_whitelisted_names(var_504);
             }
             ,
             _ => {}
@@ -11927,7 +12081,7 @@ pub fn deser_structure_query_string_cache_keys(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#QueryStringCacheKeys$Quantity */ =>  {
-                let var_498 =
+                let var_505 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11938,17 +12092,17 @@ pub fn deser_structure_query_string_cache_keys(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_498);
+                builder = builder.set_quantity(var_505);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryStringCacheKeys$Items */ =>  {
-                let var_499 =
+                let var_506 =
                     Some(
                         crate::xml_deser::deser_list_query_string_cache_keys_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_499);
+                builder = builder.set_items(var_506);
             }
             ,
             _ => {}
@@ -11965,7 +12119,7 @@ pub fn deser_structure_cache_behavior(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PathPattern") /* PathPattern com.amazonaws.cloudfront#CacheBehavior$PathPattern */ =>  {
-                let var_500 =
+                let var_507 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11974,11 +12128,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_path_pattern(var_500);
+                builder = builder.set_path_pattern(var_507);
             }
             ,
             s if s.matches("TargetOriginId") /* TargetOriginId com.amazonaws.cloudfront#CacheBehavior$TargetOriginId */ =>  {
-                let var_501 =
+                let var_508 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11987,31 +12141,31 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_target_origin_id(var_501);
+                builder = builder.set_target_origin_id(var_508);
             }
             ,
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#CacheBehavior$TrustedSigners */ =>  {
-                let var_502 =
+                let var_509 =
                     Some(
                         crate::xml_deser::deser_structure_trusted_signers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_signers(var_502);
+                builder = builder.set_trusted_signers(var_509);
             }
             ,
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#CacheBehavior$TrustedKeyGroups */ =>  {
-                let var_503 =
+                let var_510 =
                     Some(
                         crate::xml_deser::deser_structure_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_key_groups(var_503);
+                builder = builder.set_trusted_key_groups(var_510);
             }
             ,
             s if s.matches("ViewerProtocolPolicy") /* ViewerProtocolPolicy com.amazonaws.cloudfront#CacheBehavior$ViewerProtocolPolicy */ =>  {
-                let var_504 =
+                let var_511 =
                     Some(
                         Result::<crate::model::ViewerProtocolPolicy, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ViewerProtocolPolicy::from(
@@ -12021,21 +12175,21 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_viewer_protocol_policy(var_504);
+                builder = builder.set_viewer_protocol_policy(var_511);
             }
             ,
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#CacheBehavior$AllowedMethods */ =>  {
-                let var_505 =
+                let var_512 =
                     Some(
                         crate::xml_deser::deser_structure_allowed_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_methods(var_505);
+                builder = builder.set_allowed_methods(var_512);
             }
             ,
             s if s.matches("SmoothStreaming") /* SmoothStreaming com.amazonaws.cloudfront#CacheBehavior$SmoothStreaming */ =>  {
-                let var_506 =
+                let var_513 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12046,11 +12200,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_smooth_streaming(var_506);
+                builder = builder.set_smooth_streaming(var_513);
             }
             ,
             s if s.matches("Compress") /* Compress com.amazonaws.cloudfront#CacheBehavior$Compress */ =>  {
-                let var_507 =
+                let var_514 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12061,31 +12215,31 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_compress(var_507);
+                builder = builder.set_compress(var_514);
             }
             ,
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#CacheBehavior$LambdaFunctionAssociations */ =>  {
-                let var_508 =
+                let var_515 =
                     Some(
                         crate::xml_deser::deser_structure_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_associations(var_508);
+                builder = builder.set_lambda_function_associations(var_515);
             }
             ,
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#CacheBehavior$FunctionAssociations */ =>  {
-                let var_509 =
+                let var_516 =
                     Some(
                         crate::xml_deser::deser_structure_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_associations(var_509);
+                builder = builder.set_function_associations(var_516);
             }
             ,
             s if s.matches("FieldLevelEncryptionId") /* FieldLevelEncryptionId com.amazonaws.cloudfront#CacheBehavior$FieldLevelEncryptionId */ =>  {
-                let var_510 =
+                let var_517 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12094,11 +12248,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_field_level_encryption_id(var_510);
+                builder = builder.set_field_level_encryption_id(var_517);
             }
             ,
             s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#CacheBehavior$RealtimeLogConfigArn */ =>  {
-                let var_511 =
+                let var_518 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12107,11 +12261,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config_arn(var_511);
+                builder = builder.set_realtime_log_config_arn(var_518);
             }
             ,
             s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#CacheBehavior$CachePolicyId */ =>  {
-                let var_512 =
+                let var_519 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12120,11 +12274,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_cache_policy_id(var_512);
+                builder = builder.set_cache_policy_id(var_519);
             }
             ,
             s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#CacheBehavior$OriginRequestPolicyId */ =>  {
-                let var_513 =
+                let var_520 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12133,21 +12287,21 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_origin_request_policy_id(var_513);
+                builder = builder.set_origin_request_policy_id(var_520);
             }
             ,
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#CacheBehavior$ForwardedValues */ =>  {
-                let var_514 =
+                let var_521 =
                     Some(
                         crate::xml_deser::deser_structure_forwarded_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_forwarded_values(var_514);
+                builder = builder.set_forwarded_values(var_521);
             }
             ,
             s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#CacheBehavior$MinTTL */ =>  {
-                let var_515 =
+                let var_522 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12158,11 +12312,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_min_ttl(var_515);
+                builder = builder.set_min_ttl(var_522);
             }
             ,
             s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#CacheBehavior$DefaultTTL */ =>  {
-                let var_516 =
+                let var_523 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12173,11 +12327,11 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_default_ttl(var_516);
+                builder = builder.set_default_ttl(var_523);
             }
             ,
             s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CacheBehavior$MaxTTL */ =>  {
-                let var_517 =
+                let var_524 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12188,7 +12342,7 @@ pub fn deser_structure_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_max_ttl(var_517);
+                builder = builder.set_max_ttl(var_524);
             }
             ,
             _ => {}
@@ -12205,7 +12359,7 @@ pub fn deser_structure_custom_error_response(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ErrorCode") /* ErrorCode com.amazonaws.cloudfront#CustomErrorResponse$ErrorCode */ =>  {
-                let var_518 =
+                let var_525 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12216,11 +12370,11 @@ pub fn deser_structure_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_error_code(var_518);
+                builder = builder.set_error_code(var_525);
             }
             ,
             s if s.matches("ResponsePagePath") /* ResponsePagePath com.amazonaws.cloudfront#CustomErrorResponse$ResponsePagePath */ =>  {
-                let var_519 =
+                let var_526 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12229,11 +12383,11 @@ pub fn deser_structure_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_response_page_path(var_519);
+                builder = builder.set_response_page_path(var_526);
             }
             ,
             s if s.matches("ResponseCode") /* ResponseCode com.amazonaws.cloudfront#CustomErrorResponse$ResponseCode */ =>  {
-                let var_520 =
+                let var_527 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12242,11 +12396,11 @@ pub fn deser_structure_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_response_code(var_520);
+                builder = builder.set_response_code(var_527);
             }
             ,
             s if s.matches("ErrorCachingMinTTL") /* ErrorCachingMinTTL com.amazonaws.cloudfront#CustomErrorResponse$ErrorCachingMinTTL */ =>  {
-                let var_521 =
+                let var_528 =
                     Some(
                          {
                             <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12257,7 +12411,7 @@ pub fn deser_structure_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_error_caching_min_ttl(var_521);
+                builder = builder.set_error_caching_min_ttl(var_528);
             }
             ,
             _ => {}
@@ -12334,7 +12488,7 @@ pub fn deser_structure_encryption_entity(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PublicKeyId") /* PublicKeyId com.amazonaws.cloudfront#EncryptionEntity$PublicKeyId */ =>  {
-                let var_522 =
+                let var_529 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12343,11 +12497,11 @@ pub fn deser_structure_encryption_entity(
                         ?
                     )
                 ;
-                builder = builder.set_public_key_id(var_522);
+                builder = builder.set_public_key_id(var_529);
             }
             ,
             s if s.matches("ProviderId") /* ProviderId com.amazonaws.cloudfront#EncryptionEntity$ProviderId */ =>  {
-                let var_523 =
+                let var_530 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12356,17 +12510,17 @@ pub fn deser_structure_encryption_entity(
                         ?
                     )
                 ;
-                builder = builder.set_provider_id(var_523);
+                builder = builder.set_provider_id(var_530);
             }
             ,
             s if s.matches("FieldPatterns") /* FieldPatterns com.amazonaws.cloudfront#EncryptionEntity$FieldPatterns */ =>  {
-                let var_524 =
+                let var_531 =
                     Some(
                         crate::xml_deser::deser_structure_field_patterns(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_field_patterns(var_524);
+                builder = builder.set_field_patterns(var_531);
             }
             ,
             _ => {}
@@ -12449,7 +12603,7 @@ pub fn deser_structure_key_pair_ids(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#KeyPairIds$Quantity */ =>  {
-                let var_525 =
+                let var_532 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12460,17 +12614,17 @@ pub fn deser_structure_key_pair_ids(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_525);
+                builder = builder.set_quantity(var_532);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyPairIds$Items */ =>  {
-                let var_526 =
+                let var_533 =
                     Some(
                         crate::xml_deser::deser_list_key_pair_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_526);
+                builder = builder.set_items(var_533);
             }
             ,
             _ => {}
@@ -12487,7 +12641,7 @@ pub fn deser_structure_custom_headers(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#CustomHeaders$Quantity */ =>  {
-                let var_527 =
+                let var_534 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12498,17 +12652,17 @@ pub fn deser_structure_custom_headers(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_527);
+                builder = builder.set_quantity(var_534);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CustomHeaders$Items */ =>  {
-                let var_528 =
+                let var_535 =
                     Some(
                         crate::xml_deser::deser_list_origin_custom_headers_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_528);
+                builder = builder.set_items(var_535);
             }
             ,
             _ => {}
@@ -12525,7 +12679,7 @@ pub fn deser_structure_s3_origin_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OriginAccessIdentity") /* OriginAccessIdentity com.amazonaws.cloudfront#S3OriginConfig$OriginAccessIdentity */ =>  {
-                let var_529 =
+                let var_536 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12534,7 +12688,7 @@ pub fn deser_structure_s3_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_access_identity(var_529);
+                builder = builder.set_origin_access_identity(var_536);
             }
             ,
             _ => {}
@@ -12551,7 +12705,7 @@ pub fn deser_structure_custom_origin_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HTTPPort") /* HTTPPort com.amazonaws.cloudfront#CustomOriginConfig$HTTPPort */ =>  {
-                let var_530 =
+                let var_537 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12562,11 +12716,11 @@ pub fn deser_structure_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_http_port(var_530);
+                builder = builder.set_http_port(var_537);
             }
             ,
             s if s.matches("HTTPSPort") /* HTTPSPort com.amazonaws.cloudfront#CustomOriginConfig$HTTPSPort */ =>  {
-                let var_531 =
+                let var_538 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12577,11 +12731,11 @@ pub fn deser_structure_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_https_port(var_531);
+                builder = builder.set_https_port(var_538);
             }
             ,
             s if s.matches("OriginProtocolPolicy") /* OriginProtocolPolicy com.amazonaws.cloudfront#CustomOriginConfig$OriginProtocolPolicy */ =>  {
-                let var_532 =
+                let var_539 =
                     Some(
                         Result::<crate::model::OriginProtocolPolicy, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OriginProtocolPolicy::from(
@@ -12591,21 +12745,21 @@ pub fn deser_structure_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_protocol_policy(var_532);
+                builder = builder.set_origin_protocol_policy(var_539);
             }
             ,
             s if s.matches("OriginSslProtocols") /* OriginSslProtocols com.amazonaws.cloudfront#CustomOriginConfig$OriginSslProtocols */ =>  {
-                let var_533 =
+                let var_540 =
                     Some(
                         crate::xml_deser::deser_structure_origin_ssl_protocols(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origin_ssl_protocols(var_533);
+                builder = builder.set_origin_ssl_protocols(var_540);
             }
             ,
             s if s.matches("OriginReadTimeout") /* OriginReadTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginReadTimeout */ =>  {
-                let var_534 =
+                let var_541 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12616,11 +12770,11 @@ pub fn deser_structure_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_read_timeout(var_534);
+                builder = builder.set_origin_read_timeout(var_541);
             }
             ,
             s if s.matches("OriginKeepaliveTimeout") /* OriginKeepaliveTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginKeepaliveTimeout */ =>  {
-                let var_535 =
+                let var_542 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12631,7 +12785,7 @@ pub fn deser_structure_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_keepalive_timeout(var_535);
+                builder = builder.set_origin_keepalive_timeout(var_542);
             }
             ,
             _ => {}
@@ -12648,7 +12802,7 @@ pub fn deser_structure_origin_shield(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#OriginShield$Enabled */ =>  {
-                let var_536 =
+                let var_543 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12659,11 +12813,11 @@ pub fn deser_structure_origin_shield(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_536);
+                builder = builder.set_enabled(var_543);
             }
             ,
             s if s.matches("OriginShieldRegion") /* OriginShieldRegion com.amazonaws.cloudfront#OriginShield$OriginShieldRegion */ =>  {
-                let var_537 =
+                let var_544 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12672,7 +12826,7 @@ pub fn deser_structure_origin_shield(
                         ?
                     )
                 ;
-                builder = builder.set_origin_shield_region(var_537);
+                builder = builder.set_origin_shield_region(var_544);
             }
             ,
             _ => {}
@@ -12689,13 +12843,13 @@ pub fn deser_structure_origin_group_failover_criteria(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StatusCodes") /* StatusCodes com.amazonaws.cloudfront#OriginGroupFailoverCriteria$StatusCodes */ =>  {
-                let var_538 =
+                let var_545 =
                     Some(
                         crate::xml_deser::deser_structure_status_codes(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_status_codes(var_538);
+                builder = builder.set_status_codes(var_545);
             }
             ,
             _ => {}
@@ -12712,7 +12866,7 @@ pub fn deser_structure_origin_group_members(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#OriginGroupMembers$Quantity */ =>  {
-                let var_539 =
+                let var_546 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12723,17 +12877,17 @@ pub fn deser_structure_origin_group_members(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_539);
+                builder = builder.set_quantity(var_546);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginGroupMembers$Items */ =>  {
-                let var_540 =
+                let var_547 =
                     Some(
                         crate::xml_deser::deser_list_origin_group_member_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_540);
+                builder = builder.set_items(var_547);
             }
             ,
             _ => {}
@@ -12750,7 +12904,7 @@ pub fn deser_structure_lambda_function_association(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LambdaFunctionARN") /* LambdaFunctionARN com.amazonaws.cloudfront#LambdaFunctionAssociation$LambdaFunctionARN */ =>  {
-                let var_541 =
+                let var_548 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12759,11 +12913,11 @@ pub fn deser_structure_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_arn(var_541);
+                builder = builder.set_lambda_function_arn(var_548);
             }
             ,
             s if s.matches("EventType") /* EventType com.amazonaws.cloudfront#LambdaFunctionAssociation$EventType */ =>  {
-                let var_542 =
+                let var_549 =
                     Some(
                         Result::<crate::model::EventType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EventType::from(
@@ -12773,11 +12927,11 @@ pub fn deser_structure_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_event_type(var_542);
+                builder = builder.set_event_type(var_549);
             }
             ,
             s if s.matches("IncludeBody") /* IncludeBody com.amazonaws.cloudfront#LambdaFunctionAssociation$IncludeBody */ =>  {
-                let var_543 =
+                let var_550 =
                     Some(
                          {
                             <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12788,7 +12942,7 @@ pub fn deser_structure_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_include_body(var_543);
+                builder = builder.set_include_body(var_550);
             }
             ,
             _ => {}
@@ -12805,7 +12959,7 @@ pub fn deser_structure_function_association(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionARN") /* FunctionARN com.amazonaws.cloudfront#FunctionAssociation$FunctionARN */ =>  {
-                let var_544 =
+                let var_551 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12814,11 +12968,11 @@ pub fn deser_structure_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_function_arn(var_544);
+                builder = builder.set_function_arn(var_551);
             }
             ,
             s if s.matches("EventType") /* EventType com.amazonaws.cloudfront#FunctionAssociation$EventType */ =>  {
-                let var_545 =
+                let var_552 =
                     Some(
                         Result::<crate::model::EventType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EventType::from(
@@ -12828,7 +12982,7 @@ pub fn deser_structure_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_event_type(var_545);
+                builder = builder.set_event_type(var_552);
             }
             ,
             _ => {}
@@ -12867,7 +13021,7 @@ pub fn deser_structure_query_arg_profile(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryArg") /* QueryArg com.amazonaws.cloudfront#QueryArgProfile$QueryArg */ =>  {
-                let var_546 =
+                let var_553 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12876,11 +13030,11 @@ pub fn deser_structure_query_arg_profile(
                         ?
                     )
                 ;
-                builder = builder.set_query_arg(var_546);
+                builder = builder.set_query_arg(var_553);
             }
             ,
             s if s.matches("ProfileId") /* ProfileId com.amazonaws.cloudfront#QueryArgProfile$ProfileId */ =>  {
-                let var_547 =
+                let var_554 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12889,7 +13043,7 @@ pub fn deser_structure_query_arg_profile(
                         ?
                     )
                 ;
-                builder = builder.set_profile_id(var_547);
+                builder = builder.set_profile_id(var_554);
             }
             ,
             _ => {}
@@ -12906,7 +13060,7 @@ pub fn deser_structure_content_type_profile(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.cloudfront#ContentTypeProfile$Format */ =>  {
-                let var_548 =
+                let var_555 =
                     Some(
                         Result::<crate::model::Format, smithy_xml::decode::XmlError>::Ok(
                             crate::model::Format::from(
@@ -12916,11 +13070,11 @@ pub fn deser_structure_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_548);
+                builder = builder.set_format(var_555);
             }
             ,
             s if s.matches("ProfileId") /* ProfileId com.amazonaws.cloudfront#ContentTypeProfile$ProfileId */ =>  {
-                let var_549 =
+                let var_556 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12929,11 +13083,11 @@ pub fn deser_structure_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_profile_id(var_549);
+                builder = builder.set_profile_id(var_556);
             }
             ,
             s if s.matches("ContentType") /* ContentType com.amazonaws.cloudfront#ContentTypeProfile$ContentType */ =>  {
-                let var_550 =
+                let var_557 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12942,7 +13096,7 @@ pub fn deser_structure_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_content_type(var_550);
+                builder = builder.set_content_type(var_557);
             }
             ,
             _ => {}
@@ -12959,7 +13113,7 @@ pub fn deser_structure_field_patterns(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#FieldPatterns$Quantity */ =>  {
-                let var_551 =
+                let var_558 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12970,17 +13124,17 @@ pub fn deser_structure_field_patterns(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_551);
+                builder = builder.set_quantity(var_558);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldPatterns$Items */ =>  {
-                let var_552 =
+                let var_559 =
                     Some(
                         crate::xml_deser::deser_list_field_pattern_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_552);
+                builder = builder.set_items(var_559);
             }
             ,
             _ => {}
@@ -13038,7 +13192,7 @@ pub fn deser_structure_origin_ssl_protocols(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#OriginSslProtocols$Quantity */ =>  {
-                let var_553 =
+                let var_560 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13049,17 +13203,17 @@ pub fn deser_structure_origin_ssl_protocols(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_553);
+                builder = builder.set_quantity(var_560);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginSslProtocols$Items */ =>  {
-                let var_554 =
+                let var_561 =
                     Some(
                         crate::xml_deser::deser_list_ssl_protocols_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_554);
+                builder = builder.set_items(var_561);
             }
             ,
             _ => {}
@@ -13076,7 +13230,7 @@ pub fn deser_structure_status_codes(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#StatusCodes$Quantity */ =>  {
-                let var_555 =
+                let var_562 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13087,17 +13241,17 @@ pub fn deser_structure_status_codes(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_555);
+                builder = builder.set_quantity(var_562);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#StatusCodes$Items */ =>  {
-                let var_556 =
+                let var_563 =
                     Some(
                         crate::xml_deser::deser_list_status_code_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_556);
+                builder = builder.set_items(var_563);
             }
             ,
             _ => {}
@@ -13155,7 +13309,7 @@ pub fn deser_structure_origin_custom_header(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HeaderName") /* HeaderName com.amazonaws.cloudfront#OriginCustomHeader$HeaderName */ =>  {
-                let var_557 =
+                let var_564 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13164,11 +13318,11 @@ pub fn deser_structure_origin_custom_header(
                         ?
                     )
                 ;
-                builder = builder.set_header_name(var_557);
+                builder = builder.set_header_name(var_564);
             }
             ,
             s if s.matches("HeaderValue") /* HeaderValue com.amazonaws.cloudfront#OriginCustomHeader$HeaderValue */ =>  {
-                let var_558 =
+                let var_565 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13177,7 +13331,7 @@ pub fn deser_structure_origin_custom_header(
                         ?
                     )
                 ;
-                builder = builder.set_header_value(var_558);
+                builder = builder.set_header_value(var_565);
             }
             ,
             _ => {}
@@ -13241,7 +13395,7 @@ pub fn deser_structure_origin_group_member(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OriginId") /* OriginId com.amazonaws.cloudfront#OriginGroupMember$OriginId */ =>  {
-                let var_559 =
+                let var_566 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13250,7 +13404,7 @@ pub fn deser_structure_origin_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_origin_id(var_559);
+                builder = builder.set_origin_id(var_566);
             }
             ,
             _ => {}

@@ -69,7 +69,7 @@ impl smithy_http::response::ParseStrictResponse for AcceptInvitation {
 
 /// <p>Disables the standards specified by the provided
 /// <code>StandardsSubscriptionArns</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>AWS Security Hub User
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User
 /// Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisableStandards {
@@ -99,12 +99,10 @@ impl smithy_http::response::ParseStrictResponse for BatchDisableStandards {
 }
 
 /// <p>Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the
-/// ARN for a standard, use the <code>
-/// <a>DescribeStandards</a>
-/// </code>
+/// ARN for a standard, use the <code>DescribeStandards</code>
 /// operation.</p>
 /// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a>
-/// section of the <i>AWS Security Hub User Guide</i>.</p>
+/// section of the <i>Security Hub User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchEnableStandards {
     _private: (),
@@ -276,7 +274,7 @@ impl smithy_http::response::ParseStrictResponse for BatchImportFindings {
 /// <p>You can configure IAM policies to restrict access to fields and field values. For
 /// example, you might not want member accounts to be able to suppress findings or change the
 /// finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the
-/// <i>AWS Security Hub User Guide</i>.</p>
+/// <i>Security Hub User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateFindings {
     _private: (),
@@ -369,37 +367,28 @@ impl smithy_http::response::ParseStrictResponse for CreateInsight {
 /// <p>
 /// <code>CreateMembers</code> is always used to add accounts that are not organization
 /// members.</p>
-/// <p>For accounts that are part of an organization, <code>CreateMembers</code> is only used
+/// <p>For accounts that are managed using Organizations, <code>CreateMembers</code> is only used
 /// in the following cases:</p>
 /// <ul>
 /// <li>
-/// <p>Security Hub is not configured to automatically add new accounts in an
-/// organization.</p>
+/// <p>Security Hub is not configured to automatically add new organization accounts.</p>
 /// </li>
 /// <li>
 /// <p>The account was disassociated or deleted in Security Hub.</p>
 /// </li>
 /// </ul>
 /// <p>This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you
-/// can use the <code>
-/// <a>EnableSecurityHub</a>
-/// </code> operation.</p>
+/// can use the <code>EnableSecurityHub</code> operation.</p>
 /// <p>For accounts that are not organization members, you create the account association and
 /// then send an invitation to the member account. To send the invitation, you use the
-/// <code>
-/// <a>InviteMembers</a>
-/// </code> operation. If the account owner accepts
+/// <code>InviteMembers</code> operation. If the account owner accepts
 /// the invitation, the account becomes a member account in Security Hub.</p>
-/// <p>Accounts that are part of an organization do not receive an invitation. They
-/// automatically become a member account in Security Hub.</p>
+/// <p>Accounts that are managed using Organizations do not receive an invitation. They
+/// automatically become a member account in Security Hub, and Security Hub is automatically enabled for those accounts. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p>
 /// <p>A permissions policy is added that permits the administrator account to view the findings
 /// generated in the member account. When Security Hub is enabled in a member account, the member account findings are
 /// also visible to the administrator account. </p>
-/// <p>To remove the association between the administrator and member accounts, use the <code>
-/// <a>DisassociateFromMasterAccount</a>
-/// </code> or <code>
-/// <a>DisassociateMembers</a>
-/// </code> operation.</p>
+/// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMembers {
     _private: (),
@@ -511,7 +500,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteInsight {
     }
 }
 
-/// <p>Deletes invitations received by the AWS account to become a member account.</p>
+/// <p>Deletes invitations received by the Amazon Web Services account to become a member account.</p>
 /// <p>This operation is only used by accounts that are not part of an organization.
 /// Organization accounts do not receive invitations.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1002,23 +991,18 @@ impl smithy_http::response::ParseStrictResponse for EnableOrganizationAdminAccou
 /// automatically enable the following standards.</p>
 /// <ul>
 /// <li>
-/// <p>CIS AWS Foundations</p>
+/// <p>CIS Amazon Web Services Foundations</p>
 /// </li>
 /// <li>
-/// <p>AWS Foundational Security Best Practices</p>
+/// <p>Amazon Web Services Foundational Security Best Practices</p>
 /// </li>
 /// </ul>
 /// <p>You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard. </p>
 /// <p>To not enable the automatically enabled standards, set
 /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-/// <p>After you enable Security Hub, to enable a standard, use the <code>
-/// <a>BatchEnableStandards</a>
-/// </code> operation. To disable a standard, use the
-/// <code>
-/// <a>BatchDisableStandards</a>
-/// </code> operation.</p>
-/// <p>To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting Up
-/// AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p>
+/// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the
+/// <code>BatchDisableStandards</code> operation.</p>
+/// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableSecurityHub {
     _private: (),
@@ -1275,13 +1259,11 @@ impl smithy_http::response::ParseStrictResponse for GetMembers {
     }
 }
 
-/// <p>Invites other AWS accounts to become member accounts for the Security Hub administrator account that
+/// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that
 /// the invitation is sent from.</p>
 /// <p>This operation is only used to invite accounts that do not belong to an organization.
 /// Organization accounts do not receive invitations.</p>
-/// <p>Before you can use this action to invite a member, you must first use the <code>
-/// <a>CreateMembers</a>
-/// </code> action to create the member account in Security Hub.</p>
+/// <p>Before you can use this action to invite a member, you must first use the <code>CreateMembers</code> action to create the member account in Security Hub.</p>
 /// <p>When the account owner enables Security Hub and accepts the invitation to become a member
 /// account, the administrator account can view the findings generated from the member account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1338,9 +1320,9 @@ impl smithy_http::response::ParseStrictResponse for ListEnabledProductsForImport
     }
 }
 
-/// <p>Lists all Security Hub membership invitations that were sent to the current AWS account.</p>
+/// <p>Lists all Security Hub membership invitations that were sent to the current Amazon Web Services account.</p>
 /// <p>This operation is only used by accounts that are managed by invitation.
-/// Accounts that are managed using the integration with AWS Organizations do not receive invitations.</p>
+/// Accounts that are managed using the integration with Organizations do not receive invitations.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListInvitations {
     _private: (),

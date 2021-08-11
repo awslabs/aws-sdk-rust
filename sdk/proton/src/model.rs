@@ -1422,9 +1422,9 @@ pub struct Service {
     pub spec: std::option::Option<std::string::String>,
     /// <p>The service pipeline detail data.</p>
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
-    /// <p>The ARN of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the
-    /// <i>AWS Proton Administration Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting started</a> in the <i>AWS Proton User
-    /// Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the
+    /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with AWS Proton</a> in the <i>AWS Proton
+    /// User Guide</i>.</p>
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the code repository.</p>
     pub repository_id: std::option::Option<std::string::String>,
@@ -1576,9 +1576,9 @@ pub mod service {
             self.pipeline = input;
             self
         }
-        /// <p>The ARN of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the
-        /// <i>AWS Proton Administration Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting started</a> in the <i>AWS Proton User
-        /// Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the
+        /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with AWS Proton</a> in the <i>AWS Proton
+        /// User Guide</i>.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
@@ -3209,7 +3209,8 @@ pub struct EnvironmentSummary {
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>An environment deployment status message.</p>
     pub deployment_status_message: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+    /// behalf.</p>
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
@@ -3394,7 +3395,8 @@ pub mod environment_summary {
             self.deployment_status_message = input;
             self
         }
-        /// <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+        /// behalf.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.proton_service_role_arn = Some(input.into());
             self
@@ -3557,7 +3559,7 @@ pub struct Environment {
     pub last_deployment_succeeded_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the environment template.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The ID of the major version of the environment template.</p>
     pub template_major_version: std::option::Option<std::string::String>,
@@ -3567,7 +3569,8 @@ pub struct Environment {
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>An environment deployment status message.</p>
     pub deployment_status_message: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+    /// behalf.</p>
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
@@ -3696,7 +3699,7 @@ pub mod environment {
             self.arn = input;
             self
         }
-        /// <p>The ARN of the environment template.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
@@ -3756,7 +3759,8 @@ pub mod environment {
             self.deployment_status_message = input;
             self
         }
-        /// <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+        /// behalf.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.proton_service_role_arn = Some(input.into());
             self

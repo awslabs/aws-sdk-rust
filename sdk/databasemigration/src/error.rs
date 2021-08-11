@@ -5651,7 +5651,7 @@ impl ResourceNotFoundFault {
     }
 }
 
-/// <p>AWS DMS cannot access the AWS KMS key.</p>
+/// <p>DMS cannot access the KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotAccessibleFault {
@@ -5775,7 +5775,7 @@ impl InvalidResourceStateFault {
     }
 }
 
-/// <p>AWS DMS was denied access to the endpoint. Check that the
+/// <p>DMS was denied access to the endpoint. Check that the
 /// role is correctly configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6033,7 +6033,7 @@ impl ResourceAlreadyExistsFault {
     }
 }
 
-/// <p>The specified AWS KMS entity or resource can't be found.</p>
+/// <p>The specified KMS entity or resource can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundFault {
@@ -6093,7 +6093,7 @@ impl KmsNotFoundFault {
     }
 }
 
-/// <p>The state of the specified AWS KMS resource isn't valid for this request.</p>
+/// <p>The state of the specified KMS resource isn't valid for this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateFault {
@@ -6153,7 +6153,7 @@ impl KmsInvalidStateFault {
     }
 }
 
-/// <p>An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.</p>
+/// <p>An Key Management Service (KMS) error is preventing access to KMS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsFault {
@@ -6829,7 +6829,7 @@ impl SnsInvalidTopicFault {
     }
 }
 
-/// <p>This request triggered AWS KMS request throttling.</p>
+/// <p>This request triggered KMS request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingFault {

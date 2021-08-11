@@ -917,6 +917,60 @@ impl smithy_http::response::ParseStrictResponse for GetIntentVersions {
     }
 }
 
+/// <p>Provides details about an ongoing or complete migration from an
+/// Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration
+/// alerts and warnings related to the migration.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMigration {
+    _private: (),
+}
+impl GetMigration {
+    /// Creates a new builder-style object to manufacture [`GetMigrationInput`](crate::input::GetMigrationInput)
+    pub fn builder() -> crate::input::get_migration_input::Builder {
+        crate::input::get_migration_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMigration {
+    type Output =
+        std::result::Result<crate::output::GetMigrationOutput, crate::error::GetMigrationError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_migration_error(response)
+        } else {
+            crate::operation_deser::parse_get_migration_response(response)
+        }
+    }
+}
+
+/// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMigrations {
+    _private: (),
+}
+impl GetMigrations {
+    /// Creates a new builder-style object to manufacture [`GetMigrationsInput`](crate::input::GetMigrationsInput)
+    pub fn builder() -> crate::input::get_migrations_input::Builder {
+        crate::input::get_migrations_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMigrations {
+    type Output =
+        std::result::Result<crate::output::GetMigrationsOutput, crate::error::GetMigrationsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_migrations_error(response)
+        } else {
+            crate::operation_deser::parse_get_migrations_response(response)
+        }
+    }
+}
+
 /// <p>Returns information about a specific version of a slot type. In
 /// addition to specifying the slot type name, you must specify the slot type
 /// version.</p>
@@ -1044,8 +1098,9 @@ impl smithy_http::response::ParseStrictResponse for GetSlotTypeVersions {
 /// received by the bot in the last 15 days. The response contains information
 /// about a maximum of 100 utterances for each version.</p>
 /// <p>If you set <code>childDirected</code> field to true when you
-/// created your bot, or if you opted out of participating in improving Amazon Lex,
-/// utterances are not available.</p>
+/// created your bot, if you are using slot obfuscation with one or more
+/// slots, or if you opted out of participating in improving Amazon Lex, utterances
+/// are not available.</p>
 /// <p>This operation requires permissions for the
 /// <code>lex:GetUtterancesView</code> action.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1319,6 +1374,35 @@ impl smithy_http::response::ParseStrictResponse for StartImport {
             crate::operation_deser::parse_start_import_error(response)
         } else {
             crate::operation_deser::parse_start_import_response(response)
+        }
+    }
+}
+
+/// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when
+/// you want to take advantage of the new features of Amazon Lex V2.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex
+/// developer guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartMigration {
+    _private: (),
+}
+impl StartMigration {
+    /// Creates a new builder-style object to manufacture [`StartMigrationInput`](crate::input::StartMigrationInput)
+    pub fn builder() -> crate::input::start_migration_input::Builder {
+        crate::input::start_migration_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for StartMigration {
+    type Output =
+        std::result::Result<crate::output::StartMigrationOutput, crate::error::StartMigrationError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_start_migration_error(response)
+        } else {
+            crate::operation_deser::parse_start_migration_response(response)
         }
     }
 }

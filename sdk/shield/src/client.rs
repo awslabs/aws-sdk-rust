@@ -179,7 +179,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon S3 bucket that contains your AWS WAF logs.</p>
+        /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
         pub fn log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_bucket(input);
             self
@@ -220,7 +220,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
         /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
@@ -318,7 +318,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p>
+        /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
         /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p>
         /// <note>
         /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.  </p>
@@ -392,12 +392,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// <li>
-        /// <p>For an AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+        /// <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
         /// </code>
         /// </p>
         /// </li>
         /// <li>
-        /// <p>For an AWS Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
+        /// <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
         /// </code>
         /// </p>
         /// </li>
@@ -476,7 +476,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_group_id(input);
             self
         }
-        /// <p>Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
         /// <li>
         /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
@@ -485,7 +485,7 @@ pub mod fluent_builders {
         /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
         /// </li>
         /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin resources for CloudFront distributions.</p>
+        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p>
         /// </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
@@ -883,7 +883,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_id(input);
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is
+        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
         /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -1033,7 +1033,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon S3 bucket that contains your AWS WAF logs.</p>
+        /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
         pub fn log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_bucket(input);
             self
@@ -1627,7 +1627,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>
+        /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
         /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
         pub fn emergency_contact_list(
             mut self,
@@ -1687,7 +1687,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_group_id(input);
             self
         }
-        /// <p>Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
         /// <li>
         /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
@@ -1696,7 +1696,7 @@ pub mod fluent_builders {
         /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
         /// </li>
         /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin resources for CloudFront distributions.</p>
+        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
         /// </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {

@@ -37,9 +37,9 @@ async fn test_signer() -> Result<(), aws_sdk_s3::Error> {
         .unwrap()
         .make_operation(&conf)
         .unwrap();
-    op.config_mut()
+    op.properties_mut()
         .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-    op.config_mut().insert(AwsUserAgent::for_tests());
+    op.properties_mut().insert(AwsUserAgent::for_tests());
 
     client.call(op).await.expect_err("empty response");
     for req in conn.requests().iter() {

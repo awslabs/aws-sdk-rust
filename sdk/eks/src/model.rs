@@ -315,6 +315,7 @@ pub enum ErrorCode {
     SubnetNotFound,
     /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
     UnknownValue,
+    UnsupportedAddonModification,
     VpcIdNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -336,6 +337,7 @@ impl std::convert::From<&str> for ErrorCode {
             "SecurityGroupNotFound" => ErrorCode::SecurityGroupNotFound,
             "SubnetNotFound" => ErrorCode::SubnetNotFound,
             "Unknown" => ErrorCode::UnknownValue,
+            "UnsupportedAddonModification" => ErrorCode::UnsupportedAddonModification,
             "VpcIdNotFound" => ErrorCode::VpcIdNotFound,
             other => ErrorCode::Unknown(other.to_owned()),
         }
@@ -365,6 +367,7 @@ impl ErrorCode {
             ErrorCode::SecurityGroupNotFound => "SecurityGroupNotFound",
             ErrorCode::SubnetNotFound => "SubnetNotFound",
             ErrorCode::UnknownValue => "Unknown",
+            ErrorCode::UnsupportedAddonModification => "UnsupportedAddonModification",
             ErrorCode::VpcIdNotFound => "VpcIdNotFound",
             ErrorCode::Unknown(s) => s.as_ref(),
         }
@@ -385,6 +388,7 @@ impl ErrorCode {
             "SecurityGroupNotFound",
             "SubnetNotFound",
             "Unknown",
+            "UnsupportedAddonModification",
             "VpcIdNotFound",
         ]
     }
@@ -822,10 +826,16 @@ impl LaunchTemplateSpecification {
     }
 }
 
+/// <p>The node group update configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupUpdateConfig {
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel.
+    /// This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number
+    /// is 100.</p>
     pub max_unavailable: std::option::Option<i32>,
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+    /// updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub max_unavailable_percentage: std::option::Option<i32>,
 }
 impl std::fmt::Debug for NodegroupUpdateConfig {
@@ -849,6 +859,9 @@ pub mod nodegroup_update_config {
         pub(crate) max_unavailable_percentage: std::option::Option<i32>,
     }
     impl Builder {
+        /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel.
+        /// This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number
+        /// is 100.</p>
         pub fn max_unavailable(mut self, input: i32) -> Self {
             self.max_unavailable = Some(input);
             self
@@ -857,6 +870,8 @@ pub mod nodegroup_update_config {
             self.max_unavailable = input;
             self
         }
+        /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+        /// updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
         pub fn max_unavailable_percentage(mut self, input: i32) -> Self {
             self.max_unavailable_percentage = Some(input);
             self
@@ -888,8 +903,7 @@ impl NodegroupUpdateConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupScalingConfig {
-    /// <p>The minimum number of nodes that the managed node group can scale in to. This number
-    /// must be greater than zero.</p>
+    /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum number of nodes that the managed node group can scale out to. For
     /// information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service
@@ -918,8 +932,7 @@ pub mod nodegroup_scaling_config {
         pub(crate) desired_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The minimum number of nodes that the managed node group can scale in to. This number
-        /// must be greater than zero.</p>
+        /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.min_size = Some(input);
             self
@@ -1435,7 +1448,7 @@ pub struct VpcConfigRequest {
     /// control plane.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify one or more security groups for the cross-account elastic network interfaces
-    /// that Amazon EKS creates to use to allow communication between your nodes and the Kubernetes
+    /// that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes
     /// control plane. If you don't specify any security groups, then familiarize yourself with
     /// the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
     /// <ul>
@@ -1455,8 +1468,8 @@ pub struct VpcConfigRequest {
     /// Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes
     /// API server can only receive requests from within the cluster VPC. The default value for
     /// this parameter is <code>true</code>, which enables public access for your Kubernetes API
-    /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-    /// Endpoint Access Control</a> in the <i>
+    /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub endpoint_public_access: std::option::Option<bool>,
@@ -1464,19 +1477,19 @@ pub struct VpcConfigRequest {
     /// Kubernetes API server endpoint. If you enable private access, Kubernetes API requests
     /// from within your cluster's VPC use the private VPC endpoint. The default value for this
     /// parameter is <code>false</code>, which disables private access for your Kubernetes API
-    /// server. If you disable private access and you have nodes or AWS Fargate pods in the
+    /// server. If you disable private access and you have nodes or Fargate pods in the
     /// cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR
-    /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-    /// Endpoint Access Control</a> in the <i>
+    /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub endpoint_private_access: std::option::Option<bool>,
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
     /// endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that
     /// you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled
-    /// private endpoint access and you have nodes or AWS Fargate pods in the cluster, then ensure
-    /// that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-    /// Endpoint Access Control</a> in the <i>
+    /// private endpoint access and you have nodes or Fargate pods in the cluster, then ensure
+    /// that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1535,8 +1548,8 @@ pub mod vpc_config_request {
         /// Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes
         /// API server can only receive requests from within the cluster VPC. The default value for
         /// this parameter is <code>true</code>, which enables public access for your Kubernetes API
-        /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-        /// Endpoint Access Control</a> in the <i>
+        /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
         pub fn endpoint_public_access(mut self, input: bool) -> Self {
@@ -1551,10 +1564,10 @@ pub mod vpc_config_request {
         /// Kubernetes API server endpoint. If you enable private access, Kubernetes API requests
         /// from within your cluster's VPC use the private VPC endpoint. The default value for this
         /// parameter is <code>false</code>, which disables private access for your Kubernetes API
-        /// server. If you disable private access and you have nodes or AWS Fargate pods in the
+        /// server. If you disable private access and you have nodes or Fargate pods in the
         /// cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR
-        /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-        /// Endpoint Access Control</a> in the <i>
+        /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
         pub fn endpoint_private_access(mut self, input: bool) -> Self {
@@ -1754,7 +1767,7 @@ pub struct Nodegroup {
     /// this is the AMI type that was specified in the node group configuration.</p>
     pub ami_type: std::option::Option<crate::model::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
-    /// daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API
+    /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API
     /// calls through an IAM instance profile and associated policies.</p>
     pub node_role: std::option::Option<std::string::String>,
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p>
@@ -1765,7 +1778,7 @@ pub struct Nodegroup {
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are
-    /// created. Effect is one of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints
+    /// created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
     /// can be used together with tolerations to control how workloads are scheduled to your
     /// nodes.</p>
     pub taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -1779,6 +1792,7 @@ pub struct Nodegroup {
     /// <p>The health status of the node group. If there are issues with your node group's
     /// health, they are listed here.</p>
     pub health: std::option::Option<crate::model::NodegroupHealth>,
+    /// <p>The node group update configuration.</p>
     pub update_config: std::option::Option<crate::model::NodegroupUpdateConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch
     /// template that was used.</p>
@@ -2023,7 +2037,7 @@ pub mod nodegroup {
             self
         }
         /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
-        /// daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API
+        /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API
         /// calls through an IAM instance profile and associated policies.</p>
         pub fn node_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_role = Some(input.into());
@@ -2102,6 +2116,7 @@ pub mod nodegroup {
             self.health = input;
             self
         }
+        /// <p>The node group update configuration.</p>
         pub fn update_config(mut self, input: crate::model::NodegroupUpdateConfig) -> Self {
             self.update_config = Some(input);
             self
@@ -2312,7 +2327,7 @@ pub struct Issue {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>InstanceLimitExceeded</b>: Your AWS account is
+    /// <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is
     /// unable to launch any more instances of the specified instance type. You may be
     /// able to request an Amazon EC2 instance limit increase to recover.</p>
     /// </li>
@@ -2338,7 +2353,7 @@ pub struct Issue {
     pub code: std::option::Option<crate::model::NodegroupIssueCode>,
     /// <p>The error message associated with the issue.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS resources that are afflicted by this issue.</p>
+    /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Issue {
@@ -2436,7 +2451,7 @@ pub mod issue {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>InstanceLimitExceeded</b>: Your AWS account is
+        /// <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is
         /// unable to launch any more instances of the specified instance type. You may be
         /// able to request an Amazon EC2 instance limit increase to recover.</p>
         /// </li>
@@ -2826,8 +2841,8 @@ impl AsRef<str> for AmiTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoteAccessConfig {
     /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the
-    /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+    /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key
+    /// pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
     pub ec2_ssh_key: std::option::Option<std::string::String>,
     /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify
     /// an Amazon EC2 SSH key but do not specify a source security group when you create a managed
@@ -2855,8 +2870,8 @@ pub mod remote_access_config {
     }
     impl Builder {
         /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the
-        /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+        /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key
+        /// pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
         pub fn ec2_ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_ssh_key = Some(input.into());
             self
@@ -3397,7 +3412,7 @@ impl AsRef<str> for ConfigStatus {
     }
 }
 
-/// <p>An object representing an AWS Fargate profile.</p>
+/// <p>An object representing an Fargate profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FargateProfile {
@@ -3662,7 +3677,7 @@ impl AsRef<str> for FargateProfileStatus {
     }
 }
 
-/// <p>An object representing an AWS Fargate profile selector.</p>
+/// <p>An object representing an Fargate profile selector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FargateProfileSelector {
@@ -3752,7 +3767,7 @@ pub struct Cluster {
     /// <p>The endpoint for your Kubernetes API server.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-    /// plane to make calls to AWS API operations on your behalf.</p>
+    /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
     /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
@@ -3883,7 +3898,7 @@ pub mod cluster {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-        /// plane to make calls to AWS API operations on your behalf.</p>
+        /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -4063,7 +4078,7 @@ impl Cluster {
 pub struct EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.</p>
+    /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub provider: std::option::Option<crate::model::Provider>,
 }
 impl std::fmt::Debug for EncryptionConfig {
@@ -4097,7 +4112,7 @@ pub mod encryption_config {
             self.resources = input;
             self
         }
-        /// <p>AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.</p>
+        /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
         pub fn provider(mut self, input: crate::model::Provider) -> Self {
             self.provider = Some(input);
             self
@@ -4122,14 +4137,14 @@ impl EncryptionConfig {
     }
 }
 
-/// <p>Identifies the AWS Key Management Service (AWS KMS) key used to encrypt the secrets.</p>
+/// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Provider {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
     /// region as the cluster, and if the KMS key was created in a different account, the user
     /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-    /// Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service
+    /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
     /// Developer Guide</i>.</p>
     pub key_arn: std::option::Option<std::string::String>,
 }
@@ -4152,7 +4167,7 @@ pub mod provider {
         /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
         /// region as the cluster, and if the KMS key was created in a different account, the user
         /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-        /// Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service
+        /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
         /// Developer Guide</i>.</p>
         pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_arn = Some(input.into());
@@ -4459,19 +4474,19 @@ pub struct VpcConfigResponse {
     /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
     /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
     /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
-    /// internet. If this value is disabled and you have nodes or AWS Fargate pods in the cluster,
+    /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
     /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-    /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-    /// Endpoint Access Control</a> in the <i>
+    /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub endpoint_private_access: bool,
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
     /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
     /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
-    /// endpoint access and you have nodes or AWS Fargate pods in the cluster, then ensure that the
-    /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-    /// Endpoint Access Control</a> in the <i>
+    /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
+    /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4566,10 +4581,10 @@ pub mod vpc_config_response {
         /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
         /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
         /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
-        /// internet. If this value is disabled and you have nodes or AWS Fargate pods in the cluster,
+        /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
         /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-        /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-        /// Endpoint Access Control</a> in the <i>
+        /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
         pub fn endpoint_private_access(mut self, input: bool) -> Self {
@@ -5213,6 +5228,7 @@ pub enum AddonIssueCode {
     ConfigurationConflict,
     InsufficientNumberOfReplicas,
     InternalFailure,
+    UnsupportedAddonModification,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -5225,6 +5241,7 @@ impl std::convert::From<&str> for AddonIssueCode {
             "ConfigurationConflict" => AddonIssueCode::ConfigurationConflict,
             "InsufficientNumberOfReplicas" => AddonIssueCode::InsufficientNumberOfReplicas,
             "InternalFailure" => AddonIssueCode::InternalFailure,
+            "UnsupportedAddonModification" => AddonIssueCode::UnsupportedAddonModification,
             other => AddonIssueCode::Unknown(other.to_owned()),
         }
     }
@@ -5245,6 +5262,7 @@ impl AddonIssueCode {
             AddonIssueCode::ConfigurationConflict => "ConfigurationConflict",
             AddonIssueCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
             AddonIssueCode::InternalFailure => "InternalFailure",
+            AddonIssueCode::UnsupportedAddonModification => "UnsupportedAddonModification",
             AddonIssueCode::Unknown(s) => s.as_ref(),
         }
     }
@@ -5256,6 +5274,7 @@ impl AddonIssueCode {
             "ConfigurationConflict",
             "InsufficientNumberOfReplicas",
             "InternalFailure",
+            "UnsupportedAddonModification",
         ]
     }
 }

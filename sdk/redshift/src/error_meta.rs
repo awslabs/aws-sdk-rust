@@ -4,6 +4,9 @@
 pub enum Error {
     AccessToClusterDeniedFault(crate::error::AccessToClusterDeniedFault),
     AccessToSnapshotDeniedFault(crate::error::AccessToSnapshotDeniedFault),
+    AuthenticationProfileAlreadyExistsFault(crate::error::AuthenticationProfileAlreadyExistsFault),
+    AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
+    AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
@@ -56,6 +59,9 @@ pub enum Error {
     IncompatibleOrderableOptions(crate::error::IncompatibleOrderableOptions),
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     InsufficientS3BucketPolicyFault(crate::error::InsufficientS3BucketPolicyFault),
+    InvalidAuthenticationProfileRequestFault(
+        crate::error::InvalidAuthenticationProfileRequestFault,
+    ),
     InvalidAuthorizationStateFault(crate::error::InvalidAuthorizationStateFault),
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
@@ -67,10 +73,12 @@ pub enum Error {
     InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
     InvalidClusterSubnetStateFault(crate::error::InvalidClusterSubnetStateFault),
     InvalidClusterTrackFault(crate::error::InvalidClusterTrackFault),
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
     InvalidElasticIpFault(crate::error::InvalidElasticIpFault),
     InvalidEndpointStateFault(crate::error::InvalidEndpointStateFault),
     InvalidHsmClientCertificateStateFault(crate::error::InvalidHsmClientCertificateStateFault),
     InvalidHsmConfigurationStateFault(crate::error::InvalidHsmConfigurationStateFault),
+    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
     InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
@@ -140,6 +148,9 @@ impl std::fmt::Display for Error {
         match self {
             Error::AccessToClusterDeniedFault(inner) => inner.fmt(f),
             Error::AccessToSnapshotDeniedFault(inner) => inner.fmt(f),
+            Error::AuthenticationProfileAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::AuthenticationProfileNotFoundFault(inner) => inner.fmt(f),
+            Error::AuthenticationProfileQuotaExceededFault(inner) => inner.fmt(f),
             Error::AuthorizationAlreadyExistsFault(inner) => inner.fmt(f),
             Error::AuthorizationNotFoundFault(inner) => inner.fmt(f),
             Error::AuthorizationQuotaExceededFault(inner) => inner.fmt(f),
@@ -184,6 +195,7 @@ impl std::fmt::Display for Error {
             Error::IncompatibleOrderableOptions(inner) => inner.fmt(f),
             Error::InsufficientClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientS3BucketPolicyFault(inner) => inner.fmt(f),
+            Error::InvalidAuthenticationProfileRequestFault(inner) => inner.fmt(f),
             Error::InvalidAuthorizationStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterParameterGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterSecurityGroupStateFault(inner) => inner.fmt(f),
@@ -193,10 +205,12 @@ impl std::fmt::Display for Error {
             Error::InvalidClusterSubnetGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterSubnetStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterTrackFault(inner) => inner.fmt(f),
+            Error::InvalidDataShareFault(inner) => inner.fmt(f),
             Error::InvalidElasticIpFault(inner) => inner.fmt(f),
             Error::InvalidEndpointStateFault(inner) => inner.fmt(f),
             Error::InvalidHsmClientCertificateStateFault(inner) => inner.fmt(f),
             Error::InvalidHsmConfigurationStateFault(inner) => inner.fmt(f),
+            Error::InvalidNamespaceFault(inner) => inner.fmt(f),
             Error::InvalidReservedNodeStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
             Error::InvalidRetentionPeriodFault(inner) => inner.fmt(f),
@@ -299,6 +313,26 @@ impl From<smithy_http::result::SdkError<crate::error::AddPartnerError>> for Erro
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateDataShareConsumerErrorKind::InvalidDataShareFault(inner) => {
+                    Error::InvalidDataShareFault(inner)
+                }
+                crate::error::AssociateDataShareConsumerErrorKind::InvalidNamespaceFault(inner) => {
+                    Error::InvalidNamespaceFault(inner)
+                }
+                crate::error::AssociateDataShareConsumerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGroupIngressError>>
     for Error
 {
@@ -313,6 +347,21 @@ impl From<smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGr
                 crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault(inner) => Error::InvalidClusterSecurityGroupStateFault(inner),
                 crate::error::AuthorizeClusterSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AuthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
+                    Error::InvalidDataShareFault(inner)
+                }
+                crate::error::AuthorizeDataShareErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -425,6 +474,21 @@ impl From<smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError>>
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(inner) => Error::AuthenticationProfileAlreadyExistsFault(inner),
+                crate::error::CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
+                crate::error::CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+                crate::error::CreateAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -768,6 +832,35 @@ impl From<smithy_http::result::SdkError<crate::error::CreateUsageLimitError>> fo
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeauthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
+                    Error::InvalidDataShareFault(inner)
+                }
+                crate::error::DeauthorizeDataShareErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+                crate::error::DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+                crate::error::DeleteAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DeleteClusterError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterError>) -> Self {
         match err {
@@ -1026,6 +1119,22 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAccountAttributesE
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+                crate::error::DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+                crate::error::DescribeAuthenticationProfilesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError>,
@@ -1171,6 +1280,59 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterVersionsErr
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeClusterVersionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDataSharesError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeDataSharesErrorKind::InvalidDataShareFault(inner) => {
+                    Error::InvalidDataShareFault(inner)
+                }
+                crate::error::DescribeDataSharesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault(
+                    inner,
+                ) => Error::InvalidNamespaceFault(inner),
+                crate::error::DescribeDataSharesForConsumerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault(
+                    inner,
+                ) => Error::InvalidNamespaceFault(inner),
+                crate::error::DescribeDataSharesForProducerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1587,6 +1749,28 @@ impl From<smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError>>
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(
+                    inner,
+                ) => Error::InvalidDataShareFault(inner),
+                crate::error::DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault(
+                    inner,
+                ) => Error::InvalidNamespaceFault(inner),
+                crate::error::DisassociateDataShareConsumerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::EnableLoggingError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::EnableLoggingError>) -> Self {
         match err {
@@ -1693,6 +1877,21 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationErr
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(inner) => Error::AuthenticationProfileNotFoundFault(inner),
+                crate::error::ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(inner) => Error::AuthenticationProfileQuotaExceededFault(inner),
+                crate::error::ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(inner) => Error::InvalidAuthenticationProfileRequestFault(inner),
+                crate::error::ModifyAuthenticationProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2045,6 +2244,19 @@ impl From<smithy_http::result::SdkError<crate::error::RebootClusterError>> for E
                     Error::InvalidClusterStateFault(inner)
                 }
                 crate::error::RebootClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::RejectDataShareError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::RejectDataShareError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RejectDataShareErrorKind::InvalidDataShareFault(inner) => {
+                    Error::InvalidDataShareFault(inner)
+                }
+                crate::error::RejectDataShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

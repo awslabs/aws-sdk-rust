@@ -440,7 +440,7 @@ impl GetCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountConfigurationOutput {
     /// <p>Expiration events
-    /// configuration options associated with the AWS account.</p>
+    /// configuration options associated with the Amazon Web Services account.</p>
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
 }
 impl std::fmt::Debug for GetAccountConfigurationOutput {
@@ -460,7 +460,7 @@ pub mod get_account_configuration_output {
     }
     impl Builder {
         /// <p>Expiration events
-        /// configuration options associated with the AWS account.</p>
+        /// configuration options associated with the Amazon Web Services account.</p>
         pub fn expiry_events(mut self, input: crate::model::ExpiryEventsConfiguration) -> Self {
             self.expiry_events = Some(input);
             self

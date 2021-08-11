@@ -690,7 +690,7 @@ impl HostedZoneConfig {
     }
 }
 
-/// <p>A complex type that contains information about one health check that is associated with the current AWS account.</p>
+/// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheck {
@@ -1278,6 +1278,12 @@ pub struct HealthCheckConfig {
     /// the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of
     /// <code>HealthThreshold</code>. </p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control.
+    /// If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy.
+    /// </p>
+    /// </li>
     /// </ul>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53
@@ -1351,7 +1357,7 @@ pub struct HealthCheckConfig {
     /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub failure_threshold: std::option::Option<i32>,
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint, and to
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to
     /// display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
     /// <important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
@@ -1446,6 +1452,8 @@ pub struct HealthCheckConfig {
     /// </ul>
     pub insufficient_data_health_status:
         std::option::Option<crate::model::InsufficientDataHealthStatus>,
+    /// <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.</p>
+    pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthCheckConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,6 +1481,7 @@ impl std::fmt::Debug for HealthCheckConfig {
             "insufficient_data_health_status",
             &self.insufficient_data_health_status,
         );
+        formatter.field("routing_control_arn", &self.routing_control_arn);
         formatter.finish()
     }
 }
@@ -1500,6 +1509,7 @@ pub mod health_check_config {
         pub(crate) alarm_identifier: std::option::Option<crate::model::AlarmIdentifier>,
         pub(crate) insufficient_data_health_status:
             std::option::Option<crate::model::InsufficientDataHealthStatus>,
+        pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for
@@ -1613,6 +1623,12 @@ pub mod health_check_config {
         /// <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up
         /// the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of
         /// <code>HealthThreshold</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control.
+        /// If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy.
+        /// </p>
         /// </li>
         /// </ul>
         /// <p>For more information, see
@@ -1744,7 +1760,7 @@ pub mod health_check_config {
             self.failure_threshold = input;
             self
         }
-        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint, and to
+        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to
         /// display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
         /// <important>
         /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
@@ -1911,6 +1927,18 @@ pub mod health_check_config {
             self.insufficient_data_health_status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.</p>
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.routing_control_arn = Some(input.into());
+            self
+        }
+        pub fn set_routing_control_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_control_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::model::HealthCheckConfig)
         pub fn build(self) -> crate::model::HealthCheckConfig {
             crate::model::HealthCheckConfig {
@@ -1931,6 +1959,7 @@ pub mod health_check_config {
                 regions: self.regions,
                 alarm_identifier: self.alarm_identifier,
                 insufficient_data_health_status: self.insufficient_data_health_status,
+                routing_control_arn: self.routing_control_arn,
             }
         }
     }
@@ -2339,6 +2368,7 @@ pub enum HealthCheckType {
     Https,
     HttpsStrMatch,
     HttpStrMatch,
+    RecoveryControl,
     Tcp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2352,6 +2382,7 @@ impl std::convert::From<&str> for HealthCheckType {
             "HTTPS" => HealthCheckType::Https,
             "HTTPS_STR_MATCH" => HealthCheckType::HttpsStrMatch,
             "HTTP_STR_MATCH" => HealthCheckType::HttpStrMatch,
+            "RECOVERY_CONTROL" => HealthCheckType::RecoveryControl,
             "TCP" => HealthCheckType::Tcp,
             other => HealthCheckType::Unknown(other.to_owned()),
         }
@@ -2373,6 +2404,7 @@ impl HealthCheckType {
             HealthCheckType::Https => "HTTPS",
             HealthCheckType::HttpsStrMatch => "HTTPS_STR_MATCH",
             HealthCheckType::HttpStrMatch => "HTTP_STR_MATCH",
+            HealthCheckType::RecoveryControl => "RECOVERY_CONTROL",
             HealthCheckType::Tcp => "TCP",
             HealthCheckType::Unknown(s) => s.as_ref(),
         }
@@ -2385,6 +2417,7 @@ impl HealthCheckType {
             "HTTPS",
             "HTTPS_STR_MATCH",
             "HTTP_STR_MATCH",
+            "RECOVERY_CONTROL",
             "TCP",
         ]
     }
@@ -2670,7 +2703,7 @@ impl AsRef<str> for VpcRegion {
 }
 
 /// <p>A complex type that contains information about the latest version of one traffic policy
-/// that is associated with the current AWS account.</p>
+/// that is associated with the current account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficPolicySummary {
@@ -2683,7 +2716,7 @@ pub struct TrafficPolicySummary {
     pub r#type: std::option::Option<crate::model::RrType>,
     /// <p>The version number of the latest version of the traffic policy.</p>
     pub latest_version: std::option::Option<i32>,
-    /// <p>The number of traffic policies that are associated with the current AWS account.</p>
+    /// <p>The number of traffic policies that are associated with the current account.</p>
     pub traffic_policy_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for TrafficPolicySummary {
@@ -2747,7 +2780,7 @@ pub mod traffic_policy_summary {
             self.latest_version = input;
             self
         }
-        /// <p>The number of traffic policies that are associated with the current AWS account.</p>
+        /// <p>The number of traffic policies that are associated with the current account.</p>
         pub fn traffic_policy_count(mut self, input: i32) -> Self {
             self.traffic_policy_count = Some(input);
             self
@@ -3281,7 +3314,7 @@ pub struct ResourceRecordSet {
     pub weight: std::option::Option<i64>,
     /// <p>
     /// <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
-    /// resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load balancer, and is
+    /// resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is
     /// referred to by an IP address or a DNS domain name, depending on the record type.</p>
     /// <note>
     /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed,
@@ -3435,7 +3468,7 @@ pub struct ResourceRecordSet {
     /// </note>
     pub resource_records: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
     /// <p>
-    /// <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an
+    /// <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an
     /// Amazon S3 bucket, that you want to route traffic to. </p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
     /// <ul>
@@ -3807,7 +3840,7 @@ pub mod resource_record_set {
         }
         /// <p>
         /// <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
-        /// resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load balancer, and is
+        /// resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is
         /// referred to by an IP address or a DNS domain name, depending on the record type.</p>
         /// <note>
         /// <p>Although creating latency and latency alias resource record sets in a private hosted zone is allowed,
@@ -4013,7 +4046,7 @@ pub mod resource_record_set {
             self
         }
         /// <p>
-        /// <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an
+        /// <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an
         /// Amazon S3 bucket, that you want to route traffic to. </p>
         /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
         /// <ul>
@@ -4219,7 +4252,7 @@ impl ResourceRecordSet {
 }
 
 /// <p>
-/// <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+/// <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or
 /// an Amazon S3 bucket, that you want to route traffic to.</p>
 /// <p>When creating resource record sets for a private hosted zone, note the following:</p>
 /// <ul>
@@ -4240,7 +4273,7 @@ pub struct AliasTarget {
     /// <dl>
     /// <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command
+    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
     /// <li>
@@ -4254,7 +4287,7 @@ pub struct AliasTarget {
     /// <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
     /// <dd>
     /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
-    /// using the AWS CLI command
+    /// using the CLI command
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
     /// </dd>
     /// <dt>CloudFront distribution</dt>
@@ -4268,7 +4301,7 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment
     /// must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and quotas</a> in the
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the
     /// the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>ELB load balancer</dt>
@@ -4284,7 +4317,7 @@ pub struct AliasTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose
+    /// <b>Management Console</b>: Go to the Amazon EC2 page, choose
     /// <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the
     /// <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
     /// </li>
@@ -4307,7 +4340,7 @@ pub struct AliasTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
+    /// <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
     /// For more information, see the applicable guide:</p>
     /// <ul>
     /// <li>
@@ -4324,7 +4357,7 @@ pub struct AliasTarget {
     /// </li>
     /// </ul>
     /// </dd>
-    /// <dt>AWS Global Accelerator accelerator</dt>
+    /// <dt>Global Accelerator accelerator</dt>
     /// <dd>
     /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
     /// </dd>
@@ -4347,7 +4380,7 @@ pub struct AliasTarget {
     /// <dl>
     /// <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
     /// <dd>
-    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command
+    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
     /// <li>
@@ -4367,7 +4400,7 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Enter the API endpoint for the interface endpoint, such as
     /// <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs,
-    /// this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the AWS CLI command
+    /// this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
     /// </dd>
     /// <dt>CloudFront distribution</dt>
@@ -4402,34 +4435,34 @@ pub struct AliasTarget {
     /// <ul>
     /// <li>
     /// <p>
-    /// <i>AWS Management Console</i>: For information about how to get the value by using the console,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS Elastic Beanstalk</a> in the
-    /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <i>Management Console</i>: For information about how to get the value by using the console,
+    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the
+    /// <i>Elastic Beanstalk Developer Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get
     /// the value of the <code>CNAME</code> attribute. For more information, see
     /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a>
-    /// in the <i>AWS Elastic Beanstalk API Reference</i>.</p>
+    /// in the <i>Elastic Beanstalk API Reference</i>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+    /// <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the
     /// <code>CNAME</code> attribute. For more information, see
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the
-    /// <i>AWS CLI Command Reference</i>.</p>
+    /// <i>CLI Command Reference</i>.</p>
     /// </li>
     /// </ul>
     /// </dd>
     /// <dt>ELB load balancer</dt>
     /// <dd>
-    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management Console,
-    /// the ELB API, or the AWS CLI. </p>
+    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+    /// the ELB API, or the CLI. </p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
+    /// <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
     /// in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value
     /// of the <b>DNS name</b> field. </p>
     /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.
@@ -4454,7 +4487,7 @@ pub struct AliasTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
+    /// <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
     /// For more information, see the applicable guide:</p>
     /// <ul>
     /// <li>
@@ -4471,7 +4504,7 @@ pub struct AliasTarget {
     /// </li>
     /// </ul>
     /// </dd>
-    /// <dt>AWS Global Accelerator accelerator</dt>
+    /// <dt>Global Accelerator accelerator</dt>
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
@@ -4482,7 +4515,7 @@ pub struct AliasTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS CLI:</b> To get the DNS name, use
+    /// <b>CLI:</b> To get the DNS name, use
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p>
     /// </li>
     /// </ul>
@@ -4511,7 +4544,7 @@ pub struct AliasTarget {
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>
     /// <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i>
-    /// When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced AWS resource,
+    /// When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource,
     /// such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
@@ -4569,7 +4602,7 @@ pub struct AliasTarget {
     /// </dd>
     /// <dt>Other records in the same hosted zone</dt>
     /// <dd>
-    /// <p>If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records
+    /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
     /// (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check
     /// with all of the records in the alias target. For more information, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a>
@@ -4605,7 +4638,7 @@ pub mod alias_target {
         /// <dl>
         /// <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
         /// <dd>
-        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command
+        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
         /// <ul>
         /// <li>
@@ -4619,7 +4652,7 @@ pub mod alias_target {
         /// <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
         /// <dd>
         /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
-        /// using the AWS CLI command
+        /// using the CLI command
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
         /// </dd>
         /// <dt>CloudFront distribution</dt>
@@ -4633,7 +4666,7 @@ pub mod alias_target {
         /// <dd>
         /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment
         /// must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the
         /// the <i>Amazon Web Services General Reference</i>.</p>
         /// </dd>
         /// <dt>ELB load balancer</dt>
@@ -4649,7 +4682,7 @@ pub mod alias_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose
+        /// <b>Management Console</b>: Go to the Amazon EC2 page, choose
         /// <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the
         /// <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
         /// </li>
@@ -4672,7 +4705,7 @@ pub mod alias_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
+        /// <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
         /// For more information, see the applicable guide:</p>
         /// <ul>
         /// <li>
@@ -4689,7 +4722,7 @@ pub mod alias_target {
         /// </li>
         /// </ul>
         /// </dd>
-        /// <dt>AWS Global Accelerator accelerator</dt>
+        /// <dt>Global Accelerator accelerator</dt>
         /// <dd>
         /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
         /// </dd>
@@ -4722,7 +4755,7 @@ pub mod alias_target {
         /// <dl>
         /// <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
         /// <dd>
-        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command
+        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
         /// <ul>
         /// <li>
@@ -4742,7 +4775,7 @@ pub mod alias_target {
         /// <dd>
         /// <p>Enter the API endpoint for the interface endpoint, such as
         /// <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs,
-        /// this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the AWS CLI command
+        /// this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
         /// </dd>
         /// <dt>CloudFront distribution</dt>
@@ -4777,34 +4810,34 @@ pub mod alias_target {
         /// <ul>
         /// <li>
         /// <p>
-        /// <i>AWS Management Console</i>: For information about how to get the value by using the console,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS Elastic Beanstalk</a> in the
-        /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <i>Management Console</i>: For information about how to get the value by using the console,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the
+        /// <i>Elastic Beanstalk Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get
         /// the value of the <code>CNAME</code> attribute. For more information, see
         /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a>
-        /// in the <i>AWS Elastic Beanstalk API Reference</i>.</p>
+        /// in the <i>Elastic Beanstalk API Reference</i>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+        /// <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the
         /// <code>CNAME</code> attribute. For more information, see
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the
-        /// <i>AWS CLI Command Reference</i>.</p>
+        /// <i>CLI Command Reference</i>.</p>
         /// </li>
         /// </ul>
         /// </dd>
         /// <dt>ELB load balancer</dt>
         /// <dd>
-        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management Console,
-        /// the ELB API, or the AWS CLI. </p>
+        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+        /// the ELB API, or the CLI. </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
+        /// <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
         /// in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value
         /// of the <b>DNS name</b> field. </p>
         /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.
@@ -4829,7 +4862,7 @@ pub mod alias_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
+        /// <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
         /// For more information, see the applicable guide:</p>
         /// <ul>
         /// <li>
@@ -4846,7 +4879,7 @@ pub mod alias_target {
         /// </li>
         /// </ul>
         /// </dd>
-        /// <dt>AWS Global Accelerator accelerator</dt>
+        /// <dt>Global Accelerator accelerator</dt>
         /// <dd>
         /// <p>Specify the DNS name for your accelerator:</p>
         /// <ul>
@@ -4857,7 +4890,7 @@ pub mod alias_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS CLI:</b> To get the DNS name, use
+        /// <b>CLI:</b> To get the DNS name, use
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p>
         /// </li>
         /// </ul>
@@ -4893,7 +4926,7 @@ pub mod alias_target {
         }
         /// <p>
         /// <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i>
-        /// When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced AWS resource,
+        /// When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource,
         /// such as an ELB load balancer or another resource record set in the hosted zone.</p>
         /// <p>Note the following:</p>
         /// <dl>
@@ -4951,7 +4984,7 @@ pub mod alias_target {
         /// </dd>
         /// <dt>Other records in the same hosted zone</dt>
         /// <dd>
-        /// <p>If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records
+        /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
         /// (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check
         /// with all of the records in the alias target. For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a>
@@ -5492,8 +5525,8 @@ pub struct HostedZoneSummary {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS account or
-    /// an AWS service.</p>
+    /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an account or
+    /// an Amazon Web Services service.</p>
     pub owner: std::option::Option<crate::model::HostedZoneOwner>,
 }
 impl std::fmt::Debug for HostedZoneSummary {
@@ -5537,8 +5570,8 @@ pub mod hosted_zone_summary {
             self.name = input;
             self
         }
-        /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS account or
-        /// an AWS service.</p>
+        /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an account or
+        /// an Amazon Web Services service.</p>
         pub fn owner(mut self, input: crate::model::HostedZoneOwner) -> Self {
             self.owner = Some(input);
             self
@@ -5572,11 +5605,11 @@ impl HostedZoneSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneOwner {
-    /// <p>If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones using the current account,  
-    /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use AWS Cloud Map to create a hosted zone, Cloud Map
-    /// creates the hosted zone using the current AWS account. </p>
+    /// <p>If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
+    /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+    /// creates the hosted zone using the current account. </p>
     pub owning_account: std::option::Option<std::string::String>,
-    /// <p>If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
+    /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
     /// contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and
     /// associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
     pub owning_service: std::option::Option<std::string::String>,
@@ -5599,9 +5632,9 @@ pub mod hosted_zone_owner {
         pub(crate) owning_service: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones using the current account,  
-        /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use AWS Cloud Map to create a hosted zone, Cloud Map
-        /// creates the hosted zone using the current AWS account. </p>
+        /// <p>If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
+        /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+        /// creates the hosted zone using the current account. </p>
         pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owning_account = Some(input.into());
             self
@@ -5613,7 +5646,7 @@ pub mod hosted_zone_owner {
             self.owning_account = input;
             self
         }
-        /// <p>If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
+        /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
         /// contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and
         /// associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
         pub fn owning_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6185,7 +6218,7 @@ pub struct KeySigningKey {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
     /// hosted zone.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key Management Service (AWS KMS).
+    /// <p>The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management Service (KMS).
     /// The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
     /// <p>You must configure the CMK as follows:</p>
     /// <dl>
@@ -6220,14 +6253,14 @@ pub struct KeySigningKey {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+    /// <code>"Service": "dnssec-route53.amazonaws.com"</code>
     /// </p>
     /// </li>
     /// </ul>
     /// </dd>
     /// </dl>
-    /// <p>For more information about working with the customer managed CMK in AWS KMS, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service concepts</a>.</p>
+    /// <p>For more information about working with the customer managed CMK in KMS, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
     pub flag: i32,
@@ -6356,7 +6389,7 @@ pub mod key_signing_key {
             self.name = input;
             self
         }
-        /// <p>The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key Management Service (AWS KMS).
+        /// <p>The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management Service (KMS).
         /// The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
         /// <p>You must configure the CMK as follows:</p>
         /// <dl>
@@ -6391,14 +6424,14 @@ pub mod key_signing_key {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+        /// <code>"Service": "dnssec-route53.amazonaws.com"</code>
         /// </p>
         /// </li>
         /// </ul>
         /// </dd>
         /// </dl>
-        /// <p>For more information about working with the customer managed CMK in AWS KMS, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service concepts</a>.</p>
+        /// <p>For more information about working with the customer managed CMK in KMS, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_arn = Some(input.into());
             self
@@ -6748,7 +6781,9 @@ impl DnssecStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeInfo {
-    /// <p>The ID of the request.</p>
+    /// <p>This element contains an ID that you use when performing a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+    /// action to get detailed information about the change.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has
     /// not yet been applied to all Amazon Route 53 DNS servers.</p>
@@ -6757,11 +6792,7 @@ pub struct ChangeInfo {
     /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
     /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
     pub submitted_at: std::option::Option<smithy_types::Instant>,
-    /// <p>A complex type that describes change information about changes made to your hosted
-    /// zone.</p>
-    /// <p>This element contains an ID that you use when performing a
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
-    /// action to get detailed information about the change.</p>
+    /// <p>A comment you can provide.</p>
     pub comment: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ChangeInfo {
@@ -6786,7 +6817,9 @@ pub mod change_info {
         pub(crate) comment: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the request.</p>
+        /// <p>This element contains an ID that you use when performing a
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+        /// action to get detailed information about the change.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -6822,11 +6855,7 @@ pub mod change_info {
             self.submitted_at = input;
             self
         }
-        /// <p>A complex type that describes change information about changes made to your hosted
-        /// zone.</p>
-        /// <p>This element contains an ID that you use when performing a
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
-        /// action to get detailed information about the change.</p>
+        /// <p>A comment you can provide.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
             self.comment = Some(input.into());
             self

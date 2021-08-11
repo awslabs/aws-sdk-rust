@@ -15,6 +15,7 @@
 use crate::profile::source::File;
 use std::borrow::Cow;
 use std::collections::HashMap;
+use std::error::Error;
 use std::fmt::{self, Display, Formatter};
 
 /// A set of profiles that still carries a reference to the underlying data
@@ -35,6 +36,7 @@ struct Location {
 }
 
 /// An error encountered while parsing a profile
+#[derive(Debug)]
 pub struct ProfileParseError {
     /// Location where this error occurred
     location: Location,
@@ -52,6 +54,8 @@ impl Display for ProfileParseError {
         )
     }
 }
+
+impl Error for ProfileParseError {}
 
 /// Validate that a line represents a valid subproperty
 ///

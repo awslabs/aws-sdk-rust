@@ -54,22 +54,27 @@ pub fn serialize_structure_create_profile_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProfileJobInput,
 ) {
-    if let Some(var_16) = &input.dataset_name {
-        object.key("DatasetName").string(var_16);
+    if let Some(var_16) = &input.configuration {
+        let mut object_17 = object.key("Configuration").start_object();
+        crate::json_ser::serialize_structure_profile_configuration(&mut object_17, var_16);
+        object_17.finish();
     }
-    if let Some(var_17) = &input.encryption_key_arn {
-        object.key("EncryptionKeyArn").string(var_17);
+    if let Some(var_18) = &input.dataset_name {
+        object.key("DatasetName").string(var_18);
     }
-    if let Some(var_18) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_18.as_str());
+    if let Some(var_19) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_19);
     }
-    if let Some(var_19) = &input.job_sample {
-        let mut object_20 = object.key("JobSample").start_object();
-        crate::json_ser::serialize_structure_job_sample(&mut object_20, var_19);
-        object_20.finish();
+    if let Some(var_20) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_20.as_str());
     }
-    if let Some(var_21) = &input.log_subscription {
-        object.key("LogSubscription").string(var_21.as_str());
+    if let Some(var_21) = &input.job_sample {
+        let mut object_22 = object.key("JobSample").start_object();
+        crate::json_ser::serialize_structure_job_sample(&mut object_22, var_21);
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.log_subscription {
+        object.key("LogSubscription").string(var_23.as_str());
     }
     if input.max_capacity != 0 {
         object.key("MaxCapacity").number(
@@ -83,25 +88,25 @@ pub fn serialize_structure_create_profile_job_input(
             smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_22) = &input.name {
-        object.key("Name").string(var_22);
+    if let Some(var_24) = &input.name {
+        object.key("Name").string(var_24);
     }
-    if let Some(var_23) = &input.output_location {
-        let mut object_24 = object.key("OutputLocation").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_24, var_23);
-        object_24.finish();
+    if let Some(var_25) = &input.output_location {
+        let mut object_26 = object.key("OutputLocation").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_26, var_25);
+        object_26.finish();
     }
-    if let Some(var_25) = &input.role_arn {
-        object.key("RoleArn").string(var_25);
+    if let Some(var_27) = &input.role_arn {
+        object.key("RoleArn").string(var_27);
     }
-    if let Some(var_26) = &input.tags {
-        let mut object_27 = object.key("Tags").start_object();
-        for (key_28, value_29) in var_26 {
+    if let Some(var_28) = &input.tags {
+        let mut object_29 = object.key("Tags").start_object();
+        for (key_30, value_31) in var_28 {
             {
-                object_27.key(key_28).string(value_29);
+                object_29.key(key_30).string(value_31);
             }
         }
-        object_27.finish();
+        object_29.finish();
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -115,31 +120,31 @@ pub fn serialize_structure_create_project_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProjectInput,
 ) {
-    if let Some(var_30) = &input.dataset_name {
-        object.key("DatasetName").string(var_30);
+    if let Some(var_32) = &input.dataset_name {
+        object.key("DatasetName").string(var_32);
     }
-    if let Some(var_31) = &input.name {
-        object.key("Name").string(var_31);
+    if let Some(var_33) = &input.name {
+        object.key("Name").string(var_33);
     }
-    if let Some(var_32) = &input.recipe_name {
-        object.key("RecipeName").string(var_32);
+    if let Some(var_34) = &input.recipe_name {
+        object.key("RecipeName").string(var_34);
     }
-    if let Some(var_33) = &input.role_arn {
-        object.key("RoleArn").string(var_33);
+    if let Some(var_35) = &input.role_arn {
+        object.key("RoleArn").string(var_35);
     }
-    if let Some(var_34) = &input.sample {
-        let mut object_35 = object.key("Sample").start_object();
-        crate::json_ser::serialize_structure_sample(&mut object_35, var_34);
-        object_35.finish();
+    if let Some(var_36) = &input.sample {
+        let mut object_37 = object.key("Sample").start_object();
+        crate::json_ser::serialize_structure_sample(&mut object_37, var_36);
+        object_37.finish();
     }
-    if let Some(var_36) = &input.tags {
-        let mut object_37 = object.key("Tags").start_object();
-        for (key_38, value_39) in var_36 {
+    if let Some(var_38) = &input.tags {
+        let mut object_39 = object.key("Tags").start_object();
+        for (key_40, value_41) in var_38 {
             {
-                object_37.key(key_38).string(value_39);
+                object_39.key(key_40).string(value_41);
             }
         }
-        object_37.finish();
+        object_39.finish();
     }
 }
 
@@ -147,31 +152,31 @@ pub fn serialize_structure_create_recipe_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRecipeInput,
 ) {
-    if let Some(var_40) = &input.description {
-        object.key("Description").string(var_40);
+    if let Some(var_42) = &input.description {
+        object.key("Description").string(var_42);
     }
-    if let Some(var_41) = &input.name {
-        object.key("Name").string(var_41);
+    if let Some(var_43) = &input.name {
+        object.key("Name").string(var_43);
     }
-    if let Some(var_42) = &input.steps {
-        let mut array_43 = object.key("Steps").start_array();
-        for item_44 in var_42 {
+    if let Some(var_44) = &input.steps {
+        let mut array_45 = object.key("Steps").start_array();
+        for item_46 in var_44 {
             {
-                let mut object_45 = array_43.value().start_object();
-                crate::json_ser::serialize_structure_recipe_step(&mut object_45, item_44);
-                object_45.finish();
+                let mut object_47 = array_45.value().start_object();
+                crate::json_ser::serialize_structure_recipe_step(&mut object_47, item_46);
+                object_47.finish();
             }
         }
-        array_43.finish();
+        array_45.finish();
     }
-    if let Some(var_46) = &input.tags {
-        let mut object_47 = object.key("Tags").start_object();
-        for (key_48, value_49) in var_46 {
+    if let Some(var_48) = &input.tags {
+        let mut object_49 = object.key("Tags").start_object();
+        for (key_50, value_51) in var_48 {
             {
-                object_47.key(key_48).string(value_49);
+                object_49.key(key_50).string(value_51);
             }
         }
-        object_47.finish();
+        object_49.finish();
     }
 }
 
@@ -179,28 +184,39 @@ pub fn serialize_structure_create_recipe_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRecipeJobInput,
 ) {
-    if let Some(var_50) = &input.data_catalog_outputs {
-        let mut array_51 = object.key("DataCatalogOutputs").start_array();
-        for item_52 in var_50 {
+    if let Some(var_52) = &input.data_catalog_outputs {
+        let mut array_53 = object.key("DataCatalogOutputs").start_array();
+        for item_54 in var_52 {
             {
-                let mut object_53 = array_51.value().start_object();
-                crate::json_ser::serialize_structure_data_catalog_output(&mut object_53, item_52);
-                object_53.finish();
+                let mut object_55 = array_53.value().start_object();
+                crate::json_ser::serialize_structure_data_catalog_output(&mut object_55, item_54);
+                object_55.finish();
             }
         }
-        array_51.finish();
+        array_53.finish();
     }
-    if let Some(var_54) = &input.dataset_name {
-        object.key("DatasetName").string(var_54);
+    if let Some(var_56) = &input.database_outputs {
+        let mut array_57 = object.key("DatabaseOutputs").start_array();
+        for item_58 in var_56 {
+            {
+                let mut object_59 = array_57.value().start_object();
+                crate::json_ser::serialize_structure_database_output(&mut object_59, item_58);
+                object_59.finish();
+            }
+        }
+        array_57.finish();
     }
-    if let Some(var_55) = &input.encryption_key_arn {
-        object.key("EncryptionKeyArn").string(var_55);
+    if let Some(var_60) = &input.dataset_name {
+        object.key("DatasetName").string(var_60);
     }
-    if let Some(var_56) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_56.as_str());
+    if let Some(var_61) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_61);
     }
-    if let Some(var_57) = &input.log_subscription {
-        object.key("LogSubscription").string(var_57.as_str());
+    if let Some(var_62) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_62.as_str());
+    }
+    if let Some(var_63) = &input.log_subscription {
+        object.key("LogSubscription").string(var_63.as_str());
     }
     if input.max_capacity != 0 {
         object.key("MaxCapacity").number(
@@ -214,39 +230,39 @@ pub fn serialize_structure_create_recipe_job_input(
             smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_58) = &input.name {
-        object.key("Name").string(var_58);
+    if let Some(var_64) = &input.name {
+        object.key("Name").string(var_64);
     }
-    if let Some(var_59) = &input.outputs {
-        let mut array_60 = object.key("Outputs").start_array();
-        for item_61 in var_59 {
+    if let Some(var_65) = &input.outputs {
+        let mut array_66 = object.key("Outputs").start_array();
+        for item_67 in var_65 {
             {
-                let mut object_62 = array_60.value().start_object();
-                crate::json_ser::serialize_structure_output(&mut object_62, item_61);
-                object_62.finish();
+                let mut object_68 = array_66.value().start_object();
+                crate::json_ser::serialize_structure_output(&mut object_68, item_67);
+                object_68.finish();
             }
         }
-        array_60.finish();
+        array_66.finish();
     }
-    if let Some(var_63) = &input.project_name {
-        object.key("ProjectName").string(var_63);
+    if let Some(var_69) = &input.project_name {
+        object.key("ProjectName").string(var_69);
     }
-    if let Some(var_64) = &input.recipe_reference {
-        let mut object_65 = object.key("RecipeReference").start_object();
-        crate::json_ser::serialize_structure_recipe_reference(&mut object_65, var_64);
-        object_65.finish();
+    if let Some(var_70) = &input.recipe_reference {
+        let mut object_71 = object.key("RecipeReference").start_object();
+        crate::json_ser::serialize_structure_recipe_reference(&mut object_71, var_70);
+        object_71.finish();
     }
-    if let Some(var_66) = &input.role_arn {
-        object.key("RoleArn").string(var_66);
+    if let Some(var_72) = &input.role_arn {
+        object.key("RoleArn").string(var_72);
     }
-    if let Some(var_67) = &input.tags {
-        let mut object_68 = object.key("Tags").start_object();
-        for (key_69, value_70) in var_67 {
+    if let Some(var_73) = &input.tags {
+        let mut object_74 = object.key("Tags").start_object();
+        for (key_75, value_76) in var_73 {
             {
-                object_68.key(key_69).string(value_70);
+                object_74.key(key_75).string(value_76);
             }
         }
-        object_68.finish();
+        object_74.finish();
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -260,29 +276,29 @@ pub fn serialize_structure_create_schedule_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateScheduleInput,
 ) {
-    if let Some(var_71) = &input.cron_expression {
-        object.key("CronExpression").string(var_71);
+    if let Some(var_77) = &input.cron_expression {
+        object.key("CronExpression").string(var_77);
     }
-    if let Some(var_72) = &input.job_names {
-        let mut array_73 = object.key("JobNames").start_array();
-        for item_74 in var_72 {
+    if let Some(var_78) = &input.job_names {
+        let mut array_79 = object.key("JobNames").start_array();
+        for item_80 in var_78 {
             {
-                array_73.value().string(item_74);
+                array_79.value().string(item_80);
             }
         }
-        array_73.finish();
+        array_79.finish();
     }
-    if let Some(var_75) = &input.name {
-        object.key("Name").string(var_75);
+    if let Some(var_81) = &input.name {
+        object.key("Name").string(var_81);
     }
-    if let Some(var_76) = &input.tags {
-        let mut object_77 = object.key("Tags").start_object();
-        for (key_78, value_79) in var_76 {
+    if let Some(var_82) = &input.tags {
+        let mut object_83 = object.key("Tags").start_object();
+        for (key_84, value_85) in var_82 {
             {
-                object_77.key(key_78).string(value_79);
+                object_83.key(key_84).string(value_85);
             }
         }
-        object_77.finish();
+        object_83.finish();
     }
 }
 
@@ -290,8 +306,8 @@ pub fn serialize_structure_publish_recipe_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PublishRecipeInput,
 ) {
-    if let Some(var_80) = &input.description {
-        object.key("Description").string(var_80);
+    if let Some(var_86) = &input.description {
+        object.key("Description").string(var_86);
     }
 }
 
@@ -299,27 +315,27 @@ pub fn serialize_structure_send_project_session_action_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendProjectSessionActionInput,
 ) {
-    if let Some(var_81) = &input.client_session_id {
-        object.key("ClientSessionId").string(var_81);
+    if let Some(var_87) = &input.client_session_id {
+        object.key("ClientSessionId").string(var_87);
     }
     if input.preview {
         object.key("Preview").boolean(input.preview);
     }
-    if let Some(var_82) = &input.recipe_step {
-        let mut object_83 = object.key("RecipeStep").start_object();
-        crate::json_ser::serialize_structure_recipe_step(&mut object_83, var_82);
-        object_83.finish();
+    if let Some(var_88) = &input.recipe_step {
+        let mut object_89 = object.key("RecipeStep").start_object();
+        crate::json_ser::serialize_structure_recipe_step(&mut object_89, var_88);
+        object_89.finish();
     }
-    if let Some(var_84) = &input.step_index {
+    if let Some(var_90) = &input.step_index {
         object.key("StepIndex").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_84).into()),
+            smithy_types::Number::NegInt((*var_90).into()),
         );
     }
-    if let Some(var_85) = &input.view_frame {
-        let mut object_86 = object.key("ViewFrame").start_object();
-        crate::json_ser::serialize_structure_view_frame(&mut object_86, var_85);
-        object_86.finish();
+    if let Some(var_91) = &input.view_frame {
+        let mut object_92 = object.key("ViewFrame").start_object();
+        crate::json_ser::serialize_structure_view_frame(&mut object_92, var_91);
+        object_92.finish();
     }
 }
 
@@ -336,14 +352,14 @@ pub fn serialize_structure_tag_resource_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) {
-    if let Some(var_87) = &input.tags {
-        let mut object_88 = object.key("Tags").start_object();
-        for (key_89, value_90) in var_87 {
+    if let Some(var_93) = &input.tags {
+        let mut object_94 = object.key("Tags").start_object();
+        for (key_95, value_96) in var_93 {
             {
-                object_88.key(key_89).string(value_90);
+                object_94.key(key_95).string(value_96);
             }
         }
-        object_88.finish();
+        object_94.finish();
     }
 }
 
@@ -351,23 +367,23 @@ pub fn serialize_structure_update_dataset_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDatasetInput,
 ) {
-    if let Some(var_91) = &input.format {
-        object.key("Format").string(var_91.as_str());
+    if let Some(var_97) = &input.format {
+        object.key("Format").string(var_97.as_str());
     }
-    if let Some(var_92) = &input.format_options {
-        let mut object_93 = object.key("FormatOptions").start_object();
-        crate::json_ser::serialize_structure_format_options(&mut object_93, var_92);
-        object_93.finish();
+    if let Some(var_98) = &input.format_options {
+        let mut object_99 = object.key("FormatOptions").start_object();
+        crate::json_ser::serialize_structure_format_options(&mut object_99, var_98);
+        object_99.finish();
     }
-    if let Some(var_94) = &input.input {
-        let mut object_95 = object.key("Input").start_object();
-        crate::json_ser::serialize_structure_input(&mut object_95, var_94);
-        object_95.finish();
+    if let Some(var_100) = &input.input {
+        let mut object_101 = object.key("Input").start_object();
+        crate::json_ser::serialize_structure_input(&mut object_101, var_100);
+        object_101.finish();
     }
-    if let Some(var_96) = &input.path_options {
-        let mut object_97 = object.key("PathOptions").start_object();
-        crate::json_ser::serialize_structure_path_options(&mut object_97, var_96);
-        object_97.finish();
+    if let Some(var_102) = &input.path_options {
+        let mut object_103 = object.key("PathOptions").start_object();
+        crate::json_ser::serialize_structure_path_options(&mut object_103, var_102);
+        object_103.finish();
     }
 }
 
@@ -375,19 +391,24 @@ pub fn serialize_structure_update_profile_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateProfileJobInput,
 ) {
-    if let Some(var_98) = &input.encryption_key_arn {
-        object.key("EncryptionKeyArn").string(var_98);
+    if let Some(var_104) = &input.configuration {
+        let mut object_105 = object.key("Configuration").start_object();
+        crate::json_ser::serialize_structure_profile_configuration(&mut object_105, var_104);
+        object_105.finish();
     }
-    if let Some(var_99) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_99.as_str());
+    if let Some(var_106) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_106);
     }
-    if let Some(var_100) = &input.job_sample {
-        let mut object_101 = object.key("JobSample").start_object();
-        crate::json_ser::serialize_structure_job_sample(&mut object_101, var_100);
-        object_101.finish();
+    if let Some(var_107) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_107.as_str());
     }
-    if let Some(var_102) = &input.log_subscription {
-        object.key("LogSubscription").string(var_102.as_str());
+    if let Some(var_108) = &input.job_sample {
+        let mut object_109 = object.key("JobSample").start_object();
+        crate::json_ser::serialize_structure_job_sample(&mut object_109, var_108);
+        object_109.finish();
+    }
+    if let Some(var_110) = &input.log_subscription {
+        object.key("LogSubscription").string(var_110.as_str());
     }
     if input.max_capacity != 0 {
         object.key("MaxCapacity").number(
@@ -401,13 +422,13 @@ pub fn serialize_structure_update_profile_job_input(
             smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_103) = &input.output_location {
-        let mut object_104 = object.key("OutputLocation").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_104, var_103);
-        object_104.finish();
+    if let Some(var_111) = &input.output_location {
+        let mut object_112 = object.key("OutputLocation").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_112, var_111);
+        object_112.finish();
     }
-    if let Some(var_105) = &input.role_arn {
-        object.key("RoleArn").string(var_105);
+    if let Some(var_113) = &input.role_arn {
+        object.key("RoleArn").string(var_113);
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -421,13 +442,13 @@ pub fn serialize_structure_update_project_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateProjectInput,
 ) {
-    if let Some(var_106) = &input.role_arn {
-        object.key("RoleArn").string(var_106);
+    if let Some(var_114) = &input.role_arn {
+        object.key("RoleArn").string(var_114);
     }
-    if let Some(var_107) = &input.sample {
-        let mut object_108 = object.key("Sample").start_object();
-        crate::json_ser::serialize_structure_sample(&mut object_108, var_107);
-        object_108.finish();
+    if let Some(var_115) = &input.sample {
+        let mut object_116 = object.key("Sample").start_object();
+        crate::json_ser::serialize_structure_sample(&mut object_116, var_115);
+        object_116.finish();
     }
 }
 
@@ -435,19 +456,19 @@ pub fn serialize_structure_update_recipe_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRecipeInput,
 ) {
-    if let Some(var_109) = &input.description {
-        object.key("Description").string(var_109);
+    if let Some(var_117) = &input.description {
+        object.key("Description").string(var_117);
     }
-    if let Some(var_110) = &input.steps {
-        let mut array_111 = object.key("Steps").start_array();
-        for item_112 in var_110 {
+    if let Some(var_118) = &input.steps {
+        let mut array_119 = object.key("Steps").start_array();
+        for item_120 in var_118 {
             {
-                let mut object_113 = array_111.value().start_object();
-                crate::json_ser::serialize_structure_recipe_step(&mut object_113, item_112);
-                object_113.finish();
+                let mut object_121 = array_119.value().start_object();
+                crate::json_ser::serialize_structure_recipe_step(&mut object_121, item_120);
+                object_121.finish();
             }
         }
-        array_111.finish();
+        array_119.finish();
     }
 }
 
@@ -455,25 +476,36 @@ pub fn serialize_structure_update_recipe_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRecipeJobInput,
 ) {
-    if let Some(var_114) = &input.data_catalog_outputs {
-        let mut array_115 = object.key("DataCatalogOutputs").start_array();
-        for item_116 in var_114 {
+    if let Some(var_122) = &input.data_catalog_outputs {
+        let mut array_123 = object.key("DataCatalogOutputs").start_array();
+        for item_124 in var_122 {
             {
-                let mut object_117 = array_115.value().start_object();
-                crate::json_ser::serialize_structure_data_catalog_output(&mut object_117, item_116);
-                object_117.finish();
+                let mut object_125 = array_123.value().start_object();
+                crate::json_ser::serialize_structure_data_catalog_output(&mut object_125, item_124);
+                object_125.finish();
             }
         }
-        array_115.finish();
+        array_123.finish();
     }
-    if let Some(var_118) = &input.encryption_key_arn {
-        object.key("EncryptionKeyArn").string(var_118);
+    if let Some(var_126) = &input.database_outputs {
+        let mut array_127 = object.key("DatabaseOutputs").start_array();
+        for item_128 in var_126 {
+            {
+                let mut object_129 = array_127.value().start_object();
+                crate::json_ser::serialize_structure_database_output(&mut object_129, item_128);
+                object_129.finish();
+            }
+        }
+        array_127.finish();
     }
-    if let Some(var_119) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_119.as_str());
+    if let Some(var_130) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_130);
     }
-    if let Some(var_120) = &input.log_subscription {
-        object.key("LogSubscription").string(var_120.as_str());
+    if let Some(var_131) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_131.as_str());
+    }
+    if let Some(var_132) = &input.log_subscription {
+        object.key("LogSubscription").string(var_132.as_str());
     }
     if input.max_capacity != 0 {
         object.key("MaxCapacity").number(
@@ -487,19 +519,19 @@ pub fn serialize_structure_update_recipe_job_input(
             smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_121) = &input.outputs {
-        let mut array_122 = object.key("Outputs").start_array();
-        for item_123 in var_121 {
+    if let Some(var_133) = &input.outputs {
+        let mut array_134 = object.key("Outputs").start_array();
+        for item_135 in var_133 {
             {
-                let mut object_124 = array_122.value().start_object();
-                crate::json_ser::serialize_structure_output(&mut object_124, item_123);
-                object_124.finish();
+                let mut object_136 = array_134.value().start_object();
+                crate::json_ser::serialize_structure_output(&mut object_136, item_135);
+                object_136.finish();
             }
         }
-        array_122.finish();
+        array_134.finish();
     }
-    if let Some(var_125) = &input.role_arn {
-        object.key("RoleArn").string(var_125);
+    if let Some(var_137) = &input.role_arn {
+        object.key("RoleArn").string(var_137);
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -513,17 +545,17 @@ pub fn serialize_structure_update_schedule_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateScheduleInput,
 ) {
-    if let Some(var_126) = &input.cron_expression {
-        object.key("CronExpression").string(var_126);
+    if let Some(var_138) = &input.cron_expression {
+        object.key("CronExpression").string(var_138);
     }
-    if let Some(var_127) = &input.job_names {
-        let mut array_128 = object.key("JobNames").start_array();
-        for item_129 in var_127 {
+    if let Some(var_139) = &input.job_names {
+        let mut array_140 = object.key("JobNames").start_array();
+        for item_141 in var_139 {
             {
-                array_128.value().string(item_129);
+                array_140.value().string(item_141);
             }
         }
-        array_128.finish();
+        array_140.finish();
     }
 }
 
@@ -531,20 +563,20 @@ pub fn serialize_structure_format_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FormatOptions,
 ) {
-    if let Some(var_130) = &input.json {
-        let mut object_131 = object.key("Json").start_object();
-        crate::json_ser::serialize_structure_json_options(&mut object_131, var_130);
-        object_131.finish();
+    if let Some(var_142) = &input.json {
+        let mut object_143 = object.key("Json").start_object();
+        crate::json_ser::serialize_structure_json_options(&mut object_143, var_142);
+        object_143.finish();
     }
-    if let Some(var_132) = &input.excel {
-        let mut object_133 = object.key("Excel").start_object();
-        crate::json_ser::serialize_structure_excel_options(&mut object_133, var_132);
-        object_133.finish();
+    if let Some(var_144) = &input.excel {
+        let mut object_145 = object.key("Excel").start_object();
+        crate::json_ser::serialize_structure_excel_options(&mut object_145, var_144);
+        object_145.finish();
     }
-    if let Some(var_134) = &input.csv {
-        let mut object_135 = object.key("Csv").start_object();
-        crate::json_ser::serialize_structure_csv_options(&mut object_135, var_134);
-        object_135.finish();
+    if let Some(var_146) = &input.csv {
+        let mut object_147 = object.key("Csv").start_object();
+        crate::json_ser::serialize_structure_csv_options(&mut object_147, var_146);
+        object_147.finish();
     }
 }
 
@@ -552,23 +584,23 @@ pub fn serialize_structure_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Input,
 ) {
-    if let Some(var_136) = &input.s3_input_definition {
-        let mut object_137 = object.key("S3InputDefinition").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_137, var_136);
-        object_137.finish();
+    if let Some(var_148) = &input.s3_input_definition {
+        let mut object_149 = object.key("S3InputDefinition").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_149, var_148);
+        object_149.finish();
     }
-    if let Some(var_138) = &input.data_catalog_input_definition {
-        let mut object_139 = object.key("DataCatalogInputDefinition").start_object();
+    if let Some(var_150) = &input.data_catalog_input_definition {
+        let mut object_151 = object.key("DataCatalogInputDefinition").start_object();
         crate::json_ser::serialize_structure_data_catalog_input_definition(
-            &mut object_139,
-            var_138,
+            &mut object_151,
+            var_150,
         );
-        object_139.finish();
+        object_151.finish();
     }
-    if let Some(var_140) = &input.database_input_definition {
-        let mut object_141 = object.key("DatabaseInputDefinition").start_object();
-        crate::json_ser::serialize_structure_database_input_definition(&mut object_141, var_140);
-        object_141.finish();
+    if let Some(var_152) = &input.database_input_definition {
+        let mut object_153 = object.key("DatabaseInputDefinition").start_object();
+        crate::json_ser::serialize_structure_database_input_definition(&mut object_153, var_152);
+        object_153.finish();
     }
 }
 
@@ -576,26 +608,62 @@ pub fn serialize_structure_path_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PathOptions,
 ) {
-    if let Some(var_142) = &input.last_modified_date_condition {
-        let mut object_143 = object.key("LastModifiedDateCondition").start_object();
-        crate::json_ser::serialize_structure_filter_expression(&mut object_143, var_142);
-        object_143.finish();
+    if let Some(var_154) = &input.last_modified_date_condition {
+        let mut object_155 = object.key("LastModifiedDateCondition").start_object();
+        crate::json_ser::serialize_structure_filter_expression(&mut object_155, var_154);
+        object_155.finish();
     }
-    if let Some(var_144) = &input.files_limit {
-        let mut object_145 = object.key("FilesLimit").start_object();
-        crate::json_ser::serialize_structure_files_limit(&mut object_145, var_144);
-        object_145.finish();
+    if let Some(var_156) = &input.files_limit {
+        let mut object_157 = object.key("FilesLimit").start_object();
+        crate::json_ser::serialize_structure_files_limit(&mut object_157, var_156);
+        object_157.finish();
     }
-    if let Some(var_146) = &input.parameters {
-        let mut object_147 = object.key("Parameters").start_object();
-        for (key_148, value_149) in var_146 {
+    if let Some(var_158) = &input.parameters {
+        let mut object_159 = object.key("Parameters").start_object();
+        for (key_160, value_161) in var_158 {
             {
-                let mut object_150 = object_147.key(key_148).start_object();
-                crate::json_ser::serialize_structure_dataset_parameter(&mut object_150, value_149);
-                object_150.finish();
+                let mut object_162 = object_159.key(key_160).start_object();
+                crate::json_ser::serialize_structure_dataset_parameter(&mut object_162, value_161);
+                object_162.finish();
             }
         }
-        object_147.finish();
+        object_159.finish();
+    }
+}
+
+pub fn serialize_structure_profile_configuration(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::ProfileConfiguration,
+) {
+    if let Some(var_163) = &input.dataset_statistics_configuration {
+        let mut object_164 = object.key("DatasetStatisticsConfiguration").start_object();
+        crate::json_ser::serialize_structure_statistics_configuration(&mut object_164, var_163);
+        object_164.finish();
+    }
+    if let Some(var_165) = &input.profile_columns {
+        let mut array_166 = object.key("ProfileColumns").start_array();
+        for item_167 in var_165 {
+            {
+                let mut object_168 = array_166.value().start_object();
+                crate::json_ser::serialize_structure_column_selector(&mut object_168, item_167);
+                object_168.finish();
+            }
+        }
+        array_166.finish();
+    }
+    if let Some(var_169) = &input.column_statistics_configurations {
+        let mut array_170 = object.key("ColumnStatisticsConfigurations").start_array();
+        for item_171 in var_169 {
+            {
+                let mut object_172 = array_170.value().start_object();
+                crate::json_ser::serialize_structure_column_statistics_configuration(
+                    &mut object_172,
+                    item_171,
+                );
+                object_172.finish();
+            }
+        }
+        array_170.finish();
     }
 }
 
@@ -603,13 +671,13 @@ pub fn serialize_structure_job_sample(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::JobSample,
 ) {
-    if let Some(var_151) = &input.mode {
-        object.key("Mode").string(var_151.as_str());
+    if let Some(var_173) = &input.mode {
+        object.key("Mode").string(var_173.as_str());
     }
-    if let Some(var_152) = &input.size {
+    if let Some(var_174) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_152).into()),
+            smithy_types::Number::NegInt((*var_174).into()),
         );
     }
 }
@@ -618,11 +686,11 @@ pub fn serialize_structure_s3_location(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
 ) {
-    if let Some(var_153) = &input.bucket {
-        object.key("Bucket").string(var_153);
+    if let Some(var_175) = &input.bucket {
+        object.key("Bucket").string(var_175);
     }
-    if let Some(var_154) = &input.key {
-        object.key("Key").string(var_154);
+    if let Some(var_176) = &input.key {
+        object.key("Key").string(var_176);
     }
 }
 
@@ -630,14 +698,14 @@ pub fn serialize_structure_sample(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Sample,
 ) {
-    if let Some(var_155) = &input.size {
+    if let Some(var_177) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_155).into()),
+            smithy_types::Number::NegInt((*var_177).into()),
         );
     }
-    if let Some(var_156) = &input.r#type {
-        object.key("Type").string(var_156.as_str());
+    if let Some(var_178) = &input.r#type {
+        object.key("Type").string(var_178.as_str());
     }
 }
 
@@ -645,24 +713,24 @@ pub fn serialize_structure_recipe_step(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecipeStep,
 ) {
-    if let Some(var_157) = &input.action {
-        let mut object_158 = object.key("Action").start_object();
-        crate::json_ser::serialize_structure_recipe_action(&mut object_158, var_157);
-        object_158.finish();
+    if let Some(var_179) = &input.action {
+        let mut object_180 = object.key("Action").start_object();
+        crate::json_ser::serialize_structure_recipe_action(&mut object_180, var_179);
+        object_180.finish();
     }
-    if let Some(var_159) = &input.condition_expressions {
-        let mut array_160 = object.key("ConditionExpressions").start_array();
-        for item_161 in var_159 {
+    if let Some(var_181) = &input.condition_expressions {
+        let mut array_182 = object.key("ConditionExpressions").start_array();
+        for item_183 in var_181 {
             {
-                let mut object_162 = array_160.value().start_object();
+                let mut object_184 = array_182.value().start_object();
                 crate::json_ser::serialize_structure_condition_expression(
-                    &mut object_162,
-                    item_161,
+                    &mut object_184,
+                    item_183,
                 );
-                object_162.finish();
+                object_184.finish();
             }
         }
-        array_160.finish();
+        array_182.finish();
     }
 }
 
@@ -670,30 +738,50 @@ pub fn serialize_structure_data_catalog_output(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataCatalogOutput,
 ) {
-    if let Some(var_163) = &input.catalog_id {
-        object.key("CatalogId").string(var_163);
+    if let Some(var_185) = &input.catalog_id {
+        object.key("CatalogId").string(var_185);
     }
-    if let Some(var_164) = &input.database_name {
-        object.key("DatabaseName").string(var_164);
+    if let Some(var_186) = &input.database_name {
+        object.key("DatabaseName").string(var_186);
     }
-    if let Some(var_165) = &input.table_name {
-        object.key("TableName").string(var_165);
+    if let Some(var_187) = &input.table_name {
+        object.key("TableName").string(var_187);
     }
-    if let Some(var_166) = &input.s3_options {
-        let mut object_167 = object.key("S3Options").start_object();
-        crate::json_ser::serialize_structure_s3_table_output_options(&mut object_167, var_166);
-        object_167.finish();
+    if let Some(var_188) = &input.s3_options {
+        let mut object_189 = object.key("S3Options").start_object();
+        crate::json_ser::serialize_structure_s3_table_output_options(&mut object_189, var_188);
+        object_189.finish();
     }
-    if let Some(var_168) = &input.database_options {
-        let mut object_169 = object.key("DatabaseOptions").start_object();
+    if let Some(var_190) = &input.database_options {
+        let mut object_191 = object.key("DatabaseOptions").start_object();
         crate::json_ser::serialize_structure_database_table_output_options(
-            &mut object_169,
-            var_168,
+            &mut object_191,
+            var_190,
         );
-        object_169.finish();
+        object_191.finish();
     }
     if input.overwrite {
         object.key("Overwrite").boolean(input.overwrite);
+    }
+}
+
+pub fn serialize_structure_database_output(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DatabaseOutput,
+) {
+    if let Some(var_192) = &input.glue_connection_name {
+        object.key("GlueConnectionName").string(var_192);
+    }
+    if let Some(var_193) = &input.database_options {
+        let mut object_194 = object.key("DatabaseOptions").start_object();
+        crate::json_ser::serialize_structure_database_table_output_options(
+            &mut object_194,
+            var_193,
+        );
+        object_194.finish();
+    }
+    if let Some(var_195) = &input.database_output_mode {
+        object.key("DatabaseOutputMode").string(var_195.as_str());
     }
 }
 
@@ -701,33 +789,33 @@ pub fn serialize_structure_output(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Output,
 ) {
-    if let Some(var_170) = &input.compression_format {
-        object.key("CompressionFormat").string(var_170.as_str());
+    if let Some(var_196) = &input.compression_format {
+        object.key("CompressionFormat").string(var_196.as_str());
     }
-    if let Some(var_171) = &input.format {
-        object.key("Format").string(var_171.as_str());
+    if let Some(var_197) = &input.format {
+        object.key("Format").string(var_197.as_str());
     }
-    if let Some(var_172) = &input.partition_columns {
-        let mut array_173 = object.key("PartitionColumns").start_array();
-        for item_174 in var_172 {
+    if let Some(var_198) = &input.partition_columns {
+        let mut array_199 = object.key("PartitionColumns").start_array();
+        for item_200 in var_198 {
             {
-                array_173.value().string(item_174);
+                array_199.value().string(item_200);
             }
         }
-        array_173.finish();
+        array_199.finish();
     }
-    if let Some(var_175) = &input.location {
-        let mut object_176 = object.key("Location").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_176, var_175);
-        object_176.finish();
+    if let Some(var_201) = &input.location {
+        let mut object_202 = object.key("Location").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_202, var_201);
+        object_202.finish();
     }
     if input.overwrite {
         object.key("Overwrite").boolean(input.overwrite);
     }
-    if let Some(var_177) = &input.format_options {
-        let mut object_178 = object.key("FormatOptions").start_object();
-        crate::json_ser::serialize_structure_output_format_options(&mut object_178, var_177);
-        object_178.finish();
+    if let Some(var_203) = &input.format_options {
+        let mut object_204 = object.key("FormatOptions").start_object();
+        crate::json_ser::serialize_structure_output_format_options(&mut object_204, var_203);
+        object_204.finish();
     }
 }
 
@@ -735,11 +823,11 @@ pub fn serialize_structure_recipe_reference(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecipeReference,
 ) {
-    if let Some(var_179) = &input.name {
-        object.key("Name").string(var_179);
+    if let Some(var_205) = &input.name {
+        object.key("Name").string(var_205);
     }
-    if let Some(var_180) = &input.recipe_version {
-        object.key("RecipeVersion").string(var_180);
+    if let Some(var_206) = &input.recipe_version {
+        object.key("RecipeVersion").string(var_206);
     }
 }
 
@@ -747,26 +835,26 @@ pub fn serialize_structure_view_frame(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ViewFrame,
 ) {
-    if let Some(var_181) = &input.start_column_index {
+    if let Some(var_207) = &input.start_column_index {
         object.key("StartColumnIndex").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_181).into()),
+            smithy_types::Number::NegInt((*var_207).into()),
         );
     }
-    if let Some(var_182) = &input.column_range {
+    if let Some(var_208) = &input.column_range {
         object.key("ColumnRange").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_182).into()),
+            smithy_types::Number::NegInt((*var_208).into()),
         );
     }
-    if let Some(var_183) = &input.hidden_columns {
-        let mut array_184 = object.key("HiddenColumns").start_array();
-        for item_185 in var_183 {
+    if let Some(var_209) = &input.hidden_columns {
+        let mut array_210 = object.key("HiddenColumns").start_array();
+        for item_211 in var_209 {
             {
-                array_184.value().string(item_185);
+                array_210.value().string(item_211);
             }
         }
-        array_184.finish();
+        array_210.finish();
     }
 }
 
@@ -783,29 +871,29 @@ pub fn serialize_structure_excel_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExcelOptions,
 ) {
-    if let Some(var_186) = &input.sheet_names {
-        let mut array_187 = object.key("SheetNames").start_array();
-        for item_188 in var_186 {
+    if let Some(var_212) = &input.sheet_names {
+        let mut array_213 = object.key("SheetNames").start_array();
+        for item_214 in var_212 {
             {
-                array_187.value().string(item_188);
+                array_213.value().string(item_214);
             }
         }
-        array_187.finish();
+        array_213.finish();
     }
-    if let Some(var_189) = &input.sheet_indexes {
-        let mut array_190 = object.key("SheetIndexes").start_array();
-        for item_191 in var_189 {
+    if let Some(var_215) = &input.sheet_indexes {
+        let mut array_216 = object.key("SheetIndexes").start_array();
+        for item_217 in var_215 {
             {
-                array_190.value().number(
+                array_216.value().number(
                     #[allow(clippy::useless_conversion)]
-                    smithy_types::Number::NegInt((*item_191).into()),
+                    smithy_types::Number::NegInt((*item_217).into()),
                 );
             }
         }
-        array_190.finish();
+        array_216.finish();
     }
-    if let Some(var_192) = &input.header_row {
-        object.key("HeaderRow").boolean(*var_192);
+    if let Some(var_218) = &input.header_row {
+        object.key("HeaderRow").boolean(*var_218);
     }
 }
 
@@ -813,11 +901,11 @@ pub fn serialize_structure_csv_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CsvOptions,
 ) {
-    if let Some(var_193) = &input.delimiter {
-        object.key("Delimiter").string(var_193);
+    if let Some(var_219) = &input.delimiter {
+        object.key("Delimiter").string(var_219);
     }
-    if let Some(var_194) = &input.header_row {
-        object.key("HeaderRow").boolean(*var_194);
+    if let Some(var_220) = &input.header_row {
+        object.key("HeaderRow").boolean(*var_220);
     }
 }
 
@@ -825,19 +913,19 @@ pub fn serialize_structure_data_catalog_input_definition(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataCatalogInputDefinition,
 ) {
-    if let Some(var_195) = &input.catalog_id {
-        object.key("CatalogId").string(var_195);
+    if let Some(var_221) = &input.catalog_id {
+        object.key("CatalogId").string(var_221);
     }
-    if let Some(var_196) = &input.database_name {
-        object.key("DatabaseName").string(var_196);
+    if let Some(var_222) = &input.database_name {
+        object.key("DatabaseName").string(var_222);
     }
-    if let Some(var_197) = &input.table_name {
-        object.key("TableName").string(var_197);
+    if let Some(var_223) = &input.table_name {
+        object.key("TableName").string(var_223);
     }
-    if let Some(var_198) = &input.temp_directory {
-        let mut object_199 = object.key("TempDirectory").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_199, var_198);
-        object_199.finish();
+    if let Some(var_224) = &input.temp_directory {
+        let mut object_225 = object.key("TempDirectory").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_225, var_224);
+        object_225.finish();
     }
 }
 
@@ -845,16 +933,16 @@ pub fn serialize_structure_database_input_definition(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatabaseInputDefinition,
 ) {
-    if let Some(var_200) = &input.glue_connection_name {
-        object.key("GlueConnectionName").string(var_200);
+    if let Some(var_226) = &input.glue_connection_name {
+        object.key("GlueConnectionName").string(var_226);
     }
-    if let Some(var_201) = &input.database_table_name {
-        object.key("DatabaseTableName").string(var_201);
+    if let Some(var_227) = &input.database_table_name {
+        object.key("DatabaseTableName").string(var_227);
     }
-    if let Some(var_202) = &input.temp_directory {
-        let mut object_203 = object.key("TempDirectory").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_203, var_202);
-        object_203.finish();
+    if let Some(var_228) = &input.temp_directory {
+        let mut object_229 = object.key("TempDirectory").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_229, var_228);
+        object_229.finish();
     }
 }
 
@@ -862,17 +950,17 @@ pub fn serialize_structure_filter_expression(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FilterExpression,
 ) {
-    if let Some(var_204) = &input.expression {
-        object.key("Expression").string(var_204);
+    if let Some(var_230) = &input.expression {
+        object.key("Expression").string(var_230);
     }
-    if let Some(var_205) = &input.values_map {
-        let mut object_206 = object.key("ValuesMap").start_object();
-        for (key_207, value_208) in var_205 {
+    if let Some(var_231) = &input.values_map {
+        let mut object_232 = object.key("ValuesMap").start_object();
+        for (key_233, value_234) in var_231 {
             {
-                object_206.key(key_207).string(value_208);
+                object_232.key(key_233).string(value_234);
             }
         }
-        object_206.finish();
+        object_232.finish();
     }
 }
 
@@ -886,11 +974,11 @@ pub fn serialize_structure_files_limit(
             smithy_types::Number::NegInt((input.max_files).into()),
         );
     }
-    if let Some(var_209) = &input.ordered_by {
-        object.key("OrderedBy").string(var_209.as_str());
+    if let Some(var_235) = &input.ordered_by {
+        object.key("OrderedBy").string(var_235.as_str());
     }
-    if let Some(var_210) = &input.order {
-        object.key("Order").string(var_210.as_str());
+    if let Some(var_236) = &input.order {
+        object.key("Order").string(var_236.as_str());
     }
 }
 
@@ -898,24 +986,84 @@ pub fn serialize_structure_dataset_parameter(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatasetParameter,
 ) {
-    if let Some(var_211) = &input.name {
-        object.key("Name").string(var_211);
+    if let Some(var_237) = &input.name {
+        object.key("Name").string(var_237);
     }
-    if let Some(var_212) = &input.r#type {
-        object.key("Type").string(var_212.as_str());
+    if let Some(var_238) = &input.r#type {
+        object.key("Type").string(var_238.as_str());
     }
-    if let Some(var_213) = &input.datetime_options {
-        let mut object_214 = object.key("DatetimeOptions").start_object();
-        crate::json_ser::serialize_structure_datetime_options(&mut object_214, var_213);
-        object_214.finish();
+    if let Some(var_239) = &input.datetime_options {
+        let mut object_240 = object.key("DatetimeOptions").start_object();
+        crate::json_ser::serialize_structure_datetime_options(&mut object_240, var_239);
+        object_240.finish();
     }
     if input.create_column {
         object.key("CreateColumn").boolean(input.create_column);
     }
-    if let Some(var_215) = &input.filter {
-        let mut object_216 = object.key("Filter").start_object();
-        crate::json_ser::serialize_structure_filter_expression(&mut object_216, var_215);
-        object_216.finish();
+    if let Some(var_241) = &input.filter {
+        let mut object_242 = object.key("Filter").start_object();
+        crate::json_ser::serialize_structure_filter_expression(&mut object_242, var_241);
+        object_242.finish();
+    }
+}
+
+pub fn serialize_structure_statistics_configuration(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::StatisticsConfiguration,
+) {
+    if let Some(var_243) = &input.included_statistics {
+        let mut array_244 = object.key("IncludedStatistics").start_array();
+        for item_245 in var_243 {
+            {
+                array_244.value().string(item_245);
+            }
+        }
+        array_244.finish();
+    }
+    if let Some(var_246) = &input.overrides {
+        let mut array_247 = object.key("Overrides").start_array();
+        for item_248 in var_246 {
+            {
+                let mut object_249 = array_247.value().start_object();
+                crate::json_ser::serialize_structure_statistic_override(&mut object_249, item_248);
+                object_249.finish();
+            }
+        }
+        array_247.finish();
+    }
+}
+
+pub fn serialize_structure_column_selector(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::ColumnSelector,
+) {
+    if let Some(var_250) = &input.regex {
+        object.key("Regex").string(var_250);
+    }
+    if let Some(var_251) = &input.name {
+        object.key("Name").string(var_251);
+    }
+}
+
+pub fn serialize_structure_column_statistics_configuration(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::ColumnStatisticsConfiguration,
+) {
+    if let Some(var_252) = &input.selectors {
+        let mut array_253 = object.key("Selectors").start_array();
+        for item_254 in var_252 {
+            {
+                let mut object_255 = array_253.value().start_object();
+                crate::json_ser::serialize_structure_column_selector(&mut object_255, item_254);
+                object_255.finish();
+            }
+        }
+        array_253.finish();
+    }
+    if let Some(var_256) = &input.statistics {
+        let mut object_257 = object.key("Statistics").start_object();
+        crate::json_ser::serialize_structure_statistics_configuration(&mut object_257, var_256);
+        object_257.finish();
     }
 }
 
@@ -923,17 +1071,17 @@ pub fn serialize_structure_recipe_action(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecipeAction,
 ) {
-    if let Some(var_217) = &input.operation {
-        object.key("Operation").string(var_217);
+    if let Some(var_258) = &input.operation {
+        object.key("Operation").string(var_258);
     }
-    if let Some(var_218) = &input.parameters {
-        let mut object_219 = object.key("Parameters").start_object();
-        for (key_220, value_221) in var_218 {
+    if let Some(var_259) = &input.parameters {
+        let mut object_260 = object.key("Parameters").start_object();
+        for (key_261, value_262) in var_259 {
             {
-                object_219.key(key_220).string(value_221);
+                object_260.key(key_261).string(value_262);
             }
         }
-        object_219.finish();
+        object_260.finish();
     }
 }
 
@@ -941,14 +1089,14 @@ pub fn serialize_structure_condition_expression(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConditionExpression,
 ) {
-    if let Some(var_222) = &input.condition {
-        object.key("Condition").string(var_222);
+    if let Some(var_263) = &input.condition {
+        object.key("Condition").string(var_263);
     }
-    if let Some(var_223) = &input.value {
-        object.key("Value").string(var_223);
+    if let Some(var_264) = &input.value {
+        object.key("Value").string(var_264);
     }
-    if let Some(var_224) = &input.target_column {
-        object.key("TargetColumn").string(var_224);
+    if let Some(var_265) = &input.target_column {
+        object.key("TargetColumn").string(var_265);
     }
 }
 
@@ -956,10 +1104,10 @@ pub fn serialize_structure_s3_table_output_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3TableOutputOptions,
 ) {
-    if let Some(var_225) = &input.location {
-        let mut object_226 = object.key("Location").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_226, var_225);
-        object_226.finish();
+    if let Some(var_266) = &input.location {
+        let mut object_267 = object.key("Location").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_267, var_266);
+        object_267.finish();
     }
 }
 
@@ -967,13 +1115,13 @@ pub fn serialize_structure_database_table_output_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatabaseTableOutputOptions,
 ) {
-    if let Some(var_227) = &input.temp_directory {
-        let mut object_228 = object.key("TempDirectory").start_object();
-        crate::json_ser::serialize_structure_s3_location(&mut object_228, var_227);
-        object_228.finish();
+    if let Some(var_268) = &input.temp_directory {
+        let mut object_269 = object.key("TempDirectory").start_object();
+        crate::json_ser::serialize_structure_s3_location(&mut object_269, var_268);
+        object_269.finish();
     }
-    if let Some(var_229) = &input.table_name {
-        object.key("TableName").string(var_229);
+    if let Some(var_270) = &input.table_name {
+        object.key("TableName").string(var_270);
     }
 }
 
@@ -981,10 +1129,10 @@ pub fn serialize_structure_output_format_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputFormatOptions,
 ) {
-    if let Some(var_230) = &input.csv {
-        let mut object_231 = object.key("Csv").start_object();
-        crate::json_ser::serialize_structure_csv_output_options(&mut object_231, var_230);
-        object_231.finish();
+    if let Some(var_271) = &input.csv {
+        let mut object_272 = object.key("Csv").start_object();
+        crate::json_ser::serialize_structure_csv_output_options(&mut object_272, var_271);
+        object_272.finish();
     }
 }
 
@@ -992,14 +1140,32 @@ pub fn serialize_structure_datetime_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatetimeOptions,
 ) {
-    if let Some(var_232) = &input.format {
-        object.key("Format").string(var_232);
+    if let Some(var_273) = &input.format {
+        object.key("Format").string(var_273);
     }
-    if let Some(var_233) = &input.timezone_offset {
-        object.key("TimezoneOffset").string(var_233);
+    if let Some(var_274) = &input.timezone_offset {
+        object.key("TimezoneOffset").string(var_274);
     }
-    if let Some(var_234) = &input.locale_code {
-        object.key("LocaleCode").string(var_234);
+    if let Some(var_275) = &input.locale_code {
+        object.key("LocaleCode").string(var_275);
+    }
+}
+
+pub fn serialize_structure_statistic_override(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::StatisticOverride,
+) {
+    if let Some(var_276) = &input.statistic {
+        object.key("Statistic").string(var_276);
+    }
+    if let Some(var_277) = &input.parameters {
+        let mut object_278 = object.key("Parameters").start_object();
+        for (key_279, value_280) in var_277 {
+            {
+                object_278.key(key_279).string(value_280);
+            }
+        }
+        object_278.finish();
     }
 }
 
@@ -1007,7 +1173,7 @@ pub fn serialize_structure_csv_output_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CsvOutputOptions,
 ) {
-    if let Some(var_235) = &input.delimiter {
-        object.key("Delimiter").string(var_235);
+    if let Some(var_281) = &input.delimiter {
+        object.key("Delimiter").string(var_281);
     }
 }

@@ -2,6 +2,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    AccessDeniedException(crate::error::AccessDeniedException),
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
     InternalFailureException(crate::error::InternalFailureException),
@@ -14,6 +15,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
@@ -704,6 +706,47 @@ impl From<smithy_http::result::SdkError<crate::error::GetIntentVersionsError>> f
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GetMigrationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMigrationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMigrationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetMigrationErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::GetMigrationErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::GetMigrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetMigrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetMigrationsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMigrationsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMigrationsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetMigrationsErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::GetMigrationsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::GetMigrationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetSlotTypeError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetSlotTypeError>) -> Self {
         match err {
@@ -931,6 +974,31 @@ impl From<smithy_http::result::SdkError<crate::error::StartImportError>> for Err
                     Error::LimitExceededException(inner)
                 }
                 crate::error::StartImportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::StartMigrationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::StartMigrationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartMigrationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::StartMigrationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::StartMigrationErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::StartMigrationErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::StartMigrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::StartMigrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

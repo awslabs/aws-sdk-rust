@@ -2050,7 +2050,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_timestamp(input);
             self
         }
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
+        /// their corresponding values for the event you are sending for evaluation.</p>
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>You must provide at least one eventVariable</p>
+        /// </li>
+        /// <li>
+        /// <p>If detectorVersion is associated with a modelVersion, you must provide at least one associated eventVariable</p>
+        /// </li>
+        /// </ul>
+        /// </important>
+        /// <p>To ensure highest possible fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
+        /// <p>
+        /// <b>For Amazon Fraud Detector trained models:</b>
+        /// </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
+        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p>
+        /// <b>For External models ( for example, imported SageMaker):</b>
+        /// </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
+        /// will use the default value that is provided for the variable. </p>
         pub fn event_variables(
             mut self,
             k: impl Into<std::string::String>,

@@ -148,6 +148,9 @@ impl From<smithy_http::result::SdkError<crate::error::ActivateKeySigningKeyError
                 crate::error::ActivateKeySigningKeyErrorKind::ConcurrentModification(inner) => {
                     Error::ConcurrentModification(inner)
                 }
+                crate::error::ActivateKeySigningKeyErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
                 crate::error::ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
                     Error::InvalidKeySigningKeyStatus(inner)
                 }
@@ -487,6 +490,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeactivateKeySigningKeyErr
                 crate::error::DeactivateKeySigningKeyErrorKind::ConcurrentModification(inner) => {
                     Error::ConcurrentModification(inner)
                 }
+                crate::error::DeactivateKeySigningKeyErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
                 crate::error::DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(
                     inner,
                 ) => Error::InvalidKeySigningKeyStatus(inner),
@@ -564,6 +570,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteKeySigningKeyError>>
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteKeySigningKeyErrorKind::ConcurrentModification(inner) => {
                     Error::ConcurrentModification(inner)
+                }
+                crate::error::DeleteKeySigningKeyErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
                 }
                 crate::error::DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
                     Error::InvalidKeySigningKeyStatus(inner)
@@ -715,6 +724,9 @@ impl From<smithy_http::result::SdkError<crate::error::DisableHostedZoneDNSSECErr
                 crate::error::DisableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => {
                     Error::InvalidArgument(inner)
                 }
+                crate::error::DisableHostedZoneDNSSECErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
                 crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(
                     inner,
                 ) => Error::InvalidKeySigningKeyStatus(inner),
@@ -774,6 +786,7 @@ impl From<smithy_http::result::SdkError<crate::error::EnableHostedZoneDNSSECErro
                 crate::error::EnableHostedZoneDNSSECErrorKind::DnssecNotFound(inner) => Error::DnssecNotFound(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(inner) => Error::HostedZonePartiallyDelegated(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::EnableHostedZoneDNSSECErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(inner) => Error::InvalidKeySigningKeyStatus(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => Error::InvalidKmsArn(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(inner) => Error::KeySigningKeyWithActiveStatusNotFound(inner),
@@ -828,6 +841,7 @@ impl From<smithy_http::result::SdkError<crate::error::GetDNSSECError>> for Error
                 crate::error::GetDNSSECErrorKind::InvalidArgument(inner) => {
                     Error::InvalidArgument(inner)
                 }
+                crate::error::GetDNSSECErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::GetDNSSECErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }

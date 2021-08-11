@@ -8,6 +8,7 @@ pub struct CreateFHIRDatastoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFHIRDatastoreErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -17,6 +18,7 @@ pub enum CreateFHIRDatastoreErrorKind {
 impl std::fmt::Display for CreateFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateFHIRDatastoreErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateFHIRDatastoreErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -68,6 +70,12 @@ impl CreateFHIRDatastoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFHIRDatastoreErrorKind::AccessDeniedException(_)
+        )
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -90,6 +98,7 @@ impl CreateFHIRDatastoreError {
 impl std::error::Error for CreateFHIRDatastoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateFHIRDatastoreErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
@@ -649,6 +658,330 @@ impl std::error::Error for ListFHIRDatastoresError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListFHIRExportJobsError {
+    pub kind: ListFHIRExportJobsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFHIRExportJobsErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFHIRExportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListFHIRExportJobsError {
+    fn code(&self) -> Option<&str> {
+        ListFHIRExportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFHIRExportJobsError {
+    pub fn new(kind: ListFHIRExportJobsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFHIRExportJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFHIRExportJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRExportJobsErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRExportJobsErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRExportJobsErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRExportJobsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListFHIRExportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFHIRImportJobsError {
+    pub kind: ListFHIRImportJobsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFHIRImportJobsErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFHIRImportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListFHIRImportJobsError {
+    fn code(&self) -> Option<&str> {
+        ListFHIRImportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFHIRImportJobsError {
+    pub fn new(kind: ListFHIRImportJobsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFHIRImportJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFHIRImportJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRImportJobsErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRImportJobsErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRImportJobsErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFHIRImportJobsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListFHIRImportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    pub kind: ListTagsForResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct StartFHIRExportJobError {
     pub kind: StartFHIRExportJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -881,6 +1214,180 @@ impl std::error::Error for StartFHIRImportJobError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    pub kind: TagResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    pub fn new(kind: TagResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    pub kind: UntagResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    pub fn new(kind: UntagResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The user input parameter was invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -941,66 +1448,6 @@ impl ValidationException {
     }
 }
 
-/// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottlingException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ThrottlingException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottlingException {}
-/// See [`ThrottlingException`](crate::error::ThrottlingException)
-pub mod throttling_exception {
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
-    }
-}
-
 /// <p> The requested Data Store was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1022,8 +1469,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -1058,6 +1505,66 @@ impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
 

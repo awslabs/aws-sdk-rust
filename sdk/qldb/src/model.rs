@@ -49,6 +49,211 @@ impl AsRef<str> for PermissionsMode {
     }
 }
 
+/// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes
+/// the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in
+/// the case of an error).</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
+/// the <i>Amazon QLDB Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LedgerEncryptionDescription {
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
+    /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
+    /// for encryption.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>The current state of encryption at rest for the ledger. This can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code>: The ledger is actively processing the specified key
+    /// change.</p>
+    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
+    /// performance impact while the key change is being processed. The amount of time it
+    /// takes to update a key varies depending on the ledger size.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
+    /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
+    /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
+    /// and does not accept any read or write requests.</p>
+    /// <p>An impaired ledger automatically returns to an active state after you restore the
+    /// grants on the key, or re-enable the key that was disabled. However, deleting a
+    /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
+    /// access the ledgers that are protected with that key, and the data becomes
+    /// unrecoverable permanently.</p>
+    /// </li>
+    /// </ul>
+    pub encryption_status: std::option::Option<crate::model::EncryptionStatus>,
+    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
+    /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
+    /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>This parameter is undefined if the KMS key is accessible.</p>
+    pub inaccessible_kms_key_date_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for LedgerEncryptionDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LedgerEncryptionDescription");
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("encryption_status", &self.encryption_status);
+        formatter.field(
+            "inaccessible_kms_key_date_time",
+            &self.inaccessible_kms_key_date_time,
+        );
+        formatter.finish()
+    }
+}
+/// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+pub mod ledger_encryption_description {
+    /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) encryption_status: std::option::Option<crate::model::EncryptionStatus>,
+        pub(crate) inaccessible_kms_key_date_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
+        /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
+        /// for encryption.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// <p>The current state of encryption at rest for the ledger. This can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATING</code>: The ledger is actively processing the specified key
+        /// change.</p>
+        /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
+        /// performance impact while the key change is being processed. The amount of time it
+        /// takes to update a key varies depending on the ledger size.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
+        /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
+        /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
+        /// and does not accept any read or write requests.</p>
+        /// <p>An impaired ledger automatically returns to an active state after you restore the
+        /// grants on the key, or re-enable the key that was disabled. However, deleting a
+        /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
+        /// access the ledgers that are protected with that key, and the data becomes
+        /// unrecoverable permanently.</p>
+        /// </li>
+        /// </ul>
+        pub fn encryption_status(mut self, input: crate::model::EncryptionStatus) -> Self {
+            self.encryption_status = Some(input);
+            self
+        }
+        pub fn set_encryption_status(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionStatus>,
+        ) -> Self {
+            self.encryption_status = input;
+            self
+        }
+        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
+        /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
+        /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>This parameter is undefined if the KMS key is accessible.</p>
+        pub fn inaccessible_kms_key_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inaccessible_kms_key_date_time = Some(input);
+            self
+        }
+        pub fn set_inaccessible_kms_key_date_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inaccessible_kms_key_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+        pub fn build(self) -> crate::model::LedgerEncryptionDescription {
+            crate::model::LedgerEncryptionDescription {
+                kms_key_arn: self.kms_key_arn,
+                encryption_status: self.encryption_status,
+                inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time,
+            }
+        }
+    }
+}
+impl LedgerEncryptionDescription {
+    /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+    pub fn builder() -> crate::model::ledger_encryption_description::Builder {
+        crate::model::ledger_encryption_description::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EncryptionStatus {
+    Enabled,
+    KmsKeyInaccessible,
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EncryptionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENABLED" => EncryptionStatus::Enabled,
+            "KMS_KEY_INACCESSIBLE" => EncryptionStatus::KmsKeyInaccessible,
+            "UPDATING" => EncryptionStatus::Updating,
+            other => EncryptionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EncryptionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EncryptionStatus::from(s))
+    }
+}
+impl EncryptionStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EncryptionStatus::Enabled => "ENABLED",
+            EncryptionStatus::KmsKeyInaccessible => "KMS_KEY_INACCESSIBLE",
+            EncryptionStatus::Updating => "UPDATING",
+            EncryptionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"]
+    }
+}
+impl AsRef<str> for EncryptionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -289,8 +494,8 @@ pub struct JournalS3ExportDescription {
     /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
     /// </li>
     /// <li>
-    /// <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS
-    /// KMS) for server-side encryption of your exported data.</p>
+    /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
+    /// encryption of your exported data.</p>
     /// </li>
     /// </ul>
     pub role_arn: std::option::Option<std::string::String>,
@@ -418,8 +623,8 @@ pub mod journal_s3_export_description {
         /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
         /// </li>
         /// <li>
-        /// <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS
-        /// KMS) for server-side encryption of your exported data.</p>
+        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
+        /// encryption of your exported data.</p>
         /// </li>
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -597,8 +802,8 @@ pub struct S3EncryptionConfiguration {
     /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
     /// Guide</i>.</p>
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
-    /// Management Service (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
+    /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
     /// <code>ObjectEncryptionType</code>.</p>
     /// <p>
@@ -643,8 +848,8 @@ pub mod s3_encryption_configuration {
             self.object_encryption_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
-        /// Management Service (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
+        /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
         /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
         /// <code>ObjectEncryptionType</code>.</p>
         /// <p>
@@ -795,7 +1000,7 @@ pub struct JournalKinesisStreamDescription {
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-    /// blank, the stream runs indefinitely until you cancel it.</p>
+    /// undefined, the stream runs indefinitely until you cancel it.</p>
     pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
     /// journal stream to write data records to a Kinesis Data Streams resource.</p>
@@ -888,7 +1093,7 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-        /// blank, the stream runs indefinitely until you cancel it.</p>
+        /// undefined, the stream runs indefinitely until you cancel it.</p>
         pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
             self.exclusive_end_time = Some(input);
             self

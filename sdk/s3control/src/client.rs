@@ -259,7 +259,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The account ID for the owner of the bucket for which you want to create an access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -279,7 +279,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bucket that you want to associate this access point with.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -353,7 +353,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for owner of the specified Object Lambda Access Point.</p>
+        /// <p>The account ID for owner of the specified Object Lambda Access Point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -585,7 +585,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID that creates the job.</p>
+        /// <p>The account ID that creates the job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -668,7 +668,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_priority(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
+        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
         /// that Batch Operations will use to run this job's action on every object in the
         /// manifest.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -734,7 +734,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the access point you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -836,7 +836,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the access point whose policy you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -940,7 +940,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket being deleted.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -992,7 +992,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1044,7 +1044,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1085,7 +1085,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket tag set to be removed.</p>
+        /// <p>The account ID of the Outposts bucket tag set to be removed.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1096,7 +1096,7 @@ pub mod fluent_builders {
         }
         /// <p>The bucket ARN that has the tag set to be removed.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1137,7 +1137,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1187,7 +1187,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
         /// to remove.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
@@ -1329,7 +1329,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1390,7 +1390,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the access point whose configuration information you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -1544,7 +1544,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the access point whose policy you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -1737,7 +1737,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1748,7 +1748,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1789,7 +1789,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1800,7 +1800,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1841,7 +1841,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1852,7 +1852,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1893,7 +1893,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1904,7 +1904,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -1945,7 +1945,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
@@ -2137,7 +2137,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The account ID for owner of the bucket whose access points you want to list.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2148,7 +2148,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bucket whose associated access points you want to list.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -2271,7 +2271,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2342,7 +2342,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2369,7 +2369,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ID of the AWS Outposts.</p>
+        /// <p>The ID of the Outposts.</p>
         /// <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
@@ -2527,7 +2527,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID for owner of the bucket associated with the specified access point.</p>
+        /// <p>The account ID for owner of the bucket associated with the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2538,7 +2538,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the access point that you want to associate with the specified policy.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -2647,7 +2647,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2712,7 +2712,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2723,7 +2723,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -2788,7 +2788,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID of the Outposts bucket.</p>
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2799,7 +2799,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -2849,7 +2849,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -2911,7 +2911,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
@@ -2921,8 +2921,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified AWS
-        /// account.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified account.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -3114,7 +3113,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -3173,7 +3172,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self

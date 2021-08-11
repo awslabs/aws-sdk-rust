@@ -63,7 +63,7 @@ impl PortalStatus {
     }
 }
 
-/// <p>Contains AWS IoT SiteWise Monitor error details.</p>
+/// <p>Contains IoT SiteWise Monitor error details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorErrorDetails {
@@ -239,15 +239,18 @@ impl AsRef<str> for PortalState {
     }
 }
 
-/// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-/// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+/// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+/// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+/// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarms {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
+    /// resources and services, such as IoT Events.</p>
     pub alarm_role_arn: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/">Managing alarm notifications</a>
-    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+    /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub notification_lambda_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Alarms {
@@ -268,7 +271,8 @@ pub mod alarms {
         pub(crate) notification_lambda_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
+        /// resources and services, such as IoT Events.</p>
         pub fn alarm_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.alarm_role_arn = Some(input.into());
             self
@@ -280,8 +284,9 @@ pub mod alarms {
             self.alarm_role_arn = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/">Managing alarm notifications</a>
-        /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
+        /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+        /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
         pub fn notification_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_lambda_arn = Some(input.into());
             self
@@ -488,6 +493,7 @@ impl AsRef<str> for ImageFileType {
     }
 }
 
+/// **NOTE:** `CapabilitySyncStatus::Unknown` has been renamed to `::UnknownValue`.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -502,6 +508,8 @@ pub enum CapabilitySyncStatus {
     InSync,
     OutOfSync,
     SyncFailed,
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -511,6 +519,7 @@ impl std::convert::From<&str> for CapabilitySyncStatus {
             "IN_SYNC" => CapabilitySyncStatus::InSync,
             "OUT_OF_SYNC" => CapabilitySyncStatus::OutOfSync,
             "SYNC_FAILED" => CapabilitySyncStatus::SyncFailed,
+            "UNKNOWN" => CapabilitySyncStatus::UnknownValue,
             other => CapabilitySyncStatus::Unknown(other.to_owned()),
         }
     }
@@ -528,11 +537,12 @@ impl CapabilitySyncStatus {
             CapabilitySyncStatus::InSync => "IN_SYNC",
             CapabilitySyncStatus::OutOfSync => "OUT_OF_SYNC",
             CapabilitySyncStatus::SyncFailed => "SYNC_FAILED",
+            CapabilitySyncStatus::UnknownValue => "UNKNOWN",
             CapabilitySyncStatus::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED"]
+        &["IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"]
     }
 }
 impl AsRef<str> for CapabilitySyncStatus {
@@ -592,7 +602,7 @@ impl AsRef<str> for PropertyNotificationState {
 }
 
 /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model
-/// states</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelStatus {
@@ -656,7 +666,7 @@ impl AssetModelStatus {
     }
 }
 
-/// <p>Contains the details of an AWS IoT SiteWise error.</p>
+/// <p>Contains the details of an IoT SiteWise error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
@@ -664,12 +674,15 @@ pub struct ErrorDetails {
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+    /// <p> A list of detailed errors. </p>
+    pub details: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
 }
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDetails");
         formatter.field("code", &self.code);
         formatter.field("message", &self.message);
+        formatter.field("details", &self.details);
         formatter.finish()
     }
 }
@@ -681,6 +694,7 @@ pub mod error_details {
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) details: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
     }
     impl Builder {
         /// <p>The error code.</p>
@@ -701,11 +715,25 @@ pub mod error_details {
             self.message = input;
             self
         }
+        pub fn details(mut self, input: impl Into<crate::model::DetailedError>) -> Self {
+            let mut v = self.details.unwrap_or_default();
+            v.push(input.into());
+            self.details = Some(v);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails)
         pub fn build(self) -> crate::model::ErrorDetails {
             crate::model::ErrorDetails {
                 code: self.code,
                 message: self.message,
+                details: self.details,
             }
         }
     }
@@ -714,6 +742,127 @@ impl ErrorDetails {
     /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails)
     pub fn builder() -> crate::model::error_details::Builder {
         crate::model::error_details::Builder::default()
+    }
+}
+
+/// <p>Contains detailed error information. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetailedError {
+    /// <p>The error code. </p>
+    pub code: std::option::Option<crate::model::DetailedErrorCode>,
+    /// <p>The error message. </p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DetailedError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetailedError");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`DetailedError`](crate::model::DetailedError)
+pub mod detailed_error {
+    /// A builder for [`DetailedError`](crate::model::DetailedError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::DetailedErrorCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code. </p>
+        pub fn code(mut self, input: crate::model::DetailedErrorCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::DetailedErrorCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The error message. </p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetailedError`](crate::model::DetailedError)
+        pub fn build(self) -> crate::model::DetailedError {
+            crate::model::DetailedError {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl DetailedError {
+    /// Creates a new builder-style object to manufacture [`DetailedError`](crate::model::DetailedError)
+    pub fn builder() -> crate::model::detailed_error::Builder {
+        crate::model::detailed_error::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DetailedErrorCode {
+    IncompatibleComputeLocation,
+    IncompatibleForwardingConfiguration,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DetailedErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "INCOMPATIBLE_COMPUTE_LOCATION" => DetailedErrorCode::IncompatibleComputeLocation,
+            "INCOMPATIBLE_FORWARDING_CONFIGURATION" => {
+                DetailedErrorCode::IncompatibleForwardingConfiguration
+            }
+            other => DetailedErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DetailedErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DetailedErrorCode::from(s))
+    }
+}
+impl DetailedErrorCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DetailedErrorCode::IncompatibleComputeLocation => "INCOMPATIBLE_COMPUTE_LOCATION",
+            DetailedErrorCode::IncompatibleForwardingConfiguration => {
+                "INCOMPATIBLE_FORWARDING_CONFIGURATION"
+            }
+            DetailedErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "INCOMPATIBLE_COMPUTE_LOCATION",
+            "INCOMPATIBLE_FORWARDING_CONFIGURATION",
+        ]
+    }
+}
+impl AsRef<str> for DetailedErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1178,20 +1327,24 @@ impl PropertyType {
 /// up to 10 cascading metrics in its computational dependency
 /// tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume
 /// properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify
     /// up to 10 variables per expression. You can specify up to 10 functions
     /// per expression. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
-    /// <p>The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression.
-    /// AWS IoT SiteWise computes one data point per <code>window</code>.</p>
+    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
+    /// IoT SiteWise computes one data point per <code>window</code>.</p>
     pub window: std::option::Option<crate::model::MetricWindow>,
+    /// <p>The processing configuration for the given metric property.
+    /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
+    /// By default, metrics are forwarded to the cloud.</p>
+    pub processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
 }
 impl std::fmt::Debug for Metric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1199,6 +1352,7 @@ impl std::fmt::Debug for Metric {
         formatter.field("expression", &self.expression);
         formatter.field("variables", &self.variables);
         formatter.field("window", &self.window);
+        formatter.field("processing_config", &self.processing_config);
         formatter.finish()
     }
 }
@@ -1211,12 +1365,13 @@ pub mod metric {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
         pub(crate) window: std::option::Option<crate::model::MetricWindow>,
+        pub(crate) processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
     }
     impl Builder {
         /// <p>The mathematical expression that defines the metric aggregation function. You can specify
         /// up to 10 variables per expression. You can specify up to 10 functions
         /// per expression. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
@@ -1238,8 +1393,8 @@ pub mod metric {
             self.variables = input;
             self
         }
-        /// <p>The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression.
-        /// AWS IoT SiteWise computes one data point per <code>window</code>.</p>
+        /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
+        /// IoT SiteWise computes one data point per <code>window</code>.</p>
         pub fn window(mut self, input: crate::model::MetricWindow) -> Self {
             self.window = Some(input);
             self
@@ -1251,12 +1406,27 @@ pub mod metric {
             self.window = input;
             self
         }
+        /// <p>The processing configuration for the given metric property.
+        /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
+        /// By default, metrics are forwarded to the cloud.</p>
+        pub fn processing_config(mut self, input: crate::model::MetricProcessingConfig) -> Self {
+            self.processing_config = Some(input);
+            self
+        }
+        pub fn set_processing_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricProcessingConfig>,
+        ) -> Self {
+            self.processing_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Metric`](crate::model::Metric)
         pub fn build(self) -> crate::model::Metric {
             crate::model::Metric {
                 expression: self.expression,
                 variables: self.variables,
                 window: self.window,
+                processing_config: self.processing_config,
             }
         }
     }
@@ -1265,6 +1435,108 @@ impl Metric {
     /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric)
     pub fn builder() -> crate::model::metric::Builder {
         crate::model::metric::Builder::default()
+    }
+}
+
+/// <p>The processing configuration for the given metric property.
+/// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
+/// By default, metrics are forwarded to the cloud.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricProcessingConfig {
+    /// <p>The compute location for the given metric property. </p>
+    pub compute_location: std::option::Option<crate::model::ComputeLocation>,
+}
+impl std::fmt::Debug for MetricProcessingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricProcessingConfig");
+        formatter.field("compute_location", &self.compute_location);
+        formatter.finish()
+    }
+}
+/// See [`MetricProcessingConfig`](crate::model::MetricProcessingConfig)
+pub mod metric_processing_config {
+    /// A builder for [`MetricProcessingConfig`](crate::model::MetricProcessingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) compute_location: std::option::Option<crate::model::ComputeLocation>,
+    }
+    impl Builder {
+        /// <p>The compute location for the given metric property. </p>
+        pub fn compute_location(mut self, input: crate::model::ComputeLocation) -> Self {
+            self.compute_location = Some(input);
+            self
+        }
+        pub fn set_compute_location(
+            mut self,
+            input: std::option::Option<crate::model::ComputeLocation>,
+        ) -> Self {
+            self.compute_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricProcessingConfig`](crate::model::MetricProcessingConfig)
+        pub fn build(self) -> crate::model::MetricProcessingConfig {
+            crate::model::MetricProcessingConfig {
+                compute_location: self.compute_location,
+            }
+        }
+    }
+}
+impl MetricProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`MetricProcessingConfig`](crate::model::MetricProcessingConfig)
+    pub fn builder() -> crate::model::metric_processing_config::Builder {
+        crate::model::metric_processing_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComputeLocation {
+    Cloud,
+    Edge,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ComputeLocation {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLOUD" => ComputeLocation::Cloud,
+            "EDGE" => ComputeLocation::Edge,
+            other => ComputeLocation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ComputeLocation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComputeLocation::from(s))
+    }
+}
+impl ComputeLocation {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComputeLocation::Cloud => "CLOUD",
+            ComputeLocation::Edge => "EDGE",
+            ComputeLocation::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CLOUD", "EDGE"]
+    }
+}
+impl AsRef<str> for ComputeLocation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1320,24 +1592,88 @@ impl MetricWindow {
 }
 
 /// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and
-/// contiguous time interval. This window is used in metric and aggregation computations.</p>
+/// contiguous time window. You use this window in metrics to aggregate data from properties and other assets.</p>
+/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code>
+/// when you specify an interval or offset. Note that <code>m</code> represents minutes,
+/// and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds
+/// in <code>offset</code>.</p>
+/// <p>The <code>interval</code> and <code>offset</code> parameters support the
+/// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.
+/// For example, <code>PT5S</code> represents five seconds, <code>PT5M</code> represents five minutes,
+/// and <code>PT5H</code> represents five hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TumblingWindow {
-    /// <p>The time interval for the tumbling window. Note that <code>w</code> represents weeks,
-    /// <code>d</code> represents days, <code>h</code> represents hours, and <code>m</code>
-    /// represents minutes. AWS IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
     /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
     /// <code>1h</code> interval at the end of each hour, and so on. </p>
-    /// <p>When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is
-    /// exclusive and the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at
+    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
+    /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
     /// the end of the interval.</p>
     pub interval: std::option::Option<std::string::String>,
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The offset time.</p>
+    /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 p.m. (UTC),
+    /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 p.m. (UTC),
+    /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The ISO 8601 format.</p>
+    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 p.m. (UTC),
+    /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 p.m. (UTC),
+    /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The 24-hour clock.</p>
+    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
+    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 p.m. (UTC),
+    /// you get the first aggregation result at 2:03 p.m. (UTC).
+    /// You get the second aggregation result at 2:08 p.m. (UTC). </p>
+    /// </li>
+    /// <li>
+    /// <p>The offset time zone.</p>
+    /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 p.m. (PST),
+    /// you get the first aggregation result at 6 p.m. (PST) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 p.m. (PST),
+    /// you get the first aggregation result at 6 p.m. (PST) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub offset: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TumblingWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TumblingWindow");
         formatter.field("interval", &self.interval);
+        formatter.field("offset", &self.offset);
         formatter.finish()
     }
 }
@@ -1348,15 +1684,15 @@ pub mod tumbling_window {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<std::string::String>,
+        pub(crate) offset: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time interval for the tumbling window. Note that <code>w</code> represents weeks,
-        /// <code>d</code> represents days, <code>h</code> represents hours, and <code>m</code>
-        /// represents minutes. AWS IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
         /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
         /// <code>1h</code> interval at the end of each hour, and so on. </p>
-        /// <p>When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is
-        /// exclusive and the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at
+        /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
+        /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
         /// the end of the interval.</p>
         pub fn interval(mut self, input: impl Into<std::string::String>) -> Self {
             self.interval = Some(input.into());
@@ -1366,10 +1702,74 @@ pub mod tumbling_window {
             self.interval = input;
             self
         }
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The offset time.</p>
+        /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you create the metric before or at 6:00 p.m. (UTC),
+        /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you create the metric after 6:00 p.m. (UTC),
+        /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>The ISO 8601 format.</p>
+        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you create the metric before or at 6:00 p.m. (UTC),
+        /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you create the metric after 6:00 p.m. (UTC),
+        /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>The 24-hour clock.</p>
+        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
+        /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 p.m. (UTC),
+        /// you get the first aggregation result at 2:03 p.m. (UTC).
+        /// You get the second aggregation result at 2:08 p.m. (UTC). </p>
+        /// </li>
+        /// <li>
+        /// <p>The offset time zone.</p>
+        /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you create the metric before or at 6:00 p.m. (PST),
+        /// you get the first aggregation result at 6 p.m. (PST) on the day when you create the metric.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you create the metric after 6:00 p.m. (PST),
+        /// you get the first aggregation result at 6 p.m. (PST) the next day.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        pub fn offset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offset = Some(input.into());
+            self
+        }
+        pub fn set_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TumblingWindow`](crate::model::TumblingWindow)
         pub fn build(self) -> crate::model::TumblingWindow {
             crate::model::TumblingWindow {
                 interval: self.interval,
+                offset: self.offset,
             }
         }
     }
@@ -1457,7 +1857,7 @@ pub struct VariableValue {
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
     /// using the same model and therefore the same <code>propertyId</code>. For example, you might
     /// have separately grouped assets that come from the same asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VariableValue {
@@ -1493,7 +1893,7 @@ pub mod variable_value {
         /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
         /// using the same model and therefore the same <code>propertyId</code>. For example, you might
         /// have separately grouped assets that come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
@@ -1523,23 +1923,28 @@ impl VariableValue {
 /// Celsius data stream to Fahrenheit by applying the transformation expression to each data point
 /// of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and
 /// consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transform {
     /// <p>The mathematical expression that defines the transformation function. You can specify up
     /// to 10 variables per expression. You can specify up to 10 functions per
     /// expression. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
+    /// <p>The processing configuration for the given transform property.
+    /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+    /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+    pub processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
 }
 impl std::fmt::Debug for Transform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Transform");
         formatter.field("expression", &self.expression);
         formatter.field("variables", &self.variables);
+        formatter.field("processing_config", &self.processing_config);
         formatter.finish()
     }
 }
@@ -1551,12 +1956,13 @@ pub mod transform {
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
+        pub(crate) processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
     }
     impl Builder {
         /// <p>The mathematical expression that defines the transformation function. You can specify up
         /// to 10 variables per expression. You can specify up to 10 functions per
         /// expression. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
@@ -1578,11 +1984,26 @@ pub mod transform {
             self.variables = input;
             self
         }
+        /// <p>The processing configuration for the given transform property.
+        /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+        /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+        pub fn processing_config(mut self, input: crate::model::TransformProcessingConfig) -> Self {
+            self.processing_config = Some(input);
+            self
+        }
+        pub fn set_processing_config(
+            mut self,
+            input: std::option::Option<crate::model::TransformProcessingConfig>,
+        ) -> Self {
+            self.processing_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Transform`](crate::model::Transform)
         pub fn build(self) -> crate::model::Transform {
             crate::model::Transform {
                 expression: self.expression,
                 variables: self.variables,
+                processing_config: self.processing_config,
             }
         }
     }
@@ -1594,14 +2015,187 @@ impl Transform {
     }
 }
 
-/// <p>Contains an asset measurement property. For more information, see
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>The processing configuration for the given transform property.
+/// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+/// You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Measurement {}
+pub struct TransformProcessingConfig {
+    /// <p>The compute location for the given transform property. </p>
+    pub compute_location: std::option::Option<crate::model::ComputeLocation>,
+    /// <p>The forwarding configuration for a given property.</p>
+    pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
+}
+impl std::fmt::Debug for TransformProcessingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransformProcessingConfig");
+        formatter.field("compute_location", &self.compute_location);
+        formatter.field("forwarding_config", &self.forwarding_config);
+        formatter.finish()
+    }
+}
+/// See [`TransformProcessingConfig`](crate::model::TransformProcessingConfig)
+pub mod transform_processing_config {
+    /// A builder for [`TransformProcessingConfig`](crate::model::TransformProcessingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) compute_location: std::option::Option<crate::model::ComputeLocation>,
+        pub(crate) forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
+    }
+    impl Builder {
+        /// <p>The compute location for the given transform property. </p>
+        pub fn compute_location(mut self, input: crate::model::ComputeLocation) -> Self {
+            self.compute_location = Some(input);
+            self
+        }
+        pub fn set_compute_location(
+            mut self,
+            input: std::option::Option<crate::model::ComputeLocation>,
+        ) -> Self {
+            self.compute_location = input;
+            self
+        }
+        /// <p>The forwarding configuration for a given property.</p>
+        pub fn forwarding_config(mut self, input: crate::model::ForwardingConfig) -> Self {
+            self.forwarding_config = Some(input);
+            self
+        }
+        pub fn set_forwarding_config(
+            mut self,
+            input: std::option::Option<crate::model::ForwardingConfig>,
+        ) -> Self {
+            self.forwarding_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransformProcessingConfig`](crate::model::TransformProcessingConfig)
+        pub fn build(self) -> crate::model::TransformProcessingConfig {
+            crate::model::TransformProcessingConfig {
+                compute_location: self.compute_location,
+                forwarding_config: self.forwarding_config,
+            }
+        }
+    }
+}
+impl TransformProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`TransformProcessingConfig`](crate::model::TransformProcessingConfig)
+    pub fn builder() -> crate::model::transform_processing_config::Builder {
+        crate::model::transform_processing_config::Builder::default()
+    }
+}
+
+/// <p>The forwarding configuration for a given property.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForwardingConfig {
+    /// <p>The forwarding state for the given property. </p>
+    pub state: std::option::Option<crate::model::ForwardingConfigState>,
+}
+impl std::fmt::Debug for ForwardingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardingConfig");
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`ForwardingConfig`](crate::model::ForwardingConfig)
+pub mod forwarding_config {
+    /// A builder for [`ForwardingConfig`](crate::model::ForwardingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::ForwardingConfigState>,
+    }
+    impl Builder {
+        /// <p>The forwarding state for the given property. </p>
+        pub fn state(mut self, input: crate::model::ForwardingConfigState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ForwardingConfigState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ForwardingConfig`](crate::model::ForwardingConfig)
+        pub fn build(self) -> crate::model::ForwardingConfig {
+            crate::model::ForwardingConfig { state: self.state }
+        }
+    }
+}
+impl ForwardingConfig {
+    /// Creates a new builder-style object to manufacture [`ForwardingConfig`](crate::model::ForwardingConfig)
+    pub fn builder() -> crate::model::forwarding_config::Builder {
+        crate::model::forwarding_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ForwardingConfigState {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ForwardingConfigState {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ForwardingConfigState::Disabled,
+            "ENABLED" => ForwardingConfigState::Enabled,
+            other => ForwardingConfigState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ForwardingConfigState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ForwardingConfigState::from(s))
+    }
+}
+impl ForwardingConfigState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ForwardingConfigState::Disabled => "DISABLED",
+            ForwardingConfigState::Enabled => "ENABLED",
+            ForwardingConfigState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for ForwardingConfigState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains an asset measurement property. For more information, see
+/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Measurement {
+    /// <p>The processing configuration for the given measurement property.
+    /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+    /// By default, measurements are forwarded to the cloud.</p>
+    pub processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
+}
 impl std::fmt::Debug for Measurement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Measurement");
+        formatter.field("processing_config", &self.processing_config);
         formatter.finish()
     }
 }
@@ -1610,11 +2204,33 @@ pub mod measurement {
     /// A builder for [`Measurement`](crate::model::Measurement)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) processing_config:
+            std::option::Option<crate::model::MeasurementProcessingConfig>,
+    }
     impl Builder {
+        /// <p>The processing configuration for the given measurement property.
+        /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+        /// By default, measurements are forwarded to the cloud.</p>
+        pub fn processing_config(
+            mut self,
+            input: crate::model::MeasurementProcessingConfig,
+        ) -> Self {
+            self.processing_config = Some(input);
+            self
+        }
+        pub fn set_processing_config(
+            mut self,
+            input: std::option::Option<crate::model::MeasurementProcessingConfig>,
+        ) -> Self {
+            self.processing_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Measurement`](crate::model::Measurement)
         pub fn build(self) -> crate::model::Measurement {
-            crate::model::Measurement {}
+            crate::model::Measurement {
+                processing_config: self.processing_config,
+            }
         }
     }
 }
@@ -1625,15 +2241,67 @@ impl Measurement {
     }
 }
 
+/// <p>The processing configuration for the given measurement property.
+/// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+/// By default, measurements are forwarded to the cloud.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MeasurementProcessingConfig {
+    /// <p>The forwarding configuration for the given measurement property. </p>
+    pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
+}
+impl std::fmt::Debug for MeasurementProcessingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MeasurementProcessingConfig");
+        formatter.field("forwarding_config", &self.forwarding_config);
+        formatter.finish()
+    }
+}
+/// See [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig)
+pub mod measurement_processing_config {
+    /// A builder for [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
+    }
+    impl Builder {
+        /// <p>The forwarding configuration for the given measurement property. </p>
+        pub fn forwarding_config(mut self, input: crate::model::ForwardingConfig) -> Self {
+            self.forwarding_config = Some(input);
+            self
+        }
+        pub fn set_forwarding_config(
+            mut self,
+            input: std::option::Option<crate::model::ForwardingConfig>,
+        ) -> Self {
+            self.forwarding_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig)
+        pub fn build(self) -> crate::model::MeasurementProcessingConfig {
+            crate::model::MeasurementProcessingConfig {
+                forwarding_config: self.forwarding_config,
+            }
+        }
+    }
+}
+impl MeasurementProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig)
+    pub fn builder() -> crate::model::measurement_processing_config::Builder {
+        crate::model::measurement_processing_config::Builder::default()
+    }
+}
+
 /// <p>Contains an asset attribute property. For more information, see
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The default value of the asset model property attribute. All assets that you create from
     /// the asset model contain this attribute value. You can update an attribute's value after you
     /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub default_value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Attribute {
@@ -1655,7 +2323,7 @@ pub mod attribute {
         /// <p>The default value of the asset model property attribute. All assets that you create from
         /// the asset model contain this attribute value. You can update an attribute's value after you
         /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
@@ -1826,7 +2494,7 @@ impl AssetModelHierarchy {
 
 /// <p>Contains information about the current status of an asset. For more information, see
 /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model
-/// states</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetStatus {
@@ -1996,7 +2664,7 @@ impl AsRef<str> for Permission {
     }
 }
 
-/// <p>Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.</p>
+/// <p>Contains an IoT SiteWise Monitor resource ID for a portal or project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
@@ -2063,7 +2731,7 @@ impl Resource {
     }
 }
 
-/// <p>Identifies a specific AWS IoT SiteWise Monitor project.</p>
+/// <p>Identifies a specific IoT SiteWise Monitor project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectResource {
@@ -2108,7 +2776,7 @@ impl ProjectResource {
     }
 }
 
-/// <p>Identifies an AWS IoT SiteWise Monitor portal.</p>
+/// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortalResource {
@@ -2153,17 +2821,17 @@ impl PortalResource {
     }
 }
 
-/// <p>Contains an identity that can access an AWS IoT SiteWise Monitor resource.</p>
+/// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p>
 /// <note>
-/// <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the
-/// AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p>
+/// <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the
+/// Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
-    /// <p>An AWS SSO user identity.</p>
+    /// <p>An Amazon Web Services SSO user identity.</p>
     pub user: std::option::Option<crate::model::UserIdentity>,
-    /// <p>An AWS SSO group identity.</p>
+    /// <p>An Amazon Web Services SSO group identity.</p>
     pub group: std::option::Option<crate::model::GroupIdentity>,
     /// <p>An IAM user identity.</p>
     pub iam_user: std::option::Option<crate::model::IamUserIdentity>,
@@ -2192,7 +2860,7 @@ pub mod identity {
         pub(crate) iam_role: std::option::Option<crate::model::IamRoleIdentity>,
     }
     impl Builder {
-        /// <p>An AWS SSO user identity.</p>
+        /// <p>An Amazon Web Services SSO user identity.</p>
         pub fn user(mut self, input: crate::model::UserIdentity) -> Self {
             self.user = Some(input);
             self
@@ -2201,7 +2869,7 @@ pub mod identity {
             self.user = input;
             self
         }
-        /// <p>An AWS SSO group identity.</p>
+        /// <p>An Amazon Web Services SSO group identity.</p>
         pub fn group(mut self, input: crate::model::GroupIdentity) -> Self {
             self.group = Some(input);
             self
@@ -2255,7 +2923,7 @@ impl Identity {
     }
 }
 
-/// <p>Contains information about an AWS Identity and Access Management (IAM) role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the
+/// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the
 /// <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2303,7 +2971,7 @@ impl IamRoleIdentity {
     }
 }
 
-/// <p>Contains information about an AWS Identity and Access Management (IAM) user.</p>
+/// <p>Contains information about an Identity and Access Management user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserIdentity {
@@ -2364,7 +3032,7 @@ impl IamUserIdentity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupIdentity {
-    /// <p>The AWS SSO ID of the group.</p>
+    /// <p>The Amazon Web Services SSO ID of the group.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GroupIdentity {
@@ -2383,7 +3051,7 @@ pub mod group_identity {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS SSO ID of the group.</p>
+        /// <p>The Amazon Web Services SSO ID of the group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -2409,7 +3077,7 @@ impl GroupIdentity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentity {
-    /// <p>The AWS SSO ID of the user.</p>
+    /// <p>The Amazon Web Services SSO ID of the user.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserIdentity {
@@ -2428,7 +3096,7 @@ pub mod user_identity {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS SSO ID of the user.</p>
+        /// <p>The Amazon Web Services SSO ID of the user.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -2447,104 +3115,6 @@ impl UserIdentity {
     /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity)
     pub fn builder() -> crate::model::user_identity::Builder {
         crate::model::user_identity::Builder::default()
-    }
-}
-
-/// <p>Contains logging options.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LoggingOptions {
-    /// <p>The AWS IoT SiteWise logging verbosity level.</p>
-    pub level: std::option::Option<crate::model::LoggingLevel>,
-}
-impl std::fmt::Debug for LoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptions");
-        formatter.field("level", &self.level);
-        formatter.finish()
-    }
-}
-/// See [`LoggingOptions`](crate::model::LoggingOptions)
-pub mod logging_options {
-    /// A builder for [`LoggingOptions`](crate::model::LoggingOptions)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) level: std::option::Option<crate::model::LoggingLevel>,
-    }
-    impl Builder {
-        /// <p>The AWS IoT SiteWise logging verbosity level.</p>
-        pub fn level(mut self, input: crate::model::LoggingLevel) -> Self {
-            self.level = Some(input);
-            self
-        }
-        pub fn set_level(mut self, input: std::option::Option<crate::model::LoggingLevel>) -> Self {
-            self.level = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LoggingOptions`](crate::model::LoggingOptions)
-        pub fn build(self) -> crate::model::LoggingOptions {
-            crate::model::LoggingOptions { level: self.level }
-        }
-    }
-}
-impl LoggingOptions {
-    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions)
-    pub fn builder() -> crate::model::logging_options::Builder {
-        crate::model::logging_options::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LoggingLevel {
-    Error,
-    Info,
-    Off,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LoggingLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERROR" => LoggingLevel::Error,
-            "INFO" => LoggingLevel::Info,
-            "OFF" => LoggingLevel::Off,
-            other => LoggingLevel::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LoggingLevel {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggingLevel::from(s))
-    }
-}
-impl LoggingLevel {
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoggingLevel::Error => "ERROR",
-            LoggingLevel::Info => "INFO",
-            LoggingLevel::Off => "OFF",
-            LoggingLevel::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["ERROR", "INFO", "OFF"]
-    }
-}
-impl AsRef<str> for LoggingLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -2615,7 +3185,7 @@ impl ConfigurationStatus {
     }
 }
 
-/// <p>Contains the details of an AWS IoT SiteWise configuration error.</p>
+/// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationErrorDetails {
@@ -2724,6 +3294,279 @@ impl ConfigurationState {
     }
 }
 impl AsRef<str> for ConfigurationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information about the storage destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiLayerStorage {
+    /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+    pub customer_managed_s3_storage: std::option::Option<crate::model::CustomerManagedS3Storage>,
+}
+impl std::fmt::Debug for MultiLayerStorage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiLayerStorage");
+        formatter.field(
+            "customer_managed_s3_storage",
+            &self.customer_managed_s3_storage,
+        );
+        formatter.finish()
+    }
+}
+/// See [`MultiLayerStorage`](crate::model::MultiLayerStorage)
+pub mod multi_layer_storage {
+    /// A builder for [`MultiLayerStorage`](crate::model::MultiLayerStorage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) customer_managed_s3_storage:
+            std::option::Option<crate::model::CustomerManagedS3Storage>,
+    }
+    impl Builder {
+        /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+        pub fn customer_managed_s3_storage(
+            mut self,
+            input: crate::model::CustomerManagedS3Storage,
+        ) -> Self {
+            self.customer_managed_s3_storage = Some(input);
+            self
+        }
+        pub fn set_customer_managed_s3_storage(
+            mut self,
+            input: std::option::Option<crate::model::CustomerManagedS3Storage>,
+        ) -> Self {
+            self.customer_managed_s3_storage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiLayerStorage`](crate::model::MultiLayerStorage)
+        pub fn build(self) -> crate::model::MultiLayerStorage {
+            crate::model::MultiLayerStorage {
+                customer_managed_s3_storage: self.customer_managed_s3_storage,
+            }
+        }
+    }
+}
+impl MultiLayerStorage {
+    /// Creates a new builder-style object to manufacture [`MultiLayerStorage`](crate::model::MultiLayerStorage)
+    pub fn builder() -> crate::model::multi_layer_storage::Builder {
+        crate::model::multi_layer_storage::Builder::default()
+    }
+}
+
+/// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomerManagedS3Storage {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
+    /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
+    /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub s3_resource_arn: std::option::Option<std::string::String>,
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CustomerManagedS3Storage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomerManagedS3Storage");
+        formatter.field("s3_resource_arn", &self.s3_resource_arn);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage)
+pub mod customer_managed_s3_storage {
+    /// A builder for [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_resource_arn: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
+        /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
+        /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+        pub fn s3_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_s3_resource_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_resource_arn = input;
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage)
+        pub fn build(self) -> crate::model::CustomerManagedS3Storage {
+            crate::model::CustomerManagedS3Storage {
+                s3_resource_arn: self.s3_resource_arn,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl CustomerManagedS3Storage {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage)
+    pub fn builder() -> crate::model::customer_managed_s3_storage::Builder {
+        crate::model::customer_managed_s3_storage::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StorageType {
+    MultiLayerStorage,
+    SitewiseDefaultStorage,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StorageType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MULTI_LAYER_STORAGE" => StorageType::MultiLayerStorage,
+            "SITEWISE_DEFAULT_STORAGE" => StorageType::SitewiseDefaultStorage,
+            other => StorageType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StorageType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StorageType::from(s))
+    }
+}
+impl StorageType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            StorageType::MultiLayerStorage => "MULTI_LAYER_STORAGE",
+            StorageType::SitewiseDefaultStorage => "SITEWISE_DEFAULT_STORAGE",
+            StorageType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MULTI_LAYER_STORAGE", "SITEWISE_DEFAULT_STORAGE"]
+    }
+}
+impl AsRef<str> for StorageType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains logging options.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoggingOptions {
+    /// <p>The IoT SiteWise logging verbosity level.</p>
+    pub level: std::option::Option<crate::model::LoggingLevel>,
+}
+impl std::fmt::Debug for LoggingOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoggingOptions");
+        formatter.field("level", &self.level);
+        formatter.finish()
+    }
+}
+/// See [`LoggingOptions`](crate::model::LoggingOptions)
+pub mod logging_options {
+    /// A builder for [`LoggingOptions`](crate::model::LoggingOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) level: std::option::Option<crate::model::LoggingLevel>,
+    }
+    impl Builder {
+        /// <p>The IoT SiteWise logging verbosity level.</p>
+        pub fn level(mut self, input: crate::model::LoggingLevel) -> Self {
+            self.level = Some(input);
+            self
+        }
+        pub fn set_level(mut self, input: std::option::Option<crate::model::LoggingLevel>) -> Self {
+            self.level = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoggingOptions`](crate::model::LoggingOptions)
+        pub fn build(self) -> crate::model::LoggingOptions {
+            crate::model::LoggingOptions { level: self.level }
+        }
+    }
+}
+impl LoggingOptions {
+    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions)
+    pub fn builder() -> crate::model::logging_options::Builder {
+        crate::model::logging_options::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LoggingLevel {
+    Error,
+    Info,
+    Off,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LoggingLevel {
+    fn from(s: &str) -> Self {
+        match s {
+            "ERROR" => LoggingLevel::Error,
+            "INFO" => LoggingLevel::Info,
+            "OFF" => LoggingLevel::Off,
+            other => LoggingLevel::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LoggingLevel {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoggingLevel::from(s))
+    }
+}
+impl LoggingLevel {
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoggingLevel::Error => "ERROR",
+            LoggingLevel::Info => "INFO",
+            LoggingLevel::Off => "OFF",
+            LoggingLevel::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ERROR", "INFO", "OFF"]
+    }
+}
+impl AsRef<str> for LoggingLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -2898,17 +3741,17 @@ pub struct PortalSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub start_url: std::option::Option<std::string::String>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your AWS IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the current status of a portal.</p>
     pub status: std::option::Option<crate::model::PortalStatus>,
@@ -2970,9 +3813,9 @@ pub mod portal_summary {
             self.description = input;
             self
         }
-        /// <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use AWS SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// AWS IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_url = Some(input.into());
             self
@@ -3005,9 +3848,9 @@ pub mod portal_summary {
             self.last_update_date = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -3058,6 +3901,8 @@ pub struct GatewaySummary {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
     pub gateway_name: std::option::Option<std::string::String>,
+    /// <p>Contains a gateway's platform information.</p>
+    pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
     /// gateway capability defines data sources for the gateway. To retrieve a capability
     /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
@@ -3073,6 +3918,7 @@ impl std::fmt::Debug for GatewaySummary {
         let mut formatter = f.debug_struct("GatewaySummary");
         formatter.field("gateway_id", &self.gateway_id);
         formatter.field("gateway_name", &self.gateway_name);
+        formatter.field("gateway_platform", &self.gateway_platform);
         formatter.field(
             "gateway_capability_summaries",
             &self.gateway_capability_summaries,
@@ -3090,6 +3936,7 @@ pub mod gateway_summary {
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) gateway_name: std::option::Option<std::string::String>,
+        pub(crate) gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
         pub(crate) gateway_capability_summaries:
             std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
         pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
@@ -3112,6 +3959,18 @@ pub mod gateway_summary {
         }
         pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_name = input;
+            self
+        }
+        /// <p>Contains a gateway's platform information.</p>
+        pub fn gateway_platform(mut self, input: crate::model::GatewayPlatform) -> Self {
+            self.gateway_platform = Some(input);
+            self
+        }
+        pub fn set_gateway_platform(
+            mut self,
+            input: std::option::Option<crate::model::GatewayPlatform>,
+        ) -> Self {
+            self.gateway_platform = input;
             self
         }
         pub fn gateway_capability_summaries(
@@ -3159,6 +4018,7 @@ pub mod gateway_summary {
             crate::model::GatewaySummary {
                 gateway_id: self.gateway_id,
                 gateway_name: self.gateway_name,
+                gateway_platform: self.gateway_platform,
                 gateway_capability_summaries: self.gateway_capability_summaries,
                 creation_date: self.creation_date,
                 last_update_date: self.last_update_date,
@@ -3179,7 +4039,7 @@ impl GatewaySummary {
 pub struct GatewayCapabilitySummary {
     /// <p>The namespace of the capability configuration.
     /// For example, if you configure OPC-UA
-    /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
     /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
     /// <code>1</code>.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
@@ -3220,7 +4080,7 @@ pub mod gateway_capability_summary {
     impl Builder {
         /// <p>The namespace of the capability configuration.
         /// For example, if you configure OPC-UA
-        /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3273,6 +4133,182 @@ impl GatewayCapabilitySummary {
     /// Creates a new builder-style object to manufacture [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary)
     pub fn builder() -> crate::model::gateway_capability_summary::Builder {
         crate::model::gateway_capability_summary::Builder::default()
+    }
+}
+
+/// <p>Contains a gateway's platform information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GatewayPlatform {
+    /// <p>A gateway that runs on IoT Greengrass.</p>
+    pub greengrass: std::option::Option<crate::model::Greengrass>,
+    /// <p>A gateway that runs on IoT Greengrass V2.</p>
+    pub greengrass_v2: std::option::Option<crate::model::GreengrassV2>,
+}
+impl std::fmt::Debug for GatewayPlatform {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GatewayPlatform");
+        formatter.field("greengrass", &self.greengrass);
+        formatter.field("greengrass_v2", &self.greengrass_v2);
+        formatter.finish()
+    }
+}
+/// See [`GatewayPlatform`](crate::model::GatewayPlatform)
+pub mod gateway_platform {
+    /// A builder for [`GatewayPlatform`](crate::model::GatewayPlatform)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) greengrass: std::option::Option<crate::model::Greengrass>,
+        pub(crate) greengrass_v2: std::option::Option<crate::model::GreengrassV2>,
+    }
+    impl Builder {
+        /// <p>A gateway that runs on IoT Greengrass.</p>
+        pub fn greengrass(mut self, input: crate::model::Greengrass) -> Self {
+            self.greengrass = Some(input);
+            self
+        }
+        pub fn set_greengrass(
+            mut self,
+            input: std::option::Option<crate::model::Greengrass>,
+        ) -> Self {
+            self.greengrass = input;
+            self
+        }
+        /// <p>A gateway that runs on IoT Greengrass V2.</p>
+        pub fn greengrass_v2(mut self, input: crate::model::GreengrassV2) -> Self {
+            self.greengrass_v2 = Some(input);
+            self
+        }
+        pub fn set_greengrass_v2(
+            mut self,
+            input: std::option::Option<crate::model::GreengrassV2>,
+        ) -> Self {
+            self.greengrass_v2 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GatewayPlatform`](crate::model::GatewayPlatform)
+        pub fn build(self) -> crate::model::GatewayPlatform {
+            crate::model::GatewayPlatform {
+                greengrass: self.greengrass,
+                greengrass_v2: self.greengrass_v2,
+            }
+        }
+    }
+}
+impl GatewayPlatform {
+    /// Creates a new builder-style object to manufacture [`GatewayPlatform`](crate::model::GatewayPlatform)
+    pub fn builder() -> crate::model::gateway_platform::Builder {
+        crate::model::gateway_platform::Builder::default()
+    }
+}
+
+/// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2,
+/// you must deploy the IoT SiteWise Edge component to your gateway device.
+/// Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a>
+/// must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information,
+/// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a>
+/// in the <i>IoT SiteWise User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GreengrassV2 {
+    /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+    pub core_device_thing_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GreengrassV2 {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GreengrassV2");
+        formatter.field("core_device_thing_name", &self.core_device_thing_name);
+        formatter.finish()
+    }
+}
+/// See [`GreengrassV2`](crate::model::GreengrassV2)
+pub mod greengrass_v2 {
+    /// A builder for [`GreengrassV2`](crate::model::GreengrassV2)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+        pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_device_thing_name = Some(input.into());
+            self
+        }
+        pub fn set_core_device_thing_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_device_thing_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GreengrassV2`](crate::model::GreengrassV2)
+        pub fn build(self) -> crate::model::GreengrassV2 {
+            crate::model::GreengrassV2 {
+                core_device_thing_name: self.core_device_thing_name,
+            }
+        }
+    }
+}
+impl GreengrassV2 {
+    /// Creates a new builder-style object to manufacture [`GreengrassV2`](crate::model::GreengrassV2)
+    pub fn builder() -> crate::model::greengrass_v2::Builder {
+        crate::model::greengrass_v2::Builder::default()
+    }
+}
+
+/// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass,
+/// you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass
+/// group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
+/// gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Greengrass {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
+    /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
+    /// <i>IoT Greengrass API Reference</i>.</p>
+    pub group_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Greengrass {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Greengrass");
+        formatter.field("group_arn", &self.group_arn);
+        formatter.finish()
+    }
+}
+/// See [`Greengrass`](crate::model::Greengrass)
+pub mod greengrass {
+    /// A builder for [`Greengrass`](crate::model::Greengrass)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
+        /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
+        /// <i>IoT Greengrass API Reference</i>.</p>
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_arn = Some(input.into());
+            self
+        }
+        pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Greengrass`](crate::model::Greengrass)
+        pub fn build(self) -> crate::model::Greengrass {
+            crate::model::Greengrass {
+                group_arn: self.group_arn,
+            }
+        }
+    }
+}
+impl Greengrass {
+    /// Creates a new builder-style object to manufacture [`Greengrass`](crate::model::Greengrass)
+    pub fn builder() -> crate::model::greengrass::Builder {
+        crate::model::greengrass::Builder::default()
     }
 }
 
@@ -4131,7 +5167,7 @@ impl AsRef<str> for TraversalType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelSummary {
-    /// <p>The ID of the asset model (used with AWS IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p>
@@ -4177,7 +5213,7 @@ pub mod asset_model_summary {
         pub(crate) status: std::option::Option<crate::model::AssetModelStatus>,
     }
     impl Builder {
-        /// <p>The ID of the asset model (used with AWS IoT SiteWise APIs).</p>
+        /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -4273,16 +5309,16 @@ impl AssetModelSummary {
     }
 }
 
-/// <p>Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor
+/// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor
 /// resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
+    /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
     pub identity: std::option::Option<crate::model::Identity>,
-    /// <p>The AWS IoT SiteWise Monitor resource (a portal or project).</p>
+    /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
     /// also known as a project owner.</p>
@@ -4327,7 +5363,7 @@ pub mod access_policy_summary {
             self.id = input;
             self
         }
-        /// <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
+        /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
         pub fn identity(mut self, input: crate::model::Identity) -> Self {
             self.identity = Some(input);
             self
@@ -4336,7 +5372,7 @@ pub mod access_policy_summary {
             self.identity = input;
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource (a portal or project).</p>
+        /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
             self.resource = Some(input);
             self
@@ -5214,7 +6250,7 @@ impl AsRef<str> for AuthMode {
     }
 }
 
-/// <p>Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.</p>
+/// <p>Contains an image that is uploaded to IoT SiteWise and available at a URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageLocation {
@@ -5274,110 +6310,6 @@ impl ImageLocation {
     /// Creates a new builder-style object to manufacture [`ImageLocation`](crate::model::ImageLocation)
     pub fn builder() -> crate::model::image_location::Builder {
         crate::model::image_location::Builder::default()
-    }
-}
-
-/// <p>Contains a gateway's platform information.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GatewayPlatform {
-    /// <p>A gateway that runs on AWS IoT Greengrass.</p>
-    pub greengrass: std::option::Option<crate::model::Greengrass>,
-}
-impl std::fmt::Debug for GatewayPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayPlatform");
-        formatter.field("greengrass", &self.greengrass);
-        formatter.finish()
-    }
-}
-/// See [`GatewayPlatform`](crate::model::GatewayPlatform)
-pub mod gateway_platform {
-    /// A builder for [`GatewayPlatform`](crate::model::GatewayPlatform)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) greengrass: std::option::Option<crate::model::Greengrass>,
-    }
-    impl Builder {
-        /// <p>A gateway that runs on AWS IoT Greengrass.</p>
-        pub fn greengrass(mut self, input: crate::model::Greengrass) -> Self {
-            self.greengrass = Some(input);
-            self
-        }
-        pub fn set_greengrass(
-            mut self,
-            input: std::option::Option<crate::model::Greengrass>,
-        ) -> Self {
-            self.greengrass = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GatewayPlatform`](crate::model::GatewayPlatform)
-        pub fn build(self) -> crate::model::GatewayPlatform {
-            crate::model::GatewayPlatform {
-                greengrass: self.greengrass,
-            }
-        }
-    }
-}
-impl GatewayPlatform {
-    /// Creates a new builder-style object to manufacture [`GatewayPlatform`](crate::model::GatewayPlatform)
-    pub fn builder() -> crate::model::gateway_platform::Builder {
-        crate::model::gateway_platform::Builder::default()
-    }
-}
-
-/// <p>Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass,
-/// you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass
-/// group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
-/// gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Greengrass {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-    /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-    /// <i>AWS IoT Greengrass API Reference</i>.</p>
-    pub group_arn: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Greengrass {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Greengrass");
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
-    }
-}
-/// See [`Greengrass`](crate::model::Greengrass)
-pub mod greengrass {
-    /// A builder for [`Greengrass`](crate::model::Greengrass)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) group_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-        /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-        /// <i>AWS IoT Greengrass API Reference</i>.</p>
-        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.group_arn = Some(input.into());
-            self
-        }
-        pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Greengrass`](crate::model::Greengrass)
-        pub fn build(self) -> crate::model::Greengrass {
-            crate::model::Greengrass {
-                group_arn: self.group_arn,
-            }
-        }
-    }
-}
-impl Greengrass {
-    /// Creates a new builder-style object to manufacture [`Greengrass`](crate::model::Greengrass)
-    pub fn builder() -> crate::model::greengrass::Builder {
-        crate::model::greengrass::Builder::default()
     }
 }
 
@@ -5467,10 +6399,10 @@ pub struct Property {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub notification: std::option::Option<crate::model::PropertyNotification>,
@@ -5527,10 +6459,10 @@ pub mod property {
             self.name = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
@@ -5602,12 +6534,12 @@ impl Property {
     }
 }
 
-/// <p>Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value
-/// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value
+/// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyNotification {
-    /// <p>The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.</p>
+    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     pub topic: std::option::Option<std::string::String>,
     /// <p>The current notification state.</p>
     pub state: std::option::Option<crate::model::PropertyNotificationState>,
@@ -5630,7 +6562,7 @@ pub mod property_notification {
         pub(crate) state: std::option::Option<crate::model::PropertyNotificationState>,
     }
     impl Builder {
-        /// <p>The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.</p>
+        /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
         pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic = Some(input.into());
             self
@@ -5771,10 +6703,10 @@ pub struct AssetProperty {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub notification: std::option::Option<crate::model::PropertyNotification>,
@@ -5832,10 +6764,10 @@ pub mod asset_property {
             self.name = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
@@ -6481,10 +7413,10 @@ pub struct PutAssetPropertyValueEntry {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property for this entry.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The list of property values to upload. You can specify up to 10
     /// <code>propertyValues</code> array elements. </p>
@@ -6543,10 +7475,10 @@ pub mod put_asset_property_value_entry {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self

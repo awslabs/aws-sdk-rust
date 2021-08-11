@@ -83,28 +83,28 @@ impl AcceptReservedNodeExchangeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -171,7 +171,7 @@ pub mod add_partner_input {
         pub(crate) partner_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -254,28 +254,28 @@ impl AddPartnerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -330,6 +330,168 @@ impl AddPartnerInput {
     }
 }
 
+/// See [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
+pub mod associate_data_share_consumer_input {
+    /// A builder for [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) associate_entire_account: std::option::Option<bool>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+        pub fn associate_entire_account(mut self, input: bool) -> Self {
+            self.associate_entire_account = Some(input);
+            self
+        }
+        pub fn set_associate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_entire_account = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
+        /// datashare.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateDataShareConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateDataShareConsumerInput {
+                data_share_arn: self.data_share_arn,
+                associate_entire_account: self.associate_entire_account,
+                consumer_arn: self.consumer_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateDataShareConsumerInputOperationOutputAlias =
+    crate::operation::AssociateDataShareConsumer;
+#[doc(hidden)]
+pub type AssociateDataShareConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl AssociateDataShareConsumerInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateDataShareConsumer`](crate::operation::AssociateDataShareConsumer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::AssociateDataShareConsumer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_associate_data_share_consumer(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::AssociateDataShareConsumer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "AssociateDataShareConsumer",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
+    pub fn builder() -> crate::input::associate_data_share_consumer_input::Builder {
+        crate::input::associate_data_share_consumer_input::Builder::default()
+    }
+}
+
 /// See [`AuthorizeClusterSecurityGroupIngressInput`](crate::input::AuthorizeClusterSecurityGroupIngressInput)
 pub mod authorize_cluster_security_group_ingress_input {
     /// A builder for [`AuthorizeClusterSecurityGroupIngressInput`](crate::input::AuthorizeClusterSecurityGroupIngressInput)
@@ -378,8 +540,8 @@ pub mod authorize_cluster_security_group_ingress_input {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS account number of the owner of the security group specified by the
-        /// <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+        /// <p>The Amazon Web Services account number of the owner of the security group specified by the
+        /// <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an
         /// acceptable value. </p>
         /// <p>Example: <code>111122223333</code>
         /// </p>
@@ -445,28 +607,28 @@ impl AuthorizeClusterSecurityGroupIngressInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -521,6 +683,158 @@ impl AuthorizeClusterSecurityGroupIngressInput {
     }
 }
 
+/// See [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput)
+pub mod authorize_data_share_input {
+    /// A builder for [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
+        /// sharing for.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_identifier = Some(input.into());
+            self
+        }
+        pub fn set_consumer_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AuthorizeDataShareInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AuthorizeDataShareInput {
+                data_share_arn: self.data_share_arn,
+                consumer_identifier: self.consumer_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AuthorizeDataShareInputOperationOutputAlias = crate::operation::AuthorizeDataShare;
+#[doc(hidden)]
+pub type AuthorizeDataShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl AuthorizeDataShareInput {
+    /// Consumes the builder and constructs an Operation<[`AuthorizeDataShare`](crate::operation::AuthorizeDataShare)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::AuthorizeDataShare,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_authorize_data_share(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::AuthorizeDataShare::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "AuthorizeDataShare",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput)
+    pub fn builder() -> crate::input::authorize_data_share_input::Builder {
+        crate::input::authorize_data_share_input::Builder::default()
+    }
+}
+
 /// See [`AuthorizeEndpointAccessInput`](crate::input::AuthorizeEndpointAccessInput)
 pub mod authorize_endpoint_access_input {
     /// A builder for [`AuthorizeEndpointAccessInput`](crate::input::AuthorizeEndpointAccessInput)
@@ -544,7 +858,7 @@ pub mod authorize_endpoint_access_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID to grant access to.</p>
+        /// <p>The Amazon Web Services account ID to grant access to.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
@@ -609,28 +923,28 @@ impl AuthorizeEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -725,9 +1039,9 @@ pub mod authorize_snapshot_access_input {
             self.snapshot_cluster_identifier = input;
             self
         }
-        /// <p>The identifier of the AWS customer account authorized to restore the specified
+        /// <p>The identifier of the Amazon Web Services account authorized to restore the specified
         /// snapshot.</p>
-        /// <p>To share a snapshot with AWS support, specify amazon-redshift-support.</p>
+        /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
         pub fn account_with_restore_access(
             mut self,
             input: impl Into<std::string::String>,
@@ -785,28 +1099,28 @@ impl AuthorizeSnapshotAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -929,28 +1243,28 @@ impl BatchDeleteClusterSnapshotsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1101,28 +1415,28 @@ impl BatchModifyClusterSnapshotsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1237,28 +1551,28 @@ impl CancelResizeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1383,7 +1697,7 @@ pub mod copy_cluster_snapshot_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for the AWS account that is making the request.</p>
+        /// <p>Must be unique for the Amazon Web Services account that is making the request.</p>
         /// </li>
         /// </ul>
         pub fn target_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1455,28 +1769,28 @@ impl CopyClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1528,6 +1842,166 @@ impl CopyClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CopyClusterSnapshotInput`](crate::input::CopyClusterSnapshotInput)
     pub fn builder() -> crate::input::copy_cluster_snapshot_input::Builder {
         crate::input::copy_cluster_snapshot_input::Builder::default()
+    }
+}
+
+/// See [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput)
+pub mod create_authentication_profile_input {
+    /// A builder for [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_profile_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile to be created.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// <p>The content of the authentication profile in JSON format.
+        /// The maximum length of the JSON string is determined by a quota for your account.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateAuthenticationProfileInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateAuthenticationProfileInput {
+                authentication_profile_name: self.authentication_profile_name,
+                authentication_profile_content: self.authentication_profile_content,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateAuthenticationProfileInputOperationOutputAlias =
+    crate::operation::CreateAuthenticationProfile;
+#[doc(hidden)]
+pub type CreateAuthenticationProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateAuthenticationProfileInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAuthenticationProfile`](crate::operation::CreateAuthenticationProfile)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateAuthenticationProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_create_authentication_profile(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateAuthenticationProfile::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateAuthenticationProfile",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput)
+    pub fn builder() -> crate::input::create_authentication_profile_input::Builder {
+        crate::input::create_authentication_profile_input::Builder::default()
     }
 }
 
@@ -1619,7 +2093,7 @@ pub mod create_cluster_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>myexamplecluster</code>
@@ -1676,7 +2150,7 @@ pub mod create_cluster_input {
             self.node_type = input;
             self
         }
-        /// <p>The user name associated with the master user account for the cluster that is being
+        /// <p>The user name associated with the admin user account for the cluster that is being
         /// created.</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -1703,7 +2177,7 @@ pub mod create_cluster_input {
             self.master_username = input;
             self
         }
-        /// <p>The password associated with the master user account for the cluster that is being
+        /// <p>The password associated with the admin user account for the cluster that is being
         /// created.</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -2027,7 +2501,7 @@ pub mod create_cluster_input {
             self.tags = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -2120,7 +2594,7 @@ pub mod create_cluster_input {
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -2212,28 +2686,28 @@ impl CreateClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2313,7 +2787,7 @@ pub mod create_cluster_parameter_group_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique withing your AWS account.</p>
+        /// <p>Must be unique withing your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <note>
@@ -2333,7 +2807,7 @@ pub mod create_cluster_parameter_group_input {
         /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The
         /// cluster engine version determines the set of parameters.</p>
         /// <p>To get a list of valid parameter group family names, you can call <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a list of
-        /// all the parameter groups that are owned by your AWS account, including the default
+        /// all the parameter groups that are owned by your Amazon Web Services account, including the default
         /// parameter groups for each Amazon Redshift engine version. The parameter group family names
         /// associated with the default parameter groups provide you the valid values. For example,
         /// a valid family name is "redshift-1.0". </p>
@@ -2415,28 +2889,28 @@ impl CreateClusterParameterGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2513,8 +2987,7 @@ pub mod create_cluster_security_group_input {
         /// <p>Must not be "Default".</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all security groups that are created by your AWS
-        /// account.</p>
+        /// <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplesecuritygroup</code>
@@ -2599,28 +3072,28 @@ impl CreateClusterSecurityGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2688,7 +3161,7 @@ pub mod create_cluster_snapshot_input {
     }
     impl Builder {
         /// <p>A unique identifier for the snapshot that you are requesting. This identifier must
-        /// be unique for all snapshots within the AWS account.</p>
+        /// be unique for all snapshots within the Amazon Web Services account.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -2800,28 +3273,28 @@ impl CreateClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2899,8 +3372,7 @@ pub mod create_cluster_subnet_group_input {
         /// <p>Must not be "Default".</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all subnet groups that are created by your AWS
-        /// account.</p>
+        /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplesubnetgroup</code>
@@ -2995,28 +3467,28 @@ impl CreateClusterSubnetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3096,7 +3568,7 @@ pub mod create_endpoint_access_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -3193,28 +3665,28 @@ impl CreateEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3329,7 +3801,7 @@ pub mod create_event_subscription_input {
         /// <p>The type of source that will be generating the events. For example, if you want to
         /// be notified of events generated by a cluster, you would set this parameter to cluster.
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-        /// AWS account. You must specify a source type in order to specify source IDs.</p>
+        /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_type = Some(input.into());
@@ -3447,28 +3919,28 @@ impl CreateEventSubscriptionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3605,28 +4077,28 @@ impl CreateHsmClientCertificateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3832,28 +4304,28 @@ impl CreateHsmConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4064,28 +4536,28 @@ impl CreateScheduledActionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4152,7 +4624,7 @@ pub mod create_snapshot_copy_grant_input {
     }
     impl Builder {
         /// <p>The name of the snapshot copy grant. This name must be unique in the region for the
-        /// AWS account.</p>
+        /// Amazon Web Services account.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4168,7 +4640,7 @@ pub mod create_snapshot_copy_grant_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4248,28 +4720,28 @@ impl CreateSnapshotCopyGrantInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4452,28 +4924,28 @@ impl CreateSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4603,28 +5075,28 @@ impl CreateTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4829,28 +5301,28 @@ impl CreateUsageLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4902,6 +5374,300 @@ impl CreateUsageLimitInput {
     /// Creates a new builder-style object to manufacture [`CreateUsageLimitInput`](crate::input::CreateUsageLimitInput)
     pub fn builder() -> crate::input::create_usage_limit_input::Builder {
         crate::input::create_usage_limit_input::Builder::default()
+    }
+}
+
+/// See [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput)
+pub mod deauthorize_data_share_input {
+    /// A builder for [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
+        /// This identifier is an AWS account ID.</p>
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_identifier = Some(input.into());
+            self
+        }
+        pub fn set_consumer_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeauthorizeDataShareInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeauthorizeDataShareInput {
+                data_share_arn: self.data_share_arn,
+                consumer_identifier: self.consumer_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeauthorizeDataShareInputOperationOutputAlias = crate::operation::DeauthorizeDataShare;
+#[doc(hidden)]
+pub type DeauthorizeDataShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeauthorizeDataShareInput {
+    /// Consumes the builder and constructs an Operation<[`DeauthorizeDataShare`](crate::operation::DeauthorizeDataShare)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeauthorizeDataShare,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_deauthorize_data_share(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeauthorizeDataShare::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeauthorizeDataShare",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput)
+    pub fn builder() -> crate::input::deauthorize_data_share_input::Builder {
+        crate::input::deauthorize_data_share_input::Builder::default()
+    }
+}
+
+/// See [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput)
+pub mod delete_authentication_profile_input {
+    /// A builder for [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile to delete.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteAuthenticationProfileInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteAuthenticationProfileInput {
+                authentication_profile_name: self.authentication_profile_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteAuthenticationProfileInputOperationOutputAlias =
+    crate::operation::DeleteAuthenticationProfile;
+#[doc(hidden)]
+pub type DeleteAuthenticationProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteAuthenticationProfileInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAuthenticationProfile`](crate::operation::DeleteAuthenticationProfile)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteAuthenticationProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_delete_authentication_profile(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteAuthenticationProfile::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteAuthenticationProfile",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput)
+    pub fn builder() -> crate::input::delete_authentication_profile_input::Builder {
+        crate::input::delete_authentication_profile_input::Builder::default()
     }
 }
 
@@ -5049,28 +5815,28 @@ impl DeleteClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5197,28 +5963,28 @@ impl DeleteClusterParameterGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5339,28 +6105,28 @@ impl DeleteClusterSecurityGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5499,28 +6265,28 @@ impl DeleteClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5637,28 +6403,28 @@ impl DeleteClusterSubnetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5774,28 +6540,28 @@ impl DeleteEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5912,28 +6678,28 @@ impl DeleteEventSubscriptionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6054,28 +6820,28 @@ impl DeleteHsmClientCertificateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6194,28 +6960,28 @@ impl DeleteHsmConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6282,7 +7048,7 @@ pub mod delete_partner_input {
         pub(crate) partner_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -6365,28 +7131,28 @@ impl DeletePartnerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6502,28 +7268,28 @@ impl DeleteScheduledActionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6640,28 +7406,28 @@ impl DeleteSnapshotCopyGrantInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6777,28 +7543,28 @@ impl DeleteSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6928,28 +7694,28 @@ impl DeleteTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7065,28 +7831,28 @@ impl DeleteUsageLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7204,28 +7970,28 @@ impl DescribeAccountAttributesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7277,6 +8043,148 @@ impl DescribeAccountAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
     pub fn builder() -> crate::input::describe_account_attributes_input::Builder {
         crate::input::describe_account_attributes_input::Builder::default()
+    }
+}
+
+/// See [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput)
+pub mod describe_authentication_profiles_input {
+    /// A builder for [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeAuthenticationProfilesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeAuthenticationProfilesInput {
+                authentication_profile_name: self.authentication_profile_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeAuthenticationProfilesInputOperationOutputAlias =
+    crate::operation::DescribeAuthenticationProfiles;
+#[doc(hidden)]
+pub type DescribeAuthenticationProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeAuthenticationProfilesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeAuthenticationProfiles`](crate::operation::DescribeAuthenticationProfiles)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeAuthenticationProfiles,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_describe_authentication_profiles(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeAuthenticationProfiles::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeAuthenticationProfiles",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput)
+    pub fn builder() -> crate::input::describe_authentication_profiles_input::Builder {
+        crate::input::describe_authentication_profiles_input::Builder::default()
     }
 }
 
@@ -7380,28 +8288,28 @@ impl DescribeClusterDbRevisionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7500,7 +8408,7 @@ pub mod describe_cluster_parameter_groups_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterParameterGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -7584,28 +8492,28 @@ impl DescribeClusterParameterGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7715,7 +8623,7 @@ pub mod describe_cluster_parameters_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterParameters</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -7771,28 +8679,28 @@ impl DescribeClusterParametersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7891,7 +8799,7 @@ pub mod describe_clusters_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusters</a> request exceed the
-        /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -7973,28 +8881,28 @@ impl DescribeClustersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8097,7 +9005,7 @@ pub mod describe_cluster_security_groups_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSecurityGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -8182,28 +9090,28 @@ impl DescribeClusterSecurityGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8365,7 +9273,7 @@ pub mod describe_cluster_snapshots_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -8377,9 +9285,9 @@ pub mod describe_cluster_snapshots_input {
             self.marker = input;
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot. Use this field to
+        /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to
         /// filter the results to snapshots owned by a particular account. To describe snapshots you
-        /// own, either specify your AWS customer account, or do not specify the
+        /// own, either specify your Amazon Web Services account, or do not specify the
         /// parameter.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
@@ -8518,28 +9426,28 @@ impl DescribeClusterSnapshotsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8636,7 +9544,7 @@ pub mod describe_cluster_subnet_groups_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSubnetGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -8720,28 +9628,28 @@ impl DescribeClusterSubnetGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8884,28 +9792,28 @@ impl DescribeClusterTracksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9031,7 +9939,7 @@ pub mod describe_cluster_versions_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterVersions</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -9087,28 +9995,28 @@ impl DescribeClusterVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9163,6 +10071,530 @@ impl DescribeClusterVersionsInput {
     }
 }
 
+/// See [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput)
+pub mod describe_data_shares_input {
+    /// A builder for [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the datashare to describe details of.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeDataSharesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDataSharesInput {
+                data_share_arn: self.data_share_arn,
+                max_records: self.max_records,
+                marker: self.marker,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeDataSharesInputOperationOutputAlias = crate::operation::DescribeDataShares;
+#[doc(hidden)]
+pub type DescribeDataSharesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeDataSharesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeDataShares`](crate::operation::DescribeDataShares)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeDataShares,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_describe_data_shares(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeDataShares::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeDataShares",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput)
+    pub fn builder() -> crate::input::describe_data_shares_input::Builder {
+        crate::input::describe_data_shares_input::Builder::default()
+    }
+}
+
+/// See [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput)
+pub mod describe_data_shares_for_consumer_input {
+    /// A builder for [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::DataShareStatusForConsumer>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
+            self
+        }
+        /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
+        /// Redshift returns the list of datashares that have the specified status.</p>
+        pub fn status(mut self, input: crate::model::DataShareStatusForConsumer) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataShareStatusForConsumer>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeDataSharesForConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDataSharesForConsumerInput {
+                consumer_arn: self.consumer_arn,
+                status: self.status,
+                max_records: self.max_records,
+                marker: self.marker,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeDataSharesForConsumerInputOperationOutputAlias =
+    crate::operation::DescribeDataSharesForConsumer;
+#[doc(hidden)]
+pub type DescribeDataSharesForConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeDataSharesForConsumerInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeDataSharesForConsumer`](crate::operation::DescribeDataSharesForConsumer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeDataSharesForConsumer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_describe_data_shares_for_consumer(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeDataSharesForConsumer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeDataSharesForConsumer",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput)
+    pub fn builder() -> crate::input::describe_data_shares_for_consumer_input::Builder {
+        crate::input::describe_data_shares_for_consumer_input::Builder::default()
+    }
+}
+
+/// See [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput)
+pub mod describe_data_shares_for_producer_input {
+    /// A builder for [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::DataShareStatusForProducer>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
+        /// Redshift returns the list of datashares that have the specified status.</p>
+        pub fn status(mut self, input: crate::model::DataShareStatusForProducer) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataShareStatusForProducer>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeDataSharesForProducerInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDataSharesForProducerInput {
+                producer_arn: self.producer_arn,
+                status: self.status,
+                max_records: self.max_records,
+                marker: self.marker,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeDataSharesForProducerInputOperationOutputAlias =
+    crate::operation::DescribeDataSharesForProducer;
+#[doc(hidden)]
+pub type DescribeDataSharesForProducerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeDataSharesForProducerInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeDataSharesForProducer`](crate::operation::DescribeDataSharesForProducer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeDataSharesForProducer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_describe_data_shares_for_producer(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeDataSharesForProducer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeDataSharesForProducer",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput)
+    pub fn builder() -> crate::input::describe_data_shares_for_producer_input::Builder {
+        crate::input::describe_data_shares_for_producer_input::Builder::default()
+    }
+}
+
 /// See [`DescribeDefaultClusterParametersInput`](crate::input::DescribeDefaultClusterParametersInput)
 pub mod describe_default_cluster_parameters_input {
     /// A builder for [`DescribeDefaultClusterParametersInput`](crate::input::DescribeDefaultClusterParametersInput)
@@ -9203,7 +10635,7 @@ pub mod describe_default_cluster_parameters_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDefaultClusterParameters</a>
-        /// request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+        /// request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
         /// the <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -9261,28 +10693,28 @@ impl DescribeDefaultClusterParametersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9363,7 +10795,7 @@ pub mod describe_endpoint_access_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -9464,28 +10896,28 @@ impl DescribeEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9565,7 +10997,7 @@ pub mod describe_endpoint_authorization_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of either the cluster owner (grantor) or grantee.
+        /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
         /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
@@ -9655,28 +11087,28 @@ impl DescribeEndpointAuthorizationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9792,28 +11224,28 @@ impl DescribeEventCategoriesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10010,7 +11442,7 @@ pub mod describe_events_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeEvents</a> request exceed the value
-        /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
@@ -10067,28 +11499,28 @@ impl DescribeEventsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10186,7 +11618,7 @@ pub mod describe_event_subscriptions_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a DescribeEventSubscriptions request exceed the value
-        /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
@@ -10270,28 +11702,28 @@ impl DescribeEventSubscriptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10361,7 +11793,7 @@ pub mod describe_hsm_client_certificates_input {
     impl Builder {
         /// <p>The identifier of a specific HSM client certificate for which you want information.
         /// If no identifier is specified, information is returned for all HSM client certificates
-        /// owned by your AWS customer account.</p>
+        /// owned by your Amazon Web Services account.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -10393,7 +11825,7 @@ pub mod describe_hsm_client_certificates_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeHsmClientCertificates</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -10477,28 +11909,28 @@ impl DescribeHsmClientCertificatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10568,7 +12000,7 @@ pub mod describe_hsm_configurations_input {
     impl Builder {
         /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no
         /// identifier is specified, information is returned for all HSM configurations owned by
-        /// your AWS customer account.</p>
+        /// your Amazon Web Services account.</p>
         pub fn hsm_configuration_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -10600,7 +12032,7 @@ pub mod describe_hsm_configurations_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeHsmConfigurations</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -10683,28 +12115,28 @@ impl DescribeHsmConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10822,28 +12254,28 @@ impl DescribeLoggingStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10954,7 +12386,7 @@ pub mod describe_node_configuration_options_input {
             self.snapshot_identifier = input;
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot.
+        /// <p>The Amazon Web Services account used to create or copy the snapshot.
         /// Required if you are restoring a snapshot you do not own,
         /// optional if you own the snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10986,7 +12418,7 @@ pub mod describe_node_configuration_options_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeNodeConfigurationOptions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -11063,28 +12495,28 @@ impl DescribeNodeConfigurationOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11193,7 +12625,7 @@ pub mod describe_orderable_cluster_options_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeOrderableClusterOptions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -11250,28 +12682,28 @@ impl DescribeOrderableClusterOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11338,7 +12770,7 @@ pub mod describe_partners_input {
         pub(crate) partner_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -11422,28 +12854,28 @@ impl DescribePartnersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11538,7 +12970,7 @@ pub mod describe_reserved_node_offerings_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeReservedNodeOfferings</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -11594,28 +13026,28 @@ impl DescribeReservedNodeOfferingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11710,7 +13142,7 @@ pub mod describe_reserved_nodes_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeReservedNodes</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -11764,28 +13196,28 @@ impl DescribeReservedNodesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11851,7 +13283,7 @@ pub mod describe_resize_input {
     impl Builder {
         /// <p>The unique identifier of a cluster whose resize progress you are requesting. This
         /// parameter is case-sensitive.</p>
-        /// <p>By default, resize operations for all clusters defined for an AWS account are
+        /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
         /// returned.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
@@ -11903,28 +13335,28 @@ impl DescribeResizeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12067,7 +13499,7 @@ pub mod describe_scheduled_actions_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeScheduledActions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -12142,28 +13574,28 @@ impl DescribeScheduledActionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12260,7 +13692,7 @@ pub mod describe_snapshot_copy_grants_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -12345,28 +13777,28 @@ impl DescribeSnapshotCopyGrantsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12558,28 +13990,28 @@ impl DescribeSnapshotSchedulesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12678,28 +14110,28 @@ impl DescribeStorageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12861,28 +14293,28 @@ impl DescribeTableRestoreStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13106,28 +14538,28 @@ impl DescribeTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13250,7 +14682,7 @@ pub mod describe_usage_limits_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeUsageLimits</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -13334,28 +14766,28 @@ impl DescribeUsageLimitsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13472,28 +14904,28 @@ impl DisableLoggingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13612,28 +15044,28 @@ impl DisableSnapshotCopyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13685,6 +15117,169 @@ impl DisableSnapshotCopyInput {
     /// Creates a new builder-style object to manufacture [`DisableSnapshotCopyInput`](crate::input::DisableSnapshotCopyInput)
     pub fn builder() -> crate::input::disable_snapshot_copy_input::Builder {
         crate::input::disable_snapshot_copy_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
+pub mod disassociate_data_share_consumer_input {
+    /// A builder for [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) disassociate_entire_account: std::option::Option<bool>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether association for the datashare is removed from the
+        /// entire account.</p>
+        pub fn disassociate_entire_account(mut self, input: bool) -> Self {
+            self.disassociate_entire_account = Some(input);
+            self
+        }
+        pub fn set_disassociate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.disassociate_entire_account = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the consumer that association for
+        /// the datashare is removed from.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateDataShareConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateDataShareConsumerInput {
+                data_share_arn: self.data_share_arn,
+                disassociate_entire_account: self.disassociate_entire_account,
+                consumer_arn: self.consumer_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateDataShareConsumerInputOperationOutputAlias =
+    crate::operation::DisassociateDataShareConsumer;
+#[doc(hidden)]
+pub type DisassociateDataShareConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DisassociateDataShareConsumerInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateDataShareConsumer`](crate::operation::DisassociateDataShareConsumer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DisassociateDataShareConsumer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_disassociate_data_share_consumer(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DisassociateDataShareConsumer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DisassociateDataShareConsumer",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
+    pub fn builder() -> crate::input::disassociate_data_share_consumer_input::Builder {
+        crate::input::disassociate_data_share_consumer_input::Builder::default()
     }
 }
 
@@ -13810,28 +15405,28 @@ impl EnableLoggingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13913,8 +15508,8 @@ pub mod enable_snapshot_copy_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The destination AWS Region that you want to copy snapshots to.</p>
-        /// <p>Constraints: Must be the name of a valid AWS Region. For more information, see
+        /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
+        /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.
         /// </p>
         pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13940,7 +15535,7 @@ pub mod enable_snapshot_copy_input {
             self.retention_period = input;
             self
         }
-        /// <p>The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted
+        /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
         /// cluster are copied to the destination region.</p>
         pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_copy_grant_name = Some(input.into());
@@ -13953,8 +15548,8 @@ pub mod enable_snapshot_copy_input {
             self.snapshot_copy_grant_name = input;
             self
         }
-        /// <p>The number of days to retain newly copied snapshots in the destination AWS Region
-        /// after they are copied from the source AWS Region. If the value is -1, the manual
+        /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region
+        /// after they are copied from the source Amazon Web Services Region. If the value is -1, the manual
         /// snapshot is retained indefinitely. </p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -14012,28 +15607,28 @@ impl EnableSnapshotCopyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14264,28 +15859,28 @@ impl GetClusterCredentialsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14430,28 +16025,28 @@ impl GetReservedNodeExchangeOfferingsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14532,7 +16127,7 @@ pub mod modify_aqua_configuration_input {
         /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -14597,28 +16192,28 @@ impl ModifyAquaConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14670,6 +16265,166 @@ impl ModifyAquaConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ModifyAquaConfigurationInput`](crate::input::ModifyAquaConfigurationInput)
     pub fn builder() -> crate::input::modify_aqua_configuration_input::Builder {
         crate::input::modify_aqua_configuration_input::Builder::default()
+    }
+}
+
+/// See [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput)
+pub mod modify_authentication_profile_input {
+    /// A builder for [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_profile_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile to replace.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// <p>The new content of the authentication profile in JSON format.
+        /// The maximum length of the JSON string is determined by a quota for your account.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ModifyAuthenticationProfileInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ModifyAuthenticationProfileInput {
+                authentication_profile_name: self.authentication_profile_name,
+                authentication_profile_content: self.authentication_profile_content,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ModifyAuthenticationProfileInputOperationOutputAlias =
+    crate::operation::ModifyAuthenticationProfile;
+#[doc(hidden)]
+pub type ModifyAuthenticationProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ModifyAuthenticationProfileInput {
+    /// Consumes the builder and constructs an Operation<[`ModifyAuthenticationProfile`](crate::operation::ModifyAuthenticationProfile)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ModifyAuthenticationProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_modify_authentication_profile(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ModifyAuthenticationProfile::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ModifyAuthenticationProfile",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput)
+    pub fn builder() -> crate::input::modify_authentication_profile_input::Builder {
+        crate::input::modify_authentication_profile_input::Builder::default()
     }
 }
 
@@ -14795,13 +16550,13 @@ pub mod modify_cluster_input {
             self.vpc_security_group_ids = input;
             self
         }
-        /// <p>The new password for the cluster master user. This change is asynchronously applied
+        /// <p>The new password for the cluster admin user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the
         /// <code>PendingModifiedValues</code> element of the operation response. </p>
         /// <note>
         /// <p>Operations never return the password, so this operation provides a way to
-        /// regain access to the master user account for a cluster if the password is
+        /// regain access to the admin user account for a cluster if the password is
         /// lost.</p>
         /// </note>
         /// <p>Default: Uses existing setting.</p>
@@ -14996,7 +16751,7 @@ pub mod modify_cluster_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplecluster</code>
@@ -15079,7 +16834,7 @@ pub mod modify_cluster_input {
             self.encrypted = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
         /// to encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -15184,28 +16939,28 @@ impl ModifyClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15339,28 +17094,28 @@ impl ModifyClusterDbRevisionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15507,28 +17262,28 @@ impl ModifyClusterIamRolesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15714,28 +17469,28 @@ impl ModifyClusterMaintenanceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15868,28 +17623,28 @@ impl ModifyClusterParameterGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16035,28 +17790,28 @@ impl ModifyClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16202,28 +17957,28 @@ impl ModifyClusterSnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16366,28 +18121,28 @@ impl ModifyClusterSubnetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16518,28 +18273,28 @@ impl ModifyEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16637,7 +18392,7 @@ pub mod modify_event_subscription_input {
         /// <p>The type of source that will be generating the events. For example, if you want to
         /// be notified of events generated by a cluster, you would set this parameter to cluster.
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-        /// AWS account. You must specify a source type in order to specify source IDs.</p>
+        /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_type = Some(input.into());
@@ -16741,28 +18496,28 @@ impl ModifyEventSubscriptionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16969,28 +18724,28 @@ impl ModifyScheduledActionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17057,8 +18812,7 @@ pub mod modify_snapshot_copy_retention_period_input {
     }
     impl Builder {
         /// <p>The unique identifier of the cluster for which you want to change the retention
-        /// period for either automated or manual snapshots that are copied to a destination AWS
-        /// Region.</p>
+        /// period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
         /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
         /// snapshot copy enabled.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17072,12 +18826,12 @@ pub mod modify_snapshot_copy_retention_period_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The number of days to retain automated snapshots in the destination AWS Region
-        /// after they are copied from the source AWS Region.</p>
+        /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region
+        /// after they are copied from the source Amazon Web Services Region.</p>
         /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
         /// <p>If you decrease the retention period for automated snapshots that are copied to a
-        /// destination AWS Region, Amazon Redshift deletes any existing automated snapshots that were
-        /// copied to the destination AWS Region and that fall outside of the new retention
+        /// destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were
+        /// copied to the destination Amazon Web Services Region and that fall outside of the new retention
         /// period.</p>
         /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
         /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will
@@ -17150,28 +18904,28 @@ impl ModifySnapshotCopyRetentionPeriodInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17302,28 +19056,28 @@ impl ModifySnapshotScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17466,28 +19220,28 @@ impl ModifyUsageLimitInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17601,28 +19355,28 @@ impl PauseClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17753,28 +19507,28 @@ impl PurchaseReservedNodeOfferingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17888,28 +19642,28 @@ impl RebootClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17961,6 +19715,142 @@ impl RebootClusterInput {
     /// Creates a new builder-style object to manufacture [`RebootClusterInput`](crate::input::RebootClusterInput)
     pub fn builder() -> crate::input::reboot_cluster_input::Builder {
         crate::input::reboot_cluster_input::Builder::default()
+    }
+}
+
+/// See [`RejectDataShareInput`](crate::input::RejectDataShareInput)
+pub mod reject_data_share_input {
+    /// A builder for [`RejectDataShareInput`](crate::input::RejectDataShareInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RejectDataShareInput`](crate::input::RejectDataShareInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RejectDataShareInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RejectDataShareInput {
+                data_share_arn: self.data_share_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RejectDataShareInputOperationOutputAlias = crate::operation::RejectDataShare;
+#[doc(hidden)]
+pub type RejectDataShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl RejectDataShareInput {
+    /// Consumes the builder and constructs an Operation<[`RejectDataShare`](crate::operation::RejectDataShare)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::RejectDataShare,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_reject_data_share(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::RejectDataShare::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "RejectDataShare",
+                "redshift",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`RejectDataShareInput`](crate::input::RejectDataShareInput)
+    pub fn builder() -> crate::input::reject_data_share_input::Builder {
+        crate::input::reject_data_share_input::Builder::default()
     }
 }
 
@@ -18056,28 +19946,28 @@ impl ResetClusterParameterGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18237,28 +20127,28 @@ impl ResizeClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18367,7 +20257,7 @@ pub mod restore_from_cluster_snapshot_input {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18474,7 +20364,7 @@ pub mod restore_from_cluster_snapshot_input {
             self.publicly_accessible = input;
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot. Required if you are
+        /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
         /// restoring a snapshot you do not own, optional if you own the snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
@@ -18639,7 +20529,7 @@ pub mod restore_from_cluster_snapshot_input {
             self.manual_snapshot_retention_period = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster that you restore from a shared snapshot.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -18763,7 +20653,7 @@ pub mod restore_from_cluster_snapshot_input {
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -18855,28 +20745,28 @@ impl RestoreFromClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19114,28 +21004,28 @@ impl RestoreTableFromClusterSnapshotInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19249,28 +21139,28 @@ impl ResumeClusterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19378,8 +21268,8 @@ pub mod revoke_cluster_security_group_ingress_input {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS account number of the owner of the security group specified in the
-        /// <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an
+        /// <p>The Amazon Web Services account number of the owner of the security group specified in the
+        /// <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an
         /// acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
         /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
         /// cannot be provided. </p>
@@ -19446,28 +21336,28 @@ impl RevokeClusterSecurityGroupIngressInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19546,7 +21436,7 @@ pub mod revoke_endpoint_access_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID whose access is to be revoked.</p>
+        /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
@@ -19621,28 +21511,28 @@ impl RevokeEndpointAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19737,7 +21627,7 @@ pub mod revoke_snapshot_access_input {
             self.snapshot_cluster_identifier = input;
             self
         }
-        /// <p>The identifier of the AWS customer account that can no longer restore the specified
+        /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
         /// snapshot.</p>
         pub fn account_with_restore_access(
             mut self,
@@ -19795,28 +21685,28 @@ impl RevokeSnapshotAccessInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19935,28 +21825,28 @@ impl RotateEncryptionKeyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20025,7 +21915,7 @@ pub mod update_partner_status_input {
         pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -20136,28 +22026,28 @@ impl UpdatePartnerStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20215,7 +22105,7 @@ impl UpdatePartnerStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerStatusInput {
-    /// <p>The AWS account ID that owns the cluster.</p>
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -20269,7 +22159,7 @@ pub struct RevokeSnapshotAccessInput {
     /// required if your IAM user has a policy containing a snapshot resource element that
     /// specifies anything other than * for the cluster name.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS customer account that can no longer restore the specified
+    /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
     /// snapshot.</p>
     pub account_with_restore_access: std::option::Option<std::string::String>,
 }
@@ -20294,7 +22184,7 @@ impl std::fmt::Debug for RevokeSnapshotAccessInput {
 pub struct RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID whose access is to be revoked.</p>
+    /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20328,8 +22218,8 @@ pub struct RevokeClusterSecurityGroupIngressInput {
     /// <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code>
     /// must also be provided and <code>CIDRIP</code> cannot be provided. </p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account number of the owner of the security group specified in the
-    /// <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an
+    /// <p>The Amazon Web Services account number of the owner of the security group specified in the
+    /// <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an
     /// acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
     /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
     /// cannot be provided. </p>
@@ -20438,7 +22328,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all clusters within an AWS account.</p>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -20471,7 +22361,7 @@ pub struct RestoreFromClusterSnapshotInput {
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
     pub publicly_accessible: std::option::Option<bool>,
-    /// <p>The AWS customer account used to create or copy the snapshot. Required if you are
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
     /// restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
@@ -20530,7 +22420,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
     /// use to encrypt data in the cluster that you restore from a shared snapshot.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The node type that the restored cluster will be provisioned with.</p>
@@ -20554,8 +22444,8 @@ pub struct RestoreFromClusterSnapshotInput {
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
     pub additional_info: std::option::Option<std::string::String>,
-    /// <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the
-    /// cluster to access other AWS services. You must supply the IAM roles in their Amazon
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
     /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
     /// request.</p>
     /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
@@ -20576,7 +22466,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
     /// <ul>
     /// <li>
-    /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
     /// </li>
     /// <li>
     /// <p>disabled - Don't use AQUA. </p>
@@ -20705,6 +22595,20 @@ impl std::fmt::Debug for ResetClusterParameterGroupInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RejectDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RejectDataShareInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RejectDataShareInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20800,17 +22704,16 @@ impl std::fmt::Debug for ModifySnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// <p>The unique identifier of the cluster for which you want to change the retention
-    /// period for either automated or manual snapshots that are copied to a destination AWS
-    /// Region.</p>
+    /// period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
     /// snapshot copy enabled.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The number of days to retain automated snapshots in the destination AWS Region
-    /// after they are copied from the source AWS Region.</p>
+    /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region
+    /// after they are copied from the source Amazon Web Services Region.</p>
     /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
     /// <p>If you decrease the retention period for automated snapshots that are copied to a
-    /// destination AWS Region, Amazon Redshift deletes any existing automated snapshots that were
-    /// copied to the destination AWS Region and that fall outside of the new retention
+    /// destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were
+    /// copied to the destination Amazon Web Services Region and that fall outside of the new retention
     /// period.</p>
     /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will
@@ -20889,7 +22792,7 @@ pub struct ModifyEventSubscriptionInput {
     /// <p>The type of source that will be generating the events. For example, if you want to
     /// be notified of events generated by a cluster, you would set this parameter to cluster.
     /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-    /// AWS account. You must specify a source type in order to specify source IDs.</p>
+    /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
     /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects
@@ -20902,7 +22805,7 @@ pub struct ModifyEventSubscriptionInput {
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
     /// subscription.</p>
-    /// <p>Values: configuration, management, monitoring, security</p>
+    /// <p>Values: configuration, management, monitoring, security, pending</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
     /// subscription.</p>
@@ -21183,13 +23086,13 @@ pub struct ModifyClusterInput {
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the
     /// cluster. This change is asynchronously applied as soon as possible.</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The new password for the cluster master user. This change is asynchronously applied
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied
     /// as soon as possible. Between the time of the request and the completion of the request,
     /// the <code>MasterUserPassword</code> element exists in the
     /// <code>PendingModifiedValues</code> element of the operation response. </p>
     /// <note>
     /// <p>Operations never return the password, so this operation provides a way to
-    /// regain access to the master user account for a cluster if the password is
+    /// regain access to the admin user account for a cluster if the password is
     /// lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -21285,7 +23188,7 @@ pub struct ModifyClusterInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all clusters within an AWS account.</p>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code>
@@ -21320,7 +23223,7 @@ pub struct ModifyClusterInput {
     /// we encrypt with the default key. </p>
     /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
     /// to encrypt data in the cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
@@ -21385,13 +23288,37 @@ impl std::fmt::Debug for ModifyClusterInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to replace.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+    /// <p>The new content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ModifyAuthenticationProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyAuthenticationProfileInput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.field(
+            "authentication_profile_content",
+            &self.authentication_profile_content,
+        );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAquaConfigurationInput {
     /// <p>The identifier of the cluster to be modified.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
     /// <ul>
     /// <li>
-    /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
     /// </li>
     /// <li>
     /// <p>disabled - Don't use AQUA. </p>
@@ -21552,8 +23479,8 @@ pub struct EnableSnapshotCopyInput {
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already
     /// have cross-region snapshot copy enabled.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The destination AWS Region that you want to copy snapshots to.</p>
-    /// <p>Constraints: Must be the name of a valid AWS Region. For more information, see
+    /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
+    /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.
     /// </p>
     pub destination_region: std::option::Option<std::string::String>,
@@ -21562,11 +23489,11 @@ pub struct EnableSnapshotCopyInput {
     /// <p>Default: 7.</p>
     /// <p>Constraints: Must be at least 1 and no more than 35.</p>
     pub retention_period: std::option::Option<i32>,
-    /// <p>The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted
+    /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
     /// cluster are copied to the destination region.</p>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
-    /// <p>The number of days to retain newly copied snapshots in the destination AWS Region
-    /// after they are copied from the source AWS Region. If the value is -1, the manual
+    /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region
+    /// after they are copied from the source Amazon Web Services Region. If the value is -1, the manual
     /// snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
@@ -21645,6 +23572,31 @@ impl std::fmt::Debug for EnableLoggingInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateDataShareConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether association for the datashare is removed from the
+    /// entire account.</p>
+    pub disassociate_entire_account: std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the consumer that association for
+    /// the datashare is removed from.</p>
+    pub consumer_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DisassociateDataShareConsumerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateDataShareConsumerInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field(
+            "disassociate_entire_account",
+            &self.disassociate_entire_account,
+        );
+        formatter.field("consumer_arn", &self.consumer_arn);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -21699,7 +23651,7 @@ pub struct DescribeUsageLimitsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeUsageLimits</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -21911,7 +23863,7 @@ pub struct DescribeSnapshotCopyGrantsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-    /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -21962,7 +23914,7 @@ pub struct DescribeScheduledActionsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::ScheduledActionFilter>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeScheduledActions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -21997,7 +23949,7 @@ impl std::fmt::Debug for DescribeScheduledActionsInput {
 pub struct DescribeResizeInput {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This
     /// parameter is case-sensitive.</p>
-    /// <p>By default, resize operations for all clusters defined for an AWS account are
+    /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
     /// returned.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
@@ -22025,7 +23977,7 @@ pub struct DescribeReservedNodesInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeReservedNodes</a> request exceed
-    /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22057,7 +24009,7 @@ pub struct DescribeReservedNodeOfferingsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeReservedNodeOfferings</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22076,7 +24028,7 @@ impl std::fmt::Debug for DescribeReservedNodeOfferingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnersInput {
-    /// <p>The AWS account ID that owns the cluster.</p>
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -22118,7 +24070,7 @@ pub struct DescribeOrderableClusterOptionsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeOrderableClusterOptions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22148,7 +24100,7 @@ pub struct DescribeNodeConfigurationOptionsInput {
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS customer account used to create or copy the snapshot.
+    /// <p>The Amazon Web Services account used to create or copy the snapshot.
     /// Required if you are restoring a snapshot you do not own,
     /// optional if you own the snapshot.</p>
     pub owner_account: std::option::Option<std::string::String>,
@@ -22156,7 +24108,7 @@ pub struct DescribeNodeConfigurationOptionsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::NodeConfigurationOptionsFilter>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeNodeConfigurationOptions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22207,7 +24159,7 @@ impl std::fmt::Debug for DescribeLoggingStatusInput {
 pub struct DescribeHsmConfigurationsInput {
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no
     /// identifier is specified, information is returned for all HSM configurations owned by
-    /// your AWS customer account.</p>
+    /// your Amazon Web Services account.</p>
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of
     /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
@@ -22219,7 +24171,7 @@ pub struct DescribeHsmConfigurationsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeHsmConfigurations</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22260,7 +24212,7 @@ impl std::fmt::Debug for DescribeHsmConfigurationsInput {
 pub struct DescribeHsmClientCertificatesInput {
     /// <p>The identifier of a specific HSM client certificate for which you want information.
     /// If no identifier is specified, information is returned for all HSM client certificates
-    /// owned by your AWS customer account.</p>
+    /// owned by your Amazon Web Services account.</p>
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of
     /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
@@ -22272,7 +24224,7 @@ pub struct DescribeHsmClientCertificatesInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeHsmClientCertificates</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22324,7 +24276,7 @@ pub struct DescribeEventSubscriptionsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a DescribeEventSubscriptions request exceed the value
-    /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+    /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
     /// field of the response. You can retrieve the next set of response records by providing
     /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
     /// </p>
@@ -22439,7 +24391,7 @@ pub struct DescribeEventsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeEvents</a> request exceed the value
-    /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+    /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
     /// field of the response. You can retrieve the next set of response records by providing
     /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
     /// </p>
@@ -22481,7 +24433,7 @@ impl std::fmt::Debug for DescribeEventCategoriesInput {
 pub struct DescribeEndpointAuthorizationInput {
     /// <p>The cluster identifier of the cluster to access.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of either the cluster owner (grantor) or grantee.
+    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
     /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view.
@@ -22515,7 +24467,7 @@ impl std::fmt::Debug for DescribeEndpointAuthorizationInput {
 pub struct DescribeEndpointAccessInput {
     /// <p>The cluster identifier associated with the described endpoint.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint to be described.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -22560,7 +24512,7 @@ pub struct DescribeDefaultClusterParametersInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDefaultClusterParameters</a>
-    /// request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+    /// request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
     /// the <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22570,6 +24522,93 @@ impl std::fmt::Debug for DescribeDefaultClusterParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDefaultClusterParametersInput");
         formatter.field("parameter_group_family", &self.parameter_group_family);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesForProducerInput {
+    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
+    /// Redshift returns the list of datashares that have the specified status.</p>
+    pub status: std::option::Option<crate::model::DataShareStatusForProducer>,
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesForProducerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesForProducerInput");
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field("status", &self.status);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesForConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    pub consumer_arn: std::option::Option<std::string::String>,
+    /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
+    /// Redshift returns the list of datashares that have the specified status.</p>
+    pub status: std::option::Option<crate::model::DataShareStatusForConsumer>,
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesForConsumerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesForConsumerInput");
+        formatter.field("consumer_arn", &self.consumer_arn);
+        formatter.field("status", &self.status);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesInput {
+    /// <p>The identifier of the datashare to describe details of.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
         formatter.field("max_records", &self.max_records);
         formatter.field("marker", &self.marker);
         formatter.finish()
@@ -22609,7 +24648,7 @@ pub struct DescribeClusterVersionsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterVersions</a> request exceed
-    /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22670,7 +24709,7 @@ pub struct DescribeClusterSubnetGroupsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterSubnetGroups</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22741,14 +24780,14 @@ pub struct DescribeClusterSnapshotsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed
-    /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The AWS customer account used to create or copy the snapshot. Use this field to
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to
     /// filter the results to snapshots owned by a particular account. To describe snapshots you
-    /// own, either specify your AWS customer account, or do not specify the
+    /// own, either specify your Amazon Web Services account, or do not specify the
     /// parameter.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that
@@ -22831,7 +24870,7 @@ pub struct DescribeClusterSecurityGroupsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterSecurityGroups</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22885,7 +24924,7 @@ pub struct DescribeClustersInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusters</a> request exceed the
-    /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22940,7 +24979,7 @@ pub struct DescribeClusterParametersInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterParameters</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -22975,7 +25014,7 @@ pub struct DescribeClusterParameterGroupsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeClusterParameterGroups</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -23038,6 +25077,23 @@ impl std::fmt::Debug for DescribeClusterDbRevisionsInput {
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("max_records", &self.max_records);
         formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAuthenticationProfilesInput {
+    /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeAuthenticationProfilesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAuthenticationProfilesInput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
         formatter.finish()
     }
 }
@@ -23135,7 +25191,7 @@ impl std::fmt::Debug for DeleteScheduledActionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartnerInput {
-    /// <p>The AWS account ID that owns the cluster.</p>
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -23381,6 +25437,41 @@ impl std::fmt::Debug for DeleteClusterInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to delete.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteAuthenticationProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAuthenticationProfileInput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeauthorizeDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
+    /// This identifier is an AWS account ID.</p>
+    pub consumer_identifier: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeauthorizeDataShareInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeauthorizeDataShareInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("consumer_identifier", &self.consumer_identifier);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageLimitInput {
     /// <p>The identifier of the cluster that you want to limit usage.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -23478,7 +25569,7 @@ impl std::fmt::Debug for CreateSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant. This name must be unique in the region for the
-    /// AWS account.</p>
+    /// Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -23494,7 +25585,7 @@ pub struct CreateSnapshotCopyGrantInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all clusters within an AWS account.</p>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
@@ -23652,7 +25743,7 @@ pub struct CreateEventSubscriptionInput {
     /// <p>The type of source that will be generating the events. For example, if you want to
     /// be notified of events generated by a cluster, you would set this parameter to cluster.
     /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-    /// AWS account. You must specify a source type in order to specify source IDs.</p>
+    /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
     /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects
@@ -23665,7 +25756,7 @@ pub struct CreateEventSubscriptionInput {
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
     /// subscription.</p>
-    /// <p>Values: configuration, management, monitoring, security</p>
+    /// <p>Values: configuration, management, monitoring, security, pending</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
     /// subscription.</p>
@@ -23697,7 +25788,7 @@ impl std::fmt::Debug for CreateEventSubscriptionInput {
 pub struct CreateEndpointAccessInput {
     /// <p>The cluster identifier of the cluster to access.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The Redshift-managed VPC endpoint name.</p>
     /// <p>An endpoint name must contain 1-30 characters.
@@ -23737,8 +25828,7 @@ pub struct CreateClusterSubnetGroupInput {
     /// <p>Must not be "Default".</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all subnet groups that are created by your AWS
-    /// account.</p>
+    /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code>
@@ -23768,7 +25858,7 @@ impl std::fmt::Debug for CreateClusterSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterSnapshotInput {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must
-    /// be unique for all snapshots within the AWS account.</p>
+    /// be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -23826,8 +25916,7 @@ pub struct CreateClusterSecurityGroupInput {
     /// <p>Must not be "Default".</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all security groups that are created by your AWS
-    /// account.</p>
+    /// <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code>
@@ -23868,7 +25957,7 @@ pub struct CreateClusterParameterGroupInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique withing your AWS account.</p>
+    /// <p>Must be unique withing your Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     /// <note>
@@ -23878,7 +25967,7 @@ pub struct CreateClusterParameterGroupInput {
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The
     /// cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a list of
-    /// all the parameter groups that are owned by your AWS account, including the default
+    /// all the parameter groups that are owned by your Amazon Web Services account, including the default
     /// parameter groups for each Amazon Redshift engine version. The parameter group family names
     /// associated with the default parameter groups provide you the valid values. For example,
     /// a valid family name is "redshift-1.0". </p>
@@ -23943,7 +26032,7 @@ pub struct CreateClusterInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for all clusters within an AWS account.</p>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code>
@@ -23976,7 +26065,7 @@ pub struct CreateClusterInput {
     /// <code>ra3.xlplus</code> |  <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
     /// </p>
     pub node_type: std::option::Option<std::string::String>,
-    /// <p>The user name associated with the master user account for the cluster that is being
+    /// <p>The user name associated with the admin user account for the cluster that is being
     /// created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -23993,7 +26082,7 @@ pub struct CreateClusterInput {
     /// </li>
     /// </ul>
     pub master_username: std::option::Option<std::string::String>,
-    /// <p>The password associated with the master user account for the cluster that is being
+    /// <p>The password associated with the admin user account for the cluster that is being
     /// created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -24133,7 +26222,7 @@ pub struct CreateClusterInput {
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
     /// use to encrypt data in the cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
@@ -24145,8 +26234,8 @@ pub struct CreateClusterInput {
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
     pub additional_info: std::option::Option<std::string::String>,
-    /// <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the
-    /// cluster to access other AWS services. You must supply the IAM roles in their Amazon
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
     /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
     /// request.</p>
     /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
@@ -24162,7 +26251,7 @@ pub struct CreateClusterInput {
     /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
     /// <ul>
     /// <li>
-    /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
     /// </li>
     /// <li>
     /// <p>disabled - Don't use AQUA. </p>
@@ -24236,6 +26325,30 @@ impl std::fmt::Debug for CreateClusterInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to be created.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+    /// <p>The content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateAuthenticationProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAuthenticationProfileInput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.field(
+            "authentication_profile_content",
+            &self.authentication_profile_content,
+        );
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -24275,7 +26388,7 @@ pub struct CopyClusterSnapshotInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// <li>
-    /// <p>Must be unique for the AWS account that is making the request.</p>
+    /// <p>Must be unique for the Amazon Web Services account that is making the request.</p>
     /// </li>
     /// </ul>
     pub target_snapshot_identifier: std::option::Option<std::string::String>,
@@ -24376,9 +26489,9 @@ pub struct AuthorizeSnapshotAccessInput {
     /// required if your IAM user has a policy containing a snapshot resource element that
     /// specifies anything other than * for the cluster name.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS customer account authorized to restore the specified
+    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified
     /// snapshot.</p>
-    /// <p>To share a snapshot with AWS support, specify amazon-redshift-support.</p>
+    /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
     pub account_with_restore_access: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizeSnapshotAccessInput {
@@ -24402,7 +26515,7 @@ impl std::fmt::Debug for AuthorizeSnapshotAccessInput {
 pub struct AuthorizeEndpointAccessInput {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID to grant access to.</p>
+    /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24417,6 +26530,24 @@ impl std::fmt::Debug for AuthorizeEndpointAccessInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthorizeDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
+    /// sharing for.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+    pub consumer_identifier: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AuthorizeDataShareInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthorizeDataShareInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("consumer_identifier", &self.consumer_identifier);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -24427,8 +26558,8 @@ pub struct AuthorizeClusterSecurityGroupIngressInput {
     pub cidrip: std::option::Option<std::string::String>,
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account number of the owner of the security group specified by the
-    /// <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the
+    /// <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an
     /// acceptable value. </p>
     /// <p>Example: <code>111122223333</code>
     /// </p>
@@ -24453,8 +26584,29 @@ impl std::fmt::Debug for AuthorizeClusterSecurityGroupIngressInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateDataShareConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+    pub associate_entire_account: std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
+    /// datashare.</p>
+    pub consumer_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AssociateDataShareConsumerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateDataShareConsumerInput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("associate_entire_account", &self.associate_entire_account);
+        formatter.field("consumer_arn", &self.consumer_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPartnerInput {
-    /// <p>The AWS account ID that owns the cluster.</p>
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,

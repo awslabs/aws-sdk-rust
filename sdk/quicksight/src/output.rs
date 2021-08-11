@@ -4,7 +4,7 @@
 pub struct UpdateUserOutput {
     /// <p>The Amazon QuickSight user.</p>
     pub user: std::option::Option<crate::model::User>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -38,7 +38,7 @@ pub mod update_user_output {
             self.user = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -82,7 +82,7 @@ pub struct UpdateThemePermissionsOutput {
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>The resulting list of resource permissions for the theme.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -143,7 +143,7 @@ pub mod update_theme_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -187,7 +187,7 @@ pub struct UpdateThemeAliasOutput {
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateThemeAliasOutput {
@@ -231,7 +231,7 @@ pub mod update_theme_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -270,7 +270,7 @@ pub struct UpdateThemeOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateThemeOutput {
@@ -347,7 +347,7 @@ pub mod update_theme_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -385,7 +385,7 @@ pub struct UpdateTemplatePermissionsOutput {
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions to be set on the template.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -446,7 +446,7 @@ pub mod update_template_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -490,7 +490,7 @@ pub struct UpdateTemplateAliasOutput {
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateTemplateAliasOutput {
@@ -534,7 +534,7 @@ pub mod update_template_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -573,7 +573,7 @@ pub struct UpdateTemplateOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateTemplateOutput {
@@ -650,7 +650,7 @@ pub mod update_template_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -711,7 +711,7 @@ pub struct UpdateIamPolicyAssignmentOutput {
     /// </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -827,7 +827,7 @@ pub mod update_iam_policy_assignment_output {
             self.assignment_status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -871,7 +871,7 @@ impl UpdateIamPolicyAssignmentOutput {
 pub struct UpdateGroupOutput {
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::Group>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -905,7 +905,7 @@ pub mod update_group_output {
             self.group = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1140,9 +1140,9 @@ impl UpdateFolderOutput {
 pub struct UpdateDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1181,7 +1181,7 @@ pub mod update_data_source_permissions_output {
             self.data_source_arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1193,7 +1193,7 @@ pub mod update_data_source_permissions_output {
             self.data_source_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1234,11 +1234,11 @@ impl UpdateDataSourcePermissionsOutput {
 pub struct UpdateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The update status of the data source's last update.</p>
     pub update_status: std::option::Option<crate::model::ResourceStatus>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1276,7 +1276,7 @@ pub mod update_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1300,7 +1300,7 @@ pub mod update_data_source_output {
             self.update_status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1342,10 +1342,10 @@ impl UpdateDataSourceOutput {
 pub struct UpdateDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per AWS
-    /// Region for each AWS account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+    /// Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1381,8 +1381,8 @@ pub mod update_data_set_permissions_output {
             self.data_set_arn = input;
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per AWS
-        /// Region for each AWS account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+        /// Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1391,7 +1391,7 @@ pub mod update_data_set_permissions_output {
             self.data_set_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1432,7 +1432,7 @@ impl UpdateDataSetPermissionsOutput {
 pub struct UpdateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
@@ -1440,7 +1440,7 @@ pub struct UpdateDataSetOutput {
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1480,7 +1480,7 @@ pub mod update_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1512,7 +1512,7 @@ pub mod update_data_set_output {
             self.ingestion_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1559,7 +1559,7 @@ pub struct UpdateDashboardPublishedVersionOutput {
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateDashboardPublishedVersionOutput {
@@ -1614,7 +1614,7 @@ pub mod update_dashboard_published_version_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1650,7 +1650,7 @@ pub struct UpdateDashboardPermissionsOutput {
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>Information about the permissions on the dashboard.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1714,7 +1714,7 @@ pub mod update_dashboard_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1764,7 +1764,7 @@ pub struct UpdateDashboardOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateDashboardOutput {
@@ -1841,7 +1841,7 @@ pub mod update_dashboard_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1880,7 +1880,7 @@ pub struct UpdateAnalysisPermissionsOutput {
     /// <p>A structure that describes the principals and the resource-level permissions on an
     /// analysis.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -1941,7 +1941,7 @@ pub mod update_analysis_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -1989,7 +1989,7 @@ pub struct UpdateAnalysisOutput {
     pub update_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAnalysisOutput {
@@ -2055,7 +2055,7 @@ pub mod update_analysis_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2086,7 +2086,7 @@ impl UpdateAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2109,7 +2109,7 @@ pub mod update_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2146,16 +2146,16 @@ impl UpdateAccountSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the updated customization for this AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account;.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that you want to update QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+    /// <p>The QuickSight customizations you're updating in the current Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2186,7 +2186,7 @@ pub mod update_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the updated customization for this AWS account.</p>
+        /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account;.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -2195,7 +2195,7 @@ pub mod update_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the AWS account that you want to update QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -2217,7 +2217,7 @@ pub mod update_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+        /// <p>The QuickSight customizations you're updating in the current Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -2229,7 +2229,7 @@ pub mod update_account_customization_output {
             self.account_customization = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2270,7 +2270,7 @@ impl UpdateAccountCustomizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2293,7 +2293,7 @@ pub mod untag_resource_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2330,7 +2330,7 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2353,7 +2353,7 @@ pub mod tag_resource_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2493,7 +2493,7 @@ pub struct SearchDashboardsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SearchDashboardsOutput {
@@ -2553,7 +2553,7 @@ pub mod search_dashboards_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2590,7 +2590,7 @@ pub struct SearchAnalysesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SearchAnalysesOutput {
@@ -2651,7 +2651,7 @@ pub mod search_analyses_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2688,7 +2688,7 @@ pub struct RestoreAnalysisOutput {
     /// <p>The ID of the analysis that you're restoring.
     /// </p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RestoreAnalysisOutput {
@@ -2741,7 +2741,7 @@ pub mod restore_analysis_output {
             self.analysis_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2776,7 +2776,7 @@ pub struct RegisterUserOutput {
     /// <p>The URL the user visits to complete registration and provide a password. This is
     /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub user_invitation_url: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2825,7 +2825,7 @@ pub mod register_user_output {
             self.user_invitation_url = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2868,7 +2868,7 @@ pub struct ListUsersOutput {
     pub user_list: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -2917,7 +2917,7 @@ pub mod list_users_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -2960,7 +2960,7 @@ pub struct ListUserGroupsOutput {
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -3009,7 +3009,7 @@ pub mod list_user_groups_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3055,7 +3055,7 @@ pub struct ListThemeVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListThemeVersionsOutput {
@@ -3118,7 +3118,7 @@ pub mod list_theme_versions_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3154,7 +3154,7 @@ pub struct ListThemesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListThemesOutput {
@@ -3211,7 +3211,7 @@ pub mod list_themes_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3245,7 +3245,7 @@ pub struct ListThemeAliasesOutput {
     pub theme_alias_list: std::option::Option<std::vec::Vec<crate::model::ThemeAlias>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -3294,7 +3294,7 @@ pub mod list_theme_aliases_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3340,7 +3340,7 @@ pub struct ListTemplateVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTemplateVersionsOutput {
@@ -3403,7 +3403,7 @@ pub mod list_template_versions_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3439,7 +3439,7 @@ pub struct ListTemplatesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTemplatesOutput {
@@ -3499,7 +3499,7 @@ pub mod list_templates_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3533,7 +3533,7 @@ pub struct ListTemplateAliasesOutput {
     pub template_alias_list: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -3586,7 +3586,7 @@ pub mod list_template_aliases_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3628,7 +3628,7 @@ pub struct ListTagsForResourceOutput {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
     /// resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -3666,7 +3666,7 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3704,13 +3704,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
-    /// <p>The information about the namespaces in this AWS account. The response includes
-    /// the namespace ARN, name, AWS Region, notification email address, creation status, and
+    /// <p>The information about the namespaces in this Amazon Web Services account;. The response includes
+    /// the namespace ARN, name, Region;, notification email address, creation status, and
     /// identity store.</p>
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -3759,7 +3759,7 @@ pub mod list_namespaces_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3802,7 +3802,7 @@ pub struct ListIngestionsOutput {
     pub ingestions: std::option::Option<std::vec::Vec<crate::model::Ingestion>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -3851,7 +3851,7 @@ pub mod list_ingestions_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3893,7 +3893,7 @@ pub struct ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
     pub active_assignments:
         std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -3939,7 +3939,7 @@ pub mod list_iam_policy_assignments_for_user_output {
             self.active_assignments = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -3992,7 +3992,7 @@ pub struct ListIamPolicyAssignmentsOutput {
         std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -4045,7 +4045,7 @@ pub mod list_iam_policy_assignments_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4088,7 +4088,7 @@ pub struct ListGroupsOutput {
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -4137,7 +4137,7 @@ pub mod list_groups_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4180,7 +4180,7 @@ pub struct ListGroupMembershipsOutput {
     pub group_member_list: std::option::Option<std::vec::Vec<crate::model::GroupMember>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -4229,7 +4229,7 @@ pub mod list_group_memberships_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4468,7 +4468,7 @@ pub struct ListDataSourcesOutput {
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -4517,7 +4517,7 @@ pub mod list_data_sources_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4560,7 +4560,7 @@ pub struct ListDataSetsOutput {
     pub data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -4613,7 +4613,7 @@ pub mod list_data_sets_output {
             self.next_token = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4659,7 +4659,7 @@ pub struct ListDashboardVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListDashboardVersionsOutput {
@@ -4722,7 +4722,7 @@ pub mod list_dashboard_versions_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4752,14 +4752,14 @@ impl ListDashboardVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
-    /// <p>A structure that contains all of the dashboards in your AWS account. This structure
+    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
     /// provides basic information about the dashboards.</p>
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListDashboardsOutput {
@@ -4819,7 +4819,7 @@ pub mod list_dashboards_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4855,7 +4855,7 @@ pub struct ListAnalysesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListAnalysesOutput {
@@ -4915,7 +4915,7 @@ pub mod list_analyses_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -4952,7 +4952,7 @@ pub struct GetSessionEmbedUrlOutput {
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetSessionEmbedUrlOutput {
@@ -4996,7 +4996,7 @@ pub mod get_session_embed_url_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5033,7 +5033,7 @@ pub struct GetDashboardEmbedUrlOutput {
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
@@ -5077,7 +5077,7 @@ pub mod get_dashboard_embed_url_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5105,10 +5105,158 @@ impl GetDashboardEmbedUrlOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateEmbedUrlForRegisteredUserOutput {
+    /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+    pub embed_url: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserOutput");
+        formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput)
+pub mod generate_embed_url_for_registered_user_output {
+    /// A builder for [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) embed_url: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+        pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.embed_url = Some(input.into());
+            self
+        }
+        pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.embed_url = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput)
+        pub fn build(self) -> crate::output::GenerateEmbedUrlForRegisteredUserOutput {
+            crate::output::GenerateEmbedUrlForRegisteredUserOutput {
+                embed_url: self.embed_url,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl GenerateEmbedUrlForRegisteredUserOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput)
+    pub fn builder() -> crate::output::generate_embed_url_for_registered_user_output::Builder {
+        crate::output::generate_embed_url_for_registered_user_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateEmbedUrlForAnonymousUserOutput {
+    /// <p>The embed URL for the dashboard.</p>
+    pub embed_url: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserOutput");
+        formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput)
+pub mod generate_embed_url_for_anonymous_user_output {
+    /// A builder for [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) embed_url: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The embed URL for the dashboard.</p>
+        pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.embed_url = Some(input.into());
+            self
+        }
+        pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.embed_url = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput)
+        pub fn build(self) -> crate::output::GenerateEmbedUrlForAnonymousUserOutput {
+            crate::output::GenerateEmbedUrlForAnonymousUserOutput {
+                embed_url: self.embed_url,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl GenerateEmbedUrlForAnonymousUserOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput)
+    pub fn builder() -> crate::output::generate_embed_url_for_anonymous_user_output::Builder {
+        crate::output::generate_embed_url_for_anonymous_user_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>The user name.</p>
     pub user: std::option::Option<crate::model::User>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5142,7 +5290,7 @@ pub mod describe_user_output {
             self.user = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5186,7 +5334,7 @@ pub struct DescribeThemePermissionsOutput {
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions set on the theme. </p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5247,7 +5395,7 @@ pub mod describe_theme_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5291,7 +5439,7 @@ pub struct DescribeThemeAliasOutput {
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeThemeAliasOutput {
@@ -5335,7 +5483,7 @@ pub mod describe_theme_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5368,7 +5516,7 @@ pub struct DescribeThemeOutput {
     pub theme: std::option::Option<crate::model::Theme>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeThemeOutput {
@@ -5409,7 +5557,7 @@ pub mod describe_theme_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5444,7 +5592,7 @@ pub struct DescribeTemplatePermissionsOutput {
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions to be set on the template. </p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5505,7 +5653,7 @@ pub mod describe_template_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5549,7 +5697,7 @@ pub struct DescribeTemplateAliasOutput {
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeTemplateAliasOutput {
@@ -5593,7 +5741,7 @@ pub mod describe_template_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5626,7 +5774,7 @@ pub struct DescribeTemplateOutput {
     pub template: std::option::Option<crate::model::Template>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeTemplateOutput {
@@ -5667,7 +5815,7 @@ pub mod describe_template_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5697,11 +5845,11 @@ impl DescribeTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceOutput {
     /// <p>The information about the namespace that you're describing. The response includes
-    /// the namespace ARN, name, AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also
+    /// the namespace ARN, name, Region;, creation status, and identity store. <code>DescribeNamespace</code> also
     /// works for namespaces that are in the process of being created. For incomplete namespaces,
     /// this API operation lists the namespace error types and messages associated with the creation process.</p>
     pub namespace: std::option::Option<crate::model::NamespaceInfoV2>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5727,7 +5875,7 @@ pub mod describe_namespace_output {
     }
     impl Builder {
         /// <p>The information about the namespace that you're describing. The response includes
-        /// the namespace ARN, name, AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also
+        /// the namespace ARN, name, Region;, creation status, and identity store. <code>DescribeNamespace</code> also
         /// works for namespaces that are in the process of being created. For incomplete namespaces,
         /// this API operation lists the namespace error types and messages associated with the creation process.</p>
         pub fn namespace(mut self, input: crate::model::NamespaceInfoV2) -> Self {
@@ -5741,7 +5889,7 @@ pub mod describe_namespace_output {
             self.namespace = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5781,7 +5929,7 @@ impl DescribeNamespaceOutput {
 pub struct DescribeIngestionOutput {
     /// <p>Information about the ingestion.</p>
     pub ingestion: std::option::Option<crate::model::Ingestion>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5818,7 +5966,7 @@ pub mod describe_ingestion_output {
             self.ingestion = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5858,7 +6006,7 @@ impl DescribeIngestionOutput {
 pub struct DescribeIamPolicyAssignmentOutput {
     /// <p>Information describing the IAM policy assignment.</p>
     pub iam_policy_assignment: std::option::Option<crate::model::IamPolicyAssignment>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5895,7 +6043,7 @@ pub mod describe_iam_policy_assignment_output {
             self.iam_policy_assignment = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -5935,7 +6083,7 @@ impl DescribeIamPolicyAssignmentOutput {
 pub struct DescribeGroupOutput {
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::Group>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -5969,7 +6117,7 @@ pub mod describe_group_output {
             self.group = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6299,11 +6447,11 @@ impl DescribeFolderOutput {
 pub struct DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the data source.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6345,7 +6493,7 @@ pub mod describe_data_source_permissions_output {
             self.data_source_arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -6370,7 +6518,7 @@ pub mod describe_data_source_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6412,7 +6560,7 @@ impl DescribeDataSourcePermissionsOutput {
 pub struct DescribeDataSourceOutput {
     /// <p>The information on the data source.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6449,7 +6597,7 @@ pub mod describe_data_source_output {
             self.data_source = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6489,11 +6637,11 @@ impl DescribeDataSourceOutput {
 pub struct DescribeDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the dataset.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6532,7 +6680,7 @@ pub mod describe_data_set_permissions_output {
             self.data_set_arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -6554,7 +6702,7 @@ pub mod describe_data_set_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6596,7 +6744,7 @@ impl DescribeDataSetPermissionsOutput {
 pub struct DescribeDataSetOutput {
     /// <p>Information on the dataset.</p>
     pub data_set: std::option::Option<crate::model::DataSet>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6630,7 +6778,7 @@ pub mod describe_data_set_output {
             self.data_set = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6676,7 +6824,7 @@ pub struct DescribeDashboardPermissionsOutput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDashboardPermissionsOutput {
@@ -6747,7 +6895,7 @@ pub mod describe_dashboard_permissions_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6782,7 +6930,7 @@ pub struct DescribeDashboardOutput {
     pub dashboard: std::option::Option<crate::model::Dashboard>,
     /// <p>The HTTP status of this request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDashboardOutput {
@@ -6826,7 +6974,7 @@ pub mod describe_dashboard_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6865,7 +7013,7 @@ pub struct DescribeAnalysisPermissionsOutput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAnalysisPermissionsOutput {
@@ -6934,7 +7082,7 @@ pub mod describe_analysis_permissions_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -6970,7 +7118,7 @@ pub struct DescribeAnalysisOutput {
     pub analysis: std::option::Option<crate::model::Analysis>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAnalysisOutput {
@@ -7012,7 +7160,7 @@ pub mod describe_analysis_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7041,14 +7189,14 @@ impl DescribeAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsOutput {
-    /// <p>The QuickSight settings for this AWS account. This information includes the edition of Amazon
+    /// <p>The QuickSight settings for this Amazon Web Services account;. This information includes the edition of Amazon
     /// QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
     /// QuickSight subscription. In the QuickSight console, the QuickSight subscription is sometimes
     /// referred to as a QuickSight "account" even though it's technically not an account
-    /// by itself. Instead, it's a subscription to the QuickSight service for your AWS account. The
-    /// edition that you subscribe to applies to QuickSight in every AWS Region where you use it.</p>
+    /// by itself. Instead, it's a subscription to the QuickSight service for your Amazon Web Services account;. The
+    /// edition that you subscribe to applies to QuickSight in every Region; where you use it.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7073,12 +7221,12 @@ pub mod describe_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The QuickSight settings for this AWS account. This information includes the edition of Amazon
+        /// <p>The QuickSight settings for this Amazon Web Services account;. This information includes the edition of Amazon
         /// QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
         /// QuickSight subscription. In the QuickSight console, the QuickSight subscription is sometimes
         /// referred to as a QuickSight "account" even though it's technically not an account
-        /// by itself. Instead, it's a subscription to the QuickSight service for your AWS account. The
-        /// edition that you subscribe to applies to QuickSight in every AWS Region where you use it.</p>
+        /// by itself. Instead, it's a subscription to the QuickSight service for your Amazon Web Services account;. The
+        /// edition that you subscribe to applies to QuickSight in every Region; where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
             self.account_settings = Some(input);
             self
@@ -7090,7 +7238,7 @@ pub mod describe_account_settings_output {
             self.account_settings = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7128,15 +7276,15 @@ impl DescribeAccountSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that you're describing.</p>
+    /// <p>The ID for the Amazon Web Services account; that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you're describing. </p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations that exist in the current AWS Region. </p>
+    /// <p>The QuickSight customizations that exist in the current Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7167,7 +7315,7 @@ pub mod describe_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -7176,7 +7324,7 @@ pub mod describe_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the AWS account that you're describing.</p>
+        /// <p>The ID for the Amazon Web Services account; that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7197,7 +7345,7 @@ pub mod describe_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations that exist in the current AWS Region. </p>
+        /// <p>The QuickSight customizations that exist in the current Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -7209,7 +7357,7 @@ pub mod describe_account_customization_output {
             self.account_customization = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7250,7 +7398,7 @@ impl DescribeAccountCustomizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserByPrincipalIdOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7273,7 +7421,7 @@ pub mod delete_user_by_principal_id_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7310,7 +7458,7 @@ impl DeleteUserByPrincipalIdOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7333,7 +7481,7 @@ pub mod delete_user_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7374,7 +7522,7 @@ pub struct DeleteThemeAliasOutput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7423,7 +7571,7 @@ pub mod delete_theme_alias_output {
             self.arn = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7474,7 +7622,7 @@ impl DeleteThemeAliasOutput {
 pub struct DeleteThemeOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7512,7 +7660,7 @@ pub mod delete_theme_output {
             self.arn = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7568,7 +7716,7 @@ pub struct DeleteTemplateAliasOutput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteTemplateAliasOutput {
@@ -7631,7 +7779,7 @@ pub mod delete_template_alias_output {
             self.arn = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7662,7 +7810,7 @@ impl DeleteTemplateAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -7693,7 +7841,7 @@ pub mod delete_template_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7750,7 +7898,7 @@ impl DeleteTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7773,7 +7921,7 @@ pub mod delete_namespace_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7812,7 +7960,7 @@ impl DeleteNamespaceOutput {
 pub struct DeleteIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. </p>
     pub assignment_name: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7849,7 +7997,7 @@ pub mod delete_iam_policy_assignment_output {
             self.assignment_name = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7887,7 +8035,7 @@ impl DeleteIamPolicyAssignmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupMembershipOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7910,7 +8058,7 @@ pub mod delete_group_membership_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7947,7 +8095,7 @@ impl DeleteGroupMembershipOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7970,7 +8118,7 @@ pub mod delete_group_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8157,9 +8305,9 @@ impl DeleteFolderOutput {
 pub struct DeleteDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -8195,7 +8343,7 @@ pub mod delete_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -8207,7 +8355,7 @@ pub mod delete_data_source_output {
             self.data_source_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8248,9 +8396,9 @@ impl DeleteDataSourceOutput {
 pub struct DeleteDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -8286,7 +8434,7 @@ pub mod delete_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -8295,7 +8443,7 @@ pub mod delete_data_set_output {
             self.data_set_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8340,7 +8488,7 @@ pub struct DeleteDashboardOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDashboardOutput {
@@ -8392,7 +8540,7 @@ pub mod delete_dashboard_output {
             self.dashboard_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8430,7 +8578,7 @@ pub struct DeleteAnalysisOutput {
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
     pub deletion_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAnalysisOutput {
@@ -8496,7 +8644,7 @@ pub mod delete_analysis_output {
             self.deletion_time = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8527,7 +8675,7 @@ impl DeleteAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationOutput {
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -8550,7 +8698,7 @@ pub mod delete_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8591,7 +8739,7 @@ pub struct CreateThemeAliasOutput {
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateThemeAliasOutput {
@@ -8635,7 +8783,7 @@ pub mod create_theme_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8674,7 +8822,7 @@ pub struct CreateThemeOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateThemeOutput {
@@ -8751,7 +8899,7 @@ pub mod create_theme_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8787,7 +8935,7 @@ pub struct CreateTemplateAliasOutput {
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTemplateAliasOutput {
@@ -8831,7 +8979,7 @@ pub mod create_template_alias_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8871,7 +9019,7 @@ pub struct CreateTemplateOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTemplateOutput {
@@ -8949,7 +9097,7 @@ pub mod create_template_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8985,7 +9133,7 @@ pub struct CreateNamespaceOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region that you want to use for the free SPICE capacity for the new namespace.
+    /// <p>The Region; that you want to use for the free SPICE capacity for the new namespace.
     /// This is set to the region that you run CreateNamespace in. </p>
     pub capacity_region: std::option::Option<std::string::String>,
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
@@ -8997,7 +9145,7 @@ pub struct CreateNamespaceOutput {
     /// <p>Specifies the type of your user identity directory. Currently, this supports users
     /// with an identity type of <code>QUICKSIGHT</code>.</p>
     pub identity_store: std::option::Option<crate::model::IdentityStore>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9048,7 +9196,7 @@ pub mod create_namespace_output {
             self.name = input;
             self
         }
-        /// <p>The AWS Region that you want to use for the free SPICE capacity for the new namespace.
+        /// <p>The Region; that you want to use for the free SPICE capacity for the new namespace.
         /// This is set to the region that you run CreateNamespace in. </p>
         pub fn capacity_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.capacity_region = Some(input.into());
@@ -9090,7 +9238,7 @@ pub mod create_namespace_output {
             self.identity_store = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9138,7 +9286,7 @@ pub struct CreateIngestionOutput {
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The ingestion status.</p>
     pub ingestion_status: std::option::Option<crate::model::IngestionStatus>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9197,7 +9345,7 @@ pub mod create_ingestion_output {
             self.ingestion_status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9237,7 +9385,7 @@ impl CreateIngestionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment. This name must be unique within the AWS account.</p>
+    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account;.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the assignment.</p>
     pub assignment_id: std::option::Option<std::string::String>,
@@ -9265,7 +9413,7 @@ pub struct CreateIamPolicyAssignmentOutput {
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9300,7 +9448,7 @@ pub mod create_iam_policy_assignment_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the assignment. This name must be unique within the AWS account.</p>
+        /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account;.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -9380,7 +9528,7 @@ pub mod create_iam_policy_assignment_output {
             self.identities = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9424,7 +9572,7 @@ impl CreateIamPolicyAssignmentOutput {
 pub struct CreateGroupMembershipOutput {
     /// <p>The group member.</p>
     pub group_member: std::option::Option<crate::model::GroupMember>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9461,7 +9609,7 @@ pub mod create_group_membership_output {
             self.group_member = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9502,7 +9650,7 @@ impl CreateGroupMembershipOutput {
 pub struct CreateGroupOutput {
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::Group>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9536,7 +9684,7 @@ pub mod create_group_output {
             self.group = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9741,11 +9889,11 @@ impl CreateFolderOutput {
 pub struct CreateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The status of creating the data source.</p>
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9783,7 +9931,7 @@ pub mod create_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9807,7 +9955,7 @@ pub mod create_data_source_output {
             self.creation_status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9849,7 +9997,7 @@ impl CreateDataSourceOutput {
 pub struct CreateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
@@ -9857,7 +10005,7 @@ pub struct CreateDataSetOutput {
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9897,7 +10045,7 @@ pub mod create_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -9929,7 +10077,7 @@ pub mod create_data_set_output {
             self.ingestion_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9981,7 +10129,7 @@ pub struct CreateDashboardOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDashboardOutput {
@@ -10059,7 +10207,7 @@ pub mod create_dashboard_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -10099,7 +10247,7 @@ pub struct CreateAnalysisOutput {
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAnalysisOutput {
@@ -10165,7 +10313,7 @@ pub mod create_analysis_output {
             self.status = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -10196,15 +10344,15 @@ impl CreateAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the customization that you created for this AWS account.</p>
+    /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account;.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the AWS account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization you're creating. </p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're adding in the current AWS Region. </p>
+    /// <p>The QuickSight customizations you're adding in the current Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -10235,7 +10383,7 @@ pub mod create_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the customization that you created for this AWS account.</p>
+        /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account;.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -10244,7 +10392,7 @@ pub mod create_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the AWS account that you want to customize QuickSight for.</p>
+        /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10265,7 +10413,7 @@ pub mod create_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current AWS Region. </p>
+        /// <p>The QuickSight customizations you're adding in the current Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -10277,7 +10425,7 @@ pub mod create_account_customization_output {
             self.account_customization = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -10322,7 +10470,7 @@ pub struct CancelIngestionOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
-    /// <p>The AWS request ID for this operation.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -10367,7 +10515,7 @@ pub mod cancel_ingestion_output {
             self.ingestion_id = input;
             self
         }
-        /// <p>The AWS request ID for this operation.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self

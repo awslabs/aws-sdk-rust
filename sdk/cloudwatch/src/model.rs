@@ -664,11 +664,11 @@ impl StatisticSet {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
-    /// <p>The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII
-    /// characters.</p>
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
+    /// at least one non-whitespace character.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the dimension. Dimension values cannot contain blank spaces
-    /// or non-ASCII characters.</p>
+    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
+    /// at least one non-whitespace character.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Dimension {
@@ -689,8 +689,8 @@ pub mod dimension {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII
-        /// characters.</p>
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
+        /// at least one non-whitespace character.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -699,8 +699,8 @@ pub mod dimension {
             self.name = input;
             self
         }
-        /// <p>The value of the dimension. Dimension values cannot contain blank spaces
-        /// or non-ASCII characters.</p>
+        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
+        /// at least one non-whitespace character.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
@@ -789,6 +789,10 @@ pub struct MetricDataQuery {
     /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
     /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
     pub period: std::option::Option<i32>,
+    /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+    /// <code>GetMetricData</code> operations.</p>
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MetricDataQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -799,6 +803,7 @@ impl std::fmt::Debug for MetricDataQuery {
         formatter.field("label", &self.label);
         formatter.field("return_data", &self.return_data);
         formatter.field("period", &self.period);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -814,6 +819,7 @@ pub mod metric_data_query {
         pub(crate) label: std::option::Option<std::string::String>,
         pub(crate) return_data: std::option::Option<bool>,
         pub(crate) period: std::option::Option<i32>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A short name used to tie this object to the results in the response. This name must be
@@ -902,6 +908,17 @@ pub mod metric_data_query {
             self.period = input;
             self
         }
+        /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+        /// <code>GetMetricData</code> operations.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MetricDataQuery`](crate::model::MetricDataQuery)
         pub fn build(self) -> crate::model::MetricDataQuery {
             crate::model::MetricDataQuery {
@@ -911,6 +928,7 @@ pub mod metric_data_query {
                 label: self.label,
                 return_data: self.return_data,
                 period: self.period,
+                account_id: self.account_id,
             }
         }
     }
@@ -1981,6 +1999,10 @@ impl Datapoint {
 }
 
 /// <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p>
+/// <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a
+/// value of <code>Authentication too complex to
+/// retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code>
+/// operation in the same Region where the metric data is.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageData {

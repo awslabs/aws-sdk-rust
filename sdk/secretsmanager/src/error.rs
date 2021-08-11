@@ -474,6 +474,7 @@ pub struct DescribeSecretError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecretErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterException(crate::error::InvalidParameterException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -482,6 +483,7 @@ impl std::fmt::Display for DescribeSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeSecretErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeSecretErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DescribeSecretErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeSecretErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -534,6 +536,12 @@ impl DescribeSecretError {
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DescribeSecretErrorKind::InternalServiceError(_))
     }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSecretErrorKind::InvalidParameterException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -545,6 +553,7 @@ impl std::error::Error for DescribeSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeSecretErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -660,6 +669,7 @@ pub struct GetResourcePolicyError {
 #[derive(std::fmt::Debug)]
 pub enum GetResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterException(crate::error::InvalidParameterException),
     InvalidRequestException(crate::error::InvalidRequestException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -669,6 +679,7 @@ impl std::fmt::Display for GetResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetResourcePolicyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            GetResourcePolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             GetResourcePolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -725,6 +736,12 @@ impl GetResourcePolicyError {
             GetResourcePolicyErrorKind::InternalServiceError(_)
         )
     }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePolicyErrorKind::InvalidParameterException(_)
+        )
+    }
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -742,6 +759,7 @@ impl std::error::Error for GetResourcePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetResourcePolicyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            GetResourcePolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -967,6 +985,7 @@ pub struct ListSecretVersionIdsError {
 pub enum ListSecretVersionIdsErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -976,6 +995,7 @@ impl std::fmt::Display for ListSecretVersionIdsError {
         match &self.kind {
             ListSecretVersionIdsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
             ListSecretVersionIdsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListSecretVersionIdsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListSecretVersionIdsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListSecretVersionIdsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1037,6 +1057,12 @@ impl ListSecretVersionIdsError {
             ListSecretVersionIdsErrorKind::InvalidNextTokenException(_)
         )
     }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSecretVersionIdsErrorKind::InvalidParameterException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1049,6 +1075,7 @@ impl std::error::Error for ListSecretVersionIdsError {
         match &self.kind {
             ListSecretVersionIdsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListSecretVersionIdsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListSecretVersionIdsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSecretVersionIdsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListSecretVersionIdsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

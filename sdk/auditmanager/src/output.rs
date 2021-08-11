@@ -563,7 +563,7 @@ pub struct RegisterOrganizationAdminAccountOutput {
     /// </p>
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>
-    /// The identifier for the specified AWS organization.
+    /// The identifier for the specified organization.
     /// </p>
     pub organization_id: std::option::Option<std::string::String>,
 }
@@ -600,7 +600,7 @@ pub mod register_organization_admin_account_output {
             self
         }
         /// <p>
-        /// The identifier for the specified AWS organization.
+        /// The identifier for the specified organization.
         /// </p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
@@ -1184,7 +1184,7 @@ impl ListAssessmentFrameworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSettingsOutput {
     /// <p>
-    /// The settings object that holds all supported AWS Audit Manager settings.
+    /// The settings object that holds all supported Audit Manager settings.
     /// </p>
     pub settings: std::option::Option<crate::model::Settings>,
 }
@@ -1205,7 +1205,7 @@ pub mod get_settings_output {
     }
     impl Builder {
         /// <p>
-        /// The settings object that holds all supported AWS Audit Manager settings.
+        /// The settings object that holds all supported Audit Manager settings.
         /// </p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
             self.settings = Some(input);
@@ -1234,7 +1234,7 @@ impl GetSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServicesInScopeOutput {
     /// <p>
-    /// The metadata associated with the aAWS service.
+    /// The metadata associated with the Amazon Web Service.
     /// </p>
     pub service_metadata: std::option::Option<std::vec::Vec<crate::model::ServiceMetadata>>,
 }
@@ -1978,11 +1978,11 @@ impl GetAssessmentFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentOutput {
     /// <p>
-    /// An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+    /// An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
     /// </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
     /// <p>
-    /// The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
+    /// The wrapper that contains the Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
     /// </p>
     pub user_role: std::option::Option<crate::model::Role>,
 }
@@ -2005,7 +2005,7 @@ pub mod get_assessment_output {
     }
     impl Builder {
         /// <p>
-        /// An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+        /// An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
         /// </p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
@@ -2019,7 +2019,7 @@ pub mod get_assessment_output {
             self
         }
         /// <p>
-        /// The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
+        /// The wrapper that contains the Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
         /// </p>
         pub fn user_role(mut self, input: crate::model::Role) -> Self {
             self.user_role = Some(input);
@@ -2049,7 +2049,7 @@ impl GetAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountStatusOutput {
     /// <p>
-    /// The status of the specified AWS account.
+    /// The status of the specified account.
     /// </p>
     pub status: std::option::Option<crate::model::AccountStatus>,
 }
@@ -2070,7 +2070,7 @@ pub mod get_account_status_output {
     }
     impl Builder {
         /// <p>
-        /// The status of the specified AWS account.
+        /// The status of the specified account.
         /// </p>
         pub fn status(mut self, input: crate::model::AccountStatus) -> Self {
             self.status = Some(input);
@@ -2486,7 +2486,7 @@ impl CreateAssessmentFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentOutput {
     /// <p>
-    /// An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+    /// An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
     /// </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
@@ -2507,7 +2507,7 @@ pub mod create_assessment_output {
     }
     impl Builder {
         /// <p>
-        /// An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+        /// An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
         /// </p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);

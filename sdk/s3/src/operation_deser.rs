@@ -1467,8 +1467,9 @@ pub fn parse_get_bucket_website_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_output::Builder::default();
@@ -1987,9 +1988,10 @@ pub fn parse_get_object_tagging_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_torrent(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
 {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_torrent_output::Builder::default();

@@ -51,14 +51,14 @@ impl GetClip {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetClip {
+impl smithy_http::response::ParseHttpResponse for GetClip {
     type Output = std::result::Result<crate::output::GetClipOutput, crate::error::GetClipError>;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_clip(response))
@@ -493,19 +493,17 @@ impl GetMediaForFragmentList {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody>
-    for GetMediaForFragmentList
-{
+impl smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
     type Output = std::result::Result<
         crate::output::GetMediaForFragmentListOutput,
         crate::error::GetMediaForFragmentListError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_media_for_fragment_list(

@@ -320,7 +320,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>The ID of the AWS account that owns the virtual private gateway or transit gateway.</p>
+        /// <p>The ID of the account that owns the virtual private gateway or transit gateway.</p>
         pub fn associated_gateway_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -336,7 +336,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
-        /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+        /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn override_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             inp: impl Into<crate::model::RouteFilterPrefix>,
@@ -388,7 +388,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners
+        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
         /// who have met specific requirements
         /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -411,7 +411,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_name(input);
             self
         }
-        /// <p>The ID of the AWS account of the customer for whom the connection will be provisioned.</p>
+        /// <p>The ID of the account of the customer for whom the connection will be provisioned.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
             self
@@ -488,7 +488,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the AWS account ID of the customer for the connection.</p>
+        /// <p>The ID of the account ID of the customer for the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
             self
@@ -500,7 +500,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner_account(input);
             self
         }
-        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bandwidth(input);
             self
@@ -586,7 +586,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the AWS account that owns the virtual private interface.</p>
+        /// <p>The ID of the account that owns the virtual private interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
             self
@@ -659,7 +659,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the AWS account that owns the public virtual interface.</p>
+        /// <p>The ID of the account that owns the public virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
             self
@@ -732,7 +732,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the AWS account that owns the transit virtual interface.</p>
+        /// <p>The ID of the account that owns the transit virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
             self
@@ -1370,7 +1370,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn request_mac_sec(mut self, input: bool) -> Self {
             self.inner = self.inner.request_mac_sec(input);
             self
@@ -1492,7 +1492,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
         /// <p>This parameter is required when you create an association to a transit gateway.</p>
-        /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+        /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn add_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             inp: impl Into<crate::model::RouteFilterPrefix>,
@@ -1569,7 +1569,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_direct_connect_gateway_id(input);
             self
         }
-        /// <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -1849,7 +1849,7 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
         /// <note>
-        /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+        /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         /// </note>
         pub fn request_mac_sec(mut self, input: bool) -> Self {
             self.inner = self.inner.request_mac_sec(input);
@@ -3992,7 +3992,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
-        /// <p>AWS applies the value to all connections which are part of the LAG.</p>
+        /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_mode(input);
             self

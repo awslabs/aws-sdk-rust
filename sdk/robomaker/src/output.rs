@@ -2163,6 +2163,8 @@ pub struct DescribeWorldTemplateOutput {
     /// template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The version of the world template that you're using.</p>
+    pub version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeWorldTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2173,6 +2175,7 @@ impl std::fmt::Debug for DescribeWorldTemplateOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
+        formatter.field("version", &self.version);
         formatter.finish()
     }
 }
@@ -2190,6 +2193,7 @@ pub mod describe_world_template_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the world template.</p>
@@ -2264,6 +2268,15 @@ pub mod describe_world_template_output {
             self.tags = input;
             self
         }
+        /// <p>The version of the world template that you're using.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput)
         pub fn build(self) -> crate::output::DescribeWorldTemplateOutput {
             crate::output::DescribeWorldTemplateOutput {
@@ -2273,6 +2286,7 @@ pub mod describe_world_template_output {
                 created_at: self.created_at,
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
+                version: self.version,
             }
         }
     }
@@ -2956,6 +2970,8 @@ pub struct DescribeWorldOutput {
     /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
+    pub world_description_body: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeWorldOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2965,6 +2981,7 @@ impl std::fmt::Debug for DescribeWorldOutput {
         formatter.field("template", &self.template);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
+        formatter.field("world_description_body", &self.world_description_body);
         formatter.finish()
     }
 }
@@ -2981,6 +2998,7 @@ pub mod describe_world_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) world_description_body: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (arn) of the world.</p>
@@ -3042,6 +3060,18 @@ pub mod describe_world_output {
             self.tags = input;
             self
         }
+        /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
+        pub fn world_description_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.world_description_body = Some(input.into());
+            self
+        }
+        pub fn set_world_description_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.world_description_body = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeWorldOutput`](crate::output::DescribeWorldOutput)
         pub fn build(self) -> crate::output::DescribeWorldOutput {
             crate::output::DescribeWorldOutput {
@@ -3050,6 +3080,7 @@ pub mod describe_world_output {
                 template: self.template,
                 created_at: self.created_at,
                 tags: self.tags,
+                world_description_body: self.world_description_body,
             }
         }
     }

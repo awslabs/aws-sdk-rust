@@ -57,6 +57,36 @@ impl smithy_http::response::ParseStrictResponse for AddPartner {
     }
 }
 
+/// <p>From a datashare consumer account, associates a datashare with the
+/// account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer
+/// can consume the datashare.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateDataShareConsumer {
+    _private: (),
+}
+impl AssociateDataShareConsumer {
+    /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
+    pub fn builder() -> crate::input::associate_data_share_consumer_input::Builder {
+        crate::input::associate_data_share_consumer_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for AssociateDataShareConsumer {
+    type Output = std::result::Result<
+        crate::output::AssociateDataShareConsumerOutput,
+        crate::error::AssociateDataShareConsumerError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_data_share_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_associate_data_share_consumer_response(response)
+        }
+    }
+}
+
 /// <p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether
 /// the application accessing your cluster is running on the Internet or an Amazon EC2
 /// instance, you can authorize inbound access to either a Classless Interdomain Routing
@@ -65,7 +95,7 @@ impl smithy_http::response::ParseStrictResponse for AddPartner {
 /// <p>If you authorize access to an Amazon EC2 security group, specify
 /// <i>EC2SecurityGroupName</i> and
 /// <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and
-/// Amazon Redshift cluster must be in the same AWS Region. </p>
+/// Amazon Redshift cluster must be in the same Amazon Web Services Region. </p>
 /// <p>If you authorize access to a CIDR/IP address range, specify
 /// <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia
 /// article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
@@ -102,6 +132,36 @@ impl smithy_http::response::ParseStrictResponse for AuthorizeClusterSecurityGrou
     }
 }
 
+/// <p>From a data producer account, authorizes the sharing of a datashare with one or more
+/// consumer accounts. To authorize a datashare for a data consumer, the producer account
+/// must have the correct access privileges.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AuthorizeDataShare {
+    _private: (),
+}
+impl AuthorizeDataShare {
+    /// Creates a new builder-style object to manufacture [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput)
+    pub fn builder() -> crate::input::authorize_data_share_input::Builder {
+        crate::input::authorize_data_share_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for AuthorizeDataShare {
+    type Output = std::result::Result<
+        crate::output::AuthorizeDataShareOutput,
+        crate::error::AuthorizeDataShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_authorize_data_share_error(response)
+        } else {
+            crate::operation_deser::parse_authorize_data_share_response(response)
+        }
+    }
+}
+
 /// <p>Grants access to a cluster.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeEndpointAccess {
@@ -130,7 +190,7 @@ impl smithy_http::response::ParseStrictResponse for AuthorizeEndpointAccess {
     }
 }
 
-/// <p>Authorizes the specified AWS customer account to restore the specified
+/// <p>Authorizes the specified Amazon Web Services account to restore the specified
 /// snapshot.</p>
 /// <p>
 /// For more information about working with snapshots, go to
@@ -280,6 +340,34 @@ impl smithy_http::response::ParseStrictResponse for CopyClusterSnapshot {
             crate::operation_deser::parse_copy_cluster_snapshot_error(response)
         } else {
             crate::operation_deser::parse_copy_cluster_snapshot_response(response)
+        }
+    }
+}
+
+/// <p>Creates an authentication profile with the specified parameters.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAuthenticationProfile {
+    _private: (),
+}
+impl CreateAuthenticationProfile {
+    /// Creates a new builder-style object to manufacture [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput)
+    pub fn builder() -> crate::input::create_authentication_profile_input::Builder {
+        crate::input::create_authentication_profile_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateAuthenticationProfile {
+    type Output = std::result::Result<
+        crate::output::CreateAuthenticationProfileOutput,
+        crate::error::CreateAuthenticationProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_authentication_profile_error(response)
+        } else {
+            crate::operation_deser::parse_create_authentication_profile_response(response)
         }
     }
 }
@@ -495,9 +583,8 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpointAccess {
 /// and source identifier = my-cluster-1, notifications will be sent for all the cluster
 /// events for my-cluster-1. If you specify a source type but do not specify a source
 /// identifier, you will receive notice of the events for the objects of that type in your
-/// AWS account. If you do not specify either the SourceType nor the SourceIdentifier, you
-/// will be notified of events generated from all Amazon Redshift sources belonging to your AWS
-/// account. You must specify a source type if you specify a source ID.</p>
+/// Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you
+/// will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEventSubscription {
     _private: (),
@@ -625,7 +712,7 @@ impl smithy_http::response::ParseStrictResponse for CreateScheduledAction {
 }
 
 /// <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key
-/// (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied snapshots in a
+/// (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a
 /// destination region.</p>
 /// <p>
 /// For more information about managing snapshot copy grants, go to
@@ -742,6 +829,62 @@ impl smithy_http::response::ParseStrictResponse for CreateUsageLimit {
             crate::operation_deser::parse_create_usage_limit_error(response)
         } else {
             crate::operation_deser::parse_create_usage_limit_response(response)
+        }
+    }
+}
+
+/// <p>From the producer account, removes authorization from the specified datashare. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeauthorizeDataShare {
+    _private: (),
+}
+impl DeauthorizeDataShare {
+    /// Creates a new builder-style object to manufacture [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput)
+    pub fn builder() -> crate::input::deauthorize_data_share_input::Builder {
+        crate::input::deauthorize_data_share_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeauthorizeDataShare {
+    type Output = std::result::Result<
+        crate::output::DeauthorizeDataShareOutput,
+        crate::error::DeauthorizeDataShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deauthorize_data_share_error(response)
+        } else {
+            crate::operation_deser::parse_deauthorize_data_share_response(response)
+        }
+    }
+}
+
+/// <p>Deletes an authentication profile.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteAuthenticationProfile {
+    _private: (),
+}
+impl DeleteAuthenticationProfile {
+    /// Creates a new builder-style object to manufacture [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput)
+    pub fn builder() -> crate::input::delete_authentication_profile_input::Builder {
+        crate::input::delete_authentication_profile_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteAuthenticationProfile {
+    type Output = std::result::Result<
+        crate::output::DeleteAuthenticationProfileOutput,
+        crate::error::DeleteAuthenticationProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_authentication_profile_error(response)
+        } else {
+            crate::operation_deser::parse_delete_authentication_profile_response(response)
         }
     }
 }
@@ -1223,6 +1366,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeAccountAttributes {
     }
 }
 
+/// <p>Describes an authentication profile.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeAuthenticationProfiles {
+    _private: (),
+}
+impl DescribeAuthenticationProfiles {
+    /// Creates a new builder-style object to manufacture [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput)
+    pub fn builder() -> crate::input::describe_authentication_profiles_input::Builder {
+        crate::input::describe_authentication_profiles_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeAuthenticationProfiles {
+    type Output = std::result::Result<
+        crate::output::DescribeAuthenticationProfilesOutput,
+        crate::error::DescribeAuthenticationProfilesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_authentication_profiles_error(response)
+        } else {
+            crate::operation_deser::parse_describe_authentication_profiles_response(response)
+        }
+    }
+}
+
 /// <p>Returns an array of <code>ClusterDbRevision</code> objects.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterDbRevisions {
@@ -1418,8 +1589,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeClusterSecurityGroup
 
 /// <p>Returns one or more snapshot objects, which contain metadata about your cluster
 /// snapshots. By default, this operation returns information about all snapshots of all
-/// clusters that are owned by you AWS customer account. No information is returned for
-/// snapshots owned by inactive AWS customer accounts.</p>
+/// clusters that are owned by your Amazon Web Services account. No information is returned for
+/// snapshots owned by inactive Amazon Web Services accounts.</p>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns
 /// all snapshots that match any combination of the specified keys and values. For example,
 /// if you have <code>owner</code> and <code>environment</code> for tag keys, and
@@ -1458,7 +1629,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeClusterSnapshots {
 
 /// <p>Returns one or more cluster subnet group objects, which contain metadata about your
 /// cluster subnet groups. By default, this operation returns information about all cluster
-/// subnet groups that are defined in you AWS account.</p>
+/// subnet groups that are defined in your Amazon Web Services account.</p>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns
 /// all subnet groups that match any combination of the specified keys and values. For
 /// example, if you have <code>owner</code> and <code>environment</code> for tag keys, and
@@ -1550,6 +1721,91 @@ impl smithy_http::response::ParseStrictResponse for DescribeClusterVersions {
             crate::operation_deser::parse_describe_cluster_versions_error(response)
         } else {
             crate::operation_deser::parse_describe_cluster_versions_response(response)
+        }
+    }
+}
+
+/// <p>Shows the status of any inbound or outbound datashares available in the specified
+/// account.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDataShares {
+    _private: (),
+}
+impl DescribeDataShares {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput)
+    pub fn builder() -> crate::input::describe_data_shares_input::Builder {
+        crate::input::describe_data_shares_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeDataShares {
+    type Output = std::result::Result<
+        crate::output::DescribeDataSharesOutput,
+        crate::error::DescribeDataSharesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_data_shares_error(response)
+        } else {
+            crate::operation_deser::parse_describe_data_shares_response(response)
+        }
+    }
+}
+
+/// <p>Returns a list of datashares where the account identifier being called is a consumer account identifier.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDataSharesForConsumer {
+    _private: (),
+}
+impl DescribeDataSharesForConsumer {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput)
+    pub fn builder() -> crate::input::describe_data_shares_for_consumer_input::Builder {
+        crate::input::describe_data_shares_for_consumer_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeDataSharesForConsumer {
+    type Output = std::result::Result<
+        crate::output::DescribeDataSharesForConsumerOutput,
+        crate::error::DescribeDataSharesForConsumerError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_data_shares_for_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_describe_data_shares_for_consumer_response(response)
+        }
+    }
+}
+
+/// <p>Returns a list of datashares when the account identifier being called is a producer account identifier.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDataSharesForProducer {
+    _private: (),
+}
+impl DescribeDataSharesForProducer {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput)
+    pub fn builder() -> crate::input::describe_data_shares_for_producer_input::Builder {
+        crate::input::describe_data_shares_for_producer_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeDataSharesForProducer {
+    type Output = std::result::Result<
+        crate::output::DescribeDataSharesForProducerOutput,
+        crate::error::DescribeDataSharesForProducerError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_data_shares_for_producer_error(response)
+        } else {
+            crate::operation_deser::parse_describe_data_shares_for_producer_response(response)
         }
     }
 }
@@ -1741,8 +1997,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventSubscriptions {
 }
 
 /// <p>Returns information about the specified HSM client certificate. If no certificate
-/// ID is specified, returns information about all the HSM certificates owned by your AWS
-/// customer account.</p>
+/// ID is specified, returns information about all the HSM certificates owned by your Amazon Web Services account.</p>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns
 /// all HSM client certificates that match any combination of the specified keys and values.
 /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
@@ -1780,7 +2035,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeHsmClientCertificate
 
 /// <p>Returns information about the specified Amazon Redshift HSM configuration. If no
 /// configuration ID is specified, returns information about all the HSM configurations
-/// owned by your AWS customer account.</p>
+/// owned by your Amazon Web Services account.</p>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns
 /// all HSM connections that match any combination of the specified keys and values. For
 /// example, if you have <code>owner</code> and <code>environment</code> for tag keys, and
@@ -1876,7 +2131,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeNodeConfigurationOpt
 
 /// <p>Returns a list of orderable cluster options. Before you create a new cluster you
 /// can use this operation to find what options are available, such as the EC2 Availability
-/// Zones (AZ) in the specific AWS Region that you can specify, and the node types you can
+/// Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can
 /// request. The node types differ by available storage, memory, CPU and price. With the
 /// cost involved you might want to obtain a list of cluster options in the specific region
 /// and specify values when creating a cluster.
@@ -2063,7 +2318,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeScheduledActions {
     }
 }
 
-/// <p>Returns a list of snapshot copy grants owned by the AWS account in the destination
+/// <p>Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination
 /// region.</p>
 /// <p>
 /// For more information about managing snapshot copy grants, go to
@@ -2313,7 +2568,7 @@ impl smithy_http::response::ParseStrictResponse for DisableLogging {
 /// <p>Disables the automatic copying of snapshots from one region to another region for a
 /// specified cluster.</p>
 /// <p>If your cluster and its snapshots are encrypted using a customer master key (CMK)
-/// from AWS KMS, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that
+/// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that
 /// grants Amazon Redshift permission to the CMK in the destination region. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableSnapshotCopy {
@@ -2338,6 +2593,35 @@ impl smithy_http::response::ParseStrictResponse for DisableSnapshotCopy {
             crate::operation_deser::parse_disable_snapshot_copy_error(response)
         } else {
             crate::operation_deser::parse_disable_snapshot_copy_response(response)
+        }
+    }
+}
+
+/// <p>From a consumer account, remove association for the specified datashare.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateDataShareConsumer {
+    _private: (),
+}
+impl DisassociateDataShareConsumer {
+    /// Creates a new builder-style object to manufacture [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
+    pub fn builder() -> crate::input::disassociate_data_share_consumer_input::Builder {
+        crate::input::disassociate_data_share_consumer_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DisassociateDataShareConsumer {
+    type Output = std::result::Result<
+        crate::output::DisassociateDataShareConsumerOutput,
+        crate::error::DisassociateDataShareConsumerError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_data_share_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_data_share_consumer_response(response)
         }
     }
 }
@@ -2407,7 +2691,7 @@ impl smithy_http::response::ParseStrictResponse for EnableSnapshotCopy {
 /// a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more
 /// information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
 /// to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p>
-/// <p>The AWS Identity and Access Management (IAM)user or role that executes
+/// <p>The Identity and Access Management (IAM) user or role that runs
 /// GetClusterCredentials must have an IAM policy attached that allows access to all
 /// necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource Policies for GetClusterCredentials</a> in the
 /// Amazon Redshift Cluster Management Guide.</p>
@@ -2503,12 +2787,40 @@ impl smithy_http::response::ParseStrictResponse for ModifyAquaConfiguration {
     }
 }
 
+/// <p>Modifies an authentication profile.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyAuthenticationProfile {
+    _private: (),
+}
+impl ModifyAuthenticationProfile {
+    /// Creates a new builder-style object to manufacture [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput)
+    pub fn builder() -> crate::input::modify_authentication_profile_input::Builder {
+        crate::input::modify_authentication_profile_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ModifyAuthenticationProfile {
+    type Output = std::result::Result<
+        crate::output::ModifyAuthenticationProfileOutput,
+        crate::error::ModifyAuthenticationProfileError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_authentication_profile_error(response)
+        } else {
+            crate::operation_deser::parse_modify_authentication_profile_response(response)
+        }
+    }
+}
+
 /// <p>Modifies the settings for a cluster.</p>       
 /// <p>You can also change node type and the number of nodes to scale up or down the
 /// cluster. When resizing a cluster, you must specify both the number of nodes and the node
 /// type even if one of the parameters does not change.</p>
 /// <p>You can add another security or
-/// parameter group, or change the master user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect.
+/// parameter group, or change the admin user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect.
 /// For more information about managing clusters, go to
 /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
 /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -2566,8 +2878,8 @@ impl smithy_http::response::ParseStrictResponse for ModifyClusterDbRevision {
     }
 }
 
-/// <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can be
-/// used by the cluster to access other AWS services.</p>
+/// <p>Modifies the list of Identity and Access Management (IAM) roles that can be
+/// used by the cluster to access other Amazon Web Services services.</p>
 /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterIamRoles {
@@ -2624,7 +2936,7 @@ impl smithy_http::response::ParseStrictResponse for ModifyClusterMaintenance {
     }
 }
 
-/// <p>Modifies the parameters of a parameter group.</p>
+/// <p>Modifies the parameters of a parameter group. For the parameters parameter, it can't contain ASCII characters.</p>
 /// <p>
 /// For more information about parameters and parameter groups, go to
 /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
@@ -2827,8 +3139,8 @@ impl smithy_http::response::ParseStrictResponse for ModifyScheduledAction {
     }
 }
 
-/// <p>Modifies the number of days to retain snapshots in the destination AWS Region after
-/// they are copied from the source AWS Region. By default, this operation only changes the
+/// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after
+/// they are copied from the source Amazon Web Services Region. By default, this operation only changes the
 /// retention period of copied automated snapshots. The retention periods for both new and
 /// existing copied automated snapshots are updated with the new retention period. You can
 /// set the manual option to change only the retention periods of copied manual snapshots.
@@ -3010,6 +3322,34 @@ impl smithy_http::response::ParseStrictResponse for RebootCluster {
             crate::operation_deser::parse_reboot_cluster_error(response)
         } else {
             crate::operation_deser::parse_reboot_cluster_response(response)
+        }
+    }
+}
+
+/// <p>From the consumer account, rejects the specified datashare.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RejectDataShare {
+    _private: (),
+}
+impl RejectDataShare {
+    /// Creates a new builder-style object to manufacture [`RejectDataShareInput`](crate::input::RejectDataShareInput)
+    pub fn builder() -> crate::input::reject_data_share_input::Builder {
+        crate::input::reject_data_share_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RejectDataShare {
+    type Output = std::result::Result<
+        crate::output::RejectDataShareOutput,
+        crate::error::RejectDataShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_reject_data_share_error(response)
+        } else {
+            crate::operation_deser::parse_reject_data_share_response(response)
         }
     }
 }
@@ -3277,7 +3617,7 @@ impl smithy_http::response::ParseStrictResponse for RevokeEndpointAccess {
     }
 }
 
-/// <p>Removes the ability of the specified AWS customer account to restore the specified
+/// <p>Removes the ability of the specified  Amazon Web Services account to restore the specified
 /// snapshot. If the account is currently restoring the snapshot, the restore will run to
 /// completion.</p>
 /// <p>

@@ -14779,7 +14779,7 @@ impl NotAuthorizedException {
     }
 }
 
-/// <p>This exception is thrown when a user exceeds the limit for a requested AWS
+/// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
 /// resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -15591,7 +15591,7 @@ impl UserImportInProgressException {
 }
 
 /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-/// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID provided in the role does
+/// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
 /// not match what is provided in the SMS configuration for the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -15787,12 +15787,12 @@ impl InvalidEmailRoleAccessPolicyException {
 }
 
 /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-/// exception with the AWS Lambda service.</p>
+/// exception with the Lambda service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserLambdaValidationException {
     /// <p>The message returned when the Amazon Cognito service returns a user validation
-    /// exception with the AWS Lambda service.</p>
+    /// exception with the Lambda service.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserLambdaValidationException {
@@ -15827,7 +15827,7 @@ pub mod user_lambda_validation_exception {
     }
     impl Builder {
         /// <p>The message returned when the Amazon Cognito service returns a user validation
-        /// exception with the AWS Lambda service.</p>
+        /// exception with the Lambda service.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -15852,11 +15852,11 @@ impl UserLambdaValidationException {
 }
 
 /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-/// exception with the AWS Lambda service.</p>
+/// exception with the Lambda service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnexpectedLambdaException {
-    /// <p>The message returned when the Amazon Cognito service returns an unexpected AWS Lambda
+    /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda
     /// exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -15891,7 +15891,7 @@ pub mod unexpected_lambda_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns an unexpected AWS Lambda
+        /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda
         /// exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
@@ -15916,12 +15916,11 @@ impl UnexpectedLambdaException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-/// Lambda response.</p>
+/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaResponseException {
-    /// <p>The message returned when the Amazon Cognito service throws an invalid AWS Lambda
+    /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda
     /// response exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -15956,7 +15955,7 @@ pub mod invalid_lambda_response_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service throws an invalid AWS Lambda
+        /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda
         /// response exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());

@@ -57,11 +57,26 @@ where
     pub fn list_fhir_datastores(&self) -> fluent_builders::ListFHIRDatastores<C> {
         fluent_builders::ListFHIRDatastores::new(self.handle.clone())
     }
+    pub fn list_fhir_export_jobs(&self) -> fluent_builders::ListFHIRExportJobs<C> {
+        fluent_builders::ListFHIRExportJobs::new(self.handle.clone())
+    }
+    pub fn list_fhir_import_jobs(&self) -> fluent_builders::ListFHIRImportJobs<C> {
+        fluent_builders::ListFHIRImportJobs::new(self.handle.clone())
+    }
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C> {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     pub fn start_fhir_export_job(&self) -> fluent_builders::StartFHIRExportJob<C> {
         fluent_builders::StartFHIRExportJob::new(self.handle.clone())
     }
     pub fn start_fhir_import_job(&self) -> fluent_builders::StartFHIRImportJob<C> {
         fluent_builders::StartFHIRImportJob::new(self.handle.clone())
+    }
+    pub fn tag_resource(&self) -> fluent_builders::TagResource<C> {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource<C> {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -120,6 +135,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_type_version(input);
             self
         }
+        /// <p>
+        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
+        /// </p>
+        pub fn sse_configuration(mut self, input: crate::model::SseConfiguration) -> Self {
+            self.inner = self.inner.sse_configuration(input);
+            self
+        }
+        pub fn set_sse_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SseConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_sse_configuration(input);
+            self
+        }
         /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
         /// supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn preload_data_config(mut self, input: crate::model::PreloadDataConfig) -> Self {
@@ -140,6 +169,20 @@ pub mod fluent_builders {
         }
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>
+        /// Resource tags that are applied to a Data Store when it is created.
+        /// </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -389,6 +432,285 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListFHIRExportJobs<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_fhir_export_jobs_input::Builder,
+    }
+    impl<C> ListFHIRExportJobs<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFhirExportJobsOutput,
+            smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// This parameter limits the response to the export job with the specified Data Store ID.
+        /// </p>
+        pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(input);
+            self
+        }
+        pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_datastore_id(input);
+            self
+        }
+        /// <p>
+        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
+        /// </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the export job with the specified job name.
+        /// </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input);
+            self
+        }
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the export jobs with the specified job status.
+        /// </p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
+            self
+        }
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_job_status(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
+        /// </p>
+        pub fn submitted_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.submitted_before(input);
+            self
+        }
+        pub fn set_submitted_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_submitted_before(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
+        /// </p>
+        pub fn submitted_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.submitted_after(input);
+            self
+        }
+        pub fn set_submitted_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_submitted_after(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListFHIRImportJobs<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_fhir_import_jobs_input::Builder,
+    }
+    impl<C> ListFHIRImportJobs<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFhirImportJobsOutput,
+            smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// This parameter limits the response to the import job with the specified Data Store ID.
+        /// </p>
+        pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(input);
+            self
+        }
+        pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_datastore_id(input);
+            self
+        }
+        /// <p>
+        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
+        /// </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the import job with the specified job name.
+        /// </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input);
+            self
+        }
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to the import job with the specified job status.
+        /// </p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
+            self
+        }
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_job_status(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
+        /// </p>
+        pub fn submitted_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.submitted_before(input);
+            self
+        }
+        pub fn set_submitted_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_submitted_before(input);
+            self
+        }
+        /// <p>
+        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
+        /// </p>
+        pub fn submitted_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.submitted_after(input);
+            self
+        }
+        pub fn set_submitted_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_submitted_after(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListTagsForResource<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl<C> ListTagsForResource<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct StartFHIRExportJob<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::start_fhir_export_job_input::Builder,
@@ -523,6 +845,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
+        /// <p>The output data configuration that was supplied when the export job was created.</p>
+        pub fn job_output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.job_output_data_config(input);
+            self
+        }
+        pub fn set_job_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_job_output_data_config(input);
+            self
+        }
         /// <p>The AWS-generated Data Store ID.</p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.datastore_id(input);
@@ -551,6 +885,120 @@ pub mod fluent_builders {
         }
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct TagResource<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl<C> TagResource<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            smithy_http::result::SdkError<crate::error::TagResourceError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>
+        /// The user specified key and value pair tags being added to a Data Store.
+        /// </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UntagResource<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl<C> UntagResource<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+        /// </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>
+        /// The keys for the tags to be removed from the Healthlake Data Store.
+        /// </p>
+        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(inp);
+            self
+        }
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

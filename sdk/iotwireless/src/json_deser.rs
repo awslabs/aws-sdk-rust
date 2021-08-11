@@ -2756,6 +2756,15 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "AmazonId" => {
+                                builder = builder.set_amazon_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "SidewalkId" => {
                                 builder = builder.set_sidewalk_id(
                                     smithy_json::deserialize::token::expect_string_or_null(

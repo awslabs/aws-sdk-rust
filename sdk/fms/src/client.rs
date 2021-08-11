@@ -150,10 +150,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager
-        /// administrator account. This can be an AWS Organizations master account or a member account.
-        /// For more information about AWS Organizations and master accounts, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS Accounts in Your Organization</a>.  </p>
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+        /// administrator account. This must be an Organizations member account.
+        /// For more information about Organizations, see
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
         pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account(input);
             self
@@ -282,10 +282,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
-        /// <p>For AWS WAF and Shield Advanced policies, the cleanup does the following:</p>
+        /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
         /// <li>
-        /// <p>Deletes rule groups created by AWS Firewall Manager</p>
+        /// <p>Deletes rule groups created by Firewall Manager</p>
         /// </li>
         /// <li>
         /// <p>Removes web ACLs from in-scope resources</p>
@@ -457,7 +457,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Firewall Manager applications list that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.list_id(input);
             self
@@ -466,7 +466,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_list_id(input);
             self
         }
-        /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
         pub fn default_list(mut self, input: bool) -> Self {
             self.inner = self.inner.default_list(input);
             self
@@ -517,7 +517,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>The AWS account that owns the resources that you want to get the details for.</p>
+        /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
         pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account(input);
             self
@@ -593,7 +593,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_id(input);
             self
@@ -643,7 +643,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>The AWS account that is in scope of the policy that you want to get the details
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
         /// for.</p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input);
@@ -657,8 +657,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-        /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.start_time(input);
@@ -669,8 +668,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-        /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.end_time(input);
@@ -681,7 +679,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
+        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
         /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
         /// from the previous response to get information about another batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,7 +690,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of objects that you want AWS Firewall Manager to return for this request. If you have more
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
         /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -735,7 +733,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Firewall Manager protocols list that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.list_id(input);
             self
@@ -744,7 +742,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_list_id(input);
             self
         }
-        /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
         pub fn default_list(mut self, input: bool) -> Self {
             self.inner = self.inner.default_list(input);
             self
@@ -785,7 +783,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_id(input);
             self
@@ -794,7 +792,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>The AWS account ID that you want the details for.</p>
+        /// <p>The Amazon Web Services account ID that you want the details for.</p>
         pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account(input);
             self
@@ -815,7 +813,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource Types Reference</a>.
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
         /// Supported resource types are:
         /// <code>AWS::EC2::Instance</code>,
         /// <code>AWS::EC2::NetworkInterface</code>,
@@ -866,7 +864,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
         pub fn default_lists(mut self, input: bool) -> Self {
             self.inner = self.inner.default_lists(input);
             self
@@ -876,7 +874,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
@@ -886,10 +884,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-        /// objects are available, in the response, AWS Firewall Manager provides a
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+        /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+        /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -930,7 +928,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_id(input);
             self
@@ -941,7 +939,7 @@ pub mod fluent_builders {
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
         /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
         /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
         /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
@@ -954,7 +952,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
         /// Firewall Manager to return for this request. If you have more
         /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
@@ -1000,7 +998,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a
+        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
         /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
         /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
         /// value of <code>NextToken</code> from the previous response to get information about another
@@ -1013,7 +1011,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of member account IDs that you want AWS Firewall Manager to return
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
         /// for this request. If you have more IDs than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
         /// use to get another batch of member account IDs.</p>
@@ -1059,7 +1057,7 @@ pub mod fluent_builders {
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
         /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
         /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
         /// second and subsequent <code>ListPolicies</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
@@ -1072,8 +1070,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall
-        /// Manager to return for this request. If you have more <code>PolicySummary</code> objects than
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
         /// the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of
         /// <code>PolicySummary</code> objects.</p>
@@ -1117,7 +1114,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
         pub fn default_lists(mut self, input: bool) -> Self {
             self.inner = self.inner.default_lists(input);
             self
@@ -1127,7 +1124,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
@@ -1137,10 +1134,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-        /// objects are available, in the response, AWS Firewall Manager provides a
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+        /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+        /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -1181,7 +1178,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -1222,7 +1219,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The details of the AWS Firewall Manager applications list to be created.</p>
+        /// <p>The details of the Firewall Manager applications list to be created.</p>
         pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
             self.inner = self.inner.apps_list(input);
             self
@@ -1278,7 +1275,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
         /// Firewall Manager.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_topic_arn(input);
@@ -1291,7 +1288,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
         /// Firewall Manager activity. </p>
         pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_role_name(input);
@@ -1336,7 +1333,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The details of the AWS Firewall Manager policy to be created.</p>
+        /// <p>The details of the Firewall Manager policy to be created.</p>
         pub fn policy(mut self, input: crate::model::Policy) -> Self {
             self.inner = self.inner.policy(input);
             self
@@ -1345,7 +1342,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p>The tags to add to the AWS resource.</p>
+        /// <p>The tags to add to the Amazon Web Services resource.</p>
         pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tag_list(inp);
             self
@@ -1389,7 +1386,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+        /// <p>The details of the Firewall Manager protocols list to be created.</p>
         pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
             self.inner = self.inner.protocols_list(input);
             self
@@ -1445,7 +1442,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -1498,7 +1495,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self

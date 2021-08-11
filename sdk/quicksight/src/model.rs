@@ -505,8 +505,8 @@ pub struct ResourcePermission {
     /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
     /// </li>
     /// <li>
-    /// <p>The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight
-    /// ARN. Use this option only to share resources (templates) across AWS accounts.
+    /// <p>The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight
+    /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
     /// (This is less common.) </p>
     /// </li>
     /// </ul>
@@ -542,8 +542,8 @@ pub mod resource_permission {
         /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
         /// </li>
         /// <li>
-        /// <p>The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight
-        /// ARN. Use this option only to share resources (templates) across AWS accounts.
+        /// <p>The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight
+        /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
         /// (This is less common.) </p>
         /// </li>
         /// </ul>
@@ -2268,7 +2268,7 @@ pub enum DataSourceParameters {
     AuroraParameters(crate::model::AuroraParameters),
     /// <p>Aurora PostgreSQL parameters.</p>
     AuroraPostgreSqlParameters(crate::model::AuroraPostgreSqlParameters),
-    /// <p>AWS IoT Analytics parameters.</p>
+    /// <p>Amazon Web Services IoT Analytics parameters.</p>
     AwsIotAnalyticsParameters(crate::model::AwsIotAnalyticsParameters),
     /// <p>Jira parameters.</p>
     JiraParameters(crate::model::JiraParameters),
@@ -2912,7 +2912,7 @@ impl ServiceNowParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-    /// uploaded in the console.</p>
+    /// uploaded into QuickSight.</p>
     pub manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
 }
 impl std::fmt::Debug for S3Parameters {
@@ -2932,7 +2932,7 @@ pub mod s3_parameters {
     }
     impl Builder {
         /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-        /// uploaded in the console.</p>
+        /// uploaded into QuickSight.</p>
         pub fn manifest_file_location(mut self, input: crate::model::ManifestFileLocation) -> Self {
             self.manifest_file_location = Some(input);
             self
@@ -3599,7 +3599,7 @@ impl JiraParameters {
     }
 }
 
-/// <p>AWS IoT Analytics parameters.</p>
+/// <p>Amazon Web Services IoT Analytics parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsIotAnalyticsParameters {
@@ -3967,6 +3967,220 @@ impl ColumnLevelPermissionRule {
     }
 }
 
+/// <p>The configuration of tags on a dataset to set row-level security. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RowLevelPermissionTagConfiguration {
+    /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    pub status: std::option::Option<crate::model::Status>,
+    /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
+    pub tag_rules: std::option::Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
+}
+impl std::fmt::Debug for RowLevelPermissionTagConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RowLevelPermissionTagConfiguration");
+        formatter.field("status", &self.status);
+        formatter.field("tag_rules", &self.tag_rules);
+        formatter.finish()
+    }
+}
+/// See [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration)
+pub mod row_level_permission_tag_configuration {
+    /// A builder for [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) tag_rules:
+            std::option::Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
+    }
+    impl Builder {
+        /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
+        pub fn tag_rules(
+            mut self,
+            input: impl Into<crate::model::RowLevelPermissionTagRule>,
+        ) -> Self {
+            let mut v = self.tag_rules.unwrap_or_default();
+            v.push(input.into());
+            self.tag_rules = Some(v);
+            self
+        }
+        pub fn set_tag_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
+        ) -> Self {
+            self.tag_rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration)
+        pub fn build(self) -> crate::model::RowLevelPermissionTagConfiguration {
+            crate::model::RowLevelPermissionTagConfiguration {
+                status: self.status,
+                tag_rules: self.tag_rules,
+            }
+        }
+    }
+}
+impl RowLevelPermissionTagConfiguration {
+    /// Creates a new builder-style object to manufacture [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration)
+    pub fn builder() -> crate::model::row_level_permission_tag_configuration::Builder {
+        crate::model::row_level_permission_tag_configuration::Builder::default()
+    }
+}
+
+/// <p>A set of rules associated with a tag.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RowLevelPermissionTagRule {
+    /// <p>The unique key for a tag.</p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The column name that a tag key is assigned to.</p>
+    pub column_name: std::option::Option<std::string::String>,
+    /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
+    pub tag_multi_value_delimiter: std::option::Option<std::string::String>,
+    /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
+    pub match_all_value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RowLevelPermissionTagRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RowLevelPermissionTagRule");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("column_name", &self.column_name);
+        formatter.field("tag_multi_value_delimiter", &self.tag_multi_value_delimiter);
+        formatter.field("match_all_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule)
+pub mod row_level_permission_tag_rule {
+    /// A builder for [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) column_name: std::option::Option<std::string::String>,
+        pub(crate) tag_multi_value_delimiter: std::option::Option<std::string::String>,
+        pub(crate) match_all_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique key for a tag.</p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>The column name that a tag key is assigned to.</p>
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.column_name = Some(input.into());
+            self
+        }
+        pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.column_name = input;
+            self
+        }
+        /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
+        pub fn tag_multi_value_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_multi_value_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_tag_multi_value_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tag_multi_value_delimiter = input;
+            self
+        }
+        /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
+        pub fn match_all_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.match_all_value = Some(input.into());
+            self
+        }
+        pub fn set_match_all_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.match_all_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule)
+        pub fn build(self) -> crate::model::RowLevelPermissionTagRule {
+            crate::model::RowLevelPermissionTagRule {
+                tag_key: self.tag_key,
+                column_name: self.column_name,
+                tag_multi_value_delimiter: self.tag_multi_value_delimiter,
+                match_all_value: self.match_all_value,
+            }
+        }
+    }
+}
+impl RowLevelPermissionTagRule {
+    /// Creates a new builder-style object to manufacture [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule)
+    pub fn builder() -> crate::model::row_level_permission_tag_rule::Builder {
+        crate::model::row_level_permission_tag_rule::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Status {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Status {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => Status::Disabled,
+            "ENABLED" => Status::Enabled,
+            other => Status::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Status {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Status::from(s))
+    }
+}
+impl Status {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Status::Disabled => "DISABLED",
+            Status::Enabled => "ENABLED",
+            Status::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for Status {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a dataset that contains permissions for row-level security (RLS).
 /// The permissions dataset maps fields to users or groups. For more information, see
 /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User
@@ -3986,6 +4200,8 @@ pub struct RowLevelPermissionDataSet {
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
     pub format_version: std::option::Option<crate::model::RowLevelPermissionFormatVersion>,
+    /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    pub status: std::option::Option<crate::model::Status>,
 }
 impl std::fmt::Debug for RowLevelPermissionDataSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3994,6 +4210,7 @@ impl std::fmt::Debug for RowLevelPermissionDataSet {
         formatter.field("arn", &self.arn);
         formatter.field("permission_policy", &self.permission_policy);
         formatter.field("format_version", &self.format_version);
+        formatter.field("status", &self.status);
         formatter.finish()
     }
 }
@@ -4008,6 +4225,7 @@ pub mod row_level_permission_data_set {
         pub(crate) permission_policy: std::option::Option<crate::model::RowLevelPermissionPolicy>,
         pub(crate) format_version:
             std::option::Option<crate::model::RowLevelPermissionFormatVersion>,
+        pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
         /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
@@ -4057,6 +4275,15 @@ pub mod row_level_permission_data_set {
             self.format_version = input;
             self
         }
+        /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RowLevelPermissionDataSet`](crate::model::RowLevelPermissionDataSet)
         pub fn build(self) -> crate::model::RowLevelPermissionDataSet {
             crate::model::RowLevelPermissionDataSet {
@@ -4064,6 +4291,7 @@ pub mod row_level_permission_data_set {
                 arn: self.arn,
                 permission_policy: self.permission_policy,
                 format_version: self.format_version,
+                status: self.status,
             }
         }
     }
@@ -4956,9 +5184,9 @@ impl TransformOperation {
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     pub column_name: std::option::Option<std::string::String>,
-    /// <p>The dataset column tag, currently only used for geospatial type tagging. .</p>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
     /// <note>
-    /// <p>This is not tags for the AWS tagging feature. .</p>
+    /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ColumnTag>>,
 }
@@ -7276,7 +7504,7 @@ impl AnalysisSourceTemplate {
     }
 }
 
-/// <p>The Amazon QuickSight customizations associated with your AWS account or a QuickSight namespace in a specific AWS Region.</p>
+/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account; or a QuickSight namespace in a specific Region;.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountCustomization {
@@ -8020,8 +8248,7 @@ pub struct AnalysisSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>The name of the analysis. This name is displayed in the QuickSight console.
-    /// </p>
+    /// <p>The name of the analysis. This name is displayed in the QuickSight console.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The last known status for the analysis.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
@@ -8074,8 +8301,7 @@ pub mod analysis_summary {
             self.analysis_id = input;
             self
         }
-        /// <p>The name of the analysis. This name is displayed in the QuickSight console.
-        /// </p>
+        /// <p>The name of the analysis. This name is displayed in the QuickSight console.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -8393,7 +8619,7 @@ pub struct ThemeSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>the display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the theme. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the theme. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The latest version number for the theme. </p>
     pub latest_version_number: std::option::Option<i64>,
@@ -8446,7 +8672,7 @@ pub mod theme_summary {
             self.name = input;
             self
         }
-        /// <p>The ID of the theme. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the theme. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
@@ -8676,7 +8902,7 @@ impl TemplateVersionSummary {
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the template. This ID is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID of the template. This ID is unique per Region; for each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -8722,7 +8948,7 @@ pub mod template_summary {
             self.arn = input;
             self
         }
-        /// <p>The ID of the template. This ID is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID of the template. This ID is unique per Region; for each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -8801,7 +9027,7 @@ pub struct NamespaceInfoV2 {
     pub name: std::option::Option<std::string::String>,
     /// <p>The namespace ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The namespace AWS Region.</p>
+    /// <p>The namespace Region;.</p>
     pub capacity_region: std::option::Option<std::string::String>,
     /// <p>The creation status of a namespace that is not yet completely created.</p>
     pub creation_status: std::option::Option<crate::model::NamespaceStatus>,
@@ -8854,7 +9080,7 @@ pub mod namespace_info_v2 {
             self.arn = input;
             self
         }
-        /// <p>The namespace AWS Region.</p>
+        /// <p>The namespace Region;.</p>
         pub fn capacity_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.capacity_region = Some(input.into());
             self
@@ -9940,7 +10166,7 @@ impl AsRef<str> for IngestionStatus {
     }
 }
 
-/// <p>The active AWS Identity and Access Management (IAM) policy assignment.</p>
+/// <p>The active Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveIamPolicyAssignment {
@@ -10200,8 +10426,8 @@ impl MemberIdArnPair {
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-    /// account.</p>
+    /// <p>The ID of the data source. This ID is unique per Region; for each
+    /// Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -10290,8 +10516,8 @@ pub mod data_source {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-        /// account.</p>
+        /// <p>The ID of the data source. This ID is unique per Region; for each
+        /// Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -10756,6 +10982,8 @@ pub struct DataSetSummary {
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
     /// <p>The row-level security configuration for the dataset.</p>
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
+    /// <p>Whether or not the row level permission tags are applied.</p>
+    pub row_level_permission_tag_configuration_applied: bool,
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub column_level_permission_rules_applied: bool,
 }
@@ -10771,6 +10999,10 @@ impl std::fmt::Debug for DataSetSummary {
         formatter.field(
             "row_level_permission_data_set",
             &self.row_level_permission_data_set,
+        );
+        formatter.field(
+            "row_level_permission_tag_configuration_applied",
+            &self.row_level_permission_tag_configuration_applied,
         );
         formatter.field(
             "column_level_permission_rules_applied",
@@ -10793,6 +11025,7 @@ pub mod data_set_summary {
         pub(crate) import_mode: std::option::Option<crate::model::DataSetImportMode>,
         pub(crate) row_level_permission_data_set:
             std::option::Option<crate::model::RowLevelPermissionDataSet>,
+        pub(crate) row_level_permission_tag_configuration_applied: std::option::Option<bool>,
         pub(crate) column_level_permission_rules_applied: std::option::Option<bool>,
     }
     impl Builder {
@@ -10874,6 +11107,18 @@ pub mod data_set_summary {
             self.row_level_permission_data_set = input;
             self
         }
+        /// <p>Whether or not the row level permission tags are applied.</p>
+        pub fn row_level_permission_tag_configuration_applied(mut self, input: bool) -> Self {
+            self.row_level_permission_tag_configuration_applied = Some(input);
+            self
+        }
+        pub fn set_row_level_permission_tag_configuration_applied(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.row_level_permission_tag_configuration_applied = input;
+            self
+        }
         /// <p>A value that indicates if the dataset has column level permission configured.</p>
         pub fn column_level_permission_rules_applied(mut self, input: bool) -> Self {
             self.column_level_permission_rules_applied = Some(input);
@@ -10896,6 +11141,9 @@ pub mod data_set_summary {
                 last_updated_time: self.last_updated_time,
                 import_mode: self.import_mode,
                 row_level_permission_data_set: self.row_level_permission_data_set,
+                row_level_permission_tag_configuration_applied: self
+                    .row_level_permission_tag_configuration_applied
+                    .unwrap_or_default(),
                 column_level_permission_rules_applied: self
                     .column_level_permission_rules_applied
                     .unwrap_or_default(),
@@ -11086,6 +11334,470 @@ impl EmbeddingIdentityType {
 impl AsRef<str> for EmbeddingIdentityType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The type of experience you want to embed. For registered users, you can embed an Amazon QuickSight dashboard or the Amazon QuickSight console.</p>
+/// <note>
+/// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuraton.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisteredUserEmbeddingExperienceConfiguration {
+    /// <p>The configuration details for providing a dashboard embedding experience.</p>
+    pub dashboard: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
+    /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+    /// Guide</i>.</p>
+    /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+    /// you want to provide an authoring portal that allows users to create data sources,
+    /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
+    /// needs to belong to the author or admin security cohort. If you want to restrict permissions
+    /// to some of these features, add a custom permissions profile to the user with the
+    /// <code>
+    /// <a>UpdateUser</a>
+    /// </code> API operation. Use <code>
+    /// <a>RegisterUser</a>
+    /// </code> API operation to add a new user with a custom permission profile attached. For more
+    /// information, see the following sections in the <i>Amazon QuickSight User
+    /// Guide</i>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+    pub quick_sight_console:
+        std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
+}
+impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisteredUserEmbeddingExperienceConfiguration");
+        formatter.field("dashboard", &self.dashboard);
+        formatter.field("quick_sight_console", &self.quick_sight_console);
+        formatter.finish()
+    }
+}
+/// See [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
+pub mod registered_user_embedding_experience_configuration {
+    /// A builder for [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dashboard:
+            std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
+        pub(crate) quick_sight_console: std::option::Option<
+            crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration,
+        >,
+    }
+    impl Builder {
+        /// <p>The configuration details for providing a dashboard embedding experience.</p>
+        pub fn dashboard(
+            mut self,
+            input: crate::model::RegisteredUserDashboardEmbeddingConfiguration,
+        ) -> Self {
+            self.dashboard = Some(input);
+            self
+        }
+        pub fn set_dashboard(
+            mut self,
+            input: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
+        ) -> Self {
+            self.dashboard = input;
+            self
+        }
+        /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+        /// Guide</i>.</p>
+        /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+        /// you want to provide an authoring portal that allows users to create data sources,
+        /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
+        /// needs to belong to the author or admin security cohort. If you want to restrict permissions
+        /// to some of these features, add a custom permissions profile to the user with the
+        /// <code>
+        /// <a>UpdateUser</a>
+        /// </code> API operation. Use <code>
+        /// <a>RegisterUser</a>
+        /// </code> API operation to add a new user with a custom permission profile attached. For more
+        /// information, see the following sections in the <i>Amazon QuickSight User
+        /// Guide</i>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+        pub fn quick_sight_console(
+            mut self,
+            input: crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration,
+        ) -> Self {
+            self.quick_sight_console = Some(input);
+            self
+        }
+        pub fn set_quick_sight_console(
+            mut self,
+            input: std::option::Option<
+                crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration,
+            >,
+        ) -> Self {
+            self.quick_sight_console = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
+        pub fn build(self) -> crate::model::RegisteredUserEmbeddingExperienceConfiguration {
+            crate::model::RegisteredUserEmbeddingExperienceConfiguration {
+                dashboard: self.dashboard,
+                quick_sight_console: self.quick_sight_console,
+            }
+        }
+    }
+}
+impl RegisteredUserEmbeddingExperienceConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
+    pub fn builder() -> crate::model::registered_user_embedding_experience_configuration::Builder {
+        crate::model::registered_user_embedding_experience_configuration::Builder::default()
+    }
+}
+
+/// <p>Information about the Amazon QuickSight console that you want to embed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+    /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
+    /// <p>The entry point URL is constrained to the following paths:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/start</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/analyses</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/dashboards</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/favorites</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
+    /// </li>
+    /// </ul>
+    pub initial_path: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisteredUserQuickSightConsoleEmbeddingConfiguration");
+        formatter.field("initial_path", &self.initial_path);
+        formatter.finish()
+    }
+}
+/// See [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration)
+pub mod registered_user_quick_sight_console_embedding_configuration {
+    /// A builder for [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
+        /// <p>The entry point URL is constrained to the following paths:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>/start</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/start/analyses</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/start/dashboards</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/start/favorites</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
+        /// </li>
+        /// </ul>
+        pub fn initial_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.initial_path = Some(input.into());
+            self
+        }
+        pub fn set_initial_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.initial_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration)
+        pub fn build(self) -> crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+            crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+                initial_path: self.initial_path,
+            }
+        }
+    }
+}
+impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration)
+    pub fn builder(
+    ) -> crate::model::registered_user_quick_sight_console_embedding_configuration::Builder {
+        crate::model::registered_user_quick_sight_console_embedding_configuration::Builder::default(
+        )
+    }
+}
+
+/// <p>Information about the dashboard you want to embed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisteredUserDashboardEmbeddingConfiguration {
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
+    /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
+    pub initial_dashboard_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegisteredUserDashboardEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisteredUserDashboardEmbeddingConfiguration");
+        formatter.field("initial_dashboard_id", &self.initial_dashboard_id);
+        formatter.finish()
+    }
+}
+/// See [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration)
+pub mod registered_user_dashboard_embedding_configuration {
+    /// A builder for [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
+        /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
+        pub fn initial_dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.initial_dashboard_id = Some(input.into());
+            self
+        }
+        pub fn set_initial_dashboard_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.initial_dashboard_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration)
+        pub fn build(self) -> crate::model::RegisteredUserDashboardEmbeddingConfiguration {
+            crate::model::RegisteredUserDashboardEmbeddingConfiguration {
+                initial_dashboard_id: self.initial_dashboard_id,
+            }
+        }
+    }
+}
+impl RegisteredUserDashboardEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration)
+    pub fn builder() -> crate::model::registered_user_dashboard_embedding_configuration::Builder {
+        crate::model::registered_user_dashboard_embedding_configuration::Builder::default()
+    }
+}
+
+/// <p>The type of experience you want to embed. For anonymous users, you can embed an Amazon QuickSight dashboard.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnonymousUserEmbeddingExperienceConfiguration {
+    /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+    pub dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+}
+impl std::fmt::Debug for AnonymousUserEmbeddingExperienceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnonymousUserEmbeddingExperienceConfiguration");
+        formatter.field("dashboard", &self.dashboard);
+        formatter.finish()
+    }
+}
+/// See [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration)
+pub mod anonymous_user_embedding_experience_configuration {
+    /// A builder for [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dashboard:
+            std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+    }
+    impl Builder {
+        /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+        pub fn dashboard(
+            mut self,
+            input: crate::model::AnonymousUserDashboardEmbeddingConfiguration,
+        ) -> Self {
+            self.dashboard = Some(input);
+            self
+        }
+        pub fn set_dashboard(
+            mut self,
+            input: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+        ) -> Self {
+            self.dashboard = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration)
+        pub fn build(self) -> crate::model::AnonymousUserEmbeddingExperienceConfiguration {
+            crate::model::AnonymousUserEmbeddingExperienceConfiguration {
+                dashboard: self.dashboard,
+            }
+        }
+    }
+}
+impl AnonymousUserEmbeddingExperienceConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration)
+    pub fn builder() -> crate::model::anonymous_user_embedding_experience_configuration::Builder {
+        crate::model::anonymous_user_embedding_experience_configuration::Builder::default()
+    }
+}
+
+/// <p>Information about the dashboard that you want to embed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnonymousUserDashboardEmbeddingConfiguration {
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub initial_dashboard_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AnonymousUserDashboardEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnonymousUserDashboardEmbeddingConfiguration");
+        formatter.field("initial_dashboard_id", &self.initial_dashboard_id);
+        formatter.finish()
+    }
+}
+/// See [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration)
+pub mod anonymous_user_dashboard_embedding_configuration {
+    /// A builder for [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
+        /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+        pub fn initial_dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.initial_dashboard_id = Some(input.into());
+            self
+        }
+        pub fn set_initial_dashboard_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.initial_dashboard_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration)
+        pub fn build(self) -> crate::model::AnonymousUserDashboardEmbeddingConfiguration {
+            crate::model::AnonymousUserDashboardEmbeddingConfiguration {
+                initial_dashboard_id: self.initial_dashboard_id,
+            }
+        }
+    }
+}
+impl AnonymousUserDashboardEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration)
+    pub fn builder() -> crate::model::anonymous_user_dashboard_embedding_configuration::Builder {
+        crate::model::anonymous_user_dashboard_embedding_configuration::Builder::default()
+    }
+}
+
+/// <p>The key-value pair used for the row-level security tags feature.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SessionTag {
+    /// <p>The key for the tag.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value that you want to assign the tag.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SessionTag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SessionTag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`SessionTag`](crate::model::SessionTag)
+pub mod session_tag {
+    /// A builder for [`SessionTag`](crate::model::SessionTag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The key for the tag.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value that you want to assign the tag.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionTag`](crate::model::SessionTag)
+        pub fn build(self) -> crate::model::SessionTag {
+            crate::model::SessionTag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl SessionTag {
+    /// Creates a new builder-style object to manufacture [`SessionTag`](crate::model::SessionTag)
+    pub fn builder() -> crate::model::session_tag::Builder {
+        crate::model::session_tag::Builder::default()
     }
 }
 
@@ -11511,7 +12223,7 @@ impl AsRef<str> for ThemeErrorType {
 /// dataset associated with an analysis. You can use templates to create dashboards by
 /// replacing dataset placeholders with datasets that follow the same schema that was used
 /// to create the source analysis and template.</p>
-/// <p>You can share templates across AWS accounts by allowing users in other AWS accounts to
+/// <p>You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to
 /// create a template or a dashboard from an existing template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11522,7 +12234,7 @@ pub struct Template {
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure describing the versions of the template.</p>
     pub version: std::option::Option<crate::model::TemplateVersion>,
-    /// <p>The ID for the template. This is unique per AWS Region for each AWS account.</p>
+    /// <p>The ID for the template. This is unique per Region; for each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>Time when this was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
@@ -11585,7 +12297,7 @@ pub mod template {
             self.version = input;
             self
         }
-        /// <p>The ID for the template. This is unique per AWS Region for each AWS account.</p>
+        /// <p>The ID for the template. This is unique per Region; for each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -11828,7 +12540,7 @@ impl TemplateVersion {
 }
 
 /// <p>A <i>sheet</i>, which is an object that contains a set of visuals that
-/// are viewed together on one page in the Amazon QuickSight console. Every analysis and dashboard
+/// are viewed together on one page in Amazon QuickSight. Every analysis and dashboard
 /// contains at least one sheet. Each sheet contains at least one visualization widget, for
 /// example a chart, pivot table, or narrative insight. Sheets can be associated with other
 /// components, such as controls, filters, and so on.</p>
@@ -12354,11 +13066,11 @@ impl AsRef<str> for TemplateErrorType {
     }
 }
 
-/// <p>An AWS Identity and Access Management (IAM) policy assignment.</p>
+/// <p>An Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignment {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>Assignment ID.</p>
     pub assignment_id: std::option::Option<std::string::String>,
@@ -12401,7 +13113,7 @@ pub mod iam_policy_assignment {
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account; ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12681,6 +13393,9 @@ pub struct DataSet {
     >,
     /// <p>The row-level security configuration for the dataset.</p>
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
+    /// <p>The element you can use to define tags for row-level security.</p>
+    pub row_level_permission_tag_configuration:
+        std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code>
     /// <a>ColumnLevelPermissionRule</a>
     /// </code>.</p>
@@ -12708,6 +13423,10 @@ impl std::fmt::Debug for DataSet {
         formatter.field(
             "row_level_permission_data_set",
             &self.row_level_permission_data_set,
+        );
+        formatter.field(
+            "row_level_permission_tag_configuration",
+            &self.row_level_permission_tag_configuration,
         );
         formatter.field(
             "column_level_permission_rules",
@@ -12742,6 +13461,8 @@ pub mod data_set {
         >,
         pub(crate) row_level_permission_data_set:
             std::option::Option<crate::model::RowLevelPermissionDataSet>,
+        pub(crate) row_level_permission_tag_configuration:
+            std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     }
@@ -12920,6 +13641,21 @@ pub mod data_set {
             self.row_level_permission_data_set = input;
             self
         }
+        /// <p>The element you can use to define tags for row-level security.</p>
+        pub fn row_level_permission_tag_configuration(
+            mut self,
+            input: crate::model::RowLevelPermissionTagConfiguration,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = Some(input);
+            self
+        }
+        pub fn set_row_level_permission_tag_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
+        ) -> Self {
+            self.row_level_permission_tag_configuration = input;
+            self
+        }
         pub fn column_level_permission_rules(
             mut self,
             input: impl Into<crate::model::ColumnLevelPermissionRule>,
@@ -12954,6 +13690,7 @@ pub mod data_set {
                 column_groups: self.column_groups,
                 field_folders: self.field_folders,
                 row_level_permission_data_set: self.row_level_permission_data_set,
+                row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
             }
         }
@@ -13874,18 +14611,18 @@ impl AsRef<str> for AnalysisErrorType {
     }
 }
 
-/// <p>The QuickSight settings associated with your AWS account.</p>
+/// <p>The QuickSight settings associated with your Amazon Web Services account;.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
-    /// <p>The "account name" you provided for the QuickSight subscription in your AWS account.
-    /// You create this name when you sign up for QuickSight. It is unique in all of AWS and
-    /// it appears only in the console when users sign in.</p>
+    /// <p>The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;.
+    /// You create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and
+    /// it appears only when users sign in.</p>
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The edition of QuickSight that you're currently subscribed to:
     /// Enterprise edition or Standard edition.</p>
     pub edition: std::option::Option<crate::model::Edition>,
-    /// <p>The default QuickSight namespace for your AWS account. </p>
+    /// <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
     pub default_namespace: std::option::Option<std::string::String>,
     /// <p>The main notification email for your QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
@@ -13912,9 +14649,9 @@ pub mod account_settings {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The "account name" you provided for the QuickSight subscription in your AWS account.
-        /// You create this name when you sign up for QuickSight. It is unique in all of AWS and
-        /// it appears only in the console when users sign in.</p>
+        /// <p>The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;.
+        /// You create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and
+        /// it appears only when users sign in.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_name = Some(input.into());
             self
@@ -13933,7 +14670,7 @@ pub mod account_settings {
             self.edition = input;
             self
         }
-        /// <p>The default QuickSight namespace for your AWS account. </p>
+        /// <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_namespace = Some(input.into());
             self

@@ -216,7 +216,7 @@ pub mod fluent_builders {
         /// initial version is created as part of the secret, and this parameter specifies a unique
         /// identifier for the new version. </p>
         /// <note>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
         /// as the value for this parameter in the request. If you don't use the SDK and instead
         /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
@@ -265,13 +265,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
+        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
         /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
         /// versions stored in this secret.</p>
-        /// <p>You can specify any of the supported ways to identify a AWS KMS key ID. If you need to
+        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
         /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-        /// <p>If you don't specify this value, then Secrets Manager defaults to using the AWS account's
-        /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
+        /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
         /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
         /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
         /// <important>
@@ -295,7 +295,7 @@ pub mod fluent_builders {
         /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
         /// both. They cannot both be empty.</p>
         /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-        /// using the AWS CLI or one of the AWS SDKs.</p>
+        /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
         pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
             self.inner = self.inner.secret_binary(input);
             self
@@ -315,7 +315,7 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
         /// <p>
         /// <code>{"username":"bob","password":"abc123xyz456"}</code>
         /// </p>
@@ -352,7 +352,7 @@ pub mod fluent_builders {
         /// </important>
         /// <p>This parameter requires a JSON text string argument. For information on how to format a
         /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
         /// <p>
         /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
         /// </p>
@@ -373,8 +373,8 @@ pub mod fluent_builders {
         /// <p>Tag keys and values are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it
-        /// for AWS use. You can't edit or delete tag names or values with this
+        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
+        /// for Amazon Web Services use. You can't edit or delete tag names or values with this
         /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
         /// </li>
         /// <li>
@@ -557,7 +557,7 @@ pub mod fluent_builders {
         /// retry logic.</p>
         /// <important>
         /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-        /// waiting period before the permanent deletion that AWS would normally impose with the
+        /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
         /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
         /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
         /// the secret. You lose the secret permanently.</p>
@@ -1138,11 +1138,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_id(input);
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
         /// resource-based policy. The policy in the string identifies who can access or manage this
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_policy(input);
             self
@@ -1223,7 +1223,7 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
         /// <note>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
         /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
@@ -1287,7 +1287,7 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>.</p>
         /// <p> For example:</p>
         /// <p>
         /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
@@ -1560,7 +1560,7 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
         /// ensure idempotency. </p>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
         /// request to the Secrets Manager service endpoint, then you must generate a
@@ -1707,8 +1707,8 @@ pub mod fluent_builders {
         /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
         /// and a <code>Value</code>.</p>
         /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the
-        /// AWS CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For the
+        /// CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
         /// Key="Key2",Value="Value2"[,…]</code>
         /// </p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
@@ -1781,7 +1781,7 @@ pub mod fluent_builders {
         /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
         /// key and its associated value are removed.</p>
         /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
@@ -1852,7 +1852,7 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
         /// unique identifier for the new version that helps ensure idempotency. </p>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
         /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
@@ -1900,7 +1900,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) to be
         /// used to encrypt the protected text in new versions of this secret.</p>
         /// <important>
         /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
@@ -1941,7 +1941,7 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
         /// <p>
         /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
         /// </p>
@@ -2121,11 +2121,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_id(input);
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
         /// resource-based policy. The policy in the string identifies who can access or manage this
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi</p>
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_policy(input);
             self

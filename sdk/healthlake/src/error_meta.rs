@@ -27,6 +27,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError>>
     fn from(err: smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateFHIRDatastoreErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::CreateFHIRDatastoreErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -167,6 +170,78 @@ impl From<smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError>> 
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListFHIRExportJobsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListFHIRExportJobsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListFHIRExportJobsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListFHIRExportJobsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListFHIRExportJobsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListFHIRExportJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListFHIRImportJobsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListFHIRImportJobsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListFHIRImportJobsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListFHIRImportJobsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListFHIRImportJobsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListFHIRImportJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::StartFHIRExportJobError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::StartFHIRExportJobError>) -> Self {
         match err {
@@ -216,6 +291,38 @@ impl From<smithy_http::result::SdkError<crate::error::StartFHIRImportJobError>> 
                 crate::error::StartFHIRImportJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::TagResourceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

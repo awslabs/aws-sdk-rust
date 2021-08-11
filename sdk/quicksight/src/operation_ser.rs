@@ -129,6 +129,32 @@ pub fn serialize_operation_create_theme_alias(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_generate_embed_url_for_anonymous_user(
+    input: &crate::input::GenerateEmbedUrlForAnonymousUserInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_generate_embed_url_for_anonymous_user_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_generate_embed_url_for_registered_user(
+    input: &crate::input::GenerateEmbedUrlForRegisteredUserInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_generate_embed_url_for_registered_user_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_list_iam_policy_assignments(
     input: &crate::input::ListIamPolicyAssignmentsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

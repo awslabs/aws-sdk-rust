@@ -45,10 +45,16 @@ where
     pub fn add_partner(&self) -> fluent_builders::AddPartner<C> {
         fluent_builders::AddPartner::new(self.handle.clone())
     }
+    pub fn associate_data_share_consumer(&self) -> fluent_builders::AssociateDataShareConsumer<C> {
+        fluent_builders::AssociateDataShareConsumer::new(self.handle.clone())
+    }
     pub fn authorize_cluster_security_group_ingress(
         &self,
     ) -> fluent_builders::AuthorizeClusterSecurityGroupIngress<C> {
         fluent_builders::AuthorizeClusterSecurityGroupIngress::new(self.handle.clone())
+    }
+    pub fn authorize_data_share(&self) -> fluent_builders::AuthorizeDataShare<C> {
+        fluent_builders::AuthorizeDataShare::new(self.handle.clone())
     }
     pub fn authorize_endpoint_access(&self) -> fluent_builders::AuthorizeEndpointAccess<C> {
         fluent_builders::AuthorizeEndpointAccess::new(self.handle.clone())
@@ -71,6 +77,9 @@ where
     }
     pub fn copy_cluster_snapshot(&self) -> fluent_builders::CopyClusterSnapshot<C> {
         fluent_builders::CopyClusterSnapshot::new(self.handle.clone())
+    }
+    pub fn create_authentication_profile(&self) -> fluent_builders::CreateAuthenticationProfile<C> {
+        fluent_builders::CreateAuthenticationProfile::new(self.handle.clone())
     }
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C> {
         fluent_builders::CreateCluster::new(self.handle.clone())
@@ -115,6 +124,12 @@ where
     }
     pub fn create_usage_limit(&self) -> fluent_builders::CreateUsageLimit<C> {
         fluent_builders::CreateUsageLimit::new(self.handle.clone())
+    }
+    pub fn deauthorize_data_share(&self) -> fluent_builders::DeauthorizeDataShare<C> {
+        fluent_builders::DeauthorizeDataShare::new(self.handle.clone())
+    }
+    pub fn delete_authentication_profile(&self) -> fluent_builders::DeleteAuthenticationProfile<C> {
+        fluent_builders::DeleteAuthenticationProfile::new(self.handle.clone())
     }
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
@@ -166,6 +181,11 @@ where
     pub fn describe_account_attributes(&self) -> fluent_builders::DescribeAccountAttributes<C> {
         fluent_builders::DescribeAccountAttributes::new(self.handle.clone())
     }
+    pub fn describe_authentication_profiles(
+        &self,
+    ) -> fluent_builders::DescribeAuthenticationProfiles<C> {
+        fluent_builders::DescribeAuthenticationProfiles::new(self.handle.clone())
+    }
     pub fn describe_cluster_db_revisions(&self) -> fluent_builders::DescribeClusterDbRevisions<C> {
         fluent_builders::DescribeClusterDbRevisions::new(self.handle.clone())
     }
@@ -198,6 +218,19 @@ where
     }
     pub fn describe_cluster_versions(&self) -> fluent_builders::DescribeClusterVersions<C> {
         fluent_builders::DescribeClusterVersions::new(self.handle.clone())
+    }
+    pub fn describe_data_shares(&self) -> fluent_builders::DescribeDataShares<C> {
+        fluent_builders::DescribeDataShares::new(self.handle.clone())
+    }
+    pub fn describe_data_shares_for_consumer(
+        &self,
+    ) -> fluent_builders::DescribeDataSharesForConsumer<C> {
+        fluent_builders::DescribeDataSharesForConsumer::new(self.handle.clone())
+    }
+    pub fn describe_data_shares_for_producer(
+        &self,
+    ) -> fluent_builders::DescribeDataSharesForProducer<C> {
+        fluent_builders::DescribeDataSharesForProducer::new(self.handle.clone())
     }
     pub fn describe_default_cluster_parameters(
         &self,
@@ -283,6 +316,11 @@ where
     pub fn disable_snapshot_copy(&self) -> fluent_builders::DisableSnapshotCopy<C> {
         fluent_builders::DisableSnapshotCopy::new(self.handle.clone())
     }
+    pub fn disassociate_data_share_consumer(
+        &self,
+    ) -> fluent_builders::DisassociateDataShareConsumer<C> {
+        fluent_builders::DisassociateDataShareConsumer::new(self.handle.clone())
+    }
     pub fn enable_logging(&self) -> fluent_builders::EnableLogging<C> {
         fluent_builders::EnableLogging::new(self.handle.clone())
     }
@@ -299,6 +337,9 @@ where
     }
     pub fn modify_aqua_configuration(&self) -> fluent_builders::ModifyAquaConfiguration<C> {
         fluent_builders::ModifyAquaConfiguration::new(self.handle.clone())
+    }
+    pub fn modify_authentication_profile(&self) -> fluent_builders::ModifyAuthenticationProfile<C> {
+        fluent_builders::ModifyAuthenticationProfile::new(self.handle.clone())
     }
     pub fn modify_cluster(&self) -> fluent_builders::ModifyCluster<C> {
         fluent_builders::ModifyCluster::new(self.handle.clone())
@@ -358,6 +399,9 @@ where
     }
     pub fn reboot_cluster(&self) -> fluent_builders::RebootCluster<C> {
         fluent_builders::RebootCluster::new(self.handle.clone())
+    }
+    pub fn reject_data_share(&self) -> fluent_builders::RejectDataShare<C> {
+        fluent_builders::RejectDataShare::new(self.handle.clone())
     }
     pub fn reset_cluster_parameter_group(&self) -> fluent_builders::ResetClusterParameterGroup<C> {
         fluent_builders::ResetClusterParameterGroup::new(self.handle.clone())
@@ -488,7 +532,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -528,6 +572,69 @@ pub mod fluent_builders {
         }
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_partner_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateDataShareConsumer<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::associate_data_share_consumer_input::Builder,
+    }
+    impl<C> AssociateDataShareConsumer<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateDataShareConsumerOutput,
+            smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+        /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+        pub fn associate_entire_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_entire_account(input);
+            self
+        }
+        pub fn set_associate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_associate_entire_account(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
+        /// datashare.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input);
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_consumer_arn(input);
             self
         }
     }
@@ -598,8 +705,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
-        /// <p>The AWS account number of the owner of the security group specified by the
-        /// <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+        /// <p>The Amazon Web Services account number of the owner of the security group specified by the
+        /// <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an
         /// acceptable value. </p>
         /// <p>Example: <code>111122223333</code>
         /// </p>
@@ -615,6 +722,63 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_ec2_security_group_owner_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct AuthorizeDataShare<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::authorize_data_share_input::Builder,
+    }
+    impl<C> AuthorizeDataShare<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AuthorizeDataShareOutput,
+            smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
+        /// sharing for.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_identifier(input);
+            self
+        }
+        pub fn set_consumer_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_identifier(input);
             self
         }
     }
@@ -661,7 +825,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The AWS account ID to grant access to.</p>
+        /// <p>The Amazon Web Services account ID to grant access to.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input);
             self
@@ -743,9 +907,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_cluster_identifier(input);
             self
         }
-        /// <p>The identifier of the AWS customer account authorized to restore the specified
+        /// <p>The identifier of the Amazon Web Services account authorized to restore the specified
         /// snapshot.</p>
-        /// <p>To share a snapshot with AWS support, specify amazon-redshift-support.</p>
+        /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
         pub fn account_with_restore_access(
             mut self,
             input: impl Into<std::string::String>,
@@ -1013,7 +1177,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for the AWS account that is making the request.</p>
+        /// <p>Must be unique for the Amazon Web Services account that is making the request.</p>
         /// </li>
         /// </ul>
         pub fn target_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,6 +1204,69 @@ pub mod fluent_builders {
             input: std::option::Option<i32>,
         ) -> Self {
             self.inner = self.inner.set_manual_snapshot_retention_period(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateAuthenticationProfile<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_authentication_profile_input::Builder,
+    }
+    impl<C> CreateAuthenticationProfile<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAuthenticationProfileOutput,
+            smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the authentication profile to be created.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_name(input);
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_name(input);
+            self
+        }
+        /// <p>The content of the authentication profile in JSON format.
+        /// The maximum length of the JSON string is determined by a quota for your account.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_content(input);
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_content(input);
             self
         }
     }
@@ -1121,7 +1348,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>myexamplecluster</code>
@@ -1178,7 +1405,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_node_type(input);
             self
         }
-        /// <p>The user name associated with the master user account for the cluster that is being
+        /// <p>The user name associated with the admin user account for the cluster that is being
         /// created.</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -1205,7 +1432,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_master_username(input);
             self
         }
-        /// <p>The password associated with the master user account for the cluster that is being
+        /// <p>The password associated with the admin user account for the cluster that is being
         /// created.</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -1529,7 +1756,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -1565,8 +1792,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_info(input);
             self
         }
-        /// <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the
-        /// cluster to access other AWS services. You must supply the IAM roles in their Amazon
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+        /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
         /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
         /// request.</p>
         /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
@@ -1625,7 +1852,7 @@ pub mod fluent_builders {
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -1693,7 +1920,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique withing your AWS account.</p>
+        /// <p>Must be unique withing your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <note>
@@ -1713,7 +1940,7 @@ pub mod fluent_builders {
         /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The
         /// cluster engine version determines the set of parameters.</p>
         /// <p>To get a list of valid parameter group family names, you can call <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a list of
-        /// all the parameter groups that are owned by your AWS account, including the default
+        /// all the parameter groups that are owned by your Amazon Web Services account, including the default
         /// parameter groups for each Amazon Redshift engine version. The parameter group family names
         /// associated with the default parameter groups provide you the valid values. For example,
         /// a valid family name is "redshift-1.0". </p>
@@ -1792,8 +2019,7 @@ pub mod fluent_builders {
         /// <p>Must not be "Default".</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all security groups that are created by your AWS
-        /// account.</p>
+        /// <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplesecuritygroup</code>
@@ -1866,7 +2092,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the snapshot that you are requesting. This identifier must
-        /// be unique for all snapshots within the AWS account.</p>
+        /// be unique for all snapshots within the Amazon Web Services account.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -1977,8 +2203,7 @@ pub mod fluent_builders {
         /// <p>Must not be "Default".</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all subnet groups that are created by your AWS
-        /// account.</p>
+        /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplesubnetgroup</code>
@@ -2072,7 +2297,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_owner(input);
             self
@@ -2200,7 +2425,7 @@ pub mod fluent_builders {
         /// <p>The type of source that will be generating the events. For example, if you want to
         /// be notified of events generated by a cluster, you would set this parameter to cluster.
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-        /// AWS account. You must specify a source type in order to specify source IDs.</p>
+        /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_type(input);
@@ -2230,7 +2455,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
         /// subscription.</p>
-        /// <p>Values: configuration, management, monitoring, security</p>
+        /// <p>Values: configuration, management, monitoring, security, pending</p>
         pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_categories(inp);
             self
@@ -2614,7 +2839,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot copy grant. This name must be unique in the region for the
-        /// AWS account.</p>
+        /// Amazon Web Services account.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -2630,7 +2855,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2946,6 +3171,110 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeauthorizeDataShare<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::deauthorize_data_share_input::Builder,
+    }
+    impl<C> DeauthorizeDataShare<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeauthorizeDataShareOutput,
+            smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+        /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
+        /// This identifier is an AWS account ID.</p>
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_identifier(input);
+            self
+        }
+        pub fn set_consumer_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_identifier(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteAuthenticationProfile<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_authentication_profile_input::Builder,
+    }
+    impl<C> DeleteAuthenticationProfile<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAuthenticationProfileOutput,
+            smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the authentication profile to delete.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_name(input);
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_name(input);
             self
         }
     }
@@ -3495,7 +3824,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -3816,6 +4145,53 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeAuthenticationProfiles<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_authentication_profiles_input::Builder,
+    }
+    impl<C> DescribeAuthenticationProfiles<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAuthenticationProfilesOutput,
+            smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_name(input);
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeClusterDbRevisions<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::describe_cluster_db_revisions_input::Builder,
@@ -3954,7 +4330,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterParameterGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4075,7 +4451,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterParameters</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4150,7 +4526,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusters</a> request exceed the
-        /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4263,7 +4639,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSecurityGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4428,7 +4804,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4440,9 +4816,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot. Use this field to
+        /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to
         /// filter the results to snapshots owned by a particular account. To describe snapshots you
-        /// own, either specify your AWS customer account, or do not specify the
+        /// own, either specify your Amazon Web Services account, or do not specify the
         /// parameter.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
@@ -4597,7 +4973,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSubnetGroups</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4801,7 +5177,232 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterVersions</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeDataShares<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_data_shares_input::Builder,
+    }
+    impl<C> DescribeDataShares<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDataSharesOutput,
+            smithy_http::result::SdkError<crate::error::DescribeDataSharesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the datashare to describe details of.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeDataSharesForConsumer<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_data_shares_for_consumer_input::Builder,
+    }
+    impl<C> DescribeDataSharesForConsumer<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDataSharesForConsumerOutput,
+            smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input);
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_consumer_arn(input);
+            self
+        }
+        /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
+        /// Redshift returns the list of datashares that have the specified status.</p>
+        pub fn status(mut self, input: crate::model::DataShareStatusForConsumer) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataShareStatusForConsumer>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeDataSharesForProducer<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_data_shares_for_producer_input::Builder,
+    }
+    impl<C> DescribeDataSharesForProducer<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDataSharesForProducerOutput,
+            smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.producer_arn(input);
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_producer_arn(input);
+            self
+        }
+        /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
+        /// Redshift returns the list of datashares that have the specified status.</p>
+        pub fn status(mut self, input: crate::model::DataShareStatusForProducer) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataShareStatusForProducer>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value. </p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4874,7 +5475,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDefaultClusterParameters</a>
-        /// request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+        /// request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
         /// the <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4930,7 +5531,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_owner(input);
             self
@@ -5030,7 +5631,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The AWS account ID of either the cluster owner (grantor) or grantee.
+        /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
         /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input);
@@ -5276,7 +5877,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeEvents</a> request exceed the value
-        /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
@@ -5350,7 +5951,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a DescribeEventSubscriptions request exceed the value
-        /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
@@ -5430,7 +6031,7 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of a specific HSM client certificate for which you want information.
         /// If no identifier is specified, information is returned for all HSM client certificates
-        /// owned by your AWS customer account.</p>
+        /// owned by your Amazon Web Services account.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -5462,7 +6063,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeHsmClientCertificates</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -5542,7 +6143,7 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no
         /// identifier is specified, information is returned for all HSM configurations owned by
-        /// your AWS customer account.</p>
+        /// your Amazon Web Services account.</p>
         pub fn hsm_configuration_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -5574,7 +6175,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeHsmConfigurations</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -5738,7 +6339,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_identifier(input);
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot.
+        /// <p>The Amazon Web Services account used to create or copy the snapshot.
         /// Required if you are restoring a snapshot you do not own,
         /// optional if you own the snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5769,7 +6370,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeNodeConfigurationOptions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -5870,7 +6471,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeOrderableClusterOptions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -5914,7 +6515,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -6017,7 +6618,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeReservedNodeOfferings</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6090,7 +6691,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeReservedNodes</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6136,7 +6737,7 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of a cluster whose resize progress you are requesting. This
         /// parameter is case-sensitive.</p>
-        /// <p>By default, resize operations for all clusters defined for an AWS account are
+        /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
         /// returned.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input);
@@ -6252,7 +6853,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeScheduledActions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6340,7 +6941,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6841,7 +7442,7 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeUsageLimits</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6978,6 +7579,70 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_cluster_identifier(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateDataShareConsumer<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::disassociate_data_share_consumer_input::Builder,
+    }
+    impl<C> DisassociateDataShareConsumer<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateDataShareConsumerOutput,
+            smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+        /// <p>A value that specifies whether association for the datashare is removed from the
+        /// entire account.</p>
+        pub fn disassociate_entire_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_entire_account(input);
+            self
+        }
+        pub fn set_disassociate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_disassociate_entire_account(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the consumer that association for
+        /// the datashare is removed from.</p>
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input);
+            self
+        }
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_consumer_arn(input);
             self
         }
     }
@@ -7129,8 +7794,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The destination AWS Region that you want to copy snapshots to.</p>
-        /// <p>Constraints: Must be the name of a valid AWS Region. For more information, see
+        /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
+        /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.
         /// </p>
         pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7156,7 +7821,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted
+        /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
         /// cluster are copied to the destination region.</p>
         pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_copy_grant_name(input);
@@ -7169,8 +7834,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_copy_grant_name(input);
             self
         }
-        /// <p>The number of days to retain newly copied snapshots in the destination AWS Region
-        /// after they are copied from the source AWS Region. If the value is -1, the manual
+        /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region
+        /// after they are copied from the source Amazon Web Services Region. If the value is -1, the manual
         /// snapshot is retained indefinitely. </p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -7467,7 +8132,7 @@ pub mod fluent_builders {
         /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -7488,6 +8153,69 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
         ) -> Self {
             self.inner = self.inner.set_aqua_configuration_status(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyAuthenticationProfile<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::modify_authentication_profile_input::Builder,
+    }
+    impl<C> ModifyAuthenticationProfile<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyAuthenticationProfileOutput,
+            smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the authentication profile to replace.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_name(input);
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_name(input);
+            self
+        }
+        /// <p>The new content of the authentication profile in JSON format.
+        /// The maximum length of the JSON string is determined by a quota for your account.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authentication_profile_content(input);
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_profile_content(input);
             self
         }
     }
@@ -7625,13 +8353,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
-        /// <p>The new password for the cluster master user. This change is asynchronously applied
+        /// <p>The new password for the cluster admin user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the
         /// <code>PendingModifiedValues</code> element of the operation response. </p>
         /// <note>
         /// <p>Operations never return the password, so this operation provides a way to
-        /// regain access to the master user account for a cluster if the password is
+        /// regain access to the admin user account for a cluster if the password is
         /// lost.</p>
         /// </note>
         /// <p>Default: Uses existing setting.</p>
@@ -7826,7 +8554,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         /// <p>Example: <code>examplecluster</code>
@@ -7909,7 +8637,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
         /// to encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -8567,7 +9295,7 @@ pub mod fluent_builders {
         /// <p>The type of source that will be generating the events. For example, if you want to
         /// be notified of events generated by a cluster, you would set this parameter to cluster.
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
-        /// AWS account. You must specify a source type in order to specify source IDs.</p>
+        /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_type(input);
@@ -8597,7 +9325,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
         /// subscription.</p>
-        /// <p>Values: configuration, management, monitoring, security</p>
+        /// <p>Values: configuration, management, monitoring, security, pending</p>
         pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_categories(inp);
             self
@@ -8784,8 +9512,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster for which you want to change the retention
-        /// period for either automated or manual snapshots that are copied to a destination AWS
-        /// Region.</p>
+        /// period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
         /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
         /// snapshot copy enabled.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8799,12 +9526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The number of days to retain automated snapshots in the destination AWS Region
-        /// after they are copied from the source AWS Region.</p>
+        /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region
+        /// after they are copied from the source Amazon Web Services Region.</p>
         /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
         /// <p>If you decrease the retention period for automated snapshots that are copied to a
-        /// destination AWS Region, Amazon Redshift deletes any existing automated snapshots that were
-        /// copied to the destination AWS Region and that fall outside of the new retention
+        /// destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were
+        /// copied to the destination Amazon Web Services Region and that fall outside of the new retention
         /// period.</p>
         /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
         /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will
@@ -9100,6 +9827,50 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct RejectDataShare<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::reject_data_share_input::Builder,
+    }
+    impl<C> RejectDataShare<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RejectDataShareOutput,
+            smithy_http::result::SdkError<crate::error::RejectDataShareError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input);
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_share_arn(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ResetClusterParameterGroup<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::reset_cluster_parameter_group_input::Builder,
@@ -9300,7 +10071,7 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// <li>
-        /// <p>Must be unique for all clusters within an AWS account.</p>
+        /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9407,7 +10178,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
-        /// <p>The AWS customer account used to create or copy the snapshot. Required if you are
+        /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
         /// restoring a snapshot you do not own, optional if you own the snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(input);
@@ -9575,7 +10346,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_manual_snapshot_retention_period(input);
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster that you restore from a shared snapshot.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -9630,8 +10401,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_info(input);
             self
         }
-        /// <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the
-        /// cluster to access other AWS services. You must supply the IAM roles in their Amazon
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+        /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
         /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
         /// request.</p>
         /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
@@ -9702,7 +10473,7 @@ pub mod fluent_builders {
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -9988,8 +10759,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
-        /// <p>The AWS account number of the owner of the security group specified in the
-        /// <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an
+        /// <p>The Amazon Web Services account number of the owner of the security group specified in the
+        /// <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an
         /// acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
         /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
         /// cannot be provided. </p>
@@ -10053,7 +10824,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The AWS account ID whose access is to be revoked.</p>
+        /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input);
             self
@@ -10145,7 +10916,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_cluster_identifier(input);
             self
         }
-        /// <p>The identifier of the AWS customer account that can no longer restore the specified
+        /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
         /// snapshot.</p>
         pub fn account_with_restore_access(
             mut self,
@@ -10240,7 +11011,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID that owns the cluster.</p>
+        /// <p>The Amazon Web Services account ID that owns the cluster.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self

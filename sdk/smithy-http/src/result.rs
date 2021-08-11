@@ -3,20 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::body::SdkBody;
+use crate::operation;
 use std::error::Error;
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
 
 type BoxError = Box<dyn Error + Send + Sync>;
-/// Successful Sdk Result
+
+/// Successful SDK Result
 #[derive(Debug)]
 pub struct SdkSuccess<O> {
-    pub raw: http::Response<SdkBody>,
+    pub raw: operation::Response,
     pub parsed: O,
 }
 
-/// Failing Sdk Result
+/// Failed SDK Result
 #[derive(Debug)]
 pub enum SdkError<E> {
     /// The request failed during construction. It was not dispatched over the network.
@@ -29,15 +30,12 @@ pub enum SdkError<E> {
     /// A response was received but it was not parseable according the the protocol (for example
     /// the server hung up while the body was being read)
     ResponseError {
-        raw: http::Response<SdkBody>,
+        raw: operation::Response,
         err: BoxError,
     },
 
     /// An error response was received from the service
-    ServiceError {
-        err: E,
-        raw: http::Response<SdkBody>,
-    },
+    ServiceError { err: E, raw: operation::Response },
 }
 
 impl<E> Display for SdkError<E>

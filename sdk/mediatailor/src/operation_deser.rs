@@ -450,6 +450,29 @@ pub fn parse_get_playback_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_alerts_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListAlertsError::unhandled)?;
+    Err(crate::error::ListAlertsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_alerts_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_alerts_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_alerts(response.body().as_ref(), output)
+            .map_err(crate::error::ListAlertsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {

@@ -170,10 +170,15 @@ pub fn serialize_structure_update_canary_input(
             smithy_types::Number::NegInt((*var_40).into()),
         );
     }
-    if let Some(var_41) = &input.vpc_config {
-        let mut object_42 = object.key("VpcConfig").start_object();
-        crate::json_ser::serialize_structure_vpc_config_input(&mut object_42, var_41);
+    if let Some(var_41) = &input.visual_reference {
+        let mut object_42 = object.key("VisualReference").start_object();
+        crate::json_ser::serialize_structure_visual_reference_input(&mut object_42, var_41);
         object_42.finish();
+    }
+    if let Some(var_43) = &input.vpc_config {
+        let mut object_44 = object.key("VpcConfig").start_object();
+        crate::json_ser::serialize_structure_vpc_config_input(&mut object_44, var_43);
+        object_44.finish();
     }
 }
 
@@ -181,22 +186,22 @@ pub fn serialize_structure_canary_code_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CanaryCodeInput,
 ) {
-    if let Some(var_43) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_43);
+    if let Some(var_45) = &input.s3_bucket {
+        object.key("S3Bucket").string(var_45);
     }
-    if let Some(var_44) = &input.s3_key {
-        object.key("S3Key").string(var_44);
+    if let Some(var_46) = &input.s3_key {
+        object.key("S3Key").string(var_46);
     }
-    if let Some(var_45) = &input.s3_version {
-        object.key("S3Version").string(var_45);
+    if let Some(var_47) = &input.s3_version {
+        object.key("S3Version").string(var_47);
     }
-    if let Some(var_46) = &input.zip_file {
+    if let Some(var_48) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&smithy_types::base64::encode(var_46));
+            .string_unchecked(&smithy_types::base64::encode(var_48));
     }
-    if let Some(var_47) = &input.handler {
-        object.key("Handler").string(var_47);
+    if let Some(var_49) = &input.handler {
+        object.key("Handler").string(var_49);
     }
 }
 
@@ -204,29 +209,29 @@ pub fn serialize_structure_canary_run_config_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CanaryRunConfigInput,
 ) {
-    if let Some(var_48) = &input.timeout_in_seconds {
+    if let Some(var_50) = &input.timeout_in_seconds {
         object.key("TimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_48).into()),
+            smithy_types::Number::NegInt((*var_50).into()),
         );
     }
-    if let Some(var_49) = &input.memory_in_mb {
+    if let Some(var_51) = &input.memory_in_mb {
         object.key("MemoryInMB").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_49).into()),
+            smithy_types::Number::NegInt((*var_51).into()),
         );
     }
-    if let Some(var_50) = &input.active_tracing {
-        object.key("ActiveTracing").boolean(*var_50);
+    if let Some(var_52) = &input.active_tracing {
+        object.key("ActiveTracing").boolean(*var_52);
     }
-    if let Some(var_51) = &input.environment_variables {
-        let mut object_52 = object.key("EnvironmentVariables").start_object();
-        for (key_53, value_54) in var_51 {
+    if let Some(var_53) = &input.environment_variables {
+        let mut object_54 = object.key("EnvironmentVariables").start_object();
+        for (key_55, value_56) in var_53 {
             {
-                object_52.key(key_53).string(value_54);
+                object_54.key(key_55).string(value_56);
             }
         }
-        object_52.finish();
+        object_54.finish();
     }
 }
 
@@ -234,13 +239,13 @@ pub fn serialize_structure_canary_schedule_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CanaryScheduleInput,
 ) {
-    if let Some(var_55) = &input.expression {
-        object.key("Expression").string(var_55);
+    if let Some(var_57) = &input.expression {
+        object.key("Expression").string(var_57);
     }
-    if let Some(var_56) = &input.duration_in_seconds {
+    if let Some(var_58) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_56).into()),
+            smithy_types::Number::NegInt((*var_58).into()),
         );
     }
 }
@@ -249,22 +254,60 @@ pub fn serialize_structure_vpc_config_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VpcConfigInput,
 ) {
-    if let Some(var_57) = &input.subnet_ids {
-        let mut array_58 = object.key("SubnetIds").start_array();
-        for item_59 in var_57 {
+    if let Some(var_59) = &input.subnet_ids {
+        let mut array_60 = object.key("SubnetIds").start_array();
+        for item_61 in var_59 {
             {
-                array_58.value().string(item_59);
+                array_60.value().string(item_61);
             }
         }
-        array_58.finish();
+        array_60.finish();
     }
-    if let Some(var_60) = &input.security_group_ids {
-        let mut array_61 = object.key("SecurityGroupIds").start_array();
-        for item_62 in var_60 {
+    if let Some(var_62) = &input.security_group_ids {
+        let mut array_63 = object.key("SecurityGroupIds").start_array();
+        for item_64 in var_62 {
             {
-                array_61.value().string(item_62);
+                array_63.value().string(item_64);
             }
         }
-        array_61.finish();
+        array_63.finish();
+    }
+}
+
+pub fn serialize_structure_visual_reference_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::VisualReferenceInput,
+) {
+    if let Some(var_65) = &input.base_screenshots {
+        let mut array_66 = object.key("BaseScreenshots").start_array();
+        for item_67 in var_65 {
+            {
+                let mut object_68 = array_66.value().start_object();
+                crate::json_ser::serialize_structure_base_screenshot(&mut object_68, item_67);
+                object_68.finish();
+            }
+        }
+        array_66.finish();
+    }
+    if let Some(var_69) = &input.base_canary_run_id {
+        object.key("BaseCanaryRunId").string(var_69);
+    }
+}
+
+pub fn serialize_structure_base_screenshot(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::BaseScreenshot,
+) {
+    if let Some(var_70) = &input.screenshot_name {
+        object.key("ScreenshotName").string(var_70);
+    }
+    if let Some(var_71) = &input.ignore_coordinates {
+        let mut array_72 = object.key("IgnoreCoordinates").start_array();
+        for item_73 in var_71 {
+            {
+                array_72.value().string(item_73);
+            }
+        }
+        array_72.finish();
     }
 }

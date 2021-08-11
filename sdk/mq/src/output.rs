@@ -31,17 +31,17 @@ impl UpdateUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationOutput {
-    /// Required. The Amazon Resource Name (ARN) of the configuration.
+    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// Required. The date and time of the configuration.
+    /// <p>Required. The date and time of the configuration.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// Required. The unique ID that Amazon MQ generates for the configuration.
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// The latest revision of the configuration.
+    /// <p>The latest revision of the configuration.</p>
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
-    /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub name: std::option::Option<std::string::String>,
-    /// The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>,
 }
 impl std::fmt::Debug for UpdateConfigurationOutput {
@@ -70,7 +70,7 @@ pub mod update_configuration_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>,
     }
     impl Builder {
-        /// Required. The Amazon Resource Name (ARN) of the configuration.
+        /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -79,7 +79,7 @@ pub mod update_configuration_output {
             self.arn = input;
             self
         }
-        /// Required. The date and time of the configuration.
+        /// <p>Required. The date and time of the configuration.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
@@ -88,7 +88,7 @@ pub mod update_configuration_output {
             self.created = input;
             self
         }
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -97,7 +97,7 @@ pub mod update_configuration_output {
             self.id = input;
             self
         }
-        /// The latest revision of the configuration.
+        /// <p>The latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
             self.latest_revision = Some(input);
             self
@@ -109,7 +109,7 @@ pub mod update_configuration_output {
             self.latest_revision = input;
             self
         }
-        /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+        /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -154,23 +154,25 @@ impl UpdateConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerOutput {
-    /// The authentication strategy used to secure the broker.
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// The new value of automatic upgrades to new minor version for brokers.
+    /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
     pub auto_minor_version_upgrade: bool,
-    /// Required. The unique ID that Amazon MQ generates for the broker.
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// The ID of the updated configuration.
+    /// <p>The ID of the updated configuration.</p>
     pub configuration: std::option::Option<crate::model::ConfigurationId>,
-    /// The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
-    /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataOutput>,
-    /// The list of information about logs to be enabled for the specified broker.
+    /// <p>The list of information about logs to be enabled for the specified broker.</p>
     pub logs: std::option::Option<crate::model::Logs>,
-    /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
+    /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UpdateBrokerOutput {
@@ -187,6 +189,10 @@ impl std::fmt::Debug for UpdateBrokerOutput {
         formatter.field("host_instance_type", &self.host_instance_type);
         formatter.field("ldap_server_metadata", &self.ldap_server_metadata);
         formatter.field("logs", &self.logs);
+        formatter.field(
+            "maintenance_window_start_time",
+            &self.maintenance_window_start_time,
+        );
         formatter.field("security_groups", &self.security_groups);
         formatter.finish()
     }
@@ -207,10 +213,12 @@ pub mod update_broker_output {
         pub(crate) ldap_server_metadata:
             std::option::Option<crate::model::LdapServerMetadataOutput>,
         pub(crate) logs: std::option::Option<crate::model::Logs>,
+        pub(crate) maintenance_window_start_time:
+            std::option::Option<crate::model::WeeklyStartTime>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// The authentication strategy used to secure the broker.
+        /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -225,7 +233,7 @@ pub mod update_broker_output {
             self.authentication_strategy = input;
             self
         }
-        /// The new value of automatic upgrades to new minor version for brokers.
+        /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
@@ -234,7 +242,7 @@ pub mod update_broker_output {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -243,7 +251,7 @@ pub mod update_broker_output {
             self.broker_id = input;
             self
         }
-        /// The ID of the updated configuration.
+        /// <p>The ID of the updated configuration.</p>
         pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
             self.configuration = Some(input);
             self
@@ -255,7 +263,7 @@ pub mod update_broker_output {
             self.configuration = input;
             self
         }
-        /// The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -267,7 +275,7 @@ pub mod update_broker_output {
             self.engine_version = input;
             self
         }
-        /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_instance_type = Some(input.into());
             self
@@ -279,7 +287,7 @@ pub mod update_broker_output {
             self.host_instance_type = input;
             self
         }
-        /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+        /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ldap_server_metadata(
             mut self,
             input: crate::model::LdapServerMetadataOutput,
@@ -294,13 +302,28 @@ pub mod update_broker_output {
             self.ldap_server_metadata = input;
             self
         }
-        /// The list of information about logs to be enabled for the specified broker.
+        /// <p>The list of information about logs to be enabled for the specified broker.</p>
         pub fn logs(mut self, input: crate::model::Logs) -> Self {
             self.logs = Some(input);
             self
         }
         pub fn set_logs(mut self, input: std::option::Option<crate::model::Logs>) -> Self {
             self.logs = input;
+            self
+        }
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
+        pub fn maintenance_window_start_time(
+            mut self,
+            input: crate::model::WeeklyStartTime,
+        ) -> Self {
+            self.maintenance_window_start_time = Some(input);
+            self
+        }
+        pub fn set_maintenance_window_start_time(
+            mut self,
+            input: std::option::Option<crate::model::WeeklyStartTime>,
+        ) -> Self {
+            self.maintenance_window_start_time = input;
             self
         }
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
@@ -327,6 +350,7 @@ pub mod update_broker_output {
                 host_instance_type: self.host_instance_type,
                 ldap_server_metadata: self.ldap_server_metadata,
                 logs: self.logs,
+                maintenance_window_start_time: self.maintenance_window_start_time,
                 security_groups: self.security_groups,
             }
         }
@@ -371,13 +395,13 @@ impl RebootBrokerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
-    /// Required. The unique ID that Amazon MQ generates for the broker.
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// Required. The list of all ActiveMQ usernames for the specified broker.
+    /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
 }
 impl std::fmt::Debug for ListUsersOutput {
@@ -402,7 +426,7 @@ pub mod list_users_output {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
     }
     impl Builder {
-        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -411,7 +435,7 @@ pub mod list_users_output {
             self.broker_id = input;
             self
         }
-        /// Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -420,7 +444,7 @@ pub mod list_users_output {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -463,7 +487,7 @@ impl ListUsersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
-    /// The key-value pair for the resource tag.
+    /// <p>The key-value pair for the resource tag.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -520,11 +544,11 @@ impl ListTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsOutput {
-    /// The list of all revisions for the specified configuration.
+    /// <p>The list of all revisions for the specified configuration.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-    /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListConfigurationsOutput {
@@ -560,7 +584,7 @@ pub mod list_configurations_output {
             self.configurations = input;
             self
         }
-        /// The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -569,7 +593,7 @@ pub mod list_configurations_output {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -598,13 +622,13 @@ impl ListConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsOutput {
-    /// The unique ID that Amazon MQ generates for the configuration.
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// The list of all revisions for the specified configuration.
+    /// <p>The list of all revisions for the specified configuration.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
 }
 impl std::fmt::Debug for ListConfigurationRevisionsOutput {
@@ -630,7 +654,7 @@ pub mod list_configuration_revisions_output {
             std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the configuration.
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -642,7 +666,7 @@ pub mod list_configuration_revisions_output {
             self.configuration_id = input;
             self
         }
-        /// The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -651,7 +675,7 @@ pub mod list_configuration_revisions_output {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -694,9 +718,9 @@ impl ListConfigurationRevisionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBrokersOutput {
-    /// A list of information about all brokers.
+    /// <p>A list of information about all brokers.</p>
     pub broker_summaries: std::option::Option<std::vec::Vec<crate::model::BrokerSummary>>,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListBrokersOutput {
@@ -731,7 +755,7 @@ pub mod list_brokers_output {
             self.broker_summaries = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -759,15 +783,15 @@ impl ListBrokersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
-    /// Required. The unique ID that Amazon MQ generates for the broker.
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: bool,
-    /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The status of the changes pending for the ActiveMQ user.
+    /// <p>The status of the changes pending for the ActiveMQ user.</p>
     pub pending: std::option::Option<crate::model::UserPendingChanges>,
-    /// Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeUserOutput {
@@ -794,7 +818,7 @@ pub mod describe_user_output {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -803,7 +827,7 @@ pub mod describe_user_output {
             self.broker_id = input;
             self
         }
-        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn console_access(mut self, input: bool) -> Self {
             self.console_access = Some(input);
             self
@@ -825,7 +849,7 @@ pub mod describe_user_output {
             self.groups = input;
             self
         }
-        /// The status of the changes pending for the ActiveMQ user.
+        /// <p>The status of the changes pending for the ActiveMQ user.</p>
         pub fn pending(mut self, input: crate::model::UserPendingChanges) -> Self {
             self.pending = Some(input);
             self
@@ -837,7 +861,7 @@ pub mod describe_user_output {
             self.pending = input;
             self
         }
-        /// Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
@@ -868,13 +892,13 @@ impl DescribeUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionOutput {
-    /// Required. The unique ID that Amazon MQ generates for the configuration.
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// Required. The date and time of the configuration.
+    /// <p>Required. The date and time of the configuration.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// Required. The base64-encoded XML configuration.
+    /// <p>Required. The base64-encoded XML configuration.</p>
     pub data: std::option::Option<std::string::String>,
-    /// The description of the configuration.
+    /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeConfigurationRevisionOutput {
@@ -899,7 +923,7 @@ pub mod describe_configuration_revision_output {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
@@ -911,7 +935,7 @@ pub mod describe_configuration_revision_output {
             self.configuration_id = input;
             self
         }
-        /// Required. The date and time of the configuration.
+        /// <p>Required. The date and time of the configuration.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
@@ -920,7 +944,7 @@ pub mod describe_configuration_revision_output {
             self.created = input;
             self
         }
-        /// Required. The base64-encoded XML configuration.
+        /// <p>Required. The base64-encoded XML configuration.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
@@ -929,7 +953,7 @@ pub mod describe_configuration_revision_output {
             self.data = input;
             self
         }
-        /// The description of the configuration.
+        /// <p>The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -959,25 +983,25 @@ impl DescribeConfigurationRevisionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationOutput {
-    /// Required. The ARN of the configuration.
+    /// <p>Required. The ARN of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// The authentication strategy associated with the configuration.
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Required. The date and time of the configuration revision.
+    /// <p>Required. The date and time of the configuration revision.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// Required. The description of the configuration.
+    /// <p>Required. The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// Required. The unique ID that Amazon MQ generates for the configuration.
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// Required. The latest revision of the configuration.
+    /// <p>Required. The latest revision of the configuration.</p>
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
-    /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub name: std::option::Option<std::string::String>,
-    /// The list of all tags associated with this configuration.
+    /// <p>The list of all tags associated with this configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1018,7 +1042,7 @@ pub mod describe_configuration_output {
         >,
     }
     impl Builder {
-        /// Required. The ARN of the configuration.
+        /// <p>Required. The ARN of the configuration.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1027,7 +1051,7 @@ pub mod describe_configuration_output {
             self.arn = input;
             self
         }
-        /// The authentication strategy associated with the configuration.
+        /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -1042,7 +1066,7 @@ pub mod describe_configuration_output {
             self.authentication_strategy = input;
             self
         }
-        /// Required. The date and time of the configuration revision.
+        /// <p>Required. The date and time of the configuration revision.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
@@ -1051,7 +1075,7 @@ pub mod describe_configuration_output {
             self.created = input;
             self
         }
-        /// Required. The description of the configuration.
+        /// <p>Required. The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -1060,7 +1084,7 @@ pub mod describe_configuration_output {
             self.description = input;
             self
         }
-        /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
@@ -1072,7 +1096,7 @@ pub mod describe_configuration_output {
             self.engine_type = input;
             self
         }
-        /// Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -1084,7 +1108,7 @@ pub mod describe_configuration_output {
             self.engine_version = input;
             self
         }
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -1093,7 +1117,7 @@ pub mod describe_configuration_output {
             self.id = input;
             self
         }
-        /// Required. The latest revision of the configuration.
+        /// <p>Required. The latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
             self.latest_revision = Some(input);
             self
@@ -1105,7 +1129,7 @@ pub mod describe_configuration_output {
             self.latest_revision = input;
             self
         }
-        /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+        /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -1160,12 +1184,12 @@ impl DescribeConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInstanceOptionsOutput {
-    /// List of available broker instance options.
+    /// <p>List of available broker instance options.</p>
     pub broker_instance_options:
         std::option::Option<std::vec::Vec<crate::model::BrokerInstanceOption>>,
-    /// Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBrokerInstanceOptionsOutput {
@@ -1205,7 +1229,7 @@ pub mod describe_broker_instance_options_output {
             self.broker_instance_options = input;
             self
         }
-        /// Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1214,7 +1238,7 @@ pub mod describe_broker_instance_options_output {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1243,11 +1267,11 @@ impl DescribeBrokerInstanceOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerEngineTypesOutput {
-    /// List of available engine types and versions.
+    /// <p>List of available engine types and versions.</p>
     pub broker_engine_types: std::option::Option<std::vec::Vec<crate::model::BrokerEngineType>>,
-    /// Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+    /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub max_results: i32,
-    /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeBrokerEngineTypesOutput {
@@ -1287,7 +1311,7 @@ pub mod describe_broker_engine_types_output {
             self.broker_engine_types = input;
             self
         }
-        /// Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1296,7 +1320,7 @@ pub mod describe_broker_engine_types_output {
             self.max_results = input;
             self
         }
-        /// The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1325,62 +1349,62 @@ impl DescribeBrokerEngineTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerOutput {
-    /// The authentication strategy used to secure the broker.
+    /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub auto_minor_version_upgrade: bool,
-    /// The Amazon Resource Name (ARN) of the broker.
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub broker_arn: std::option::Option<std::string::String>,
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
-    /// A list of information about allocated brokers.
+    /// <p>A list of information about allocated brokers.</p>
     pub broker_instances: std::option::Option<std::vec::Vec<crate::model::BrokerInstance>>,
-    /// The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub broker_name: std::option::Option<std::string::String>,
-    /// The status of the broker.
+    /// <p>The broker's status.</p>
     pub broker_state: std::option::Option<crate::model::BrokerState>,
-    /// The list of all revisions for the specified configuration.
+    /// <p>The list of all revisions for the specified configuration.</p>
     pub configurations: std::option::Option<crate::model::Configurations>,
-    /// The time when the broker was created.
+    /// <p>The time when the broker was created.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// Required. The deployment mode of the broker.
+    /// <p>The broker's deployment mode.</p>
     pub deployment_mode: std::option::Option<crate::model::DeploymentMode>,
-    /// Encryption options for the broker.
+    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
     pub encryption_options: std::option::Option<crate::model::EncryptionOptions>,
-    /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+    /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
-    /// The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// The broker's instance type.
+    /// <p>The broker's instance type.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
-    /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataOutput>,
-    /// The list of information about logs currently enabled and pending to be deployed for the specified broker.
+    /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
     pub logs: std::option::Option<crate::model::LogsSummary>,
-    /// The parameters that determine the WeeklyStartTime.
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
-    /// The authentication strategy that will be applied when the broker is rebooted.
+    /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
     pub pending_authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+    /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub pending_engine_version: std::option::Option<std::string::String>,
-    /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub pending_host_instance_type: std::option::Option<std::string::String>,
-    /// The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker once it is rebooted.
+    /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
     pub pending_ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataOutput>,
-    /// The list of pending security groups to authorize connections to brokers.
+    /// <p>The list of pending security groups to authorize connections to brokers.</p>
     pub pending_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+    /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
     pub publicly_accessible: bool,
-    /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+    /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The broker's storage type.
+    /// <p>The broker's storage type.</p>
     pub storage_type: std::option::Option<crate::model::BrokerStorageType>,
-    /// The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+    /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The list of all tags associated with this broker.
+    /// <p>The list of all tags associated with this broker.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// The list of all broker usernames for the specified broker.
+    /// <p>The list of all broker usernames for the specified broker.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
 }
 impl std::fmt::Debug for DescribeBrokerOutput {
@@ -1476,7 +1500,7 @@ pub mod describe_broker_output {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
     }
     impl Builder {
-        /// The authentication strategy used to secure the broker.
+        /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -1491,7 +1515,7 @@ pub mod describe_broker_output {
             self.authentication_strategy = input;
             self
         }
-        /// Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+        /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
@@ -1500,7 +1524,7 @@ pub mod describe_broker_output {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// The Amazon Resource Name (ARN) of the broker.
+        /// <p>The broker's Amazon Resource Name (ARN).</p>
         pub fn broker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_arn = Some(input.into());
             self
@@ -1509,7 +1533,7 @@ pub mod describe_broker_output {
             self.broker_arn = input;
             self
         }
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -1531,7 +1555,7 @@ pub mod describe_broker_output {
             self.broker_instances = input;
             self
         }
-        /// The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+        /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
         pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_name = Some(input.into());
             self
@@ -1540,7 +1564,7 @@ pub mod describe_broker_output {
             self.broker_name = input;
             self
         }
-        /// The status of the broker.
+        /// <p>The broker's status.</p>
         pub fn broker_state(mut self, input: crate::model::BrokerState) -> Self {
             self.broker_state = Some(input);
             self
@@ -1552,7 +1576,7 @@ pub mod describe_broker_output {
             self.broker_state = input;
             self
         }
-        /// The list of all revisions for the specified configuration.
+        /// <p>The list of all revisions for the specified configuration.</p>
         pub fn configurations(mut self, input: crate::model::Configurations) -> Self {
             self.configurations = Some(input);
             self
@@ -1564,7 +1588,7 @@ pub mod describe_broker_output {
             self.configurations = input;
             self
         }
-        /// The time when the broker was created.
+        /// <p>The time when the broker was created.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
@@ -1573,7 +1597,7 @@ pub mod describe_broker_output {
             self.created = input;
             self
         }
-        /// Required. The deployment mode of the broker.
+        /// <p>The broker's deployment mode.</p>
         pub fn deployment_mode(mut self, input: crate::model::DeploymentMode) -> Self {
             self.deployment_mode = Some(input);
             self
@@ -1585,7 +1609,7 @@ pub mod describe_broker_output {
             self.deployment_mode = input;
             self
         }
-        /// Encryption options for the broker.
+        /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn encryption_options(mut self, input: crate::model::EncryptionOptions) -> Self {
             self.encryption_options = Some(input);
             self
@@ -1597,7 +1621,7 @@ pub mod describe_broker_output {
             self.encryption_options = input;
             self
         }
-        /// Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
@@ -1609,7 +1633,7 @@ pub mod describe_broker_output {
             self.engine_type = input;
             self
         }
-        /// The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -1621,7 +1645,7 @@ pub mod describe_broker_output {
             self.engine_version = input;
             self
         }
-        /// The broker's instance type.
+        /// <p>The broker's instance type.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_instance_type = Some(input.into());
             self
@@ -1633,7 +1657,7 @@ pub mod describe_broker_output {
             self.host_instance_type = input;
             self
         }
-        /// The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+        /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
         pub fn ldap_server_metadata(
             mut self,
             input: crate::model::LdapServerMetadataOutput,
@@ -1648,7 +1672,7 @@ pub mod describe_broker_output {
             self.ldap_server_metadata = input;
             self
         }
-        /// The list of information about logs currently enabled and pending to be deployed for the specified broker.
+        /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
         pub fn logs(mut self, input: crate::model::LogsSummary) -> Self {
             self.logs = Some(input);
             self
@@ -1657,7 +1681,7 @@ pub mod describe_broker_output {
             self.logs = input;
             self
         }
-        /// The parameters that determine the WeeklyStartTime.
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn maintenance_window_start_time(
             mut self,
             input: crate::model::WeeklyStartTime,
@@ -1672,7 +1696,7 @@ pub mod describe_broker_output {
             self.maintenance_window_start_time = input;
             self
         }
-        /// The authentication strategy that will be applied when the broker is rebooted.
+        /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
         pub fn pending_authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -1687,7 +1711,7 @@ pub mod describe_broker_output {
             self.pending_authentication_strategy = input;
             self
         }
-        /// The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn pending_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.pending_engine_version = Some(input.into());
             self
@@ -1699,7 +1723,7 @@ pub mod describe_broker_output {
             self.pending_engine_version = input;
             self
         }
-        /// The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
         pub fn pending_host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.pending_host_instance_type = Some(input.into());
             self
@@ -1711,7 +1735,7 @@ pub mod describe_broker_output {
             self.pending_host_instance_type = input;
             self
         }
-        /// The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker once it is rebooted.
+        /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
         pub fn pending_ldap_server_metadata(
             mut self,
             input: crate::model::LdapServerMetadataOutput,
@@ -1739,7 +1763,7 @@ pub mod describe_broker_output {
             self.pending_security_groups = input;
             self
         }
-        /// Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+        /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
@@ -1761,7 +1785,7 @@ pub mod describe_broker_output {
             self.security_groups = input;
             self
         }
-        /// The broker's storage type.
+        /// <p>The broker's storage type.</p>
         pub fn storage_type(mut self, input: crate::model::BrokerStorageType) -> Self {
             self.storage_type = Some(input);
             self
@@ -1921,7 +1945,7 @@ impl DeleteTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBrokerOutput {
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteBrokerOutput {
@@ -1940,7 +1964,7 @@ pub mod delete_broker_output {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
@@ -2025,17 +2049,17 @@ impl CreateTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationOutput {
-    /// Required. The Amazon Resource Name (ARN) of the configuration.
+    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// The authentication strategy associated with the configuration.
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
-    /// Required. The date and time of the configuration.
+    /// <p>Required. The date and time of the configuration.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// Required. The unique ID that Amazon MQ generates for the configuration.
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// The latest revision of the configuration.
+    /// <p>The latest revision of the configuration.</p>
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
-    /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateConfigurationOutput {
@@ -2065,7 +2089,7 @@ pub mod create_configuration_output {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Required. The Amazon Resource Name (ARN) of the configuration.
+        /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -2074,7 +2098,7 @@ pub mod create_configuration_output {
             self.arn = input;
             self
         }
-        /// The authentication strategy associated with the configuration.
+        /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
             input: crate::model::AuthenticationStrategy,
@@ -2089,7 +2113,7 @@ pub mod create_configuration_output {
             self.authentication_strategy = input;
             self
         }
-        /// Required. The date and time of the configuration.
+        /// <p>Required. The date and time of the configuration.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
@@ -2098,7 +2122,7 @@ pub mod create_configuration_output {
             self.created = input;
             self
         }
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -2107,7 +2131,7 @@ pub mod create_configuration_output {
             self.id = input;
             self
         }
-        /// The latest revision of the configuration.
+        /// <p>The latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
             self.latest_revision = Some(input);
             self
@@ -2119,7 +2143,7 @@ pub mod create_configuration_output {
             self.latest_revision = input;
             self
         }
-        /// Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+        /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -2151,9 +2175,9 @@ impl CreateConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBrokerOutput {
-    /// The Amazon Resource Name (ARN) of the broker.
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub broker_arn: std::option::Option<std::string::String>,
-    /// The unique ID that Amazon MQ generates for the broker.
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateBrokerOutput {
@@ -2174,7 +2198,7 @@ pub mod create_broker_output {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the broker.
+        /// <p>The broker's Amazon Resource Name (ARN).</p>
         pub fn broker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_arn = Some(input.into());
             self
@@ -2183,7 +2207,7 @@ pub mod create_broker_output {
             self.broker_arn = input;
             self
         }
-        /// The unique ID that Amazon MQ generates for the broker.
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.broker_id = Some(input.into());
             self
